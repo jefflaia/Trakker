@@ -1,0 +1,5 @@
+D:\ASPNET_MVC\Trakker\BaseMasterController\bin\Debug\BaseMasterController.dll
+D:\ASPNET_MVC\Trakker\BaseMasterController\bin\Debug\BaseMasterController.pdb
+D:\ASPNET_MVC\Trakker\BaseMasterController\obj\Debug\ResolveAssemblyReference.cache
+D:\ASPNET_MVC\Trakker\BaseMasterController\obj\Debug\BaseMasterController.dll
+D:\ASPNET_MVC\Trakker\BaseMasterController\obj\Debug\BaseMasterController.pdb

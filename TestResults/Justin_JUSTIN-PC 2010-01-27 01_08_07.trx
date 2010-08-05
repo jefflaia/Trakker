@@ -1,0 +1,999 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="990e3de3-cf33-4157-b0ef-510028d35f94" name="Justin@JUSTIN-PC 2010-01-27 01:08:07" runUser="Justin-PC\Justin" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Default Run Configuration" id="efb24221-bc53-4e85-bccb-a0e269fd889e">
+    <Deployment runDeploymentRoot="D:\ASPNET_MVC\Trakker\TestResults\Justin_JUSTIN-PC 2010-01-27 01_08_07">
+      <DeploymentItem filename="D:\ASPNET_MVC\Trakker\Lib\Gallio.dll" />
+      <DeploymentItem filename="D:\ASPNET_MVC\Trakker\Trakker.Data\bin\Debug\Trakker.Data.dll" />
+      <DeploymentItem filename="D:\ASPNET_MVC\Trakker\Lib\MbUnit.dll" />
+      <DeploymentItem filename="D:\ASPNET_MVC\Trakker\Trakker\bin\Trakker.dll" />
+    </Deployment>
+    <Hosts skipUnhostableTests="false" />
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Failed">
+    <Counters total="60" executed="60" passed="59" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2010-01-27T01:08:07.0454598-08:00" queuing="2010-01-27T01:08:07.4094806-08:00" start="2010-01-27T01:08:07.5174868-08:00" finish="2010-01-27T01:08:12.6087780-08:00" />
+  <TestDefinitions>
+    <GallioTestElement name="CanInsertCategoryWithSave" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="35613633-6134-3432-3937-333630326334" d3p1:Gallio.TestId="36a54a24973602c4" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanInsertCategoryWithSave" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="120" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="eb9af525-d79f-49a3-9385-2d2f277c4ab1" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetSeverityUsingFilterWithId" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="39316438-3563-3663-6663-363032663235" d3p1:Gallio.TestId="8d19c5c6fc602f25" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.Data.Filters" d3p1:Gallio.TypeName="Trakker.Tests.Data.Filters.SeverityFiltersTests" d3p1:Gallio.MemberName="CanGetSeverityUsingFilterWithId" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Filters\SeverityFiltersTests.cs" d3p1:Gallio.Line="28" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="2c4bd582-dba5-461d-ad1e-1276de54779b" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetStatusUsingFilterWithName" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="37353836-3832-3332-3963-316332646239" d3p1:Gallio.TestId="685728239c1c2db9" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.Data.Filters" d3p1:Gallio.TypeName="Trakker.Tests.Data.Filters.StatusFiltersTests" d3p1:Gallio.MemberName="CanGetStatusUsingFilterWithName" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Filters\StatusFiltersTests.cs" d3p1:Gallio.Line="33" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="d6f50d01-02af-490b-8115-6ca6aff6b4cd" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanUpdateUserWithSave" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="39333633-6365-6432-3662-313432343463" d3p1:Gallio.TestId="3639ec2d6b14244c" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.UserRepositoryTest" d3p1:Gallio.MemberName="CanUpdateUserWithSave" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\UserRepositoryTest.cs" d3p1:Gallio.Line="60" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="039f490a-396f-4da9-8886-3c1c851f6f3c" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanDeleteCategory" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="36303934-3739-3730-3335-383438383239" d3p1:Gallio.TestId="4906970735848829" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanDeleteCategory" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="427" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="cd4284cc-cb3f-4968-9c58-f6eb360ea57e" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="ExpectedValueForUpperboundWithEvenVariance" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="37383535-3765-3566-3533-636434393134" d3p1:Gallio.TestId="5587e7f553cd4914" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="ExpectedValueForUpperboundWithEvenVariance" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="71" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="ea6fd953-8c99-4d70-b233-e63990ecce03" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetCategoryUsingFilterWithId" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="38333637-3338-3465-3634-346466623935" d3p1:Gallio.TestId="763883e4644dfb95" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.Data.Filters" d3p1:Gallio.TypeName="Trakker.Tests.Data.Filters.CategoryFiltersTests" d3p1:Gallio.MemberName="CanGetCategoryUsingFilterWithId" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Filters\CategoryFiltersTests.cs" d3p1:Gallio.Line="28" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="cd8cdb43-a303-4d00-9aa7-c8af44068a9d" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="ExpectedValueForPageSize" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="39613634-3264-3137-3932-633962653063" d3p1:Gallio.TestId="46a9d27192c9be0c" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="ExpectedValueForPageSize" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="103" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="f9eac42b-52a4-48f5-aac8-945caa82b5e4" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetUserUsingFilterWithEmail" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="65363236-3732-6330-3731-656461376534" d3p1:Gallio.TestId="626e270c71eda7e4" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.Data.Filters" d3p1:Gallio.TypeName="Trakker.Tests.Data.Filters.UserFiltersTests" d3p1:Gallio.MemberName="CanGetUserUsingFilterWithEmail" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Filters\UserFiltersTests.cs" d3p1:Gallio.Line="28" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="9a36295c-a82f-4d6a-b1e3-277ae09fe06a" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGenerateProperSlugForATask" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="66323337-3632-3335-6265-313565663461" d3p1:Gallio.TestId="732f2653be15ef4a" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanGenerateProperSlugForATask" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="339" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="d4c71e9b-e622-461d-a9ff-53939df292ff" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="LowerboundCannotBeLessThanOne" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="30366166-3333-6565-3633-636335373120" d3p1:Gallio.TestId="fa6033ee63cc571" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="LowerboundCannotBeLessThanOne" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="117" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="0ebdf5ee-0fb2-4b44-8019-88ab619fc26f" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="PreviousPageCannotBeLessThanOne" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="39306339-3035-3162-6437-666238393262" d3p1:Gallio.TestId="9c0950b1d7fb892b" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="PreviousPageCannotBeLessThanOne" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="145" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="cfee321d-7b05-471a-aca2-a408bfd40f1c" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="ExpectedValueForHasPreviousPage" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="33393733-6433-6338-3232-376664343666" d3p1:Gallio.TestId="37933d8c227fd46f" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="ExpectedValueForHasPreviousPage" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="43" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="c00c5b27-2802-4cbe-ba97-84f654d752fc" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="ExpectedValueForLowerboundWithEvenVariance" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="63646466-3437-3335-6533-353166323434" d3p1:Gallio.TestId="fddc7453e351f244" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="ExpectedValueForLowerboundWithEvenVariance" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="53" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="f04dbba3-4cff-4413-9637-90b9197814df" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetPriorities" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="64653863-6135-3039-6337-623034373662" d3p1:Gallio.TestId="c8ed5a90c7b0476b" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanGetPriorities" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="34" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="a2063eeb-fdaf-41b4-886c-649b8297e593" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="ExpectedValueForLowerboundWithOddVariance" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="64313333-3666-3134-6233-393834626437" d3p1:Gallio.TestId="331df641b3984bd7" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="ExpectedValueForLowerboundWithOddVariance" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="62" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="5c9571dd-5b6c-4fe6-a1ed-76ac227c9dbe" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanInsertTaskWithSave" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="38323333-3535-6530-3264-306338333331" d3p1:Gallio.TestId="3328550e2d0c8331" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanInsertTaskWithSave" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="162" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="5b8a1fea-aa96-417e-b747-761306242f52" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetCategoryUsingFilterWithName" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="39376366-3234-6538-3432-313232626434" d3p1:Gallio.TestId="fc79428e42122bd4" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.Data.Filters" d3p1:Gallio.TypeName="Trakker.Tests.Data.Filters.CategoryFiltersTests" d3p1:Gallio.MemberName="CanGetCategoryUsingFilterWithName" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Filters\CategoryFiltersTests.cs" d3p1:Gallio.Line="36" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="d5fba520-0c22-428e-a6fe-2349f38c0465" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanUpdateCategoryWithSave" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="62653566-3562-6238-6465-663730306136" d3p1:Gallio.TestId="f5ebb58bdef700a6" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanUpdateCategoryWithSave" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="139" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="6ec35709-cdbe-4dfb-a0ae-f3104bb5eb62" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanInsertCommentWithSave" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="64323663-3865-3661-3531-393831306136" d3p1:Gallio.TestId="c62de8a6519810a6" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanInsertCommentWithSave" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="298" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="f6a70c26-ceac-4f79-9469-84e604429f29" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetTasks" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="61356636-3261-3530-3638-663363313237" d3p1:Gallio.TestId="6f5aa20568f3c127" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanGetTasks" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="27" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="154dbd70-a9d7-4f4f-b06a-bf297897d683" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetStatus" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="37323164-3063-3531-3736-313634346563" d3p1:Gallio.TestId="d127c015761644ec" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanGetStatus" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="57" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="a10bf181-7be5-4faf-b790-9ab55c677d26" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetCommentUsingFilterWithId" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="38373765-6262-6365-6339-623664653333" d3p1:Gallio.TestId="e778bbecc9b6de33" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.Data.Filters" d3p1:Gallio.TypeName="Trakker.Tests.Data.Filters.CommentFiltersTests" d3p1:Gallio.MemberName="CanGetCommentUsingFilterWithId" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Filters\CommentFiltersTests.cs" d3p1:Gallio.Line="28" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="1bcc96c0-d02d-49ff-8684-642334e847a1" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetStatusUsingFilterWithId" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="36303433-6230-3739-3462-383733383265" d3p1:Gallio.TestId="34060b974b87382e" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.Data.Filters" d3p1:Gallio.TypeName="Trakker.Tests.Data.Filters.StatusFiltersTests" d3p1:Gallio.MemberName="CanGetStatusUsingFilterWithId" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Filters\StatusFiltersTests.cs" d3p1:Gallio.Line="25" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="96e82590-18dd-4ffc-8db1-16d4e4451647" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanDeleteSeverity" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="31343939-3936-3534-3832-643532636535" d3p1:Gallio.TestId="9941694582d52ce5" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanDeleteSeverity" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="412" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="191fe87e-d991-4996-b774-de906743a3ac" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetSeverityUsingFilterWithName" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="38656533-3631-3130-3438-356535363838" d3p1:Gallio.TestId="3ee81601485e5688" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.Data.Filters" d3p1:Gallio.TypeName="Trakker.Tests.Data.Filters.SeverityFiltersTests" d3p1:Gallio.MemberName="CanGetSeverityUsingFilterWithName" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Filters\SeverityFiltersTests.cs" d3p1:Gallio.Line="36" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="f5b5bf50-bb57-4fd5-a5fb-59269ad71b00" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanUpdateTaskWithSave" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="66343531-3639-6466-6135-623330333734" d3p1:Gallio.TestId="154f96fda5b30374" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanUpdateTaskWithSave" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="189" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="15e6e64a-6ee2-471f-878b-c820460a8ea1" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetSeverities" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="39353937-3966-3664-3336-343161376634" d3p1:Gallio.TestId="7959f9d63641a7f4" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanGetSeverities" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="43" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="f365abf2-2285-4890-9ee2-5852d44c8ac7" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="IndexCannotBeLessThanOne" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="34386233-6635-3165-3239-663966663434" d3p1:Gallio.TestId="3b845fe129f9ff44" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="IndexCannotBeLessThanOne" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="29" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="58d87605-d48a-4e81-bca8-91a467251aa5" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetPriorityUsingFilterWithName" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="36333638-6264-3965-3766-626337323434" d3p1:Gallio.TestId="8636dbe97fbc7244" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.Data.Filters" d3p1:Gallio.TypeName="Trakker.Tests.Data.Filters.PriorityFiltersTests" d3p1:Gallio.MemberName="CanGetPriorityUsingFilterWithName" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Filters\PriorityFiltersTests.cs" d3p1:Gallio.Line="36" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="a0930f67-c0b3-4775-82cb-2830396b7dcc" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="IndexCannotBeGreaterThanTotalPages" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="61303763-3863-6635-6436-663634646665" d3p1:Gallio.TestId="c70ac85fd6f64dfe" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="IndexCannotBeGreaterThanTotalPages" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="36" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="aea0c147-d0c1-4d04-adaa-537dac7f4096" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="ExpectedValueForIndex" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="30346538-6261-3539-3934-303933623333" d3p1:Gallio.TestId="8e40ab9594093b33" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="ExpectedValueForIndex" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="110" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="75a07b1e-1bb5-4bb3-aa62-e1af29e53be9" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanUpdatePriorityWithSave" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="64616363-3837-3030-3365-356163316533" d3p1:Gallio.TestId="ccad78003e5ac1e3" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanUpdatePriorityWithSave" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="95" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="e37b61f1-58df-4a1d-ab7e-1ecdd323977f" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetCategory" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="61313663-6266-3364-3062-386630656564" d3p1:Gallio.TestId="c61afbd30b8f0eed" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanGetCategory" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="50" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="cc673e6a-b0c4-4de3-a0be-679975160e83" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetCommentUsingFilterWithTaskId" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="66356533-3961-3364-3136-663933383462" d3p1:Gallio.TestId="3e5fa9d316f9384b" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.Data.Filters" d3p1:Gallio.TypeName="Trakker.Tests.Data.Filters.CommentFiltersTests" d3p1:Gallio.MemberName="CanGetCommentUsingFilterWithTaskId" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Filters\CommentFiltersTests.cs" d3p1:Gallio.Line="44" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="cd5624f3-149c-43bd-a2c0-eb64c41b7c17" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanDeletePriority" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="35646535-6339-3033-6661-626533666434" d3p1:Gallio.TestId="5ed59c30fabe3fd4" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanDeletePriority" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="379" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="9523f815-cc3d-4e55-9298-db4edb9a6bc3" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetCommentUsingFilterWithUserId" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="32663533-3534-3438-3666-633633336364" d3p1:Gallio.TestId="35f245846fc633cd" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.Data.Filters" d3p1:Gallio.TypeName="Trakker.Tests.Data.Filters.CommentFiltersTests" d3p1:Gallio.MemberName="CanGetCommentUsingFilterWithUserId" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Filters\CommentFiltersTests.cs" d3p1:Gallio.Line="36" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="3d72aac6-e42d-4f08-b9b1-0aebd3727393" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="UpperboundCannotBeLessThanIndex" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="66326139-6366-3564-6536-373161303932" d3p1:Gallio.TestId="9a2ffcd5e671a092" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="UpperboundCannotBeLessThanIndex" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="131" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="43ad6d82-79f1-40ad-b474-0aaefadbceb4" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanDeleteStatus" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="65663032-3236-3961-6239-646636313139" d3p1:Gallio.TestId="20fe62a9b9df6119" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanDeleteStatus" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="397" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="854f900f-39b6-4719-ac3d-29e5b51be320" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="ExpectedValueForUpperboundWithOddVariance" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="36326665-6461-3535-3436-373664326131" d3p1:Gallio.TestId="ef26ad554676d2a1" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="ExpectedValueForUpperboundWithOddVariance" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="80" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="1385dced-4c3f-4f62-b959-5e91ef28c52c" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="LowerboundCannotBeGreaterThanIndex" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="63376633-3762-6632-3031-316336303334" d3p1:Gallio.TestId="3f7cb72f011c6034" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="LowerboundCannotBeGreaterThanIndex" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="124" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="217d5e7b-9a6e-4163-ac29-6ec5c09f1ffa" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="UpperboundCannotBeGreaterThanTotalPages" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="62353664-3366-6266-3332-353634623462" d3p1:Gallio.TestId="d65bf3fb32564b4b" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="UpperboundCannotBeGreaterThanTotalPages" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="138" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="8ddb8ad8-7aea-4e42-90b8-f9fe2133789c" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanUpdateSeverityWithSave" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="65363566-3234-3030-3763-363031316162" d3p1:Gallio.TestId="f56e42007c6011ab" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanUpdateSeverityWithSave" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="273" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="daedbe26-af13-418c-b13d-f0be2ea9e0ba" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanInsertUserWithSave" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="62653264-3333-6264-6634-386336656163" d3p1:Gallio.TestId="d2eb33dbf48c6eac" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.UserRepositoryTest" d3p1:Gallio.MemberName="CanInsertUserWithSave" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\UserRepositoryTest.cs" d3p1:Gallio.Line="39" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="c23663bc-8aa2-460e-999a-4ccf70a075b4" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetPaginatedObjectWithData" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="35623536-6132-3065-3830-326332353961" d3p1:Gallio.TestId="65b52ae0802c259a" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.Data.Filters" d3p1:Gallio.TypeName="Trakker.Tests.Data.Filters.BaseFiltersTests" d3p1:Gallio.MemberName="CanGetPaginatedObjectWithData" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Filters\BaseFiltersTests.cs" d3p1:Gallio.Line="28" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="2ed5e4a3-7371-4a3d-a598-2e57b9c8314c" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanDeleteTask" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="37643133-6234-6661-6465-366466366264" d3p1:Gallio.TestId="31d74bafde6df6bd" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanDeleteTask" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="364" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="13d16a60-2106-41e1-84c4-c3e89c36925c" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanInsertStatusWithSave" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="36333964-6131-6239-3034-303932306120" d3p1:Gallio.TestId="d9361a9b040920a" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanInsertStatusWithSave" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="212" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="7e60d1e9-0bac-4da9-b805-c893045fc709" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetUsers" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="35383762-3065-3631-3530-613332323866" d3p1:Gallio.TestId="b785e01650a3228f" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.UserRepositoryTest" d3p1:Gallio.MemberName="CanGetUsers" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\UserRepositoryTest.cs" d3p1:Gallio.Line="28" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="c465984d-3da7-4769-9f99-fea82a93200d" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="ExpectedValueForItemCount" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="66646664-3664-6230-3766-396635363264" d3p1:Gallio.TestId="dfdfd60b7f9f562d" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="ExpectedValueForItemCount" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="96" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="aa58697e-4655-43a6-8a30-9e9881e4662f" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanDeleteComment" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="62313134-3461-3037-6330-623365633034" d3p1:Gallio.TestId="411ba470c0b3ec04" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanDeleteComment" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="442" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="6805c4a3-d018-482f-9a0c-436fe3b0f62e" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="ExpectedValueForTotalPages" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="37633962-3131-3533-3431-626130373862" d3p1:Gallio.TestId="b9c7113541ba078b" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="ExpectedValueForTotalPages" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="89" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="bdcfef74-1e69-4bfe-93f8-c747ba3c0d60" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="NextPageCannotBeGreaterThanTotalPages" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="37663339-6239-3038-6665-343665346663" d3p1:Gallio.TestId="93f79b80fe46e4fc" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="NextPageCannotBeGreaterThanTotalPages" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="152" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="b0f0bbb4-d65e-4a68-86c3-76d3a4eff905" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetComments" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="37393638-6230-6339-3131-346363383035" d3p1:Gallio.TestId="86970b9c114cc805" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanGetComments" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="64" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="fcdf325d-703a-476e-aa7e-1fb37712b2a3" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanUpdateCommentWithSave" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="65336335-3733-6663-3533-666234306364" d3p1:Gallio.TestId="5c3e37cf53fb40cd" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanUpdateCommentWithSave" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="319" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="ab5b177b-8d7c-4d94-a831-1a570ccd991a" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="ExpectedValueForHasNextPage" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="39326162-6438-3832-3937-306237353663" d3p1:Gallio.TestId="ba298d28970b756c" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.ViewModels" d3p1:Gallio.TypeName="Trakker.Tests.ViewModels.PaginationTests" d3p1:Gallio.MemberName="ExpectedValueForHasNextPage" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Helpers\PaginationTests.cs" d3p1:Gallio.Line="19" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="e23ad733-7109-45bd-861e-53a079f2c509" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanInsertPriorityWithSave" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="63383038-3165-3866-6631-623432393635" d3p1:Gallio.TestId="808ce1f8f1b42965" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanInsertPriorityWithSave" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="75" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="ae977e5a-2edc-4d43-90f3-557c711d9a77" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanInsertSeverityWithSave" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="63353537-6462-3933-3535-363934613864" d3p1:Gallio.TestId="755cbd3955694a8d" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanInsertSeverityWithSave" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="253" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="384b0942-c3ff-4dec-9ba6-4cdfbe759479" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanUpdateStatusWithSave" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="37346263-3930-3631-3665-333737343261" d3p1:Gallio.TestId="cb4709166e37742a" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.TaskRepositoryTest" d3p1:Gallio.MemberName="CanUpdateStatusWithSave" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\TaskRepositoryTest.cs" d3p1:Gallio.Line="231" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="d6d77e17-110a-4e6a-8d31-353f658f477a" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanDeleteUser" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="37656437-3235-6162-3239-396330363763" d3p1:Gallio.TestId="7de752ba299c067c" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.TaskRepositoryTest" d3p1:Gallio.TypeName="Trakker.Tests.TaskRepositoryTest.UserRepositoryTest" d3p1:Gallio.MemberName="CanDeleteUser" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Repositorys\UserRepositoryTest.cs" d3p1:Gallio.Line="98" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="d27a1e5c-1dff-468f-98ca-326ebe2ee0d6" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+    <GallioTestElement name="CanGetPriorityUsingFilterWithId" storage="D:\ASPNET_MVC\Trakker\Trakker.Tests\bin\Debug\Trakker.Tests.dll" id="35393833-3265-3931-6239-613938613064" d3p1:Gallio.TestId="3895e219b9a98a0d" d3p1:Gallio.AssemblyName="Trakker.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" d3p1:Gallio.NamespaceName="Trakker.Tests.Data.Filters" d3p1:Gallio.TypeName="Trakker.Tests.Data.Filters.PriorityFiltersTests" d3p1:Gallio.MemberName="CanGetPriorityUsingFilterWithId" d3p1:Gallio.ParameterName="" d3p1:Gallio.Path="D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Filters\PriorityFiltersTests.cs" d3p1:Gallio.Line="28" d3p1:Gallio.Column="0" xmlns:d3p1="http://www.gallio.org/">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="4d8d2775-a1a7-421c-b9bb-d6e1d8493ce2" />
+      <Properties>
+        <Property>
+          <Key>TestKind</Key>
+          <Value>Test</Value>
+        </Property>
+      </Properties>
+    </GallioTestElement>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="39306339-3035-3162-6437-666238393262" executionId="cfee321d-7b05-471a-aca2-a408bfd40f1c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="62353664-3366-6266-3332-353634623462" executionId="8ddb8ad8-7aea-4e42-90b8-f9fe2133789c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39326162-6438-3832-3937-306237353663" executionId="e23ad733-7109-45bd-861e-53a079f2c509" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="37663339-6239-3038-6665-343665346663" executionId="b0f0bbb4-d65e-4a68-86c3-76d3a4eff905" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="66326139-6366-3564-6536-373161303932" executionId="43ad6d82-79f1-40ad-b474-0aaefadbceb4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="63646466-3437-3335-6533-353166323434" executionId="f04dbba3-4cff-4413-9637-90b9197814df" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="64313333-3666-3134-6233-393834626437" executionId="5c9571dd-5b6c-4fe6-a1ed-76ac227c9dbe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="37383535-3765-3566-3533-636434393134" executionId="ea6fd953-8c99-4d70-b233-e63990ecce03" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="34386233-6635-3165-3239-663966663434" executionId="58d87605-d48a-4e81-bca8-91a467251aa5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="61303763-3863-6635-6436-663634646665" executionId="aea0c147-d0c1-4d04-adaa-537dac7f4096" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="33393733-6433-6338-3232-376664343666" executionId="c00c5b27-2802-4cbe-ba97-84f654d752fc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="36326665-6461-3535-3436-373664326131" executionId="1385dced-4c3f-4f62-b959-5e91ef28c52c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="30346538-6261-3539-3934-303933623333" executionId="75a07b1e-1bb5-4bb3-aa62-e1af29e53be9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="30366166-3333-6565-3633-636335373120" executionId="0ebdf5ee-0fb2-4b44-8019-88ab619fc26f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="63376633-3762-6632-3031-316336303334" executionId="217d5e7b-9a6e-4163-ac29-6ec5c09f1ffa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="37633962-3131-3533-3431-626130373862" executionId="bdcfef74-1e69-4bfe-93f8-c747ba3c0d60" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="66646664-3664-6230-3766-396635363264" executionId="aa58697e-4655-43a6-8a30-9e9881e4662f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39613634-3264-3137-3932-633962653063" executionId="f9eac42b-52a4-48f5-aac8-945caa82b5e4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="35383762-3065-3631-3530-613332323866" executionId="c465984d-3da7-4769-9f99-fea82a93200d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="62653264-3333-6264-6634-386336656163" executionId="c23663bc-8aa2-460e-999a-4ccf70a075b4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="37656437-3235-6162-3239-396330363763" executionId="d27a1e5c-1dff-468f-98ca-326ebe2ee0d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39333633-6365-6432-3662-313432343463" executionId="039f490a-396f-4da9-8886-3c1c851f6f3c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39316438-3563-3663-6663-363032663235" executionId="2c4bd582-dba5-461d-ad1e-1276de54779b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="38656533-3631-3130-3438-356535363838" executionId="f5b5bf50-bb57-4fd5-a5fb-59269ad71b00" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="35646535-6339-3033-6661-626533666434" executionId="9523f815-cc3d-4e55-9298-db4edb9a6bc3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="65663032-3236-3961-6239-646636313139" executionId="854f900f-39b6-4719-ac3d-29e5b51be320" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="66323337-3632-3335-6265-313565663461" executionId="d4c71e9b-e622-461d-a9ff-53939df292ff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="37643133-6234-6661-6465-366466366264" executionId="13d16a60-2106-41e1-84c4-c3e89c36925c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="62313134-3461-3037-6330-623365633034" executionId="6805c4a3-d018-482f-9a0c-436fe3b0f62e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="61356636-3261-3530-3638-663363313237" executionId="154dbd70-a9d7-4f4f-b06a-bf297897d683" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="31343939-3936-3534-3832-643532636535" executionId="191fe87e-d991-4996-b774-de906743a3ac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="36303934-3739-3730-3335-383438383239" executionId="cd4284cc-cb3f-4968-9c58-f6eb360ea57e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="63383038-3165-3866-6631-623432393635" executionId="ae977e5a-2edc-4d43-90f3-557c711d9a77" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="37393638-6230-6339-3131-346363383035" executionId="fcdf325d-703a-476e-aa7e-1fb37712b2a3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="35613633-6134-3432-3937-333630326334" executionId="eb9af525-d79f-49a3-9385-2d2f277c4ab1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="64616363-3837-3030-3365-356163316533" executionId="e37b61f1-58df-4a1d-ab7e-1ecdd323977f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39353937-3966-3664-3336-343161376634" executionId="f365abf2-2285-4890-9ee2-5852d44c8ac7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="64653863-6135-3039-6337-623034373662" executionId="a2063eeb-fdaf-41b4-886c-649b8297e593" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="37323164-3063-3531-3736-313634346563" executionId="a10bf181-7be5-4faf-b790-9ab55c677d26" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="61313663-6266-3364-3062-386630656564" executionId="cc673e6a-b0c4-4de3-a0be-679975160e83" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="62653566-3562-6238-6465-663730306136" executionId="6ec35709-cdbe-4dfb-a0ae-f3104bb5eb62" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="65363566-3234-3030-3763-363031316162" executionId="daedbe26-af13-418c-b13d-f0be2ea9e0ba" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="63353537-6462-3933-3535-363934613864" executionId="384b0942-c3ff-4dec-9ba6-4cdfbe759479" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="65336335-3733-6663-3533-666234306364" executionId="ab5b177b-8d7c-4d94-a831-1a570ccd991a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="64323663-3865-3661-3531-393831306136" executionId="f6a70c26-ceac-4f79-9469-84e604429f29" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="66343531-3639-6466-6135-623330333734" executionId="15e6e64a-6ee2-471f-878b-c820460a8ea1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="38323333-3535-6530-3264-306338333331" executionId="5b8a1fea-aa96-417e-b747-761306242f52" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="37346263-3930-3631-3665-333737343261" executionId="d6d77e17-110a-4e6a-8d31-353f658f477a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="36333964-6131-6239-3034-303932306120" executionId="7e60d1e9-0bac-4da9-b805-c893045fc709" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="38373765-6262-6365-6339-623664653333" executionId="1bcc96c0-d02d-49ff-8684-642334e847a1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="66356533-3961-3364-3136-663933383462" executionId="cd5624f3-149c-43bd-a2c0-eb64c41b7c17" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="32663533-3534-3438-3666-633633336364" executionId="3d72aac6-e42d-4f08-b9b1-0aebd3727393" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="65363236-3732-6330-3731-656461376534" executionId="9a36295c-a82f-4d6a-b1e3-277ae09fe06a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="35393833-3265-3931-6239-613938613064" executionId="4d8d2775-a1a7-421c-b9bb-d6e1d8493ce2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="36333638-6264-3965-3766-626337323434" executionId="a0930f67-c0b3-4775-82cb-2830396b7dcc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="38333637-3338-3465-3634-346466623935" executionId="cd8cdb43-a303-4d00-9aa7-c8af44068a9d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39376366-3234-6538-3432-313232626434" executionId="d5fba520-0c22-428e-a6fe-2349f38c0465" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="36303433-6230-3739-3462-383733383265" executionId="96e82590-18dd-4ffc-8db1-16d4e4451647" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="37353836-3832-3332-3963-316332646239" executionId="d6f50d01-02af-490b-8115-6ca6aff6b4cd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="35623536-6132-3065-3830-326332353961" executionId="2ed5e4a3-7371-4a3d-a598-2e57b9c8314c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <GallioTestResult executionId="cfee321d-7b05-471a-aca2-a408bfd40f1c" testId="39306339-3035-3162-6437-666238393262" testName="PreviousPageCannotBeLessThanOne" computerName="JUSTIN-PC" duration="00:00:00.0030000" startTime="2010-01-27T01:08:10.4916569-08:00" endTime="2010-01-27T01:08:10.4946571-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="8ddb8ad8-7aea-4e42-90b8-f9fe2133789c" testId="62353664-3366-6266-3332-353634623462" testName="UpperboundCannotBeGreaterThanTotalPages" computerName="JUSTIN-PC" duration="00:00:00.0020000" startTime="2010-01-27T01:08:10.5226587-08:00" endTime="2010-01-27T01:08:10.5256589-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="e23ad733-7109-45bd-861e-53a079f2c509" testId="39326162-6438-3832-3937-306237353663" testName="ExpectedValueForHasNextPage" computerName="JUSTIN-PC" duration="00:00:00.0060000" startTime="2010-01-27T01:08:10.0286305-08:00" endTime="2010-01-27T01:08:10.0316306-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="b0f0bbb4-d65e-4a68-86c3-76d3a4eff905" testId="37663339-6239-3038-6665-343665346663" testName="NextPageCannotBeGreaterThanTotalPages" computerName="JUSTIN-PC" duration="00:00:00.0030000" startTime="2010-01-27T01:08:10.4606552-08:00" endTime="2010-01-27T01:08:10.4686556-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="43ad6d82-79f1-40ad-b474-0aaefadbceb4" testId="66326139-6366-3564-6536-373161303932" testName="UpperboundCannotBeLessThanIndex" computerName="JUSTIN-PC" duration="00:00:00.0010000" startTime="2010-01-27T01:08:10.5506603-08:00" endTime="2010-01-27T01:08:10.5536605-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="f04dbba3-4cff-4413-9637-90b9197814df" testId="63646466-3437-3335-6533-353166323434" testName="ExpectedValueForLowerboundWithEvenVariance" computerName="JUSTIN-PC" duration="00:00:00.0030000" startTime="2010-01-27T01:08:10.1616381-08:00" endTime="2010-01-27T01:08:10.1646382-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="5c9571dd-5b6c-4fe6-a1ed-76ac227c9dbe" testId="64313333-3666-3134-6233-393834626437" testName="ExpectedValueForLowerboundWithOddVariance" computerName="JUSTIN-PC" duration="00:00:00.0020000" startTime="2010-01-27T01:08:10.1886396-08:00" endTime="2010-01-27T01:08:10.1926398-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="ea6fd953-8c99-4d70-b233-e63990ecce03" testId="37383535-3765-3566-3533-636434393134" testName="ExpectedValueForUpperboundWithEvenVariance" computerName="JUSTIN-PC" duration="00:00:00.0010000" startTime="2010-01-27T01:08:10.2806449-08:00" endTime="2010-01-27T01:08:10.2846451-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="58d87605-d48a-4e81-bca8-91a467251aa5" testId="34386233-6635-3165-3239-663966663434" testName="IndexCannotBeLessThanOne" computerName="JUSTIN-PC" duration="00:00:00.0010000" startTime="2010-01-27T01:08:10.3736502-08:00" endTime="2010-01-27T01:08:10.3776504-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="aea0c147-d0c1-4d04-adaa-537dac7f4096" testId="61303763-3863-6635-6436-663634646665" testName="IndexCannotBeGreaterThanTotalPages" computerName="JUSTIN-PC" duration="00:00:00.0010000" startTime="2010-01-27T01:08:10.3436485-08:00" endTime="2010-01-27T01:08:10.3476487-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="c00c5b27-2802-4cbe-ba97-84f654d752fc" testId="33393733-6433-6338-3232-376664343666" testName="ExpectedValueForHasPreviousPage" computerName="JUSTIN-PC" duration="00:00:00.0360000" startTime="2010-01-27T01:08:10.0586322-08:00" endTime="2010-01-27T01:08:10.0616323-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="1385dced-4c3f-4f62-b959-5e91ef28c52c" testId="36326665-6461-3535-3436-373664326131" testName="ExpectedValueForUpperboundWithOddVariance" computerName="JUSTIN-PC" duration="00:00:00.0030000" startTime="2010-01-27T01:08:10.3106466-08:00" endTime="2010-01-27T01:08:10.3136468-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="75a07b1e-1bb5-4bb3-aa62-e1af29e53be9" testId="30346538-6261-3539-3934-303933623333" testName="ExpectedValueForIndex" computerName="JUSTIN-PC" duration="00:00:00.0460000" startTime="2010-01-27T01:08:10.0946342-08:00" endTime="2010-01-27T01:08:10.1056349-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="0ebdf5ee-0fb2-4b44-8019-88ab619fc26f" testId="30366166-3333-6565-3633-636335373120" testName="LowerboundCannotBeLessThanOne" computerName="JUSTIN-PC" duration="00:00:00.0040000" startTime="2010-01-27T01:08:10.4346537-08:00" endTime="2010-01-27T01:08:10.4376538-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="217d5e7b-9a6e-4163-ac29-6ec5c09f1ffa" testId="63376633-3762-6632-3031-316336303334" testName="LowerboundCannotBeGreaterThanIndex" computerName="JUSTIN-PC" duration="00:00:00.0090000" startTime="2010-01-27T01:08:10.4066521-08:00" endTime="2010-01-27T01:08:10.4106523-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="bdcfef74-1e69-4bfe-93f8-c747ba3c0d60" testId="37633962-3131-3533-3431-626130373862" testName="ExpectedValueForTotalPages" computerName="JUSTIN-PC" duration="00:00:00.0010000" startTime="2010-01-27T01:08:10.2476430-08:00" endTime="2010-01-27T01:08:10.2506432-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="aa58697e-4655-43a6-8a30-9e9881e4662f" testId="66646664-3664-6230-3766-396635363264" testName="ExpectedValueForItemCount" computerName="JUSTIN-PC" duration="00:00:00.0040000" startTime="2010-01-27T01:08:10.1286362-08:00" endTime="2010-01-27T01:08:10.1326364-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="f9eac42b-52a4-48f5-aac8-945caa82b5e4" testId="39613634-3264-3137-3932-633962653063" testName="ExpectedValueForPageSize" computerName="JUSTIN-PC" duration="00:00:00.0010000" startTime="2010-01-27T01:08:10.2176413-08:00" endTime="2010-01-27T01:08:10.2206414-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="c465984d-3da7-4769-9f99-fea82a93200d" testId="35383762-3065-3631-3530-613332323866" testName="CanGetUsers" computerName="JUSTIN-PC" duration="00:00:00.0070000" startTime="2010-01-27T01:08:12.3757647-08:00" endTime="2010-01-27T01:08:12.3787649-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="c23663bc-8aa2-460e-999a-4ccf70a075b4" testId="62653264-3333-6264-6634-386336656163" testName="CanInsertUserWithSave" computerName="JUSTIN-PC" duration="00:00:00.0400000" startTime="2010-01-27T01:08:12.4057664-08:00" endTime="2010-01-27T01:08:12.4087666-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="d27a1e5c-1dff-468f-98ca-326ebe2ee0d6" testId="37656437-3235-6162-3239-396330363763" testName="CanDeleteUser" computerName="JUSTIN-PC" duration="00:00:00.0420000" startTime="2010-01-27T01:08:12.3437629-08:00" endTime="2010-01-27T01:08:12.3477631-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="039f490a-396f-4da9-8886-3c1c851f6f3c" testId="39333633-6365-6432-3662-313432343463" testName="CanUpdateUserWithSave" computerName="JUSTIN-PC" duration="00:00:00.0480000" startTime="2010-01-27T01:08:12.4387683-08:00" endTime="2010-01-27T01:08:12.4437686-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="2c4bd582-dba5-461d-ad1e-1276de54779b" testId="39316438-3563-3663-6663-363032663235" testName="CanGetSeverityUsingFilterWithId" computerName="JUSTIN-PC" duration="00:00:00.0150000" startTime="2010-01-27T01:08:10.6536662-08:00" endTime="2010-01-27T01:08:10.6566664-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="f5b5bf50-bb57-4fd5-a5fb-59269ad71b00" testId="38656533-3631-3130-3438-356535363838" testName="CanGetSeverityUsingFilterWithName" computerName="JUSTIN-PC" duration="00:00:00.0140000" startTime="2010-01-27T01:08:10.6866681-08:00" endTime="2010-01-27T01:08:10.6896683-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="9523f815-cc3d-4e55-9298-db4edb9a6bc3" testId="35646535-6339-3033-6661-626533666434" testName="CanDeletePriority" computerName="JUSTIN-PC" duration="00:00:00.0260000" startTime="2010-01-27T01:08:10.8486774-08:00" endTime="2010-01-27T01:08:10.8526776-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="854f900f-39b6-4719-ac3d-29e5b51be320" testId="65663032-3236-3961-6239-646636313139" testName="CanDeleteStatus" computerName="JUSTIN-PC" duration="00:00:00.0280000" startTime="2010-01-27T01:08:10.9106809-08:00" endTime="2010-01-27T01:08:10.9146811-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="d4c71e9b-e622-461d-a9ff-53939df292ff" testId="66323337-3632-3335-6265-313565663461" testName="CanGenerateProperSlugForATask" computerName="JUSTIN-PC" duration="00:00:00.1300000" startTime="2010-01-27T01:08:10.9826850-08:00" endTime="2010-01-27T01:08:10.9866853-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="13d16a60-2106-41e1-84c4-c3e89c36925c" testId="37643133-6234-6661-6465-366466366264" testName="CanDeleteTask" computerName="JUSTIN-PC" duration="00:00:00.1710000" startTime="2010-01-27T01:08:10.9516832-08:00" endTime="2010-01-27T01:08:10.9556835-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="6805c4a3-d018-482f-9a0c-436fe3b0f62e" testId="62313134-3461-3037-6330-623365633034" testName="CanDeleteComment" computerName="JUSTIN-PC" duration="00:00:00.0240000" startTime="2010-01-27T01:08:10.8186756-08:00" endTime="2010-01-27T01:08:10.8226759-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="154dbd70-a9d7-4f4f-b06a-bf297897d683" testId="61356636-3261-3530-3638-663363313237" testName="CanGetTasks" computerName="JUSTIN-PC" duration="00:00:00.0060000" startTime="2010-01-27T01:08:11.1576950-08:00" endTime="2010-01-27T01:08:11.1616953-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="191fe87e-d991-4996-b774-de906743a3ac" testId="31343939-3936-3534-3832-643532636535" testName="CanDeleteSeverity" computerName="JUSTIN-PC" duration="00:00:00.0260000" startTime="2010-01-27T01:08:10.8826793-08:00" endTime="2010-01-27T01:08:10.8866795-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="cd4284cc-cb3f-4968-9c58-f6eb360ea57e" testId="36303934-3739-3730-3335-383438383239" testName="CanDeleteCategory" computerName="JUSTIN-PC" duration="00:00:00.0330000" startTime="2010-01-27T01:08:10.7846737-08:00" endTime="2010-01-27T01:08:10.7886739-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="ae977e5a-2edc-4d43-90f3-557c711d9a77" testId="63383038-3165-3866-6631-623432393635" testName="CanInsertPriorityWithSave" computerName="JUSTIN-PC" duration="00:00:00.0140000" startTime="2010-01-27T01:08:11.2477002-08:00" endTime="2010-01-27T01:08:11.2507004-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="fcdf325d-703a-476e-aa7e-1fb37712b2a3" testId="37393638-6230-6339-3131-346363383035" testName="CanGetComments" computerName="JUSTIN-PC" duration="00:00:00.0130000" startTime="2010-01-27T01:08:11.0386882-08:00" endTime="2010-01-27T01:08:11.0426885-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="eb9af525-d79f-49a3-9385-2d2f277c4ab1" testId="35613633-6134-3432-3937-333630326334" testName="CanInsertCategoryWithSave" computerName="JUSTIN-PC" duration="00:00:00.0180000" startTime="2010-01-27T01:08:11.1876967-08:00" endTime="2010-01-27T01:08:11.1926970-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="e37b61f1-58df-4a1d-ab7e-1ecdd323977f" testId="64616363-3837-3030-3365-356163316533" testName="CanUpdatePriorityWithSave" computerName="JUSTIN-PC" duration="00:00:00.0470000" startTime="2010-01-27T01:08:12.1007490-08:00" endTime="2010-01-27T01:08:12.1147498-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="f365abf2-2285-4890-9ee2-5852d44c8ac7" testId="39353937-3966-3664-3336-343161376634" testName="CanGetSeverities" computerName="JUSTIN-PC" duration="00:00:00.0040000" startTime="2010-01-27T01:08:11.0996917-08:00" endTime="2010-01-27T01:08:11.1026919-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="a2063eeb-fdaf-41b4-886c-649b8297e593" testId="64653863-6135-3039-6337-623034373662" testName="CanGetPriorities" computerName="JUSTIN-PC" duration="00:00:00.0060000" startTime="2010-01-27T01:08:11.0696900-08:00" endTime="2010-01-27T01:08:11.0726902-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="a10bf181-7be5-4faf-b790-9ab55c677d26" testId="37323164-3063-3531-3736-313634346563" testName="CanGetStatus" computerName="JUSTIN-PC" duration="00:00:00.0040000" startTime="2010-01-27T01:08:11.1286934-08:00" endTime="2010-01-27T01:08:11.1326936-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="cc673e6a-b0c4-4de3-a0be-679975160e83" testId="61313663-6266-3364-3062-386630656564" testName="CanGetCategory" computerName="JUSTIN-PC" duration="00:00:00.0090000" startTime="2010-01-27T01:08:11.0116867-08:00" endTime="2010-01-27T01:08:11.0146869-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="6ec35709-cdbe-4dfb-a0ae-f3104bb5eb62" testId="62653566-3562-6238-6465-663730306136" testName="CanUpdateCategoryWithSave" computerName="JUSTIN-PC" duration="00:00:01.1430000" startTime="2010-01-27T01:08:11.3677070-08:00" endTime="2010-01-27T01:08:12.0227445-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="daedbe26-af13-418c-b13d-f0be2ea9e0ba" testId="65363566-3234-3030-3763-363031316162" testName="CanUpdateSeverityWithSave" computerName="JUSTIN-PC" duration="00:00:00.0260000" startTime="2010-01-27T01:08:12.1377511-08:00" endTime="2010-01-27T01:08:12.1417513-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="384b0942-c3ff-4dec-9ba6-4cdfbe759479" testId="63353537-6462-3933-3535-363934613864" testName="CanInsertSeverityWithSave" computerName="JUSTIN-PC" duration="00:00:00.0100000" startTime="2010-01-27T01:08:11.2777019-08:00" endTime="2010-01-27T01:08:11.2807021-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="ab5b177b-8d7c-4d94-a831-1a570ccd991a" testId="65336335-3733-6663-3533-666234306364" testName="CanUpdateCommentWithSave" computerName="JUSTIN-PC" duration="00:00:00.0430000" startTime="2010-01-27T01:08:12.0487460-08:00" endTime="2010-01-27T01:08:12.0707473-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="f6a70c26-ceac-4f79-9469-84e604429f29" testId="64323663-3865-3661-3531-393831306136" testName="CanInsertCommentWithSave" computerName="JUSTIN-PC" duration="00:00:00.0250000" startTime="2010-01-27T01:08:11.2176985-08:00" endTime="2010-01-27T01:08:11.2206986-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="15e6e64a-6ee2-471f-878b-c820460a8ea1" testId="66343531-3639-6466-6135-623330333734" testName="CanUpdateTaskWithSave" computerName="JUSTIN-PC" duration="00:00:00.0440000" startTime="2010-01-27T01:08:12.2017547-08:00" endTime="2010-01-27T01:08:12.2197558-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="5b8a1fea-aa96-417e-b747-761306242f52" testId="38323333-3535-6530-3264-306338333331" testName="CanInsertTaskWithSave" computerName="JUSTIN-PC" duration="00:00:00.0150000" startTime="2010-01-27T01:08:11.3367053-08:00" endTime="2010-01-27T01:08:11.3407055-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="d6d77e17-110a-4e6a-8d31-353f658f477a" testId="37346263-3930-3631-3665-333737343261" testName="CanUpdateStatusWithSave" computerName="JUSTIN-PC" duration="00:00:00.0320000" startTime="2010-01-27T01:08:12.1677528-08:00" endTime="2010-01-27T01:08:12.1747532-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="7e60d1e9-0bac-4da9-b805-c893045fc709" testId="36333964-6131-6239-3034-303932306120" testName="CanInsertStatusWithSave" computerName="JUSTIN-PC" duration="00:00:00.0170000" startTime="2010-01-27T01:08:11.3077036-08:00" endTime="2010-01-27T01:08:11.3117038-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="1bcc96c0-d02d-49ff-8684-642334e847a1" testId="38373765-6262-6365-6339-623664653333" testName="CanGetCommentUsingFilterWithId" computerName="JUSTIN-PC" duration="00:00:00.0090000" startTime="2010-01-27T01:08:09.9016232-08:00" endTime="2010-01-27T01:08:09.9046234-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="cd5624f3-149c-43bd-a2c0-eb64c41b7c17" testId="66356533-3961-3364-3136-663933383462" testName="CanGetCommentUsingFilterWithTaskId" computerName="JUSTIN-PC" duration="00:00:00.0060000" startTime="2010-01-27T01:08:09.9276247-08:00" endTime="2010-01-27T01:08:09.9316249-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="3d72aac6-e42d-4f08-b9b1-0aebd3727393" testId="32663533-3534-3438-3666-633633336364" testName="CanGetCommentUsingFilterWithUserId" computerName="JUSTIN-PC" duration="00:00:00.1280000" startTime="2010-01-27T01:08:09.9676270-08:00" endTime="2010-01-27T01:08:09.9956286-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+        <ErrorInfo>
+          <Message>Execute
+System.InvalidOperationException: Sequence contains more than one element
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataQuery`1.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Linq.Queryable.SingleOrDefault[TSource](IQueryable`1 source)
+   at Trakker.Tests.Data.Filters.CommentFiltersTests.CanGetCommentUsingFilterWithUserId() in D:\ASPNET_MVC\Trakker\Trakker.Tests\Data\Filters\CommentFiltersTests.cs:line 37</Message>
+        </ErrorInfo>
+      </Output>
+    </GallioTestResult>
+    <GallioTestResult executionId="9a36295c-a82f-4d6a-b1e3-277ae09fe06a" testId="65363236-3732-6330-3731-656461376534" testName="CanGetUserUsingFilterWithEmail" computerName="JUSTIN-PC" duration="00:00:00.0460000" startTime="2010-01-27T01:08:12.2517576-08:00" endTime="2010-01-27T01:08:12.2767590-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="4d8d2775-a1a7-421c-b9bb-d6e1d8493ce2" testId="35393833-3265-3931-6239-613938613064" testName="CanGetPriorityUsingFilterWithId" computerName="JUSTIN-PC" duration="00:00:00.0130000" startTime="2010-01-27T01:08:10.5886625-08:00" endTime="2010-01-27T01:08:10.5916627-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="a0930f67-c0b3-4775-82cb-2830396b7dcc" testId="36333638-6264-3965-3766-626337323434" testName="CanGetPriorityUsingFilterWithName" computerName="JUSTIN-PC" duration="00:00:00.0130000" startTime="2010-01-27T01:08:10.6206643-08:00" endTime="2010-01-27T01:08:10.6236645-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="cd8cdb43-a303-4d00-9aa7-c8af44068a9d" testId="38333637-3338-3465-3634-346466623935" testName="CanGetCategoryUsingFilterWithId" computerName="JUSTIN-PC" duration="00:00:00.0140000" startTime="2010-01-27T01:08:09.8356194-08:00" endTime="2010-01-27T01:08:09.8396196-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="d5fba520-0c22-428e-a6fe-2349f38c0465" testId="39376366-3234-6538-3432-313232626434" testName="CanGetCategoryUsingFilterWithName" computerName="JUSTIN-PC" duration="00:00:00.0120000" startTime="2010-01-27T01:08:09.8626210-08:00" endTime="2010-01-27T01:08:09.8666212-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="96e82590-18dd-4ffc-8db1-16d4e4451647" testId="36303433-6230-3739-3462-383733383265" testName="CanGetStatusUsingFilterWithId" computerName="JUSTIN-PC" duration="00:00:00.0150000" startTime="2010-01-27T01:08:10.7176699-08:00" endTime="2010-01-27T01:08:10.7216701-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="d6f50d01-02af-490b-8115-6ca6aff6b4cd" testId="37353836-3832-3332-3963-316332646239" testName="CanGetStatusUsingFilterWithName" computerName="JUSTIN-PC" duration="00:00:00.0070000" startTime="2010-01-27T01:08:10.7516718-08:00" endTime="2010-01-27T01:08:10.7556720-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+    <GallioTestResult executionId="2ed5e4a3-7371-4a3d-a598-2e57b9c8314c" testId="35623536-6132-3065-3830-326332353961" testName="CanGetPaginatedObjectWithData" computerName="JUSTIN-PC" duration="00:00:00.0390000" startTime="2010-01-27T01:08:09.7646154-08:00" endTime="2010-01-27T01:08:09.8046176-08:00" testType="f3589083-259c-4054-87f7-75cdad4b08e5" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </GallioTestResult>
+  </Results>
+</TestRun>

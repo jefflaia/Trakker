@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{389ADED5-60D1-4C97-B2A5-FEE75CDA20E3}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Trakker</RootNamespace>
+    <AssemblyName>Trakker</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=0.4.0.126, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Mvc.Validation, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Mvc.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\ActionFilters\AuthenticateAttribute.cs" />
+    <Compile Include="Attributes\ActionFilters\UserInRoleAttribute.cs" />
+    <Compile Include="Controllers\ConventionController.cs" />
+    <Compile Include="Controllers\MasterController.cs" />
+    <Compile Include="Controllers\NavController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\TicketController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\SystemButtonBuilder\Elements\ButtonElement.cs" />
+    <Compile Include="Helpers\SystemButtonBuilder\Elements\LinkElement.cs" />
+    <Compile Include="Helpers\SystemButtonBuilder\Elements\IElement.cs" />
+    <Compile Include="Helpers\SystemButtonBuilder\Icons\AssignIcon.cs" />
+    <Compile Include="Helpers\SystemButtonBuilder\Icons\AssignToMe.cs" />
+    <Compile Include="Helpers\SystemButtonBuilder\Icons\BaseIcon.cs" />
+    <Compile Include="Helpers\SystemButtonBuilder\Icons\CreateCommentIcon.cs" />
+    <Compile Include="Helpers\SystemButtonBuilder\Icons\EditTicketIcon.cs" />
+    <Compile Include="Helpers\SystemButtonBuilder\Icons\IButtonIcon.cs" />
+    <Compile Include="Helpers\SystemButtonBuilder\Icons\SaveIcon.cs" />
+    <Compile Include="Helpers\SystemButtonBuilder\Icons\WatchIssue.cs" />
+    <Compile Include="Helpers\SystemButtonBuilder\ISystemButtonBuilder.cs" />
+    <Compile Include="Helpers\SystemButtonBuilder\SystemButtonBuilder.cs" />
+    <Compile Include="Helpers\Extensions\LambdaExtensions.cs" />
+    <Compile Include="Helpers\Extensions\TypeExtensions.cs" />
+    <Compile Include="Helpers\FormException.cs" />
+    <Compile Include="Helpers\Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Helpers\IsCurrentActionHelper.cs" />
+    <Compile Include="Helpers\WidgetAction.cs" />
+    <Compile Include="Helpers\Pagination.cs" />
+    <Compile Include="ViewData\ProjectData\AllProjectsViewData.cs" />
+    <Compile Include="ViewData\ProjectData\CreateEditProjectViewData.cs" />
+    <Compile Include="ViewData\ProjectData\ProjectSummaryViewData.cs" />
+    <Compile Include="ViewData\SharedData\MasterViewData.cs" />
+    <Compile Include="ViewData\TicketData\CommentCreateEditViewData.cs" />
+    <Compile Include="ViewData\TicketData\TicketDetailsViewData.cs" />
+    <Compile Include="ViewData\TicketData\CreateEditViewData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewData\TicketData\CommentViewData.cs" />
+    <Compile Include="ViewData\TicketData\TicketListViewData.cs" />
+    <Compile Include="ViewData\UserData\LogoutViewData.cs" />
+    <Compile Include="ViewData\UserData\LoginViewData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Images\Icons.png" />
+    <Content Include="Content\Images\Field-Background.bmp" />
+    <Content Include="Content\Images\Icons\binocular.png" />
+    <Content Include="Content\Images\Icons\comment_add.png" />
+    <Content Include="Content\Images\Icons\disk--plus.png" />
+    <Content Include="Content\Images\Icons\highlighter--arrow.png" />
+    <Content Include="Content\Images\Icons\user--arrow.png" />
+    <Content Include="Content\Images\Icons\user-silhouette-question.png" />
+    <Content Include="Content\Images\TableBackgrounds.png" />
+    <Content Include="Content\Images\UI-Backgrounds.png" />
+    <Content Include="Content\Images\UI-Button.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Views\Project\AllProjects.aspx" />
+    <Content Include="Views\Project\EditProject.aspx" />
+    <Content Include="Views\Project\CreateEditProject.ascx" />
+    <Content Include="Views\Project\CreateProject.aspx" />
+    <Content Include="Views\Project\ProjectSummary.aspx" />
+    <Content Include="Views\Shared\Navigation.ascx" />
+    <Content Include="Views\Shared\SubNavigation.ascx" />
+    <Content Include="Views\User\Login.aspx" />
+    <Content Include="Views\Nav\TicketListPagination.ascx" />
+    <Content Include="Views\Ticket\EditComment.aspx" />
+    <Content Include="Views\Ticket\CreateEditCommentForm.ascx" />
+    <Content Include="Views\Ticket\CreateComment.aspx" />
+    <Content Include="Views\Ticket\Comment.ascx" />
+    <Content Include="Views\Ticket\CreateTicket.aspx" />
+    <Content Include="Views\Ticket\CreateEditTicketForm.ascx" />
+    <Content Include="Views\Ticket\TicketDetails.aspx" />
+    <Content Include="Views\Ticket\EditTicket.aspx" />
+    <Content Include="Views\Ticket\TicketList.aspx" />
+    <Content Include="Views\User\Logout.aspx" />
+    <Content Include="Web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Main.css" />
+    <Content Include="Scripts\jquery-1.3.2.js" />
+    <Content Include="Scripts\jquery-1.3.2.min.js" />
+    <Content Include="Scripts\jquery-1.3.2-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.3.2.min-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcJQueryValidation.js" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseMasterController\Trakker.Core.csproj">
+      <Project>{CF243D83-CEF5-448B-8E56-DE3149AF4319}</Project>
+      <Name>Trakker.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Trakker.Data\Trakker.Data.csproj">
+      <Project>{A9547E24-5633-4817-8B4A-E35AF672EAFB}</Project>
+      <Name>Trakker.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Trakker.Services\Trakker.Services.csproj">
+      <Project>{BE2CFC1B-672C-40D4-881E-909E5C54F3CF}</Project>
+      <Name>Trakker.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <!-- To enable MVC area subproject support, uncomment the following two lines:
+  <UsingTask TaskName="Microsoft.Web.Mvc.Build.CreateAreaManifest" AssemblyName="Microsoft.Web.Mvc.Build, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+  <UsingTask TaskName="Microsoft.Web.Mvc.Build.CopyAreaManifests" AssemblyName="Microsoft.Web.Mvc.Build, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+  -->
+  <Target Name="AfterBuild" DependsOnTargets="AfterBuildCompiler">
+    <PropertyGroup>
+      <AreasManifestDir>$(ProjectDir)\..\Manifests</AreasManifestDir>
+    </PropertyGroup>
+    <!-- If this is an area child project, uncomment the following line:
+    <CreateAreaManifest AreaName="$(AssemblyName)" AreaType="Child" AreaPath="$(ProjectDir)" ManifestPath="$(AreasManifestDir)" ContentFiles="@(Content)" />
+    -->
+    <!-- If this is an area parent project, uncomment the following lines:
+    <CreateAreaManifest AreaName="$(AssemblyName)" AreaType="Parent" AreaPath="$(ProjectDir)" ManifestPath="$(AreasManifestDir)" ContentFiles="@(Content)" />
+    <CopyAreaManifests ManifestPath="$(AreasManifestDir)" CrossCopy="false" RenameViews="true" />
+    -->
+  </Target>
+  <Target Name="AfterBuildCompiler" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)\..\$(ProjectName)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3103</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
