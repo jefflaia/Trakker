@@ -36,13 +36,13 @@ namespace Trakker.Helpers
         }
         */
 
+
         public static string SaveButton(this HtmlHelper helper, string innerHtml, Relation relation, Icon icon, object attributes )
         {
             SystemButtonBuilder buttonBuilder = new SystemButtonBuilder();
             buttonBuilder.SetIcon(icon);
-            buttonBuilder.SetElement(new LinkElement());
+            buttonBuilder.SetElement(new ButtonElement());
             buttonBuilder.SetRelation(relation);
-
 
             return buttonBuilder.CreateButton(innerHtml, "", attributes).ToString(); 
         }

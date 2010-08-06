@@ -71,12 +71,6 @@ namespace Trakker.Data.Access.SqlServer
     partial void DeleteTicket(Ticket instance);
     #endregion
 		
-		public TrakkerDBDataContext() : 
-				base(global::Trakker.Data.Properties.Settings.Default.TrakkerConnectionString2, mappingSource)
-		{
-			OnCreated();
-		}
-		
 		public TrakkerDBDataContext(string connection) : 
 				base(connection, mappingSource)
 		{

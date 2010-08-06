@@ -68,7 +68,7 @@
         <elementListCompartment Id="a7abf15d-5771-43b3-af7a-248314985049" absoluteBounds="3.515, 5.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11 : 9.3213525390625); (11.0104166666667 : 9.3213525390625 : JumpStart); (11.1770833333333 : 9.3213525390625 : JumpEnd); (11.75 : 9.3213525390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(11 : 9.3213525390625); (11.75 : 9.3213525390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TrakkerDBDataContext/Component/Component_ComponentTicket" />
       <nodes>
         <classShapeMoniker Id="d036a301-5788-4a51-983b-e395ab1a511d" />
@@ -95,7 +95,7 @@
         <elementListCompartment Id="3ff868a4-5c11-4d77-8d78-703352d38abc" absoluteBounds="5.89, 8.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.875 : 9.23159912109375); (9 : 9.23159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(7.875 : 9.23159912109375); (8.36979166666667 : 9.23159912109375 : JumpStart); (8.53645833333333 : 9.23159912109375 : JumpEnd); (9 : 9.23159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TrakkerDBDataContext/Project/Project_Component" />
       <nodes>
         <classShapeMoniker Id="def43c5f-d0ab-4794-b2b4-87b4c8c3d317" />
@@ -122,7 +122,7 @@
         <classShapeMoniker Id="21a3a043-a2de-4248-8cd8-be0622d1a8e2" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(9.125 : 6.23159912109375); (8.25 : 6.23159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(9.125 : 6.23159912109375); (8.53645833333333 : 6.23159912109375 : JumpStart); (8.36979166666667 : 6.23159912109375 : JumpEnd); (8.25 : 6.23159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TrakkerDBDataContext/Ticket/Ticket_Comment" />
       <nodes>
         <classShapeMoniker Id="90ed0e53-2b0b-46d6-afbd-d09a69e9b5a4" />

@@ -6,12 +6,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     
-    <%= Html.SystemButton("LogWork", "Log Work", Relation.Left ) %>
-    <%= Html.SystemButton("Edit", "Edit Ticket", Relation.Center ) %>
-    <%= Html.SystemButton("Comment", "Comment", Relation.Right ) %>
-
-    <%= Html.Image("/Content/Images/UI-Button.png") %>
-
+   
+   <%= Html.SaveButton("Save", Relation.Single, Icon.Save, new { }) %>
 
     <div id="TicketDetails">
          <h2><%= Model.View.Summary%></h2>
