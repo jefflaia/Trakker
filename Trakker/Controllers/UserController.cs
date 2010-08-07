@@ -8,9 +8,11 @@ using Trakker.ViewData.UserData;
 using Trakker.Services;
 using AutoMapper;
 using System.Web.Security;
+using Trakker.Attributes;
 
 namespace Trakker.Controllers
 {
+    
     public class UserController : MasterController
     {
        
@@ -25,6 +27,13 @@ namespace Trakker.Controllers
 
         public ActionResult Login()
         {
+
+            var key = AuthorizationService.SaltGenerator(10);
+            var passwrod = AuthorizationService.HashPassword("justin", key);
+
+
+
+
             return View(new LoginViewData());
         }
 

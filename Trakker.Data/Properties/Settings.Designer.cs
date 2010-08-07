@@ -64,5 +64,16 @@ namespace Trakker.Data.Properties {
                 return ((string)(this["TrakkerConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WEBSERVER;Initial Catalog=Trakker;User ID=Justin;Password=Molly121320" +
+            "08")]
+        public string TrakkerConnectionString3 {
+            get {
+                return ((string)(this["TrakkerConnectionString3"]));
+            }
+        }
     }
 }

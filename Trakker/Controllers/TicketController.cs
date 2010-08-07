@@ -11,6 +11,7 @@ using Trakker.Attributes;
 
 namespace Trakker.Controllers
 {
+    [Authenticate]
     public class TicketController : MasterController
     {
         protected ITicketService _ticketService;
