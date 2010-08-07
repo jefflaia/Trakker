@@ -10,7 +10,7 @@ namespace Trakker.Services
 {
     public abstract class AuthorizationService
     {
-        const int KEY_LENGTH = 15;
+        const int SALT_LENGTH = 10;
 
         protected static IUserService _userService = new UserService();
 
@@ -85,19 +85,9 @@ namespace Trakker.Services
             return null;
         }
     
-        public static string SaltGenerator(int size)
+        public static string SaltGenerator()
         {
-            // Allocate a byte array, which will hold the salt.
-            byte[] saltBytes = new byte[size];
-
-            // Initialize a random number generator.
-            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-
-            // Fill the salt with cryptographically strong byte values.
-            rng.GetNonZeroBytes(saltBytes);
-
-            return Encoding.UTF8.GetString(saltBytes);
-
+            return RandomHash.Generate(SALT_LENGTH);
         }
 
         public static string HashPassword(string password, string salt)

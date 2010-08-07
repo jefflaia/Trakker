@@ -164,6 +164,7 @@
     <Content Include="Views\User\Logout.aspx" />
     <Content Include="Web.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\Main.css" />
     <Content Include="Scripts\jquery-1.3.2.js" />

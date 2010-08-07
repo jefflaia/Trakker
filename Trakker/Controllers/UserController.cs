@@ -28,7 +28,7 @@ namespace Trakker.Controllers
         public ActionResult Login()
         {
 
-            var key = AuthorizationService.SaltGenerator(10);
+            var key = AuthorizationService.SaltGenerator();
             var passwrod = AuthorizationService.HashPassword("justin", key);
 
 
