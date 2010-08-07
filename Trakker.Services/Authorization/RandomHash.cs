@@ -78,12 +78,12 @@ namespace Trakker.Services
             // grouped by types. You can remove character groups from this
             // array, but doing so will weaken the password strength.
             char[][] charGroups = new char[][] 
-        {
-            PASSWORD_CHARS_LCASE.ToCharArray(),
-            PASSWORD_CHARS_UCASE.ToCharArray(),
-            PASSWORD_CHARS_NUMERIC.ToCharArray(),
-            PASSWORD_CHARS_SPECIAL.ToCharArray()
-        };
+            {
+                PASSWORD_CHARS_LCASE.ToCharArray(),
+                PASSWORD_CHARS_UCASE.ToCharArray(),
+                PASSWORD_CHARS_NUMERIC.ToCharArray(),
+                PASSWORD_CHARS_SPECIAL.ToCharArray()
+            };
 
             // Use this array to track the number of unused characters in each
             // character group.
@@ -179,8 +179,10 @@ namespace Trakker.Services
 
                 // If we processed the last character in this group, start over.
                 if (lastCharIdx == 0)
+                {
                     charsLeftInGroup[nextGroupIdx] =
                                               charGroups[nextGroupIdx].Length;
+                }
                 // There are more unprocessed characters left.
                 else
                 {
