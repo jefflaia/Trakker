@@ -77,7 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authorization\AuthorizationService.cs" />
-    <Compile Include="Authorization\IAuthorizationService.cs" />
     <Compile Include="Authorization\RandomHash.cs" />
     <Compile Include="Project\IProjectService.cs" />
     <Compile Include="Project\ProjectService.cs" />

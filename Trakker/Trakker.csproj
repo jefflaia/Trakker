@@ -127,6 +127,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewData\TicketData\CommentViewData.cs" />
     <Compile Include="ViewData\TicketData\TicketListViewData.cs" />
+    <Compile Include="ViewData\UserData\CreateUserViewData.cs" />
     <Compile Include="ViewData\UserData\LogoutViewData.cs" />
     <Compile Include="ViewData\UserData\LoginViewData.cs" />
   </ItemGroup>
@@ -150,6 +151,7 @@
     <Content Include="Views\Project\ProjectSummary.aspx" />
     <Content Include="Views\Shared\Navigation.ascx" />
     <Content Include="Views\Shared\SubNavigation.ascx" />
+    <Content Include="Views\User\CreateUser.aspx" />
     <Content Include="Views\User\Login.aspx" />
     <Content Include="Views\Nav\TicketListPagination.ascx" />
     <Content Include="Views\Ticket\EditComment.aspx" />

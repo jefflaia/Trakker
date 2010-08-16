@@ -11,6 +11,8 @@ namespace Trakker.Services
         User GetUserWithId(int id);
         User GetUserWithEmail(string email);
 
+        void Save(User user);
+
 
         IList<User> GetAllUsers();
     }

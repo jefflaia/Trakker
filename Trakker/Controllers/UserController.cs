@@ -60,5 +60,33 @@ namespace Trakker.Controllers
 
             return View(new LogoutViewData());
         }
+
+        [Authenticate]
+        public ActionResult CreateUser()
+        {
+            return View(new CreateUserViewData());
+        }
+
+        [HttpPost]
+        [Authenticate]
+        public ActionResult CreateUser(User user, string rePassword)
+        {
+            try
+            {
+                if (String.Compare(user.Password, rePassword) == 0)
+                {
+                    _userService.Save(user);
+                    
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+
+
+            return View(new CreateUserViewData());
+        }
+    
     }
 }

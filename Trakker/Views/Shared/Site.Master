@@ -20,31 +20,31 @@
 <body>
 
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
 
-         $("div.Nav > ul > li").hover(function() {
+        $("div.Nav > ul > li").hover(function () {
             $(this).find(">a").addClass("Hover");
             $(this).find("ul").eq(0).show();
-            
-            var parentWidth = $(this).parent().find("a:first").outerWidth(true);
-            var listWidth = $(this).find("ul li a").outerWidth(true);
-           
+
+            var parentWidth = $(this).find("a:first").outerWidth(true);
+            var listWidth = $(this).find("ul:first li").outerWidth();
+
             if (parentWidth > listWidth) {
-                $(this).find("ul:first").css({ "width": parentWidth });
+                $(this).find("ul:first li").css({ "width": parentWidth - 2 });
             }
-        }, function() {
+        }, function () {
             $(this).find(">a").removeClass("Hover");
             $(this).find("ul").eq(0).hide();
         });
 
-        $("div.SubNav > ul > li").hover(function() {
+        $("div.SubNav > ul > li").hover(function () {
             $(this).find(">a").addClass("Hover");
             $(this).find("ul").eq(0).show();
-        }, function() {
+        }, function () {
             $(this).find(">a").removeClass("Hover");
             $(this).find("ul").eq(0).hide();
         });
-        
+
     });
 </script>
 

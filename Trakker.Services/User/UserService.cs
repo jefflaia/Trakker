@@ -31,8 +31,10 @@ namespace Trakker.Services
            return _userRepository.GetUsers().ToList<User>();
        }
 
-
-
-
+       public void Save(User user)
+       {
+           _userRepository.Save(user);
+       }
+       
    }
 }

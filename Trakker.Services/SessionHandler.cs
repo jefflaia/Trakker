@@ -7,7 +7,7 @@ namespace Trakker.Services
 {
     public static class SessionHandler
     {
-
+        const int COOKIE_LIFE = 30;
 
         public static void CreateCookie(string cookieContent)
         {

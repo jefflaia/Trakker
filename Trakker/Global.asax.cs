@@ -26,6 +26,8 @@ namespace Trakker
 
             routes.MapRoute("Login", "login", new { controller = "User", action = "Login" });
             routes.MapRoute("Logout", "logout", new { controller = "User", action = "Logout" });
+            routes.MapRoute("Create User", "create/user", new { controller = "User", action = "CreateUser" }); 
+            routes.MapRoute("Edit User", "edit/user", new { controller = "User", action = "EditUser" }); 
 
             routes.MapRoute("AllProjects", "projects", new { controller = "Project", action = "AllProjects" });
             routes.MapRoute("ProjectSummary", "project/{keyName}", new { controller = "Project", action = "ProjectSummary" });

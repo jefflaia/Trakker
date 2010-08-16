@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Trakker.Data;
 using System.Security.Cryptography;
+using System.Web.Security;
 
 
 namespace Trakker.Services
@@ -134,5 +135,6 @@ namespace Trakker.Services
             return hashValue;
 
         }
+
     }
 }

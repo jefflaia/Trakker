@@ -16,6 +16,7 @@ namespace Trakker.Data
         public int TotalComments { get; set; }
         public int FailedPasswordAttemptCount { get; set; }
         public DateTime LastFailedLoginAttempt { get; set; }
-
+        public int RoleId { get; set; }
+        
     }
 }

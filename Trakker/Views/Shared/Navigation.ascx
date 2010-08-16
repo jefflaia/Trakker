@@ -33,4 +33,11 @@
             <li><%= Html.ActionLink<TicketController>(x => x.TicketList(1), "View All") %></li>
         </ul>
     </li>
+    <li>
+        <a href="#">Administration</a>
+        <ul class="UI-SHadow">
+            <li><a href="#">New User</a></li>
+            <li><a href="#">Edit User</a></li>
+        </ul>
+    </li> 
 </ul>

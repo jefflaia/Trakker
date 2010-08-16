@@ -26,7 +26,8 @@ namespace Trakker.Data
                        LastLogin = u.LastLogin,
                        LastFailedLoginAttempt = u.LastFailedLoginAttempt,
                        FailedPasswordAttemptCount = u.FailedPasswordAttemptCount,
-                       TotalComments = u.TotalComments
+                       TotalComments = u.TotalComments,
+                       RoleId = u.RoleId
                    };
         }
 
