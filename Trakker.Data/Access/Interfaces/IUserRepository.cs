@@ -8,9 +8,11 @@ namespace Trakker.Data
     public interface IUserRepository
     {
         IQueryable<User> GetUsers();
-
         void Save(User user);
-
         void DeleteUser(int id);
+
+        IQueryable<Role> GetRoles();
+        void Save(Role role);
+        
     }
 }

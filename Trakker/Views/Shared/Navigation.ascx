@@ -36,7 +36,7 @@
     <li>
         <a href="#">Administration</a>
         <ul class="UI-SHadow">
-            <li><a href="#">New User</a></li>
+            <li><a href="#"><%= Html.ActionLink<UserController>(x => x.CreateUser(), "Create User") %></a></li>
             <li><a href="#">Edit User</a></li>
         </ul>
     </li> 

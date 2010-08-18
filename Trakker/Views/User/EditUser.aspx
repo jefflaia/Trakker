@@ -18,9 +18,6 @@
     <%= Html.LabelFor(x => x.View.RePassword)%>
     <%= Html.TextBox("RePassword", Model.View.RePassword)%>
 
-    <%= Html.LabelFor(x=>x.View.Roles) %>
-    <%= Html.DropDownList("RoleId", new SelectList(Model.View.Roles, "RoleId", "Name", Model.View.RoleId )) %>
-
     <%= Html.SaveButton("Save", Relation.Single, Icon.Save, new { type = "submit" })%>
 <% } %>
 </asp:Content>

@@ -65,5 +65,40 @@ namespace Trakker.Data
                 ctx.SubmitChanges();
             }
         }
+
+        public IQueryable<Role> GetRoles()
+        {
+            return from r in _db.Roles
+                   select new Role()
+                   {
+                       RoleId = r.RoleId,
+                       Description = r.Description,
+                       Name = r.Name
+                   };
+        }
+
+        public void Save(Role role)
+        {
+            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
+            {
+
+                Mapper.CreateMap<Role, Sql.Role>();
+                Sql.Role r = Mapper.Map<Role, Sql.Role>(role);
+
+                if (r.RoleId == 0)
+                {
+                    ctx.Roles.InsertOnSubmit(r);
+                }
+                else
+                {
+                    ctx.Roles.Attach(r);
+                    ctx.Roles.Context.Refresh(RefreshMode.KeepCurrentValues, r);
+                }
+
+                ctx.SubmitChanges();
+
+                role.RoleId = r.RoleId;
+            };
+        }
     }
 }

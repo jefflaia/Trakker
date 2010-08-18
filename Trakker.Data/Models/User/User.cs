@@ -17,6 +17,10 @@ namespace Trakker.Data
         public int FailedPasswordAttemptCount { get; set; }
         public DateTime LastFailedLoginAttempt { get; set; }
         public int RoleId { get; set; }
-        
+
+        public bool HasLoggedIn()
+        {
+            return DateTime.Equals(LastLogin, Created);
+        }        
     }
 }

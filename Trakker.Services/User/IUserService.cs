@@ -13,7 +13,12 @@ namespace Trakker.Services
 
         void Save(User user);
 
-
         IList<User> GetAllUsers();
+
+        IList<Role> GetAllRoles();
+
+        string SaltGenerator();
+        string HashPassword(string password, string salt);
+
     }
 }

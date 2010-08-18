@@ -272,7 +272,7 @@ namespace Trakker.Controllers
             try
             {
                 originalComment.Body = comment.Body;
-                originalComment.Modified = DateTime.Today;
+                originalComment.Modified = DateTime.Now;
                 _ticketService.Save(originalComment);
             }
             catch (Exception e)
