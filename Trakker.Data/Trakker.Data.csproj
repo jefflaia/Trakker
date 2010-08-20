@@ -104,6 +104,8 @@
     </Compile>
     <Compile Include="Access\SqlServer\TrakkerDBDataContext.cs" />
     <Compile Include="Access\SqlServer\UserRepository.cs" />
+    <Compile Include="ConnectionStringProvider.cs" />
+    <Compile Include="DataContextProvider.cs" />
     <Compile Include="Filter\BaseFilters.cs" />
     <Compile Include="Filter\Project\ProjectFilters.cs" />
     <Compile Include="Filter\Ticket\CategoryFilters.cs" />
@@ -113,6 +115,9 @@
     <Compile Include="Filter\Ticket\StatusFilters.cs" />
     <Compile Include="Filter\Ticket\TicketFilters.cs" />
     <Compile Include="Filter\User\UserFilters.cs" />
+    <Compile Include="IConnectionStringProvider.cs" />
+    <Compile Include="IDataContextProvider.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="Models\Paginated.cs" />
     <Compile Include="Models\Project\Project.cs" />
     <Compile Include="Models\Ticket\Comment.cs" />
@@ -124,12 +129,17 @@
     <Compile Include="Models\Ticket\Category.cs" />
     <Compile Include="Models\User\Role.cs" />
     <Compile Include="Models\User\User.cs" />
+    <Compile Include="NameValue.cs" />
+    <Compile Include="ObjectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="PropertyInfoExtensions.cs" />
+    <Compile Include="Repository.cs" />
+    <Compile Include="TypeExtensions.cs" />
     <Compile Include="Utilities\LazyList.cs" />
     <Compile Include="Utilities\SlugGenerator.cs" />
   </ItemGroup>

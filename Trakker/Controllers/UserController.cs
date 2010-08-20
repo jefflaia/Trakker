@@ -111,7 +111,7 @@ namespace Trakker.Controllers
             if (userId == 0) ; //TODO:: redirect
 
             Mapper.CreateMap<CreateEditUserViewData, User>();
-            User user = Mapper.Map<CreateEditUserViewData, User>(viewData);
+             User user = Mapper.Map(viewData, new User());
 
 
 
