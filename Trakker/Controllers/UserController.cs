@@ -17,11 +17,11 @@ namespace Trakker.Controllers
     public class UserController : MasterController
     {
        
-        protected IUserService _userService;
+        protected readonly IUserService _userService;
     
-        public UserController()
+        public UserController(IUserService userService)
         {
-            _userService = new UserService();
+            _userService = userService;
 
         }
         

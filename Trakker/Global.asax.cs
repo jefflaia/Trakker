@@ -49,6 +49,9 @@ namespace Trakker
         {
             Mapper.CreateMap<Comment, CommentViewData>();
 
+            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory());
+
+
             RegisterRoutes(RouteTable.Routes);
         }
     }
