@@ -17,10 +17,10 @@ namespace Trakker.Controllers
         protected ITicketService _ticketService;
         protected IUserService _userService;
     
-        public TicketController()
+        public TicketController(ITicketService ticketService, IUserService userService)
         {
-            _ticketService = new TicketService();
-            _userService = new UserService();
+            _ticketService = ticketService;
+            _userService = userService;
 
         }
 

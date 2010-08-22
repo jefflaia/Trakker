@@ -9,6 +9,9 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Reflection;
 using Castle.Core;
+using Castle.MicroKernel.Registration;
+using Trakker.Services;
+using Trakker.Data;
 
 namespace Trakker
 {
@@ -36,6 +39,12 @@ namespace Trakker
             {
                 container.AddComponentLifeStyle(t.FullName, t, LifestyleType.Transient);
             }
+
+            container.Register(
+                Castle.MicroKernel.Registration.Component.For<IUserService>().ImplementedBy<UserService>().LifeStyle.Singleton,
+                Castle.MicroKernel.Registration.Component.For<ITicketService>().ImplementedBy<TicketService>().LifeStyle.Singleton
+
+            );
         }
 	 
         // Constructs the controller instance needed to service each request this part is Updated to be compatible with MVC 2

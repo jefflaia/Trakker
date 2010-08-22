@@ -10,6 +10,7 @@ using Trakker.Data;
 using Trakker.ViewData.TicketData;
 using System.Web.Security;
 using System.Security.Principal;
+using Castle.Windsor;
 
 namespace Trakker
 {
@@ -50,7 +51,6 @@ namespace Trakker
             Mapper.CreateMap<Comment, CommentViewData>();
 
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory());
-
 
             RegisterRoutes(RouteTable.Routes);
         }

@@ -10,7 +10,7 @@ namespace Trakker.Services
 {
    public class UserService : IUserService
     {
-       IUserRepository _userRepository;
+       protected IUserRepository _userRepository;
        const int SALT_LENGTH = 10;
 
        public UserService()
