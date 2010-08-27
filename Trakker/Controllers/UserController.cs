@@ -13,7 +13,6 @@ using System.Data.SqlTypes;
 
 namespace Trakker.Controllers
 {
-    
     public class UserController : MasterController
     {
        
