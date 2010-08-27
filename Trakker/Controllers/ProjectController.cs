@@ -14,13 +14,14 @@ namespace Trakker.Controllers
     [Authenticate]
     public class ProjectController : MasterController
     {
-        protected ProjectService _projectService;
-        protected UserService _userService;
+        protected readonly IProjectService _projectService;
+        protected readonly IUserService _userService;
 
-        public ProjectController()
+        public ProjectController(IProjectService projectService, IUserService userService, ITicketService ticketService)
+            : base(projectService, ticketService)
         {
-            _projectService = new ProjectService();
-            _userService = new UserService();
+            _projectService = projectService;
+            _userService = userService;
         }
 
         public ActionResult ProjectSummary(string keyName)
@@ -72,7 +73,7 @@ namespace Trakker.Controllers
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                //throw new Exception(e.Message);
             }
 
             CreateEditProjectViewData viewData = new CreateEditProjectViewData()
@@ -89,7 +90,7 @@ namespace Trakker.Controllers
         {
             Project project = _projectService.GetProjectByKeyName(projectKeyName);
 
-            if(project == null); //TODO:: redirect to page not-found
+            //if(project == null); //TODO:: redirect to page not-found
 
             CreateEditProjectViewData viewData = new CreateEditProjectViewData()
             {
@@ -105,7 +106,7 @@ namespace Trakker.Controllers
         {
             Project p = _projectService.GetProjectByKeyName(projectKeyName);
 
-            if (p == null) ; //TODO:: redirect to page not-found
+            //if (p == null) ; //TODO:: redirect to page not-found
 
 
             try
@@ -118,7 +119,7 @@ namespace Trakker.Controllers
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                //throw new Exception(e.Message);
             }
 
             CreateEditProjectViewData viewData = new CreateEditProjectViewData()

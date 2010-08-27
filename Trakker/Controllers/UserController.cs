@@ -18,9 +18,13 @@ namespace Trakker.Controllers
     {
        
         protected readonly IUserService _userService;
-    
-        public UserController(IUserService userService)
+
+        public UserController(IUserService userService, ITicketService ticketService, IProjectService projectService)
+            : base(projectService, ticketService)
+
         {
+           // var test = uR.GetById(1);
+
             _userService = userService;
 
         }
@@ -28,6 +32,8 @@ namespace Trakker.Controllers
 
         public ActionResult Login()
         {
+            
+
             return View(new LoginViewData());
         }
 
@@ -91,7 +97,7 @@ namespace Trakker.Controllers
         [Authenticate]
         public ActionResult EditUser(int userId)
         {
-            if (userId == 0) ; //TODO:: redirect
+            //if (userId == 0) ; //TODO:: redirect
 
             User user = _userService.GetUserWithId(userId);
             
@@ -108,7 +114,7 @@ namespace Trakker.Controllers
         [Authenticate]
         public ActionResult EditUser(int userId, CreateEditUserViewData viewData )
         {
-            if (userId == 0) ; //TODO:: redirect
+            //if (userId == 0) ; //TODO:: redirect
 
             Mapper.CreateMap<CreateEditUserViewData, User>();
              User user = Mapper.Map(viewData, new User());
@@ -116,7 +122,7 @@ namespace Trakker.Controllers
 
 
             User u = _userService.GetUserWithId(userId);
-            if(u == null); //TODO:: redirect
+            //if(u == null); //TODO:: redirect
 
             try
             {

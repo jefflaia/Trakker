@@ -16,8 +16,9 @@ namespace Trakker.Controllers
     {
         protected ITicketService _ticketService;
         protected IUserService _userService;
-    
-        public TicketController(ITicketService ticketService, IUserService userService)
+
+        public TicketController(ITicketService ticketService, IUserService userService, IProjectService projectService)
+            : base(projectService, ticketService)
         {
             _ticketService = ticketService;
             _userService = userService;
@@ -154,7 +155,7 @@ namespace Trakker.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                //throw new Exception(ex.Message);
             }
 
             return View();

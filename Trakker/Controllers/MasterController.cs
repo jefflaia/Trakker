@@ -18,7 +18,7 @@ namespace Trakker.Controllers
         private ProjectService _projectService;
         private TicketService _ticketService;
 
-        public MasterController()
+        public MasterController(IProjectService projectService, ITicketService ticketService)
         {
             _projectService = new ProjectService();
             _ticketService = new TicketService();

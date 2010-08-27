@@ -22,15 +22,3 @@ F:\Trakker\Trakker.Services\bin\Debug\Trakker.Data.pdb
 F:\Trakker\Trakker.Services\obj\Debug\ResolveAssemblyReference.cache
 F:\Trakker\Trakker.Services\obj\Debug\Trakker.Services.dll
 F:\Trakker\Trakker.Services\obj\Debug\Trakker.Services.pdb
-D:\Projects\ASPNET\Trakker\Trakker.Services\bin\Debug\Trakker.Services.dll
-D:\Projects\ASPNET\Trakker\Trakker.Services\bin\Debug\Trakker.Services.pdb
-D:\Projects\ASPNET\Trakker\Trakker.Services\bin\Debug\Castle.Core.dll
-D:\Projects\ASPNET\Trakker\Trakker.Services\bin\Debug\Castle.DynamicProxy2.dll
-D:\Projects\ASPNET\Trakker\Trakker.Services\bin\Debug\Castle.MicroKernel.dll
-D:\Projects\ASPNET\Trakker\Trakker.Services\bin\Debug\Castle.Windsor.dll
-D:\Projects\ASPNET\Trakker\Trakker.Services\bin\Debug\Trakker.Data.dll
-D:\Projects\ASPNET\Trakker\Trakker.Services\bin\Debug\AutoMapper.dll
-D:\Projects\ASPNET\Trakker\Trakker.Services\bin\Debug\Trakker.Data.pdb
-D:\Projects\ASPNET\Trakker\Trakker.Services\obj\Debug\ResolveAssemblyReference.cache
-D:\Projects\ASPNET\Trakker\Trakker.Services\obj\Debug\Trakker.Services.dll
-D:\Projects\ASPNET\Trakker\Trakker.Services\obj\Debug\Trakker.Services.pdb

@@ -48,10 +48,9 @@ form div.Row input{float:left; width: 150px;}
 .UI-Shadow{-moz-box-shadow: 0px 2px 5px #222; -webkit-box-shadow: #222 0px 2px 5px;}
 .UI-Hover{-moz-box-shadow: 0 0 3px #222; -webkit-box-shadow: #222 0 0 3px;}
 
-/*  background: #fff url(/Content/Images/UI-Backgrounds.png) 0px -110px;
 
 /* UI Buttons */
-.UI-Button{float:left; margin: 2px 0px; color: inherit; display:inline-block; height: 23px; line-height: 23px; border:1px solid #ccc; padding: 0px 5px 2px 5px; 
+.UI-Button{float:left; margin: 2px 0px; color: inherit; display:inline-block; height: 23px; line-height: 23px; border:1px solid #ccc; padding: 3px 5px 2px 5px; 
 background-image: url(Images/UI-Backgrounds.png);}
 .UI-Button:hover{border-color: #999; background-position: 0px  -80px; -moz-box-shadow: 0 0 3px #aaa; -webkit-box-shadow: #aaa 0 0 3px;}
 .UI-Button:active{position:relative; top: 1px;  }
@@ -63,7 +62,7 @@ background-image: url(Images/UI-Backgrounds.png);}
 .UI-Button.UI-Border-Top{-moz-border-radius:5px 5px 0px 0px; -webkit-border-radius:5px 5px 0px 0px; margin: 2px 3px 0px 3px;}
 .UI-Button.UI-Border-Bottom{-moz-border-radius:0px 0px 5px 5px; -webkit-border-radius:0px 0px 5px 5px; margin: 0px 3px 2px 3px;}
 
-.UI-Button div.Icon{width:16px; height: 16px; margin: 5px 5px 0px 0px; float:left; border:none; background-image: url(Images/Icons.png);}
+.UI-Button div.Icon{width:16px; height: 16px; margin: 0px 5px 0px 0px; float:left; border:none; background-image: url(Images/Icons.png);}
 .UI-Button div.Icon.DiskPlus{ background-position: 0 -72px;}
 .UI-Button div.Icon.HighlighterArrow{background-position: 0 -108px;}
 .UI-Button div.Icon.CommentAdd{ background-position: 0 -36px;}

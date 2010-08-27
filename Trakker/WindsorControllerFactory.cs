@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Castle.Windsor;
 using Castle.Windsor.Configuration.Interpreters;
 using Castle.Core.Resource;
@@ -22,11 +20,11 @@ namespace Trakker
         // 1. Sets up a new IoC container
         // 2. Registers all components specified in web.config
         // 3. Registers all controller types as components
-        public WindsorControllerFactory()
+        public WindsorControllerFactory(string configPath)
         {
             // Instantiate a container, taking configuration from web.config
             container = new WindsorContainer(
-                new XmlInterpreter(new ConfigResource("castle"))
+                new XmlInterpreter(configPath)
             );
 
             // Also register all the controller types as transient
@@ -41,9 +39,13 @@ namespace Trakker
             }
 
             container.Register(
-                Castle.MicroKernel.Registration.Component.For<IUserService>().ImplementedBy<UserService>().LifeStyle.Singleton,
-                Castle.MicroKernel.Registration.Component.For<ITicketService>().ImplementedBy<TicketService>().LifeStyle.Singleton
+                Castle.MicroKernel.Registration.Component.For<IConnectionStringProvider>().ImplementedBy<ConnectionStringProvider>().LifeStyle.Singleton,
+                Castle.MicroKernel.Registration.Component.For<IDataContextProvider>().ImplementedBy<DataContextProvider>().LifeStyle.PerWebRequest,
 
+
+                Castle.MicroKernel.Registration.Component.For<IUserService>().ImplementedBy<UserService>().LifeStyle.Singleton,
+                Castle.MicroKernel.Registration.Component.For<ITicketService>().ImplementedBy<TicketService>().LifeStyle.Singleton,
+                Castle.MicroKernel.Registration.Component.For<IProjectService>().ImplementedBy<ProjectService>().LifeStyle.Singleton
             );
         }
 	 

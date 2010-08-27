@@ -21,11 +21,5 @@ namespace Trakker.Data
                 yield return new NameValue<object>(property.Name, () => property.GetValue(item, null));
             }
         }
-
-        public static NameValue<object> GetPrimaryKey(this object item)
-        {
-            PropertyInfo property = item.GetType().GetPrimaryKey();
-            return new NameValue<object>(property.Name, () => property.GetValue(item, null));
-        }
     }
 }

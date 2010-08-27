@@ -13,8 +13,3 @@ F:\Trakker\BaseMasterController\bin\Debug\Trakker.Core.pdb
 F:\Trakker\BaseMasterController\obj\Debug\ResolveAssemblyReference.cache
 F:\Trakker\BaseMasterController\obj\Debug\Trakker.Core.dll
 F:\Trakker\BaseMasterController\obj\Debug\Trakker.Core.pdb
-D:\Projects\ASPNET\Trakker\BaseMasterController\bin\Debug\Trakker.Core.dll
-D:\Projects\ASPNET\Trakker\BaseMasterController\bin\Debug\Trakker.Core.pdb
-D:\Projects\ASPNET\Trakker\BaseMasterController\obj\Debug\ResolveAssemblyReference.cache
-D:\Projects\ASPNET\Trakker\BaseMasterController\obj\Debug\Trakker.Core.dll
-D:\Projects\ASPNET\Trakker\BaseMasterController\obj\Debug\Trakker.Core.pdb
