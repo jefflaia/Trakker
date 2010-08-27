@@ -30,8 +30,5 @@ bin/
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
-Trakker.Tests/obj/Debug/Trakker.Tests.csproj.FileListAbsolute.txt
-BaseMasterController/obj/Debug/Trakker.Core.csproj.FileListAbsolute.txt
-Trakker.Data/obj/Debug/Trakker.Data.csproj.FileListAbsolute.txt
-Trakker.Services/obj/Debug/Trakker.Services.csproj.FileListAbsolute.txt
-Trakker/obj/Debug/Trakker.csproj.FileListAbsolute.txt
+*\obj\*
+*\bin\*
