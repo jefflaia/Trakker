@@ -50,7 +50,7 @@ namespace Trakker
         {
             Mapper.CreateMap<Comment, CommentViewData>();
 
-            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory("windsor.config"));
+            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory("Windsor.config"));
 
             RegisterRoutes(RouteTable.Routes);
         }

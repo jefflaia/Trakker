@@ -15,6 +15,7 @@ namespace Trakker
 {
     public class WindsorControllerFactory : DefaultControllerFactory
     {
+
         WindsorContainer container;
         // The constructor:
         // 1. Sets up a new IoC container
@@ -40,12 +41,7 @@ namespace Trakker
 
             container.Register(
                 Castle.MicroKernel.Registration.Component.For<IConnectionStringProvider>().ImplementedBy<ConnectionStringProvider>().LifeStyle.Singleton,
-                Castle.MicroKernel.Registration.Component.For<IDataContextProvider>().ImplementedBy<DataContextProvider>().LifeStyle.PerWebRequest,
-
-
-                Castle.MicroKernel.Registration.Component.For<IUserService>().ImplementedBy<UserService>().LifeStyle.Singleton,
-                Castle.MicroKernel.Registration.Component.For<ITicketService>().ImplementedBy<TicketService>().LifeStyle.Singleton,
-                Castle.MicroKernel.Registration.Component.For<IProjectService>().ImplementedBy<ProjectService>().LifeStyle.Singleton
+                Castle.MicroKernel.Registration.Component.For<IDataContextProvider>().ImplementedBy<DataContextProvider>().LifeStyle.PerWebRequest
             );
         }
 	 
