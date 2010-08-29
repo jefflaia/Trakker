@@ -11,6 +11,7 @@ using Trakker.ViewData.TicketData;
 using System.Web.Security;
 using System.Security.Principal;
 using Castle.Windsor;
+using Trakker.Routes;
 
 namespace Trakker
 {
@@ -22,25 +23,12 @@ namespace Trakker
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-
-
-            routes.MapRoute("Login", "login", new { controller = "User", action = "Login" });
-            routes.MapRoute("Logout", "logout", new { controller = "User", action = "Logout" });
-            routes.MapRoute("Create User", "create/user", new { controller = "User", action = "CreateUser" }); 
-            routes.MapRoute("Edit User", "edit/user/{userId}", new { controller = "User", action = "EditUser", userId = 0 }); 
-
-            routes.MapRoute("AllProjects", "projects", new { controller = "Project", action = "AllProjects" });
-            routes.MapRoute("ProjectSummary", "project/{keyName}", new { controller = "Project", action = "ProjectSummary" });
-            routes.MapRoute("ComponentSummary", "component/{keyName}", new { controller = "Project", action = "ComponentSummary" });
-            routes.MapRoute("CreateProject", "new/project", new { controller = "Project", action = "CreateProject" });
-            routes.MapRoute("EditProject", "edit/project/{projectKeyName}", new { controller = "Project", action = "EditProject" });
-
-            routes.MapRoute("CreateTicket", "new", new { controller = "Ticket", action = "CreateTicket" });
-            routes.MapRoute("EditTicket", "edit/{keyName}", new { controller = "Ticket", action = "EditTicket" });
-            routes.MapRoute("TicketDetails", "{keyName}", new { controller = "Ticket", action = "TicketDetails" });
-            routes.MapRoute("CreateComment", "{keyName}/comment", new { controller = "Ticket", action = "CreateComment" });
-            routes.MapRoute("EditComment", "{keyName}/comment/edit/{id}", new { controller = "Ticket", action = "EditComment" });
+            
+            UserRoutes.AddRoutes(ref routes);
+            ProjectRoutes.AddRoutes(ref routes);
+            TicketRoutes.AddRoutes(ref routes);
+            
+            
             routes.MapRoute("DefaultPaginated", "page/{index}", new { controller = "Ticket", action = "TicketList"});
             routes.MapRoute("Default", "",  new { controller = "Ticket", action = "TicketList"});
 
