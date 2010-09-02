@@ -11,22 +11,20 @@ using Castle.MicroKernel.Registration;
 using Trakker.Services;
 using Trakker.Data;
 
-namespace Trakker
+namespace Trakker.IoC
 {
     public class WindsorControllerFactory : DefaultControllerFactory
     {
 
-        WindsorContainer container;
+        IWindsorContainer container;
         // The constructor:
         // 1. Sets up a new IoC container
         // 2. Registers all components specified in web.config
         // 3. Registers all controller types as components
-        public WindsorControllerFactory(string configPath)
+        public WindsorControllerFactory()
         {
             // Instantiate a container, taking configuration from web.config
-            container = new WindsorContainer(
-                new XmlInterpreter(configPath)
-            );
+            container = WindsorContainerProvider.GetInstance();
 
             // Also register all the controller types as transient
             var controllerTypes =
@@ -38,11 +36,6 @@ namespace Trakker
             {
                 container.AddComponentLifeStyle(t.FullName, t, LifestyleType.Transient);
             }
-
-            container.Register(
-                Castle.MicroKernel.Registration.Component.For<IConnectionStringProvider>().ImplementedBy<ConnectionStringProvider>().LifeStyle.Singleton,
-                Castle.MicroKernel.Registration.Component.For<IDataContextProvider>().ImplementedBy<DataContextProvider>().LifeStyle.PerWebRequest
-            );
         }
 	 
         // Constructs the controller instance needed to service each request this part is Updated to be compatible with MVC 2

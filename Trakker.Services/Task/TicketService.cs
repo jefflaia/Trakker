@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Trakker.Data;
-using Trakker.Data.Interfaces.SqlServer;
 
 namespace Trakker.Services
 {
@@ -12,10 +11,10 @@ namespace Trakker.Services
         ITicketRepository _ticketRepository;
         IProjectRepository _projectRepository;
 
-        public TicketService()
+        public TicketService(ITicketRepository ticketRepository, IProjectRepository projectRepository)
         {
-            _ticketRepository = new TicketRepository();
-            _projectRepository = new ProjectRepository();
+            _ticketRepository = ticketRepository;
+            _projectRepository = projectRepository;
         }
 
         public IList<Ticket> TicketList(int pageSize, int index)

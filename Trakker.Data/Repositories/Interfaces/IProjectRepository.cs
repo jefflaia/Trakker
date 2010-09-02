@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Trakker.Data.Interfaces.SqlServer
+namespace Trakker.Data
 {
     public interface IProjectRepository
     {

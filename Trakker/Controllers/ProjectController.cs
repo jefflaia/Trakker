@@ -18,7 +18,7 @@ namespace Trakker.Controllers
         protected readonly IUserService _userService;
 
         public ProjectController(IProjectService projectService, IUserService userService, ITicketService ticketService)
-            : base(projectService, ticketService)
+            : base(projectService, ticketService, userService)
         {
             _projectService = projectService;
             _userService = userService;

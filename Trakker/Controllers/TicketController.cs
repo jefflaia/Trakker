@@ -14,11 +14,9 @@ namespace Trakker.Controllers
     [Authenticate]
     public class TicketController : MasterController
     {
-        protected ITicketService _ticketService;
-        protected IUserService _userService;
-
+       
         public TicketController(ITicketService ticketService, IUserService userService, IProjectService projectService)
-            : base(projectService, ticketService)
+            : base(projectService, ticketService, userService)
         {
             _ticketService = ticketService;
             _userService = userService;
@@ -145,9 +143,9 @@ namespace Trakker.Controllers
             try
             {
                 ticket.ProjectId = ProjectService.SelectedProjectId;
-                ticket.CreatedByUserId = AuthorizationService.CurrentUser.UserId;
-                ticket.AssignedByUserId = AuthorizationService.CurrentUser.UserId;
-                ticket.AssignedToUserId = AuthorizationService.CurrentUser.UserId;
+                ticket.CreatedByUserId = _userService.CurrentUser.UserId;
+                ticket.AssignedByUserId = _userService.CurrentUser.UserId;
+                ticket.AssignedToUserId = _userService.CurrentUser.UserId;
                
                 _ticketService.Save(ticket);
 

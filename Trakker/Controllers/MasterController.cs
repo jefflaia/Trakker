@@ -15,32 +15,33 @@ namespace Trakker.Controllers
     public abstract class MasterController : ConventionController
     {
 
-        private ProjectService _projectService;
-        private TicketService _ticketService;
+        protected IProjectService _projectService;
+        protected ITicketService _ticketService;
+        protected IUserService _userService;
 
-        public MasterController(IProjectService projectService, ITicketService ticketService)
+        public MasterController(IProjectService projectService, ITicketService ticketService, IUserService userSerivice)
         {
-            _projectService = new ProjectService();
-            _ticketService = new TicketService();
+            _projectService = projectService;
+            _ticketService = ticketService;
+            _userService = userSerivice;
         }
 
         protected override MasterViewData GetMasterViewData()
         {
             MasterViewData viewData = new MasterViewData()
-                {
-                    Projects =  _projectService.GetAllProjects(),
-                    HasCurrentProject = true,
-                    CurrentProject = _projectService.GetProjectByProjectId(ProjectService.SelectedProjectId),
-                    CurrentUser = AuthorizationService.CurrentUser,
-                    IsUserLoggedIn = AuthorizationService.IsUserLoggedIn(), 
-                    Tickets = _ticketService.GetNewestTicketsWithProjectId(ProjectService.SelectedProjectId, 5),
-                    NumTicketsAssignedToCurrentUser = 0
-
-                };
+            {
+                Projects =  _projectService.GetAllProjects(),
+                HasCurrentProject = true,
+                CurrentProject = _projectService.GetProjectByProjectId(ProjectService.SelectedProjectId),
+                CurrentUser = _userService.CurrentUser,
+                IsUserLoggedIn = _userService.IsUserLoggedIn(), 
+                Tickets = _ticketService.GetNewestTicketsWithProjectId(ProjectService.SelectedProjectId, 5),
+                NumTicketsAssignedToCurrentUser = 0
+            };
 
             if (viewData.CurrentUser != null)
             {
-                viewData.NumTicketsAssignedToCurrentUser = _ticketService.CountTicketsWithAssignedTo(AuthorizationService.CurrentUser.UserId);
+                viewData.NumTicketsAssignedToCurrentUser = _ticketService.CountTicketsWithAssignedTo(_userService.CurrentUser.UserId);
             }
 
             return viewData;

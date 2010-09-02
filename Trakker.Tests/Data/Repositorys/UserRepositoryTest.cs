@@ -16,9 +16,9 @@ namespace Trakker.Tests._ticketRepositoryTest
         protected IUserRepository userRepository;
 
 
-        public UserRepositoryTest()
+        public UserRepositoryTest(IUserRepository userRepository)
         {
-            userRepository = new UserRepository();
+            userRepository = userRepository;
         }
 
         #region Gets

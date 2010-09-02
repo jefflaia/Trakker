@@ -1,5 +1,5 @@
 ﻿
-namespace Trakker.Data.Access.SqlServer
+namespace Trakker.Data.Access
 {
     using System;
     using System.Configuration;

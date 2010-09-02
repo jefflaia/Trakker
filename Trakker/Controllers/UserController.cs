@@ -15,11 +15,8 @@ namespace Trakker.Controllers
 {
     public class UserController : MasterController
     {
-       
-        protected readonly IUserService _userService;
-
-        public UserController(IUserService userService, ITicketService ticketService, IProjectService projectService)
-            : base(projectService, ticketService)
+       public UserController(IUserService userService, ITicketService ticketService, IProjectService projectService)
+            : base(projectService, ticketService, userService)
 
         {
            // var test = uR.GetById(1);
@@ -39,9 +36,9 @@ namespace Trakker.Controllers
         [HttpPost]
         public ActionResult Login(User user)
         {
-           if(AuthorizationService.ValidateCredentials(user.Email, user.Password))
+            if (_userService.ValidateCredentials(user.Email, user.Password))
            {
-               AuthorizationService.LogUserIn(user);
+               _userService.LogUserIn(user);
                return RedirectToAction<TicketController>(x => x.TicketList(1));
            }
 
@@ -54,8 +51,8 @@ namespace Trakker.Controllers
 
         public ActionResult Logout()
         {
-            AuthorizationService.LogUserOut();
-            AuthorizationService.CurrentUser = null;
+            _userService.LogUserOut();
+            _userService.CurrentUser = null;
 
             return View(new LogoutViewData());
         }

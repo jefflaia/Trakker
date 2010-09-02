@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Trakker.Data.Interfaces.SqlServer;
 using Trakker.Data;
 using System.Web;
 
@@ -16,10 +15,10 @@ namespace Trakker.Services
         protected const string COOKIE_NAME = "Project";
 
 
-        public ProjectService()
+        public ProjectService(IProjectRepository projectRepository, ITicketRepository ticketRepository)
         {
-            _projectRepository = new ProjectRepository();
-            _ticketRepository = new TicketRepository();
+            _projectRepository = projectRepository;
+            _ticketRepository = ticketRepository;
 
             HttpCookie cookie = HttpContext.Current.Request.Cookies.Get(COOKIE_NAME);
 

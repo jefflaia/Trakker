@@ -4,19 +4,24 @@ using System.Linq;
 using System.Text;
 using AutoMapper;
 using System.Data.Linq;
-using Trakker.Data.Interfaces.SqlServer;
+using Trakker.Data;
 
 namespace Trakker.Data
 {
-    using Sql = Access.SqlServer;
+    using Sql = Access;
 
     public class ProjectRepository : IProjectRepository
     {
-        protected Sql.TrakkerDBDataContext _db = new Sql.TrakkerDBDataContext();
+        protected DataContext _db;
+
+        public ProjectRepository(IDataContextProvider dataContext)
+        {
+            _db = dataContext.DataContext;
+        }
 
         public IQueryable<Project> GetProjects()
         {
-            return from p in _db.Projects
+            return from p in _db.GetTable<Sql.Project>()
                    select new Project()
                    {
                        ProjectId = p.ProjectId,
@@ -54,7 +59,7 @@ namespace Trakker.Data
 
         public IQueryable<Component> GetComponents()
         {
-            return from c in _db.Components
+            return from c in _db.GetTable<Sql.Component>()
                    select new Component()
                    {
                        ComponentId = c.ComponentId,

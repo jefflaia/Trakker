@@ -8,16 +8,20 @@ using AutoMapper;
 
 namespace Trakker.Data
 {
-    using Sql = Access.SqlServer;
+    using Sql = Trakker.Data.Access;
 
     public class TicketRepository : ITicketRepository
     {
-        protected Sql.TrakkerDBDataContext _db = new Sql.TrakkerDBDataContext();
+        protected DataContext _db;
 
+        public TicketRepository(IDataContextProvider dataContext)
+        {
+            _db = dataContext.DataContext;
+        }
 
         public IQueryable<Severity> GetSeverities()
         {
-            return from s in _db.Severities
+            return from s in _db.GetTable<Sql.Severity>()
                    select new Severity
                    {
                        SeverityId = s.SeverityId,
@@ -29,7 +33,7 @@ namespace Trakker.Data
 
         public IQueryable<Priority> GetPriorities()
         {
-            return from p in _db.Priorities
+            return from p in _db.GetTable<Sql.Priority>()
                    select new Priority
                    {
                        PriorityId = p.PriorityId,
@@ -41,7 +45,7 @@ namespace Trakker.Data
 
         public IQueryable<Category> GetCategories()
         {
-            return from t in _db.Categories
+            return from t in _db.GetTable<Sql.Category>()
                    select new Category
                    {
                        CategoryId = t.CategoryId,
@@ -52,9 +56,7 @@ namespace Trakker.Data
 
         public IQueryable<Ticket> GetTickets()
         {
-            IUserRepository userRepository = new UserRepository();
-
-            return from t in _db.Tickets
+           return from t in _db.GetTable<Sql.Ticket>()
                    select new Ticket
                    {
                        TicketId = t.TicketId,
@@ -78,7 +80,7 @@ namespace Trakker.Data
 
         public IQueryable<Status> GetStatus()
         {
-            return from s in _db.Status
+            return from s in _db.GetTable<Sql.Status>()
                    select new Status
                    {
                        StatusId = s.StatusId,
@@ -89,7 +91,7 @@ namespace Trakker.Data
 
         public IQueryable<Comment> GetComments()
         {
-            return from c in _db.Comments
+            return from c in _db.GetTable<Sql.Comment>()
                    select new Comment
                    {
                        CommentId = c.CommentId,

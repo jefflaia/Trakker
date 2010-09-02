@@ -101,6 +101,7 @@
   <ItemGroup>
     <Compile Include="Attributes\ActionFilters\AuthenticateAttribute.cs" />
     <Compile Include="Attributes\ActionFilters\UserInRoleAttribute.cs" />
+    <Compile Include="IoC\WindsorContainerProvider.cs" />
     <Compile Include="Controllers\ConventionController.cs" />
     <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Controllers\NavController.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="Helpers\IsCurrentActionHelper.cs" />
     <Compile Include="Helpers\WidgetAction.cs" />
     <Compile Include="Helpers\Pagination.cs" />
+    <Compile Include="IoC\CastleConfigFileSection.cs" />
     <Compile Include="Routes\ProjectRoutes.cs" />
     <Compile Include="Routes\TicketRoutes.cs" />
     <Compile Include="Routes\UserRoutes.cs" />
@@ -146,7 +148,7 @@
     <Compile Include="ViewData\UserData\CreateEditUserViewData.cs" />
     <Compile Include="ViewData\UserData\LogoutViewData.cs" />
     <Compile Include="ViewData\UserData\LoginViewData.cs" />
-    <Compile Include="WindsorControllerFactory.cs" />
+    <Compile Include="IoC\WindsorControllerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\Icons.png" />

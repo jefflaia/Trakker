@@ -1,24 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Trakker.Data;
-
+using System.Collections.Generic;
 namespace Trakker.Services
 {
     public interface IUserService
     {
-        User GetUserWithId(int id);
-        User GetUserWithEmail(string email);
-
-        void Save(User user);
-
-        IList<User> GetAllUsers();
-
+        User CurrentUser { get; set; }
         IList<Role> GetAllRoles();
-
-        string SaltGenerator();
+        IList<User> GetAllUsers();
+        User GetUserWithEmail(string email);
+        User GetUserWithId(int id);
         string HashPassword(string password, string salt);
-
+        bool IsUserLoggedIn();
+        void LogUserIn(User user);
+        void LogUserOut();
+        string SaltGenerator();
+        void Save(User user);
+        bool ValidateCredentials(string email, string password);
     }
 }

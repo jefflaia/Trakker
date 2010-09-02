@@ -15,9 +15,9 @@ namespace Trakker.Tests.Data.Filters
         protected ITicketRepository _ticketRepository;
 
 
-        public StatusFiltersTests()
+        public StatusFiltersTests(ITicketRepository ticketRepository)
         {
-            _ticketRepository = new TicketRepository();
+            _ticketRepository = ticketRepository;
         }
 
         [Test]

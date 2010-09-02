@@ -7,15 +7,20 @@ using System.Data.Linq;
 
 namespace Trakker.Data
 {
-    using Sql = Access.SqlServer;
+    using Sql = Access;
 
     public class UserRepository : IUserRepository
     {
-        protected Sql.TrakkerDBDataContext _db = new Sql.TrakkerDBDataContext();
+        protected DataContext _db;
+
+        public UserRepository(IDataContextProvider dataContext)
+        {
+            _db = dataContext.DataContext;
+        }
 
         public IQueryable<User> GetUsers()
         {
-            return from u in _db.Users
+            return from u in _db.GetTable<Sql.User>()
                    select new User()
                    {
                        UserId = u.UserId,
@@ -68,7 +73,7 @@ namespace Trakker.Data
 
         public IQueryable<Role> GetRoles()
         {
-            return from r in _db.Roles
+            return from r in _db.GetTable<Sql.Role>()
                    select new Role()
                    {
                        RoleId = r.RoleId,

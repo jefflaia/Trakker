@@ -13,9 +13,29 @@ namespace Trakker.Services
        protected IUserRepository _userRepository;
        const int SALT_LENGTH = 10;
 
-       public UserService()
+       private User _currentUser;
+       public User CurrentUser
        {
-           _userRepository = new UserRepository();
+           get
+           {
+               if (_currentUser == null)
+               {
+                   return GetUser();
+               }
+               else
+               {
+                   return _currentUser;
+               }
+           }
+           set
+           {
+               _currentUser = value;
+           }
+       }
+
+       public UserService(IUserRepository userRepository)
+       {
+           _userRepository = userRepository;
        }
 
        public User GetUserWithId(int id)
@@ -103,6 +123,57 @@ namespace Trakker.Services
            return hashValue;
 
        }
-       
+
+       public bool IsUserLoggedIn()
+       {
+           if (GetUser() != null)
+           {
+               return true;
+           }
+
+           return false;
+       }
+
+       public bool ValidateCredentials(string email, string password)
+       {
+           User user = GetUserWithEmail(email);
+           string hashedPassword = HashPassword(password, user.Salt);
+
+           if (user == null)
+           {
+               return false;
+           }
+
+           if (String.Compare(user.Password, hashedPassword, false) == 0)
+           {
+               return true;
+           }
+
+           return false;
+       }
+
+       public void LogUserIn(User user)
+       {
+           CurrentUser = GetUserWithEmail(user.Email);
+           SessionHandler.CreateCookie(user.Email);
+       }
+
+       public void LogUserOut()
+       {
+           SessionHandler.RemoveCookie();
+           CurrentUser = null;
+       }
+
+       protected User GetUser()
+       {
+           string cookieValue = SessionHandler.ReadCookie();
+
+           if (!cookieValue.Equals(string.Empty))
+           {
+               return GetUserWithEmail(cookieValue);
+           }
+
+           return null;
+       }
    }
 }

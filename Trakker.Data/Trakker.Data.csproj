@@ -92,21 +92,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Access\Interfaces\ITicketRepository.cs" />
-    <Compile Include="Access\Interfaces\IUserRepository.cs" />
-    <Compile Include="Access\Interfaces\IProjectRepository.cs" />
-    <Compile Include="Access\SqlServer\ProjectRepository.cs" />
-    <Compile Include="Access\SqlServer\TicketRepository.cs" />
-    <Compile Include="Access\SqlServer\TrakkerDB.cs">
+    <Compile Include="Repositories\Interfaces\ITicketRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IUserRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IProjectRepository.cs" />
+    <Compile Include="Repositories\ProjectRepository.cs" />
+    <Compile Include="Repositories\TicketRepository.cs" />
+    <Compile Include="Access\TrakkerDB.cs">
       <DependentUpon>TrakkerDB.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Access\SqlServer\TrakkerDB.designer.cs">
+    <Compile Include="Access\TrakkerDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TrakkerDB.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Access\SqlServer\TrakkerDBDataContext.cs" />
-    <Compile Include="Access\SqlServer\UserRepository.cs" />
+    <Compile Include="Access\TrakkerDBDataContext.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="ConnectionStringProvider.cs" />
     <Compile Include="DataContextProvider.cs" />
     <Compile Include="Filter\BaseFilters.cs" />
@@ -144,7 +144,7 @@
     <Compile Include="Utilities\SlugGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Access\SqlServer\TrakkerDB.dbml">
+    <None Include="Access\TrakkerDB.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>TrakkerDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
@@ -158,7 +158,7 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Access\SqlServer\TrakkerDB.dbml.layout">
+    <None Include="Access\TrakkerDB.dbml.layout">
       <DependentUpon>TrakkerDB.dbml</DependentUpon>
     </None>
   </ItemGroup>
@@ -179,6 +179,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

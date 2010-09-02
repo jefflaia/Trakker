@@ -4,6 +4,8 @@ using System.Web.Mvc;
 using Trakker.Services;
 using System.Web;
 using System.Web.Security;
+using Trakker.IoC;
+
 
 namespace Trakker.Attributes
 {
@@ -12,14 +14,15 @@ namespace Trakker.Attributes
 
         public AuthenticateAttribute()
         {
-           
+            
         }
 
 
         public override void OnActionExecuting(ActionExecutingContext actionContext)
         {
+            IUserService userSerivce = WindsorContainerProvider.GetInstance().Resolve<IUserService>();
 
-            if (AuthorizationService.IsUserLoggedIn()) return;
+            if (userSerivce.CurrentUser != null) return;
 
             HttpContext ctx = HttpContext.Current;
 

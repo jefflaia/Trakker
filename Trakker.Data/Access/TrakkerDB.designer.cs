@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Trakker.Data.Access.SqlServer
+namespace Trakker.Data.Access
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
