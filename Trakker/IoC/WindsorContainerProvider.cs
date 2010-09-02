@@ -27,11 +27,15 @@ namespace Trakker.IoC
             return _container;
         }
 
-
         public static string GetConfigPath()
         {
             CastleConfigFileSection fileSection = (CastleConfigFileSection)ConfigurationManager.GetSection("castleConfigFile");
             return fileSection.File.Path;
+        }
+
+        public static void Resolve<T>()
+        {
+            GetInstance().Resolve<T>();
         }
     }
 }

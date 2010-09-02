@@ -107,8 +107,8 @@
     </Compile>
     <Compile Include="Access\TrakkerDBDataContext.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
-    <Compile Include="ConnectionStringProvider.cs" />
-    <Compile Include="DataContextProvider.cs" />
+    <Compile Include="Access\ConnectionStringProvider.cs" />
+    <Compile Include="Access\DataContextProvider.cs" />
     <Compile Include="Filter\BaseFilters.cs" />
     <Compile Include="Filter\Project\ProjectFilters.cs" />
     <Compile Include="Filter\Ticket\CategoryFilters.cs" />
@@ -118,8 +118,8 @@
     <Compile Include="Filter\Ticket\StatusFilters.cs" />
     <Compile Include="Filter\Ticket\TicketFilters.cs" />
     <Compile Include="Filter\User\UserFilters.cs" />
-    <Compile Include="IConnectionStringProvider.cs" />
-    <Compile Include="IDataContextProvider.cs" />
+    <Compile Include="Access\IConnectionStringProvider.cs" />
+    <Compile Include="Access\IDataContextProvider.cs" />
     <Compile Include="Models\Paginated.cs" />
     <Compile Include="Models\Project\Project.cs" />
     <Compile Include="Models\Ticket\Comment.cs" />
