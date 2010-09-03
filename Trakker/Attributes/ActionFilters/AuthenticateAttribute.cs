@@ -9,10 +9,10 @@ using Trakker.IoC;
 
 namespace Trakker.Attributes
 {
-    public class AuthenticateAttribute : ActionFilterAttribute
+    public class AuthenticateAttribute : BaseAuthorizationActionFilterAttribute
     {
 
-        public AuthenticateAttribute()
+        public AuthenticateAttribute() : base()
         {
             
         }
@@ -20,9 +20,7 @@ namespace Trakker.Attributes
 
         public override void OnActionExecuting(ActionExecutingContext actionContext)
         {
-            IUserService userSerivce = WindsorContainerProvider.GetInstance().Resolve<IUserService>();
-
-            if (userSerivce.CurrentUser != null) return;
+            if (_userService.CurrentUser != null) return;
 
             HttpContext ctx = HttpContext.Current;
 

@@ -33,9 +33,9 @@ namespace Trakker.IoC
             return fileSection.File.Path;
         }
 
-        public static void Resolve<T>()
+        public static T Resolve<T>()
         {
-            GetInstance().Resolve<T>();
+            return GetInstance().Resolve<T>();
         }
     }
 }
