@@ -10,6 +10,9 @@ using AutoMapper;
 using System.Web.Security;
 using Trakker.Attributes;
 using System.Data.SqlTypes;
+using Trakker.Helpers;
+using System.Web.UI;
+using System.Collections;
 
 namespace Trakker.Controllers
 {
@@ -22,15 +25,26 @@ namespace Trakker.Controllers
            // var test = uR.GetById(1);
 
             _userService = userService;
-
+            
         }
         
 
         public ActionResult Login()
         {
-            
+            ICollection<User> c = (ICollection<User>)_userService.GetAllUsers();
 
-            return View(new LoginViewData());
+            var table = new HtmlTableBuilder<User>(c);
+            table.IgnoreProperty(x => x.Salt);
+            table.IgnoreProperty(x => x.Password);
+            table.IgnoreProperty(x => x.RoleId);
+            table.IgnoreProperty(x => x.HasLoggedIn());
+
+            var viewData = new LoginViewData()
+                {
+                    Table = table
+                };
+
+            return View(viewData);
         }
 
         [HttpPost]

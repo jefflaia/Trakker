@@ -15,8 +15,14 @@
         
         <label for="Password">Password:</label>
         <%= Html.Password("Password", Model.View.Password)%>
-        
+
         <%= Html.Button("Login", "Login", HtmlButtonType.Submit) %>
     
     <% } %>
+
+    <%
+    
+        Model.View.Table.Render();
+     %>
+
 </asp:Content>
