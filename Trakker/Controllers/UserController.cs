@@ -36,8 +36,8 @@ namespace Trakker.Controllers
             var table = new HtmlTableBuilder<User>(c);
             table.IgnoreProperty(x => x.Salt);
             table.IgnoreProperty(x => x.Password);
+            table.IgnoreProperty(x => x.LastLogin);
             table.IgnoreProperty(x => x.RoleId);
-            table.IgnoreProperty(x => x.HasLoggedIn());
 
             var viewData = new LoginViewData()
                 {

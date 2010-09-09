@@ -44,9 +44,9 @@ namespace Trakker.Helpers
             _propertiesToIgnore.Add(name, name);
         }
 
-        public void IgnoreProperty(Expression<Func<T, object>> expression)
+        public void IgnoreProperty<TResult>(Expression<Func<T, TResult>> expression)
         {
-           string name = expression.GetPropertyName<T>();
+           string name = expression.GetPropertyName();
             _propertiesToIgnore.Add(name, name);
         }
 
