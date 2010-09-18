@@ -11,122 +11,138 @@ using System.Web.UI.WebControls;
 using Trakker.Helpers.Table;
 using System.Web.UI;
 using System.Linq.Expressions;
+using Trakker.Helpers.Table.Controls;
+
 namespace Trakker.Helpers
 {
+    /*
+    Type cellType = typeof(HtmlTableCell<>);
+
+    Type propertyType = property.PropertyType;
+
+    Type constructedType = cellType.MakeGenericType(propertyType);
+
+    var cell = Activator.CreateInstance(constructedType, _writer);
+    * */
+
     public class HtmlTableBuilder<T> 
     {
-        private ICollection<T> _collection;
-        private IList _properties;
+        private IList<T> _items;
+        private IDictionary<string, PropertyInfo> _properties;
         private HtmlTextWriter _writer;
-        private IDictionary<string, string> _propertiesToIgnore;
+        private IDictionary<string, ITableColumn> _columns;
 
-        protected const string TAG = "table";
-        protected const string THEAD_TAG = "thead";
-        protected const string TFOOT_TAG = "tfoot";
-        protected const string TBODY_TAG = "tbody";
-        protected const string TABLE_HEADER_TAG = "th";
-        protected const string TABLE_DATA_TAG = "td";
-
-        public HtmlTableBuilder(ICollection<T> collection)
+        public HtmlTableBuilder(IList<T> items)
         {
+            _items = items;
+            _properties = new Dictionary<string, PropertyInfo>();
             _writer = new HtmlTextWriter(HttpContext.Current.Response.Output);
-            _collection = collection;
-            _properties = typeof(T).GetProperties().ToList();
-            _propertiesToIgnore = new Dictionary<string, string>();
-
-            Rows = new Collection<IHtmlTableRow>();
-            Header = new HtmlTableRow(_writer);
-            ShowTableHeaders = true;
-        }
-
-        public void IgnoreProperty(string name)
-        {
-            _propertiesToIgnore.Add(name, name);
-        }
-
-        public void IgnoreProperty<TResult>(Expression<Func<T, TResult>> expression)
-        {
-           string name = expression.GetPropertyName();
-            _propertiesToIgnore.Add(name, name);
-        }
-
-
-
-        
-        public ICollection<IHtmlTableRow> Rows { get; set; }
-
-        public bool ShowTableHeaders { get; set; }
-        
-        public IHtmlTableRow Header { get; set; }
-        
-        public bool HasPropertyIgnored(string name)
-        {            
-            return _propertiesToIgnore.ContainsKey(name);
-        }
-
-        protected void BuildTableHeader()
-        {
-            foreach (PropertyInfo property in _properties)
+            _columns = new Dictionary<string, ITableColumn>();
+            PropertyInfo[] properties = typeof(T).GetProperties();
+           
+            for (int i = 0; i < properties.Length; i++)
             {
-                if(HasPropertyIgnored(property.Name) == false)
-                {
-                    HtmlTableCell cell = new HtmlTableCell(_writer)
-                    {
-                        Tag = TABLE_HEADER_TAG
-                    };
+                _properties.Add(properties[i].Name, properties[i]);
+            }
 
-                    cell.InnerText = property.Name;
-                    Header.AddCell(cell);
-                }
+            Initialize();
+            
+            //create columns if none have been created in Initialize()
+            if (_columns.Count <= 0)
+            {
+                CreateColumns();
             }
         }
 
-        protected void BuildTableBody()
+        public virtual void Initialize()
         {
-            foreach (T item in _collection)
+        }
+
+        public ITableColumn CreateColumn<TControl>(string name)
+        {
+            Type type = typeof(TControl);
+
+            TableControl control = (TableControl)Activator.CreateInstance(type);
+
+            ITableColumn column = new TableColumn(name).SetControl(control);
+
+            _columns.Add(name, column);
+
+            return _columns[name];
+        }
+
+        public ITableColumn CreateColumn<TControl, TResult>(Expression<Func<T, TResult>> expression)
+        {
+            return CreateColumn<TControl>(expression.GetPropertyName());
+        }
+        
+        public ITableColumn GetColumn<TResult>(Expression<Func<T, TResult>> expression)
+        {
+            string name = expression.GetPropertyName();
+            if (ColumnExists(name))
             {
-                IHtmlTableRow row = new HtmlTableRow(_writer);
+                return _columns[name];
+            }
 
-                foreach (PropertyInfo property in _properties)
-                {
-                    if (HasPropertyIgnored(property.Name) == false)
+            return null;
+        }
+
+        public ITableColumn GetColumn(string name)
+        {
+            if (ColumnExists(name))
+            {
+                return _columns[name];
+            }
+
+            return null;
+        }
+
+   
+        protected void CreateColumns()
+        {
+            foreach (KeyValuePair<string, PropertyInfo> propertyPair in _properties)
+            {
+                _columns.Add(propertyPair.Value.Name, new TableColumn(propertyPair.Value.Name)
                     {
-                        HtmlTableCell cell = new HtmlTableCell(_writer);
-                        cell.InnerText = property.GetValue(item, null).ToString();
-                        row.AddCell(cell);
-                    }
-                }
+                        Name = propertyPair.Value.Name
+                    });
+            }
+        }
 
-                Rows.Add(row);
-            }           
+
+        protected Boolean ColumnExists(string name)
+        {
+            return _columns.ContainsKey(name);
         }
 
         public void Render()
         {
-            BuildTableHeader();
-            BuildTableBody();
+            _writer.RenderBeginTag("table");
 
-            _writer.RenderBeginTag(TAG);
-
-            if (ShowTableHeaders)
+            _writer.RenderBeginTag("thead");
+            foreach (KeyValuePair<String, ITableColumn> column in _columns)
             {
-                _writer.RenderBeginTag(THEAD_TAG);
-                Header.Render();
+                column.Value.RenderTableHeader(_writer);
+            }
+            _writer.RenderEndTag(); //thead
+
+
+            _writer.RenderBeginTag("tbody");
+            foreach(T item in _items)
+            {
+                _writer.RenderBeginTag("tr");
+                foreach (KeyValuePair<String, ITableColumn> column in _columns)
+                {
+                    PropertyInfo property = _properties[column.Value.Name];
+
+                    column.Value.RenderTableData(property.GetValue(item, null), _writer);
+                }
                 _writer.RenderEndTag();
             }
+                 
+            _writer.RenderEndTag(); //tbody
 
-            _writer.RenderBeginTag(TFOOT_TAG);
-            _writer.RenderEndTag();
-
-
-            _writer.RenderBeginTag(TBODY_TAG);
-            foreach (IHtmlTableRow row in Rows)
-            {
-                row.Render();
-            }
-            _writer.RenderEndTag();
-
-            _writer.RenderEndTag();
+            _writer.RenderEndTag(); //table
         }
     }
 }

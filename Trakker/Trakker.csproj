@@ -103,11 +103,12 @@
     <Compile Include="Attributes\ActionFilters\UserInRoleAttribute.cs" />
     <Compile Include="Attributes\BaseAuthorizationActionFilterAttribute.cs" />
     <Compile Include="Helpers\Extensions\ExpressionExtensions.cs" />
-    <Compile Include="Helpers\Table\HtmlTableCell.cs" />
-    <Compile Include="Helpers\Table\HtmlTableRow.cs" />
+    <Compile Include="Helpers\Table\Controls\DateFormatControl.cs" />
+    <Compile Include="Helpers\Table\Controls\TableControl.cs" />
     <Compile Include="Helpers\Table\HtmlTableBuilder.cs" />
-    <Compile Include="Helpers\Table\IHtmlTableCell.cs" />
-    <Compile Include="Helpers\Table\IHtmlTableRow.cs" />
+    <Compile Include="Helpers\Table\ITableColumn.cs" />
+    <Compile Include="Helpers\Table\TableColumn.cs" />
+    <Compile Include="Helpers\Table\TestTable.cs" />
     <Compile Include="IoC\WindsorContainerProvider.cs" />
     <Compile Include="Controllers\ConventionController.cs" />
     <Compile Include="Controllers\MasterController.cs" />
@@ -232,6 +233,7 @@
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

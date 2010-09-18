@@ -10,9 +10,12 @@ using AutoMapper;
 using System.Web.Security;
 using Trakker.Attributes;
 using System.Data.SqlTypes;
-using Trakker.Helpers;
 using System.Web.UI;
 using System.Collections;
+using System.Web.UI.HtmlControls;
+using Trakker.Helpers.Table.Controls;
+using Trakker.Helpers.Table;
+
 
 namespace Trakker.Controllers
 {
@@ -31,13 +34,20 @@ namespace Trakker.Controllers
 
         public ActionResult Login()
         {
-            ICollection<User> c = (ICollection<User>)_userService.GetAllUsers();
+            var t  = new HtmlTable();
+            var td = new HtmlTableCell();
+            
+            IList<User> c = _userService.GetAllUsers();
 
-            var table = new HtmlTableBuilder<User>(c);
-            table.IgnoreProperty(x => x.Salt);
-            table.IgnoreProperty(x => x.Password);
-            table.IgnoreProperty(x => x.LastLogin);
-            table.IgnoreProperty(x => x.RoleId);
+            var table = new TestTable(c);
+
+            var control = table.CreateColumn<DateFormatControl>("UserId")
+                .SetHeaderText("Yeah user baby");
+            
+
+           table.GetColumn(x=>x.Created).SetControl(new DateFormatControl());
+           table.GetColumn(x => x.UserId).Ignore = true;
+             
 
             var viewData = new LoginViewData()
                 {
