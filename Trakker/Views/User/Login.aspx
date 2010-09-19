@@ -25,4 +25,12 @@
         Model.View.Table.Render();
      %>
 
+     <textarea class="test" id="test"></textarea>
+     		<script type="text/javascript">
+		//<![CDATA[
+     		    // Replace the <textarea id="editor1"> with an CKEditor instance.
+     		    var editor = CKEDITOR.replace('test');
+		//]]>
+		</script>
+
 </asp:Content>
