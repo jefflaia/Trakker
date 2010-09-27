@@ -11,16 +11,20 @@ namespace Trakker.Data
 
     public class UserRepository : IUserRepository
     {
-        protected DataContext _db;
+        protected DataContext _dataContext;
+        protected Table<Sql.Role> _rolesTable;
+        protected Table<Sql.User> _usersTable;
 
         public UserRepository(IDataContextProvider dataContext)
         {
-            _db = dataContext.DataContext;
+            _dataContext = dataContext.DataContext;
+            _rolesTable = _dataContext.GetTable<Sql.Role>();
+            _usersTable = _dataContext.GetTable<Sql.User>();
         }
 
         public IQueryable<User> GetUsers()
         {
-            return from u in _db.GetTable<Sql.User>()
+            return from u in _usersTable
                    select new User()
                    {
                        UserId = u.UserId,
@@ -38,42 +42,33 @@ namespace Trakker.Data
 
         public void Save(User user)
         {
-            using(Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
+            Mapper.CreateMap<User, Sql.User>();
+            Sql.User u = Mapper.Map<User, Sql.User>(user);
+
+            if (user.UserId == 0)
             {
+                _usersTable.InsertOnSubmit(u);
+            }
+            else
+            {
+                _usersTable.Attach(u);
+                _usersTable.Context.Refresh(RefreshMode.KeepCurrentValues, u);
+            }
 
-                Mapper.CreateMap<User, Sql.User>();
-                Sql.User u = Mapper.Map<User, Sql.User>(user);
-
-                if (user.UserId == 0)
-                {
-                    ctx.Users.InsertOnSubmit(u);
-                }
-                else
-                {
-                    ctx.Users.Attach(u);
-                    ctx.Users.Context.Refresh(RefreshMode.KeepCurrentValues, u);
-                }
-
-                ctx.SubmitChanges();
-
-                user.UserId = u.UserId;
-            };
+            user.UserId = u.UserId;
         }
 
         public void DeleteUser(int id)
         {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
-            {
-                ctx.Users.DeleteAllOnSubmit(from u in ctx.Users
-                                               where u.UserId == id
-                                               select u);
-                ctx.SubmitChanges();
-            }
+            _usersTable.DeleteAllOnSubmit(from u in _usersTable
+                                            where u.UserId == id
+                                            select u);
+   
         }
 
         public IQueryable<Role> GetRoles()
         {
-            return from r in _db.GetTable<Sql.Role>()
+            return from r in _rolesTable
                    select new Role()
                    {
                        RoleId = r.RoleId,
@@ -84,26 +79,20 @@ namespace Trakker.Data
 
         public void Save(Role role)
         {
-
-            var roleTable = _db.GetTable<Sql.Role>();
-
             Mapper.CreateMap<Role, Sql.Role>();
             Sql.Role r = Mapper.Map<Role, Sql.Role>(role);
 
             if (r.RoleId == 0)
             {
-                roleTable.InsertOnSubmit(r);
+                _rolesTable.InsertOnSubmit(r);
             }
             else
             {
-                roleTable.Attach(r);
-                roleTable.Context.Refresh(RefreshMode.KeepCurrentValues, r);
+                _rolesTable.Attach(r);
+                _rolesTable.Context.Refresh(RefreshMode.KeepCurrentValues, r);
             }
 
-            
-
             role.RoleId = r.RoleId;
-            
         }
     }
 }

@@ -12,16 +12,23 @@ namespace Trakker.Data
 
     public class ProjectRepository : IProjectRepository
     {
-        protected DataContext _db;
+        protected DataContext _dataContext;
+        protected Table<Sql.Project> _projectsTable;
+        protected Table<Sql.Component> _componentsTable;
+
+
+
 
         public ProjectRepository(IDataContextProvider dataContext)
         {
-            _db = dataContext.DataContext;
+            _dataContext = dataContext.DataContext;
+            _projectsTable = _dataContext.GetTable<Sql.Project>();
+            _componentsTable = _dataContext.GetTable<Sql.Component>();
         }
 
         public IQueryable<Project> GetProjects()
         {
-            return from p in _db.GetTable<Sql.Project>()
+            return from p in _projectsTable
                    select new Project()
                    {
                        ProjectId = p.ProjectId,
@@ -35,31 +42,26 @@ namespace Trakker.Data
 
         public void Save(Project project)
         {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
+
+            Mapper.CreateMap<Project, Sql.Project>();
+            Sql.Project p = Mapper.Map<Project, Sql.Project>(project);
+
+            if (project.ProjectId == 0)
             {
+                _projectsTable.InsertOnSubmit(p);
+            }
+            else
+            {
+                _projectsTable.Attach(p);
+                _projectsTable.Context.Refresh(RefreshMode.KeepCurrentValues, p);
+            }
 
-                Mapper.CreateMap<Project, Sql.Project>();
-                Sql.Project p = Mapper.Map<Project, Sql.Project>(project);
-
-                if (project.ProjectId == 0)
-                {
-                    ctx.Projects.InsertOnSubmit(p);
-                }
-                else
-                {
-                    ctx.Projects.Attach(p);
-                    ctx.Projects.Context.Refresh(RefreshMode.KeepCurrentValues, p);
-                }
-
-                ctx.SubmitChanges();
-
-                project.ProjectId = p.ProjectId;
-            };
+            project.ProjectId = p.ProjectId;
         }
 
         public IQueryable<Component> GetComponents()
         {
-            return from c in _db.GetTable<Sql.Component>()
+            return from c in _componentsTable
                    select new Component()
                    {
                        ComponentId = c.ComponentId,
@@ -73,25 +75,21 @@ namespace Trakker.Data
 
         public void SaveComponent(Component component)
         {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
+            Mapper.CreateMap<Component, Sql.Component>();
+            Sql.Component c = Mapper.Map<Component, Sql.Component>(component);
+
+            if (component.ComponentId == 0)
             {
-                Mapper.CreateMap<Component, Sql.Component>();
-                Sql.Component c = Mapper.Map<Component, Sql.Component>(component);
+                _componentsTable.InsertOnSubmit(c);
+            }
+            else
+            {
+                _componentsTable.Attach(c);
+                _componentsTable.Context.Refresh(RefreshMode.KeepCurrentValues, c);
+            }
 
-                if (component.ComponentId == 0)
-                {
-                    ctx.Components.InsertOnSubmit(c);
-                }
-                else
-                {
-                    ctx.Components.Attach(c);
-                    ctx.Components.Context.Refresh(RefreshMode.KeepCurrentValues, c);
-                }
 
-                ctx.SubmitChanges();
-
-                component.ComponentId = c.ComponentId;
-            };
+            component.ComponentId = c.ComponentId;
         }
     }
 }
