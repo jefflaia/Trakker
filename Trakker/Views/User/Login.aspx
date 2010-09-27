@@ -33,4 +33,6 @@
 		//]]>
 		</script>
 
+        <%= Html.CKEditorTextArea("somename", "somevalue", new { }) %>
+
 </asp:Content>

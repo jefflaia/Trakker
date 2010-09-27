@@ -13,7 +13,10 @@ div#Header div.Right{float: right; width: 400px; margin-right: 20px;}
 div#Header div.Right div{width: 100%; text-align: right;}
 
 div#SubHeader{width: 100%; background-image:url(/Content/Images/UI-Backgrounds.png); background-position: 0px -49px; height: 30px; border-bottom: 1px solid #667e9a;}
-div#Content{ margin: 10px 2%; width: 96%; }
+div#Content{ margin: 10px 0%; width: 100%; }
+div#Content div.InnerBorder{ position:relative; padding: 15px; margin:15px; display:block; border: 1px solid #ccc;}
+div#Content div.InnerBorder div.Inner{float: left;}
+
 
 
 /* Navigation */

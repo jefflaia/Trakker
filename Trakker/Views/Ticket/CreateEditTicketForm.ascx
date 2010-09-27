@@ -46,7 +46,7 @@
 
     <div class="Row">
         <label for="Description">Description:</label>
-        <%= Html.TextArea("Description", Model.Ticket.Description)%>
+        <%= Html.CKEditorTextArea("Description", Model.Ticket.Description, new { })%>
         <%= Html.ValidationMessage("Description", "*") %>
     </div>
 

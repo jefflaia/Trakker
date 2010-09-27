@@ -103,6 +103,7 @@
     <Compile Include="Attributes\ActionFilters\UserInRoleAttribute.cs" />
     <Compile Include="Attributes\BaseAuthorizationActionFilterAttribute.cs" />
     <Compile Include="Helpers\Extensions\ExpressionExtensions.cs" />
+    <Compile Include="Helpers\Extensions\TextAreaExtensions.cs" />
     <Compile Include="Helpers\Table\Controls\DateFormatControl.cs" />
     <Compile Include="Helpers\Table\Controls\TableControl.cs" />
     <Compile Include="Helpers\Table\HtmlTableBuilder.cs" />
@@ -814,9 +815,7 @@
     <None Include="Scripts\ckeditor\_samples\php\standalone.php" />
     <None Include="Scripts\ckeditor\_samples\sample_posteddata.php" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\Script\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

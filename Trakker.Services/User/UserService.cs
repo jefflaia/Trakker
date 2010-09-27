@@ -164,7 +164,7 @@ namespace Trakker.Services
            CurrentUser = null;
        }
 
-       protected User GetUser()
+       public User GetUser()
        {
            string cookieValue = SessionHandler.ReadCookie();
 
@@ -175,5 +175,11 @@ namespace Trakker.Services
 
            return null;
        }
+
+       public void Save(Role role)
+       {
+           _userRepository.Save(role);
+       }
+
    }
 }

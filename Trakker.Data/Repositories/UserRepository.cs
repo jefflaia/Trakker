@@ -84,26 +84,26 @@ namespace Trakker.Data
 
         public void Save(Role role)
         {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
+
+            var roleTable = _db.GetTable<Sql.Role>();
+
+            Mapper.CreateMap<Role, Sql.Role>();
+            Sql.Role r = Mapper.Map<Role, Sql.Role>(role);
+
+            if (r.RoleId == 0)
             {
+                roleTable.InsertOnSubmit(r);
+            }
+            else
+            {
+                roleTable.Attach(r);
+                roleTable.Context.Refresh(RefreshMode.KeepCurrentValues, r);
+            }
 
-                Mapper.CreateMap<Role, Sql.Role>();
-                Sql.Role r = Mapper.Map<Role, Sql.Role>(role);
+            
 
-                if (r.RoleId == 0)
-                {
-                    ctx.Roles.InsertOnSubmit(r);
-                }
-                else
-                {
-                    ctx.Roles.Attach(r);
-                    ctx.Roles.Context.Refresh(RefreshMode.KeepCurrentValues, r);
-                }
-
-                ctx.SubmitChanges();
-
-                role.RoleId = r.RoleId;
-            };
+            role.RoleId = r.RoleId;
+            
         }
     }
 }

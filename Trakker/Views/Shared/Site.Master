@@ -82,7 +82,9 @@
     <% } %>
 
     <div id="Content">
-        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        <div class="InnerBorder">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
     </div>
 </body>
 </html>

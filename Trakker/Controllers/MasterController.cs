@@ -8,6 +8,7 @@ using Trakker.Data;
 using Trakker.ViewData.SharedData;
 using Trakker.Core;
 using Trakker.Services;
+using Trakker.IoC;
 
 namespace Trakker.Controllers
 {
@@ -24,7 +25,11 @@ namespace Trakker.Controllers
             _projectService = projectService;
             _ticketService = ticketService;
             _userService = userSerivice;
+
+            UnitOfWork = WindsorContainerProvider.Resolve<IUnitOfWork>();
         }
+
+        protected IUnitOfWork UnitOfWork { get; set; }
 
         protected override MasterViewData GetMasterViewData()
         {

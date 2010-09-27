@@ -17,5 +17,7 @@ namespace Trakker.Services
         string SaltGenerator();
         void Save(User user);
         bool ValidateCredentials(string email, string password);
+
+        void Save(Role role);
     }
 }

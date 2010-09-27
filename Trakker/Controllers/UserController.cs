@@ -34,27 +34,53 @@ namespace Trakker.Controllers
 
         public ActionResult Login()
         {
-            var t  = new HtmlTable();
-            var td = new HtmlTableCell();
-            
-            IList<User> c = _userService.GetAllUsers();
+            using (UnitOfWork)
+            {
+                var t = new HtmlTable();
+                var td = new HtmlTableCell();
 
-            var table = new TestTable(c);
+                IList<User> c = _userService.GetAllUsers();
 
-            var control = table.CreateColumn<DateFormatControl>("UserId")
-                .SetHeaderText("Yeah user baby");
-            
+                try
+                {
 
-           table.GetColumn(x=>x.Created).SetControl(new DateFormatControl());
-           table.GetColumn(x => x.UserId).Ignore = true;
-             
+                    _userService.Save(new Role()
+                    {
+                        Description = "desc"
+                    });
 
-            var viewData = new LoginViewData()
+                    UnitOfWork.Commit();
+                }
+                catch (Exception e)
+                {
+                }
+
+                var table = new TestTable(c);
+
+
+
+
+
+                var control = table.CreateColumn<DateFormatControl>("UserId")
+                    .SetHeaderText("Yeah user baby");
+
+
+                table.GetColumn(x => x.Created).SetControl(new DateFormatControl());
+                table.GetColumn(x => x.UserId).Ignore = true;
+
+
+                var viewData = new LoginViewData()
                 {
                     Table = table
                 };
 
-            return View(viewData);
+                return View(viewData);
+               
+
+
+            }
+
+            
         }
 
         [HttpPost]
