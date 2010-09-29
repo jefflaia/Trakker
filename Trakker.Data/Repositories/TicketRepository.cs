@@ -12,16 +12,30 @@ namespace Trakker.Data
 
     public class TicketRepository : ITicketRepository
     {
-        protected DataContext _db;
+        protected DataContext _dataContext;
+        protected Table<Sql.Priority> _prioritiesTable;
+        protected Table<Sql.Severity> _severitiesTable;
+        protected Table<Sql.Category> _categoriesTable;
+        protected Table<Sql.Ticket> _ticketsTable;
+        protected Table<Sql.Status> _statusesTable;
+        protected Table<Sql.Comment> _commentsTable;
 
-        public TicketRepository(IDataContextProvider dataContext)
+
+        public TicketRepository(IDataContextProvider dataContextProvider)
         {
-            _db = dataContext.DataContext;
+            DataContext dataContext = dataContextProvider.DataContext;
+
+            _prioritiesTable = dataContext.GetTable<Sql.Priority>();
+            _severitiesTable = dataContext.GetTable<Sql.Severity>();
+            _categoriesTable = dataContext.GetTable<Sql.Category>();
+            _ticketsTable = dataContext.GetTable<Sql.Ticket>();
+            _statusesTable = dataContext.GetTable<Sql.Status>();
+            _commentsTable = dataContext.GetTable<Sql.Comment>();
         }
 
         public IQueryable<Severity> GetSeverities()
         {
-            return from s in _db.GetTable<Sql.Severity>()
+            return from s in _severitiesTable
                    select new Severity
                    {
                        SeverityId = s.SeverityId,
@@ -33,7 +47,7 @@ namespace Trakker.Data
 
         public IQueryable<Priority> GetPriorities()
         {
-            return from p in _db.GetTable<Sql.Priority>()
+            return from p in _prioritiesTable
                    select new Priority
                    {
                        PriorityId = p.PriorityId,
@@ -45,7 +59,7 @@ namespace Trakker.Data
 
         public IQueryable<Category> GetCategories()
         {
-            return from t in _db.GetTable<Sql.Category>()
+            return from t in _categoriesTable
                    select new Category
                    {
                        CategoryId = t.CategoryId,
@@ -56,7 +70,7 @@ namespace Trakker.Data
 
         public IQueryable<Ticket> GetTickets()
         {
-           return from t in _db.GetTable<Sql.Ticket>()
+           return from t in _ticketsTable
                    select new Ticket
                    {
                        TicketId = t.TicketId,
@@ -80,7 +94,7 @@ namespace Trakker.Data
 
         public IQueryable<Status> GetStatus()
         {
-            return from s in _db.GetTable<Sql.Status>()
+            return from s in _statusesTable
                    select new Status
                    {
                        StatusId = s.StatusId,
@@ -91,7 +105,7 @@ namespace Trakker.Data
 
         public IQueryable<Comment> GetComments()
         {
-            return from c in _db.GetTable<Sql.Comment>()
+            return from c in _commentsTable
                    select new Comment
                    {
                        CommentId = c.CommentId,
@@ -107,244 +121,181 @@ namespace Trakker.Data
 
         public void Save(Ticket Ticket)
         {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
-            {
-                //map the priority from our model to the dal object
-                Mapper.CreateMap<Ticket, Sql.Ticket>();
-                Sql.Ticket t = Mapper.Map<Ticket, Sql.Ticket>(Ticket);
+            //map the priority from our model to the dal object
+            Mapper.CreateMap<Ticket, Sql.Ticket>();
+            Sql.Ticket t = Mapper.Map<Ticket, Sql.Ticket>(Ticket);
 
-                t.Description = t.Description ?? string.Empty;
-                t.Created = t.Created.Equals(DateTime.MinValue) ? DateTime.Now : t.Created;
+            t.Description = t.Description ?? string.Empty;
+            t.Created = t.Created.Equals(DateTime.MinValue) ? DateTime.Now : t.Created;
 
                 
-                //check if the Ticket exists
-                if (Ticket.TicketId == 0)
-                {
-                    ctx.Tickets.InsertOnSubmit(t);
-                }
-                else
-                {
-                    ctx.Tickets.Attach(t);
-                    ctx.Tickets.Context.Refresh(RefreshMode.KeepCurrentValues, t);
-                }
+            //check if the Ticket exists
+            if (Ticket.TicketId == 0)
+            {
+                _ticketsTable.InsertOnSubmit(t);
+            }
+            else
+            {
+                _ticketsTable.Attach(t);
+                _ticketsTable.Context.Refresh(RefreshMode.KeepCurrentValues, t);
+            }
 
-                //submit the changes
-                ctx.SubmitChanges();
-
-                //set the id 
-                //needed for inserts, updates the id will stay the same
-                Ticket.TicketId = t.TicketId;
-            };
+            //set the id 
+            //needed for inserts, updates the id will stay the same
+            Ticket.TicketId = t.TicketId;
         }
 
         public void Save(Category category)
         {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
+            //map the priority from our model to the dal object
+            Mapper.CreateMap<Category, Sql.Category>();
+            Sql.Category c = Mapper.Map<Category, Sql.Category>(category);
+
+            if (category.CategoryId == 0)
             {
-                //map the priority from our model to the dal object
-                Mapper.CreateMap<Category, Sql.Category>();
-                Sql.Category c = Mapper.Map<Category, Sql.Category>(category);
+                _categoriesTable.InsertOnSubmit(c);
+            }
+            else
+            {
+                _categoriesTable.Attach(c);
+                _categoriesTable.Context.Refresh(RefreshMode.KeepCurrentValues, c);
+            }
 
-                if (category.CategoryId == 0)
-                {
-                    ctx.Categories.InsertOnSubmit(c);
-                }
-                else
-                {
-                    ctx.Categories.Attach(c);
-                    ctx.Categories.Context.Refresh(RefreshMode.KeepCurrentValues, c);
-                }
-
-                //submit the changes
-                ctx.SubmitChanges();
-
-                //set the id 
-                //needed for inserts, updates the id will stay the same
-                category.CategoryId = c.CategoryId;
-            };
+            //set the id 
+            //needed for inserts, updates the id will stay the same
+            category.CategoryId = c.CategoryId;
         }
 
         public void Save(Priority priority)
         {
 
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
+            //map the priority from our model to the dal object
+            Mapper.CreateMap<Priority, Sql.Priority>();
+            Sql.Priority p = Mapper.Map<Priority, Sql.Priority>(priority);
+
+            if (priority.PriorityId == 0)
             {
-                //map the priority from our model to the dal object
-                Mapper.CreateMap<Priority, Sql.Priority>();
-                Sql.Priority p = Mapper.Map<Priority, Sql.Priority>(priority);
-
-                if (priority.PriorityId == 0)
-                {
-                    ctx.Priorities.InsertOnSubmit(p);
-                }
-                else
-                {
-                    ctx.Priorities.Attach(p);
-                    ctx.Priorities.Context.Refresh(RefreshMode.KeepCurrentValues, p);
-                }
-
-                //submit the changes
-                ctx.SubmitChanges();
-
-                //set the id 
-                //needed for inserts, updates the id will stay the same
-                priority.PriorityId = p.PriorityId;
-
-              
+                _prioritiesTable.InsertOnSubmit(p);
             }
+            else
+            {
+                _prioritiesTable.Attach(p);
+                _prioritiesTable.Context.Refresh(RefreshMode.KeepCurrentValues, p);
+            }
+
+
+            //set the id 
+            //needed for inserts, updates the id will stay the same
+            priority.PriorityId = p.PriorityId;
         }
 
         public void Save(Status status)
         {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
+            //map the priority from our model to the dal object
+            Mapper.CreateMap<Status, Sql.Status>();
+            Sql.Status s = Mapper.Map<Status, Sql.Status>(status);
+
+            if (status.StatusId == 0)
             {
-                //map the priority from our model to the dal object
-                Mapper.CreateMap<Status, Sql.Status>();
-                Sql.Status s = Mapper.Map<Status, Sql.Status>(status);
+                _statusesTable.InsertOnSubmit(s);
+            }
+            else
+            {
+                _statusesTable.Attach(s);
+                _statusesTable.Context.Refresh(RefreshMode.KeepCurrentValues, s);
+            }
 
-                if (status.StatusId == 0)
-                {
-                    ctx.Status.InsertOnSubmit(s);
-                }
-                else
-                {
-                    ctx.Status.Attach(s);
-                    ctx.Status.Context.Refresh(RefreshMode.KeepCurrentValues, s);
-                }
-
-                //submit the changes
-                ctx.SubmitChanges();
-
-                //set the id 
-                //needed for inserts, updates the id will stay the same
-                status.StatusId = s.StatusId;
-            };
+            //set the id 
+            //needed for inserts, updates the id will stay the same
+            status.StatusId = s.StatusId;
         }
 
         public void Save(Severity severity)
         {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
+            //map the priority from our model to the dal object
+            Mapper.CreateMap<Severity, Sql.Severity>();
+            Sql.Severity s = Mapper.Map<Severity, Sql.Severity>(severity);
+
+            if (severity.SeverityId == 0)
             {
-                //map the priority from our model to the dal object
-                Mapper.CreateMap<Severity, Sql.Severity>();
-                Sql.Severity s = Mapper.Map<Severity, Sql.Severity>(severity);
+                _severitiesTable.InsertOnSubmit(s);
+            }
+            else
+            {
+                _severitiesTable.Attach(s);
+                _severitiesTable.Context.Refresh(RefreshMode.KeepCurrentValues, s);
+            }
 
-                if (severity.SeverityId == 0)
-                {
-                    ctx.Severities.InsertOnSubmit(s);
-                }
-                else
-                {
-                    ctx.Severities.Attach(s);
-                    ctx.Severities.Context.Refresh(RefreshMode.KeepCurrentValues, s);
-                }
-
-                ctx.SubmitChanges();
-
-                //set the id 
-                //needed for inserts, updates the id will stay the same
-                severity.SeverityId = s.SeverityId;
-            };
+            //set the id 
+            //needed for inserts, updates the id will stay the same
+            severity.SeverityId = s.SeverityId;
         }
 
         public void Save(Comment comment)
         {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
+            //map the priority from our model to the dal object
+            Mapper.CreateMap<Comment, Sql.Comment>();
+            Sql.Comment c = Mapper.Map<Comment, Sql.Comment>(comment);
+
+            if (comment.CommentId == 0)
             {
-                //map the priority from our model to the dal object
-                Mapper.CreateMap<Comment, Sql.Comment>();
-                Sql.Comment c = Mapper.Map<Comment, Sql.Comment>(comment);
+                _commentsTable.InsertOnSubmit(c);
+            }
+            else
+            {
+                _commentsTable.Attach(c);
+                _commentsTable.Context.Refresh(RefreshMode.KeepCurrentValues, c);
+            }
 
-                if (comment.CommentId == 0)
-                {
-                    ctx.Comments.InsertOnSubmit(c);
-                }
-                else
-                {
-                    ctx.Comments.Attach(c);
-                    ctx.Comments.Context.Refresh(RefreshMode.KeepCurrentValues, c);
-                }
-
-                ctx.SubmitChanges();
-
-                //set the id 
-                //needed for inserts, updates the id will stay the same
-                comment.CommentId = c.CommentId;
-            };
+            //set the id 
+            //needed for inserts, updates the id will stay the same
+            comment.CommentId = c.CommentId;
         }
 
         public void DeleteTicket(int id)
         {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
-            {
-                ctx.Tickets.DeleteAllOnSubmit(from t in ctx.Tickets
-                                where t.TicketId == id
-                                select t);
-
-                ctx.SubmitChanges();
-            }
+            _ticketsTable.DeleteAllOnSubmit(from t in _ticketsTable
+                            where t.TicketId == id
+                            select t);
         }
 
         public void DeleteCategory(int id)
         {
             using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
             {
-                ctx.Categories.DeleteAllOnSubmit(from t in ctx.Categories
+                _categoriesTable.DeleteAllOnSubmit(from t in _categoriesTable
                                             where t.CategoryId == id
                                             select t);
 
-                ctx.SubmitChanges();
             }
         }
 
         public void DeleteStatus(int id)
         {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
-            {
-                ctx.Status.DeleteAllOnSubmit(from t in ctx.Status
-                                            where t.StatusId == id
-                                            select t);
-
-                ctx.SubmitChanges();
-            }
+            _statusesTable.DeleteAllOnSubmit(from t in _statusesTable
+                                        where t.StatusId == id
+                                        select t);
         }
 
         public void DeleteSeverity(int id)
         {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
-            {
-                ctx.Severities.DeleteAllOnSubmit(from t in ctx.Severities
-                                            where t.SeverityId == id
-                                            select t);
-
-                ctx.SubmitChanges();
-            }
+            _severitiesTable.DeleteAllOnSubmit(from t in _severitiesTable
+                                        where t.SeverityId == id
+                                        select t);
         }
 
         public void DeletePriority(int id)
         {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
-            {
-                ctx.Priorities.DeleteAllOnSubmit(from t in ctx.Priorities
+            _prioritiesTable.DeleteAllOnSubmit(from t in _prioritiesTable
                                             where t.PriorityId == id
                                             select t);
-
-                ctx.SubmitChanges();
-            }
         }
 
         public void DeleteComment(int id)
         {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
-            {
-                ctx.Comments.DeleteAllOnSubmit(from c in ctx.Comments
+            _commentsTable.DeleteAllOnSubmit(from c in _commentsTable
                                                  where c.CommentId == id
                                                  select c);
-
-                ctx.SubmitChanges();
-            }
         }
-
-
     }
 }
