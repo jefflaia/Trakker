@@ -8,7 +8,7 @@ namespace Trakker.Data
         public bool IsClosed { get; set; }
         public string Summary { get; set; }
         public int CategoryId { get; set; }
-        public int SeverityId { get; set; }
+        public int ResolutionId { get; set; }
         public string Description { get; set; }
         public DateTime Created { get; set; }
         public DateTime DueDate { get; set; }

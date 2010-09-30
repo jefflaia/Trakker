@@ -31,5 +31,11 @@ namespace Trakker.Data
         void Save(Comment comment);
         void DeleteComment(int id);
 
+        /***** Resolution *****/
+        IQueryable<Resolution> GetResolutions();
+        void Save(Resolution resolution);
+        void DeleteResolution(int id);
+
+
     }
 }

@@ -27,12 +27,6 @@
     </div>
 
     <div class="Row">
-        <label for="SeverityId">Severity:</label>
-        <%= Html.DropDownList("SeverityId", new SelectList(Model.Severities, "SeverityId", "Name", Model.Ticket.SeverityId))%>
-        <%= Html.ValidationMessage("SeverityId", "*")%>
-    </div>
-
-    <div class="Row">
         <label for="CategoryId">Category:</label>
         <%= Html.DropDownList("CategoryId", new SelectList(Model.Categories, "CategoryId", "Name", Model.Ticket.CategoryId))%>
         <%= Html.ValidationMessage("CategoryId", "*")%>

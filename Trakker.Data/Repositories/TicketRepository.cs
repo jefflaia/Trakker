@@ -18,6 +18,7 @@ namespace Trakker.Data
         protected Table<Sql.Ticket> _ticketsTable;
         protected Table<Sql.Status> _statusesTable;
         protected Table<Sql.Comment> _commentsTable;
+        protected Table<Sql.Resolution> _resolutionTable;
 
 
         public TicketRepository(IDataContextProvider dataContextProvider)
@@ -29,6 +30,7 @@ namespace Trakker.Data
             _ticketsTable = dataContext.GetTable<Sql.Ticket>();
             _statusesTable = dataContext.GetTable<Sql.Status>();
             _commentsTable = dataContext.GetTable<Sql.Comment>();
+            _resolutionTable = dataContext.GetTable<Sql.Resolution>();
         }
 
         public IQueryable<Priority> GetPriorities()
@@ -65,16 +67,15 @@ namespace Trakker.Data
                        DueDate = t.DueDate,
                        PriorityId = t.PriorityId,
                        CategoryId = t.CategoryId,
+                       ResolutionId = t.ResolutionId,
                        Summary = t.Summary,
                        StatusId = t.StatusId,
-                       SeverityId = t.SeverityId,
                        KeyName = t.KeyName,
                        AssignedByUserId = t.AssignedByUserId,
                        AssignedToUserId = t.AssignedToUserId,
                        ProjectId = t.ProjectId,
                        CreatedByUserId = t.CreatedByUserId,
                        IsClosed = BitConverter.ToBoolean(BitConverter.GetBytes(t.IsClosed), 0)
-
                    };
         }
 
@@ -105,18 +106,18 @@ namespace Trakker.Data
 
 
 
-        public void Save(Ticket Ticket)
+        public void Save(Ticket ticket)
         {
             //map the priority from our model to the dal object
             Mapper.CreateMap<Ticket, Sql.Ticket>();
-            Sql.Ticket t = Mapper.Map<Ticket, Sql.Ticket>(Ticket);
+            Sql.Ticket t = Mapper.Map<Ticket, Sql.Ticket>(ticket);
 
             t.Description = t.Description ?? string.Empty;
             t.Created = t.Created.Equals(DateTime.MinValue) ? DateTime.Now : t.Created;
 
                 
             //check if the Ticket exists
-            if (Ticket.TicketId == 0)
+            if (ticket.TicketId == 0)
             {
                 _ticketsTable.InsertOnSubmit(t);
             }
@@ -128,7 +129,7 @@ namespace Trakker.Data
 
             //set the id 
             //needed for inserts, updates the id will stay the same
-            Ticket.TicketId = t.TicketId;
+            ticket.TicketId = t.TicketId;
         }
 
         public void Save(Category category)
@@ -255,5 +256,56 @@ namespace Trakker.Data
                                                  where c.CommentId == id
                                                  select c);
         }
+
+
+        #region Resolution
+        public IQueryable<Resolution> GetResolutions()
+        {
+            return from r in _resolutionTable
+                   select new Resolution
+                   {
+                       ResolutionId = r.ResolutionId,
+                       Name = r.Name,
+                       Description = r.Description,
+                       Created = r.Created
+
+                   };
+        }
+
+        public void Save(Resolution resolution)
+        {
+            //map the priority from our model to the dal object
+            Mapper.CreateMap<Resolution, Sql.Resolution>();
+            Sql.Resolution r = Mapper.Map<Resolution, Sql.Resolution>(resolution);
+
+            r.Description = r.Description ?? string.Empty;
+            r.Created = r.Created.Equals(DateTime.MinValue) ? DateTime.Now : r.Created;
+
+
+            //check if the Ticket exists
+            if (resolution.ResolutionId == 0)
+            {
+                _resolutionTable.InsertOnSubmit(r);
+            }
+            else
+            {
+                _resolutionTable.Attach(r);
+                _resolutionTable.Context.Refresh(RefreshMode.KeepCurrentValues, r);
+            }
+
+            //set the id 
+            //needed for inserts, updates the id will stay the same
+            resolution.ResolutionId = r.ResolutionId;
+        }
+
+        public void DeleteResolution(int id)
+        {
+            _resolutionTable.DeleteAllOnSubmit(from r in _resolutionTable
+                                            where r.ResolutionId == id
+                                            select r);
+        }
+
+
+        #endregion
     }
 }
