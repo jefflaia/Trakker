@@ -18,7 +18,6 @@ namespace Trakker.ViewData.TicketData
         public IList<Ticket> Items { get; set; }
         public IDictionary<int, User> Users { get; set; }
         public IDictionary<int, Category> Categories { get; set; }
-        public IDictionary<int, Severity> Severities { get; set; }
         public IDictionary<int, Priority> Priorities { get; set; }
         public IDictionary<int, Status> Status { get; set; }
               

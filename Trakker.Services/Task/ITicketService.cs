@@ -36,9 +36,5 @@ namespace Trakker.Services
         Status GetStatusWithId(int id);
         IList<Status> GetAllStatus();
 
-        /********* Severity *********/
-        Severity GetSeverityWithId(int id);
-        IList<Severity> GetAllSeverities();
-
     }
 }

@@ -115,7 +115,6 @@
     <Compile Include="Filter\Ticket\CategoryFilters.cs" />
     <Compile Include="Filter\Ticket\CommentFilters.cs" />
     <Compile Include="Filter\Ticket\PriorityFilters.cs" />
-    <Compile Include="Filter\Ticket\SeverityFilters.cs" />
     <Compile Include="Filter\Ticket\StatusFilters.cs" />
     <Compile Include="Filter\Ticket\TicketFilters.cs" />
     <Compile Include="Filter\User\UserFilters.cs" />
@@ -126,7 +125,6 @@
     <Compile Include="Models\Ticket\Comment.cs" />
     <Compile Include="Models\Project\Component.cs" />
     <Compile Include="Models\Ticket\Priority.cs" />
-    <Compile Include="Models\Ticket\Severity.cs" />
     <Compile Include="Models\Ticket\Status.cs" />
     <Compile Include="Models\Ticket\Ticket.cs" />
     <Compile Include="Models\Ticket\Category.cs" />

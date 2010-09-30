@@ -11,7 +11,6 @@
             <th>Key Name</th>
             <th>Summary</th>
             <th>Category</th>
-            <th>Severity</th>
             <th>Priority</th>
             <th>Status</th>
             <th>Created By</th>
@@ -24,10 +23,7 @@
             <td><%= Html.Encode(item.KeyName) %></td>
             <td><%= Html.ActionLink<TicketController>(x => x.TicketDetails(item.KeyName), Html.Encode(item.Summary))%></td>
             <td><%= Html.Encode(Model.View.Categories[item.CategoryId].Name)%></td>
-            <td >
-                <span class="ColorBar" style="background-color: #<%= Model.View.Severities[item.SeverityId].HexColor %>;"></span>
-                <%= Html.Encode(Model.View.Severities[item.SeverityId].Name)%>
-            </td>
+           
             <td >
                 <span class="ColorBar" style="background-color: #<%= Model.View.Priorities[item.PriorityId].HexColor %>;"></span>
                 <%= Html.Encode(Model.View.Priorities[item.PriorityId].Name)%>

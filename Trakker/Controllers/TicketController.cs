@@ -46,7 +46,6 @@ namespace Trakker.Controllers
                 DueDate = ticket.DueDate,
                 Status = _ticketService.GetStatusWithId(ticket.StatusId),
                 Priority = _ticketService.GetPriorityWithId(ticket.PriorityId),
-                Severity = _ticketService.GetSeverityWithId(ticket.SeverityId),
                 Cateogory = _ticketService.GetCategoryWithId(ticket.CategoryId),
                 KeyName = ticket.KeyName,
                 Comments = comments,
@@ -67,13 +66,11 @@ namespace Trakker.Controllers
             IDictionary<int, Priority> priorities = new Dictionary<int, Priority>();
             IDictionary<int, Status> status = new Dictionary<int, Status>();
             IDictionary<int, Category> categories = new Dictionary<int, Category>();
-            IDictionary<int, Severity> severities = new Dictionary<int, Severity>();
             IDictionary<int, User> users = new Dictionary<int, User>();
 
             foreach (var p in _ticketService.GetAllPriorities()) priorities.Add(p.PriorityId, p);
             foreach (var s in _ticketService.GetAllStatus())status.Add(s.StatusId, s);        
             foreach (var c in _ticketService.GetAllCategories()) categories.Add(c.CategoryId, c);
-            foreach (var s in _ticketService.GetAllSeverities()) severities.Add(s.SeverityId, s);
 
             IList<Ticket> tickets = _ticketService.TicketList(PAGE_SIZE, index ?? 1);
             foreach (Ticket ticket in tickets)
@@ -102,7 +99,6 @@ namespace Trakker.Controllers
                 Items = tickets,
                 Users = users,
                 Priorities = priorities,
-                Severities = severities,
                 Categories = categories,
                 Status = status,
                 Pagination = new WidgetAction("ticketListPagination", "Nav", new
@@ -129,7 +125,6 @@ namespace Trakker.Controllers
                 Categories = _ticketService.GetAllCategories(),
                 Priorities = _ticketService.GetAllPriorities(),
                 Status = _ticketService.GetAllStatus(),
-                Severities = _ticketService.GetAllSeverities(),
                 Users = _userService.GetAllUsers()
             };
 
@@ -167,7 +162,6 @@ namespace Trakker.Controllers
             CreateEditViewData viewData = new CreateEditViewData()
             {
                 Categories = _ticketService.GetAllCategories(),
-                Severities = _ticketService.GetAllSeverities(),
                 Priorities = _ticketService.GetAllPriorities(),
                 Status = _ticketService.GetAllStatus(),
                 Ticket = _ticketService.GetTicketWithKeyName(keyName),

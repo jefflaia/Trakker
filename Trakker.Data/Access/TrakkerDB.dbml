@@ -78,15 +78,6 @@
       <Association Name="Role_User" Member="Users" ThisKey="RoleId" OtherKey="RoleId" Type="User" />
     </Type>
   </Table>
-  <Table Name="dbo.Severity" Member="Severities">
-    <Type Name="Severity">
-      <Column Name="SeverityId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
-      <Column Name="HexColor" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
-      <Association Name="Severity_Ticket" Member="Tickets" ThisKey="SeverityId" OtherKey="SeverityId" Type="Ticket" />
-    </Type>
-  </Table>
   <Table Name="dbo.Status" Member="Status">
     <Type Name="Status">
       <Column Name="StatusId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -132,7 +123,6 @@
       <Association Name="Category_Ticket" Member="Category" ThisKey="CategoryId" OtherKey="CategoryId" Type="Category" IsForeignKey="true" />
       <Association Name="Priority_Ticket" Member="Priority" ThisKey="PriorityId" OtherKey="PriorityId" Type="Priority" IsForeignKey="true" />
       <Association Name="Project_Ticket" Member="Project" ThisKey="ProjectId" OtherKey="ProjectId" Type="Project" IsForeignKey="true" />
-      <Association Name="Severity_Ticket" Member="Severity" ThisKey="SeverityId" OtherKey="SeverityId" Type="Severity" IsForeignKey="true" />
       <Association Name="Status_Ticket" Member="Status" ThisKey="SeverityId" OtherKey="StatusId" Type="Status" IsForeignKey="true" />
       <Association Name="User_Ticket" Member="User" ThisKey="AssignedToUserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
       <Association Name="User_Ticket1" Member="User1" ThisKey="CreatedByUserId" OtherKey="UserId" Type="User" IsForeignKey="true" />

@@ -45,11 +45,6 @@ namespace Trakker.Services
             return _ticketRepository.GetPriorities().WithId(id).Single<Priority>();
         }
 
-        public Severity GetSeverityWithId(int id)
-        {
-            return _ticketRepository.GetSeverities().WithId(id).Single<Severity>();
-        }
-
         public Status GetStatusWithId(int id)
         {
             return _ticketRepository.GetStatus().WithId(id).Single<Status>();
@@ -98,11 +93,6 @@ namespace Trakker.Services
         public IList<Status> GetAllStatus()
         {
             return _ticketRepository.GetStatus().ToList<Status>();
-        }
-
-        public IList<Severity> GetAllSeverities()
-        {
-            return _ticketRepository.GetSeverities().ToList<Severity>();
         }
 
         public IList<Priority> GetAllPriorities()

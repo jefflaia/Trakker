@@ -12,7 +12,6 @@ namespace Trakker.ViewData.TicketData
         public int Id { get; set; }
         public string Summary { get; set; }
         public Category Cateogory { get; set; }
-        public Severity Severity { get; set; }
         public Priority Priority { get; set; }
         public Status Status { get; set; }
         public DateTime DueDate { get; set; }

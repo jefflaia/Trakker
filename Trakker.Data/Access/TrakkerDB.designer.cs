@@ -54,9 +54,6 @@ namespace Trakker.Data.Access
     partial void InsertRole(Role instance);
     partial void UpdateRole(Role instance);
     partial void DeleteRole(Role instance);
-    partial void InsertSeverity(Severity instance);
-    partial void UpdateSeverity(Severity instance);
-    partial void DeleteSeverity(Severity instance);
     partial void InsertStatus(Status instance);
     partial void UpdateStatus(Status instance);
     partial void DeleteStatus(Status instance);
@@ -156,14 +153,6 @@ namespace Trakker.Data.Access
 			get
 			{
 				return this.GetTable<Role>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Severity> Severities
-		{
-			get
-			{
-				return this.GetTable<Severity>();
 			}
 		}
 		
@@ -1767,168 +1756,6 @@ namespace Trakker.Data.Access
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Severity")]
-	public partial class Severity : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _SeverityId;
-		
-		private string _Name;
-		
-		private string _Description;
-		
-		private string _HexColor;
-		
-		private EntitySet<Ticket> _Tickets;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSeverityIdChanging(int value);
-    partial void OnSeverityIdChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnHexColorChanging(string value);
-    partial void OnHexColorChanged();
-    #endregion
-		
-		public Severity()
-		{
-			this._Tickets = new EntitySet<Ticket>(new Action<Ticket>(this.attach_Tickets), new Action<Ticket>(this.detach_Tickets));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SeverityId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int SeverityId
-		{
-			get
-			{
-				return this._SeverityId;
-			}
-			set
-			{
-				if ((this._SeverityId != value))
-				{
-					this.OnSeverityIdChanging(value);
-					this.SendPropertyChanging();
-					this._SeverityId = value;
-					this.SendPropertyChanged("SeverityId");
-					this.OnSeverityIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HexColor", DbType="Char(6) NOT NULL", CanBeNull=false)]
-		public string HexColor
-		{
-			get
-			{
-				return this._HexColor;
-			}
-			set
-			{
-				if ((this._HexColor != value))
-				{
-					this.OnHexColorChanging(value);
-					this.SendPropertyChanging();
-					this._HexColor = value;
-					this.SendPropertyChanged("HexColor");
-					this.OnHexColorChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Severity_Ticket", Storage="_Tickets", ThisKey="SeverityId", OtherKey="SeverityId")]
-		public EntitySet<Ticket> Tickets
-		{
-			get
-			{
-				return this._Tickets;
-			}
-			set
-			{
-				this._Tickets.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tickets(Ticket entity)
-		{
-			this.SendPropertyChanging();
-			entity.Severity = this;
-		}
-		
-		private void detach_Tickets(Ticket entity)
-		{
-			this.SendPropertyChanging();
-			entity.Severity = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Status")]
 	public partial class Status : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2396,8 +2223,6 @@ namespace Trakker.Data.Access
 		
 		private EntityRef<Project> _Project;
 		
-		private EntityRef<Severity> _Severity;
-		
 		private EntityRef<Status> _Status;
 		
 		private EntityRef<User> _User;
@@ -2451,7 +2276,6 @@ namespace Trakker.Data.Access
 			this._Category = default(EntityRef<Category>);
 			this._Priority = default(EntityRef<Priority>);
 			this._Project = default(EntityRef<Project>);
-			this._Severity = default(EntityRef<Severity>);
 			this._Status = default(EntityRef<Status>);
 			this._User = default(EntityRef<User>);
 			this._User1 = default(EntityRef<User>);
@@ -2638,7 +2462,7 @@ namespace Trakker.Data.Access
 			{
 				if ((this._SeverityId != value))
 				{
-					if ((this._Severity.HasLoadedOrAssignedValue || this._Status.HasLoadedOrAssignedValue))
+					if (this._Status.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -2937,40 +2761,6 @@ namespace Trakker.Data.Access
 						this._ProjectId = default(int);
 					}
 					this.SendPropertyChanged("Project");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Severity_Ticket", Storage="_Severity", ThisKey="SeverityId", OtherKey="SeverityId", IsForeignKey=true)]
-		public Severity Severity
-		{
-			get
-			{
-				return this._Severity.Entity;
-			}
-			set
-			{
-				Severity previousValue = this._Severity.Entity;
-				if (((previousValue != value) 
-							|| (this._Severity.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Severity.Entity = null;
-						previousValue.Tickets.Remove(this);
-					}
-					this._Severity.Entity = value;
-					if ((value != null))
-					{
-						value.Tickets.Add(this);
-						this._SeverityId = value.SeverityId;
-					}
-					else
-					{
-						this._SeverityId = default(int);
-					}
-					this.SendPropertyChanged("Severity");
 				}
 			}
 		}

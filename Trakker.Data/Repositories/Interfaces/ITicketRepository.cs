@@ -21,11 +21,6 @@ namespace Trakker.Data
         void Save(Category category);
         void DeleteCategory(int id);
 
-        /********* Severity *********/
-        IQueryable<Severity> GetSeverities();
-        void Save(Severity severity);
-        void DeleteSeverity(int id);
-
         /********* Status *********/
         IQueryable<Status> GetStatus();
         void Save(Status status);

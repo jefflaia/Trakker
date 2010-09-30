@@ -14,7 +14,6 @@ namespace Trakker.Data
     {
         protected DataContext _dataContext;
         protected Table<Sql.Priority> _prioritiesTable;
-        protected Table<Sql.Severity> _severitiesTable;
         protected Table<Sql.Category> _categoriesTable;
         protected Table<Sql.Ticket> _ticketsTable;
         protected Table<Sql.Status> _statusesTable;
@@ -26,23 +25,10 @@ namespace Trakker.Data
             DataContext dataContext = dataContextProvider.DataContext;
 
             _prioritiesTable = dataContext.GetTable<Sql.Priority>();
-            _severitiesTable = dataContext.GetTable<Sql.Severity>();
             _categoriesTable = dataContext.GetTable<Sql.Category>();
             _ticketsTable = dataContext.GetTable<Sql.Ticket>();
             _statusesTable = dataContext.GetTable<Sql.Status>();
             _commentsTable = dataContext.GetTable<Sql.Comment>();
-        }
-
-        public IQueryable<Severity> GetSeverities()
-        {
-            return from s in _severitiesTable
-                   select new Severity
-                   {
-                       SeverityId = s.SeverityId,
-                       Name = s.Name,
-                       Description = s.Description,
-                       HexColor = s.HexColor
-                   };
         }
 
         public IQueryable<Priority> GetPriorities()
@@ -210,27 +196,6 @@ namespace Trakker.Data
             status.StatusId = s.StatusId;
         }
 
-        public void Save(Severity severity)
-        {
-            //map the priority from our model to the dal object
-            Mapper.CreateMap<Severity, Sql.Severity>();
-            Sql.Severity s = Mapper.Map<Severity, Sql.Severity>(severity);
-
-            if (severity.SeverityId == 0)
-            {
-                _severitiesTable.InsertOnSubmit(s);
-            }
-            else
-            {
-                _severitiesTable.Attach(s);
-                _severitiesTable.Context.Refresh(RefreshMode.KeepCurrentValues, s);
-            }
-
-            //set the id 
-            //needed for inserts, updates the id will stay the same
-            severity.SeverityId = s.SeverityId;
-        }
-
         public void Save(Comment comment)
         {
             //map the priority from our model to the dal object
@@ -274,13 +239,6 @@ namespace Trakker.Data
         {
             _statusesTable.DeleteAllOnSubmit(from t in _statusesTable
                                         where t.StatusId == id
-                                        select t);
-        }
-
-        public void DeleteSeverity(int id)
-        {
-            _severitiesTable.DeleteAllOnSubmit(from t in _severitiesTable
-                                        where t.SeverityId == id
                                         select t);
         }
 
