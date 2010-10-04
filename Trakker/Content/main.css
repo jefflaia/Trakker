@@ -14,8 +14,7 @@ div#Header div.Right div{width: 100%; text-align: right;}
 
 div#SubHeader{width: 100%; background-image:url(/Content/Images/UI-Backgrounds.png); background-position: 0px -49px; height: 30px; border-bottom: 1px solid #667e9a;}
 div#Content{ margin: 10px 0%; width: 100%; }
-div#Content div.InnerBorder{ position:relative; padding: 15px; margin:15px; display:block; border: 1px solid #ccc;}
-div#Content div.InnerBorder div.Inner{float: left;}
+div#Content div.InnerBorder{ position:relative; padding: 15px; margin:15px; border: 2px solid #B7DDF2; background-color: #EBF4FB;}
 
 
 
@@ -35,16 +34,17 @@ div.SubNav{ margin: 7px 0px 0px 10px; padding: 0; display:block; width: 500px; f
 div.SubNav a.Hover{  border-style: solid; border-color: #667e9a;  background-color: White;}
 div.SubNav a.Current{  border-style: solid; border-color: #667e9a;  background-color: White;}
 div.SubNav li{	display:inline-block; list-style: none; border-width: 1px 1px 0px 1px;}
-div.SubNav li a{ color: #353535; background-color: transparent; position:relative; display: block; padding: 2px 10px 4px 10px; white-space: nowrap; z-index: 99; border-width: 1px 1px 0px 1px; border-style: solid; border-color: transparent;}
+div.SubNav li a{ color: #353535; background-color: transparent; position: relative; display: block; padding: 2px 10px 4px 10px; white-space: nowrap; z-index: 99; border-width: 1px 1px 0px 1px; border-style: solid; border-color: transparent;}
 
 
 /* Forms */
-form div.Row{float: left; width: 100%;}
-form div.Row label{float:left; width: 150px;}
-form div.Row select, textarea, input {border: 1px solid #BDC7D8; margin: 2px; padding: 2px; background-color:#FFFFFF; background-image:url(Images/Field-Background.bmp); background-repeat:repeat-x;}
-form div.Row select{float:left; width: 155px; }
-form div.Row textarea{float:left; width: 500px;}
-form div.Row input{float:left; width: 150px;}
+/* c3c3c3*/
+select, textarea, input {color: inherit; border: 1px solid #AACFE4; margin: 2px; padding: 2px 2px; background-color:#FFFFFF; background-image:url(Images/Field-Background.bmp); background-repeat:repeat-x;
+                         -moz-border-radius: 2px; min-width: 200px;}
+form div.Row{margin: 2px 0px; position: static; clear: both; display: inline-block; width: 100%;}
+form div.Row div.Left {width: 32%; float:left; text-align:right; padding-right: 10px; height: 26px; line-height: 26px; }
+form div.Row div.Left label {font-weight: bold;}
+form div.Row div.Right{float: left; width: 65%; height: 26px;}
 
 
 /* UI Elements */

@@ -5,12 +5,17 @@ using System.Collections.Generic;
 using System.Web.Routing;
 using Trakker.Helpers.Icons;
 using Trakker.Helpers.Elements;
+using Trakker.Core.Forms;
 
 namespace Trakker.Helpers
 {
 
     public static class HtmlHelperExtentions
     {
+        public static FormRow FormRow(this HtmlHelper helper)
+        {
+            return new FormRow();
+        }
        
 
         public static string StyledSubmitButton(this HtmlHelper helper, string text, object attributes)
