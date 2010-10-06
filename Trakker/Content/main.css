@@ -41,10 +41,11 @@ div.SubNav li a{ color: #353535; background-color: transparent; position: relati
 /* c3c3c3*/
 select, textarea, input {color: inherit; border: 1px solid #AACFE4; margin: 2px; padding: 2px 2px; background-color:#FFFFFF; background-image:url(Images/Field-Background.bmp); background-repeat:repeat-x;
                          -moz-border-radius: 2px; min-width: 200px;}
-form div.Row{margin: 2px 0px; position: static; clear: both; display: inline-block; width: 100%;}
+form div.Row{margin: 2px 0px; position: static; clear: both; overflow:auto; display: inline-block; width: 100%;}
 form div.Row div.Left {width: 32%; float:left; text-align:right; padding-right: 10px; height: 26px; line-height: 26px; }
 form div.Row div.Left label {font-weight: bold;}
-form div.Row div.Right{float: left; width: 65%; height: 26px;}
+form div.Row div.Right{float: left; width: 65%; }
+form div.Row div.Right p.Description{float:left; width: 100%; display: inline-block; color: #888;}
 
 
 /* UI Elements */

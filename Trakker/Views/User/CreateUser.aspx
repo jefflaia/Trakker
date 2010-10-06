@@ -14,9 +14,9 @@
 
         <%= Html.FormRow()
            .AddToLeft(Html.LabelFor(x => x.View.Email))
-           .AddToRight(Html.TextBox("Email", Model.View.Email)) %>
+           .AddToRight(Html.TextBox("Email", Model.View.Email))
+           .SetDescription("Your email address") %>
 
-            
         <%= Html.FormRow()
            .AddToLeft(Html.LabelFor(x => x.View.Password).ToString())
            .AddToRight(Html.TextBox("Password", Model.View.Password).ToString()) %>

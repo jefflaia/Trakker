@@ -13,6 +13,7 @@ namespace Trakker.Core.Forms
     {
         protected IList<string> _rightMarkup;
         protected IList<string> _leftMarkup;
+        protected string _description;
 
         public FormRow()
         {
@@ -43,6 +44,12 @@ namespace Trakker.Core.Forms
             return this;
         }
 
+        public FormRow SetDescription(string description)
+        {
+            _description = description;
+            return this;
+        }
+
 
         public string Render()
         {
@@ -53,6 +60,11 @@ namespace Trakker.Core.Forms
             containerDiv.InnerHtml = String.Concat(BuildLeft(), Buildright());
 
             return containerDiv.ToString();
+        }
+
+        public override string ToString()
+        {
+            return Render();
         }
 
         protected string BuildLeft()
@@ -81,15 +93,23 @@ namespace Trakker.Core.Forms
                 rightMarkup = String.Concat(rightMarkup, markup);
             }
 
+            rightMarkup = String.Concat(rightMarkup, BuildDescription());
+
             rightDiv.AddCssClass("Right");
             rightDiv.InnerHtml = rightMarkup;
 
             return rightDiv.ToString();
         }
 
-        public override string ToString()
+        protected string BuildDescription()
         {
-            return Render();
+            TagBuilder p = new TagBuilder("p");
+            p.AddCssClass("Description");
+
+            p.SetInnerText(_description);
+            return p.ToString();
         }
+
+        
     }
 }
