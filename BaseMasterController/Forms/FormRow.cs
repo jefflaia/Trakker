@@ -13,13 +13,13 @@ namespace Trakker.Core.Forms
     {
         protected IList<string> _rightMarkup;
         protected IList<string> _leftMarkup;
-        protected string _description;
+        protected IList<string> _description;
 
         public FormRow()
         {
-
             _rightMarkup = new List<string>();
             _leftMarkup = new List<string>();
+            _description = new List<string>();
         }
 
         public FormRow AddToRight(MvcHtmlString markup)
@@ -44,9 +44,9 @@ namespace Trakker.Core.Forms
             return this;
         }
 
-        public FormRow SetDescription(string description)
+        public FormRow AppendDescription(string description)
         {
-            _description = description;
+            _description.Add(description);
             return this;
         }
 
@@ -106,7 +106,14 @@ namespace Trakker.Core.Forms
             TagBuilder p = new TagBuilder("p");
             p.AddCssClass("Description");
 
-            p.SetInnerText(_description);
+            string descriptionText = String.Empty;
+
+            foreach (string description in _description)
+            {
+                descriptionText = String.Concat(descriptionText, description);
+            }
+
+            p.SetInnerText(descriptionText);
             return p.ToString();
         }
 

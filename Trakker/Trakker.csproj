@@ -761,6 +761,7 @@
     <Content Include="Views\Ticket\EditTicket.aspx" />
     <Content Include="Views\Ticket\TicketList.aspx" />
     <Content Include="Views\User\Logout.aspx" />
+    <Content Include="Views\User\CreateEditUser.ascx" />
     <Content Include="Web.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>

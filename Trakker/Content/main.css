@@ -1,5 +1,5 @@
 ﻿*{margin: 0px; padding: 0px;}
-body{color: #353535; font-size: 12px; line-height: 1.4; font-family:"lucida grande",tahoma,verdana,arial,sans-serif;}
+body{color: #353535; font-size: 12px; line-height: 1.4; font-family:"lucida grande",tahoma,verdana,arial,sans-serif; background-color: #F7F7F7;}
 
 a{outline: none; text-decoration: none;} /* remove dotted line when clicking a link */
 h1,h2,h3,h4,h5,h6{margin: 10px 0px 10px 0px;}
@@ -13,9 +13,9 @@ div#Header div.Right{float: right; width: 400px; margin-right: 20px;}
 div#Header div.Right div{width: 100%; text-align: right;}
 
 div#SubHeader{width: 100%; background-image:url(/Content/Images/UI-Backgrounds.png); background-position: 0px -49px; height: 30px; border-bottom: 1px solid #667e9a;}
-div#Content{ margin: 10px 0%; width: 100%; }
-div#Content div.InnerBorder{ position:relative; padding: 15px; margin:15px; border: 2px solid #B7DDF2; background-color: #EBF4FB;}
-
+div#Content{ width: 100%; }
+div#Content div.InnerBorder{ overflow: hidden; position:relative; padding: 10px 45px; background-color: White;}
+div#Footer{ background-color: #F7F7F7; border-top: 1px solid #bbb; width: 100%; min-height: 50px;}
 
 
 /* Navigation */
@@ -40,7 +40,12 @@ div.SubNav li a{ color: #353535; background-color: transparent; position: relati
 /* Forms */
 /* c3c3c3*/
 select, textarea, input {color: inherit; border: 1px solid #AACFE4; margin: 2px; padding: 2px 2px; background-color:#FFFFFF; background-image:url(Images/Field-Background.bmp); background-repeat:repeat-x;
-                         -moz-border-radius: 2px; min-width: 200px;}
+-moz-border-radius: 2px; min-width: 200px;}
+select { min-width: 206px;}                         
+form { border: 2px solid #B7DDF2; background-color: #EBF4FB; overflow: hidden; padding: 0px 20px 10px 20px;}
+form h1, form h2, form h3, form h4, form h5, form h6 { border-bottom: 1px solid #b7ddf2; background-color: #dbeef8; margin: 0px 0px 20px 0px; position: relative; left: -20px; padding: 0px 20px; width: 100%; height: 45px; line-height: 45px;}
+form.Center {margin: 0 auto;}                         
+form div.HorizontalRule{height: 1px; width: 100%; background-color: #B7DDF2; margin: 10px 0;}                       
 form div.Row{margin: 2px 0px; position: static; clear: both; overflow:auto; display: inline-block; width: 100%;}
 form div.Row div.Left {width: 32%; float:left; text-align:right; padding-right: 10px; height: 26px; line-height: 26px; }
 form div.Row div.Left label {font-weight: bold;}

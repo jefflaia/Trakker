@@ -6,6 +6,7 @@ using System.Web.Routing;
 using Trakker.Helpers.Icons;
 using Trakker.Helpers.Elements;
 using Trakker.Core.Forms;
+using System.Web.Mvc.Html;
 
 namespace Trakker.Helpers
 {
@@ -15,8 +16,14 @@ namespace Trakker.Helpers
         public static FormRow FormRow(this HtmlHelper helper)
         {
             return new FormRow();
+        }      
+
+        public static string FormHR(this HtmlHelper helper)
+        {
+            TagBuilder tag = new TagBuilder("div");
+            tag.AddCssClass("HorizontalRule");
+            return tag.ToString();
         }
-       
 
         public static string StyledSubmitButton(this HtmlHelper helper, string text, object attributes)
         {
@@ -41,6 +48,20 @@ namespace Trakker.Helpers
         }
         */
 
+        public static MvcForm BeginForm(this HtmlHelper htmlHelper, int width)
+        {
+            return BeginForm(htmlHelper, width, true);
+        }
+
+        public static MvcForm BeginForm(this HtmlHelper htmlHelper, int width, bool center)
+        {
+            object attrs = new {
+                style = "width: " + width + "px;",
+                @class = ( center ? "Center" : "" )
+            };
+            
+            return htmlHelper.BeginForm(null, null, FormMethod.Post, new RouteValueDictionary(attrs));
+        }
 
         public static string SaveButton(this HtmlHelper helper, string innerHtml, Relation relation, Icon icon, object attributes )
         {

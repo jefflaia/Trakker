@@ -17,7 +17,6 @@
             <label>Priority:</label>    <p class="Value"><%= Model.View.Priority.Name%></p>
             <label>Category:</label>    <p class="Value"><%= Model.View.Cateogory.Name%></p>
             <label>Status:</label>      <p class="Value"><%= Model.View.Status.Name%></p>
-            <label>Severity:</label>    <p class="Value"><%= Model.View.Severity.Name%></p>
             <label>Created:</label>     <p class="Value"><%= Model.View.Created%></p>
             <label>DueDate:</label>     <p class="Value"><%= Model.View.DueDate%></p>
             

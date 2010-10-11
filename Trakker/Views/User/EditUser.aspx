@@ -6,18 +6,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<% using (Html.BeginForm())
+<% using (Html.BeginForm(400))
    { %>
-    <h2>CreateUser</h2>
-    <%= Html.LabelFor(x => x.View.Email)%>
-    <%= Html.TextBox("Email", Model.View.Email)%>
-
-    <%= Html.LabelFor(x => x.View.Password)%>
-    <%= Html.TextBox("Password", Model.View.Password)%>
-
-    <%= Html.LabelFor(x => x.View.RePassword)%>
-    <%= Html.TextBox("RePassword", Model.View.RePassword)%>
-
-    <%= Html.SaveButton("Save", Relation.Single, Icon.Save, new { type = "submit" })%>
+    <h2>Edit User: <%= Model.View.Email %></h2>
+    <%= Html.Partial("CreateEditUser", Model.View) %>
 <% } %>
 </asp:Content>

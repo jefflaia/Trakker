@@ -71,6 +71,7 @@
          <% } %>
     </div>
     
+    <!--
     <%if (Model.Master.IsUserLoggedIn && Model.Master.CurrentProject != null) { %>
         <div id="SubHeader">
             <div class="SubNav">
@@ -79,11 +80,16 @@
          
         </div>
     <% } %>
+    -->
 
     <div id="Content">
         <div class="InnerBorder">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
         </div>
+    </div>
+
+    <div id="Footer">
+        
     </div>
 </body>
 </html>
