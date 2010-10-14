@@ -5,10 +5,11 @@ using System.Web;
 using Trakker.Data;
 using Trakker.Services;
 using Trakker.Helpers;
+using Trakker.ViewData.SharedData;
 
 namespace Trakker.ViewData.TicketData
 {
-    public class TicketListViewData
+    public class TicketListViewData : MasterViewData
     {
         //public IList<WidgetAction> RowItems { get; set; }
 

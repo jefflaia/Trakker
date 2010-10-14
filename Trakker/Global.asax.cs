@@ -29,6 +29,7 @@ namespace Trakker
             UserRoutes.AddRoutes(ref routes);
             ProjectRoutes.AddRoutes(ref routes);
             TicketRoutes.AddRoutes(ref routes);
+            SiteRoute.AddRoutes(ref routes);
                         
             routes.MapRoute("DefaultPaginated", "page/{index}", new { controller = "Ticket", action = "TicketList"});
             routes.MapRoute("Default", "",  new { controller = "Ticket", action = "TicketList"});

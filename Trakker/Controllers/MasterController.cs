@@ -9,11 +9,15 @@ using Trakker.ViewData.SharedData;
 using Trakker.Core;
 using Trakker.Services;
 using Trakker.IoC;
+using System.Linq.Expressions;
+using System.Web.Routing;
+using Trakker.Helpers;
+
 
 namespace Trakker.Controllers
 {
 
-    public abstract class MasterController : ConventionController
+    public abstract class MasterController : Controller
     {
 
         protected IProjectService _projectService;
@@ -30,27 +34,44 @@ namespace Trakker.Controllers
         }
 
         protected IUnitOfWork UnitOfWork { get; set; }
-
-        protected override MasterViewData GetMasterViewData()
+        
+        
+        public RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> actionExpression)
         {
-            MasterViewData viewData = new MasterViewData()
-            {
-                Projects =  _projectService.GetAllProjects(),
-                HasCurrentProject = true,
-                CurrentProject = _projectService.GetProjectByProjectId(ProjectService.SelectedProjectId),
-                CurrentUser = _userService.CurrentUser,
-                IsUserLoggedIn = _userService.IsUserLoggedIn(), 
-                Tickets = _ticketService.GetNewestTicketsWithProjectId(ProjectService.SelectedProjectId, 5),
-                NumTicketsAssignedToCurrentUser = 0
-            };
+            string controllerName = typeof(TController).GetControllerName();
+            string actionName = actionExpression.GetActionName();
 
-            if (viewData.CurrentUser != null)
-            {
-                viewData.NumTicketsAssignedToCurrentUser = _ticketService.CountTicketsWithAssignedTo(_userService.CurrentUser.UserId);
-            }
-
-            return viewData;
+            return RedirectToAction(actionName, controllerName);
         }
+
+        public RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> actionExpression,
+                                                                   IDictionary<string, object> dictionary)
+        {
+            string controllerName = typeof(TController).GetControllerName();
+            string actionName = actionExpression.GetActionName();
+
+            return RedirectToAction(actionName, controllerName,
+                                    new RouteValueDictionary(dictionary));
+        }
+
+        public RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> actionExpression,
+                                                                   object values)
+        {
+            string controllerName = typeof(TController).GetControllerName();
+            string actionName = actionExpression.GetActionName();
+
+            return RedirectToAction(actionName, controllerName,
+                                    new RouteValueDictionary(values));
+        }
+
+
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            base.OnActionExecuting(filterContext);
+            this.ViewData["SelectedItem"] = this.GetType().Name;
+        }
+
+         
     }
 
 

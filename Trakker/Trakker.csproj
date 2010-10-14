@@ -65,10 +65,6 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\Lib\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Microsoft.Web.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="Mvc.Validation, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Mvc.Validation.dll</HintPath>
@@ -102,8 +98,10 @@
     <Compile Include="Attributes\ActionFilters\AuthenticateAttribute.cs" />
     <Compile Include="Attributes\ActionFilters\UserInRoleAttribute.cs" />
     <Compile Include="Attributes\BaseAuthorizationActionFilterAttribute.cs" />
-    <Compile Include="Helpers\Extensions\ExpressionExtensions.cs" />
+    <Compile Include="Controllers\SiteController.cs" />
+    <Compile Include="Helpers\Extensions\HtmlHelper\ButtonHtmlHelperExtensions.cs" />
     <Compile Include="Helpers\Extensions\TextAreaExtensions.cs" />
+    <Compile Include="Helpers\SystemButtonBuilder\Icons\LoginIcon.cs" />
     <Compile Include="Helpers\Table\Controls\DateFormatControl.cs" />
     <Compile Include="Helpers\Table\Controls\TableControl.cs" />
     <Compile Include="Helpers\Table\HtmlTableBuilder.cs" />
@@ -111,7 +109,6 @@
     <Compile Include="Helpers\Table\TableColumn.cs" />
     <Compile Include="Helpers\Table\TestTable.cs" />
     <Compile Include="IoC\WindsorContainerProvider.cs" />
-    <Compile Include="Controllers\ConventionController.cs" />
     <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
@@ -136,18 +133,20 @@
     <Compile Include="Helpers\Extensions\LambdaExtensions.cs" />
     <Compile Include="Helpers\Extensions\TypeExtensions.cs" />
     <Compile Include="Helpers\FormException.cs" />
-    <Compile Include="Helpers\Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Helpers\Extensions\HtmlHelper\HtmlHelperExtensions.cs" />
     <Compile Include="Helpers\IsCurrentActionHelper.cs" />
     <Compile Include="Helpers\WidgetAction.cs" />
     <Compile Include="Helpers\Pagination.cs" />
     <Compile Include="IoC\CastleConfigFileSection.cs" />
     <Compile Include="Routes\ProjectRoutes.cs" />
+    <Compile Include="Routes\SiteRoute.cs" />
     <Compile Include="Routes\TicketRoutes.cs" />
     <Compile Include="Routes\UserRoutes.cs" />
     <Compile Include="ViewData\ProjectData\AllProjectsViewData.cs" />
     <Compile Include="ViewData\ProjectData\CreateEditProjectViewData.cs" />
     <Compile Include="ViewData\ProjectData\ProjectSummaryViewData.cs" />
     <Compile Include="ViewData\SharedData\MasterViewData.cs" />
+    <Compile Include="ViewData\SharedData\MenuViewData.cs" />
     <Compile Include="ViewData\TicketData\CommentCreateEditViewData.cs" />
     <Compile Include="ViewData\TicketData\TicketDetailsViewData.cs" />
     <Compile Include="ViewData\TicketData\CreateEditViewData.cs" />
@@ -740,12 +739,17 @@
     <Content Include="Scripts\ckeditor\_source\skins\v2\toolbar.css" />
     <Content Include="Scripts\ckeditor\_source\themes\default\theme.js" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Views\Project\AllProjects.aspx" />
     <Content Include="Views\Project\EditProject.aspx" />
     <Content Include="Views\Project\CreateEditProject.ascx" />
     <Content Include="Views\Project\CreateProject.aspx" />
     <Content Include="Views\Project\ProjectSummary.aspx" />
-    <Content Include="Views\Shared\Navigation.ascx" />
+    <Content Include="Views\Site\Menu.ascx" />
     <Content Include="Views\Shared\SubNavigation.ascx" />
     <Content Include="Views\User\EditUser.aspx" />
     <Content Include="Views\User\CreateUser.aspx" />
@@ -767,10 +771,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\Main.css" />
-    <Content Include="Scripts\jquery-1.3.2.js" />
-    <Content Include="Scripts\jquery-1.3.2.min.js" />
-    <Content Include="Scripts\jquery-1.3.2-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.3.2.min-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
@@ -780,7 +780,6 @@
     <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
     <Content Include="Scripts\MicrosoftMvcJQueryValidation.js" />
     <Content Include="Views\Shared\Error.aspx" />
-    <Content Include="Views\Shared\LogOnUserControl.ascx" />
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
   </ItemGroup>

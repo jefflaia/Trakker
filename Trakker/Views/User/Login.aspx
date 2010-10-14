@@ -1,30 +1,25 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<ViewWrapperViewData<MasterViewData,LoginViewData>>" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Login
-</asp:Content>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<LoginViewData>" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
+    
+    <% using (Html.BeginForm(400)) { %>
     <h2>Login</h2>
-    
-    <% using (Html.BeginForm()) { %>
         
-        <label for="Email">Email:</label>
-        <%= Html.TextBox("Email", Model.View.Email) %>
-        
-        <label for="Password">Password:</label>
-        <%= Html.Password("Password", Model.View.Password)%>
+        <%= Html.FormRow()
+            .AddToLeft(Html.LabelFor(x => x.Email))
+            .AddToRight(Html.TextBoxFor(x => x.Email)) %>
 
-        <%= Html.Button("Login", "Login", HtmlButtonType.Submit) %>
-    
+        <%= Html.FormRow()
+            .AddToLeft(Html.LabelFor(x => x.Password))
+            .AddToRight(Html.PasswordFor(x => x.Password)) %>
+        
+        <%= Html.FormRow()
+            .AddToRight(Html.LoginButton("Login", new { }))%>  
+
     <% } %>
 
-    <%
-    
-        Model.View.Table.Render();
-     %>
-
+ 
+ <!--
      <textarea class="test" id="test"></textarea>
      		<script type="text/javascript">
 		//<![CDATA[
@@ -34,5 +29,6 @@
 		</script>
 
         <%= Html.CKEditorTextArea("somename", "somevalue", new { }) %>
+        -->
 
 </asp:Content>

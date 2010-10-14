@@ -9,7 +9,6 @@ namespace Trakker.ViewData.UserData
 
     public class CreateEditUserViewData
     {
-        
         [DisplayName("Email")]
         [Description("Demonstrates DisplayNameAttribute.")]
         public string Email { get; set; }

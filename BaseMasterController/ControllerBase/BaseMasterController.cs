@@ -5,9 +5,10 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
 
-namespace Trakker.Core
+/*
+namespace Trakker.Controllers
 {
-    public abstract class BaseMasterController<TMasterViewData> : Controller
+    public abstract class BaseMasterController : Controller
     {
         /// <summary>
         /// Views this instance.
@@ -23,10 +24,10 @@ namespace Trakker.Core
         /// </summary>
         /// <param name="model">The model.</param>
         /// <returns></returns>
-        protected virtual new ActionResult View(object model)
+        protected virtual ActionResult View(MasterViewData model)
         {
             var masterModel = GetMasterViewData();
-            object wrapper = CreateModel(model, masterModel);
+            MasterViewData wrapper = CreateModel(model, masterModel);
 
             return base.View(wrapper);
         }
@@ -36,9 +37,9 @@ namespace Trakker.Core
         /// override this in your master controller.
         /// </summary>
         /// <returns></returns>
-        protected virtual TMasterViewData GetMasterViewData()
+        protected virtual MasterViewData GetMasterViewData()
         {
-            return default(TMasterViewData);
+            return new MasterViewData();
         }
 
         /// <summary>
@@ -47,18 +48,41 @@ namespace Trakker.Core
         /// <param name="model">The model.</param>
         /// <param name="masterModel">The master model.</param>
         /// <returns></returns>
-        private static object CreateModel(object model, TMasterViewData masterModel)
+        private static MasterViewData CreateModel(MasterViewData model, MasterViewData masterModel)
         {
-            var modelType = typeof(object);
+            model.CurrentProject = masterModel.CurrentProject;
+            model.CurrentUser = masterModel.CurrentUser;
+            model.HasCurrentProject = masterModel.HasCurrentProject;
+            model.IsUserLoggedIn = masterModel.IsUserLoggedIn;
+            model.NumTicketsAssignedToCurrentUser = masterModel.NumTicketsAssignedToCurrentUser;
+            model.Projects = masterModel.Projects;
+            model.Tickets = masterModel.Tickets;
 
-            if (model != null)
-                modelType = model.GetType();
-
-            var types = new[] { typeof(TMasterViewData), modelType };
-            Type generic = typeof(ViewWrapperViewData<,>).MakeGenericType(types);
-
-            return Activator.CreateInstance(generic, masterModel, model);
+            return model;
         }
+
+        protected override MasterViewData GetMasterViewData()
+        {
+            MasterViewData viewData = new MasterViewData()
+            {
+                Projects = _projectService.GetAllProjects(),
+                HasCurrentProject = true,
+                CurrentProject = _projectService.GetProjectByProjectId(ProjectService.SelectedProjectId),
+                CurrentUser = _userService.CurrentUser,
+                IsUserLoggedIn = _userService.IsUserLoggedIn(),
+                Tickets = _ticketService.GetNewestTicketsWithProjectId(ProjectService.SelectedProjectId, 5),
+                NumTicketsAssignedToCurrentUser = 0
+            };
+
+            if (viewData.CurrentUser != null)
+            {
+                viewData.NumTicketsAssignedToCurrentUser = _ticketService.CountTicketsWithAssignedTo(_userService.CurrentUser.UserId);
+            }
+
+            return viewData;
+        }
+
     }
 
 }
+*/

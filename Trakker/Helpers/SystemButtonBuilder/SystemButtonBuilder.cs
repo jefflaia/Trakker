@@ -27,7 +27,8 @@ namespace Trakker.Helpers
         CreateComment,
         Assign,
         AssignToMe,
-        WatchIssue
+        WatchIssue,
+        Login,
 
     }
 

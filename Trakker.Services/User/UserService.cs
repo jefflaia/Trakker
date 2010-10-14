@@ -81,8 +81,6 @@ namespace Trakker.Services
 
        public string HashPassword(string password, string salt)
        {
-
-
            // Convert plain text into a byte array.
            byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
            byte[] saltBytes = Encoding.UTF8.GetBytes(salt);
@@ -137,13 +135,13 @@ namespace Trakker.Services
        public bool ValidateCredentials(string email, string password)
        {
            User user = GetUserWithEmail(email);
-           string hashedPassword = HashPassword(password, user.Salt);
-
+           
            if (user == null)
            {
                return false;
            }
 
+           string hashedPassword = HashPassword(password, user.Salt);
            if (String.Compare(user.Password, hashedPassword, false) == 0)
            {
                return true;

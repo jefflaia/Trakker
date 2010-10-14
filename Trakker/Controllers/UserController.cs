@@ -34,59 +34,13 @@ namespace Trakker.Controllers
 
         public ActionResult Login()
         {
-            using (UnitOfWork)
-            {
-                var t = new HtmlTable();
-                var td = new HtmlTableCell();
-
-                IList<User> c = _userService.GetAllUsers();
-
-                try
-                {
-
-                    _userService.Save(new Role()
-                    {
-                        Description = "desc"
-                    });
-
-                    UnitOfWork.Commit();
-                }
-                catch (Exception e)
-                {
-                }
-
-                var table = new TestTable(c);
-
-
-
-
-
-                var control = table.CreateColumn<DateFormatControl>("UserId")
-                    .SetHeaderText("Yeah user baby");
-
-
-                table.GetColumn(x => x.Created).SetControl(new DateFormatControl());
-                table.GetColumn(x => x.UserId).Ignore = true;
-
-
-                var viewData = new LoginViewData()
-                {
-                    Table = table
-                };
-
-                return View(viewData);
-               
-
-
-            }
-
-            
+            return View(new LoginViewData());
         }
 
         [HttpPost]
         public ActionResult Login(User user)
         {
-            if (_userService.ValidateCredentials(user.Email, user.Password))
+           if (_userService.ValidateCredentials(user.Email, user.Password))
            {
                _userService.LogUserIn(user);
                return RedirectToAction<TicketController>(x => x.TicketList(1));
