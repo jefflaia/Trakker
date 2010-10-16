@@ -24,11 +24,7 @@ namespace Trakker.Controllers
        public UserController(IUserService userService, ITicketService ticketService, IProjectService projectService)
             : base(projectService, ticketService, userService)
 
-        {
-           // var test = uR.GetById(1);
-
-            _userService = userService;
-            
+        {            
         }
         
 

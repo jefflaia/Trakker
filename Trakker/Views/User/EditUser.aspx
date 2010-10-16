@@ -1,14 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<ViewWrapperViewData<MasterViewData,Trakker.ViewData.UserData.CreateEditUserViewData>>" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	CreateUser
-</asp:Content>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Trakker.ViewData.UserData.CreateEditUserViewData>" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
 <% using (Html.BeginForm(400))
    { %>
-    <h2>Edit User: <%= Model.View.Email %></h2>
-    <%= Html.Partial("CreateEditUser", Model.View) %>
+    <h2>Edit User: <%= Model.Email %></h2>
+    <%= Html.Partial("CreateEditUser", Model) %>
 <% } %>
 </asp:Content>

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Web;
 using Trakker.Data;
 using Trakker.Helpers;
+using Trakker.ViewData.SharedData;
 
 namespace Trakker.ViewData.TicketData
 {
-    public class TicketDetailsViewData
+    public class TicketDetailsViewData : MasterViewData
     {
         public int Id { get; set; }
         public string Summary { get; set; }

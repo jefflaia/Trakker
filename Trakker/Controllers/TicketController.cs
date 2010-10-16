@@ -19,9 +19,6 @@ namespace Trakker.Controllers
         public TicketController(ITicketService ticketService, IUserService userService, IProjectService projectService)
             : base(projectService, ticketService, userService)
         {
-            _ticketService = ticketService;
-            _userService = userService;
-
         }
 
 

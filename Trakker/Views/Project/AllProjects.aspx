@@ -1,9 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<ViewWrapperViewData<MasterViewData,AllProjectsViewData>>" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	All Projects
-</asp:Content>
-
+<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<AllProjectsViewData>" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <h2>All Projects</h2>
@@ -18,7 +13,7 @@
             </tr>
         </thead>
         <tbody>
-            <% foreach(var project in Model.View.Projects) { %>
+            <% foreach(var project in Model.Projects) { %>
                 <tr>
                     <td><%= Html.ActionLink<ProjectController>(x=>x.EditProject(project.KeyName), project.Name)  %></td>
                     <td><%= project.Lead  %></td>

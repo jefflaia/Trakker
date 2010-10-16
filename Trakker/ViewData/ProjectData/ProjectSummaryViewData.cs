@@ -1,6 +1,7 @@
-﻿namespace Trakker.ViewData.ProjectData
+﻿using Trakker.ViewData.SharedData;
+namespace Trakker.ViewData.ProjectData
 {
-    public class ProjectSummaryViewData
+    public class ProjectSummaryViewData : MasterViewData
     {
         
 

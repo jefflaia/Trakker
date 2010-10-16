@@ -1,13 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<ViewWrapperViewData<MasterViewData,CreateEditProjectViewData>>" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	CreateProject
-</asp:Content>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<CreateEditProjectViewData>" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <h2>CreateProject</h2>
 
-    <% Html.RenderPartial("CreateEditProject", Model.View); %>
+    <% Html.RenderPartial("CreateEditProject", Model); %>
 
 </asp:Content>

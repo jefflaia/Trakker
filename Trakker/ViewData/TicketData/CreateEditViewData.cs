@@ -2,11 +2,12 @@
 using System.Web.Mvc;
 using Trakker.Data;
 using System.Collections.Generic;
+using Trakker.ViewData.SharedData;
 
 namespace Trakker.ViewData.TicketData
 {
 
-    public class CreateEditViewData
+    public class CreateEditViewData : MasterViewData
     {
         public Ticket Ticket { get; set; }
         public IList<Priority> Priorities { get; set; }

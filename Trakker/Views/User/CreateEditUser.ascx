@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<Trakker.ViewData.UserData.CreateEditUserViewData>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<CreateEditUserViewData>" %>
 
 <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.Email))
@@ -18,4 +18,4 @@
     .AddToRight(Html.DropDownListFor(x => x.RoleId, new SelectList(Model.Roles, "RoleId", "Name", Model.RoleId ))) %>
 
 <%= Html.FormRow()
-    .AddToRight(Html.SaveButton("Save", Relation.Single, Icon.Save, new { type = "submit" })) %>
+    .AddToRight(Html.SaveButton("Save", new object { }))%>

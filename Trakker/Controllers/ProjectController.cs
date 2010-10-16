@@ -14,14 +14,10 @@ namespace Trakker.Controllers
     [Authenticate]
     public class ProjectController : MasterController
     {
-        protected readonly IProjectService _projectService;
-        protected readonly IUserService _userService;
 
         public ProjectController(IProjectService projectService, IUserService userService, ITicketService ticketService)
             : base(projectService, ticketService, userService)
         {
-            _projectService = projectService;
-            _userService = userService;
         }
 
         public ActionResult ProjectSummary(string keyName)

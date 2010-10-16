@@ -1,4 +1,4 @@
-<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<MenuViewData>" %>
+<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<MasterViewData>" %>
 <ul>
     <li>
         <%= Html.ActionLink<ProjectController>(x => x.AllProjects(), "Projects") %>

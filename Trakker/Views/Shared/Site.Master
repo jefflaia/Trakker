@@ -47,10 +47,10 @@
 </script>
     <div id="Header">
     
-        <% if (true){ %>
+        <% if (Model.IsUserLoggedIn){ %>
             <div class="Nav">
 
-                <% Html.RenderAction<SiteController>(x => x.Menu()); %>
+                <% Html.RenderPartial("Menu", Model); %>
             </div>
             
             <div class="Right">
@@ -59,10 +59,7 @@
                 <% } %>
                 <div>
                     <span>Assigned: <%= Model.NumTicketsAssignedToCurrentUser %></span>
-                    <span><%
-                    /*
-                    = Html.ActionLink<UserController>(x => x.Logout(), "Logout (" + Model.CurrentUser.Email+")")
-                              */%></span>
+                    <span><%= Html.ActionLink<UserController>(x => x.Logout(), "Logout (" + Model.CurrentUser.Email+")")%></span>
                 </div>
             </div>
          <% } %>
