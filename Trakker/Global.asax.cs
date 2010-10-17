@@ -14,6 +14,7 @@ using Castle.Windsor;
 using Trakker.Routes;
 using System.Configuration;
 using Trakker.IoC;
+using System.ComponentModel;
 
 namespace Trakker
 {
@@ -29,15 +30,20 @@ namespace Trakker
             UserRoutes.AddRoutes(ref routes);
             ProjectRoutes.AddRoutes(ref routes);
             TicketRoutes.AddRoutes(ref routes);
-            SiteRoute.AddRoutes(ref routes);
+            
+            //routes.MapRoute("pagination", String.Empty, new { controller = "Nav", action = "ticketListPagination" });
                         
             routes.MapRoute("DefaultPaginated", "page/{index}", new { controller = "Ticket", action = "TicketList"});
+           
             routes.MapRoute("Default", "",  new { controller = "Ticket", action = "TicketList"});
+            routes.MapRoute("CatchAll", "{controller}/{action}");
 
         }
 
         protected void Application_Start()
         {
+            
+
             Mapper.CreateMap<Comment, CommentViewData>();
 
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory());

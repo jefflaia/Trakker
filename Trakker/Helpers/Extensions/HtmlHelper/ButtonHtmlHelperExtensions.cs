@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Trakker.Helpers.Elements;
+using Trakker.Helpers.Icons;
 
 namespace Trakker.Helpers
 {
@@ -12,15 +13,15 @@ namespace Trakker.Helpers
 
         public static string LoginButton(this HtmlHelper helper, string innerHtml, object attributes)
         {
-            return Button(helper, innerHtml, Relation.Single, Icon.Login, attributes);
+            return Button(helper, innerHtml, Relation.Single, new LoginIcon(), attributes);
         }
 
         public static string SaveButton(this HtmlHelper helper, string innerHtml, object attributes)
         {
-            return Button(helper, innerHtml, Relation.Single, Icon.Save, attributes);
+            return Button(helper, innerHtml, Relation.Single, new SaveIcon(), attributes);
         }
 
-        private static string Button(this HtmlHelper helper, string innerHtml, Relation relation, Icon icon, object attributes)
+        private static string Button(this HtmlHelper helper, string innerHtml, Relation relation, IIcon icon, object attributes)
         {
             SystemButtonBuilder buttonBuilder = new SystemButtonBuilder();
             buttonBuilder.SetIcon(icon);

@@ -17,7 +17,7 @@ namespace Trakker.Helpers
         public static FormRow FormRow(this HtmlHelper helper)
         {
             return new FormRow();
-        }      
+        }
 
         public static string FormHR(this HtmlHelper helper)
         {
@@ -36,18 +36,18 @@ namespace Trakker.Helpers
 
             return input.ToString(TagRenderMode.SelfClosing);
         }
-/*
-        public static string Link(this HtmlHelper helper, string fileName, string rel, object attributes)
-        {
-            var link = new TagBuilder("link");
-            link.MergeAttribute("rel", rel);
-            link.MergeAttribute("type", "text/css");
-            link.MergeAttributes(new RouteValueDictionary(attributes));
-            link.MergeAttribute("href", "");
+        /*
+                public static string Link(this HtmlHelper helper, string fileName, string rel, object attributes)
+                {
+                    var link = new TagBuilder("link");
+                    link.MergeAttribute("rel", rel);
+                    link.MergeAttribute("type", "text/css");
+                    link.MergeAttributes(new RouteValueDictionary(attributes));
+                    link.MergeAttribute("href", "");
 
-            return link.ToString(TagRenderMode.SelfClosing);
-        }
-        */
+                    return link.ToString(TagRenderMode.SelfClosing);
+                }
+                */
 
         public static MvcForm BeginForm(this HtmlHelper htmlHelper, int width)
         {
@@ -56,20 +56,28 @@ namespace Trakker.Helpers
 
         public static MvcForm BeginForm(this HtmlHelper htmlHelper, int width, bool center)
         {
-            object attrs = new {
+            object attrs = new
+            {
                 style = "width: " + width + "px;",
-                @class = ( center ? "Center" : "" )
+                @class = (center ? "Center" : "")
             };
-            
+
             return htmlHelper.BeginForm(null, null, FormMethod.Post, new RouteValueDictionary(attrs));
         }
 
-
-        public static void RenderAction<TController>(this HtmlHelper helper, Expression<Action<TController>> action) where TController : Controller
+        public static MvcHtmlString LabelFor<TModel, TValue>(this HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression, string labelText)
         {
-            var routeValues = action.GetRouteValuesFromExpression<TController>();
-            helper.RenderAction(routeValues["Action"].ToString(), routeValues);
-            //helper.RenderAction(routeValues["Action"], routeValues["Controller"]);
+            return LabelHelper(html, html.ViewData.ModelMetadata, ExpressionHelper.GetExpressionText(expression), labelText);
         }
+
+
+        internal static MvcHtmlString LabelHelper(HtmlHelper html, ModelMetadata metadata, string htmlFieldName, string labelText)
+        {
+            TagBuilder tag = new TagBuilder("label");
+            tag.Attributes.Add("for", html.ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldId(htmlFieldName));
+            tag.SetInnerText(labelText);
+            return MvcHtmlString.Create(tag.ToString(TagRenderMode.Normal));
+        }
+
     }
 }

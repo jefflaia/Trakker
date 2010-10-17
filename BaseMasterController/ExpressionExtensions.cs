@@ -86,8 +86,8 @@
             string actionName = GetTargetActionName(call.Method);
 
             var rvd = new RouteValueDictionary();
-            rvd.Add("Controller", controllerName);
-            rvd.Add("Action", actionName);
+            rvd.Add("controller", controllerName);
+            rvd.Add("action", actionName);
 
             return rvd;
         }

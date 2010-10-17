@@ -12,7 +12,7 @@ namespace Trakker.Helpers
     public interface ISystemButtonBuilder
     {
         TagBuilder CreateButton(string innerHtml, string action, object attributes);
-        void SetIcon(Icon Icon);
+        void SetIcon(IIcon Icon);
         void SetElement(IElement element);
         void SetRelation(Relation relation);
     }

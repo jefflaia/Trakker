@@ -130,7 +130,6 @@
     <Compile Include="Helpers\SystemButtonBuilder\ISystemButtonBuilder.cs" />
     <Compile Include="Helpers\SystemButtonBuilder\SystemButtonBuilder.cs" />
     <Compile Include="Helpers\Extensions\LambdaExtensions.cs" />
-    <Compile Include="Helpers\Extensions\TypeExtensions.cs" />
     <Compile Include="Helpers\FormException.cs" />
     <Compile Include="Helpers\Extensions\HtmlHelper\HtmlHelperExtensions.cs" />
     <Compile Include="Helpers\IsCurrentActionHelper.cs" />
@@ -138,7 +137,6 @@
     <Compile Include="Helpers\Pagination.cs" />
     <Compile Include="IoC\CastleConfigFileSection.cs" />
     <Compile Include="Routes\ProjectRoutes.cs" />
-    <Compile Include="Routes\SiteRoute.cs" />
     <Compile Include="Routes\TicketRoutes.cs" />
     <Compile Include="Routes\UserRoutes.cs" />
     <Compile Include="ViewData\ProjectData\AllProjectsViewData.cs" />
@@ -785,6 +783,10 @@
     <ProjectReference Include="..\BaseMasterController\Trakker.Core.csproj">
       <Project>{CF243D83-CEF5-448B-8E56-DE3149AF4319}</Project>
       <Name>Trakker.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcFutures\MvcFutures.csproj">
+      <Project>{D3CF7430-6DA4-42B0-BD90-CA39D16687B2}</Project>
+      <Name>MvcFutures</Name>
     </ProjectReference>
     <ProjectReference Include="..\Trakker.Data\Trakker.Data.csproj">
       <Project>{A9547E24-5633-4817-8B4A-E35AF672EAFB}</Project>

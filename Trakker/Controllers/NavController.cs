@@ -8,6 +8,7 @@ using Trakker.Helpers;
 
 namespace Trakker.Controllers
 {
+    [ChildActionOnly]
     public class NavController : Controller
     {
         #region Widget

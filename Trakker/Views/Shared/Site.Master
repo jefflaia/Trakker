@@ -46,7 +46,7 @@
     });
 </script>
     <div id="Header">
-    
+
         <% if (Model.IsUserLoggedIn){ %>
             <div class="Nav">
 

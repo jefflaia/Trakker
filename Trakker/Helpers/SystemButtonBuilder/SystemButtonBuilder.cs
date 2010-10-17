@@ -58,16 +58,9 @@ namespace Trakker.Helpers
             return tag;
         }
 
-        public void SetIcon(Icon icon)
+        public void SetIcon(IIcon icon)
         {
-            string className = string.Concat(ICON_CLASS_PREFFIX, icon.ToString(), ICON_CLASS_SUFFIX);
-            _icon = (IIcon)Assembly.GetExecutingAssembly().CreateInstance(className);
-
-            if (_icon == null)
-            {
-                throw new Exception(className + " does not exist.");
-            }
-
+            _icon = icon;
         }
 
         public void SetElement(IElement element)
