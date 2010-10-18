@@ -20,18 +20,6 @@ namespace Trakker.Helpers
         Bottom
     }
 
-    public enum Icon
-    {
-        Save,
-        EditTicket,
-        CreateComment,
-        Assign,
-        AssignToMe,
-        WatchIssue,
-        Login,
-
-    }
-
     public class SystemButtonBuilder : ISystemButtonBuilder
     {
 
@@ -43,7 +31,7 @@ namespace Trakker.Helpers
         protected const string ICON_CLASS_PREFFIX = "Trakker.Helpers.Icons.";
         protected const string BASE_CSSCLASS = "UI-Button";
 
-        public TagBuilder CreateButton(string innerHtml, string action, object attributes)
+        public TagBuilder CreateButton(string innerText, string action, object attributes)
         {
             var tag = _element.Get();
 
@@ -53,7 +41,7 @@ namespace Trakker.Helpers
             tag.AddCssClass(BASE_CSSCLASS);
             tag.AddCssClass(GetRelationCss(_relation));
 
-            tag.InnerHtml = string.Concat(_icon.Get(), innerHtml);
+            tag.InnerHtml = string.Concat(BuildInnerHtml(innerText), _icon.Get());
 
             return tag;
         }
@@ -91,6 +79,14 @@ namespace Trakker.Helpers
                 default:
                     return "UI-Border";
             }
+        }
+
+        protected string BuildInnerHtml(string innerText)
+        {
+            TagBuilder tag = new TagBuilder("span");
+            tag.SetInnerText(innerText);
+
+            return tag.ToString();
         }
     }
 }

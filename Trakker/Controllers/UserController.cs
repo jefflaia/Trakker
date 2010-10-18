@@ -34,19 +34,25 @@ namespace Trakker.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(User user)
+        public ActionResult Login(LoginViewData viewData)
         {
-           if (_userService.ValidateCredentials(user.Email, user.Password))
-           {
-               _userService.LogUserIn(user);
-               return RedirectToAction<TicketController>(x => x.TicketList(1));
-           }
-
-            return View(new LoginViewData()
+            if (ModelState.IsValid)
             {
-                Email = user.Email,
-                Password = user.Password
-            });
+                User user = new User()
+                {
+                    Email = viewData.Email,
+                    Password = viewData.Password
+                };
+
+                if (_userService.ValidateCredentials(user.Email, user.Password))
+                {
+                    _userService.LogUserIn(user);
+                    return RedirectToAction<TicketController>(x => x.TicketList(1));
+                }
+            }
+
+            return View(viewData);
+
         }
 
         public ActionResult Logout()

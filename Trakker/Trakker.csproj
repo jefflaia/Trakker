@@ -65,6 +65,10 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\Lib\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Mvc.Validation, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Mvc.Validation.dll</HintPath>
@@ -783,10 +787,6 @@
     <ProjectReference Include="..\BaseMasterController\Trakker.Core.csproj">
       <Project>{CF243D83-CEF5-448B-8E56-DE3149AF4319}</Project>
       <Name>Trakker.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MvcFutures\MvcFutures.csproj">
-      <Project>{D3CF7430-6DA4-42B0-BD90-CA39D16687B2}</Project>
-      <Name>MvcFutures</Name>
     </ProjectReference>
     <ProjectReference Include="..\Trakker.Data\Trakker.Data.csproj">
       <Project>{A9547E24-5633-4817-8B4A-E35AF672EAFB}</Project>

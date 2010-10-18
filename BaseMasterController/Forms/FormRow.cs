@@ -24,7 +24,12 @@ namespace Trakker.Core.Forms
 
         public FormRow AddToRight(MvcHtmlString markup)
         {
-            return AddToRight(markup.ToString());
+            if (markup != null)
+            {
+                return AddToRight(markup.ToString());
+            }
+
+            return this;
         }
         
         public FormRow AddToRight(string markup)
