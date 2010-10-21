@@ -115,17 +115,13 @@ namespace Trakker.Controllers
         {
             CreateEditViewData viewData = new CreateEditViewData()
             {
-                Ticket = new Ticket()
-                {
-                    DueDate = DateTime.Today
-                },
                 Categories = _ticketService.GetAllCategories(),
                 Priorities = _ticketService.GetAllPriorities(),
                 Status = _ticketService.GetAllStatus(),
-                Users = _userService.GetAllUsers()
+                Users = _userService.GetAllUsers(),
+                Projects = _projectService.GetAllProjects()
             };
 
-            viewData.Users.Insert(0, new User()); //add a blank selection
 
             return View(viewData);
         }
@@ -133,22 +129,21 @@ namespace Trakker.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult CreateTicket(Ticket ticket)
         {
-            try
+            if (ModelState.IsValid)
             {
-                ticket.ProjectId = ProjectService.SelectedProjectId;
-                ticket.CreatedByUserId = _userService.CurrentUser.UserId;
-                ticket.AssignedByUserId = _userService.CurrentUser.UserId;
-                ticket.AssignedToUserId = _userService.CurrentUser.UserId;
-               
-                _ticketService.Save(ticket);
 
-                return RedirectToAction<TicketController>(x => x.TicketList(1));
-            }
-            catch (Exception ex)
-            {
-                //throw new Exception(ex.Message);
-            }
+                    ticket.ProjectId = ProjectService.SelectedProjectId;
+                    ticket.CreatedByUserId = _userService.CurrentUser.UserId;
+                    ticket.AssignedByUserId = _userService.CurrentUser.UserId;
+                    ticket.AssignedToUserId = _userService.CurrentUser.UserId;
+                    ticket.ResolutionId = 1; //temp
 
+                    _ticketService.Save(ticket);
+                    UnitOfWork.Commit();
+
+                    return RedirectToAction<TicketController>(x => x.TicketList(1));
+            }
+           
             return View();
         }
 
@@ -158,11 +153,12 @@ namespace Trakker.Controllers
             
             CreateEditViewData viewData = new CreateEditViewData()
             {
+                Projects = _projectService.GetAllProjects(),
                 Categories = _ticketService.GetAllCategories(),
                 Priorities = _ticketService.GetAllPriorities(),
                 Status = _ticketService.GetAllStatus(),
-                Ticket = _ticketService.GetTicketWithKeyName(keyName),
-                Users = _userService.GetAllUsers()
+                Users = _userService.GetAllUsers(),
+
             };
             
             viewData.Users.Insert(0, new User()); //add a blank selection

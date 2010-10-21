@@ -1,53 +1,49 @@
 <%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<Trakker.ViewData.TicketData.CreateEditViewData>" %>
 
-<%= Html.ValidationSummary("Edit was unsuccessful. Please correct the errors and try again.") %>
-<% using (Html.BeginForm()) {%>
-    <div class="Row">
-        <label for="Summary">Summary:</label>
-        <%= Html.TextBox("Summary", Model.Ticket.Summary) %>
-        <%= Html.ValidationMessage("Summary", "*") %>
-    </div>
+<%= Html.FormRow()
+    .AddToLeft(Html.LabelFor(x => x.ProjectId))
+    .AddToRight(Html.DropDownListFor(x => x.PriorityId, new SelectList(Model.Projects, "ProjectId", "Name")))
+    .AddToRight(Html.ValidationMessageFor(x => x.ProjectId))%>
 
-    <div class="Row">
-        <label for="PriorityId">Assign To:</label>
-        <%= Html.DropDownList("AssignedTo", new SelectList(Model.Users, "UserID", "Email", Model.Ticket.AssignedToUserId))%>
-        <%= Html.ValidationMessage("AssignedTo", "*") %>
-    </div>
+<%= Html.FormRow()
+    .AddToLeft(Html.LabelFor(x => x.Summary))
+    .AddToRight(Html.TextBoxFor(x => x.Summary, new { style = "width: 450px;" }))
+    .AddToRight(Html.ValidationMessageFor(x => x.Summary))%>
 
-    <div class="Row">
-        <label for="PriorityId">Priority:</label>
-        <%= Html.DropDownList("PriorityId", new SelectList(Model.Priorities, "PriorityId", "Name", Model.Ticket.PriorityId))%>
-        <%= Html.ValidationMessage("PriorityId", "*") %>
-    </div>
+<%= Html.FormRow()
+    .AddToLeft(Html.LabelFor(x => x.AssignedToUserId))
+    .AddToRight(Html.TextBoxFor(x => x.AssignedToUserId))
+    .AddToRight(Html.ValidationMessageFor(x => x.AssignedToUserId)) %>
 
-    <div class="Row">
-        <label for="StatusId">Status:</label>
-        <%= Html.DropDownList("StatusId", new SelectList(Model.Status, "StatusId", "Name", Model.Ticket.StatusId))%>
-        <%= Html.ValidationMessage("StatusId", "*") %>
-    </div>
+    <%= Html.FormRow()
+    .AddToLeft(Html.LabelFor(x => x.PriorityId))
+    .AddToRight(Html.DropDownListFor(x => x.PriorityId, new SelectList(Model.Priorities, "PriorityId", "Name")))
+    .AddToRight(Html.ValidationMessageFor(x => x.PriorityId)) %>
 
-    <div class="Row">
-        <label for="CategoryId">Category:</label>
-        <%= Html.DropDownList("CategoryId", new SelectList(Model.Categories, "CategoryId", "Name", Model.Ticket.CategoryId))%>
-        <%= Html.ValidationMessage("CategoryId", "*")%>
-    </div>
+<%= Html.FormRow()
+    .AddToLeft(Html.LabelFor(x => x.StatusId))
+    .AddToRight(Html.DropDownListFor(x => x.StatusId, new SelectList(Model.Status, "StatusId", "Name")))
+    .AddToRight(Html.ValidationMessageFor(x => x.StatusId)) %>
 
-    <div class="Row">
-        <label for="DueDate">DueDate:</label>
-        <%= Html.TextBox("DueDate", String.Format("{0:g}", Model.Ticket.DueDate))%>
-        <%= Html.ValidationMessage("DueDate", "*") %>
-    </div>
+<%= Html.FormRow()
+    .AddToLeft(Html.LabelFor(x => x.CategoryId))
+    .AddToRight(Html.DropDownListFor(x => x.CategoryId, new SelectList(Model.Categories, "CategoryId", "Name")))
+    .AddToRight(Html.ValidationMessageFor(x => x.CategoryId)) %>
 
-    <div class="Row">
-        <label for="Description">Description:</label>
-        <%= Html.CKEditorTextArea("Description", Model.Ticket.Description, new { })%>
-        <%= Html.ValidationMessage("Description", "*") %>
-    </div>
 
-    <div class="Row">
-       <%= Html.StyledSubmitButton("Save", null)%>
-    </div>
-<% } %>
+
+<%= Html.FormRow()
+    .AddToLeft(Html.LabelFor(x => x.DueDate))
+    .AddToRight(Html.TextBoxFor(x => x.DueDate))
+    .AddToRight(Html.ValidationMessageFor(x => x.DueDate)) %>
+
+<%= Html.FormRow()
+    .AddToLeft(Html.LabelFor(x => x.Description))
+    .AddToRight(Html.TextAreaFor(x => x.Description, new { style = "width: 450px; height: 70px;" }))
+    .AddToRight(Html.ValidationMessageFor(x => x.Description))%>
+
+<%= Html.FormRow()
+    .AddToRight(Html.SaveButton("Save", new {})) %>
 
 
 

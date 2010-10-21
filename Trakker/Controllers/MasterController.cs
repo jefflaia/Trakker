@@ -107,7 +107,7 @@ namespace Trakker.Controllers
             model.HasCurrentProject = masterModel.HasCurrentProject;
             model.IsUserLoggedIn = masterModel.IsUserLoggedIn;
             model.NumTicketsAssignedToCurrentUser = masterModel.NumTicketsAssignedToCurrentUser;
-            model.Projects = masterModel.Projects;
+            model.RecentProjects = masterModel.RecentProjects;
             model.Tickets = masterModel.Tickets;
 
             return model;
@@ -117,7 +117,7 @@ namespace Trakker.Controllers
         {
             MasterViewData viewData = new MasterViewData()
             {
-                Projects = _projectService.GetAllProjects(),
+                RecentProjects = _projectService.GetAllProjects(),
                 HasCurrentProject = true,
                 CurrentProject = _projectService.GetProjectByProjectId(ProjectService.SelectedProjectId),
                 CurrentUser = _userService.CurrentUser,

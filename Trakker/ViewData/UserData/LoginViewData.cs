@@ -8,16 +8,17 @@ using Trakker.Helpers;
 using Trakker.ViewData.SharedData;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Trakker.Properties;
 
 
 namespace Trakker.ViewData.UserData
 {
     public class LoginViewData : MasterViewData
     {
-        [Required(ErrorMessage = "Email is required")]
+        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "You must enter your password")]
+        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         public string Password { get; set; }
     }
 }

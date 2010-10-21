@@ -8,7 +8,7 @@ namespace Trakker.ViewData.SharedData
 {
     public class MasterViewData
     {
-        public IList<Project> Projects { get; set; }
+        public IList<Project> RecentProjects { get; set; }
 
         public bool HasCurrentProject { get; set; }
         public Project CurrentProject { get; set; }

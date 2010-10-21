@@ -9,9 +9,9 @@
                 <li class="Break"></li>
             <% } %>
            
-            <% if (Model.Projects.Count > 0) { %>
+            <% if (Model.RecentProjects.Count > 0) { %>
                 <li class="Heading">Recent Projects</li>
-                <% foreach (var project in Model.Projects) { %>
+                <% foreach (var project in Model.RecentProjects) { %>
                     <li><%= Html.ActionLink<ProjectController>(x => x.ProjectSummary(project.KeyName), project.Name)%></li>
                 <% } %>
             <% } %>

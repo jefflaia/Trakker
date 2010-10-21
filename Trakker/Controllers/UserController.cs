@@ -49,6 +49,10 @@ namespace Trakker.Controllers
                     _userService.LogUserIn(user);
                     return RedirectToAction<TicketController>(x => x.TicketList(1));
                 }
+                else
+                {
+                    ModelState.AddModelError("Invalid", "Invalid email or password");
+                }
             }
 
             return View(viewData);
