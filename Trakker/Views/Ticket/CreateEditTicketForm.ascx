@@ -2,7 +2,7 @@
 
 <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.ProjectId))
-    .AddToRight(Html.DropDownListFor(x => x.PriorityId, new SelectList(Model.Projects, "ProjectId", "Name")))
+        .AddToRight(Html.DropDownListFor(x => x.ProjectId, new SelectList(Model.Projects, "ProjectId", "Name")))
     .AddToRight(Html.ValidationMessageFor(x => x.ProjectId))%>
 
 <%= Html.FormRow()

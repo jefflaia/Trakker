@@ -40,7 +40,7 @@ namespace Trakker.Controllers
                 Summary = ticket.Summary,
                 Description = ticket.Description,
                 Created = ticket.Created,
-                DueDate = ticket.DueDate,
+                DueDate = ticket.DueDate.Value,
                 Status = _ticketService.GetStatusWithId(ticket.StatusId),
                 Priority = _ticketService.GetPriorityWithId(ticket.PriorityId),
                 Cateogory = _ticketService.GetCategoryWithId(ticket.CategoryId),
@@ -127,67 +127,81 @@ namespace Trakker.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult CreateTicket(Ticket ticket)
+        public ActionResult CreateTicket(CreateEditViewData viewData)
         {
             if (ModelState.IsValid)
             {
+                Mapper.CreateMap<CreateEditViewData, Ticket>();
+                Ticket ticket = Mapper.Map(viewData, new Ticket());
 
-                    ticket.ProjectId = ProjectService.SelectedProjectId;
-                    ticket.CreatedByUserId = _userService.CurrentUser.UserId;
-                    ticket.AssignedByUserId = _userService.CurrentUser.UserId;
-                    ticket.AssignedToUserId = _userService.CurrentUser.UserId;
-                    ticket.ResolutionId = 1; //temp
+                ticket.CreatedByUserId = _userService.CurrentUser.UserId;
+                ticket.AssignedByUserId = _userService.CurrentUser.UserId;
+                ticket.AssignedToUserId = _userService.CurrentUser.UserId;
+                ticket.Created = DateTime.Now;
+                ticket.ResolutionId = 1; //temp
 
-                    _ticketService.Save(ticket);
-                    UnitOfWork.Commit();
+                _ticketService.Save(ticket);
+                UnitOfWork.Commit();
 
-                    return RedirectToAction<TicketController>(x => x.TicketList(1));
+                return RedirectToAction<TicketController>(x => x.TicketList(1));
             }
-           
-            return View();
+
+            viewData.Categories = _ticketService.GetAllCategories();
+            viewData.Priorities = _ticketService.GetAllPriorities();
+            viewData.Status = _ticketService.GetAllStatus();
+            viewData.Users = _userService.GetAllUsers();
+            viewData.Projects = _projectService.GetAllProjects();
+
+            return View(viewData);
         }
 
         [AcceptVerbs(HttpVerbs.Get)]
         public ActionResult EditTicket(string keyName)
         {
-            
+            Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
+
+            if (ticket == null) throw new Exception("redirect, ticket doesnt exist!");
+
             CreateEditViewData viewData = new CreateEditViewData()
             {
                 Projects = _projectService.GetAllProjects(),
                 Categories = _ticketService.GetAllCategories(),
                 Priorities = _ticketService.GetAllPriorities(),
                 Status = _ticketService.GetAllStatus(),
-                Users = _userService.GetAllUsers(),
-
+                Users = _userService.GetAllUsers()
             };
-            
-            viewData.Users.Insert(0, new User()); //add a blank selection
+
+            Mapper.CreateMap<Ticket, CreateEditViewData>();
+            viewData = Mapper.Map(ticket, viewData);
 
             return View(viewData);
         }
          
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult EditTicket(string keyName, Ticket ticket)
+        public ActionResult EditTicket(string keyName, CreateEditViewData viewData)
         {
-            Ticket t = _ticketService.GetTicketWithKeyName(keyName);
+            Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
 
-            if (t == null) throw new Exception("redirect, ticket doesnt exist!");
+            if (ticket == null) throw new Exception("redirect, ticket doesnt exist!");
 
-            try
+            if (ModelState.IsValid)
             {
-                ticket.TicketId = t.TicketId;
-                ticket.Created = t.Created;
-
+                Mapper.CreateMap<CreateEditViewData, Ticket>();
+                ticket = Mapper.Map(viewData, ticket);
 
                 _ticketService.Save(ticket);
+                UnitOfWork.Commit();
+
                 return RedirectToAction<TicketController>(x => x.TicketDetails(ticket.KeyName));
             }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
 
-            
+            viewData.Categories = _ticketService.GetAllCategories();
+            viewData.Priorities = _ticketService.GetAllPriorities();
+            viewData.Status = _ticketService.GetAllStatus();
+            viewData.Users = _userService.GetAllUsers();
+            viewData.Projects = _projectService.GetAllProjects();
+
+            return View(viewData);
         }
 
         public ActionResult CreateComment(string keyName)

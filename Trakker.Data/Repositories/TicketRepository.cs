@@ -64,7 +64,7 @@ namespace Trakker.Data
                        TicketId = t.TicketId,
                        Description = t.Description,
                        Created = t.Created,
-                       DueDate = t.DueDate,
+                       DueDate = t.DueDate.Value,
                        PriorityId = t.PriorityId,
                        CategoryId = t.CategoryId,
                        ResolutionId = t.ResolutionId,
