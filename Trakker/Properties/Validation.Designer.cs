@@ -68,5 +68,23 @@ namespace Trakker.Properties {
                 return ResourceManager.GetString("Required", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This field cannot be longer than 100 characters..
+        /// </summary>
+        public static string StringLength_100 {
+            get {
+                return ResourceManager.GetString("StringLength_100", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This field cannot be longer than 150 characters..
+        /// </summary>
+        public static string StringLength_150 {
+            get {
+                return ResourceManager.GetString("StringLength_150", resourceCulture);
+            }
+        }
     }
 }

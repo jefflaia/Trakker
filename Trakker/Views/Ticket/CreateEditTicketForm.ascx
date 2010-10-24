@@ -30,12 +30,13 @@
     .AddToRight(Html.DropDownListFor(x => x.CategoryId, new SelectList(Model.Categories, "CategoryId", "Name")))
     .AddToRight(Html.ValidationMessageFor(x => x.CategoryId)) %>
 
-
-
 <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.DueDate))
-    .AddToRight(Html.TextBoxFor(x => x.DueDate))
-    .AddToRight(Html.ValidationMessageFor(x => x.DueDate)) %>
+        .AddToRight(
+            Html.Telerik().DatePickerFor(x => x.DueDate)
+                .Value(Model.DueDate)
+                .ShowButton(true))
+        .AddToRight(Html.ValidationMessageFor(x => x.DueDate)) %>
 
 <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.Description))

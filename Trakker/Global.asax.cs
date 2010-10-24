@@ -15,6 +15,7 @@ using Trakker.Routes;
 using System.Configuration;
 using Trakker.IoC;
 using System.ComponentModel;
+using Telerik.Web.Mvc;
 
 namespace Trakker
 {
@@ -49,6 +50,24 @@ namespace Trakker
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory());
 
             RegisterRoutes(RouteTable.Routes);
+
+
+            SharedWebAssets
+                .StyleSheets(config => config.AddGroup("css", group => group
+                    .Add("~/Content/Main.css")
+                    .Add("telerik.common.css")
+                    .Add("telerik.vista.css")
+                    .Combined(true)
+                 ));
+
+            SharedWebAssets
+                .Scripts(config => config.AddGroup("js", group => group
+                    .Add("jquery-1.4.2.min.js")
+                    .Add("telerik.common.min.js")
+                    .Add("telerik.datepicker.min.js")
+                    .Add("telerik.calendar.min.js")
+                    .Combined(true)
+                ));
         }
     }
 }

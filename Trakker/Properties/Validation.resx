@@ -120,4 +120,12 @@
   <data name="Required" xml:space="preserve">
     <value>This field is required.</value>
   </data>
+  <data name="StringLength_100" xml:space="preserve">
+    <value>This field cannot be longer than 100 characters.</value>
+    <comment>Max length of 100 characters</comment>
+  </data>
+  <data name="StringLength_150" xml:space="preserve">
+    <value>This field cannot be longer than 150 characters.</value>
+    <comment>Max length of 150 characters</comment>
+  </data>
 </root>

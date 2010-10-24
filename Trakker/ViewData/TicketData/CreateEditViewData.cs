@@ -15,6 +15,7 @@ namespace Trakker.ViewData.TicketData
         public int ProjectId { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
+        [StringLength(100, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_100")]
         public string Summary { get; set; }
 
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]

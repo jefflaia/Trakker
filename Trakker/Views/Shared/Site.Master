@@ -9,42 +9,20 @@
     <meta name="keywords" content="Keywords for you web page go here. Each keyword or group of keyword phrases are separated by a comma. Keep this  list short and relevant to the content and title of this specific page." />
     
     <title>Trakker</title>
-    <%= Html.Css("Main.css") %>
-    <%= Html.Script("jquery-1.4.1.js") %>
+
+
+<% 
+    Html.Telerik().StyleSheetRegistrar()
+        .DefaultGroup(dg => dg.Enabled(false))
+        .StyleSheets(css => css.AddSharedGroup("css"))
+        .Render();
+%>
  
-    <script type="text/javascript" src="Script/ckeditor/ckeditor.js"></script>
-	<script src="Script/ckeditor/sample.js" type="text/javascript"></script>
+ 
 </head>
 <body>
 
-<script type="text/javascript">
-    $(document).ready(function () {
 
-        $("div.Nav > ul > li").hover(function () {
-            $(this).find(">a").addClass("Hover");
-            $(this).find("ul").eq(0).show();
-
-            var parentWidth = $(this).find("a:first").outerWidth(true);
-            var listWidth = $(this).find("ul:first li").outerWidth();
-
-            if (parentWidth > listWidth) {
-                $(this).find("ul:first li").css({ "width": parentWidth - 2 });
-            }
-        }, function () {
-            $(this).find(">a").removeClass("Hover");
-            $(this).find("ul").eq(0).hide();
-        });
-
-        $("div.SubNav > ul > li").hover(function () {
-            $(this).find(">a").addClass("Hover");
-            $(this).find("ul").eq(0).show();
-        }, function () {
-            $(this).find(">a").removeClass("Hover");
-            $(this).find("ul").eq(0).hide();
-        });
-
-    });
-</script>
     <div id="Header">
 
         <% if (Model.IsUserLoggedIn){ %>
@@ -85,5 +63,41 @@
     <div id="Footer">
         
     </div>
+
+    <% 
+        Html.Telerik().ScriptRegistrar()
+           .DefaultGroup(dg => dg.Enabled(false))
+           .Scripts(scripts => scripts.AddSharedGroup("js"))
+           .Render();
+     %>
+
+     <script type="text/javascript">
+         $(document).ready(function () {
+
+             $("div.Nav > ul > li").hover(function () {
+                 $(this).find(">a").addClass("Hover");
+                 $(this).find("ul").eq(0).show();
+
+                 var parentWidth = $(this).find("a:first").outerWidth(true);
+                 var listWidth = $(this).find("ul:first li").outerWidth();
+
+                 if (parentWidth > listWidth) {
+                     $(this).find("ul:first li").css({ "width": parentWidth - 2 });
+                 }
+             }, function () {
+                 $(this).find(">a").removeClass("Hover");
+                 $(this).find("ul").eq(0).hide();
+             });
+
+             $("div.SubNav > ul > li").hover(function () {
+                 $(this).find(">a").addClass("Hover");
+                 $(this).find("ul").eq(0).show();
+             }, function () {
+                 $(this).find(">a").removeClass("Hover");
+                 $(this).find("ul").eq(0).hide();
+             });
+
+         });
+</script>
 </body>
 </html>

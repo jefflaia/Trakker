@@ -38,8 +38,7 @@ div.SubNav li a{ color: #353535; background-color: transparent; position: relati
 
 
 /* Forms */
-/* c3c3c3*/
-select, textarea, input {color: inherit; border: 1px solid #AACFE4; margin: 2px; padding: 2px 2px; background-color:#FFFFFF; background-image:url(Images/Field-Background.png); background-repeat:repeat-x;
+select, textarea, input {color: inherit; border: 1px solid #AACFE4; margin: 2px !important; padding: 2px 2px; background-color:#FFFFFF; background-image:url(Images/Field-Background.png); background-repeat:repeat-x;
 -moz-border-radius: 2px; min-width: 200px;}
 select { min-width: 206px;}                
 select.input-validation-error, textarea.input-validation-error, input.input-validation-error{background-color: #fff7f8; border: 1px dashed #ff3131;}
@@ -65,7 +64,7 @@ form div.Row span.field-validation-error{color: #ff3131; display:block; margin: 
 .UI-Button{float:left; margin: 2px 0px; color: inherit; display:inline-block; height: 23px; line-height: 23px; border:1px solid #ccc; padding: 3px 5px 2px 5px; 
 background-image: url(Images/UI-Backgrounds.png);}
 .UI-Button:hover{border-color: #999; background-position: 0px  -80px; -moz-box-shadow: 0 0 3px #aaa; -webkit-box-shadow: #aaa 0 0 3px;}
-.UI-Button:active{position:relative; top: 1px;  }
+.UI-Button:active{position: relative; top: 1px;  }
 
 .UI-Button.UI-Border{-moz-border-radius:4px; -webkit-border-radius:4px; margin: 2px 3px;}
 .UI-Button.UI-Border-Left{-moz-border-radius:5px 0px 0px 5px; -webkit-border-radius:5px 0px 0px 5px; border-width: 1px 0px 1px 1px; margin: 2px 0px 2px 3px;}
@@ -121,10 +120,10 @@ div.Comment p.Body{float:left; width: auto;}
 /**************************************** Generic Styling ******************************************/
 
 /****** basic table styling  *****/
-table{border-collapse:collapse; margin:10px 0px; border-bottom: 1px solid #bbb; width: 100%;}
-table tr.Header {border: 1px solid #bbb; }
-table tr{border-left: 1px solid #bbb; border-right: 1px solid #bbb;}
-table tr:nth-child(odd){background: #eee; }
-table tr td{ padding: 5px 10px; border-left: 1px solid #bbb;}
-table tr td span.ColorBar{height: 10px; width: 5px; display:inline-block; margin-right: 5px;}
-table tr th{ padding: 5px 10px; border-left: 1px solid #bbb; background:#e9e9e9 url(/Images/UI-Backgrounds.png) repeat-x;}
+table.App{border-collapse:collapse; margin:10px 0px; border-bottom: 1px solid #bbb; width: 100%;}
+table.App tr.Header {border: 1px solid #bbb; }
+table.App tr{border-left: 1px solid #bbb; border-right: 1px solid #bbb;}
+table.App tr:nth-child(odd){background: #eee; }
+table.App tr td{ padding: 5px 10px; border-left: 1px solid #bbb;}
+table.App tr td span.ColorBar{height: 10px; width: 5px; display:inline-block; margin-right: 5px;}
+table.App tr th{ padding: 5px 10px; border-left: 1px solid #bbb; background:#e9e9e9 url(/Images/UI-Backgrounds.png) repeat-x;}
