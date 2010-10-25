@@ -38,20 +38,29 @@ namespace Trakker.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = new User()
+                if (_userService.ValidateCredentials(viewData.Email, viewData.Password))
                 {
-                    Email = viewData.Email,
-                    Password = viewData.Password
-                };
+                    User user = _userService.GetUserWithEmail(viewData.Email);
+                    user.LastLogin = DateTime.Now;
+                    _userService.Save(user);
+                    UnitOfWork.Commit();
 
-                if (_userService.ValidateCredentials(user.Email, user.Password))
-                {
                     _userService.LogUserIn(user);
+                    
                     return RedirectToAction<TicketController>(x => x.TicketList(1));
                 }
                 else
                 {
                     ModelState.AddModelError("Invalid", "Invalid email or password");
+                    User user = _userService.GetUserWithEmail(viewData.Email);
+
+                    if (user != null)
+                    {
+                        user.FailedPasswordAttemptCount++;
+                        user.LastFailedLoginAttempt = DateTime.Now;
+                        _userService.Save(user);
+                        UnitOfWork.Commit();
+                    }
                 }
             }
 
