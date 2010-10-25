@@ -1,4 +1,4 @@
-﻿namespace Trakker.Helpers.Extensions
+﻿namespace Trakker.Helpers
 {
     using System;
     using System.Collections.Generic;

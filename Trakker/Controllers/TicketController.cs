@@ -119,7 +119,8 @@ namespace Trakker.Controllers
                 Priorities = _ticketService.GetAllPriorities(),
                 Status = _ticketService.GetAllStatus(),
                 Users = _userService.GetAllUsers(),
-                Projects = _projectService.GetAllProjects()
+                Projects = _projectService.GetAllProjects(),
+                Resolutions = _ticketService.GetAllResolutions()
             };
 
 
@@ -136,9 +137,7 @@ namespace Trakker.Controllers
 
                 ticket.CreatedByUserId = _userService.CurrentUser.UserId;
                 ticket.AssignedByUserId = _userService.CurrentUser.UserId;
-                ticket.AssignedToUserId = _userService.CurrentUser.UserId;
                 ticket.Created = DateTime.Now;
-                ticket.ResolutionId = 1; //temp
 
                 _ticketService.Save(ticket);
                 UnitOfWork.Commit();
@@ -151,6 +150,7 @@ namespace Trakker.Controllers
             viewData.Status = _ticketService.GetAllStatus();
             viewData.Users = _userService.GetAllUsers();
             viewData.Projects = _projectService.GetAllProjects();
+            viewData.Resolutions = _ticketService.GetAllResolutions();
 
             return View(viewData);
         }

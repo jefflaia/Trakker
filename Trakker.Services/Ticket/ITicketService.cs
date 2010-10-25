@@ -36,5 +36,11 @@ namespace Trakker.Services
         Status GetStatusWithId(int id);
         IList<Status> GetAllStatus();
 
+        #region Resolution
+        void Save(Resolution resolution);
+        IList<Resolution> GetAllResolutions();
+        Resolution GetResolutionById(int resoutionId);
+        #endregion
+
     }
 }

@@ -136,5 +136,25 @@ namespace Trakker.Services
         {
             _ticketRepository.Save(comment);
         }
+
+
+        #region Resolution
+        public void Save(Resolution resolution)
+        {
+            _ticketRepository.Save(resolution);
+        }
+
+        public IList<Resolution> GetAllResolutions()
+        {
+            return _ticketRepository.GetResolutions().ToList<Resolution>();
+        }
+
+        public Resolution GetResolutionById(int resoutionId)
+        {
+            return _ticketRepository.GetResolutions()
+                .Where(r => r.ResolutionId == resoutionId)
+                .SingleOrDefault<Resolution>() ?? null;
+        }
+        #endregion
     }
 }

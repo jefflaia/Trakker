@@ -65,7 +65,6 @@ namespace Trakker.Controllers
             }
 
             return View(viewData);
-
         }
 
         public ActionResult Logout()
