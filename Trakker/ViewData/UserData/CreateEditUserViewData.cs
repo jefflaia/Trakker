@@ -9,22 +9,28 @@
     using System.ComponentModel.DataAnnotations;
     using Trakker.Properties;
 
+    [PropertiesMustMatch("Password", "RePassword")]
     public class CreateEditUserViewData : MasterViewData
     {
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         [StringLength(100, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_100")]
         public string Email { get; set; }
 
+        [DataType(DataType.Password)]
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
-        [StringLength(100, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_100")]
+        [StringLength(100, MinimumLength = 8, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "PasswordLength")]
         public string Password { get; set; }
 
+        [DisplayName("Confirm Password")]
+        [DataType(DataType.Password)]
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
-        [StringLength(100, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_100")]
+        [StringLength(100, MinimumLength = 8, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "PasswordLength")]
         public string RePassword { get; set; }
 
+        [DisplayName("Role")]
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         public int RoleId { get; set; }
+        
         public IList<Role> Roles { get; set; }
     }
 

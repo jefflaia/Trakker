@@ -106,6 +106,7 @@
     <Compile Include="Attributes\ActionFilters\UserInRoleAttribute.cs" />
     <Compile Include="Attributes\BaseAuthorizationActionFilterAttribute.cs" />
     <Compile Include="Helpers\Extensions\HtmlHelper\ButtonHtmlHelperExtensions.cs" />
+    <Compile Include="Helpers\Extensions\ListExtensions.cs" />
     <Compile Include="Helpers\Extensions\TextAreaExtensions.cs" />
     <Compile Include="Helpers\SystemButtonBuilder\Icons\LoginIcon.cs" />
     <Compile Include="Helpers\Table\Controls\DateFormatControl.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="ViewData\UserData\LogoutViewData.cs" />
     <Compile Include="ViewData\UserData\LoginViewData.cs" />
     <Compile Include="IoC\WindsorControllerFactory.cs" />
+    <Compile Include="ViewData\ValidationAttributes\PropertiesMustMatch.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\2010.2.825\Black\editor.png" />

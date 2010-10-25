@@ -12,15 +12,15 @@ namespace Trakker.Data
         public string Password { get; set; }
         public string Salt { get; set; }
         public DateTime Created { get; set; }
-        public DateTime LastLogin { get; set; }
+        public DateTime? LastLogin { get; set; }
         public int TotalComments { get; set; }
         public int FailedPasswordAttemptCount { get; set; }
-        public DateTime LastFailedLoginAttempt { get; set; }
+        public DateTime? LastFailedLoginAttempt { get; set; }
         public int RoleId { get; set; }
 
         public bool HasLoggedIn()
         {
-            return DateTime.Equals(LastLogin, Created);
+            return DateTime.Equals(LastLogin.Value, Created);
         }        
     }
 }

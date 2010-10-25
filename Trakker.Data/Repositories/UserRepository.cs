@@ -51,6 +51,7 @@ namespace Trakker.Data
             }
             else
             {
+                user.LastFailedLoginAttempt = null;
                 _usersTable.Attach(u);
                 _usersTable.Context.Refresh(RefreshMode.KeepCurrentValues, u);
             }

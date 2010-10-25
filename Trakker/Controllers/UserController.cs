@@ -78,26 +78,26 @@ namespace Trakker.Controllers
 
         [HttpPost]
         [Authenticate]
-        public ActionResult CreateUser(User user, string rePassword)
+        public ActionResult CreateUser(CreateEditUserViewData viewData)
         {
-            try
+            User existingUser = _userService.GetUserWithEmail(viewData.Email);
+            if (existingUser != null)
             {
-                if (String.Compare(user.Password, rePassword) == 0)
-                {
-                    user.RoleId = 2;                  
-                    _userService.Save(user);
-                }
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
+                ModelState.AddModelError("Email", "A user with this email already exists.");
             }
 
-
-            return View(new CreateEditUserViewData()
+            if (ModelState.IsValid)
             {
-                Roles = _userService.GetAllRoles()
-            });
+                Mapper.CreateMap<CreateEditUserViewData, User>();
+                User user = Mapper.Map(viewData, new User());
+
+                _userService.Save(user);
+                UnitOfWork.Commit();
+            }
+
+            viewData.Roles = _userService.GetAllRoles();
+
+            return View(viewData);
         }
 
         [Authenticate]

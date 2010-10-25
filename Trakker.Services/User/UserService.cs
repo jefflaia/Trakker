@@ -57,11 +57,7 @@ namespace Trakker.Services
        {
            if (user.UserId == 0)
            {
-               var now = DateTime.Now;
-
-               user.Created = now;
-               user.LastLogin = now;
-               user.LastFailedLoginAttempt = now;
+               user.Created = DateTime.Now;
                user.Salt = SaltGenerator();
                user.Password = HashPassword(user.Password, user.Salt);
            }

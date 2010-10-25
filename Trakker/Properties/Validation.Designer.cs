@@ -61,6 +61,15 @@ namespace Trakker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This field must be 8 to 100 characters long..
+        /// </summary>
+        public static string PasswordLength {
+            get {
+                return ResourceManager.GetString("PasswordLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This field is required..
         /// </summary>
         public static string Required {
