@@ -157,6 +157,7 @@
     <Compile Include="ViewData\ProjectData\ProjectSummaryViewData.cs" />
     <Compile Include="ViewData\SharedData\MasterViewData.cs" />
     <Compile Include="ViewData\TicketData\CommentCreateEditViewData.cs" />
+    <Compile Include="ViewData\TicketData\CreateEditPriorityViewData.cs" />
     <Compile Include="ViewData\TicketData\TicketDetailsViewData.cs" />
     <Compile Include="ViewData\TicketData\CreateEditViewData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -863,6 +864,8 @@
     <Content Include="Views\Project\ProjectSummary.aspx" />
     <Content Include="Views\Shared\Menu.ascx" />
     <Content Include="Views\Shared\SubNavigation.ascx" />
+    <Content Include="Views\Ticket\CreateEditPriorityForm.ascx" />
+    <Content Include="Views\Ticket\CreatePriority.aspx" />
     <Content Include="Views\User\EditUser.aspx" />
     <Content Include="Views\User\CreateUser.aspx" />
     <Content Include="Views\User\Login.aspx" />

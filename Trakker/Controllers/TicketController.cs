@@ -300,5 +300,15 @@ namespace Trakker.Controllers
             return PartialView(viewData);
         }
         #endregion
+
+
+        #region Priority
+
+        public ActionResult CreatePriority()
+        {
+            return View(new CreateEditPriorityViewData());
+        }
+        #endregion
+
     }
 }
