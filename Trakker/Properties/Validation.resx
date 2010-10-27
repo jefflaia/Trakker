@@ -132,4 +132,16 @@
     <value>This field cannot be longer than 150 characters.</value>
     <comment>Max length of 150 characters</comment>
   </data>
+  <data name="StringLength_250" xml:space="preserve">
+    <value>This field cannot be longer than 250 characters.</value>
+    <comment>Max length of 250 characters.</comment>
+  </data>
+  <data name="StringLength_50" xml:space="preserve">
+    <value>This field cannot be longer than 50 characters.</value>
+    <comment>Max length of 50 characters.</comment>
+  </data>
+  <data name="StringLength_HexColor" xml:space="preserve">
+    <value>This field must be 3 or 6 characters in length.</value>
+    <comment>Min length of 3, max length of 6.</comment>
+  </data>
 </root>

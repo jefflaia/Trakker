@@ -95,5 +95,32 @@ namespace Trakker.Properties {
                 return ResourceManager.GetString("StringLength_150", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This field cannot be longer than 250 characters..
+        /// </summary>
+        public static string StringLength_250 {
+            get {
+                return ResourceManager.GetString("StringLength_250", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This field cannot be longer than 50 characters..
+        /// </summary>
+        public static string StringLength_50 {
+            get {
+                return ResourceManager.GetString("StringLength_50", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This field must be 3 or 6 characters in length..
+        /// </summary>
+        public static string StringLength_HexColor {
+            get {
+                return ResourceManager.GetString("StringLength_HexColor", resourceCulture);
+            }
+        }
     }
 }

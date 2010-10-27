@@ -13,5 +13,11 @@
  %>
 
   <%= Html.FormRow()
+    .AddToLeft(Html.LabelFor(m => m.HexColor))
+    .AddToRight(Html.TextBoxFor(m => m.HexColor))
+    .AddToRight(Html.ValidationMessageFor(x => x.HexColor))
+ %>
+
+  <%= Html.FormRow()
     .AddToRight(Html.SaveButton("Save", null))
  %>

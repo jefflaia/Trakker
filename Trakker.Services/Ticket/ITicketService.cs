@@ -31,6 +31,7 @@ namespace Trakker.Services
         /********* Priority *********/
         Priority GetPriorityWithId(int id);
         IList<Priority> GetAllPriorities();
+        void Save(Priority priority);
 
         /********* Status *********/
         Status GetStatusWithId(int id);

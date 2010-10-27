@@ -137,6 +137,10 @@ namespace Trakker.Services
             _ticketRepository.Save(comment);
         }
 
+        public void Save(Priority priority)
+        {
+            _ticketRepository.Save(priority);
+        }
 
         #region Resolution
         public void Save(Resolution resolution)

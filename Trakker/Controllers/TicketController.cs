@@ -308,6 +308,21 @@ namespace Trakker.Controllers
         {
             return View(new CreateEditPriorityViewData());
         }
+
+        [HttpPost]
+        public ActionResult CreatePriority(CreateEditPriorityViewData viewData)
+        {
+            if (ModelState.IsValid)
+            {
+                Mapper.CreateMap<CreateEditPriorityViewData, Priority>();
+                Priority priority = Mapper.Map(viewData, new Priority());
+
+                _ticketService.Save(priority);
+                UnitOfWork.Commit();
+            }
+
+            return View(viewData);
+        }
         #endregion
 
     }
