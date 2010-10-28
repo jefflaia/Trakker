@@ -14,6 +14,7 @@
     {
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         [StringLength(100, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_100")]
+        [Email(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Email")]
         public string Email { get; set; }
 
         [DataType(DataType.Password)]

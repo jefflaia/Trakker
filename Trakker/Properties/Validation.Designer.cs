@@ -61,6 +61,15 @@ namespace Trakker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not a valid email address..
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This field must be 8 to 100 characters long..
         /// </summary>
         public static string PasswordLength {

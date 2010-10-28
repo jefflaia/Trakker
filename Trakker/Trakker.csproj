@@ -167,6 +167,7 @@
     <Compile Include="ViewData\UserData\LogoutViewData.cs" />
     <Compile Include="ViewData\UserData\LoginViewData.cs" />
     <Compile Include="IoC\WindsorControllerFactory.cs" />
+    <Compile Include="ViewData\ValidationAttributes\Email.cs" />
     <Compile Include="ViewData\ValidationAttributes\PropertiesMustMatch.cs" />
   </ItemGroup>
   <ItemGroup>
