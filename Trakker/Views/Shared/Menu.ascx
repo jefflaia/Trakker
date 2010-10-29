@@ -36,8 +36,9 @@
     <li>
         <a href="#">Administration</a>
         <ul class="UI-SHadow">
-            <li><a href="#"><%= Html.ActionLink<UserController>(x => x.CreateUser(), "Create User") %></a></li>
-            <li><a href="#">Edit User</a></li>
+            <li><%= Html.ActionLink<UserController>(x => x.CreateUser(), "Create User") %></li>
+            <li><%= Html.ActionLink<TicketController>(c => c.CreatePriority(), "Create Priority") %></li>
+            <li><%= Html.ActionLink<TicketController>(c => c.CreateResolution(), "Create Resolution") %></li>
         </ul>
     </li> 
 </ul>

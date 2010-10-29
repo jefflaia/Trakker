@@ -204,6 +204,10 @@ namespace Trakker.Controllers
             return View(viewData);
         }
 
+        #endregion
+
+        #region Comment
+
         public ActionResult CreateComment(string keyName)
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
@@ -301,7 +305,6 @@ namespace Trakker.Controllers
         }
         #endregion
 
-
         #region Priority
 
         public ActionResult CreatePriority()
@@ -325,5 +328,26 @@ namespace Trakker.Controllers
         }
         #endregion
 
+        #region Resolution
+        public ActionResult CreateResolution()
+        {
+            return View(new CreateEditResolutionViewData());
+        }
+
+        [HttpPost]
+        public ActionResult CreateResolution(CreateEditResolutionViewData viewData)
+        {
+            if (ModelState.IsValid)
+            {
+                Mapper.CreateMap<CreateEditResolutionViewData, Resolution>();
+                Resolution resolution = Mapper.Map(viewData, new Resolution());
+
+                _ticketService.Save(resolution);
+                UnitOfWork.Commit();
+            }
+
+            return View(viewData);
+        }
+        #endregion
     }
 }

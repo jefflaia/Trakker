@@ -19,6 +19,8 @@ namespace Trakker.Routes
 
             routes.MapRoute("CreatePriority", "create/priority", new { controller = "Ticket", action = "CreatePriority" });
 
+            routes.MapRoute("CreateResolution", "create/resolution", new { controller = "Ticket", action = "CreateResolution" });
+
         }
     }
 }
