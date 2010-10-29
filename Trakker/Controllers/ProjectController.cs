@@ -8,6 +8,7 @@ using Trakker.ViewData.ProjectData;
 using Trakker.Services;
 using Trakker.Data;
 using Trakker.Attributes;
+using AutoMapper;
 
 namespace Trakker.Controllers
 {
@@ -20,6 +21,7 @@ namespace Trakker.Controllers
         {
         }
 
+        #region Project
         public ActionResult ProjectSummary(string keyName)
         {
 
@@ -38,45 +40,38 @@ namespace Trakker.Controllers
             });
         }
 
-        public ActionResult ComponentSummary(string keyName)
-        {
-            throw new NotImplementedException();
-        }
-
         public ActionResult CreateProject()
         {
-
-            CreateEditProjectViewData viewData = new CreateEditProjectViewData()
+            return View(new CreateEditProjectViewData()
             {
-                Project = new Project(),
                 Users = _userService.GetAllUsers()
-            };
-
-            return View(viewData);
+            });
         }
 
         [HttpPost]
-        public ActionResult CreateProject(Project project)
+        public ActionResult CreateProject(CreateEditProjectViewData viewData)
         {
-            //_projectService.GetProjectByKeyName(project.KeyName);
+            //TODO:: add this to check if the keyname already exists
             //_projectService.GetProjectByName(project.Name);
-            //get the project by keyname and name see if they are unique. if not post error
 
-            try
+            if (false)
             {
-                _projectService.Save(project);
-                return RedirectToAction<ProjectController>(x => x.ProjectSummary(project.KeyName));
+                if (ModelState.IsValid)
+                {
+                    Mapper.CreateMap<CreateEditProjectViewData, Project>();
+                    Project project = Mapper.Map(viewData, new Project());
+
+                    project.Created = DateTime.Now;
+                    _projectService.Save(project);
+                    UnitOfWork.Commit();
+                }
             }
-            catch (Exception e)
+            else
             {
-                //throw new Exception(e.Message);
+                ModelState.AddModelError("KeyName", "A project with this key already exists. Please choose another.");
             }
 
-            CreateEditProjectViewData viewData = new CreateEditProjectViewData()
-            {
-                Project = project,
-                Users = _userService.GetAllUsers()
-            };
+            viewData.Users = _userService.GetAllUsers();
 
             return View(viewData);
         }
@@ -87,14 +82,10 @@ namespace Trakker.Controllers
             Project project = _projectService.GetProjectByKeyName(projectKeyName);
 
             //if(project == null); //TODO:: redirect to page not-found
-
-            CreateEditProjectViewData viewData = new CreateEditProjectViewData()
+            return View(new CreateEditProjectViewData()
             {
-                Project = project,
                 Users = _userService.GetAllUsers()
-            };
-
-            return View(viewData);
+            });
         }
 
         [HttpPost]
@@ -120,11 +111,21 @@ namespace Trakker.Controllers
 
             CreateEditProjectViewData viewData = new CreateEditProjectViewData()
             {
-                Project = project,
+                //Project = project,
                 Users = _userService.GetAllUsers()
             };
 
             return View(viewData);
         }
+        #endregion
+
+
+        #region Component
+        public ActionResult ComponentSummary(string keyName)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+
     }
 }

@@ -106,6 +106,15 @@ namespace Trakker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This field cannot be longer than 20 characters..
+        /// </summary>
+        public static string StringLength_20 {
+            get {
+                return ResourceManager.GetString("StringLength_20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This field cannot be longer than 250 characters..
         /// </summary>
         public static string StringLength_250 {

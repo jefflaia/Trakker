@@ -35,10 +35,11 @@
     </li>
     <li>
         <a href="#">Administration</a>
-        <ul class="UI-SHadow">
+        <ul class="UI-Shadow">
             <li><%= Html.ActionLink<UserController>(x => x.CreateUser(), "Create User") %></li>
             <li><%= Html.ActionLink<TicketController>(c => c.CreatePriority(), "Create Priority") %></li>
             <li><%= Html.ActionLink<TicketController>(c => c.CreateResolution(), "Create Resolution") %></li>
+            <li><li><%= Html.ActionLink<ProjectController>(c => c.CreateProject(), "Create Project") %></li></li>
         </ul>
     </li> 
 </ul>

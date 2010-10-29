@@ -136,6 +136,10 @@
     <value>This field cannot be longer than 150 characters.</value>
     <comment>Max length of 150 characters</comment>
   </data>
+  <data name="StringLength_20" xml:space="preserve">
+    <value>This field cannot be longer than 20 characters.</value>
+    <comment>Max length of 20 characters.</comment>
+  </data>
   <data name="StringLength_250" xml:space="preserve">
     <value>This field cannot be longer than 250 characters.</value>
     <comment>Max length of 250 characters.</comment>
