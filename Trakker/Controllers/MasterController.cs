@@ -12,6 +12,7 @@ using Trakker.IoC;
 using System.Linq.Expressions;
 using System.Web.Routing;
 using Trakker.Helpers;
+using Microsoft.Web.Mvc;
 
 
 namespace Trakker.Controllers
@@ -36,12 +37,28 @@ namespace Trakker.Controllers
         protected IUnitOfWork UnitOfWork { get; set; }
         
         
-        public RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> actionExpression)
+        public RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> action)
         {
-            string controllerName = typeof(TController).GetControllerName();
-            string actionName = actionExpression.GetActionName();
+            
 
-            return RedirectToAction(actionName, controllerName);
+            MethodCallExpression body = action.Body as MethodCallExpression;
+
+            if (body == null)
+            {
+                throw new InvalidOperationException("Expression must be a method call.");
+            }
+
+            if (body.Object != action.Parameters[0])
+            {
+                throw new InvalidOperationException("Method call must target lambda argument.");
+            }
+
+            string controllerName = typeof(TController).GetControllerName();
+            string actionName = body.Method.Name;
+
+            RouteValueDictionary parameters = LinkBuilder.BuildParameterValuesFromExpression(body);
+
+            return RedirectToAction(actionName, controllerName, parameters);
         }
 
         public RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> actionExpression,

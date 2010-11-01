@@ -7,7 +7,7 @@ namespace Trakker.Data
         public string Name { get; set; }
         public int Lead { get; set; }
         public string KeyName { get; set; }
-        public DateTime Due { get; set;}
-        public DateTime Created { get; set; }
+        public DateTime? Due { get; set;}
+        public DateTime? Created { get; set; }
     }
 }

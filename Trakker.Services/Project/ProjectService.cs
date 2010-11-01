@@ -82,25 +82,21 @@ namespace Trakker.Services
         public void Save(Project project)
         {
             //exsiting project
-            if (project.ProjectId > 0 && project.KeyName != null)
+            //override created / keyname with old values. These values are not allowed to be changed.
+            if (project.ProjectId > 0)
             {
-                Project oldProject = _projectRepository.GetProjects().WithId(project.ProjectId).Single<Project>();
-
-                //the keyName has changed need to update all tickets for this project ot reflect this change
-                if (oldProject.KeyName.CompareTo(project.KeyName) != 0)
-                {
-                    IList<Ticket> tickets = _ticketRepository.GetTickets().WithProjectId(project.ProjectId).ToList<Ticket>();
-                    
-                    foreach (Ticket ticket in tickets)
-                    {
-                          ticket.KeyName = ticket.KeyName.Replace(oldProject.KeyName, project.KeyName);
-                          _ticketRepository.Save(ticket);
-                    }
-                }
+                Project oldProject = _projectRepository.GetProjects().Where(p => p.ProjectId == project.ProjectId).Single();
+                project.KeyName = oldProject.KeyName;
+                project.Created = oldProject.Created;
             }
-
+            //new project
+            else
+            {
+                project.Created = DateTime.Now;
+                project.KeyName = project.KeyName.ToUpper();
+            }
+            
             _projectRepository.Save(project);
-              
         }
     }
 }

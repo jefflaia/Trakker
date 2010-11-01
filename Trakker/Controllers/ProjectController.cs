@@ -54,7 +54,7 @@ namespace Trakker.Controllers
             //TODO:: add this to check if the keyname already exists
             //_projectService.GetProjectByName(project.Name);
 
-            if (false)
+            if (true)
             {
                 if (ModelState.IsValid)
                 {
@@ -80,40 +80,38 @@ namespace Trakker.Controllers
         public ActionResult EditProject(string projectKeyName)
         {
             Project project = _projectService.GetProjectByKeyName(projectKeyName);
+           
+            Mapper.CreateMap<Project, CreateEditProjectViewData>();
+            CreateEditProjectViewData viewData = Mapper.Map(project, new CreateEditProjectViewData());
+
+            viewData.Users = _userService.GetAllUsers();
 
             //if(project == null); //TODO:: redirect to page not-found
-            return View(new CreateEditProjectViewData()
-            {
-                Users = _userService.GetAllUsers()
-            });
+            return View(viewData);
         }
 
         [HttpPost]
-        public ActionResult EditProject(string projectKeyName, Project project)
+        public ActionResult EditProject(string projectKeyName, CreateEditProjectViewData viewData)
         {
-            Project p = _projectService.GetProjectByKeyName(projectKeyName);
+            Project project = _projectService.GetProjectByKeyName(projectKeyName);
 
-            //if (p == null) ; //TODO:: redirect to page not-found
-
-
-            try
+            if (project == null)
             {
-                project.ProjectId = p.ProjectId;
-                project.Created = p.Created;
+                throw new NotImplementedException("need to redirect to a general error page");
+            }
+
+            if (ModelState.IsValid)
+            {
+                Mapper.CreateMap<CreateEditProjectViewData, Project>();
+                project = Mapper.Map(viewData, project);
+
                 _projectService.Save(project);
+                UnitOfWork.Commit();
 
-                return RedirectToAction<ProjectController>(x => x.ProjectSummary(projectKeyName));
-            }
-            catch (Exception e)
-            {
-                //throw new Exception(e.Message);
+                return RedirectToAction<ProjectController>(x => x.ProjectSummary(project.KeyName));
             }
 
-            CreateEditProjectViewData viewData = new CreateEditProjectViewData()
-            {
-                //Project = project,
-                Users = _userService.GetAllUsers()
-            };
+            viewData.Users = _userService.GetAllUsers();
 
             return View(viewData);
         }
