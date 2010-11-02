@@ -1,6 +1,8 @@
-﻿using System;
-namespace Trakker.Data
+﻿
+namespace Trakker.Data.Repositories
 {
+    using System;
+
     public interface IProjectRepository
     {
         System.Linq.IQueryable<Trakker.Data.Component> GetComponents();

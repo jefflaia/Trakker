@@ -96,11 +96,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Ticket\Resolution.cs" />
-    <Compile Include="Repositories\Interfaces\ITicketRepository.cs" />
-    <Compile Include="Repositories\Interfaces\IUserRepository.cs" />
-    <Compile Include="Repositories\Interfaces\IProjectRepository.cs" />
-    <Compile Include="Repositories\ProjectRepository.cs" />
-    <Compile Include="Repositories\TicketRepository.cs" />
+    <Compile Include="Repositories\Ticket\ITicketRepository.cs" />
+    <Compile Include="Repositories\User\IUserRepository.cs" />
+    <Compile Include="Repositories\Project\IProjectRepository.cs" />
+    <Compile Include="Repositories\Project\ProjectRepository.cs" />
+    <Compile Include="Repositories\Ticket\TicketRepository.cs" />
     <Compile Include="Access\TrakkerDB.cs">
       <DependentUpon>TrakkerDB.dbml</DependentUpon>
     </Compile>
@@ -110,7 +110,7 @@
       <DependentUpon>TrakkerDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="Access\TrakkerDBDataContext.cs" />
-    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\User\UserRepository.cs" />
     <Compile Include="Access\ConnectionStringProvider.cs" />
     <Compile Include="Access\DataContextProvider.cs" />
     <Compile Include="Filter\BaseFilters.cs" />

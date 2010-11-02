@@ -911,10 +911,6 @@
       <Project>{A9547E24-5633-4817-8B4A-E35AF672EAFB}</Project>
       <Name>Trakker.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Trakker.Services\Trakker.Services.csproj">
-      <Project>{BE2CFC1B-672C-40D4-881E-909E5C54F3CF}</Project>
-      <Name>Trakker.Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Windsor.config">

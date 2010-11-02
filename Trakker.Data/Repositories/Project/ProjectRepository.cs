@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using AutoMapper;
-using System.Data.Linq;
-using Trakker.Data;
-
-namespace Trakker.Data
+﻿namespace Trakker.Data.Repositories
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using AutoMapper;
+    using System.Data.Linq;
+    using Trakker.Data;
+
     using Sql = Access;
 
     public class ProjectRepository : IProjectRepository

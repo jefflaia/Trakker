@@ -1,13 +1,13 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Data.Linq;
-using System.Web;
-using AutoMapper;
-
-namespace Trakker.Data
+namespace Trakker.Data.Repositories
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Data.Linq;
+    using System.Web;
+    using AutoMapper;
+
     using Sql = Trakker.Data.Access;
 
     public class TicketRepository : ITicketRepository

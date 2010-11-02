@@ -6,7 +6,7 @@ namespace Trakker.Data.Services
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using Trakker.Data;
+    using Trakker.Data.Repositories;
 
     public class TicketService : ITicketService
     {
