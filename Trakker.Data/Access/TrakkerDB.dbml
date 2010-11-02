@@ -89,15 +89,6 @@
       <Association Name="User_Project" Member="User" ThisKey="Lead" OtherKey="UserId" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Resolution" Member="Resolutions">
-    <Type Name="Resolution">
-      <Column Name="ResolutionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Association Name="Resolution_Ticket" Member="Tickets" ThisKey="ResolutionId" OtherKey="ResolutionId" Type="Ticket" />
-    </Type>
-  </Table>
   <Table Name="dbo.Ticket" Member="Tickets">
     <Type Name="Ticket">
       <Column Name="TicketId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -119,12 +110,12 @@
       <Association Name="Ticket_Comment" Member="Comments" ThisKey="TicketId" OtherKey="TicketId" Type="Comment" />
       <Association Name="Ticket_ComponentTicket" Member="ComponentTickets" ThisKey="TicketId" OtherKey="TicketId" Type="ComponentTicket" />
       <Association Name="Category_Ticket" Member="Category" ThisKey="CategoryId" OtherKey="CategoryId" Type="Category" IsForeignKey="true" />
-      <Association Name="Resolution_Ticket" Member="Resolution" ThisKey="ResolutionId" OtherKey="ResolutionId" Type="Resolution" IsForeignKey="true" />
       <Association Name="Priority_Ticket" Member="Priority" ThisKey="PriorityId" OtherKey="PriorityId" Type="Priority" IsForeignKey="true" />
       <Association Name="Project_Ticket" Member="Project" ThisKey="ProjectId" OtherKey="ProjectId" Type="Project" IsForeignKey="true" />
       <Association Name="User_Ticket" Member="User" ThisKey="AssignedToUserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
       <Association Name="User_Ticket1" Member="User1" ThisKey="CreatedByUserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
       <Association Name="User_Ticket2" Member="User2" ThisKey="AssignedByUserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+      <Association Name="Resolution_Ticket" Member="Resolution" ThisKey="ResolutionId" OtherKey="ResolutionId" Type="Resolution" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.[User]" Member="Users">
@@ -145,6 +136,14 @@
       <Association Name="User_Ticket1" Member="Tickets1" ThisKey="UserId" OtherKey="CreatedByUserId" Type="Ticket" />
       <Association Name="User_Ticket2" Member="Tickets2" ThisKey="UserId" OtherKey="AssignedByUserId" Type="Ticket" />
       <Association Name="Role_User" Member="Role" ThisKey="RoleId" OtherKey="RoleId" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Resolution" Member="Resolutions">
+    <Type Name="Resolution">
+      <Column Name="ResolutionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Resolution_Ticket" Member="Tickets" ThisKey="ResolutionId" OtherKey="ResolutionId" Type="Ticket" />
     </Type>
   </Table>
 </Database>

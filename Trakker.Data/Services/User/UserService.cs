@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Trakker.Data;
-using System.Security.Cryptography;
-
-
-namespace Trakker.Services
+﻿namespace Trakker.Data.Services
 {
-   public class UserService : IUserService
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using Trakker.Data;
+    using System.Security.Cryptography;
+
+    public class UserService : IUserService
     {
        protected IUserRepository _userRepository;
        const int SALT_LENGTH = 10;

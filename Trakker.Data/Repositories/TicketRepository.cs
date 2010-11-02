@@ -266,9 +266,7 @@ namespace Trakker.Data
                    {
                        ResolutionId = r.ResolutionId,
                        Name = r.Name,
-                       Description = r.Description,
-                       Created = r.Created
-
+                       Description = r.Description
                    };
         }
 
@@ -279,8 +277,6 @@ namespace Trakker.Data
             Sql.Resolution r = Mapper.Map<Resolution, Sql.Resolution>(resolution);
 
             r.Description = r.Description ?? string.Empty;
-            r.Created = r.Created.Equals(DateTime.MinValue) ? DateTime.Now : r.Created;
-
 
             //check if the Ticket exists
             if (resolution.ResolutionId == 0)

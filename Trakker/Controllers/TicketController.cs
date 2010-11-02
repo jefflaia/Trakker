@@ -5,7 +5,7 @@ using System.Web.Mvc;
 using Trakker.Helpers;
 using Trakker.Data;
 using Trakker.ViewData.TicketData;
-using Trakker.Services;
+using Trakker.Data.Services;
 using AutoMapper;
 using Trakker.Attributes;
 using System.Web.UI.HtmlControls;

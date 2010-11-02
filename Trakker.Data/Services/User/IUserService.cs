@@ -1,8 +1,10 @@
-﻿using System;
-using Trakker.Data;
-using System.Collections.Generic;
-namespace Trakker.Services
+﻿
+namespace Trakker.Data.Services
 {
+    using System;
+    using Trakker.Data;
+    using System.Collections.Generic;
+
     public interface IUserService
     {
         User CurrentUser { get; set; }

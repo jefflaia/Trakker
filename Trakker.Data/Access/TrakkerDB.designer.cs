@@ -57,17 +57,18 @@ namespace Trakker.Data.Access
     partial void InsertProject(Project instance);
     partial void UpdateProject(Project instance);
     partial void DeleteProject(Project instance);
-    partial void InsertResolution(Resolution instance);
-    partial void UpdateResolution(Resolution instance);
-    partial void DeleteResolution(Resolution instance);
     partial void InsertTicket(Ticket instance);
     partial void UpdateTicket(Ticket instance);
     partial void DeleteTicket(Ticket instance);
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
+    partial void InsertResolution(Resolution instance);
+    partial void UpdateResolution(Resolution instance);
+    partial void DeleteResolution(Resolution instance);
     #endregion
-				
+		
+		
 		public TrakkerDBDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
@@ -164,14 +165,6 @@ namespace Trakker.Data.Access
 			}
 		}
 		
-		public System.Data.Linq.Table<Resolution> Resolutions
-		{
-			get
-			{
-				return this.GetTable<Resolution>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Ticket> Tickets
 		{
 			get
@@ -185,6 +178,14 @@ namespace Trakker.Data.Access
 			get
 			{
 				return this.GetTable<User>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Resolution> Resolutions
+		{
+			get
+			{
+				return this.GetTable<Resolution>();
 			}
 		}
 	}
@@ -1946,168 +1947,6 @@ namespace Trakker.Data.Access
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Resolution")]
-	public partial class Resolution : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ResolutionId;
-		
-		private string _Name;
-		
-		private System.DateTime _Created;
-		
-		private string _Description;
-		
-		private EntitySet<Ticket> _Tickets;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnResolutionIdChanging(int value);
-    partial void OnResolutionIdChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnCreatedChanging(System.DateTime value);
-    partial void OnCreatedChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    #endregion
-		
-		public Resolution()
-		{
-			this._Tickets = new EntitySet<Ticket>(new Action<Ticket>(this.attach_Tickets), new Action<Ticket>(this.detach_Tickets));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResolutionId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ResolutionId
-		{
-			get
-			{
-				return this._ResolutionId;
-			}
-			set
-			{
-				if ((this._ResolutionId != value))
-				{
-					this.OnResolutionIdChanging(value);
-					this.SendPropertyChanging();
-					this._ResolutionId = value;
-					this.SendPropertyChanged("ResolutionId");
-					this.OnResolutionIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Created", DbType="DateTime NOT NULL")]
-		public System.DateTime Created
-		{
-			get
-			{
-				return this._Created;
-			}
-			set
-			{
-				if ((this._Created != value))
-				{
-					this.OnCreatedChanging(value);
-					this.SendPropertyChanging();
-					this._Created = value;
-					this.SendPropertyChanged("Created");
-					this.OnCreatedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Resolution_Ticket", Storage="_Tickets", ThisKey="ResolutionId", OtherKey="ResolutionId")]
-		public EntitySet<Ticket> Tickets
-		{
-			get
-			{
-				return this._Tickets;
-			}
-			set
-			{
-				this._Tickets.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tickets(Ticket entity)
-		{
-			this.SendPropertyChanging();
-			entity.Resolution = this;
-		}
-		
-		private void detach_Tickets(Ticket entity)
-		{
-			this.SendPropertyChanging();
-			entity.Resolution = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Ticket")]
 	public partial class Ticket : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2152,8 +1991,6 @@ namespace Trakker.Data.Access
 		
 		private EntityRef<Category> _Category;
 		
-		private EntityRef<Resolution> _Resolution;
-		
 		private EntityRef<Priority> _Priority;
 		
 		private EntityRef<Project> _Project;
@@ -2163,6 +2000,8 @@ namespace Trakker.Data.Access
 		private EntityRef<User> _User1;
 		
 		private EntityRef<User> _User2;
+		
+		private EntityRef<Resolution> _Resolution;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2206,12 +2045,12 @@ namespace Trakker.Data.Access
 			this._Comments = new EntitySet<Comment>(new Action<Comment>(this.attach_Comments), new Action<Comment>(this.detach_Comments));
 			this._ComponentTickets = new EntitySet<ComponentTicket>(new Action<ComponentTicket>(this.attach_ComponentTickets), new Action<ComponentTicket>(this.detach_ComponentTickets));
 			this._Category = default(EntityRef<Category>);
-			this._Resolution = default(EntityRef<Resolution>);
 			this._Priority = default(EntityRef<Priority>);
 			this._Project = default(EntityRef<Project>);
 			this._User = default(EntityRef<User>);
 			this._User1 = default(EntityRef<User>);
 			this._User2 = default(EntityRef<User>);
+			this._Resolution = default(EntityRef<Resolution>);
 			OnCreated();
 		}
 		
@@ -2616,40 +2455,6 @@ namespace Trakker.Data.Access
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Resolution_Ticket", Storage="_Resolution", ThisKey="ResolutionId", OtherKey="ResolutionId", IsForeignKey=true)]
-		public Resolution Resolution
-		{
-			get
-			{
-				return this._Resolution.Entity;
-			}
-			set
-			{
-				Resolution previousValue = this._Resolution.Entity;
-				if (((previousValue != value) 
-							|| (this._Resolution.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Resolution.Entity = null;
-						previousValue.Tickets.Remove(this);
-					}
-					this._Resolution.Entity = value;
-					if ((value != null))
-					{
-						value.Tickets.Add(this);
-						this._ResolutionId = value.ResolutionId;
-					}
-					else
-					{
-						this._ResolutionId = default(int);
-					}
-					this.SendPropertyChanged("Resolution");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Priority_Ticket", Storage="_Priority", ThisKey="PriorityId", OtherKey="PriorityId", IsForeignKey=true)]
 		public Priority Priority
 		{
@@ -2816,6 +2621,40 @@ namespace Trakker.Data.Access
 						this._AssignedByUserId = default(int);
 					}
 					this.SendPropertyChanged("User2");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Resolution_Ticket", Storage="_Resolution", ThisKey="ResolutionId", OtherKey="ResolutionId", IsForeignKey=true)]
+		public Resolution Resolution
+		{
+			get
+			{
+				return this._Resolution.Entity;
+			}
+			set
+			{
+				Resolution previousValue = this._Resolution.Entity;
+				if (((previousValue != value) 
+							|| (this._Resolution.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Resolution.Entity = null;
+						previousValue.Tickets.Remove(this);
+					}
+					this._Resolution.Entity = value;
+					if ((value != null))
+					{
+						value.Tickets.Add(this);
+						this._ResolutionId = value.ResolutionId;
+					}
+					else
+					{
+						this._ResolutionId = default(int);
+					}
+					this.SendPropertyChanged("Resolution");
 				}
 			}
 		}
@@ -3333,6 +3172,144 @@ namespace Trakker.Data.Access
 		{
 			this.SendPropertyChanging();
 			entity.User2 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Resolution")]
+	public partial class Resolution : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ResolutionId;
+		
+		private string _Name;
+		
+		private string _Description;
+		
+		private EntitySet<Ticket> _Tickets;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnResolutionIdChanging(int value);
+    partial void OnResolutionIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    #endregion
+		
+		public Resolution()
+		{
+			this._Tickets = new EntitySet<Ticket>(new Action<Ticket>(this.attach_Tickets), new Action<Ticket>(this.detach_Tickets));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResolutionId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ResolutionId
+		{
+			get
+			{
+				return this._ResolutionId;
+			}
+			set
+			{
+				if ((this._ResolutionId != value))
+				{
+					this.OnResolutionIdChanging(value);
+					this.SendPropertyChanging();
+					this._ResolutionId = value;
+					this.SendPropertyChanged("ResolutionId");
+					this.OnResolutionIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Resolution_Ticket", Storage="_Tickets", ThisKey="ResolutionId", OtherKey="ResolutionId")]
+		public EntitySet<Ticket> Tickets
+		{
+			get
+			{
+				return this._Tickets;
+			}
+			set
+			{
+				this._Tickets.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tickets(Ticket entity)
+		{
+			this.SendPropertyChanging();
+			entity.Resolution = this;
+		}
+		
+		private void detach_Tickets(Ticket entity)
+		{
+			this.SendPropertyChanging();
+			entity.Resolution = null;
 		}
 	}
 }

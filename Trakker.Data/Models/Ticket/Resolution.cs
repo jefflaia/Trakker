@@ -9,7 +9,6 @@ namespace Trakker.Data
     {
         public int ResolutionId { get; set; }
         public string Name { get; set; }
-        public DateTime Created { get; set; }
         public string Description { get; set; }
     }
 }

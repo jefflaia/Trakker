@@ -1,10 +1,10 @@
-﻿using System;
-using System.Configuration;
-using System.Web;
-using System.Web.Security;
-
-namespace Trakker.Services
+﻿namespace Trakker.Data.Services
 {
+    using System;
+    using System.Configuration;
+    using System.Web;
+    using System.Web.Security;
+
     public static class SessionHandler
     {
         const int COOKIE_LIFE = 30;

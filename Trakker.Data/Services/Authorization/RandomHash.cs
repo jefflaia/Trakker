@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Security.Cryptography;
-
-namespace Trakker.Services
+﻿
+namespace Trakker.Data.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Security.Cryptography;
+
     public class RandomHash
     {
         // Define default min and max password lengths.

@@ -8,7 +8,7 @@ using System.Web.Routing;
 using System.Reflection;
 using Castle.Core;
 using Castle.MicroKernel.Registration;
-using Trakker.Services;
+using Trakker.Data.Services;
 using Trakker.Data;
 
 namespace Trakker.IoC

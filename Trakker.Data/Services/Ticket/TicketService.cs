@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Trakker.Data;
+﻿
 
-namespace Trakker.Services
+namespace Trakker.Data.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using Trakker.Data;
+
     public class TicketService : ITicketService
     {
         ITicketRepository _ticketRepository;

@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Trakker.Data;
-using System.Web;
+﻿
 
-
-namespace Trakker.Services
+namespace Trakker.Data.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using Trakker.Data;
+    using System.Web;
+
+
     public class ProjectService : IProjectService
     {
         protected IProjectRepository _projectRepository;
