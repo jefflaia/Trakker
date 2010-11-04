@@ -129,3 +129,7 @@ table.App tr:nth-child(odd){background: #eee; }
 table.App tr td{ padding: 5px 10px; border-left: 1px solid #bbb;}
 table.App tr td span.ColorBar{height: 10px; width: 5px; display:inline-block; margin-right: 5px;}
 table.App tr th{ padding: 5px 10px; border-left: 1px solid #bbb; background:#e9e9e9 url(/Images/UI-Backgrounds.png) repeat-x;}
+
+
+/**** Telerik Overrides ****/
+div.t-datepicker a{margin-top: 5px !important;} /* move the icon down */
