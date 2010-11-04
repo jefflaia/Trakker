@@ -11,11 +11,11 @@ namespace Trakker.Routes
     {
         public static void AddRoutes(ref RouteCollection routes)
         {
-            routes.MapRoute("CreateTicket", "new", new { controller = "Ticket", action = "CreateTicket" });
-            routes.MapRoute("EditTicket", "edit/{keyName}", new { controller = "Ticket", action = "EditTicket" });
-            routes.MapRoute("TicketDetails", "{keyName}", new { controller = "Ticket", action = "TicketDetails" });
-            routes.MapRoute("CreateComment", "{keyName}/comment", new { controller = "Ticket", action = "CreateComment" });
-            routes.MapRoute("EditComment", "{keyName}/comment/edit/{id}", new { controller = "Ticket", action = "EditComment" });
+            routes.MapRoute("CreateTicket", "create/ticket", new { controller = "Ticket", action = "CreateTicket" });
+            routes.MapRoute("EditTicket", "edit/ticket/{keyName}", new { controller = "Ticket", action = "EditTicket" });
+            routes.MapRoute("TicketDetails", "ticket/{keyName}", new { controller = "Ticket", action = "TicketDetails" });
+            routes.MapRoute("CreateComment", "{keyName}/create/comment", new { controller = "Ticket", action = "CreateComment" });
+            routes.MapRoute("EditComment", "{keyName}/edit/comment/{id}", new { controller = "Ticket", action = "EditComment" });
 
             routes.MapRoute("CreatePriority", "create/priority", new { controller = "Ticket", action = "CreatePriority" });
 

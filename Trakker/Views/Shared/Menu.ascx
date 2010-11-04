@@ -22,7 +22,7 @@
     <li>
        <%= Html.ActionLink<TicketController>(x => x.TicketList(1), "Tickets") %>
         <ul class="UI-Shadow">
-            <li><%= Html.ActionLink<TicketController>(x => x.CreateTicket(), "New ticket") %></li>
+            <li><%= Html.ActionLink<TicketController>(x => x.CreateTicket(), "Create ticket") %></li>
             <li class="Break"></li>    
             <li class="Heading">Newest Tickets</li>   
             <% foreach (var ticket in Model.Tickets)
