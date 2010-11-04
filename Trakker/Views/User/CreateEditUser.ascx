@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<CreateEditUserViewData>" %>
 
+<%= Html.ValidationSummary() %>
 <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.Email))
     .AddToRight(Html.TextBoxFor(x => x.Email, Model.Email))

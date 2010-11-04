@@ -125,6 +125,10 @@
     <value>This field must be 8 to 100 characters long.</value>
     <comment>Min and max length of a password</comment>
   </data>
+  <data name="PasswordsMustMatch" xml:space="preserve">
+    <value>Passwords do not match.</value>
+    <comment>Password and RePassword must match.</comment>
+  </data>
   <data name="Required" xml:space="preserve">
     <value>This field is required.</value>
   </data>

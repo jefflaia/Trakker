@@ -8,8 +8,8 @@
     using Trakker.ViewData.SharedData;
     using System.ComponentModel.DataAnnotations;
     using Trakker.Properties;
+using Foolproof;
 
-    [PropertiesMustMatch("Password", "RePassword")]
     public class CreateEditUserViewData : MasterViewData
     {
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
@@ -24,6 +24,7 @@
 
         [DisplayName("Confirm Password")]
         [DataType(DataType.Password)]
+        [EqualTo("Password", ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "PasswordsMustMatch")]
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         [StringLength(100, MinimumLength = 8, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "PasswordLength")]
         public string RePassword { get; set; }

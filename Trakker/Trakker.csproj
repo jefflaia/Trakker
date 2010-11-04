@@ -907,6 +907,10 @@
       <Project>{CF243D83-CEF5-448B-8E56-DE3149AF4319}</Project>
       <Name>Trakker.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Foolproof\Foolproof.csproj">
+      <Project>{EFF6C241-3C1B-4973-B3EA-5C3C0A2EF408}</Project>
+      <Name>Foolproof</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Trakker.Data\Trakker.Data.csproj">
       <Project>{A9547E24-5633-4817-8B4A-E35AF672EAFB}</Project>
       <Name>Trakker.Data</Name>
