@@ -53,6 +53,8 @@ form div.Row div.Left label {font-weight: bold;}
 form div.Row div.Right{float: left; width: 65%; }
 form div.Row div.Right p.Description{float:left; width: 100%; display: inline-block; color: #888;}
 form div.Row span.field-validation-error{color: #ff3131; display:block; margin: 0px 5px 0px 5px; }
+form div.validation-summary-errors{background-color: #FFF7F8; border: 1px dashed #FF3131; margin-bottom: 10px; padding: 10px 0px 10px 0px;}
+form div.validation-summary-errors li{margin-left: 30px; }
 
 
 /* UI Elements */
