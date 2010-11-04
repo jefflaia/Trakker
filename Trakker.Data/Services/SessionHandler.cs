@@ -11,12 +11,13 @@
 
         public static void CreateCookie(string cookieContent)
         {
-            var ticket = new FormsAuthenticationTicket(1, cookieContent, DateTime.Now, DateTime.Now.AddMinutes(30), true, "");
+            var ticket = new FormsAuthenticationTicket(1, cookieContent, DateTime.Now, DateTime.Now.AddMinutes(COOKIE_LIFE), true, "");
 
             string cookieContents = FormsAuthentication.Encrypt(ticket);
 
             var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, cookieContents)
             {
+                HttpOnly = true,
                 Path = FormsAuthentication.FormsCookiePath
             };
 
