@@ -16,7 +16,7 @@
         int CountTicketsWithAssignedTo(int userId);
         IList<Ticket> GetTicketsWithAssignedTo(int userId);
         IList<Ticket> GetNewestTicketsWithProjectId(int projectId, int limit);
-        string GenerateTicketKeyName(int projectId);
+        string GenerateTicketKeyName(Project project);
         int TotalTickets();
         void Save(Ticket ticket);
 

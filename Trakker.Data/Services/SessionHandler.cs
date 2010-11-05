@@ -7,7 +7,7 @@
 
     public static class SessionHandler
     {
-        const int COOKIE_LIFE = 30;
+        const int COOKIE_LIFE = 480; //8 hours
 
         public static void CreateCookie(string cookieContent)
         {

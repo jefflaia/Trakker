@@ -36,7 +36,8 @@
                        Created = p.Created,
                        Due = p.Due,
                        Lead = p.Lead,
-                       KeyName = p.KeyName
+                       KeyName = p.KeyName,
+                       TicketIndex = p.TicketIndex
                    };
         }
 

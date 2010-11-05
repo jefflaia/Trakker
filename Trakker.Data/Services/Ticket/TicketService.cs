@@ -103,34 +103,19 @@ namespace Trakker.Data.Services
         }
 
 
-        public string GenerateTicketKeyName(int projectId)
+        public string GenerateTicketKeyName(Project project)
         {
-            Project project = _projectRepository.GetProjects().WithId(projectId).SingleOrDefault<Project>();
-
-            //test if no ticket
-            int maxValue;
-            string maxKeyName = (from t in _ticketRepository.GetTickets()
-                                 where t.ProjectId == projectId
-                                 && t.KeyName.StartsWith(project.KeyName)
-                                 select t.KeyName).Max() ?? String.Empty;
-
-            maxKeyName = maxKeyName.Replace(String.Concat(project.KeyName, "-"), String.Empty);
-
-            if (int.TryParse(maxKeyName, out maxValue) == false)
-            {
-                //tryparse actually assigns 0 when false, but i do it to show its being done
-                maxValue = 0;
-            }
-
-            maxValue++;
-
-            return String.Concat(project.KeyName, "-", maxValue.ToString());
+            return  String.Concat(project.KeyName, "-", project.TicketIndex);
         }
 
         public void Save(Ticket ticket)
         {
-            ticket.KeyName = GenerateTicketKeyName(ticket.ProjectId);
-                                        
+            Project project = _projectRepository.GetProjects().WithId(ticket.ProjectId).SingleOrDefault<Project>();
+            project.TicketIndex++;
+            
+            ticket.KeyName = GenerateTicketKeyName(project);
+
+            _projectRepository.Save(project);            
             _ticketRepository.Save(ticket);
         }
 
