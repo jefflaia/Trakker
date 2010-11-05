@@ -21,6 +21,8 @@ namespace Trakker.Routes
 
             routes.MapRoute("CreateResolution", "create/resolution", new { controller = "Ticket", action = "CreateResolution" });
 
+            routes.MapRoute("TicketList", "tickets/page/{index}", new { controller = "Ticket", action = "TicketList" });
+
         }
     }
 }

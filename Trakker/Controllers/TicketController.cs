@@ -22,7 +22,7 @@ namespace Trakker.Controllers
         }
 
 
-        #region MainActionResults
+        #region Tickets
         public ActionResult TicketDetails(string keyName)
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
@@ -44,6 +44,7 @@ namespace Trakker.Controllers
                 Status = _ticketService.GetStatusWithId(ticket.StatusId),
                 Priority = _ticketService.GetPriorityWithId(ticket.PriorityId),
                 Cateogory = _ticketService.GetCategoryWithId(ticket.CategoryId),
+                Resolution = _ticketService.GetResolutionById(ticket.ResolutionId),
                 KeyName = ticket.KeyName,
                 Comments = comments,
                 AssignedBy = _userService.GetUserWithId(ticket.AssignedByUserId),

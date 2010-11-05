@@ -33,9 +33,7 @@ namespace Trakker
             TicketRoutes.AddRoutes(ref routes);
             
             //routes.MapRoute("pagination", String.Empty, new { controller = "Nav", action = "ticketListPagination" });
-                        
-            routes.MapRoute("DefaultPaginated", "page/{index}", new { controller = "Ticket", action = "TicketList"});
-           
+                                  
             routes.MapRoute("Default", "",  new { controller = "Ticket", action = "TicketList"});
             routes.MapRoute("CatchAll", "{controller}/{action}");
 

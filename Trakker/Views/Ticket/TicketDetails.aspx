@@ -15,6 +15,7 @@
             <label>Status:</label>      <p class="Value"><%= Model.Status.Name%></p>
             <label>Created:</label>     <p class="Value"><%= Model.Created%></p>
             <label>DueDate:</label>     <p class="Value"><%= Model.DueDate%></p>
+            <label>Resoltuion:</label>     <p class="Value"><%= Model.Resolution.Name %></p>
             
             <h3 class="SubHeader">Description:</h3>
             <p class="Description"><%= Model.Description%></p>

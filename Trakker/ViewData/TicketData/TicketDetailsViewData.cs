@@ -19,6 +19,7 @@ namespace Trakker.ViewData.TicketData
         public DateTime Created { get; set; }
         public string Description { get; set; }
         public string KeyName { get; set; }
+        public Resolution Resolution { get; set; }
 
         public User CreatedBy { get; set; }
         public User AssignedBy { get; set; }
