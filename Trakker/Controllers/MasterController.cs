@@ -1,22 +1,21 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Mvc.Ajax;
-using Trakker.Data;
-using Trakker.ViewData.SharedData;
-using Trakker.Core;
-using Trakker.IoC;
-using System.Linq.Expressions;
-using System.Web.Routing;
-using Trakker.Helpers;
-using Microsoft.Web.Mvc;
-using Trakker.Data.Services;
-
-
 namespace Trakker.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Mvc;
+    using System.Web.Mvc.Ajax;
+    using Trakker.Data;
+    using Trakker.ViewData.SharedData;
+    using Trakker.Core;
+    using Trakker.IoC;
+    using System.Linq.Expressions;
+    using System.Web.Routing;
+    using Trakker.Helpers;
+    using Microsoft.Web.Mvc;
+    using Trakker.Data.Services;
+    using Trakker.Core.Extensions;
 
     public abstract class MasterController : Controller
     {

@@ -106,7 +106,6 @@
     <Compile Include="Attributes\ActionFilters\UserInRoleAttribute.cs" />
     <Compile Include="Attributes\BaseAuthorizationActionFilterAttribute.cs" />
     <Compile Include="Helpers\Extensions\HtmlHelper\ButtonHtmlHelperExtensions.cs" />
-    <Compile Include="Helpers\Extensions\ListExtensions.cs" />
     <Compile Include="Helpers\Extensions\TextAreaExtensions.cs" />
     <Compile Include="Helpers\SystemButtonBuilder\Icons\LoginIcon.cs" />
     <Compile Include="Helpers\Table\Controls\DateFormatControl.cs" />
@@ -137,8 +136,6 @@
     <Compile Include="Helpers\SystemButtonBuilder\Icons\WatchIssue.cs" />
     <Compile Include="Helpers\SystemButtonBuilder\ISystemButtonBuilder.cs" />
     <Compile Include="Helpers\SystemButtonBuilder\SystemButtonBuilder.cs" />
-    <Compile Include="Helpers\Extensions\LambdaExtensions.cs" />
-    <Compile Include="Helpers\FormException.cs" />
     <Compile Include="Helpers\Extensions\HtmlHelper\HtmlHelperExtensions.cs" />
     <Compile Include="Helpers\IsCurrentActionHelper.cs" />
     <Compile Include="Helpers\WidgetAction.cs" />

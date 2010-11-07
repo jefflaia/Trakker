@@ -7,6 +7,7 @@ namespace Trakker.Data.Repositories
     using System.Data.Linq;
     using System.Web;
     using AutoMapper;
+    using Trakker.Core.Extensions;
 
     using Sql = Trakker.Data.Access;
 
@@ -75,7 +76,7 @@ namespace Trakker.Data.Repositories
                        AssignedToUserId = t.AssignedToUserId,
                        ProjectId = t.ProjectId,
                        CreatedByUserId = t.CreatedByUserId,
-                       IsClosed = BitConverter.ToBoolean(BitConverter.GetBytes(t.IsClosed), 0)
+                       IsClosed = t.IsClosed
                    };
         }
 
