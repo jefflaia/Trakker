@@ -40,7 +40,7 @@ namespace Trakker.Controllers
                 Summary = ticket.Summary,
                 Description = ticket.Description,
                 Created = ticket.Created,
-                DueDate = ticket.DueDate.Value,
+                DueDate = ticket.DueDate,
                 Status = _ticketService.GetStatusWithId(ticket.StatusId),
                 Priority = _ticketService.GetPriorityWithId(ticket.PriorityId),
                 Cateogory = _ticketService.GetCategoryWithId(ticket.CategoryId),
@@ -114,14 +114,15 @@ namespace Trakker.Controllers
 
         public ActionResult CreateTicket()
         {
-            CreateEditViewData viewData = new CreateEditViewData()
+            CreateEditTicketViewData viewData = new CreateEditTicketViewData()
             {
                 Categories = _ticketService.GetAllCategories(),
                 Priorities = _ticketService.GetAllPriorities(),
                 Status = _ticketService.GetAllStatus(),
                 Users = _userService.GetAllUsers(),
                 Projects = _projectService.GetAllProjects(),
-                Resolutions = _ticketService.GetAllResolutions()
+                Resolutions = _ticketService.GetAllResolutions(),
+                ProjectId = ProjectService.SelectedProjectId
             };
 
 
@@ -129,11 +130,11 @@ namespace Trakker.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult CreateTicket(CreateEditViewData viewData)
+        public ActionResult CreateTicket(CreateEditTicketViewData viewData)
         {
             if (ModelState.IsValid)
             {
-                Mapper.CreateMap<CreateEditViewData, Ticket>();
+                Mapper.CreateMap<CreateEditTicketViewData, Ticket>();
                 Ticket ticket = Mapper.Map(viewData, new Ticket());
 
                 ticket.CreatedByUserId = _userService.CurrentUser.UserId;
@@ -163,23 +164,24 @@ namespace Trakker.Controllers
 
             if (ticket == null) throw new Exception("redirect, ticket doesnt exist!");
 
-            CreateEditViewData viewData = new CreateEditViewData()
+            CreateEditTicketViewData viewData = new CreateEditTicketViewData()
             {
                 Projects = _projectService.GetAllProjects(),
                 Categories = _ticketService.GetAllCategories(),
                 Priorities = _ticketService.GetAllPriorities(),
                 Status = _ticketService.GetAllStatus(),
-                Users = _userService.GetAllUsers()
+                Users = _userService.GetAllUsers(),
+                Resolutions = _ticketService.GetAllResolutions()
             };
 
-            Mapper.CreateMap<Ticket, CreateEditViewData>();
+            Mapper.CreateMap<Ticket, CreateEditTicketViewData>();
             viewData = Mapper.Map(ticket, viewData);
 
             return View(viewData);
         }
          
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult EditTicket(string keyName, CreateEditViewData viewData)
+        public ActionResult EditTicket(string keyName, CreateEditTicketViewData viewData)
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
 
@@ -187,7 +189,7 @@ namespace Trakker.Controllers
 
             if (ModelState.IsValid)
             {
-                Mapper.CreateMap<CreateEditViewData, Ticket>();
+                Mapper.CreateMap<CreateEditTicketViewData, Ticket>();
                 ticket = Mapper.Map(viewData, ticket);
 
                 _ticketService.Save(ticket);
@@ -201,6 +203,7 @@ namespace Trakker.Controllers
             viewData.Status = _ticketService.GetAllStatus();
             viewData.Users = _userService.GetAllUsers();
             viewData.Projects = _projectService.GetAllProjects();
+            viewData.Resolutions = _ticketService.GetAllResolutions();
 
             return View(viewData);
         }

@@ -64,7 +64,7 @@ namespace Trakker.Data.Repositories
                        TicketId = t.TicketId,
                        Description = t.Description,
                        Created = t.Created,
-                       DueDate = t.DueDate.Value,
+                       DueDate = t.DueDate,
                        PriorityId = t.PriorityId,
                        CategoryId = t.CategoryId,
                        ResolutionId = t.ResolutionId,
@@ -111,10 +111,6 @@ namespace Trakker.Data.Repositories
             //map the priority from our model to the dal object
             Mapper.CreateMap<Ticket, Sql.Ticket>();
             Sql.Ticket t = Mapper.Map<Ticket, Sql.Ticket>(ticket);
-
-            t.Description = t.Description ?? string.Empty;
-            t.Created = t.Created.Equals(DateTime.MinValue) ? DateTime.Now : t.Created;
-
                 
             //check if the Ticket exists
             if (ticket.TicketId == 0)

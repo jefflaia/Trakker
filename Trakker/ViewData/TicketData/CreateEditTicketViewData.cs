@@ -10,8 +10,9 @@ using System.ComponentModel;
 namespace Trakker.ViewData.TicketData
 {
 
-    public class CreateEditViewData : MasterViewData
+    public class CreateEditTicketViewData : MasterViewData
     {
+        [DisplayName("Project")]
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         public int ProjectId { get; set; }
 

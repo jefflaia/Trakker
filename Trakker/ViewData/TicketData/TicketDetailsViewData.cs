@@ -15,7 +15,7 @@ namespace Trakker.ViewData.TicketData
         public Category Cateogory { get; set; }
         public Priority Priority { get; set; }
         public Status Status { get; set; }
-        public DateTime DueDate { get; set; }
+        public DateTime? DueDate { get; set; }
         public DateTime Created { get; set; }
         public string Description { get; set; }
         public string KeyName { get; set; }

@@ -160,7 +160,7 @@
     <Compile Include="ViewData\TicketData\CreateEditPriorityViewData.cs" />
     <Compile Include="ViewData\TicketData\CreateEditResolutionViewData.cs" />
     <Compile Include="ViewData\TicketData\TicketDetailsViewData.cs" />
-    <Compile Include="ViewData\TicketData\CreateEditViewData.cs" />
+    <Compile Include="ViewData\TicketData\CreateEditTicketViewData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewData\TicketData\CommentViewData.cs" />
     <Compile Include="ViewData\TicketData\TicketListViewData.cs" />

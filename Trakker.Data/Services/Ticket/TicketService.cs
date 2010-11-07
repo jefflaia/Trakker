@@ -112,8 +112,20 @@ namespace Trakker.Data.Services
         {
             Project project = _projectRepository.GetProjects().WithId(ticket.ProjectId).SingleOrDefault<Project>();
             project.TicketIndex++;
+
+            if (ticket.TicketId == 0)
+            {
+                ticket.Created = DateTime.Now;
+            }
+            else
+            {
+                Ticket oldTicket = _ticketRepository.GetTickets().WithId(ticket.TicketId).Single();
+                ticket.Created = oldTicket.Created; //override any date comming in
+            }
+               
             
             ticket.KeyName = GenerateTicketKeyName(project);
+            ticket.Description = ticket.Description ?? string.Empty; //if null make it empty
 
             _projectRepository.Save(project);            
             _ticketRepository.Save(ticket);

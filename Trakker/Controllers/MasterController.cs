@@ -34,8 +34,7 @@ namespace Trakker.Controllers
             UnitOfWork = WindsorContainerProvider.Resolve<IUnitOfWork>();
         }
 
-        protected IUnitOfWork UnitOfWork { get; set; }
-        
+        protected IUnitOfWork UnitOfWork { get; set; }        
         
         public RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> action)
         {
