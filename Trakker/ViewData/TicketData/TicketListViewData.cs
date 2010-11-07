@@ -11,12 +11,11 @@ namespace Trakker.ViewData.TicketData
 {
     public class TicketListViewData : MasterViewData
     {
-        //public IList<WidgetAction> RowItems { get; set; }
-
-
-        public WidgetAction Pagination { get; set; }
-
         public IList<Ticket> Items { get; set; }
+        public int TotalTickets { get; set; }
+        public int Page { get; set; }
+        public int PageSize { get; set; }
+
         public IDictionary<int, User> Users { get; set; }
         public IDictionary<int, Category> Categories { get; set; }
         public IDictionary<int, Priority> Priorities { get; set; }

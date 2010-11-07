@@ -21,7 +21,6 @@ namespace Trakker.Data.Repositories
         protected Table<Sql.Comment> _commentsTable;
         protected Table<Sql.Resolution> _resolutionTable;
 
-
         public TicketRepository(IDataContextProvider dataContextProvider)
         {
             DataContext dataContext = dataContextProvider.DataContext;
@@ -34,32 +33,95 @@ namespace Trakker.Data.Repositories
             _resolutionTable = dataContext.GetTable<Sql.Resolution>();
         }
 
-        public IQueryable<Priority> GetPriorities()
+        #region Status
+        public IQueryable<Status> GetStatus()
         {
-            return from p in _prioritiesTable
-                   select new Priority
+            return from s in _statusesTable
+                   select new Status
                    {
-                       PriorityId = p.PriorityId,
-                       Name = p.Name,
-                       Description = p.Description,
-                       HexColor = p.HexColor
+                       StatusId = s.StatusId,
+                       Name = s.Name,
+                       Description = s.Description
                    };
         }
 
-        public IQueryable<Category> GetCategories()
+        public void Save(Status status)
         {
-            return from t in _categoriesTable
-                   select new Category
+            //map the priority from our model to the dal object
+            Mapper.CreateMap<Status, Sql.Status>();
+            Sql.Status s = Mapper.Map<Status, Sql.Status>(status);
+
+            if (status.StatusId == 0)
+            {
+                _statusesTable.InsertOnSubmit(s);
+            }
+            else
+            {
+                _statusesTable.Attach(s);
+                _statusesTable.Context.Refresh(RefreshMode.KeepCurrentValues, s);
+            }
+
+            //set the id 
+            //needed for inserts, updates the id will stay the same
+            status.StatusId = s.StatusId;
+        }
+
+        public void DeleteStatus(int id)
+        {
+            _statusesTable.DeleteAllOnSubmit(from t in _statusesTable
+                                             where t.StatusId == id
+                                             select t);
+        }
+        #endregion
+
+        #region Comment
+        public void DeleteComment(int id)
+        {
+            _commentsTable.DeleteAllOnSubmit(from c in _commentsTable
+                                             where c.CommentId == id
+                                             select c);
+        }
+
+        public IQueryable<Comment> GetComments()
+        {
+            return from c in _commentsTable
+                   select new Comment
                    {
-                       CategoryId = t.CategoryId,
-                       Name = t.Name,
-                       Description = t.Description
+                       CommentId = c.CommentId,
+                       Body = c.Body,
+                       Created = c.Created,
+                       Modified = c.Modified, 
+                       TicketId = c.TicketId,
+                       UserId = c.UserId
                    };
         }
 
+        public void Save(Comment comment)
+        {
+            //map the priority from our model to the dal object
+            Mapper.CreateMap<Comment, Sql.Comment>();
+            Sql.Comment c = Mapper.Map<Comment, Sql.Comment>(comment);
+
+            if (comment.CommentId == 0)
+            {
+                _commentsTable.InsertOnSubmit(c);
+            }
+            else
+            {
+                _commentsTable.Attach(c);
+                _commentsTable.Context.Refresh(RefreshMode.KeepCurrentValues, c);
+            }
+
+            //set the id 
+            //needed for inserts, updates the id will stay the same
+            comment.CommentId = c.CommentId;
+        }
+        #endregion
+
+        #region Ticket
         public IQueryable<Ticket> GetTickets()
         {
-           return from t in _ticketsTable
+            return from t in _ticketsTable
                    select new Ticket
                    {
                        TicketId = t.TicketId,
@@ -79,33 +141,6 @@ namespace Trakker.Data.Repositories
                        IsClosed = t.IsClosed
                    };
         }
-
-        public IQueryable<Status> GetStatus()
-        {
-            return from s in _statusesTable
-                   select new Status
-                   {
-                       StatusId = s.StatusId,
-                       Name = s.Name,
-                       Description = s.Description
-                   };
-        }
-
-        public IQueryable<Comment> GetComments()
-        {
-            return from c in _commentsTable
-                   select new Comment
-                   {
-                       CommentId = c.CommentId,
-                       Body = c.Body,
-                       Created = c.Created,
-                       Modified = c.Modified, 
-                       TicketId = c.TicketId,
-                       UserId = c.UserId
-                   };
-        }
-
-
 
         public void Save(Ticket ticket)
         {
@@ -128,7 +163,16 @@ namespace Trakker.Data.Repositories
             //needed for inserts, updates the id will stay the same
             ticket.TicketId = t.TicketId;
         }
+        
+        public void DeleteTicket(int id)
+        {
+            _ticketsTable.DeleteAllOnSubmit(from t in _ticketsTable
+                                            where t.TicketId == id
+                                            select t);
+        }
+        #endregion
 
+        #region Category
         public void Save(Category category)
         {
             //map the priority from our model to the dal object
@@ -148,6 +192,43 @@ namespace Trakker.Data.Repositories
             //set the id 
             //needed for inserts, updates the id will stay the same
             category.CategoryId = c.CategoryId;
+        }
+
+        public void DeleteCategory(int id)
+        {
+            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
+            {
+                _categoriesTable.DeleteAllOnSubmit(from t in _categoriesTable
+                                                   where t.CategoryId == id
+                                                   select t);
+
+            }
+        }
+
+        public IQueryable<Category> GetCategories()
+        {
+            return from t in _categoriesTable
+                   select new Category
+                   {
+                       CategoryId = t.CategoryId,
+                       Name = t.Name,
+                       Description = t.Description
+                   };
+        }
+        
+        #endregion
+
+        #region Priority
+        public IQueryable<Priority> GetPriorities()
+        {
+            return from p in _prioritiesTable
+                   select new Priority
+                   {
+                       PriorityId = p.PriorityId,
+                       Name = p.Name,
+                       Description = p.Description,
+                       HexColor = p.HexColor
+                   };
         }
 
         public void Save(Priority priority)
@@ -173,87 +254,13 @@ namespace Trakker.Data.Repositories
             priority.PriorityId = p.PriorityId;
         }
 
-        public void Save(Status status)
-        {
-            //map the priority from our model to the dal object
-            Mapper.CreateMap<Status, Sql.Status>();
-            Sql.Status s = Mapper.Map<Status, Sql.Status>(status);
-
-            if (status.StatusId == 0)
-            {
-                _statusesTable.InsertOnSubmit(s);
-            }
-            else
-            {
-                _statusesTable.Attach(s);
-                _statusesTable.Context.Refresh(RefreshMode.KeepCurrentValues, s);
-            }
-
-            //set the id 
-            //needed for inserts, updates the id will stay the same
-            status.StatusId = s.StatusId;
-        }
-
-        public void Save(Comment comment)
-        {
-            //map the priority from our model to the dal object
-            Mapper.CreateMap<Comment, Sql.Comment>();
-            Sql.Comment c = Mapper.Map<Comment, Sql.Comment>(comment);
-
-            if (comment.CommentId == 0)
-            {
-                _commentsTable.InsertOnSubmit(c);
-            }
-            else
-            {
-                _commentsTable.Attach(c);
-                _commentsTable.Context.Refresh(RefreshMode.KeepCurrentValues, c);
-            }
-
-            //set the id 
-            //needed for inserts, updates the id will stay the same
-            comment.CommentId = c.CommentId;
-        }
-
-        public void DeleteTicket(int id)
-        {
-            _ticketsTable.DeleteAllOnSubmit(from t in _ticketsTable
-                            where t.TicketId == id
-                            select t);
-        }
-
-        public void DeleteCategory(int id)
-        {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
-            {
-                _categoriesTable.DeleteAllOnSubmit(from t in _categoriesTable
-                                            where t.CategoryId == id
-                                            select t);
-
-            }
-        }
-
-        public void DeleteStatus(int id)
-        {
-            _statusesTable.DeleteAllOnSubmit(from t in _statusesTable
-                                        where t.StatusId == id
-                                        select t);
-        }
-
         public void DeletePriority(int id)
         {
             _prioritiesTable.DeleteAllOnSubmit(from t in _prioritiesTable
-                                            where t.PriorityId == id
-                                            select t);
+                                               where t.PriorityId == id
+                                               select t);
         }
-
-        public void DeleteComment(int id)
-        {
-            _commentsTable.DeleteAllOnSubmit(from c in _commentsTable
-                                                 where c.CommentId == id
-                                                 select c);
-        }
-
+        #endregion
 
         #region Resolution
         public IQueryable<Resolution> GetResolutions()

@@ -2,7 +2,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>ticketList2</h2>
-    <% Model.Pagination.Render(ViewContext); %>
     <table>
         <tr class="Header">
             <th>Key Name</th>
@@ -35,6 +34,6 @@
        <%}%>
     </table>
 
-    <% Model.Pagination.Render(ViewContext); %>
+    <% Html.RenderAction<NavController>(c => c.ticketListPagination(Model.TotalTickets, Model.Page, Model.PageSize)); %>
 
 </asp:Content>

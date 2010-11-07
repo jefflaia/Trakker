@@ -16,7 +16,8 @@
             <label>Created:</label>     <p class="Value"><%= Model.Created%></p>
             <label>DueDate:</label>     <p class="Value"><%= Model.DueDate%></p>
             <label>Resoltuion:</label>     <p class="Value"><%= Model.Resolution.Name %></p>
-            
+            <label>Status:</label><p><%= Model.IsClosed ? "Closed" : "Open" %></p>
+
             <h3 class="SubHeader">Description:</h3>
             <p class="Description"><%= Model.Description%></p>
         
@@ -32,16 +33,16 @@
             <h3 class="SubHeader">Dates</h3>
             <label>Created:</label>     <p class="Value"><%= Model.Created %></p>
             <label>Due Date:</label>    <p class="Value"><%= Model.DueDate %></p>
+            
         </div>
     
       <%= Html.ActionLink<TicketController>(x => x.CreateComment(Model.KeyName), "Create Comment")%>
             <br />
             
-            <% foreach (var item in Model.Comments)
-            {
-                item.Render(ViewContext);
-            }       
-            %>
+            <% foreach (var comment in Model.Comments)
+            { %>
+               <% Html.RenderAction<TicketController>(c => c.Comment(comment)); %>
+            <% } %>
         
     </div>
    

@@ -27,13 +27,6 @@ namespace Trakker.Controllers
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
 
-            IList<WidgetAction> comments = new List<WidgetAction>();
-
-            foreach (Comment comment in _ticketService.GetCommentsWithticketId(ticket.TicketId))
-            {
-                comments.Add(new WidgetAction("Comment", "ticket", comment));
-            }
-
             TicketDetailsViewData viewData = new TicketDetailsViewData()
             {
                 Id = ticket.TicketId,
@@ -46,7 +39,8 @@ namespace Trakker.Controllers
                 Cateogory = _ticketService.GetCategoryWithId(ticket.CategoryId),
                 Resolution = _ticketService.GetResolutionById(ticket.ResolutionId),
                 KeyName = ticket.KeyName,
-                Comments = comments,
+                Comments = _ticketService.GetCommentsWithticketId(ticket.TicketId),
+                IsClosed = ticket.IsClosed,
                 AssignedBy = _userService.GetUserWithId(ticket.AssignedByUserId),
                 CreatedBy = _userService.GetUserWithId(ticket.CreatedByUserId),
                 AssignedTo = _userService.GetUserWithId(ticket.AssignedToUserId)
@@ -99,14 +93,10 @@ namespace Trakker.Controllers
                 Priorities = priorities,
                 Categories = categories,
                 Status = status,
-                Pagination = new WidgetAction("ticketListPagination", "Nav", new
-                { 
-                    pageIndex = index ?? 1,
-                    totalItemCount = _ticketService.TotalTickets(),
-                    pageSize = PAGE_SIZE
-                })
+                TotalTickets = _ticketService.TotalTickets(),
+                Page = index ?? 1,
+                PageSize = PAGE_SIZE
             };
-
 
             return View(viewData);
         }
@@ -296,10 +286,6 @@ namespace Trakker.Controllers
 
             return View(viewData);
         }
-
-        #endregion
-
-        #region Widgets
 
         public ActionResult Comment(Comment comment)
         {
