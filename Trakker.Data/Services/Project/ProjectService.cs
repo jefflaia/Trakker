@@ -14,58 +14,14 @@ namespace Trakker.Data.Services
     {
         protected IProjectRepository _projectRepository;
         protected ITicketRepository _ticketRepository;
-        protected const string COOKIE_NAME = "Project";
-
 
         public ProjectService(IProjectRepository projectRepository, ITicketRepository ticketRepository)
         {
             _projectRepository = projectRepository;
             _ticketRepository = ticketRepository;
-
-            HttpCookie cookie = HttpContext.Current.Request.Cookies.Get(COOKIE_NAME);
-
-            if (cookie != null)
-            {
-                int projectId;
-                bool result = Int32.TryParse(cookie.Value, out projectId);
-
-                SelectedProjectId = projectId;
-            }
-
         }
 
-        public static int _selectedProjectId;
-        public static int SelectedProjectId { 
-            get
-            {
-                if (_selectedProjectId <= 0)
-                {
-                    HttpCookie cookie = HttpContext.Current.Request.Cookies.Get(COOKIE_NAME);
-
-                    if (cookie != null)
-                    {
-                        int projectId;
-                        bool result = Int32.TryParse(cookie.Value, out projectId);
-
-                        _selectedProjectId = projectId;
-                    }
-                }
-
-                return _selectedProjectId;
-            }
-            set
-            {
-                HttpCookie cookie = new HttpCookie(COOKIE_NAME)
-                {
-                    Value = value.ToString()
-                };
-             
-                HttpContext.Current.Response.Cookies.Add(cookie);
-
-                _selectedProjectId = value;
-            }
-        }
-
+        #region Project
         public IList<Project> GetAllProjects()
         {
             return _projectRepository.GetProjects().ToList<Project>();
@@ -100,5 +56,6 @@ namespace Trakker.Data.Services
             
             _projectRepository.Save(project);
         }
+        #endregion
     }
 }

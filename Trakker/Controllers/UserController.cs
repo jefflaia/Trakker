@@ -23,7 +23,6 @@ namespace Trakker.Controllers
     {
        public UserController(IUserService userService, ITicketService ticketService, IProjectService projectService)
             : base(projectService, ticketService, userService)
-
         {            
         }
         

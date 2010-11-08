@@ -16,6 +16,7 @@ namespace Trakker.Controllers
     using Microsoft.Web.Mvc;
     using Trakker.Data.Services;
     using Trakker.Core.Extensions;
+    using AutoMapper;
 
     public abstract class MasterController : Controller
     {
@@ -23,6 +24,8 @@ namespace Trakker.Controllers
         protected IProjectService _projectService;
         protected ITicketService _ticketService;
         protected IUserService _userService;
+        
+        const string CURRENT_PROJECT_COOKIE_NAME = "Project";
 
         public MasterController(IProjectService projectService, ITicketService ticketService, IUserService userSerivice)
         {
@@ -78,7 +81,41 @@ namespace Trakker.Controllers
             return RedirectToAction(actionName, controllerName,
                                     new RouteValueDictionary(values));
         }
+        protected Project _currentProject;
+        public Project CurrentProject
+        {
+            get
+            {
+                if (_currentProject == null)
+                {
+                    HttpCookie cookie = HttpContext.Request.Cookies.Get(CURRENT_PROJECT_COOKIE_NAME);
 
+                    if (cookie != null)
+                    {
+                        int projectId;
+                        bool success = Int32.TryParse(cookie.Value, out projectId);
+
+                        if (success)
+                        {
+                            _currentProject = _projectService.GetProjectByProjectId(projectId);
+                        }
+                    }
+                }
+
+                return _currentProject;
+            }
+            set
+            {
+                HttpCookie cookie = new HttpCookie(CURRENT_PROJECT_COOKIE_NAME)
+                {
+                    Value = value.ProjectId.ToString()
+                };
+
+                HttpContext.Response.Cookies.Add(cookie);
+
+                _currentProject = value;
+            }
+        } 
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
@@ -95,37 +132,16 @@ namespace Trakker.Controllers
             return View(ViewData.Model);
         }
 
-        /// <summary>
-        /// Views the specified model.
-        /// </summary>
-        /// <param name="model">The model.</param>
-        /// <returns></returns>
         protected ActionResult View(MasterViewData model)
         {
-            var masterModel = GetMasterViewData();
-            MasterViewData wrapper = CreateModel(model, masterModel);
-
-            return base.View(wrapper);
+            Mapper.CreateMap<MasterViewData, MasterViewData>();
+            return base.View(Mapper.Map(GetMasterViewData(), model));
         }
 
-
-        /// <summary>
-        /// Creates the model.
-        /// </summary>
-        /// <param name="model">The model.</param>
-        /// <param name="masterModel">The master model.</param>
-        /// <returns></returns>
         private static MasterViewData CreateModel(MasterViewData model, MasterViewData masterModel)
         {
-            model.CurrentProject = masterModel.CurrentProject;
-            model.CurrentUser = masterModel.CurrentUser;
-            model.HasCurrentProject = masterModel.HasCurrentProject;
-            model.IsUserLoggedIn = masterModel.IsUserLoggedIn;
-            model.NumTicketsAssignedToCurrentUser = masterModel.NumTicketsAssignedToCurrentUser;
-            model.RecentProjects = masterModel.RecentProjects;
-            model.Tickets = masterModel.Tickets;
-
-            return model;
+            Mapper.CreateMap<MasterViewData, MasterViewData>();
+            return Mapper.Map(masterModel, model);
         }
 
         private MasterViewData GetMasterViewData()
@@ -134,12 +150,20 @@ namespace Trakker.Controllers
             {
                 RecentProjects = _projectService.GetAllProjects(),
                 HasCurrentProject = true,
-                CurrentProject = _projectService.GetProjectByProjectId(ProjectService.SelectedProjectId),
+                CurrentProject = CurrentProject,
                 CurrentUser = _userService.CurrentUser,
                 IsUserLoggedIn = _userService.IsUserLoggedIn(),
-                Tickets = _ticketService.GetNewestTicketsWithProjectId(ProjectService.SelectedProjectId, 5),
                 NumTicketsAssignedToCurrentUser = 0
             };
+
+            if (CurrentProject != null)
+            {
+                viewData.Tickets = _ticketService.GetNewestTicketsWithProjectId(CurrentProject.ProjectId, 5);
+            }
+            else
+            {
+                viewData.Tickets = new List<Ticket>();
+            }
 
             if (viewData.CurrentUser != null)
             {

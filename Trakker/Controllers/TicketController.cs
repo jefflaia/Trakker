@@ -112,7 +112,7 @@ namespace Trakker.Controllers
                 Users = _userService.GetAllUsers(),
                 Projects = _projectService.GetAllProjects(),
                 Resolutions = _ticketService.GetAllResolutions(),
-                ProjectId = ProjectService.SelectedProjectId
+                ProjectId = CurrentProject.ProjectId
             };
 
 

@@ -1,24 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
-using AutoMapper;
-using Sql = Trakker.Data.Access;
-using Trakker.Data;
-using Trakker.ViewData.TicketData;
-using System.Web.Security;
-using System.Security.Principal;
-using Castle.Windsor;
-using Trakker.Routes;
-using System.Configuration;
-using Trakker.IoC;
-using System.ComponentModel;
-using Telerik.Web.Mvc;
-
-namespace Trakker
+﻿namespace Trakker
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Mvc;
+    using System.Web.Routing;
+    using AutoMapper;
+    using Sql = Trakker.Data.Access;
+    using Trakker.Data;
+    using Trakker.ViewData.TicketData;
+    using System.Web.Security;
+    using System.Security.Principal;
+    using Castle.Windsor;
+    using Trakker.Routes;
+    using System.Configuration;
+    using Trakker.IoC;
+    using System.ComponentModel;
+    using Telerik.Web.Mvc;
+
+
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
 
@@ -41,14 +42,9 @@ namespace Trakker
 
         protected void Application_Start()
         {
-            
-
-            Mapper.CreateMap<Comment, CommentViewData>();
-
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory());
 
             RegisterRoutes(RouteTable.Routes);
-
 
             SharedWebAssets
                 .StyleSheets(config => config.AddGroup("css", group => group

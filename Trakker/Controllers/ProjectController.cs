@@ -24,10 +24,7 @@ namespace Trakker.Controllers
         #region Project
         public ActionResult ProjectSummary(string keyName)
         {
-
-            Project project = _projectService.GetProjectByKeyName(keyName);
-
-            ProjectService.SelectedProjectId = project.ProjectId;   
+            CurrentProject = _projectService.GetProjectByKeyName(keyName);   
                
             return View(new ProjectSummaryViewData());
         }
