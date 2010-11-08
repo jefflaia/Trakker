@@ -1,0 +1,1 @@
+ - replace lengths used in exerpts as settings values stored in excel file or DB

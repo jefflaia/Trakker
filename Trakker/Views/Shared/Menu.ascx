@@ -27,7 +27,7 @@
             <li class="Heading">Newest Tickets</li>   
             <% foreach (var ticket in Model.Tickets)
                { %>               
-               <li><%= Html.ActionLink<TicketController>(X => X.TicketDetails(ticket.KeyName), ticket.Summary) %></li>
+               <li><%= Html.ActionLink<TicketController>(X => X.TicketDetails(ticket.KeyName), Html.Exerpt(ticket.Summary, 30)) %></li>
             <% } %>
             <li class="Break"></li>
             <li><%= Html.ActionLink<TicketController>(x => x.TicketList(1), "View All") %></li>

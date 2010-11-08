@@ -65,19 +65,14 @@ namespace Trakker.Helpers
             return htmlHelper.BeginForm(null, null, FormMethod.Post, new RouteValueDictionary(attrs));
         }
 
-        public static MvcHtmlString LabelFor<TModel, TValue>(this HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression, string labelText)
+        public static string Exerpt(this HtmlHelper htmlHelper, string text, int length)
         {
-            return LabelHelper(html, html.ViewData.ModelMetadata, ExpressionHelper.GetExpressionText(expression), labelText);
+            if (text.Length > length)
+            {
+                text = text.Substring(0, length).Trim() + "...";
+            }
+
+            return text;
         }
-
-
-        internal static MvcHtmlString LabelHelper(HtmlHelper html, ModelMetadata metadata, string htmlFieldName, string labelText)
-        {
-            TagBuilder tag = new TagBuilder("label");
-            tag.Attributes.Add("for", html.ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldId(htmlFieldName));
-            tag.SetInnerText(labelText);
-            return MvcHtmlString.Create(tag.ToString(TagRenderMode.Normal));
-        }
-
     }
 }

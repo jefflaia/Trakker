@@ -123,10 +123,6 @@ namespace Trakker.Controllers
             this.ViewData["SelectedItem"] = this.GetType().Name;
         }
 
-        /// <summary>
-        /// Views this instance.
-        /// </summary>
-        /// <returns></returns>
         protected virtual new ActionResult View()
         {
             return View(ViewData.Model);
