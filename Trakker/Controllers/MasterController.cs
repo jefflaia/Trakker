@@ -36,7 +36,43 @@ namespace Trakker.Controllers
             UnitOfWork = WindsorContainerProvider.Resolve<IUnitOfWork>();
         }
 
-        protected IUnitOfWork UnitOfWork { get; set; }        
+        protected Project _currentProject;
+        public Project CurrentProject
+        {
+            get
+            {
+                if (_currentProject == null)
+                {
+                    HttpCookie cookie = HttpContext.Request.Cookies.Get(CURRENT_PROJECT_COOKIE_NAME);
+
+                    if (cookie != null)
+                    {
+                        int projectId;
+                        bool success = Int32.TryParse(cookie.Value, out projectId);
+
+                        if (success)
+                        {
+                            _currentProject = _projectService.GetProjectByProjectId(projectId);
+                        }
+                    }
+                }
+
+                return _currentProject;
+            }
+            set
+            {
+                HttpCookie cookie = new HttpCookie(CURRENT_PROJECT_COOKIE_NAME)
+                {
+                    Value = value.ProjectId.ToString()
+                };
+
+                HttpContext.Response.Cookies.Add(cookie);
+
+                _currentProject = value;
+            }
+        } 
+
+        public IUnitOfWork UnitOfWork { get; set; }        
         
         public RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> action)
         {
@@ -81,41 +117,7 @@ namespace Trakker.Controllers
             return RedirectToAction(actionName, controllerName,
                                     new RouteValueDictionary(values));
         }
-        protected Project _currentProject;
-        public Project CurrentProject
-        {
-            get
-            {
-                if (_currentProject == null)
-                {
-                    HttpCookie cookie = HttpContext.Request.Cookies.Get(CURRENT_PROJECT_COOKIE_NAME);
-
-                    if (cookie != null)
-                    {
-                        int projectId;
-                        bool success = Int32.TryParse(cookie.Value, out projectId);
-
-                        if (success)
-                        {
-                            _currentProject = _projectService.GetProjectByProjectId(projectId);
-                        }
-                    }
-                }
-
-                return _currentProject;
-            }
-            set
-            {
-                HttpCookie cookie = new HttpCookie(CURRENT_PROJECT_COOKIE_NAME)
-                {
-                    Value = value.ProjectId.ToString()
-                };
-
-                HttpContext.Response.Cookies.Add(cookie);
-
-                _currentProject = value;
-            }
-        } 
+      
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
