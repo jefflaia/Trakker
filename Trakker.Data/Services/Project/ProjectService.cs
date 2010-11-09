@@ -44,7 +44,7 @@ namespace Trakker.Data.Services
             if (project.ProjectId > 0)
             {
                 Project oldProject = _projectRepository.GetProjects().Where(p => p.ProjectId == project.ProjectId).Single();
-                project.KeyName = oldProject.KeyName;
+                project.KeyName = oldProject.KeyName.ToUpper();
                 project.Created = oldProject.Created;
             }
             //new project

@@ -51,23 +51,23 @@ namespace Trakker.Data.Access
     partial void InsertRole(Role instance);
     partial void UpdateRole(Role instance);
     partial void DeleteRole(Role instance);
-    partial void InsertUser(User instance);
-    partial void UpdateUser(User instance);
-    partial void DeleteUser(User instance);
     partial void InsertResolution(Resolution instance);
     partial void UpdateResolution(Resolution instance);
     partial void DeleteResolution(Resolution instance);
-    partial void InsertProject(Project instance);
-    partial void UpdateProject(Project instance);
-    partial void DeleteProject(Project instance);
     partial void InsertStatus(Status instance);
     partial void UpdateStatus(Status instance);
     partial void DeleteStatus(Status instance);
     partial void InsertTicket(Ticket instance);
     partial void UpdateTicket(Ticket instance);
     partial void DeleteTicket(Ticket instance);
+    partial void InsertProject(Project instance);
+    partial void UpdateProject(Project instance);
+    partial void DeleteProject(Project instance);
+    partial void InsertUser(User instance);
+    partial void UpdateUser(User instance);
+    partial void DeleteUser(User instance);
     #endregion
-				
+		
 		public TrakkerDBDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
@@ -148,27 +148,11 @@ namespace Trakker.Data.Access
 			}
 		}
 		
-		public System.Data.Linq.Table<User> Users
-		{
-			get
-			{
-				return this.GetTable<User>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Resolution> Resolutions
 		{
 			get
 			{
 				return this.GetTable<Resolution>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Project> Projects
-		{
-			get
-			{
-				return this.GetTable<Project>();
 			}
 		}
 		
@@ -185,6 +169,22 @@ namespace Trakker.Data.Access
 			get
 			{
 				return this.GetTable<Ticket>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Project> Projects
+		{
+			get
+			{
+				return this.GetTable<Project>();
+			}
+		}
+		
+		public System.Data.Linq.Table<User> Users
+		{
+			get
+			{
+				return this.GetTable<User>();
 			}
 		}
 	}
@@ -568,9 +568,9 @@ namespace Trakker.Data.Access
 		
 		private int _UserId;
 		
-		private EntityRef<User> _User;
-		
 		private EntityRef<Ticket> _Ticket;
+		
+		private EntityRef<User> _User;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -592,8 +592,8 @@ namespace Trakker.Data.Access
 		
 		public Comment()
 		{
-			this._User = default(EntityRef<User>);
 			this._Ticket = default(EntityRef<Ticket>);
+			this._User = default(EntityRef<User>);
 			OnCreated();
 		}
 		
@@ -725,40 +725,6 @@ namespace Trakker.Data.Access
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Comment", Storage="_User", ThisKey="UserId", OtherKey="UserId", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.Comments.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.Comments.Add(this);
-						this._UserId = value.UserId;
-					}
-					else
-					{
-						this._UserId = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Ticket_Comment", Storage="_Ticket", ThisKey="TicketId", OtherKey="TicketId", IsForeignKey=true)]
 		public Ticket Ticket
 		{
@@ -789,6 +755,40 @@ namespace Trakker.Data.Access
 						this._TicketId = default(int);
 					}
 					this.SendPropertyChanged("Ticket");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Comment", Storage="_User", ThisKey="UserId", OtherKey="UserId", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Comments.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Comments.Add(this);
+						this._UserId = value.UserId;
+					}
+					else
+					{
+						this._UserId = default(int);
+					}
+					this.SendPropertyChanged("User");
 				}
 			}
 		}
@@ -1557,465 +1557,6 @@ namespace Trakker.Data.Access
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
-	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _UserId;
-		
-		private string _Email;
-		
-		private string _Password;
-		
-		private string _Salt;
-		
-		private System.DateTime _Created;
-		
-		private System.Nullable<System.DateTime> _LastLogin;
-		
-		private int _TotalComments;
-		
-		private int _FailedPasswordAttemptCount;
-		
-		private int _RoleId;
-		
-		private System.Nullable<System.DateTime> _LastFailedLoginAttempt;
-		
-		private EntitySet<Comment> _Comments;
-		
-		private EntitySet<Project> _Projects;
-		
-		private EntitySet<Ticket> _Tickets;
-		
-		private EntitySet<Ticket> _Tickets1;
-		
-		private EntitySet<Ticket> _Tickets2;
-		
-		private EntityRef<Role> _Role;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUserIdChanging(int value);
-    partial void OnUserIdChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    partial void OnSaltChanging(string value);
-    partial void OnSaltChanged();
-    partial void OnCreatedChanging(System.DateTime value);
-    partial void OnCreatedChanged();
-    partial void OnLastLoginChanging(System.Nullable<System.DateTime> value);
-    partial void OnLastLoginChanged();
-    partial void OnTotalCommentsChanging(int value);
-    partial void OnTotalCommentsChanged();
-    partial void OnFailedPasswordAttemptCountChanging(int value);
-    partial void OnFailedPasswordAttemptCountChanged();
-    partial void OnRoleIdChanging(int value);
-    partial void OnRoleIdChanged();
-    partial void OnLastFailedLoginAttemptChanging(System.Nullable<System.DateTime> value);
-    partial void OnLastFailedLoginAttemptChanged();
-    #endregion
-		
-		public User()
-		{
-			this._Comments = new EntitySet<Comment>(new Action<Comment>(this.attach_Comments), new Action<Comment>(this.detach_Comments));
-			this._Projects = new EntitySet<Project>(new Action<Project>(this.attach_Projects), new Action<Project>(this.detach_Projects));
-			this._Tickets = new EntitySet<Ticket>(new Action<Ticket>(this.attach_Tickets), new Action<Ticket>(this.detach_Tickets));
-			this._Tickets1 = new EntitySet<Ticket>(new Action<Ticket>(this.attach_Tickets1), new Action<Ticket>(this.detach_Tickets1));
-			this._Tickets2 = new EntitySet<Ticket>(new Action<Ticket>(this.attach_Tickets2), new Action<Ticket>(this.detach_Tickets2));
-			this._Role = default(EntityRef<Role>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int UserId
-		{
-			get
-			{
-				return this._UserId;
-			}
-			set
-			{
-				if ((this._UserId != value))
-				{
-					this.OnUserIdChanging(value);
-					this.SendPropertyChanging();
-					this._UserId = value;
-					this.SendPropertyChanged("UserId");
-					this.OnUserIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Salt", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string Salt
-		{
-			get
-			{
-				return this._Salt;
-			}
-			set
-			{
-				if ((this._Salt != value))
-				{
-					this.OnSaltChanging(value);
-					this.SendPropertyChanging();
-					this._Salt = value;
-					this.SendPropertyChanged("Salt");
-					this.OnSaltChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Created", DbType="DateTime NOT NULL")]
-		public System.DateTime Created
-		{
-			get
-			{
-				return this._Created;
-			}
-			set
-			{
-				if ((this._Created != value))
-				{
-					this.OnCreatedChanging(value);
-					this.SendPropertyChanging();
-					this._Created = value;
-					this.SendPropertyChanged("Created");
-					this.OnCreatedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastLogin", DbType="DateTime")]
-		public System.Nullable<System.DateTime> LastLogin
-		{
-			get
-			{
-				return this._LastLogin;
-			}
-			set
-			{
-				if ((this._LastLogin != value))
-				{
-					this.OnLastLoginChanging(value);
-					this.SendPropertyChanging();
-					this._LastLogin = value;
-					this.SendPropertyChanged("LastLogin");
-					this.OnLastLoginChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalComments", DbType="Int NOT NULL")]
-		public int TotalComments
-		{
-			get
-			{
-				return this._TotalComments;
-			}
-			set
-			{
-				if ((this._TotalComments != value))
-				{
-					this.OnTotalCommentsChanging(value);
-					this.SendPropertyChanging();
-					this._TotalComments = value;
-					this.SendPropertyChanged("TotalComments");
-					this.OnTotalCommentsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FailedPasswordAttemptCount", DbType="Int NOT NULL")]
-		public int FailedPasswordAttemptCount
-		{
-			get
-			{
-				return this._FailedPasswordAttemptCount;
-			}
-			set
-			{
-				if ((this._FailedPasswordAttemptCount != value))
-				{
-					this.OnFailedPasswordAttemptCountChanging(value);
-					this.SendPropertyChanging();
-					this._FailedPasswordAttemptCount = value;
-					this.SendPropertyChanged("FailedPasswordAttemptCount");
-					this.OnFailedPasswordAttemptCountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleId", DbType="Int NOT NULL")]
-		public int RoleId
-		{
-			get
-			{
-				return this._RoleId;
-			}
-			set
-			{
-				if ((this._RoleId != value))
-				{
-					if (this._Role.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnRoleIdChanging(value);
-					this.SendPropertyChanging();
-					this._RoleId = value;
-					this.SendPropertyChanged("RoleId");
-					this.OnRoleIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastFailedLoginAttempt", DbType="DateTime")]
-		public System.Nullable<System.DateTime> LastFailedLoginAttempt
-		{
-			get
-			{
-				return this._LastFailedLoginAttempt;
-			}
-			set
-			{
-				if ((this._LastFailedLoginAttempt != value))
-				{
-					this.OnLastFailedLoginAttemptChanging(value);
-					this.SendPropertyChanging();
-					this._LastFailedLoginAttempt = value;
-					this.SendPropertyChanged("LastFailedLoginAttempt");
-					this.OnLastFailedLoginAttemptChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Comment", Storage="_Comments", ThisKey="UserId", OtherKey="UserId")]
-		public EntitySet<Comment> Comments
-		{
-			get
-			{
-				return this._Comments;
-			}
-			set
-			{
-				this._Comments.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Project", Storage="_Projects", ThisKey="UserId", OtherKey="Lead")]
-		public EntitySet<Project> Projects
-		{
-			get
-			{
-				return this._Projects;
-			}
-			set
-			{
-				this._Projects.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Ticket", Storage="_Tickets", ThisKey="UserId", OtherKey="AssignedToUserId")]
-		public EntitySet<Ticket> Tickets
-		{
-			get
-			{
-				return this._Tickets;
-			}
-			set
-			{
-				this._Tickets.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Ticket1", Storage="_Tickets1", ThisKey="UserId", OtherKey="CreatedByUserId")]
-		public EntitySet<Ticket> Tickets1
-		{
-			get
-			{
-				return this._Tickets1;
-			}
-			set
-			{
-				this._Tickets1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Ticket2", Storage="_Tickets2", ThisKey="UserId", OtherKey="AssignedByUserId")]
-		public EntitySet<Ticket> Tickets2
-		{
-			get
-			{
-				return this._Tickets2;
-			}
-			set
-			{
-				this._Tickets2.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Role_User", Storage="_Role", ThisKey="RoleId", OtherKey="RoleId", IsForeignKey=true)]
-		public Role Role
-		{
-			get
-			{
-				return this._Role.Entity;
-			}
-			set
-			{
-				Role previousValue = this._Role.Entity;
-				if (((previousValue != value) 
-							|| (this._Role.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Role.Entity = null;
-						previousValue.Users.Remove(this);
-					}
-					this._Role.Entity = value;
-					if ((value != null))
-					{
-						value.Users.Add(this);
-						this._RoleId = value.RoleId;
-					}
-					else
-					{
-						this._RoleId = default(int);
-					}
-					this.SendPropertyChanged("Role");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Comments(Comment entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Comments(Comment entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Projects(Project entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Projects(Project entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Tickets(Ticket entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Tickets(Ticket entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Tickets1(Ticket entity)
-		{
-			this.SendPropertyChanging();
-			entity.User1 = this;
-		}
-		
-		private void detach_Tickets1(Ticket entity)
-		{
-			this.SendPropertyChanging();
-			entity.User1 = null;
-		}
-		
-		private void attach_Tickets2(Ticket entity)
-		{
-			this.SendPropertyChanging();
-			entity.User2 = this;
-		}
-		
-		private void detach_Tickets2(Ticket entity)
-		{
-			this.SendPropertyChanging();
-			entity.User2 = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Resolution")]
 	public partial class Resolution : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2151,309 +1692,6 @@ namespace Trakker.Data.Access
 		{
 			this.SendPropertyChanging();
 			entity.Resolution = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Project")]
-	public partial class Project : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ProjectId;
-		
-		private string _Name;
-		
-		private int _Lead;
-		
-		private string _KeyName;
-		
-		private System.DateTime _Due;
-		
-		private System.DateTime _Created;
-		
-		private int _TicketIndex;
-		
-		private EntitySet<Component> _Components;
-		
-		private EntitySet<Ticket> _Tickets;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnProjectIdChanging(int value);
-    partial void OnProjectIdChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnLeadChanging(int value);
-    partial void OnLeadChanged();
-    partial void OnKeyNameChanging(string value);
-    partial void OnKeyNameChanged();
-    partial void OnDueChanging(System.DateTime value);
-    partial void OnDueChanged();
-    partial void OnCreatedChanging(System.DateTime value);
-    partial void OnCreatedChanged();
-    partial void OnTicketIndexChanging(int value);
-    partial void OnTicketIndexChanged();
-    #endregion
-		
-		public Project()
-		{
-			this._Components = new EntitySet<Component>(new Action<Component>(this.attach_Components), new Action<Component>(this.detach_Components));
-			this._Tickets = new EntitySet<Ticket>(new Action<Ticket>(this.attach_Tickets), new Action<Ticket>(this.detach_Tickets));
-			this._User = default(EntityRef<User>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ProjectId
-		{
-			get
-			{
-				return this._ProjectId;
-			}
-			set
-			{
-				if ((this._ProjectId != value))
-				{
-					this.OnProjectIdChanging(value);
-					this.SendPropertyChanging();
-					this._ProjectId = value;
-					this.SendPropertyChanged("ProjectId");
-					this.OnProjectIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lead", DbType="Int NOT NULL")]
-		public int Lead
-		{
-			get
-			{
-				return this._Lead;
-			}
-			set
-			{
-				if ((this._Lead != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnLeadChanging(value);
-					this.SendPropertyChanging();
-					this._Lead = value;
-					this.SendPropertyChanged("Lead");
-					this.OnLeadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KeyName", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string KeyName
-		{
-			get
-			{
-				return this._KeyName;
-			}
-			set
-			{
-				if ((this._KeyName != value))
-				{
-					this.OnKeyNameChanging(value);
-					this.SendPropertyChanging();
-					this._KeyName = value;
-					this.SendPropertyChanged("KeyName");
-					this.OnKeyNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Due", DbType="DateTime NOT NULL")]
-		public System.DateTime Due
-		{
-			get
-			{
-				return this._Due;
-			}
-			set
-			{
-				if ((this._Due != value))
-				{
-					this.OnDueChanging(value);
-					this.SendPropertyChanging();
-					this._Due = value;
-					this.SendPropertyChanged("Due");
-					this.OnDueChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Created", DbType="DateTime NOT NULL")]
-		public System.DateTime Created
-		{
-			get
-			{
-				return this._Created;
-			}
-			set
-			{
-				if ((this._Created != value))
-				{
-					this.OnCreatedChanging(value);
-					this.SendPropertyChanging();
-					this._Created = value;
-					this.SendPropertyChanged("Created");
-					this.OnCreatedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TicketIndex", DbType="Int NOT NULL")]
-		public int TicketIndex
-		{
-			get
-			{
-				return this._TicketIndex;
-			}
-			set
-			{
-				if ((this._TicketIndex != value))
-				{
-					this.OnTicketIndexChanging(value);
-					this.SendPropertyChanging();
-					this._TicketIndex = value;
-					this.SendPropertyChanged("TicketIndex");
-					this.OnTicketIndexChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Project_Component", Storage="_Components", ThisKey="ProjectId", OtherKey="ProjectId")]
-		public EntitySet<Component> Components
-		{
-			get
-			{
-				return this._Components;
-			}
-			set
-			{
-				this._Components.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Project_Ticket", Storage="_Tickets", ThisKey="ProjectId", OtherKey="ProjectId")]
-		public EntitySet<Ticket> Tickets
-		{
-			get
-			{
-				return this._Tickets;
-			}
-			set
-			{
-				this._Tickets.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Project", Storage="_User", ThisKey="Lead", OtherKey="UserId", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.Projects.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.Projects.Add(this);
-						this._Lead = value.UserId;
-					}
-					else
-					{
-						this._Lead = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Components(Component entity)
-		{
-			this.SendPropertyChanging();
-			entity.Project = this;
-		}
-		
-		private void detach_Components(Component entity)
-		{
-			this.SendPropertyChanging();
-			entity.Project = null;
-		}
-		
-		private void attach_Tickets(Ticket entity)
-		{
-			this.SendPropertyChanging();
-			entity.Project = this;
-		}
-		
-		private void detach_Tickets(Ticket entity)
-		{
-			this.SendPropertyChanging();
-			entity.Project = null;
 		}
 	}
 	
@@ -3426,6 +2664,864 @@ namespace Trakker.Data.Access
 		{
 			this.SendPropertyChanging();
 			entity.Ticket = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Project")]
+	public partial class Project : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ProjectId;
+		
+		private string _Name;
+		
+		private int _Lead;
+		
+		private string _KeyName;
+		
+		private System.DateTime _Due;
+		
+		private System.DateTime _Created;
+		
+		private int _TicketIndex;
+		
+		private string _Url;
+		
+		private EntitySet<Component> _Components;
+		
+		private EntitySet<Ticket> _Tickets;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnProjectIdChanging(int value);
+    partial void OnProjectIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnLeadChanging(int value);
+    partial void OnLeadChanged();
+    partial void OnKeyNameChanging(string value);
+    partial void OnKeyNameChanged();
+    partial void OnDueChanging(System.DateTime value);
+    partial void OnDueChanged();
+    partial void OnCreatedChanging(System.DateTime value);
+    partial void OnCreatedChanged();
+    partial void OnTicketIndexChanging(int value);
+    partial void OnTicketIndexChanged();
+    partial void OnUrlChanging(string value);
+    partial void OnUrlChanged();
+    #endregion
+		
+		public Project()
+		{
+			this._Components = new EntitySet<Component>(new Action<Component>(this.attach_Components), new Action<Component>(this.detach_Components));
+			this._Tickets = new EntitySet<Ticket>(new Action<Ticket>(this.attach_Tickets), new Action<Ticket>(this.detach_Tickets));
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ProjectId
+		{
+			get
+			{
+				return this._ProjectId;
+			}
+			set
+			{
+				if ((this._ProjectId != value))
+				{
+					this.OnProjectIdChanging(value);
+					this.SendPropertyChanging();
+					this._ProjectId = value;
+					this.SendPropertyChanged("ProjectId");
+					this.OnProjectIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lead", DbType="Int NOT NULL")]
+		public int Lead
+		{
+			get
+			{
+				return this._Lead;
+			}
+			set
+			{
+				if ((this._Lead != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnLeadChanging(value);
+					this.SendPropertyChanging();
+					this._Lead = value;
+					this.SendPropertyChanged("Lead");
+					this.OnLeadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KeyName", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string KeyName
+		{
+			get
+			{
+				return this._KeyName;
+			}
+			set
+			{
+				if ((this._KeyName != value))
+				{
+					this.OnKeyNameChanging(value);
+					this.SendPropertyChanging();
+					this._KeyName = value;
+					this.SendPropertyChanged("KeyName");
+					this.OnKeyNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Due", DbType="DateTime NOT NULL")]
+		public System.DateTime Due
+		{
+			get
+			{
+				return this._Due;
+			}
+			set
+			{
+				if ((this._Due != value))
+				{
+					this.OnDueChanging(value);
+					this.SendPropertyChanging();
+					this._Due = value;
+					this.SendPropertyChanged("Due");
+					this.OnDueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Created", DbType="DateTime NOT NULL")]
+		public System.DateTime Created
+		{
+			get
+			{
+				return this._Created;
+			}
+			set
+			{
+				if ((this._Created != value))
+				{
+					this.OnCreatedChanging(value);
+					this.SendPropertyChanging();
+					this._Created = value;
+					this.SendPropertyChanged("Created");
+					this.OnCreatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TicketIndex", DbType="Int NOT NULL")]
+		public int TicketIndex
+		{
+			get
+			{
+				return this._TicketIndex;
+			}
+			set
+			{
+				if ((this._TicketIndex != value))
+				{
+					this.OnTicketIndexChanging(value);
+					this.SendPropertyChanging();
+					this._TicketIndex = value;
+					this.SendPropertyChanged("TicketIndex");
+					this.OnTicketIndexChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Url", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string Url
+		{
+			get
+			{
+				return this._Url;
+			}
+			set
+			{
+				if ((this._Url != value))
+				{
+					this.OnUrlChanging(value);
+					this.SendPropertyChanging();
+					this._Url = value;
+					this.SendPropertyChanged("Url");
+					this.OnUrlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Project_Component", Storage="_Components", ThisKey="ProjectId", OtherKey="ProjectId")]
+		public EntitySet<Component> Components
+		{
+			get
+			{
+				return this._Components;
+			}
+			set
+			{
+				this._Components.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Project_Ticket", Storage="_Tickets", ThisKey="ProjectId", OtherKey="ProjectId")]
+		public EntitySet<Ticket> Tickets
+		{
+			get
+			{
+				return this._Tickets;
+			}
+			set
+			{
+				this._Tickets.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Project", Storage="_User", ThisKey="Lead", OtherKey="UserId", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Projects.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Projects.Add(this);
+						this._Lead = value.UserId;
+					}
+					else
+					{
+						this._Lead = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Components(Component entity)
+		{
+			this.SendPropertyChanging();
+			entity.Project = this;
+		}
+		
+		private void detach_Components(Component entity)
+		{
+			this.SendPropertyChanging();
+			entity.Project = null;
+		}
+		
+		private void attach_Tickets(Ticket entity)
+		{
+			this.SendPropertyChanging();
+			entity.Project = this;
+		}
+		
+		private void detach_Tickets(Ticket entity)
+		{
+			this.SendPropertyChanging();
+			entity.Project = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
+	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _UserId;
+		
+		private string _Email;
+		
+		private string _Password;
+		
+		private string _Salt;
+		
+		private System.DateTime _Created;
+		
+		private System.Nullable<System.DateTime> _LastLogin;
+		
+		private int _TotalComments;
+		
+		private int _FailedPasswordAttemptCount;
+		
+		private int _RoleId;
+		
+		private System.Nullable<System.DateTime> _LastFailedLoginAttempt;
+		
+		private string _FirstName;
+		
+		private string _LastName;
+		
+		private string _Initial;
+		
+		private EntitySet<Comment> _Comments;
+		
+		private EntitySet<Ticket> _Tickets;
+		
+		private EntitySet<Ticket> _Tickets1;
+		
+		private EntitySet<Ticket> _Tickets2;
+		
+		private EntitySet<Project> _Projects;
+		
+		private EntityRef<Role> _Role;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnSaltChanging(string value);
+    partial void OnSaltChanged();
+    partial void OnCreatedChanging(System.DateTime value);
+    partial void OnCreatedChanged();
+    partial void OnLastLoginChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastLoginChanged();
+    partial void OnTotalCommentsChanging(int value);
+    partial void OnTotalCommentsChanged();
+    partial void OnFailedPasswordAttemptCountChanging(int value);
+    partial void OnFailedPasswordAttemptCountChanged();
+    partial void OnRoleIdChanging(int value);
+    partial void OnRoleIdChanged();
+    partial void OnLastFailedLoginAttemptChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastFailedLoginAttemptChanged();
+    partial void OnFirstNameChanging(string value);
+    partial void OnFirstNameChanged();
+    partial void OnLastNameChanging(string value);
+    partial void OnLastNameChanged();
+    partial void OnInitialChanging(string value);
+    partial void OnInitialChanged();
+    #endregion
+		
+		public User()
+		{
+			this._Comments = new EntitySet<Comment>(new Action<Comment>(this.attach_Comments), new Action<Comment>(this.detach_Comments));
+			this._Tickets = new EntitySet<Ticket>(new Action<Ticket>(this.attach_Tickets), new Action<Ticket>(this.detach_Tickets));
+			this._Tickets1 = new EntitySet<Ticket>(new Action<Ticket>(this.attach_Tickets1), new Action<Ticket>(this.detach_Tickets1));
+			this._Tickets2 = new EntitySet<Ticket>(new Action<Ticket>(this.attach_Tickets2), new Action<Ticket>(this.detach_Tickets2));
+			this._Projects = new EntitySet<Project>(new Action<Project>(this.attach_Projects), new Action<Project>(this.detach_Projects));
+			this._Role = default(EntityRef<Role>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Salt", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		public string Salt
+		{
+			get
+			{
+				return this._Salt;
+			}
+			set
+			{
+				if ((this._Salt != value))
+				{
+					this.OnSaltChanging(value);
+					this.SendPropertyChanging();
+					this._Salt = value;
+					this.SendPropertyChanged("Salt");
+					this.OnSaltChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Created", DbType="DateTime NOT NULL")]
+		public System.DateTime Created
+		{
+			get
+			{
+				return this._Created;
+			}
+			set
+			{
+				if ((this._Created != value))
+				{
+					this.OnCreatedChanging(value);
+					this.SendPropertyChanging();
+					this._Created = value;
+					this.SendPropertyChanged("Created");
+					this.OnCreatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastLogin", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastLogin
+		{
+			get
+			{
+				return this._LastLogin;
+			}
+			set
+			{
+				if ((this._LastLogin != value))
+				{
+					this.OnLastLoginChanging(value);
+					this.SendPropertyChanging();
+					this._LastLogin = value;
+					this.SendPropertyChanged("LastLogin");
+					this.OnLastLoginChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalComments", DbType="Int NOT NULL")]
+		public int TotalComments
+		{
+			get
+			{
+				return this._TotalComments;
+			}
+			set
+			{
+				if ((this._TotalComments != value))
+				{
+					this.OnTotalCommentsChanging(value);
+					this.SendPropertyChanging();
+					this._TotalComments = value;
+					this.SendPropertyChanged("TotalComments");
+					this.OnTotalCommentsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FailedPasswordAttemptCount", DbType="Int NOT NULL")]
+		public int FailedPasswordAttemptCount
+		{
+			get
+			{
+				return this._FailedPasswordAttemptCount;
+			}
+			set
+			{
+				if ((this._FailedPasswordAttemptCount != value))
+				{
+					this.OnFailedPasswordAttemptCountChanging(value);
+					this.SendPropertyChanging();
+					this._FailedPasswordAttemptCount = value;
+					this.SendPropertyChanged("FailedPasswordAttemptCount");
+					this.OnFailedPasswordAttemptCountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleId", DbType="Int NOT NULL")]
+		public int RoleId
+		{
+			get
+			{
+				return this._RoleId;
+			}
+			set
+			{
+				if ((this._RoleId != value))
+				{
+					if (this._Role.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRoleIdChanging(value);
+					this.SendPropertyChanging();
+					this._RoleId = value;
+					this.SendPropertyChanged("RoleId");
+					this.OnRoleIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastFailedLoginAttempt", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastFailedLoginAttempt
+		{
+			get
+			{
+				return this._LastFailedLoginAttempt;
+			}
+			set
+			{
+				if ((this._LastFailedLoginAttempt != value))
+				{
+					this.OnLastFailedLoginAttemptChanging(value);
+					this.SendPropertyChanging();
+					this._LastFailedLoginAttempt = value;
+					this.SendPropertyChanged("LastFailedLoginAttempt");
+					this.OnLastFailedLoginAttemptChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string FirstName
+		{
+			get
+			{
+				return this._FirstName;
+			}
+			set
+			{
+				if ((this._FirstName != value))
+				{
+					this.OnFirstNameChanging(value);
+					this.SendPropertyChanging();
+					this._FirstName = value;
+					this.SendPropertyChanged("FirstName");
+					this.OnFirstNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string LastName
+		{
+			get
+			{
+				return this._LastName;
+			}
+			set
+			{
+				if ((this._LastName != value))
+				{
+					this.OnLastNameChanging(value);
+					this.SendPropertyChanging();
+					this._LastName = value;
+					this.SendPropertyChanged("LastName");
+					this.OnLastNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Initial", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string Initial
+		{
+			get
+			{
+				return this._Initial;
+			}
+			set
+			{
+				if ((this._Initial != value))
+				{
+					this.OnInitialChanging(value);
+					this.SendPropertyChanging();
+					this._Initial = value;
+					this.SendPropertyChanged("Initial");
+					this.OnInitialChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Comment", Storage="_Comments", ThisKey="UserId", OtherKey="UserId")]
+		public EntitySet<Comment> Comments
+		{
+			get
+			{
+				return this._Comments;
+			}
+			set
+			{
+				this._Comments.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Ticket", Storage="_Tickets", ThisKey="UserId", OtherKey="AssignedToUserId")]
+		public EntitySet<Ticket> Tickets
+		{
+			get
+			{
+				return this._Tickets;
+			}
+			set
+			{
+				this._Tickets.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Ticket1", Storage="_Tickets1", ThisKey="UserId", OtherKey="CreatedByUserId")]
+		public EntitySet<Ticket> Tickets1
+		{
+			get
+			{
+				return this._Tickets1;
+			}
+			set
+			{
+				this._Tickets1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Ticket2", Storage="_Tickets2", ThisKey="UserId", OtherKey="AssignedByUserId")]
+		public EntitySet<Ticket> Tickets2
+		{
+			get
+			{
+				return this._Tickets2;
+			}
+			set
+			{
+				this._Tickets2.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Project", Storage="_Projects", ThisKey="UserId", OtherKey="Lead")]
+		public EntitySet<Project> Projects
+		{
+			get
+			{
+				return this._Projects;
+			}
+			set
+			{
+				this._Projects.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Role_User", Storage="_Role", ThisKey="RoleId", OtherKey="RoleId", IsForeignKey=true)]
+		public Role Role
+		{
+			get
+			{
+				return this._Role.Entity;
+			}
+			set
+			{
+				Role previousValue = this._Role.Entity;
+				if (((previousValue != value) 
+							|| (this._Role.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Role.Entity = null;
+						previousValue.Users.Remove(this);
+					}
+					this._Role.Entity = value;
+					if ((value != null))
+					{
+						value.Users.Add(this);
+						this._RoleId = value.RoleId;
+					}
+					else
+					{
+						this._RoleId = default(int);
+					}
+					this.SendPropertyChanged("Role");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Comments(Comment entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Comments(Comment entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_Tickets(Ticket entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Tickets(Ticket entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_Tickets1(Ticket entity)
+		{
+			this.SendPropertyChanging();
+			entity.User1 = this;
+		}
+		
+		private void detach_Tickets1(Ticket entity)
+		{
+			this.SendPropertyChanging();
+			entity.User1 = null;
+		}
+		
+		private void attach_Tickets2(Ticket entity)
+		{
+			this.SendPropertyChanging();
+			entity.User2 = this;
+		}
+		
+		private void detach_Tickets2(Ticket entity)
+		{
+			this.SendPropertyChanging();
+			entity.User2 = null;
+		}
+		
+		private void attach_Projects(Project entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Projects(Project entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
 		}
 	}
 }

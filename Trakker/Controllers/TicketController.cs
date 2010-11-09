@@ -111,11 +111,14 @@ namespace Trakker.Controllers
                 Status = _ticketService.GetAllStatus(),
                 Users = _userService.GetAllUsers(),
                 Projects = _projectService.GetAllProjects(),
-                Resolutions = _ticketService.GetAllResolutions(),
-                ProjectId = CurrentProject.ProjectId
+                Resolutions = _ticketService.GetAllResolutions()
             };
 
-
+            if (IsProjectSelected())
+            {
+                viewData.ProjectId = CurrentProject.ProjectId;
+            }
+            
             return View(viewData);
         }
 

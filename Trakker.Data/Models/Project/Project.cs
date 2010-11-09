@@ -10,5 +10,6 @@ namespace Trakker.Data
         public DateTime? Due { get; set;}
         public DateTime? Created { get; set; }
         public int TicketIndex { get; set; }
+        public string Url { get; set; }
     }
 }

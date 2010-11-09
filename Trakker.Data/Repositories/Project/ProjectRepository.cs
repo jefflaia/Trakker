@@ -37,7 +37,8 @@
                        Due = p.Due,
                        Lead = p.Lead,
                        KeyName = p.KeyName,
-                       TicketIndex = p.TicketIndex
+                       TicketIndex = p.TicketIndex,
+                       Url = p.Url
                    };
         }
 

@@ -49,6 +49,7 @@
             SharedWebAssets
                 .StyleSheets(config => config.AddGroup("css", group => group
                     .Add("~/Content/Main.css")
+                    .Add("~/Content/Project.css")
                     .Add("telerik.common.css")
                     .Add("telerik.vista.css")
                     .Combined(true)

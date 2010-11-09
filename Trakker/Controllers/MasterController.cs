@@ -70,7 +70,12 @@ namespace Trakker.Controllers
 
                 _currentProject = value;
             }
-        } 
+        }
+
+        public bool IsProjectSelected()
+        {
+            return CurrentProject != null;
+        }
 
         public IUnitOfWork UnitOfWork { get; set; }        
         

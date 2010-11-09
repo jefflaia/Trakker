@@ -36,7 +36,10 @@
                        LastFailedLoginAttempt = u.LastFailedLoginAttempt,
                        FailedPasswordAttemptCount = u.FailedPasswordAttemptCount,
                        TotalComments = u.TotalComments,
-                       RoleId = u.RoleId
+                       RoleId = u.RoleId,
+                       FirstName = u.FirstName,
+                       LastName = u.LastName,
+                       Initial = u.Initial
                    };
         }
 
