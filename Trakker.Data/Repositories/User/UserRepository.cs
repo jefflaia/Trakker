@@ -38,8 +38,7 @@
                        TotalComments = u.TotalComments,
                        RoleId = u.RoleId,
                        FirstName = u.FirstName,
-                       LastName = u.LastName,
-                       Initial = u.Initial
+                       LastName = u.LastName
                    };
         }
 

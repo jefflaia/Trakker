@@ -68,6 +68,7 @@ namespace Trakker.Data.Access
     partial void DeleteUser(User instance);
     #endregion
 		
+		
 		public TrakkerDBDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
@@ -3024,8 +3025,6 @@ namespace Trakker.Data.Access
 		
 		private string _LastName;
 		
-		private string _Initial;
-		
 		private EntitySet<Comment> _Comments;
 		
 		private EntitySet<Ticket> _Tickets;
@@ -3066,8 +3065,6 @@ namespace Trakker.Data.Access
     partial void OnFirstNameChanged();
     partial void OnLastNameChanging(string value);
     partial void OnLastNameChanged();
-    partial void OnInitialChanging(string value);
-    partial void OnInitialChanged();
     #endregion
 		
 		public User()
@@ -3321,26 +3318,6 @@ namespace Trakker.Data.Access
 					this._LastName = value;
 					this.SendPropertyChanged("LastName");
 					this.OnLastNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Initial", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string Initial
-		{
-			get
-			{
-				return this._Initial;
-			}
-			set
-			{
-				if ((this._Initial != value))
-				{
-					this.OnInitialChanging(value);
-					this.SendPropertyChanging();
-					this._Initial = value;
-					this.SendPropertyChanged("Initial");
-					this.OnInitialChanged();
 				}
 			}
 		}

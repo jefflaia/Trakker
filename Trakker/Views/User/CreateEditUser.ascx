@@ -1,4 +1,15 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<CreateEditUserViewData>" %>
+
+<%= Html.FormRow()
+    .AddToLeft(Html.LabelFor(x => x.FirstName))
+    .AddToRight(Html.TextBoxFor(x => x.FirstName, Model.FirstName))
+    .AddToRight(Html.ValidationMessageFor(m => m.FirstName)) %>
+
+<%= Html.FormRow()
+    .AddToLeft(Html.LabelFor(x => x.LastName))
+    .AddToRight(Html.TextBoxFor(x => x.LastName, Model.LastName))
+    .AddToRight(Html.ValidationMessageFor(m => m.LastName)) %>
+
 <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.Email))
     .AddToRight(Html.TextBoxFor(x => x.Email, Model.Email))

@@ -19,11 +19,10 @@ namespace Trakker.Data
         public int RoleId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Initial { get; set; }
 
         public string FullName()
         {
-            return String.Format("{0} {1}. {2}", FirstName, Initial, LastName);
+            return String.Format("{0} {1}", FirstName, LastName);
         }
 
         public bool HasLoggedIn()

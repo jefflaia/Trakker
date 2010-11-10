@@ -145,7 +145,6 @@
       <Column Name="LastFailedLoginAttempt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Initial" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Association Name="User_Comment" Member="Comments" ThisKey="UserId" OtherKey="UserId" Type="Comment" />
       <Association Name="User_Ticket" Member="Tickets" ThisKey="UserId" OtherKey="AssignedToUserId" Type="Ticket" />
       <Association Name="User_Ticket1" Member="Tickets1" ThisKey="UserId" OtherKey="CreatedByUserId" Type="Ticket" />

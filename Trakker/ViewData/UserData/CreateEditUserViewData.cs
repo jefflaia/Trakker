@@ -8,10 +8,20 @@
     using Trakker.ViewData.SharedData;
     using System.ComponentModel.DataAnnotations;
     using Trakker.Properties;
-using Foolproof;
+    using Foolproof;
 
     public class CreateEditUserViewData : MasterViewData
     {
+        [DisplayName("First Name")]
+        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
+        [StringLength(50, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_50")]
+        public string FirstName { get; set; }
+
+        [DisplayName("Last Name")]
+        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
+        [StringLength(50, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_50")]
+        public string LastName { get; set; }
+
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         [StringLength(100, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_100")]
         [Email(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Email")]

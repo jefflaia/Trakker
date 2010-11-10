@@ -165,7 +165,6 @@
     <Compile Include="ViewData\UserData\LoginViewData.cs" />
     <Compile Include="IoC\WindsorControllerFactory.cs" />
     <Compile Include="ViewData\ValidationAttributes\Email.cs" />
-    <Compile Include="ViewData\ValidationAttributes\PropertiesMustMatch.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\2010.2.825\Black\editor.png" />
