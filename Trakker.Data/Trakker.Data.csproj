@@ -66,11 +66,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Gallio, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL" />
-    <Reference Include="MbUnit, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\MbUnit.dll</HintPath>
-    </Reference>
     <Reference Include="Mvc.Validation, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Mvc.Validation.dll</HintPath>
@@ -95,6 +90,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth.cs" />
     <Compile Include="Models\Ticket\Resolution.cs" />
     <Compile Include="Repositories\Ticket\ITicketRepository.cs" />
     <Compile Include="Repositories\User\IUserRepository.cs" />

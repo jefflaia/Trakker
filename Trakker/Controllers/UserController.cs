@@ -37,14 +37,14 @@ namespace Trakker.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (_userService.ValidateCredentials(viewData.Email, viewData.Password))
+                if (Auth.ValidateCredentials(viewData.Email, viewData.Password))
                 {
                     User user = _userService.GetUserWithEmail(viewData.Email);
                     user.LastLogin = DateTime.Now;
                     _userService.Save(user);
                     UnitOfWork.Commit();
 
-                    _userService.LogUserIn(user);
+                    Auth.LogUserIn(user);
                     
                     return RedirectToAction<TicketController>(x => x.TicketList(1));
                 }
@@ -68,8 +68,8 @@ namespace Trakker.Controllers
 
         public ActionResult Logout()
         {
-            _userService.LogUserOut();
-            _userService.CurrentUser = null;
+            Auth.LogUserOut();
+            Auth.CurrentUser = null;
 
             return View(new LogoutViewData());
         }

@@ -9,7 +9,7 @@ namespace Trakker.Controllers
     using Trakker.Data;
     using Trakker.ViewData.SharedData;
     using Trakker.Core;
-    using Trakker.IoC;
+    using Trakker.Core.IoC;
     using System.Linq.Expressions;
     using System.Web.Routing;
     using Trakker.Helpers;
@@ -154,8 +154,8 @@ namespace Trakker.Controllers
                 RecentProjects = _projectService.GetAllProjects(),
                 HasCurrentProject = true,
                 CurrentProject = CurrentProject,
-                CurrentUser = _userService.CurrentUser,
-                IsUserLoggedIn = _userService.IsUserLoggedIn(),
+                CurrentUser = Auth.CurrentUser,
+                IsUserLoggedIn = Auth.IsUserLoggedIn(),
                 NumTicketsAssignedToCurrentUser = 0
             };
 
@@ -170,7 +170,7 @@ namespace Trakker.Controllers
 
             if (viewData.CurrentUser != null)
             {
-                viewData.NumTicketsAssignedToCurrentUser = _ticketService.CountTicketsWithAssignedTo(_userService.CurrentUser.UserId);
+                viewData.NumTicketsAssignedToCurrentUser = _ticketService.CountTicketsWithAssignedTo(Auth.CurrentUser.UserId);
             }
 
             return viewData;

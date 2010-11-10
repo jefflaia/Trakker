@@ -52,17 +52,20 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Core">
+    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.DynamicProxy2, Version=2.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.MicroKernel">
+    <Reference Include="Castle.MicroKernel, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Castle.MicroKernel.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Windsor">
+    <Reference Include="Castle.Windsor, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -114,7 +117,6 @@
     <Compile Include="Helpers\Table\ITableColumn.cs" />
     <Compile Include="Helpers\Table\TableColumn.cs" />
     <Compile Include="Helpers\Table\TestTable.cs" />
-    <Compile Include="IoC\WindsorContainerProvider.cs" />
     <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
@@ -139,7 +141,6 @@
     <Compile Include="Helpers\Extensions\HtmlHelper\HtmlHelperExtensions.cs" />
     <Compile Include="Helpers\IsCurrentActionHelper.cs" />
     <Compile Include="Helpers\Pagination.cs" />
-    <Compile Include="IoC\CastleConfigFileSection.cs" />
     <Compile Include="Properties\Validation.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -163,8 +164,8 @@
     <Compile Include="ViewData\UserData\CreateEditUserViewData.cs" />
     <Compile Include="ViewData\UserData\LogoutViewData.cs" />
     <Compile Include="ViewData\UserData\LoginViewData.cs" />
-    <Compile Include="IoC\WindsorControllerFactory.cs" />
     <Compile Include="ViewData\ValidationAttributes\Email.cs" />
+    <Compile Include="WindsorControllerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\2010.2.825\Black\editor.png" />

@@ -130,8 +130,8 @@ namespace Trakker.Controllers
                 Mapper.CreateMap<CreateEditTicketViewData, Ticket>();
                 Ticket ticket = Mapper.Map(viewData, new Ticket());
 
-                ticket.CreatedByUserId = _userService.CurrentUser.UserId;
-                ticket.AssignedByUserId = _userService.CurrentUser.UserId;
+                ticket.CreatedByUserId = Auth.CurrentUser.UserId;
+                ticket.AssignedByUserId = Auth.CurrentUser.UserId;
                 ticket.Created = DateTime.Now;
 
                 _ticketService.Save(ticket);

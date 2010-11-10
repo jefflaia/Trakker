@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Trakker.Data.Services;
-using Trakker.IoC;
+using Trakker.Core.IoC;
 
 namespace Trakker.Attributes
 {

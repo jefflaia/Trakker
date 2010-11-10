@@ -1,4 +1,4 @@
-﻿namespace Trakker.IoC
+﻿namespace Trakker.Core.IoC
 {
     using System;
     using System.Collections.Generic;

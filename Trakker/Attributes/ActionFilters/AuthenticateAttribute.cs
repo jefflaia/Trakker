@@ -4,7 +4,8 @@ using System.Web.Mvc;
 using Trakker.Data.Services;
 using System.Web;
 using System.Web.Security;
-using Trakker.IoC;
+using Trakker.Core.IoC;
+using Trakker.Data;
 
 
 namespace Trakker.Attributes
@@ -20,7 +21,7 @@ namespace Trakker.Attributes
 
         public override void OnActionExecuting(ActionExecutingContext actionContext)
         {
-            if (_userService.CurrentUser != null) return;
+            if (Auth.CurrentUser != null) return;
 
             HttpContext ctx = HttpContext.Current;
 

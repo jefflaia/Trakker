@@ -12,10 +12,9 @@
     using Trakker.ViewData.TicketData;
     using System.Web.Security;
     using System.Security.Principal;
-    using Castle.Windsor;
     using Trakker.Routes;
     using System.Configuration;
-    using Trakker.IoC;
+    using Trakker.Core.IoC;
     using System.ComponentModel;
     using Telerik.Web.Mvc;
 
