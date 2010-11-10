@@ -1,18 +1,16 @@
-﻿using System;
-using System.Linq;
-using Castle.Windsor;
-using Castle.Windsor.Configuration.Interpreters;
-using Castle.Core.Resource;
-using System.Web.Mvc;
-using System.Web.Routing;
-using System.Reflection;
-using Castle.Core;
-using Castle.MicroKernel.Registration;
-using Trakker.Data.Services;
-using Trakker.Data;
-
-namespace Trakker.IoC
+﻿namespace Trakker.Core.IoC
 {
+    using System;
+    using System.Linq;
+    using Castle.Windsor;
+    using Castle.Windsor.Configuration.Interpreters;
+    using Castle.Core.Resource;
+    using System.Web.Mvc;
+    using System.Web.Routing;
+    using System.Reflection;
+    using Castle.Core;
+    using Castle.MicroKernel.Registration;
+
     public class WindsorControllerFactory : DefaultControllerFactory
     {
 
