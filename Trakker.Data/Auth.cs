@@ -113,18 +113,18 @@ namespace Trakker.Data
         {
             IUserService userService = WindsorContainerProvider.Resolve<IUserService>();
             CurrentUser = userService.GetUserWithEmail(user.Email);
-            SessionHandler.CreateCookie(user.Email);
+            SessionCookie.Create(user.Email);
         }
 
         public static void LogUserOut()
         {
-            SessionHandler.RemoveCookie();
+            SessionCookie.Remove();
             CurrentUser = null;
         }
 
         public static User GetUser()
         {
-            string cookieValue = SessionHandler.ReadCookie();
+            string cookieValue = SessionCookie.Read();
 
             if (!cookieValue.Equals(string.Empty))
             {

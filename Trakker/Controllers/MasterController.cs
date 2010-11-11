@@ -25,8 +25,6 @@ namespace Trakker.Controllers
         protected ITicketService _ticketService;
         protected IUserService _userService;
         
-        const string CURRENT_PROJECT_COOKIE_NAME = "Project";
-
         public MasterController(IProjectService projectService, ITicketService ticketService, IUserService userSerivice)
         {
             _projectService = projectService;
@@ -43,31 +41,16 @@ namespace Trakker.Controllers
             {
                 if (_currentProject == null)
                 {
-                    HttpCookie cookie = HttpContext.Request.Cookies.Get(CURRENT_PROJECT_COOKIE_NAME);
-
-                    if (cookie != null)
-                    {
-                        int projectId;
-                        bool success = Int32.TryParse(cookie.Value, out projectId);
-
-                        if (success)
-                        {
-                            _currentProject = _projectService.GetProjectByProjectId(projectId);
-                        }
-                    }
+                    return _projectService.GetProjectByProjectId(ProjectCookie.Read());
                 }
-
-                return _currentProject;
+                else
+                {
+                    return _currentProject;
+                }
             }
             set
             {
-                HttpCookie cookie = new HttpCookie(CURRENT_PROJECT_COOKIE_NAME)
-                {
-                    Value = value.ProjectId.ToString()
-                };
-
-                HttpContext.Response.Cookies.Add(cookie);
-
+                ProjectCookie.Create(value.ProjectId);
                 _currentProject = value;
             }
         }
