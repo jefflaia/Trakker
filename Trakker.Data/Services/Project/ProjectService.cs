@@ -37,6 +37,13 @@ namespace Trakker.Data.Services
             return _projectRepository.GetProjects().WithKeyName(keyName).SingleOrDefault<Project>() ?? null;
         }
 
+        public Project GetProjectByName(string name)
+        {
+            return _projectRepository.GetProjects()
+                .Where(m => m.Name == name)
+                .SingleOrDefault<Project>() ?? null;
+        }
+
         public void Save(Project project)
         {
             //exsiting project

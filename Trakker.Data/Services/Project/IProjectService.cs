@@ -14,6 +14,7 @@ namespace Trakker.Data.Services
         IList<Trakker.Data.Project> GetAllProjects();
         Project GetProjectByProjectId(int id);
         Project GetProjectByKeyName(string keyName);
+        Project GetProjectByName(string name);
         void Save(Project project);
     }
 }

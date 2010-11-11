@@ -51,7 +51,7 @@ form div.Row{margin: 2px 0px; position: static; clear: both; overflow:auto; disp
 form div.Row div.Left {width: 32%; float:left; text-align:right; padding-right: 10px; height: 26px; line-height: 26px; }
 form div.Row div.Left label {font-weight: bold;}
 form div.Row div.Right{float: left; width: 65%; }
-form div.Row div.Right p.Description{float:left; display: inline-block; color: #888; margin-left: 5px;}
+form div.Row div.Right p.Description{ display: block; color: #888; margin-left: 5px; }
 form div.Row span.field-validation-error{color: #ff3131; display:block; margin: 0px 5px 0px 5px; }
 form div.validation-summary-errors{background-color: #FFF7F8; border: 1px dashed #FF3131; margin-bottom: 10px; padding: 10px 0px 10px 0px;}
 form div.validation-summary-errors li{margin-left: 30px; }

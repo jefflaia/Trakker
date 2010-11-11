@@ -150,7 +150,8 @@
     <Compile Include="Routes\TicketRoutes.cs" />
     <Compile Include="Routes\UserRoutes.cs" />
     <Compile Include="ViewData\ProjectData\AllProjectsViewData.cs" />
-    <Compile Include="ViewData\ProjectData\CreateEditProjectViewData.cs" />
+    <Compile Include="ViewData\ProjectData\CreateProjectViewData.cs" />
+    <Compile Include="ViewData\ProjectData\EditProjectViewData.cs" />
     <Compile Include="ViewData\ProjectData\ProjectSummaryViewData.cs" />
     <Compile Include="ViewData\SharedData\MasterViewData.cs" />
     <Compile Include="ViewData\TicketData\CommentCreateEditViewData.cs" />
@@ -858,7 +859,6 @@
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Views\Project\AllProjects.aspx" />
     <Content Include="Views\Project\EditProject.aspx" />
-    <Content Include="Views\Project\CreateEditProject.ascx" />
     <Content Include="Views\Project\CreateProject.aspx" />
     <Content Include="Views\Project\ProjectSummary.aspx" />
     <Content Include="Views\Shared\Menu.ascx" />
