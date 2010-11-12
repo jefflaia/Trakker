@@ -25,7 +25,7 @@
                 <%= Html.Encode(Model.Priorities[item.PriorityId].Name)%>
             </td>
             <td><%= Html.Encode(Model.Status[item.StatusId].Name)%></td>
-            <td><%= Html.Encode(Model.Users[item.CreatedByUserId].Email)%></td
+            <td><%= Html.Encode(Model.Users[item.CreatedByUserId].Email)%></td>
             <td><%= Html.Encode(Model.Users[item.AssignedToUserId].Email)%></td>
             <td><%= Html.Encode(Model.Users[item.AssignedByUserId].Email)%></td>
 
