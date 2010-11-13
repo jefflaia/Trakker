@@ -14,7 +14,7 @@ div#Header div.Right div{width: 100%; text-align: right;}
 
 div#SubHeader{width: 100%; background-image:url(/Content/Images/UI-Backgrounds.png); background-position: 0px -49px; height: 30px; border-bottom: 1px solid #667e9a;}
 div#Content{ width: 100%; }
-div#Content div.InnerBorder{ overflow: hidden; position:relative; padding: 10px 45px; background-color: White; min-height: 500px;}
+div#Content div.InnerBorder{ overflow: hidden; position: relative; padding: 10px 45px; background-color: White; min-height: 500px;}
 div#Footer{ background-color: #F7F7F7; border-top: 1px solid #bbb; width: 100%; min-height: 50px;}
 
 

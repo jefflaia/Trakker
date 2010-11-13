@@ -1903,7 +1903,7 @@
 								<AutoHideGroup IsVisible="True">
 									<wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" IconIndex="0" IconResourceID="4" IconResourcePackage="8d8529d3-625d-4496-8354-3dad630ecc1b" Name="ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}" IsVisible="True" DockedHeight="768" DockedWidth="204.8" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
 									<wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" IconIndex="0" IconResourceID="6650" IconResourcePackage="da9fb551-c724-11d0-ae1f-00a0c90fffc3" Name="ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}" IsVisible="True" DockedHeight="768" DockedWidth="204.8" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
-									<wm:ToolWindowView OnTopWhenLastInContext="False" ForceCreate="ForceCreate" IconIndex="5" IconResourceID="6650" IconResourcePackage="21af45b0-ffa5-11d0-b63f-00a0c922e851" Name="ST:0:0:{25f7e850-ffa1-11d0-b63f-00a0c922e851}" DockedHeight="768" DockedWidth="204.8" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
+									<wm:ToolWindowView OnTopWhenLastInContext="False" ForceCreate="ForceCreate" IconIndex="5" IconResourceID="6650" IconResourcePackage="21af45b0-ffa5-11d0-b63f-00a0c922e851" Name="ST:0:0:{25f7e850-ffa1-11d0-b63f-00a0c922e851}" IsVisible="True" DockedHeight="768" DockedWidth="204.8" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
 								</AutoHideGroup>
 							</AutoHideChannel>
 							<AutoHideChannel Dock="Right" Orientation="Vertical" IsVisible="True">
@@ -2370,11 +2370,11 @@
 							<Item Name="Coverage Not Touched Area" Foreground="0x00000000" Background="0x00A580E6" BoldFont="No"/>
 							<Item Name="Coverage Partially Touched Area" Foreground="0x00000000" Background="0x00F9D2BF" BoldFont="No"/>
 							<Item Name="Coverage Touched Area" Foreground="0x00000000" Background="0x00B4E4B4" BoldFont="No"/>
-							<Item Name="CSS Comment" Foreground="0x00FFFF00" Background="0x02000000" BoldFont="Yes"/>
-							<Item Name="CSS Keyword" Foreground="0x00BEF4FC" Background="0x02000000" BoldFont="Yes"/>
-							<Item Name="CSS Property Name" Foreground="0x00BEF4FC" Background="0x02000000" BoldFont="Yes"/>
+							<Item Name="CSS Comment" Foreground="0x003C3C3C" Background="0x02000000" BoldFont="Yes"/>
+							<Item Name="CSS Keyword" Foreground="0x006DC6FF" Background="0x02000000" BoldFont="Yes"/>
+							<Item Name="CSS Property Name" Foreground="0x006DC6FF" Background="0x02000000" BoldFont="Yes"/>
 							<Item Name="CSS Property Value" Foreground="0x02000000" Background="0x02000000" BoldFont="Yes"/>
-							<Item Name="CSS Selector" Foreground="0x00BEF4FC" Background="0x02000000" BoldFont="Yes"/>
+							<Item Name="CSS Selector" Foreground="0x003278CC" Background="0x02000000" BoldFont="Yes"/>
 							<Item Name="CSS String Value" Foreground="0x00FFFF00" Background="0x02000000" BoldFont="Yes"/>
 							<Item Name="Current List Location" Foreground="0x00A3DBFF" Background="0x01000007" BoldFont="No"/>
 							<Item Name="Current Statement" Foreground="0x00000000" Background="0x0064BCE8" BoldFont="No"/>
@@ -2382,7 +2382,7 @@
 							<Item Name="Definition Window Background" Foreground="0x01000002" Background="0x00000000" BoldFont="No"/>
 							<Item Name="MarkerFormatDefinition/HighlightedReference" Foreground="0x02000000" Background="0x000C0C0C" BoldFont="No"/>
 							<Item Name="HTML Attribute" Foreground="0x003278CC" Background="0x02000000" BoldFont="No"/>
-							<Item Name="HTML Attribute Value" Foreground="0x005CC2A5" Background="0x02000000" BoldFont="No"/>
+							<Item Name="HTML Attribute Value" Foreground="0x0078CDB6" Background="0x02000000" BoldFont="No"/>
 							<Item Name="HTML Comment" Foreground="0x00C0C0C0" Background="0x02000000" BoldFont="No"/>
 							<Item Name="HTML Element Name" Foreground="0x0064BCE8" Background="0x02000000" BoldFont="No"/>
 							<Item Name="HTML Operator" Foreground="0x003278CC" Background="0x02000000" BoldFont="No"/>
@@ -2402,7 +2402,8 @@
 							<Item Name="Refactoring Current Field" Foreground="0x02000000" Background="0x00B4E4B4" BoldFont="No"/>
 							<Item Name="Refactoring Dependent Field" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Stale Code" Foreground="0x00C0C0C0" Background="0x02000000" BoldFont="Yes"/>
-							<Item Name="String" Foreground="0x0041AB8E" Background="0x02000000" BoldFont="Yes"/>
+							<Item Name="String" Foreground="0x0078CDB6" Background="0x02000000" BoldFont="No"/>
+							<Item Name="SymbolReferenceClassificationFormat" Foreground="0x0078CDB6" Background="0x02000000" BoldFont="Yes"/>
 							<Item Name="Task List Shortcut" Foreground="0x00FFFFFF" Background="0x0100000F" BoldFont="Yes"/>
 							<Item Name="Text" Foreground="0x00EBEBEB" Background="0x02000000" BoldFont="Yes"/>
 							<Item Name="Tracepoint (Disabled)" Foreground="0x00FFFFFF" Background="0x00463A96" BoldFont="No"/>
