@@ -48,7 +48,7 @@ namespace Trakker.Helpers
                     return link.ToString(TagRenderMode.SelfClosing);
                 }
                 */
-
+        /*
         public static MvcForm BeginForm(this HtmlHelper htmlHelper, int width)
         {
             return BeginForm(htmlHelper, width, true);
@@ -64,6 +64,7 @@ namespace Trakker.Helpers
 
             return htmlHelper.BeginForm(null, null, FormMethod.Post, new RouteValueDictionary(attrs));
         }
+         */
 
         public static string Exerpt(this HtmlHelper htmlHelper, string text, int length)
         {

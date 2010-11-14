@@ -43,7 +43,10 @@
         {
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory());
 
+            //AreaRegistration.RegisterAllAreas();
             RegisterRoutes(RouteTable.Routes);
+
+           
 
             SharedWebAssets
                 .StyleSheets(config => config.AddGroup("css", group => group

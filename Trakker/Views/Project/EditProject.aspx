@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<EditProjectViewData>" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<% using (Html.BeginForm(400))
+<% using (Html.BeginForm())
    { %>
     <h2>Edit Project: <%= Model.Name%></h2>
 

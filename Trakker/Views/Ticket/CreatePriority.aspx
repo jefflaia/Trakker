@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <% using(Html.BeginForm(400)) { %>
+    <% using(Html.BeginForm()) { %>
         <h2>Create Priority</h2>
         <% Html.RenderPartial("CreateEditPriorityForm"); %>
     <% } %>
