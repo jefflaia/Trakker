@@ -43,22 +43,7 @@
          <% } %>
     </div>
     
-    <!--
-    <%if (Model.IsUserLoggedIn && Model.CurrentProject != null) { %>
-        <div id="SubHeader">
-            <div class="SubNav">
-                <% Html.RenderPartial("SubNavigation"); %>
-            </div>
-         
-        </div>
-    <% } %>
-    -->
-
-    <div id="Content">
-        <div class="InnerBorder">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-        </div>
-    </div>
+    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
 
     <div id="Footer">
         

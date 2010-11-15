@@ -2,6 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:ContentPlaceHolder ID="BasicContent" runat="server" />
-
+    <div id="Content">
+        <div class="InnerBorder">
+            <asp:ContentPlaceHolder ID="BasicContent" runat="server" />
+        </div>
+    </div>
+  
 </asp:Content>
