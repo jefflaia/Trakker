@@ -1,5 +1,5 @@
 ﻿*{margin: 0px; padding: 0px;}
-body{color: #353535; font-size: 12px; line-height: 1.4; font-family:"lucida grande",tahoma,verdana,arial,sans-serif; }
+body{color: #353535; font-size: 12px; line-height: 1.4; font-family:"lucida grande",tahoma,verdana,arial,sans-serif; background-color: #f7f7f7;}
 
 a{outline: none; text-decoration: none;} /* remove dotted line when clicking a link */
 h1,h2,h3,h4,h5,h6{margin: 10px 0px 10px 0px;}
@@ -13,7 +13,7 @@ div#Header div.Right{float: right; width: 400px; margin-right: 20px;}
 div#Header div.Right div{width: 100%; text-align: right;}
 
 div#SubHeader{width: 100%; background-image:url(/Content/Images/UI-Backgrounds.png); background-position: 0px -49px; height: 30px; border-bottom: 1px solid #667e9a;}
-div#Content{ width: 100%; }
+div#Content{ width: 100%; background-color: White; display:inline-block;}
 div#Content div.InnerBorder{ position: relative; margin: 10px 20px; background-color: White; min-height: 500px;}
 div#Footer{ background-color: #F7F7F7; border-top: 1px solid #bbb; width: 100%; min-height: 50px;}
 

@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Trakker.ViewData.TicketData.CreateEditResolutionViewData>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Basic.Master" Inherits="System.Web.Mvc.ViewPage<Trakker.ViewData.TicketData.CreateEditResolutionViewData>" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="BasicContent" runat="server">
 
     <% using (Html.BeginForm())
        { %>

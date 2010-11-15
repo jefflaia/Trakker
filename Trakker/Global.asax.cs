@@ -43,7 +43,7 @@
         {
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory());
 
-            //AreaRegistration.RegisterAllAreas();
+            AreaRegistration.RegisterAllAreas();
             RegisterRoutes(RouteTable.Routes);
 
            
