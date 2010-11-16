@@ -26,11 +26,6 @@
     <div id="Header">
 
         <% if (Model.IsUserLoggedIn){ %>
-            <div class="Nav">
-
-                <% Html.RenderPartial("Menu", Model); %>
-            </div>
-            
             <div class="Right">
                 <% if (Model.CurrentProject != null) { %>
                     <div><%= Model.CurrentProject.Name%> (<%=Model.CurrentProject.KeyName %>) </div>
@@ -40,6 +35,13 @@
                     <span><%= Html.ActionLink<UserController>(x => x.Logout(), "Logout (" + Model.CurrentUser.Email+")")%></span>
                 </div>
             </div>
+
+            <div class="Dropdown Nav">
+
+                <% Html.RenderPartial("Menu", Model); %>
+            </div>
+            
+            
          <% } %>
     </div>
     
@@ -59,7 +61,7 @@
      <script type="text/javascript">
          $(document).ready(function () {
 
-             $("div.Nav > ul > li").hover(function () {
+             $("div.Nav > ul > li, div.SubNav > ul > li").hover(function () {
                  $(this).find(">a").addClass("Hover");
                  $(this).find("ul").eq(0).show();
 
@@ -73,18 +75,8 @@
                  $(this).find(">a").removeClass("Hover");
                  $(this).find("ul").eq(0).hide();
              });
-
-             $("div.SubNav > ul > li").hover(function () {
-                 $(this).find(">a").addClass("Hover");
-                 $(this).find("ul").eq(0).show();
-             }, function () {
-                 $(this).find(">a").removeClass("Hover");
-                 $(this).find("ul").eq(0).hide();
-             });
-
          });
-</script>
-    <script>
+
         $(document).ready(function () {
             jQuery('#Due').tDatePicker({
                 format: 'M/d/yyyy',

@@ -19,22 +19,25 @@ div#Footer{ background-color: #F7F7F7; border-top: 1px solid #bbb; width: 100%; 
 
 
 /* Navigation */
-div.Nav{ margin: 17px 0px 0px 10px; padding: 0; display:block; width: 500px; float:left;}
-div.Nav a.Hover{ border-width: 1px 1px 0px 1px; border-style: solid; border-color: #999; z-index:101; background-color: White;}
-div.Nav li{	display:inline-block; list-style: none; border-width: 1px 1px 0px 1px;}
-div.Nav li a{ color: #353535; background-color: transparent; position:relative; display: block; padding: 2px 10px 4px 10px; white-space: nowrap; z-index: 99; border-width: 1px 1px 0px 1px; border-style: solid; border-color: transparent;}
-div.Nav li ul{ width: auto; margin:0px; padding: 0; position: absolute; display:none; z-index: 100; border: 1px solid #999; margin-top: -1px; }
-div.Nav li ul li{ float: none; display:block; background-color: White; border-color: White;}
-div.Nav li ul li a{	width: auto; background: white; color: #24313C; }
-div.Nav li ul li a:hover{ background-color: #a4d6f5;}
-div.Nav li ul li.Heading{font-weight: bold; padding: 10px 5px 0px 5px; border-bottom: 1px solid white; border-top: 1px solid white; display:block;}
-div.Nav li ul li.Break{border-bottom: 1px dotted gray; width: 100%; height: 1px; padding: 5px 0px; }
 
-div.SubNav{ padding: 10px 10px 0px 10px; display:block; border-bottom: 1px solid #B0B0B0; height: 24px; }
+
+div.Dropdown { padding: 0; display:block; }
+div.Dropdown a.Hover{ border-width: 1px 1px 0px 1px; border-style: solid; border-color: #999; z-index:101; background-color: White;}
+div.Dropdown li{ display:inline-block; list-style: none; border-width: 1px 1px 0px 1px;}
+div.Dropdown li a{ color: #353535; background-color: transparent; position:relative; display: block; padding: 2px 10px 4px 10px; white-space: nowrap; z-index: 99; border-width: 1px 1px 0px 1px; border-style: solid; border-color: transparent;}
+div.Dropdown li ul{ width: auto; margin:0px; padding: 0; position: absolute; display:none; z-index: 100; border: 1px solid #999; margin-top: -1px; }
+div.Dropdown li ul li{ float: none; display:block; background-color: White; border-color: White;}
+div.Dropdown li ul li a{ width: auto; background: white; color: #24313C; }
+div.Dropdown li ul li a:hover{ background-color: #a4d6f5;}
+div.Dropdown li ul li.Heading{ font-weight: bold; padding: 10px 5px 0px 5px; border-bottom: 1px solid white; border-top: 1px solid white; display:block;}
+div.Dropdown li ul li.Break{ border-bottom: 1px dotted gray; width: 100%; height: 1px; padding: 5px 0px; }
+
+div.Nav{ margin: 15px 0px 0px 10px; }
+
+div.SubNav{ padding: 10px 10px 1px 10px; display:block; border-bottom: 1px solid #B0B0B0; height: 24px; }
 div.SubNav a.Hover{  }
-div.SubNav a.Current{  font-weight: bold;}
-div.SubNav li{	float:left; list-style: none; margin: 0px 3px;}
-div.SubNav li a{ color: #353535; background-color: transparent; position: relative; display: block; padding: 2px 10px 4px 10px; white-space: nowrap;}
+div.SubNav a.Current{ font-weight: bold; }
+
 
 
 /* Forms */
@@ -131,3 +134,29 @@ table.App tr th{ padding: 5px 10px; border-left: 1px solid #bbb; background:#e9e
 
 /**** Telerik Overrides ****/
 div.t-datepicker a{margin-top: 5px !important;} /* move the icon down */
+
+
+
+
+/*
+<style>
+        ul.SideNav{ float:left; display:block; position:relative; list-style-type:none; margin:0; padding:0; z-index: 5; margin-top: 20px; padding-top: 1px; }
+        ul.SideNav li {border: 1px solid #bbb; display: block; background-color: #eee; margin: -1px -1px 0px 0px; padding: 3px 10px; }
+        ul.SideNav li.Current{background-color: White; margin-left: -10px; border-right: none; min-width: 120px; font-weight: bold;}
+        
+       div.AdminContent { overflow-x: auto; background-color:#FFFFFF; border:1px solid #BBBBBB; min-height: 600px; position: relative; }
+    </style>
+
+    <div>
+        <h1>Attributes</h1>
+    </div>
+    <ul class="SideNav">
+        <li>Categories</li>
+        <li class="Current">Resolutions</li>
+        <li>Status</li>
+        <li>Priorities</li>
+    </ul>
+    <div class="AdminContent">
+        sa;ldka;slkdals;
+    </div>
+*/
