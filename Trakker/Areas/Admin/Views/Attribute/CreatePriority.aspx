@@ -1,6 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Basic.Master" Inherits="System.Web.Mvc.ViewPage<Trakker.ViewData.TicketData.CreateEditPriorityViewData>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Basic.Master" Inherits="System.Web.Mvc.ViewPage<Trakker.Areas.Admin.Models.Attribute.CreateEditPriorityModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="BasicContent" runat="server">
+
+<%= Html.ActionLink("Click me", "CreatePriority", new { controller = "Attribute", area = "admin" })  %>
 
     <% using(Html.BeginForm()) { %>
         <h2>Create Priority</h2>

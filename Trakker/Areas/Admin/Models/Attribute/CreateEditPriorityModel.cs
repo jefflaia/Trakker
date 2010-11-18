@@ -1,16 +1,14 @@
-﻿
-
-namespace Trakker.ViewData.TicketData
+﻿namespace Trakker.Areas.Admin.Models.Attribute
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Web;
+    using Trakker.ViewData.SharedData;
     using System.ComponentModel.DataAnnotations;
     using Trakker.Properties;
-    using Trakker.ViewData.SharedData;
 
-    public class CreateEditResolutionViewData : MasterViewData
+    public class CreateEditPriorityModel : MasterViewData
     {
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         [StringLength(50, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_50")]
@@ -19,5 +17,9 @@ namespace Trakker.ViewData.TicketData
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         [StringLength(250, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_250")]
         public string Description { get; set; }
+
+        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
+        [StringLength(6, MinimumLength = 3, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_HexColor")]
+        public string HexColor { get; set; }
     }
 }

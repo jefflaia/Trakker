@@ -11,6 +11,7 @@
     using Castle.Core;
     using Castle.MicroKernel.Registration;
     using Trakker.Core.IoC;
+    using Trakker.Areas.Admin.Controllers;
 
     public class WindsorControllerFactory : DefaultControllerFactory
     {
@@ -33,6 +34,7 @@
 
             foreach (Type t in controllerTypes)
             {
+                Console.Write(t.FullName);
                 container.AddComponentLifeStyle(t.FullName, t, LifestyleType.Transient);
             }
         }

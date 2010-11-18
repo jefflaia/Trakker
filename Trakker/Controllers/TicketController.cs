@@ -298,49 +298,6 @@ namespace Trakker.Controllers
         }
         #endregion
 
-        #region Priority
-
-        public ActionResult CreatePriority()
-        {
-            return View(new CreateEditPriorityViewData());
-        }
-
-        [HttpPost]
-        public ActionResult CreatePriority(CreateEditPriorityViewData viewData)
-        {
-            if (ModelState.IsValid)
-            {
-                Mapper.CreateMap<CreateEditPriorityViewData, Priority>();
-                Priority priority = Mapper.Map(viewData, new Priority());
-
-                _ticketService.Save(priority);
-                UnitOfWork.Commit();
-            }
-
-            return View(viewData);
-        }
-        #endregion
-
-        #region Resolution
-        public ActionResult CreateResolution()
-        {
-            return View(new CreateEditResolutionViewData());
-        }
-
-        [HttpPost]
-        public ActionResult CreateResolution(CreateEditResolutionViewData viewData)
-        {
-            if (ModelState.IsValid)
-            {
-                Mapper.CreateMap<CreateEditResolutionViewData, Resolution>();
-                Resolution resolution = Mapper.Map(viewData, new Resolution());
-
-                _ticketService.Save(resolution);
-                UnitOfWork.Commit();
-            }
-
-            return View(viewData);
-        }
-        #endregion
+        
     }
 }
