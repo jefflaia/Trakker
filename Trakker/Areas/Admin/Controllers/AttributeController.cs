@@ -20,6 +20,12 @@ namespace Trakker.Areas.Admin.Controllers
         {
         }
 
+        public ActionResult Index()
+        {
+            return View(new IndexModel());
+        }
+
+
         #region Priority
 
         public ActionResult CreatePriority()

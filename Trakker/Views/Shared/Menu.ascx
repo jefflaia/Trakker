@@ -36,8 +36,10 @@
     <li>
         <a href="#">Administration</a>
         <ul class="UI-Shadow">
+            <li><%= Html.RouteLink("Attributes", new { area = "Admin", controller = "Attribute", action = "Index"}) %></li>
+            <li><%= Html.RouteLink("Management", new { area = "Admin", controller = "Management", action = "Index" }) %></li>
             <li><%= Html.ActionLink<UserController>(x => x.CreateUser(), "Create User") %></li>
-            <li><li><%= Html.ActionLink<ProjectController>(c => c.CreateProject(), "Create Project") %></li></li>
+            <li><%= Html.ActionLink<ProjectController>(c => c.CreateProject(), "Create Project") %></li>
         </ul>
     </li> 
 </ul>

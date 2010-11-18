@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Trakker.Areas.Admin.Models.Management;
 
 namespace Trakker.Areas.Admin.Controllers
 {
@@ -13,7 +14,7 @@ namespace Trakker.Areas.Admin.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return View(new IndexModel());
         }
 
     }

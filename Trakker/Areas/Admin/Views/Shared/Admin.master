@@ -5,7 +5,7 @@
     <% Html.RenderPartial("SubNavigation"); %>
     <div id="Content">
         <div class="InnerBorder">
-            <asp:ContentPlaceHolder ID="AdminContent" runat="server" />
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
         </div>
     </div>
 </asp:Content>

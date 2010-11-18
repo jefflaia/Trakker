@@ -107,7 +107,9 @@
   <ItemGroup>
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AttributeController.cs" />
+    <Compile Include="Areas\Admin\Models\Attribute\IndexModel.cs" />
     <Compile Include="Areas\Admin\Controllers\ManagementController.cs" />
+    <Compile Include="Areas\Admin\Models\Management\IndexModel.cs" />
     <Compile Include="Attributes\ActionFilters\AuthenticateAttribute.cs" />
     <Compile Include="Attributes\ActionFilters\UserInRoleAttribute.cs" />
     <Compile Include="Attributes\BaseAuthorizationActionFilterAttribute.cs" />
@@ -172,6 +174,8 @@
     <Compile Include="WindsorControllerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Views\Attribute\Index.aspx" />
+    <Content Include="Areas\Admin\Views\Management\Index.aspx" />
     <Content Include="Content\2010.2.825\Black\editor.png" />
     <Content Include="Content\2010.2.825\Black\loading.gif" />
     <Content Include="Content\2010.2.825\Black\sprite.png" />
