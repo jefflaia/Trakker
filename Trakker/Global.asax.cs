@@ -46,8 +46,9 @@
             AreaRegistration.RegisterAllAreas();
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory());
             RegisterRoutes(RouteTable.Routes);
+            //RouteDebug.RouteDebugger.RewriteRoutesForTesting(RouteTable.Routes);
 
-           
+                      
 
             SharedWebAssets
                 .StyleSheets(config => config.AddGroup("css", group => group

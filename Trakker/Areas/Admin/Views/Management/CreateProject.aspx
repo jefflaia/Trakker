@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Basic.Master" Inherits="System.Web.Mvc.ViewPage<CreateProjectViewData>" %>
-<asp:Content ID="Content2" ContentPlaceHolderID="BasicContent" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Areas/Admin/Views/Shared/Admin.master" Inherits="System.Web.Mvc.ViewPage<Trakker.Areas.Admin.Models.Management.CreateProjectModel>" %>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <% using (Html.BeginForm())
        {%>

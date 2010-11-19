@@ -1,5 +1,5 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Basic.Master" Inherits="System.Web.Mvc.ViewPage<AllProjectsViewData>" %>
-<asp:Content ID="Content2" ContentPlaceHolderID="BasicContent" runat="server">
+<%@ Page Title="" Language="C#" MasterPageFile="~/Areas/Admin/Views/Shared/Admin.master" Inherits="System.Web.Mvc.ViewPage<Trakker.Areas.Admin.Models.Management.AllProjectsModel>" %>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <h2>All Projects</h2>
     <table>
@@ -15,7 +15,7 @@
         <tbody>
             <% foreach(var project in Model.Projects) { %>
                 <tr>
-                    <td><%= Html.ActionLink<ProjectController>(x=>x.EditProject(project.KeyName), project.Name)  %></td>
+                    <td><%= Html.RouteLink(project.Name, "EditProject", new { keyName = project.KeyName }) %></td>
                     <td><%= project.Lead  %></td>
                     <td><%= project.KeyName  %></td>
                     <td><%= project.Due  %></td>

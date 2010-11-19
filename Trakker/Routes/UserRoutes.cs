@@ -13,8 +13,7 @@ namespace Trakker.Routes
         {
             routes.MapRoute("Login", "login", new { controller = "User", action = "Login" }, new []{ "Trakker.Controllers" });
             routes.MapRoute("Logout", "logout", new { controller = "User", action = "Logout" }, new[] { "Trakker.Controllers" });
-            routes.MapRoute("Create User", "create/user", new { controller = "User", action = "CreateUser" }, new[] { "Trakker.Controllers" });
-            routes.MapRoute("Edit User", "edit/user/{userId}", new { controller = "User", action = "EditUser", userId = 0 }, new[] { "Trakker.Controllers" });
+
         }
     }
 }

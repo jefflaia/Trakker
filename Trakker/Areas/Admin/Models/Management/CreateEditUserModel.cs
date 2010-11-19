@@ -1,7 +1,5 @@
-﻿namespace Trakker.ViewData.UserData
+﻿namespace Trakker.Areas.Admin.Models.Management
 {
-    using System;
-    using System.Web.Mvc;
     using Trakker.Data;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -9,8 +7,9 @@
     using System.ComponentModel.DataAnnotations;
     using Trakker.Properties;
     using Foolproof;
+    using Trakker.ViewData;
 
-    public class CreateEditUserViewData : MasterViewData
+    public class CreateEditUserModel : MasterViewData
     {
         [DisplayName("First Name")]
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]

@@ -11,11 +11,9 @@ namespace Trakker.Routes
     {
         public static void AddRoutes(ref RouteCollection routes)
         {
-            routes.MapRoute("AllProjects", "projects", new { controller = "Project", action = "AllProjects" });
+            
             routes.MapRoute("ProjectSummary", "project/{keyName}", new { controller = "Project", action = "ProjectSummary" });
             routes.MapRoute("ComponentSummary", "component/{keyName}", new { controller = "Project", action = "ComponentSummary" });
-            routes.MapRoute("CreateProject", "create/project", new { controller = "Project", action = "CreateProject" });
-            routes.MapRoute("EditProject", "edit/project/{projectKeyName}", new { controller = "Project", action = "EditProject" });
 
         }
     }

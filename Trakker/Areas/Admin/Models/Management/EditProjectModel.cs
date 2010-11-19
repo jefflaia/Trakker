@@ -1,4 +1,4 @@
-﻿namespace Trakker.ViewData.ProjectData
+﻿namespace Trakker.Areas.Admin.Models.Management
 {
     using System;
     using System.Collections.Generic;
@@ -10,7 +10,7 @@
     using System.ComponentModel;
     using Trakker.Data;
 
-    public class EditProjectViewData : MasterViewData
+    public class EditProjectModel : MasterViewData
     {
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         [StringLength(100, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_100")]

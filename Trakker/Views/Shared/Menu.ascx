@@ -1,7 +1,7 @@
 <%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<MasterViewData>" %>
 <ul>
     <li>
-        <%= Html.ActionLink<ProjectController>(x => x.AllProjects(), "Projects") %>
+        <a href="">Projects</a>
         <ul class="UI-Shadow">
             <% if (Model.CurrentProject != null) { %>
                 <li class="Heading">Current Project</li>
@@ -15,8 +15,6 @@
                     <li><%= Html.ActionLink<ProjectController>(x => x.ProjectSummary(project.KeyName), project.Name)%></li>
                 <% } %>
             <% } %>
-            <li class="Break"></li>
-            <li><%= Html.ActionLink<ProjectController>(x => x.AllProjects(), "View All") %></li>
         </ul>
     </li>
     <li>
@@ -38,8 +36,6 @@
         <ul class="UI-Shadow">
             <li><%= Html.RouteLink("Attributes", new { area = "Admin", controller = "Attribute", action = "Index"}) %></li>
             <li><%= Html.RouteLink("Management", new { area = "Admin", controller = "Management", action = "Index" }) %></li>
-            <li><%= Html.ActionLink<UserController>(x => x.CreateUser(), "Create User") %></li>
-            <li><%= Html.ActionLink<ProjectController>(c => c.CreateProject(), "Create Project") %></li>
         </ul>
     </li> 
 </ul>
