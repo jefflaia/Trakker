@@ -195,7 +195,7 @@ namespace Trakker.Areas.Admin.Controllers
                 _projectService.Save(project);
                 UnitOfWork.Commit();
 
-                return RedirectToAction<ProjectController>(x => x.ProjectSummary(project.KeyName));
+                return RedirectToRoute("ProjectSummary", new { keyName = project.KeyName });
             }
 
             viewData.Users = _userService.GetAllUsers();

@@ -31,7 +31,7 @@
             UserRoutes.AddRoutes(ref routes);
             ProjectRoutes.AddRoutes(ref routes);
             TicketRoutes.AddRoutes(ref routes);
-            
+
             //routes.MapRoute("pagination", String.Empty, new { controller = "Nav", action = "ticketListPagination" });
                                   
             routes.MapRoute("Default", "",  new { controller = "Ticket", action = "TicketList"});
