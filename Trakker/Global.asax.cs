@@ -32,10 +32,10 @@
             ProjectRoutes.AddRoutes(ref routes);
             TicketRoutes.AddRoutes(ref routes);
 
-            //routes.MapRoute("pagination", String.Empty, new { controller = "Nav", action = "ticketListPagination" });
+            //routes.MapRoute("Pagination", "paginator/{count}/{page}/{pageSize}", new { controller = "Nav", action = "TicketListPagination" });
                                   
             routes.MapRoute("Default", "",  new { controller = "Ticket", action = "TicketList"});
-            routes.MapRoute("CatchAll", "{controller}/{action}");
+            routes.MapRoute(null, "{controller}/{action}", new string[]{ "Trakker.Controllers" });
 
         }
 

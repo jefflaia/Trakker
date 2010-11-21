@@ -34,6 +34,6 @@
        <%}%>
     </table>
 
-    <% Html.RenderAction<NavController>(c => c.ticketListPagination(Model.TotalTickets, Model.Page, Model.PageSize)); %>
+    <% Html.RenderAction("Pagination", "Nav", new { count = Model.TotalTickets, page = Model.Page, pageSize = Model.PageSize }); %>
 
 </asp:Content>

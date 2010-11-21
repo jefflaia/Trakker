@@ -9,6 +9,7 @@ namespace Trakker.Data.Services
     {
         IList<Role> GetAllRoles();
         IList<User> GetAllUsers();
+        Paginated<User> GetAllUsersPaginated(int page, int pageSize);
         User GetUserWithEmail(string email);
         User GetUserWithId(int id);
         void Save(User user);

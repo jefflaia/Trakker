@@ -9,51 +9,58 @@
 
     public class UserService : IUserService
     {
-       protected IUserRepository _userRepository;
+        protected IUserRepository _userRepository;
 
-       public UserService(IUserRepository userRepository)
-       {
-           _userRepository = userRepository;
-       }
+        public UserService(IUserRepository userRepository)
+        {
+            _userRepository = userRepository;
+        }
 
-       public User GetUserWithId(int id)
-       {
-           return _userRepository.GetUsers().Where(x => x.UserId == id).SingleOrDefault<User>() ?? null;
-       }
+        #region User
+        public User GetUserWithId(int id)
+        {
+            return _userRepository.GetUsers().Where(x => x.UserId == id).SingleOrDefault<User>() ?? null;
+        }
 
-       public User GetUserWithEmail(string email)
-       {
-           return _userRepository.GetUsers().Where(x => x.Email == email).SingleOrDefault<User>() ?? null;
-       }
+        public User GetUserWithEmail(string email)
+        {
+            return _userRepository.GetUsers().Where(x => x.Email == email).SingleOrDefault<User>() ?? null;
+        }
 
-       public IList<User> GetAllUsers()
-       {
-           return _userRepository.GetUsers().ToList<User>();
-       }
+        public IList<User> GetAllUsers()
+        {
+            return _userRepository.GetUsers().ToList<User>();
+        }
 
-       public void Save(User user)
-       {
-           if (user.UserId == 0)
-           {
-               user.Created = DateTime.Now;
-               user.Salt = Auth.SaltGenerator();
-               user.Password = Auth.HashPassword(user.Password, user.Salt);
-           }
+        public Paginated<User> GetAllUsersPaginated(int page, int pageSize)
+        {
+            return _userRepository.GetUsers().AsPaginated<User>(page, pageSize);
+        }
 
-           _userRepository.Save(user);
-       }
+        public void Save(User user)
+        {
+            if (user.UserId == 0)
+            {
+                user.Created = DateTime.Now;
+                user.Salt = Auth.SaltGenerator();
+                user.Password = Auth.HashPassword(user.Password, user.Salt);
+            }
 
+            _userRepository.Save(user);
+        }
+        #endregion
+
+       #region Roles
        public IList<Role> GetAllRoles()
        {
            return _userRepository.GetRoles().ToList<Role>();
        }
 
-       
-
        public void Save(Role role)
        {
            _userRepository.Save(role);
        }
+       #endregion
 
-   }
+    }
 }

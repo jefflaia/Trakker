@@ -4,7 +4,7 @@
     <h2>All Projects</h2>
     <table>
         <thead>
-            <tr class="Header">
+            <tr>
                 <th>Name</th>
                 <th>Leader</th>
                 <th>Key</th>

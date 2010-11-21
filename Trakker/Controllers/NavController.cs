@@ -11,11 +11,9 @@ namespace Trakker.Controllers
 
     public class NavController : Controller
     {
-        #region Widget
-        public PartialViewResult ticketListPagination(int totalItemCount, int pageIndex, int pageSize)
+        public ActionResult Pagination(int count, int page, int pageSize)
         {
-            return PartialView(new Pagination(totalItemCount, pageIndex, pageSize));
+            return PartialView(new Pagination(count, page, pageSize));
         }
-        #endregion
     }
 }

@@ -25,6 +25,22 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         #region User
+
+        [Authenticate]
+        public ActionResult UserList()
+        {
+            var paginatedUsers = _userService.GetAllUsersPaginated(1, 10);
+
+            return View(new UserListModel()
+            {
+                Users = paginatedUsers.Items,
+                TotalUsers = paginatedUsers.TotalItems,
+                PageSize = 10,
+                CurrentPage = 1,
+                Roles = _userService.GetAllRoles().ToDictionary(d => d.RoleId)
+            });
+        }
+
         [Authenticate]
         public ActionResult CreateUser()
         {
