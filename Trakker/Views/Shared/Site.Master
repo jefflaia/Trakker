@@ -67,8 +67,9 @@
              }
 
              function closeAllMenus(target) {
-                 target.parent().parent().find("li").removeClass("Open");
-                 target.parent().parent().find("ul").hide();
+                 var menus = $('div.Dropdown');
+                 menus.find("ul  li  ul").hide();
+                 menus.find("ul li").removeClass("Open");
              }
 
              function openMenu(target) {
@@ -81,7 +82,7 @@
              }
 
              function constrainWidth(target) {
-                 var parentWidth = target.parent().find("a:first").outerWidth(true);
+                 var parentWidth = target.parent().outerWidth(true);
                  var listWidth = target.parent().find("ul:first li").outerWidth();
 
                  if (parentWidth > listWidth) {
