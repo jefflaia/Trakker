@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Trakker.Data;
-using Trakker.ViewData.SharedData;
 
-namespace Trakker.ViewData.TicketData
+
+namespace Trakker.Models
 {
-    public class CommentCreateEditViewData : MasterViewData
+    public class CommentCreateEditModel : MasterModel
     {
         public Comment Comment { get; set; }
     }

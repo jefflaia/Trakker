@@ -1,4 +1,4 @@
-<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<Trakker.ViewData.TicketData.CommentCreateEditViewData>" %>
+<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<CommentCreateEditModel>" %>
 
 
 

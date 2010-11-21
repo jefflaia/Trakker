@@ -1,10 +1,9 @@
-﻿namespace Trakker.ViewData.ProjectData
+﻿namespace Trakker.Models
 {
-    using Trakker.ViewData.SharedData;
     using Trakker.Data;
     using System.Collections.Generic;
 
-    public class ProjectSummaryViewData : MasterViewData
+    public class ProjectSummaryModel : MasterModel
     {
         public Project Project { get; set; }
         public User Lead { get; set; }

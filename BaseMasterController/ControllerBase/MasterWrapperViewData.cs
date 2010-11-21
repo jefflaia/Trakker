@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Trakker.Core
 {
-    public class MasterWrapperViewData<TMasterModel>
+    public class MasterWrapperModel<TMasterModel>
     {
-        public MasterWrapperViewData(TMasterModel masterModel)
+        public MasterWrapperModel(TMasterModel masterModel)
         {
             Master = masterModel;
         }

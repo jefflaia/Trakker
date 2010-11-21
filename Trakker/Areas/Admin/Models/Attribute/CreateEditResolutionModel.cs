@@ -8,9 +8,9 @@ namespace Trakker.Areas.Admin.Models.Attribute
     using System.Web;
     using System.ComponentModel.DataAnnotations;
     using Trakker.Properties;
-    using Trakker.ViewData.SharedData;
+    using Trakker.Models;
 
-    public class CreateEditResolutionModel : MasterViewData
+    public class CreateEditResolutionModel : MasterModel
     {
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         [StringLength(50, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_50")]

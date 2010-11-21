@@ -3,13 +3,12 @@
     using Trakker.Data;
     using System.Collections.Generic;
     using System.ComponentModel;
-    using Trakker.ViewData.SharedData;
     using System.ComponentModel.DataAnnotations;
     using Trakker.Properties;
     using Foolproof;
-    using Trakker.ViewData;
+    using Trakker.Models;
 
-    public class CreateEditUserModel : MasterViewData
+    public class CreateEditUserModel : MasterModel
     {
         [DisplayName("First Name")]
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]

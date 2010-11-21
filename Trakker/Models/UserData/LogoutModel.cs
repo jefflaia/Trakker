@@ -2,12 +2,11 @@
 using System.Web.Mvc;
 using Trakker.Data;
 using System.Collections.Generic;
-using Trakker.ViewData.SharedData;
 
-namespace Trakker.ViewData.UserData
+namespace Trakker.Models
 {
 
-    public class LogoutViewData : MasterViewData
+    public class LogoutModel : MasterModel
     {
         public string Email { get; set; }
     }

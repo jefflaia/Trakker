@@ -1,4 +1,4 @@
-<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<Trakker.ViewData.TicketData.CreateEditTicketViewData>" %>
+<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<CreateEditTicketModel>" %>
 
 <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.ProjectId))

@@ -16,7 +16,7 @@ namespace Trakker.Controllers
         /// <returns></returns>
         protected virtual new ActionResult View()
         {
-            return View(ViewData.Model);
+            return View(Model.Model);
         }
 
         /// <summary>
@@ -24,10 +24,10 @@ namespace Trakker.Controllers
         /// </summary>
         /// <param name="model">The model.</param>
         /// <returns></returns>
-        protected virtual ActionResult View(MasterViewData model)
+        protected virtual ActionResult View(MasterModel model)
         {
-            var masterModel = GetMasterViewData();
-            MasterViewData wrapper = CreateModel(model, masterModel);
+            var masterModel = GetMasterModel();
+            MasterModel wrapper = CreateModel(model, masterModel);
 
             return base.View(wrapper);
         }
@@ -37,9 +37,9 @@ namespace Trakker.Controllers
         /// override this in your master controller.
         /// </summary>
         /// <returns></returns>
-        protected virtual MasterViewData GetMasterViewData()
+        protected virtual MasterModel GetMasterModel()
         {
-            return new MasterViewData();
+            return new MasterModel();
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Trakker.Controllers
         /// <param name="model">The model.</param>
         /// <param name="masterModel">The master model.</param>
         /// <returns></returns>
-        private static MasterViewData CreateModel(MasterViewData model, MasterViewData masterModel)
+        private static MasterModel CreateModel(MasterModel model, MasterModel masterModel)
         {
             model.CurrentProject = masterModel.CurrentProject;
             model.CurrentUser = masterModel.CurrentUser;
@@ -61,9 +61,9 @@ namespace Trakker.Controllers
             return model;
         }
 
-        protected override MasterViewData GetMasterViewData()
+        protected override MasterModel GetMasterModel()
         {
-            MasterViewData viewData = new MasterViewData()
+            MasterModel viewData = new MasterModel()
             {
                 Projects = _projectService.GetAllProjects(),
                 HasCurrentProject = true,

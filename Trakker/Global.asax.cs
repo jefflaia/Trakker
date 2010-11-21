@@ -9,7 +9,6 @@
     using AutoMapper;
     using Sql = Trakker.Data.Access;
     using Trakker.Data;
-    using Trakker.ViewData.TicketData;
     using System.Web.Security;
     using System.Security.Principal;
     using Trakker.Routes;

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Trakker.ViewData.SharedData;
 using Trakker.Data;
+using Trakker.Models;
 
 namespace Trakker.Areas.Admin.Models.Management
 {
-    public class UserListModel : MasterViewData
+    public class UserListModel : MasterModel
     {
         public IList<User> Users { get; set; }
         public int TotalUsers { get; set; }

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Trakker.ViewData.SharedData;
+using Trakker.Models;
 
 namespace Trakker.Areas.Admin.Models.Attribute
 {
-    public class IndexModel : MasterViewData
+    public class IndexModel : MasterModel
     {
     }
 }

@@ -1,4 +1,4 @@
-<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<MasterViewData>" %>
+<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<MasterModel>" %>
 <ul>
     <li>
         <a href="">Projects</a>

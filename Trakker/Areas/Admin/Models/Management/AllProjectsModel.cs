@@ -6,9 +6,9 @@
     using System.Web;
     using Trakker.Data;
     using Trakker.Helpers;
-    using Trakker.ViewData.SharedData;
+    using Trakker.Models;
 
-    public class AllProjectsModel : MasterViewData
+    public class AllProjectsModel : MasterModel
     {
         public IList<Project> Projects { get; set; }
 

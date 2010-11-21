@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace Trakker.ViewData
+namespace Trakker.Models
 {
     public class EmailAttribute : RegularExpressionAttribute
     {

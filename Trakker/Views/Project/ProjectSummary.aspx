@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Basic.Master" Inherits="System.Web.Mvc.ViewPage<ProjectSummaryViewData>" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Basic.Master" Inherits="System.Web.Mvc.ViewPage<ProjectSummaryModel>" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="BasicContent" runat="server">
 
     <h2><%= Model.Project.Name %>: <em><%= Model.Project.KeyName %></em></h2>

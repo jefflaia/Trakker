@@ -5,7 +5,6 @@ using System.Web.Mvc;
 using Trakker.Helpers;
 using Trakker.Data;
 using Trakker.Data.Services;
-using Trakker.ViewData.UserData;
 using AutoMapper;
 using System.Web.Security;
 using Trakker.Attributes;
@@ -15,6 +14,7 @@ using System.Collections;
 using System.Web.UI.HtmlControls;
 using Trakker.Helpers.Table.Controls;
 using Trakker.Helpers.Table;
+using Trakker.Models;
 
 
 namespace Trakker.Controllers
@@ -29,11 +29,11 @@ namespace Trakker.Controllers
 
         public ActionResult Login()
         {
-            return View(new LoginViewData());
+            return View(new LoginModel());
         }
 
         [HttpPost]
-        public ActionResult Login(LoginViewData viewData)
+        public ActionResult Login(LoginModel viewData)
         {
             if (ModelState.IsValid)
             {
@@ -71,7 +71,7 @@ namespace Trakker.Controllers
             Auth.LogUserOut();
             Auth.CurrentUser = null;
 
-            return View(new LogoutViewData());
+            return View(new LogoutModel());
         }
 
         

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
-using Trakker.ViewData.ProjectData;
 using Trakker.Data.Services;
 using Trakker.Data;
 using Trakker.Attributes;
 using AutoMapper;
+using Trakker.Models;
 
 namespace Trakker.Controllers
 {
@@ -26,7 +26,7 @@ namespace Trakker.Controllers
         {
             CurrentProject = _projectService.GetProjectByKeyName(keyName);
 
-            return View(new ProjectSummaryViewData()
+            return View(new ProjectSummaryModel()
             {
                 Project = CurrentProject,
                 NewestTickets = _ticketService.GetNewestTicketsWithProjectId(CurrentProject.ProjectId, 5),

@@ -3,7 +3,6 @@
     using System;
     using Trakker.Data;
     using System.Collections.Generic;
-    using Trakker.ViewData.SharedData;
     using System.ComponentModel.DataAnnotations;
     using Trakker.Properties;
     using System.ComponentModel;

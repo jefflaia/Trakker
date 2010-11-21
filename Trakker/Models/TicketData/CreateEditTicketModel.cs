@@ -2,15 +2,14 @@
 using System.Web.Mvc;
 using Trakker.Data;
 using System.Collections.Generic;
-using Trakker.ViewData.SharedData;
 using System.ComponentModel.DataAnnotations;
 using Trakker.Properties;
 using System.ComponentModel;
 
-namespace Trakker.ViewData.TicketData
+namespace Trakker.Models
 {
 
-    public class CreateEditTicketViewData : MasterViewData
+    public class CreateEditTicketModel : MasterModel
     {
         [DisplayName("Project")]
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]

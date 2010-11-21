@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using Trakker.Data;
 
-namespace Trakker.ViewData.SharedData
+namespace Trakker.Models
 {
-    public class MasterViewData
+    public class MasterModel
     {
         public IList<Project> RecentProjects { get; set; }
 

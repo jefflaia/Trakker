@@ -5,10 +5,10 @@ using System.Web;
 
 namespace Trakker.Core
 {
-    public class ViewWrapperViewData<TMasterModel, TViewModel>
-        : MasterWrapperViewData<TMasterModel>
+    public class ViewWrapperModel<TMasterModel, TViewModel>
+        : MasterWrapperModel<TMasterModel>
     {
-        public ViewWrapperViewData(TMasterModel masterModel, TViewModel viewModel)
+        public ViewWrapperModel(TMasterModel masterModel, TViewModel viewModel)
             : base(masterModel)
         {
             View = viewModel;

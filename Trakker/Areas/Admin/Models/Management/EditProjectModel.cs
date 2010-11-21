@@ -4,13 +4,13 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Web;
-    using Trakker.ViewData.SharedData;
     using System.ComponentModel.DataAnnotations;
     using Trakker.Properties;
     using System.ComponentModel;
     using Trakker.Data;
+    using Trakker.Models;
 
-    public class EditProjectModel : MasterViewData
+    public class EditProjectModel : MasterModel
     {
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         [StringLength(100, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_100")]

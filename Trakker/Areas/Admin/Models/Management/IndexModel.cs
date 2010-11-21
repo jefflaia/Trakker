@@ -4,9 +4,9 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Web;
-    using Trakker.ViewData.SharedData;
+    using Trakker.Models;
 
-    public class IndexModel : MasterViewData
+    public class IndexModel : MasterModel
     {
     }
 }

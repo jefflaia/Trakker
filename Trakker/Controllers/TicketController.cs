@@ -4,11 +4,11 @@ using System.Web;
 using System.Web.Mvc;
 using Trakker.Helpers;
 using Trakker.Data;
-using Trakker.ViewData.TicketData;
 using Trakker.Data.Services;
 using AutoMapper;
 using Trakker.Attributes;
 using System.Web.UI.HtmlControls;
+using Trakker.Models;
 
 namespace Trakker.Controllers
 {
@@ -27,7 +27,7 @@ namespace Trakker.Controllers
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
 
-            TicketDetailsViewData viewData = new TicketDetailsViewData()
+            TicketDetailsModel viewData = new TicketDetailsModel()
             {
                 Id = ticket.TicketId,
                 Summary = ticket.Summary,
@@ -86,7 +86,7 @@ namespace Trakker.Controllers
                 }
             }
             
-            TicketListViewData viewData = new TicketListViewData()
+            TicketListModel viewData = new TicketListModel()
             {
                 Items = tickets,
                 Users = users,
@@ -104,7 +104,7 @@ namespace Trakker.Controllers
 
         public ActionResult CreateTicket()
         {
-            CreateEditTicketViewData viewData = new CreateEditTicketViewData()
+            CreateEditTicketModel viewData = new CreateEditTicketModel()
             {
                 Categories = _ticketService.GetAllCategories(),
                 Priorities = _ticketService.GetAllPriorities(),
@@ -123,11 +123,11 @@ namespace Trakker.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult CreateTicket(CreateEditTicketViewData viewData)
+        public ActionResult CreateTicket(CreateEditTicketModel viewData)
         {
             if (ModelState.IsValid)
             {
-                Mapper.CreateMap<CreateEditTicketViewData, Ticket>();
+                Mapper.CreateMap<CreateEditTicketModel, Ticket>();
                 Ticket ticket = Mapper.Map(viewData, new Ticket());
 
                 ticket.CreatedByUserId = Auth.CurrentUser.UserId;
@@ -157,7 +157,7 @@ namespace Trakker.Controllers
 
             if (ticket == null) throw new Exception("redirect, ticket doesnt exist!");
 
-            CreateEditTicketViewData viewData = new CreateEditTicketViewData()
+            CreateEditTicketModel viewData = new CreateEditTicketModel()
             {
                 Projects = _projectService.GetAllProjects(),
                 Categories = _ticketService.GetAllCategories(),
@@ -167,14 +167,14 @@ namespace Trakker.Controllers
                 Resolutions = _ticketService.GetAllResolutions()
             };
 
-            Mapper.CreateMap<Ticket, CreateEditTicketViewData>();
+            Mapper.CreateMap<Ticket, CreateEditTicketModel>();
             viewData = Mapper.Map(ticket, viewData);
 
             return View(viewData);
         }
          
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult EditTicket(string keyName, CreateEditTicketViewData viewData)
+        public ActionResult EditTicket(string keyName, CreateEditTicketModel viewData)
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
 
@@ -182,7 +182,7 @@ namespace Trakker.Controllers
 
             if (ModelState.IsValid)
             {
-                Mapper.CreateMap<CreateEditTicketViewData, Ticket>();
+                Mapper.CreateMap<CreateEditTicketModel, Ticket>();
                 ticket = Mapper.Map(viewData, ticket);
 
                 _ticketService.Save(ticket);
@@ -212,7 +212,7 @@ namespace Trakker.Controllers
             if(ticket == null)
                 throw new Exception("need a redirect here! the ticket does not exist");
 
-            return View(new CommentCreateEditViewData());
+            return View(new CommentCreateEditModel());
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
@@ -251,7 +251,7 @@ namespace Trakker.Controllers
             if (comment.TicketId != ticket.TicketId) throw new Exception("redirect, comment does not belong to this ticket");
             if (comment.UserId != 1) throw new Exception("redirect comment does not belong to this user");
 
-            CommentCreateEditViewData viewData = new CommentCreateEditViewData()
+            CommentCreateEditModel viewData = new CommentCreateEditModel()
             {
                 Comment = comment
             };
@@ -282,7 +282,7 @@ namespace Trakker.Controllers
                 throw new Exception();
             }
 
-            CommentCreateEditViewData viewData = new CommentCreateEditViewData()
+            CommentCreateEditModel viewData = new CommentCreateEditModel()
             {
                 Comment = comment
             };
@@ -292,7 +292,7 @@ namespace Trakker.Controllers
 
         public ActionResult Comment(Comment comment)
         {
-            CommentViewData viewData = Mapper.Map<Comment, CommentViewData>(comment);
+            CommentModel viewData = Mapper.Map<Comment, CommentModel>(comment);
 
             return PartialView(viewData);
         }

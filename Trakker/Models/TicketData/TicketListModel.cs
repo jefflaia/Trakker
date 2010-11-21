@@ -5,11 +5,10 @@ using System.Web;
 using Trakker.Data;
 using Trakker.Data.Services;
 using Trakker.Helpers;
-using Trakker.ViewData.SharedData;
 
-namespace Trakker.ViewData.TicketData
+namespace Trakker.Models
 {
-    public class TicketListViewData : MasterViewData
+    public class TicketListModel : MasterModel
     {
         public IList<Ticket> Items { get; set; }
         public int TotalTickets { get; set; }

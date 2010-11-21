@@ -1,4 +1,4 @@
-<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<Trakker.ViewData.TicketData.CommentViewData>" %>
+<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<CommentModel>" %>
 
 <div class="Comment">
     <div class="UserInfo">

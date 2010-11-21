@@ -7,7 +7,6 @@ namespace Trakker.Controllers
     using System.Web.Mvc;
     using System.Web.Mvc.Ajax;
     using Trakker.Data;
-    using Trakker.ViewData.SharedData;
     using Trakker.Core;
     using Trakker.Core.IoC;
     using System.Linq.Expressions;
@@ -17,6 +16,7 @@ namespace Trakker.Controllers
     using Trakker.Data.Services;
     using Trakker.Core.Extensions;
     using AutoMapper;
+    using Trakker.Models;
 
     public abstract class MasterController : Controller
     {
@@ -118,21 +118,21 @@ namespace Trakker.Controllers
             return View(ViewData.Model);
         }
 
-        protected ActionResult View(MasterViewData model)
+        protected ActionResult View(MasterModel model)
         {
-            Mapper.CreateMap<MasterViewData, MasterViewData>();
-            return base.View(Mapper.Map(GetMasterViewData(), model));
+            Mapper.CreateMap<MasterModel, MasterModel>();
+            return base.View(Mapper.Map(GetMasterModel(), model));
         }
 
-        private static MasterViewData CreateModel(MasterViewData model, MasterViewData masterModel)
+        private static MasterModel CreateModel(MasterModel model, MasterModel masterModel)
         {
-            Mapper.CreateMap<MasterViewData, MasterViewData>();
+            Mapper.CreateMap<MasterModel, MasterModel>();
             return Mapper.Map(masterModel, model);
         }
 
-        private MasterViewData GetMasterViewData()
+        private MasterModel GetMasterModel()
         {
-            MasterViewData viewData = new MasterViewData()
+            MasterModel viewData = new MasterModel()
             {
                 RecentProjects = _projectService.GetAllProjects(),
                 HasCurrentProject = true,
