@@ -1,7 +1,13 @@
 <%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<MasterModel>" %>
 <ul>
     <li>
-        <a href="">Projects</a>
+        <% if (Model.HasCurrentProject) { %>
+            <%= Html.RouteLink("Projects", "ProjectSummary", new { keyName = Model.CurrentProject.KeyName }) %>
+        <% } else { %>
+             <a href="">Projects</a>
+             <!-- add project browser here -->
+        <% } %>
+        <a href="#" class="Toggle">V</a>
         <ul class="UI-Shadow">
             <% if (Model.CurrentProject != null) { %>
                 <li class="Heading">Current Project</li>
@@ -19,6 +25,7 @@
     </li>
     <li>
        <%= Html.RouteLink("Tickets", "TicketList", new { index = 1 }) %>
+       <a href="#" class="Toggle">V</a>
         <ul class="UI-Shadow">
             <li><%= Html.RouteLink("Create Ticket", "CreateTicket") %></li>
             <li class="Break"></li>    
@@ -33,6 +40,7 @@
     </li>
     <li>
         <a href="#">Administration</a>
+        <a href="#" class="Toggle">V</a>
         <ul class="UI-Shadow">
             <li><%= Html.RouteLink("Attributes", "AttributeIndex") %></li>
             <li><%= Html.RouteLink("Management", "ManagementIndex") %></li>

@@ -14,6 +14,7 @@ namespace Trakker.Models
 {
     public class LoginModel : MasterModel
     {
+        [Email(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Email")]
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         public string Email { get; set; }
 

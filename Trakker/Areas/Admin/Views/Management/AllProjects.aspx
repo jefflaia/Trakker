@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Areas/Admin/Views/Shared/Admin.master" Inherits="System.Web.Mvc.ViewPage<Trakker.Areas.Admin.Models.Management.AllProjectsModel>" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Areas/Admin/Views/Shared/Admin.master" Inherits="System.Web.Mvc.ViewPage<AllProjectsModel>" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <h2>All Projects</h2>

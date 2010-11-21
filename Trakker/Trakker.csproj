@@ -110,9 +110,9 @@
   <ItemGroup>
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AttributeController.cs" />
-    <Compile Include="Areas\Admin\Models\Attribute\IndexModel.cs" />
+    <Compile Include="Areas\Admin\Models\Attribute\AttributeIndexModel.cs" />
     <Compile Include="Areas\Admin\Controllers\ManagementController.cs" />
-    <Compile Include="Areas\Admin\Models\Management\IndexModel.cs" />
+    <Compile Include="Areas\Admin\Models\Management\ManagementIndexModel.cs" />
     <Compile Include="Areas\Admin\Models\Management\UserListModel.cs" />
     <Compile Include="Attributes\ActionFilters\AuthenticateAttribute.cs" />
     <Compile Include="Attributes\ActionFilters\UserInRoleAttribute.cs" />

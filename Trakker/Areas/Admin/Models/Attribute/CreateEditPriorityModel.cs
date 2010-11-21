@@ -1,4 +1,4 @@
-﻿namespace Trakker.Areas.Admin.Models.Attribute
+﻿namespace Trakker.Areas.Admin.Models
 {
     using System;
     using System.Collections.Generic;

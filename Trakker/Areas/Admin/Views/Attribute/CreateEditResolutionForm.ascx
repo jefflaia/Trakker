@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<Trakker.Areas.Admin.Models.Attribute.CreateEditResolutionModel>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<CreateEditResolutionModel>" %>
 
 <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(m => m.Name))

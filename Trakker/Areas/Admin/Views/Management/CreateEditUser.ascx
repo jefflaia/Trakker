@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<Trakker.Areas.Admin.Models.Management.CreateEditUserModel>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<CreateEditUserModel>" %>
 
 <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.FirstName))

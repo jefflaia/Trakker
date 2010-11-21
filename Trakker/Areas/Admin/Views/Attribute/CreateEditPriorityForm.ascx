@@ -1,4 +1,4 @@
-<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<Trakker.Areas.Admin.Models.Attribute.CreateEditPriorityModel>" %>
+<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<CreateEditPriorityModel>" %>
 
 <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(m => m.Name))

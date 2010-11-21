@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Trakker.Areas.Admin.Models.Management;
+using Trakker.Areas.Admin.Models;
 using Trakker.Controllers;
 using Trakker.Data.Services;
 using Trakker.Attributes;
@@ -21,7 +21,7 @@ namespace Trakker.Areas.Admin.Controllers
 
         public ActionResult Index()
         {
-            return View(new IndexModel());
+            return View(new ManagementIndexModel());
         }
 
         #region User

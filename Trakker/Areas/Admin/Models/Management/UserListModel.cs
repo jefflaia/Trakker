@@ -5,7 +5,7 @@ using System.Web;
 using Trakker.Data;
 using Trakker.Models;
 
-namespace Trakker.Areas.Admin.Models.Management
+namespace Trakker.Areas.Admin.Models
 {
     public class UserListModel : MasterModel
     {

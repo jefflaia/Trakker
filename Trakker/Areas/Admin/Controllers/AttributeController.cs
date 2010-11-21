@@ -10,7 +10,7 @@ namespace Trakker.Areas.Admin.Controllers
     using AutoMapper;
     using Trakker.Data;
     using Trakker.Controllers;
-    using Trakker.Areas.Admin.Models.Attribute;
+    using Trakker.Areas.Admin.Models;
 
 
     public class AttributeController : MasterController
@@ -22,7 +22,7 @@ namespace Trakker.Areas.Admin.Controllers
 
         public ActionResult Index()
         {
-            return View(new IndexModel());
+            return View(new AttributeIndexModel());
         }
 
 

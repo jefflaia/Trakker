@@ -1,4 +1,4 @@
-﻿namespace Trakker.Areas.Admin.Models.Management
+﻿namespace Trakker.Areas.Admin.Models
 {
     using System;
     using Trakker.Data;

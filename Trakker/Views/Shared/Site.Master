@@ -32,7 +32,7 @@
                 <% } %>
                 <div>
                     <span>Assigned: <%= Model.NumTicketsAssignedToCurrentUser %></span>
-                    <span><%= Html.ActionLink<UserController>(x => x.Logout(), "Logout (" + Model.CurrentUser.Email+")")%></span>
+                    <span><%= Html.RouteLink("Logout (" + Model.CurrentUser.Email + ")", "Logout")%></span>
                 </div>
             </div>
 
@@ -61,21 +61,57 @@
      <script type="text/javascript">
          $(document).ready(function () {
 
-             $("div.Nav > ul > li, div.SubNav > ul > li").hover(function () {
-                 $(this).find(">a").addClass("Hover");
-                 $(this).find("ul").eq(0).show();
+             function closeMenu(target) {
+                 target.parent().removeClass("Open");
+                 target.parent().find("> ul").eq(0).hide();
+             }
 
-                 var parentWidth = $(this).find("a:first").outerWidth(true);
-                 var listWidth = $(this).find("ul:first li").outerWidth();
+             function closeAllMenus(target) {
+                 target.parent().parent().find("li").removeClass("Open");
+                 target.parent().parent().find("ul").hide();
+             }
+
+             function openMenu(target) {
+                 target.parent().addClass("Open");
+                 target.parent().find("> ul").eq(0).show();
+             }
+
+             function isMenuOpen(target) {
+                 return target.parent().find("> ul").is(':hidden');
+             }
+
+             function constrainWidth(target) {
+                 var parentWidth = target.parent().find("a:first").outerWidth(true);
+                 var listWidth = target.parent().find("ul:first li").outerWidth();
 
                  if (parentWidth > listWidth) {
-                     $(this).find("ul:first li").css({ "width": parentWidth - 2 });
+                     target.parent().find("ul:first li").css({ "width": parentWidth - 2 });
                  }
-             }, function () {
-                 $(this).find(">a").removeClass("Hover");
-                 $(this).find("ul").eq(0).hide();
+             }
+
+
+
+             $("div.Nav > ul > li a.Toggle, div.SubNav > ul > li a.Toggle").click(function (event) {
+                 var self = $(this);
+                 event.stopPropagation();
+
+                 if (isMenuOpen(self)) {
+                     closeAllMenus(self);
+                     openMenu(self);
+                     constrainWidth(self);
+
+                     $('body').click(function () {
+                         closeMenu(self);
+                         $(this).unbind("click");
+                     });
+                 } else {
+                     closeMenu(self);
+                     $('body').unbind("click");
+                 }
              });
          });
+
+
 
         $(document).ready(function () {
             jQuery('#Due').tDatePicker({
