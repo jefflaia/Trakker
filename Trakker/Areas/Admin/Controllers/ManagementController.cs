@@ -12,6 +12,7 @@ using Trakker.Data;
 
 namespace Trakker.Areas.Admin.Controllers
 {
+    [Authenticate]
     public class ManagementController : MasterController
     {
         public ManagementController(ITicketService ticketService, IUserService userService, IProjectService projectService)
@@ -26,7 +27,6 @@ namespace Trakker.Areas.Admin.Controllers
 
         #region User
 
-        [Authenticate]
         public ActionResult UserList()
         {
             var paginatedUsers = _userService.GetAllUsersPaginated(1, 10);
@@ -41,20 +41,18 @@ namespace Trakker.Areas.Admin.Controllers
             });
         }
 
-        [Authenticate]
         public ActionResult CreateUser()
         {
-            return View(new CreateEditUserModel()
+            return View(new CreateUserModel()
             {
                 Roles = _userService.GetAllRoles()
             });
         }
 
         [HttpPost]
-        [Authenticate]
-        public ActionResult CreateUser(CreateEditUserModel viewData)
+        public ActionResult CreateUser(CreateUserModel viewModel)
         {
-            User existingUser = _userService.GetUserWithEmail(viewData.Email);
+            User existingUser = _userService.GetUserWithEmail(viewModel.Email);
             if (existingUser != null)
             {
                 ModelState.AddModelError("Email", "A user with this email already exists.");
@@ -62,42 +60,39 @@ namespace Trakker.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                Mapper.CreateMap<CreateEditUserModel, User>();
-                User user = Mapper.Map(viewData, new User());
+                Mapper.CreateMap<CreateUserModel, User>();
+                User user = Mapper.Map(viewModel, new User());
 
                 _userService.Save(user);
                 UnitOfWork.Commit();
             }
 
-            viewData.Roles = _userService.GetAllRoles();
+            viewModel.Roles = _userService.GetAllRoles();
 
-            return View(viewData);
+            return View(viewModel);
         }
 
-        [Authenticate]
         public ActionResult EditUser(int userId)
         {
             //if (userId == 0) ; //TODO:: redirect
-
             User user = _userService.GetUserWithId(userId);
+            if(user == null) throw new NotImplementedException("This should be an error page");
 
-
-            return View(new CreateEditUserModel()
-            {
-                Email = user.Email,
-                Roles = _userService.GetAllRoles(),
-                RoleId = user.RoleId
+            Mapper.CreateMap<User, EditUserModel>();
+            EditUserModel viewModel = Mapper.Map(user, new EditUserModel() {
+                Roles = _userService.GetAllRoles()
             });
+            
+            return View(viewModel);
         }
 
         [HttpPost]
-        [Authenticate]
-        public ActionResult EditUser(int userId, CreateEditUserModel viewData)
+        public ActionResult EditUser(int userId, EditUserModel viewModel)
         {
             //if (userId == 0) ; //TODO:: redirect
 
-            Mapper.CreateMap<CreateEditUserModel, User>();
-            User user = Mapper.Map(viewData, new User());
+            Mapper.CreateMap<EditUserModel, User>();
+            User user = Mapper.Map(viewModel, new User());
 
 
 
@@ -115,10 +110,40 @@ namespace Trakker.Areas.Admin.Controllers
             }
 
 
-            viewData.Roles = _userService.GetAllRoles();
+            viewModel.Roles = _userService.GetAllRoles();
 
-            return View(viewData);
+            return View(viewModel);
         }
+
+        [HttpGet]
+        public ActionResult EditUserPassword(int userId)
+        {
+            return View(new EditUserPasswordModel() { 
+                User = _userService.GetUserWithId(userId)
+            });
+        }
+
+        [HttpPost]
+        public ActionResult EditUserPassword(int userId, EditUserPasswordModel viewModel)
+        {
+            User user = _userService.GetUserWithId(userId);
+
+            if (user == null) throw new NotImplementedException("This should be an error page");
+
+            Mapper.CreateMap<EditUserPasswordModel, User>();
+            Mapper.Map(viewModel, user);
+
+            if (ModelState.IsValid)
+            {
+                user.Password = Auth.HashPassword(user.Password, user.Salt);
+                _userService.Save(user);
+                UnitOfWork.Commit();
+            }
+
+            viewModel.User = _userService.GetUserWithId(userId);
+            return View(viewModel);
+        }
+
         #endregion
 
         #region Project
@@ -139,15 +164,15 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateProject(CreateProjectModel viewData)
+        public ActionResult CreateProject(CreateProjectModel viewModel)
         {
 
-            if (_projectService.GetProjectByKeyName(viewData.KeyName) != null)
+            if (_projectService.GetProjectByKeyName(viewModel.KeyName) != null)
             {
                 ModelState.AddModelError("KeyName", "A project with this key already exists. Please choose another.");
             }
 
-            if (_projectService.GetProjectByName(viewData.Name) != null)
+            if (_projectService.GetProjectByName(viewModel.Name) != null)
             {
                 ModelState.AddModelError("Name", "A project with this name already exists. Please choose another.");
             }
@@ -155,7 +180,7 @@ namespace Trakker.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 Mapper.CreateMap<CreateProjectModel, Project>();
-                Project project = Mapper.Map(viewData, new Project());
+                Project project = Mapper.Map(viewModel, new Project());
 
                 project.Created = DateTime.Now;
                 _projectService.Save(project);
@@ -163,9 +188,9 @@ namespace Trakker.Areas.Admin.Controllers
             }
 
 
-            viewData.Users = _userService.GetAllUsers();
+            viewModel.Users = _userService.GetAllUsers();
 
-            return View(viewData);
+            return View(viewModel);
         }
 
         [HttpGet]
@@ -176,15 +201,15 @@ namespace Trakker.Areas.Admin.Controllers
             if (project == null) throw new NotImplementedException("project not found");
 
             Mapper.CreateMap<Project, EditProjectModel>();
-            EditProjectModel viewData = Mapper.Map(project, new EditProjectModel());
+            EditProjectModel viewModel = Mapper.Map(project, new EditProjectModel());
 
-            viewData.Users = _userService.GetAllUsers();
+            viewModel.Users = _userService.GetAllUsers();
 
-            return View(viewData);
+            return View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult EditProject(string keyName, [Bind(Exclude = "KeyName")]EditProjectModel viewData)
+        public ActionResult EditProject(string keyName, [Bind(Exclude = "KeyName")]EditProjectModel viewModel)
         {
             Project project = _projectService.GetProjectByKeyName(keyName);
 
@@ -194,7 +219,7 @@ namespace Trakker.Areas.Admin.Controllers
             }
 
             //check if the project name already exists
-            Project projectSameName = _projectService.GetProjectByName(viewData.Name);
+            Project projectSameName = _projectService.GetProjectByName(viewModel.Name);
             if (projectSameName != null)
             {
                 if (projectSameName.ProjectId != project.ProjectId)
@@ -206,7 +231,7 @@ namespace Trakker.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 Mapper.CreateMap<EditProjectModel, Project>();
-                project = Mapper.Map(viewData, project);
+                project = Mapper.Map(viewModel, project);
 
                 _projectService.Save(project);
                 UnitOfWork.Commit();
@@ -214,9 +239,9 @@ namespace Trakker.Areas.Admin.Controllers
                 return RedirectToRoute("ProjectSummary", new { keyName = project.KeyName });
             }
 
-            viewData.Users = _userService.GetAllUsers();
+            viewModel.Users = _userService.GetAllUsers();
 
-            return View(viewData);
+            return View(viewModel);
         }
         #endregion
     }

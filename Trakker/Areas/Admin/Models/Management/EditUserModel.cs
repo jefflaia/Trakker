@@ -8,7 +8,7 @@
     using Foolproof;
     using Trakker.Models;
 
-    public class CreateEditUserModel : MasterModel
+    public class EditUserModel : MasterModel
     {
         [DisplayName("First Name")]
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
@@ -24,18 +24,6 @@
         [StringLength(100, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_100")]
         [Email(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Email")]
         public string Email { get; set; }
-
-        [DataType(DataType.Password)]
-        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
-        [StringLength(100, MinimumLength = 8, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "PasswordLength")]
-        public string Password { get; set; }
-
-        [DisplayName("Confirm Password")]
-        [DataType(DataType.Password)]
-        [EqualTo("Password", ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "PasswordsMustMatch")]
-        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
-        [StringLength(100, MinimumLength = 8, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "PasswordLength")]
-        public string RePassword { get; set; }
 
         [DisplayName("Role")]
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]

@@ -26,7 +26,6 @@ div.Dropdown li{ display:inline-block; list-style: none; border-width: 1px 1px 0
 div.Dropdown li a{ color: #353535; background-color: transparent; position:relative;  padding: 2px 5px 4px 5px; white-space: nowrap; z-index: 99; border-width: 1px 1px 0px 1px; border-style: solid; border-color: transparent;}
 div.Dropdown li ul{ width: auto; margin:0px; padding: 0; position: absolute; display:none; z-index: 100; border: 1px solid #999; margin-top: 5px; background-color: White;}
 div.Dropdown li a:hover{ background-color: White; }
-
 div.Dropdown li ul li{ float: none; display:block; background-color: White; border-color: White;}
 div.Dropdown li ul li a{ width: auto; background: white; color: #24313C; display: block;}
 div.Dropdown li ul li a:hover{ background-color: #a4d6f5;}
@@ -35,7 +34,7 @@ div.Dropdown li ul li.Break{ border-bottom: 1px dotted gray; width: 100%; height
 
 div.Nav{ margin: 18px 0px 0px 10px; }
 
-div.SubNav{ padding: 10px 10px 1px 10px; display:block; border-bottom: 1px solid #B0B0B0; height: 24px; }
+div.SubNav{  margin: 5px 0px 0px 0px;  padding: 0px 10px 0px 10px; border-bottom: 1px solid #B0B0B0; height: 25px; }
 div.SubNav a.Current{ font-weight: bold; }
 
 

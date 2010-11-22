@@ -110,6 +110,8 @@
   <ItemGroup>
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AttributeController.cs" />
+    <Compile Include="Areas\Admin\Models\Management\CreateUserModel.cs" />
+    <Compile Include="Areas\Admin\Models\Management\EditUserPasswordModel.cs" />
     <Compile Include="Areas\Admin\Models\Attribute\AttributeIndexModel.cs" />
     <Compile Include="Areas\Admin\Controllers\ManagementController.cs" />
     <Compile Include="Areas\Admin\Models\Management\ManagementIndexModel.cs" />
@@ -171,7 +173,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\TicketData\CommentModel.cs" />
     <Compile Include="Models\TicketData\TicketListModel.cs" />
-    <Compile Include="Areas\Admin\Models\Management\CreateEditUserModel.cs" />
+    <Compile Include="Areas\Admin\Models\Management\EditUserModel.cs" />
     <Compile Include="Models\UserData\LogoutModel.cs" />
     <Compile Include="Models\UserData\LoginModel.cs" />
     <Compile Include="Models\ValidationAttributes\Email.cs" />
@@ -179,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Attribute\Index.aspx" />
+    <Content Include="Areas\Admin\Views\Management\EditUserPassword.aspx" />
     <Content Include="Areas\Admin\Views\Management\Index.aspx" />
     <Content Include="Areas\Admin\Views\Management\UserList.aspx" />
     <Content Include="Content\2010.2.825\Black\editor.png" />
@@ -893,7 +896,6 @@
     <Content Include="Views\Ticket\EditTicket.aspx" />
     <Content Include="Views\Ticket\TicketList.aspx" />
     <Content Include="Views\User\Logout.aspx" />
-    <Content Include="Areas\Admin\Views\Management\CreateEditUser.ascx" />
     <Content Include="Web.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
