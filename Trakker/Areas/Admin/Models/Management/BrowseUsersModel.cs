@@ -7,7 +7,7 @@ using Trakker.Models;
 
 namespace Trakker.Areas.Admin.Models
 {
-    public class UserListModel : MasterModel
+    public class BrowseUsersModel : MasterModel
     {
         public IList<User> Users { get; set; }
         public int TotalUsers { get; set; }

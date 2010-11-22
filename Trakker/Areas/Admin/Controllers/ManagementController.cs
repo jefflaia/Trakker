@@ -27,11 +27,11 @@ namespace Trakker.Areas.Admin.Controllers
 
         #region User
 
-        public ActionResult UserList()
+        public ActionResult BrowseUsers()
         {
             var paginatedUsers = _userService.GetAllUsersPaginated(1, 10);
 
-            return View(new UserListModel()
+            return View(new BrowseUsersModel()
             {
                 Users = paginatedUsers.Items,
                 TotalUsers = paginatedUsers.TotalItems,

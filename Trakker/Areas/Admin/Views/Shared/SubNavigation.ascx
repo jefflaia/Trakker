@@ -12,7 +12,7 @@
         <li><%= Html.RouteLink("Management", "ManagementIndex") %>
             <a href="#" class="Toggle">V</a>
             <ul class="UI-Shadow">
-                <li><%= Html.RouteLink("Users", "UserList") %></li>
+                <li><%= Html.RouteLink("Users", "BrowseUsers")%></li>
                 <li><%= Html.RouteLink("Create User", "CreateUser") %></li>
                 <li><%= Html.RouteLink("Projects", "AllProjects") %></li>
                 <li><%= Html.RouteLink("Create Project", "CreateProject") %></li>
