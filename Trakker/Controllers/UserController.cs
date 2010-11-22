@@ -45,8 +45,8 @@ namespace Trakker.Controllers
                     UnitOfWork.Commit();
 
                     Auth.LogUserIn(user);
-                    
-                    return RedirectToAction<TicketController>(x => x.TicketList(1));
+
+                    return RedirectToRoute("BrowseTickets");
                 }
                 else
                 {

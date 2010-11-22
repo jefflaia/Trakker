@@ -49,8 +49,7 @@ namespace Trakker.Controllers
             return View(viewData);
         }
 
-        [Authenticate]
-        public ActionResult TicketList(int? index)
+        public ActionResult BrowseTickets(int? index)
         {
             const int PAGE_SIZE = 10;
             User user;
@@ -86,7 +85,7 @@ namespace Trakker.Controllers
                 }
             }
             
-            TicketListModel viewData = new TicketListModel()
+            BrowseTicketsModel viewData = new BrowseTicketsModel()
             {
                 Items = tickets,
                 Users = users,
@@ -137,7 +136,7 @@ namespace Trakker.Controllers
                 _ticketService.Save(ticket);
                 UnitOfWork.Commit();
 
-                return RedirectToAction<TicketController>(x => x.TicketList(1));
+                return RedirectToRoute("BrowseTickets");
             }
 
             viewData.Categories = _ticketService.GetAllCategories();

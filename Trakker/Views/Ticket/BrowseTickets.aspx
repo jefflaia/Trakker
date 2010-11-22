@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Basic.Master" Inherits="System.Web.Mvc.ViewPage<TicketListModel>" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Basic.Master" Inherits="System.Web.Mvc.ViewPage<BrowseTicketsModel>" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BasicContent" runat="server">
     <h2>ticketList2</h2>

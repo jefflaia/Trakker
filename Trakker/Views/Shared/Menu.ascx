@@ -24,7 +24,7 @@
         </ul>
     </li>
     <li>
-       <%= Html.RouteLink("Tickets", "TicketList", new { index = 1 }) %>
+       <%= Html.RouteLink("Tickets", "BrowseTickets", new { index = 1 })%>
        <a href="#" class="Toggle">V</a>
         <ul class="UI-Shadow">
             <li><%= Html.RouteLink("Create Ticket", "CreateTicket") %></li>
@@ -35,7 +35,7 @@
                <li><%= Html.RouteLink(Html.Exerpt(ticket.Summary, 30), "TicketDetails", new {keyName = ticket.KeyName}) %></li>
             <% } %>
             <li class="Break"></li>
-            <li><%= Html.RouteLink("View All", "TicketList", new { index = 1 }) %></li>
+            <li><%= Html.RouteLink("View All", "BrowseTickets", new { index = 1 })%></li>
         </ul>
     </li>
     <li>

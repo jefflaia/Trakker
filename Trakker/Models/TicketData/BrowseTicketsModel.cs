@@ -8,7 +8,7 @@ using Trakker.Helpers;
 
 namespace Trakker.Models
 {
-    public class TicketListModel : MasterModel
+    public class BrowseTicketsModel : MasterModel
     {
         public IList<Ticket> Items { get; set; }
         public int TotalTickets { get; set; }
