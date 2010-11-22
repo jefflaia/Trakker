@@ -110,6 +110,7 @@
   <ItemGroup>
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AttributeController.cs" />
+    <Compile Include="Areas\Admin\Models\Attribute\CreateEditStatusModel.cs" />
     <Compile Include="Areas\Admin\Models\Management\CreateUserModel.cs" />
     <Compile Include="Areas\Admin\Models\Management\EditUserPasswordModel.cs" />
     <Compile Include="Areas\Admin\Models\Attribute\AttributeIndexModel.cs" />
@@ -180,6 +181,7 @@
     <Compile Include="WindsorControllerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Views\Attribute\CreateStatus.aspx" />
     <Content Include="Areas\Admin\Views\Attribute\Index.aspx" />
     <Content Include="Areas\Admin\Views\Management\EditUserPassword.aspx" />
     <Content Include="Areas\Admin\Views\Management\Index.aspx" />

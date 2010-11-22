@@ -47,10 +47,6 @@ namespace Trakker.Data.Services
             return _ticketRepository.GetPriorities().WithId(id).Single<Priority>();
         }
 
-        public Status GetStatusWithId(int id)
-        {
-            return _ticketRepository.GetStatus().WithId(id).Single<Status>();
-        }
 
         public Comment GetCommentWithId(int id)
         {
@@ -92,10 +88,27 @@ namespace Trakker.Data.Services
             return _ticketRepository.GetCategories().ToList<Category>();
         }
 
+        #region Status
         public IList<Status> GetAllStatus()
         {
             return _ticketRepository.GetStatus().ToList<Status>();
         }
+
+        public Status GetStatusWithId(int id)
+        {
+            return _ticketRepository.GetStatus().WithId(id).Single<Status>();
+        }
+
+        public Status GetStatusByName(string name)
+        {
+            return _ticketRepository.GetStatus().Where(s => s.Name == name).SingleOrDefault();
+        }
+
+        public void Save(Status status)
+        {
+            _ticketRepository.Save(status);
+        }
+        #endregion
 
         public IList<Priority> GetAllPriorities()
         {

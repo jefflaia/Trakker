@@ -12,7 +12,6 @@ namespace Trakker.Areas.Admin.Controllers
     using Trakker.Controllers;
     using Trakker.Areas.Admin.Models;
 
-
     public class AttributeController : MasterController
     {
         public AttributeController(ITicketService ticketService, IUserService userService, IProjectService projectService)
@@ -71,5 +70,34 @@ namespace Trakker.Areas.Admin.Controllers
         }
         #endregion
 
+        #region status
+        [HttpGet]
+        public ActionResult CreateStatus()
+        {
+            return View(new CreateEditStatusModel());
+        }
+
+        [HttpPost]
+        public ActionResult CreateStatus(CreateEditStatusModel viewModel)
+        {
+            if (_ticketService.GetStatusByName(viewModel.Name) != null)
+            {
+                ModelState.AddModelError("Name", "The value already exists.");
+            }
+
+
+            if (ModelState.IsValid)
+            {
+                Mapper.CreateMap<CreateEditStatusModel, Status>();
+                Status status = Mapper.Map(viewModel, new Status());
+
+                _ticketService.Save(status);
+                UnitOfWork.Commit();
+            }
+
+            return View(viewModel);
+        }
+
+        #endregion
     }
 }

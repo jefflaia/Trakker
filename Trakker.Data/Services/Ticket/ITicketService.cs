@@ -36,7 +36,9 @@
 
         /********* Status *********/
         Status GetStatusWithId(int id);
+        Status GetStatusByName(string name);
         IList<Status> GetAllStatus();
+        void Save(Status status);
 
         #region Resolution
         void Save(Resolution resolution);

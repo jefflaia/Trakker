@@ -6,7 +6,7 @@
             <ul class="UI-Shadow">
                 <li><%= Html.RouteLink("Create Priority", "CreatePriority") %></li>
                 <li><%= Html.RouteLink("Create Resolution", "CreateResolution") %></li>
-                <li></li>
+                <li><%= Html.RouteLink("Create Status", "CreateStatus") %></li>
             </ul>
         </li>
         <li><%= Html.RouteLink("Management", "ManagementIndex") %>
