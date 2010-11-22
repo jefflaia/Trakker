@@ -23,7 +23,7 @@ namespace Trakker.Areas.Admin
             context.MapRoute("CreateUser", "admin/management/user/create", new { controller = "Management", action = "CreateUser" });
             context.MapRoute("EditUser", "admin/management/user/{userId}/edit", new { controller = "Management", action = "EditUser" });
             context.MapRoute("EditUserPassword", "admin/management/user/{userId}/password/edit", new { controller = "Management", action = "EditUserPassword" });
-            context.MapRoute("AllProjects", "admin/management/projects", new { controller = "Management", action = "AllProjects" });
+            context.MapRoute("BrowseProjects", "admin/management/projects", new { controller = "Management", action = "BrowseProjects" });
             context.MapRoute("CreateProject", "admin/management/project/create", new { controller = "Management", action = "CreateProject" });
             context.MapRoute("EditProject", "admin/management/project/{keyName}/edit", new { controller = "Management", action = "EditProject" });
         }

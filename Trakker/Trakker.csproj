@@ -160,7 +160,7 @@
     <Compile Include="Routes\ProjectRoutes.cs" />
     <Compile Include="Routes\TicketRoutes.cs" />
     <Compile Include="Routes\UserRoutes.cs" />
-    <Compile Include="Areas\Admin\Models\Management\AllProjectsModel.cs" />
+    <Compile Include="Areas\Admin\Models\Management\BrowseProjectsModel.cs" />
     <Compile Include="Areas\Admin\Models\Management\CreateProjectModel.cs" />
     <Compile Include="Areas\Admin\Models\Management\EditProjectModel.cs" />
     <Compile Include="Models\ProjectData\ProjectSummaryModel.cs" />
@@ -872,7 +872,7 @@
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
-    <Content Include="Areas\Admin\Views\Management\AllProjects.aspx" />
+    <Content Include="Areas\Admin\Views\Management\BrowseProjects.aspx" />
     <Content Include="Areas\Admin\Views\Management\EditProject.aspx" />
     <Content Include="Areas\Admin\Views\Management\CreateProject.aspx" />
     <Content Include="Views\Project\ProjectSummary.aspx" />

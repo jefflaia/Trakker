@@ -8,7 +8,7 @@
     using Trakker.Helpers;
     using Trakker.Models;
 
-    public class AllProjectsModel : MasterModel
+    public class BrowseProjectsModel : MasterModel
     {
         public IList<Project> Projects { get; set; }
 

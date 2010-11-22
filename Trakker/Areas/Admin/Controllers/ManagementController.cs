@@ -138,9 +138,9 @@ namespace Trakker.Areas.Admin.Controllers
         #endregion
 
         #region Project
-        public ActionResult AllProjects()
+        public ActionResult BrowseProjects()
         {
-            return View(new AllProjectsModel()
+            return View(new BrowseProjectsModel()
             {
                 Projects = _projectService.GetAllProjects()
             });
