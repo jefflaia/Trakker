@@ -89,29 +89,20 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult EditUser(int userId, EditUserModel viewModel)
         {
-            //if (userId == 0) ; //TODO:: redirect
+            User user = _userService.GetUserWithId(userId);
+
+            if (user == null) throw new NotImplementedException("This should be an error page");
 
             Mapper.CreateMap<EditUserModel, User>();
-            User user = Mapper.Map(viewModel, new User());
+            Mapper.Map(viewModel, user);
 
-
-
-            User u = _userService.GetUserWithId(userId);
-            //if(u == null); //TODO:: redirect
-
-            try
+            if (ModelState.IsValid)
             {
-
                 _userService.Save(user);
+                UnitOfWork.Commit();
             }
-            catch (Exception e)
-            {
-                //TODO:: rollback
-            }
-
 
             viewModel.Roles = _userService.GetAllRoles();
-
             return View(viewModel);
         }
 
