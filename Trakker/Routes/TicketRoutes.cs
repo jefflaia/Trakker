@@ -16,7 +16,7 @@ namespace Trakker.Routes
             routes.MapRoute("TicketDetails", "ticket/{keyName}", new { controller = "Ticket", action = "TicketDetails" });
             routes.MapRoute("CreateComment", "{keyName}/create/comment", new { controller = "Ticket", action = "CreateComment" });
             routes.MapRoute("EditComment", "{keyName}/edit/comment/{id}", new { controller = "Ticket", action = "EditComment" });
-            routes.MapRoute("BrowseTickets", "tickets/page/{index}", new { controller = "Ticket", action = "BrowseTickets" });
+            routes.MapRoute("BrowseTickets", "tickets/page/{index}", new { controller = "Ticket", action = "BrowseTickets", index = 1 });
 
         }
     }

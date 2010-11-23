@@ -135,7 +135,7 @@ namespace Trakker.Controllers
             MasterModel viewData = new MasterModel()
             {
                 RecentProjects = _projectService.GetAllProjects(),
-                HasCurrentProject = true,
+                HasCurrentProject = CurrentProject != null ? true : false,
                 CurrentProject = CurrentProject,
                 CurrentUser = Auth.CurrentUser,
                 IsUserLoggedIn = Auth.IsUserLoggedIn(),

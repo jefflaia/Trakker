@@ -33,7 +33,7 @@
 
             //routes.MapRoute("Pagination", "paginator/{count}/{page}/{pageSize}", new { controller = "Nav", action = "TicketListPagination" });
                                   
-            routes.MapRoute("Default", "",  new { controller = "Ticket", action = "TicketList"});
+            routes.MapRoute("Default", "",  new { controller = "Ticket", action = "BrowseTickets"});
             routes.MapRoute(null, "{controller}/{action}", new string[]{ "Trakker.Controllers" });
 
         }
