@@ -98,6 +98,37 @@ namespace Trakker.Areas.Admin.Controllers
             return View(viewModel);
         }
 
+        [HttpGet]
+        public ActionResult EditStatus(int statusId)
+        {
+            Status status = _ticketService.GetStatusWithId(statusId);
+
+            if (status == null) throw new NotImplementedException("Throw not found error");
+
+            Mapper.CreateMap<Status, CreateEditStatusModel>();
+            return View(Mapper.Map(status, new CreateEditStatusModel()));
+        }
+
+        [HttpPost]
+        public ActionResult EditStatus(int statusId, CreateEditStatusModel viewModel)
+        {
+            Status status = _ticketService.GetStatusWithId(statusId);
+
+            if (status == null) throw new NotImplementedException("Throw not found error");
+            
+            if (ModelState.IsValid)
+            {
+                Mapper.CreateMap<CreateEditStatusModel, Status>();
+                Mapper.Map(viewModel, status);
+
+                _ticketService.Save(status);
+                UnitOfWork.Commit();
+                
+            }
+
+            return View(viewModel);
+        }
+        
         #endregion
     }
 }
