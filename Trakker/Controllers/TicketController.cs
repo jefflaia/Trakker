@@ -54,14 +54,14 @@ namespace Trakker.Controllers
             const int PAGE_SIZE = 10;
             User user;
 
-            IDictionary<int, Priority> priorities = new Dictionary<int, Priority>();
-            IDictionary<int, Status> status = new Dictionary<int, Status>();
-            IDictionary<int, Category> categories = new Dictionary<int, Category>();
+            IDictionary<int, TicketPriority> priorities = new Dictionary<int, TicketPriority>();
+            IDictionary<int, TicketStatus> status = new Dictionary<int, TicketStatus>();
+            IDictionary<int, TicketType> categories = new Dictionary<int, TicketType>();
             IDictionary<int, User> users = new Dictionary<int, User>();
 
-            foreach (var p in _ticketService.GetAllPriorities()) priorities.Add(p.PriorityId, p);
-            foreach (var s in _ticketService.GetAllStatus())status.Add(s.StatusId, s);        
-            foreach (var c in _ticketService.GetAllCategories()) categories.Add(c.CategoryId, c);
+            foreach (var p in _ticketService.GetAllPriorities()) priorities.Add(p.Id, p);
+            foreach (var s in _ticketService.GetAllStatus())status.Add(s.Id, s);        
+            foreach (var c in _ticketService.GetAllCategories()) categories.Add(c.Id, c);
 
             IList<Ticket> tickets = _ticketService.TicketList(PAGE_SIZE, index ?? 1);
             foreach (Ticket ticket in tickets)

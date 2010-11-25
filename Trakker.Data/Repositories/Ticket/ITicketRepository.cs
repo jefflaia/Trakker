@@ -14,20 +14,20 @@
         #endregion
 
         #region Priority
-        IQueryable<Priority> GetPriorities();
-        void Save(Priority priority);
+        IQueryable<TicketPriority> GetPriorities();
+        void Save(TicketPriority priority);
         void DeletePriority(int id);
         #endregion
 
         #region Categories
-        IQueryable<Category> GetCategories();
-        void Save(Category category);
+        IQueryable<TicketType> GetCategories();
+        void Save(TicketType category);
         void DeleteCategory(int id);
         #endregion
 
         #region Status
-        IQueryable<Status> GetStatus();
-        void Save(Status status);
+        IQueryable<TicketStatus> GetStatus();
+        void Save(TicketStatus status);
         void DeleteStatus(int id);
         #endregion
 
@@ -38,8 +38,8 @@
         #endregion
 
         #region Resolution
-        IQueryable<Resolution> GetResolutions();
-        void Save(Resolution resolution);
+        IQueryable<TicketResolution> GetResolutions();
+        void Save(TicketResolution resolution);
         void DeleteResolution(int id);
         #endregion
 

@@ -14,44 +14,44 @@ namespace Trakker.Data.Repositories
     public class TicketRepository : ITicketRepository
     {
         protected DataContext _dataContext;
-        protected Table<Sql.Priority> _prioritiesTable;
-        protected Table<Sql.Category> _categoriesTable;
+        protected Table<Sql.TicketPriority> _prioritiesTable;
+        protected Table<Sql.TicketType> _typeTable;
         protected Table<Sql.Ticket> _ticketsTable;
-        protected Table<Sql.Status> _statusesTable;
+        protected Table<Sql.TicketStatus> _statusesTable;
         protected Table<Sql.Comment> _commentsTable;
-        protected Table<Sql.Resolution> _resolutionTable;
+        protected Table<Sql.TicketResolution> _resolutionTable;
 
         public TicketRepository(IDataContextProvider dataContextProvider)
         {
             DataContext dataContext = dataContextProvider.DataContext;
 
-            _prioritiesTable = dataContext.GetTable<Sql.Priority>();
-            _categoriesTable = dataContext.GetTable<Sql.Category>();
+            _prioritiesTable = dataContext.GetTable<Sql.TicketPriority>();
+            _typeTable = dataContext.GetTable<Sql.TicketType>();
             _ticketsTable = dataContext.GetTable<Sql.Ticket>();
-            _statusesTable = dataContext.GetTable<Sql.Status>();
+            _statusesTable = dataContext.GetTable<Sql.TicketStatus>();
             _commentsTable = dataContext.GetTable<Sql.Comment>();
-            _resolutionTable = dataContext.GetTable<Sql.Resolution>();
+            _resolutionTable = dataContext.GetTable<Sql.TicketResolution>();
         }
 
         #region Status
-        public IQueryable<Status> GetStatus()
+        public IQueryable<TicketStatus> GetStatus()
         {
             return from s in _statusesTable
-                   select new Status
+                   select new TicketStatus
                    {
-                       StatusId = s.StatusId,
+                       Id = s.Id,
                        Name = s.Name,
                        Description = s.Description
                    };
         }
 
-        public void Save(Status status)
+        public void Save(TicketStatus status)
         {
             //map the priority from our model to the dal object
-            Mapper.CreateMap<Status, Sql.Status>();
-            Sql.Status s = Mapper.Map<Status, Sql.Status>(status);
+            Mapper.CreateMap<TicketStatus, Sql.TicketStatus>();
+            Sql.TicketStatus s = Mapper.Map<TicketStatus, Sql.TicketStatus>(status);
 
-            if (status.StatusId == 0)
+            if (status.Id == 0)
             {
                 _statusesTable.InsertOnSubmit(s);
             }
@@ -63,13 +63,13 @@ namespace Trakker.Data.Repositories
 
             //set the id 
             //needed for inserts, updates the id will stay the same
-            status.StatusId = s.StatusId;
+            status.Id = s.Id;
         }
 
         public void DeleteStatus(int id)
         {
             _statusesTable.DeleteAllOnSubmit(from t in _statusesTable
-                                             where t.StatusId == id
+                                             where t.Id == id
                                              select t);
         }
         #endregion
@@ -172,45 +172,45 @@ namespace Trakker.Data.Repositories
         }
         #endregion
 
-        #region Category
-        public void Save(Category category)
+        #region Type
+        public void Save(TicketType category)
         {
             //map the priority from our model to the dal object
-            Mapper.CreateMap<Category, Sql.Category>();
-            Sql.Category c = Mapper.Map<Category, Sql.Category>(category);
+            Mapper.CreateMap<TicketType, Sql.TicketType>();
+            Sql.TicketType c = Mapper.Map<TicketType, Sql.TicketType>(category);
 
-            if (category.CategoryId == 0)
+            if (category.Id == 0)
             {
-                _categoriesTable.InsertOnSubmit(c);
+                _typeTable.InsertOnSubmit(c);
             }
             else
             {
-                _categoriesTable.Attach(c);
-                _categoriesTable.Context.Refresh(RefreshMode.KeepCurrentValues, c);
+                _typeTable.Attach(c);
+                _typeTable.Context.Refresh(RefreshMode.KeepCurrentValues, c);
             }
 
             //set the id 
             //needed for inserts, updates the id will stay the same
-            category.CategoryId = c.CategoryId;
+            category.Id = c.Id;
         }
 
         public void DeleteCategory(int id)
         {
             using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
             {
-                _categoriesTable.DeleteAllOnSubmit(from t in _categoriesTable
-                                                   where t.CategoryId == id
+                _typeTable.DeleteAllOnSubmit(from t in _typeTable
+                                                   where t.Id == id
                                                    select t);
 
             }
         }
 
-        public IQueryable<Category> GetCategories()
+        public IQueryable<TicketType> GetCategories()
         {
-            return from t in _categoriesTable
-                   select new Category
+            return from t in _typeTable
+                   select new TicketType
                    {
-                       CategoryId = t.CategoryId,
+                       Id = t.Id,
                        Name = t.Name,
                        Description = t.Description
                    };
@@ -219,26 +219,26 @@ namespace Trakker.Data.Repositories
         #endregion
 
         #region Priority
-        public IQueryable<Priority> GetPriorities()
+        public IQueryable<TicketPriority> GetPriorities()
         {
             return from p in _prioritiesTable
-                   select new Priority
+                   select new TicketPriority
                    {
-                       PriorityId = p.PriorityId,
+                       Id = p.Id,
                        Name = p.Name,
                        Description = p.Description,
                        HexColor = p.HexColor
                    };
         }
 
-        public void Save(Priority priority)
+        public void Save(TicketPriority priority)
         {
 
             //map the priority from our model to the dal object
-            Mapper.CreateMap<Priority, Sql.Priority>();
-            Sql.Priority p = Mapper.Map<Priority, Sql.Priority>(priority);
+            Mapper.CreateMap<TicketPriority, Sql.TicketPriority>();
+            Sql.TicketPriority p = Mapper.Map<TicketPriority, Sql.TicketPriority>(priority);
 
-            if (priority.PriorityId == 0)
+            if (priority.Id == 0)
             {
                 _prioritiesTable.InsertOnSubmit(p);
             }
@@ -251,39 +251,39 @@ namespace Trakker.Data.Repositories
 
             //set the id 
             //needed for inserts, updates the id will stay the same
-            priority.PriorityId = p.PriorityId;
+            priority.Id = p.Id;
         }
 
         public void DeletePriority(int id)
         {
             _prioritiesTable.DeleteAllOnSubmit(from t in _prioritiesTable
-                                               where t.PriorityId == id
+                                               where t.Id == id
                                                select t);
         }
         #endregion
 
         #region Resolution
-        public IQueryable<Resolution> GetResolutions()
+        public IQueryable<TicketResolution> GetResolutions()
         {
             return from r in _resolutionTable
-                   select new Resolution
+                   select new TicketResolution
                    {
-                       ResolutionId = r.ResolutionId,
+                       Id = r.Id,
                        Name = r.Name,
                        Description = r.Description
                    };
         }
 
-        public void Save(Resolution resolution)
+        public void Save(TicketResolution resolution)
         {
             //map the priority from our model to the dal object
-            Mapper.CreateMap<Resolution, Sql.Resolution>();
-            Sql.Resolution r = Mapper.Map<Resolution, Sql.Resolution>(resolution);
+            Mapper.CreateMap<TicketResolution, Sql.TicketResolution>();
+            Sql.TicketResolution r = Mapper.Map<TicketResolution, Sql.TicketResolution>(resolution);
 
             r.Description = r.Description ?? string.Empty;
 
             //check if the Ticket exists
-            if (resolution.ResolutionId == 0)
+            if (resolution.Id == 0)
             {
                 _resolutionTable.InsertOnSubmit(r);
             }
@@ -295,13 +295,13 @@ namespace Trakker.Data.Repositories
 
             //set the id 
             //needed for inserts, updates the id will stay the same
-            resolution.ResolutionId = r.ResolutionId;
+            resolution.Id = r.Id;
         }
 
         public void DeleteResolution(int id)
         {
             _resolutionTable.DeleteAllOnSubmit(from r in _resolutionTable
-                                            where r.ResolutionId == id
+                                            where r.Id == id
                                             select r);
         }
 

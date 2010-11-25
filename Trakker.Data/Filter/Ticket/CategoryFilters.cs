@@ -8,16 +8,16 @@ namespace Trakker.Data
 {
     public static class CategoryFilters
     {
-        public static IQueryable<Category> WithId(this IQueryable<Category> qry, int categoryId)
+        public static IQueryable<TicketType> WithId(this IQueryable<TicketType> qry, int categoryId)
         {
             return from c in qry
                    where
-                       c.CategoryId == categoryId
+                       c.Id == categoryId
                    select c;
 
         }
    
-        public static IQueryable<Category> WithName(this IQueryable<Category> qry, string name)
+        public static IQueryable<TicketType> WithName(this IQueryable<TicketType> qry, string name)
         {
             return from c in qry
                    where

@@ -37,14 +37,14 @@ namespace Trakker.Data.Services
             return _ticketRepository.GetTickets().Where(x => x.AssignedToUserId == userId).Count<Ticket>();
         }
 
-        public Category GetCategoryWithId(int id)
+        public TicketType GetCategoryWithId(int id)
         {
-            return _ticketRepository.GetCategories().WithId(id).Single<Category>();
+            return _ticketRepository.GetCategories().WithId(id).Single<TicketType>();
         }
 
-        public Priority GetPriorityWithId(int id)
+        public TicketPriority GetPriorityWithId(int id)
         {
-            return _ticketRepository.GetPriorities().WithId(id).Single<Priority>();
+            return _ticketRepository.GetPriorities().WithId(id).Single<TicketPriority>();
         }
 
 
@@ -83,36 +83,36 @@ namespace Trakker.Data.Services
         }
 
 
-        public IList<Category> GetAllCategories()
+        public IList<TicketType> GetAllCategories()
         {
-            return _ticketRepository.GetCategories().ToList<Category>();
+            return _ticketRepository.GetCategories().ToList<TicketType>();
         }
 
         #region Status
-        public IList<Status> GetAllStatus()
+        public IList<TicketStatus> GetAllStatus()
         {
-            return _ticketRepository.GetStatus().ToList<Status>();
+            return _ticketRepository.GetStatus().ToList<TicketStatus>();
         }
 
-        public Status GetStatusWithId(int id)
+        public TicketStatus GetStatusWithId(int id)
         {
-            return _ticketRepository.GetStatus().WithId(id).Single<Status>();
+            return _ticketRepository.GetStatus().WithId(id).Single<TicketStatus>();
         }
 
-        public Status GetStatusByName(string name)
+        public TicketStatus GetStatusByName(string name)
         {
             return _ticketRepository.GetStatus().Where(s => s.Name == name).SingleOrDefault();
         }
 
-        public void Save(Status status)
+        public void Save(TicketStatus status)
         {
             _ticketRepository.Save(status);
         }
         #endregion
 
-        public IList<Priority> GetAllPriorities()
+        public IList<TicketPriority> GetAllPriorities()
         {
-            return _ticketRepository.GetPriorities().ToList<Priority>();
+            return _ticketRepository.GetPriorities().ToList<TicketPriority>();
         }
 
 
@@ -149,27 +149,27 @@ namespace Trakker.Data.Services
             _ticketRepository.Save(comment);
         }
 
-        public void Save(Priority priority)
+        public void Save(TicketPriority priority)
         {
             _ticketRepository.Save(priority);
         }
 
         #region Resolution
-        public void Save(Resolution resolution)
+        public void Save(TicketResolution resolution)
         {
             _ticketRepository.Save(resolution);
         }
 
-        public IList<Resolution> GetAllResolutions()
+        public IList<TicketResolution> GetAllResolutions()
         {
-            return _ticketRepository.GetResolutions().ToList<Resolution>();
+            return _ticketRepository.GetResolutions().ToList<TicketResolution>();
         }
 
-        public Resolution GetResolutionById(int resoutionId)
+        public TicketResolution GetResolutionById(int resoutionId)
         {
             return _ticketRepository.GetResolutions()
-                .Where(r => r.ResolutionId == resoutionId)
-                .SingleOrDefault<Resolution>() ?? null;
+                .Where(r => r.Id == resoutionId)
+                .SingleOrDefault<TicketResolution>() ?? null;
         }
         #endregion
     }

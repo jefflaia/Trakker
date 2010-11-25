@@ -8,15 +8,15 @@ namespace Trakker.Data
 {
     public static class PriorityFilters
     {
-        public static IQueryable<Priority> WithId(this IQueryable<Priority> qry, int priorityId)
+        public static IQueryable<TicketPriority> WithId(this IQueryable<TicketPriority> qry, int priorityId)
         {
             return from p in qry
                    where
-                       p.PriorityId == priorityId
+                       p.Id == priorityId
                    select p;
         }
 
-        public static IQueryable<Priority> WithName(this IQueryable<Priority> qry, string name)
+        public static IQueryable<TicketPriority> WithName(this IQueryable<TicketPriority> qry, string name)
         {
             return from p in qry
                    where

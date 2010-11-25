@@ -45,11 +45,11 @@ namespace Trakker.Models
         public string Description { get; set; }
         public string KeyName { get; set; }
 
-        public IList<Priority> Priorities { get; set; }
-        public IList<Category> Categories { get; set; }
-        public IList<Status> Status { get; set; }
+        public IList<TicketPriority> Priorities { get; set; }
+        public IList<TicketType> Categories { get; set; }
+        public IList<TicketStatus> Status { get; set; }
         public IList<Project> Projects { get; set; }
-        public IList<Resolution> Resolutions { get; set; }
+        public IList<TicketResolution> Resolutions { get; set; }
         public IList<User> Users { get; set; }
 
     }

@@ -16,9 +16,9 @@ namespace Trakker.Models
         public int PageSize { get; set; }
 
         public IDictionary<int, User> Users { get; set; }
-        public IDictionary<int, Category> Categories { get; set; }
-        public IDictionary<int, Priority> Priorities { get; set; }
-        public IDictionary<int, Status> Status { get; set; }
+        public IDictionary<int, TicketType> Categories { get; set; }
+        public IDictionary<int, TicketPriority> Priorities { get; set; }
+        public IDictionary<int, TicketStatus> Status { get; set; }
               
                 
     }

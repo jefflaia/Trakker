@@ -91,7 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth.cs" />
-    <Compile Include="Models\Ticket\Resolution.cs" />
+    <Compile Include="Models\Ticket\TicketResolution.cs" />
     <Compile Include="ProjectCookie.cs" />
     <Compile Include="Repositories\Ticket\ITicketRepository.cs" />
     <Compile Include="Repositories\User\IUserRepository.cs" />
@@ -124,10 +124,10 @@
     <Compile Include="Models\Project\Project.cs" />
     <Compile Include="Models\Ticket\Comment.cs" />
     <Compile Include="Models\Project\Component.cs" />
-    <Compile Include="Models\Ticket\Priority.cs" />
-    <Compile Include="Models\Ticket\Status.cs" />
+    <Compile Include="Models\Ticket\TicketPriority.cs" />
+    <Compile Include="Models\Ticket\TicketStatus.cs" />
     <Compile Include="Models\Ticket\Ticket.cs" />
-    <Compile Include="Models\Ticket\Category.cs" />
+    <Compile Include="Models\Ticket\TicketType.cs" />
     <Compile Include="Models\User\Role.cs" />
     <Compile Include="Models\User\User.cs" />
     <Compile Include="Services\Authorization\RandomHash.cs" />

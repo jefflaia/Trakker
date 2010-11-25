@@ -37,8 +37,8 @@ namespace Trakker.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                Mapper.CreateMap<CreateEditPriorityModel, Priority>();
-                Priority priority = Mapper.Map(viewData, new Priority());
+                Mapper.CreateMap<CreateEditPriorityModel, TicketPriority>();
+                TicketPriority priority = Mapper.Map(viewData, new TicketPriority());
 
                 _ticketService.Save(priority);
                 UnitOfWork.Commit();
@@ -59,8 +59,8 @@ namespace Trakker.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                Mapper.CreateMap<CreateEditResolutionModel, Resolution>();
-                Resolution resolution = Mapper.Map(viewData, new Resolution());
+                Mapper.CreateMap<CreateEditResolutionModel, TicketResolution>();
+                TicketResolution resolution = Mapper.Map(viewData, new TicketResolution());
 
                 _ticketService.Save(resolution);
                 UnitOfWork.Commit();
@@ -88,8 +88,8 @@ namespace Trakker.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                Mapper.CreateMap<CreateEditStatusModel, Status>();
-                Status status = Mapper.Map(viewModel, new Status());
+                Mapper.CreateMap<CreateEditStatusModel, TicketStatus>();
+                TicketStatus status = Mapper.Map(viewModel, new TicketStatus());
 
                 _ticketService.Save(status);
                 UnitOfWork.Commit();
@@ -101,24 +101,24 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult EditStatus(int statusId)
         {
-            Status status = _ticketService.GetStatusWithId(statusId);
+            TicketStatus status = _ticketService.GetStatusWithId(statusId);
 
             if (status == null) throw new NotImplementedException("Throw not found error");
 
-            Mapper.CreateMap<Status, CreateEditStatusModel>();
+            Mapper.CreateMap<TicketStatus, CreateEditStatusModel>();
             return View(Mapper.Map(status, new CreateEditStatusModel()));
         }
 
         [HttpPost]
         public ActionResult EditStatus(int statusId, CreateEditStatusModel viewModel)
         {
-            Status status = _ticketService.GetStatusWithId(statusId);
+            TicketStatus status = _ticketService.GetStatusWithId(statusId);
 
             if (status == null) throw new NotImplementedException("Throw not found error");
             
             if (ModelState.IsValid)
             {
-                Mapper.CreateMap<CreateEditStatusModel, Status>();
+                Mapper.CreateMap<CreateEditStatusModel, TicketStatus>();
                 Mapper.Map(viewModel, status);
 
                 _ticketService.Save(status);

@@ -11,14 +11,14 @@ namespace Trakker.Models
     {
         public int Id { get; set; }
         public string Summary { get; set; }
-        public Category Cateogory { get; set; }
-        public Priority Priority { get; set; }
-        public Status Status { get; set; }
+        public TicketType Cateogory { get; set; }
+        public TicketPriority Priority { get; set; }
+        public TicketStatus Status { get; set; }
         public DateTime? DueDate { get; set; }
         public DateTime Created { get; set; }
         public string Description { get; set; }
         public string KeyName { get; set; }
-        public Resolution Resolution { get; set; }
+        public TicketResolution Resolution { get; set; }
         public Boolean IsClosed { get; set; }
 
         public User CreatedBy { get; set; }

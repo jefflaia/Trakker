@@ -8,16 +8,16 @@ namespace Trakker.Data
 {
     public static class StatusFilters
     {
-        public static IQueryable<Status> WithId(this IQueryable<Status> qry, int id)
+        public static IQueryable<TicketStatus> WithId(this IQueryable<TicketStatus> qry, int id)
         {
             return from s in qry
                    where
-                       s.StatusId == id
+                       s.Id == id
                    select s;
 
         }
 
-        public static IQueryable<Status> WithName(this IQueryable<Status> qry, string name)
+        public static IQueryable<TicketStatus> WithName(this IQueryable<TicketStatus> qry, string name)
         {
             return from s in qry
                    where

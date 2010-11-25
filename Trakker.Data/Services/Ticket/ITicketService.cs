@@ -26,24 +26,24 @@
         void Save(Comment comment);
 
         /********* Category *********/
-        Category GetCategoryWithId(int id);
-        IList<Category> GetAllCategories();
+        TicketType GetCategoryWithId(int id);
+        IList<TicketType> GetAllCategories();
 
         /********* Priority *********/
-        Priority GetPriorityWithId(int id);
-        IList<Priority> GetAllPriorities();
-        void Save(Priority priority);
+        TicketPriority GetPriorityWithId(int id);
+        IList<TicketPriority> GetAllPriorities();
+        void Save(TicketPriority priority);
 
         /********* Status *********/
-        Status GetStatusWithId(int id);
-        Status GetStatusByName(string name);
-        IList<Status> GetAllStatus();
-        void Save(Status status);
+        TicketStatus GetStatusWithId(int id);
+        TicketStatus GetStatusByName(string name);
+        IList<TicketStatus> GetAllStatus();
+        void Save(TicketStatus status);
 
         #region Resolution
-        void Save(Resolution resolution);
-        IList<Resolution> GetAllResolutions();
-        Resolution GetResolutionById(int resoutionId);
+        void Save(TicketResolution resolution);
+        IList<TicketResolution> GetAllResolutions();
+        TicketResolution GetResolutionById(int resoutionId);
         #endregion
 
     }

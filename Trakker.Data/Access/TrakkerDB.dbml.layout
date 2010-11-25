@@ -1,13 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.875, 13" name="TrakkerDB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.25, 10.625" name="TrakkerDB">
   <DataContextMoniker Name="/TrakkerDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="60d7e0aa-371b-4d2a-91ad-47dec470d96b" absoluteBounds="6.5, 1.125, 2, 1.3862939453125">
-      <DataClassMoniker Name="/TrakkerDBDataContext/Category" />
-      <nestedChildShapes>
-        <elementListCompartment Id="218af9c4-affc-4cb0-87ef-102aed3a905d" absoluteBounds="6.515, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="21a3a043-a2de-4248-8cd8-be0622d1a8e2" absoluteBounds="12, 5.5, 2, 1.9631982421875005">
       <DataClassMoniker Name="/TrakkerDBDataContext/WorkLog" />
       <nestedChildShapes>
@@ -32,37 +26,19 @@
         <elementListCompartment Id="b02fff5a-bc8f-4f75-bae8-edf2612d2977" absoluteBounds="10.015, 8.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0d27cba6-f4af-4afe-8fee-d199bd750b30" absoluteBounds="10.125, 10.625, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/TrakkerDBDataContext/Priority" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e4a88c18-cb11-4a8f-a385-93dea3cbf10e" absoluteBounds="10.14, 11.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="218b2183-59d2-4d88-8c00-5cf42970236f" absoluteBounds="0.625, 4.875, 2, 1.3862939453125005">
       <DataClassMoniker Name="/TrakkerDBDataContext/Role" />
       <nestedChildShapes>
         <elementListCompartment Id="0db8d5bc-c2e4-4b88-98e0-6077f0165192" absoluteBounds="0.64, 5.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(9 : 9.19314697265625); (9.77604416666667 : 9.19314697265625 : JumpStart); (9.94271083333333 : 9.19314697265625 : JumpEnd); (10 : 9.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(9 : 9.19314697265625); (10 : 9.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TrakkerDBDataContext/Component/Component_ComponentTicket" />
       <nodes>
         <classShapeMoniker Id="d036a301-5788-4a51-983b-e395ab1a511d" />
         <classShapeMoniker Id="37f7705f-7266-4e99-ac1a-43c8d71345bc" />
       </nodes>
     </associationConnector>
-    <classShape Id="91e1efae-b936-455a-ae68-6fe34ec99275" absoluteBounds="12.625, 3.875, 2, 1.3862939453125">
-      <DataClassMoniker Name="/TrakkerDBDataContext/Resolution" />
-      <nestedChildShapes>
-        <elementListCompartment Id="836e0f18-8077-42b4-bc6f-230842e0867c" absoluteBounds="12.64, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a5cb1bac-a1d8-4f78-85c7-0582e3293016" absoluteBounds="6.875, 11.125, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/TrakkerDBDataContext/Status" />
-      <nestedChildShapes>
-        <elementListCompartment Id="02708bc4-054b-4595-a364-f8570f08f668" absoluteBounds="6.8900000000000006, 11.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="2826445d-7ed2-4157-9eb0-3f225f36f468" absoluteBounds="9.5, 4.125, 2, 3.6939111328124996">
       <DataClassMoniker Name="/TrakkerDBDataContext/Ticket" />
       <nestedChildShapes>
@@ -90,34 +66,6 @@
         <classShapeMoniker Id="37f7705f-7266-4e99-ac1a-43c8d71345bc" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.40625 : 2.5112939453125); (8.40625 : 4.65625); (9.5 : 4.65625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TrakkerDBDataContext/Category/Category_Ticket" />
-      <nodes>
-        <classShapeMoniker Id="60d7e0aa-371b-4d2a-91ad-47dec470d96b" />
-        <classShapeMoniker Id="2826445d-7ed2-4157-9eb0-3f225f36f468" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(12.625 : 4.69314697265625); (11.5 : 4.69314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TrakkerDBDataContext/Resolution/Resolution_Ticket" />
-      <nodes>
-        <classShapeMoniker Id="91e1efae-b936-455a-ae68-6fe34ec99275" />
-        <classShapeMoniker Id="2826445d-7ed2-4157-9eb0-3f225f36f468" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.875 : 12.4848453776042); (9.71875 : 12.4848453776042); (9.71875 : 7.8189111328125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TrakkerDBDataContext/Status/Status_Ticket" />
-      <nodes>
-        <classShapeMoniker Id="a5cb1bac-a1d8-4f78-85c7-0582e3293016" />
-        <classShapeMoniker Id="2826445d-7ed2-4157-9eb0-3f225f36f468" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(10.125 : 11.4142976888021); (9.8593775 : 11.4142976888021); (9.8593775 : 7.8189111328125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/TrakkerDBDataContext/Priority/Priority_Ticket" />
-      <nodes>
-        <classShapeMoniker Id="0d27cba6-f4af-4afe-8fee-d199bd750b30" />
-        <classShapeMoniker Id="2826445d-7ed2-4157-9eb0-3f225f36f468" />
-      </nodes>
-    </associationConnector>
     <classShape Id="ebad1c6f-588d-4cd1-bc05-3c2b7ced7236" absoluteBounds="3.5, 8, 2, 2.3478011067708335">
       <DataClassMoniker Name="/TrakkerDBDataContext/Project" />
       <nestedChildShapes>
@@ -131,7 +79,7 @@
         <classShapeMoniker Id="d036a301-5788-4a51-983b-e395ab1a511d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 8.15625); (9.5781225 : 8.15625); (9.5781225 : 7.8189111328125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 8.15625); (9.5781225 : 8.15625); (9.5781225 : 7.8189111328125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TrakkerDBDataContext/Project/Project_Ticket" />
       <nodes>
         <classShapeMoniker Id="ebad1c6f-588d-4cd1-bc05-3c2b7ced7236" />
@@ -144,46 +92,98 @@
         <elementListCompartment Id="18351c2d-b5f7-4da2-84ad-86a1f971864e" absoluteBounds="3.265, 4.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.25 : 6.23159912109375); (6.25 : 6.23159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.25 : 6.23159912109375); (6.25 : 6.23159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TrakkerDBDataContext/User/User_Comment" />
       <nodes>
         <classShapeMoniker Id="1228a571-4873-4166-a2ea-bb1727cce479" />
         <classShapeMoniker Id="c6c7d359-0b8f-46b2-bd4b-063f6c37b5d2" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.25 : 4.984375); (9.5 : 4.984375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.25 : 4.71875); (9.5 : 4.71875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TrakkerDBDataContext/User/User_Ticket" />
       <nodes>
         <classShapeMoniker Id="1228a571-4873-4166-a2ea-bb1727cce479" />
         <classShapeMoniker Id="2826445d-7ed2-4157-9eb0-3f225f36f468" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.25 : 4.390625); (8.32291666666667 : 4.390625 : JumpStart); (8.48958333333333 : 4.390625 : JumpEnd); (9.5 : 4.390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.25 : 5.015625); (9.5 : 5.015625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TrakkerDBDataContext/User/User_Ticket1" />
       <nodes>
         <classShapeMoniker Id="1228a571-4873-4166-a2ea-bb1727cce479" />
         <classShapeMoniker Id="2826445d-7ed2-4157-9eb0-3f225f36f468" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.25 : 7.3213525390625); (9.5 : 7.3213525390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.25 : 7.3213525390625); (9.5 : 7.3213525390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TrakkerDBDataContext/User/User_Ticket2" />
       <nodes>
         <classShapeMoniker Id="1228a571-4873-4166-a2ea-bb1727cce479" />
         <classShapeMoniker Id="2826445d-7ed2-4157-9eb0-3f225f36f468" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.375 : 7.3670068359375); (4.375 : 8)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.375 : 7.3670068359375); (4.375 : 8)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TrakkerDBDataContext/User/User_Project" />
       <nodes>
         <classShapeMoniker Id="1228a571-4873-4166-a2ea-bb1727cce479" />
         <classShapeMoniker Id="ebad1c6f-588d-4cd1-bc05-3c2b7ced7236" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.625 : 5.56814697265625); (3.25 : 5.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.625 : 5.56814697265625); (3.25 : 5.56814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TrakkerDBDataContext/Role/Role_User" />
       <nodes>
         <classShapeMoniker Id="218b2183-59d2-4d88-8c00-5cf42970236f" />
         <classShapeMoniker Id="1228a571-4873-4166-a2ea-bb1727cce479" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="48172353-0764-486d-9f69-e51d553a9e42" absoluteBounds="10.125, 1.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/TrakkerDBDataContext/TicketPriority" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a49704ca-6252-4941-adab-527d731eae9f" absoluteBounds="10.14, 1.7100000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0ef16d24-93a0-4873-bb60-328e3b418d1e" absoluteBounds="12.625, 3.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/TrakkerDBDataContext/TicketType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6dca08db-90ed-4eda-9b4d-e29594905fc5" absoluteBounds="12.64, 3.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="31baf519-078e-4d3c-bd5c-806e8bee0014" absoluteBounds="15, 4.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/TrakkerDBDataContext/TicketResolution" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8e12b60-0e1d-4b41-b92e-60e2ce3b6016" absoluteBounds="15.015, 4.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="97d801ab-856d-4b88-97e7-e178f8fc9766" absoluteBounds="7.875, 1.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/TrakkerDBDataContext/TicketStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d478966c-e632-4968-ae0a-804c9aa545a9" absoluteBounds="7.89, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.8125 : 2.82859537760417); (10.8125 : 4.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TrakkerDBDataContext/TicketPriority/TicketPriority_Ticket" />
+      <nodes>
+        <classShapeMoniker Id="48172353-0764-486d-9f69-e51d553a9e42" />
+        <classShapeMoniker Id="2826445d-7ed2-4157-9eb0-3f225f36f468" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.625 : 4.44314697265625); (11.5 : 4.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TrakkerDBDataContext/TicketType/TicketType_Ticket" />
+      <nodes>
+        <classShapeMoniker Id="0ef16d24-93a0-4873-bb60-328e3b418d1e" />
+        <classShapeMoniker Id="2826445d-7ed2-4157-9eb0-3f225f36f468" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15 : 5.13064697265625); (11.5 : 5.13064697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TrakkerDBDataContext/TicketResolution/TicketResolution_Ticket" />
+      <nodes>
+        <classShapeMoniker Id="31baf519-078e-4d3c-bd5c-806e8bee0014" />
+        <classShapeMoniker Id="2826445d-7ed2-4157-9eb0-3f225f36f468" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.6875 : 2.70359537760417); (9.6875 : 4.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TrakkerDBDataContext/TicketStatus/TicketStatus_Ticket" />
+      <nodes>
+        <classShapeMoniker Id="97d801ab-856d-4b88-97e7-e178f8fc9766" />
+        <classShapeMoniker Id="2826445d-7ed2-4157-9eb0-3f225f36f468" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
