@@ -29,7 +29,7 @@ namespace Trakker.Controllers
             return View(new ProjectSummaryModel()
             {
                 Project = CurrentProject,
-                NewestTickets = _ticketService.GetNewestTicketsWithProjectId(CurrentProject.ProjectId, 5),
+                NewestTickets = _ticketService.GetNewestTicketsWithProjectId(CurrentProject.Id, 5),
                 Lead = _userService.GetUserWithId(CurrentProject.Lead)
             });
         }

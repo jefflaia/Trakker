@@ -27,7 +27,7 @@
             return from u in _usersTable
                    select new User()
                    {
-                       UserId = u.UserId,
+                       Id = u.Id,
                        Email = u.Email,
                        Created = u.Created,
                        Password = u.Password,
@@ -47,7 +47,7 @@
             Mapper.CreateMap<User, Sql.User>();
             Sql.User u = Mapper.Map<User, Sql.User>(user);
 
-            if (user.UserId == 0)
+            if (user.Id == 0)
             {
                 _usersTable.InsertOnSubmit(u);
             }
@@ -61,7 +61,7 @@
         public void DeleteUser(int id)
         {
             _usersTable.DeleteAllOnSubmit(from u in _usersTable
-                                            where u.UserId == id
+                                            where u.Id == id
                                             select u);
    
         }
@@ -71,7 +71,7 @@
             return from r in _rolesTable
                    select new Role()
                    {
-                       RoleId = r.RoleId,
+                       Id = r.Id,
                        Description = r.Description,
                        Name = r.Name
                    };
@@ -82,7 +82,7 @@
             Mapper.CreateMap<Role, Sql.Role>();
             Sql.Role r = Mapper.Map<Role, Sql.Role>(role);
 
-            if (r.RoleId == 0)
+            if (r.Id == 0)
             {
                 _rolesTable.InsertOnSubmit(r);
             }
@@ -92,7 +92,7 @@
                 _rolesTable.Context.Refresh(RefreshMode.KeepCurrentValues, r);
             }
 
-            role.RoleId = r.RoleId;
+            role.Id = r.Id;
         }
     }
 }

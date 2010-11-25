@@ -3,7 +3,7 @@ namespace Trakker.Data
 {
     public class Component
     {
-        public int ComponentId { get; set; }
+        public int Id { get; set; }
         public string Name{ get; set; }
         public DateTime Created { get; set; }
         public string Description { get; set; }

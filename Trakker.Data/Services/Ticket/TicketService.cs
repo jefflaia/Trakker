@@ -50,7 +50,7 @@ namespace Trakker.Data.Services
 
         public Comment GetCommentWithId(int id)
         {
-            return _ticketRepository.GetComments().Where(x => x.CommentId == id).SingleOrDefault<Comment>() ?? null;
+            return _ticketRepository.GetComments().Where(x => x.Id == id).SingleOrDefault<Comment>() ?? null;
         }
 
         public IList<Comment> GetCommentsWithticketId(int id)
@@ -126,13 +126,13 @@ namespace Trakker.Data.Services
             Project project = _projectRepository.GetProjects().WithId(ticket.ProjectId).SingleOrDefault<Project>();
             project.TicketIndex++;
 
-            if (ticket.TicketId == 0)
+            if (ticket.Id == 0)
             {
                 ticket.Created = DateTime.Now;
             }
             else
             {
-                Ticket oldTicket = _ticketRepository.GetTickets().WithId(ticket.TicketId).Single();
+                Ticket oldTicket = _ticketRepository.GetTickets().WithId(ticket.Id).Single();
                 ticket.Created = oldTicket.Created; //override any date comming in
             }
                

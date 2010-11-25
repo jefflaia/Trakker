@@ -11,7 +11,7 @@ namespace Trakker.Data
         {
             return from t in qry
                    where
-                       t.TicketId == ticketId
+                       t.Id == ticketId
                    select t;
         }
 

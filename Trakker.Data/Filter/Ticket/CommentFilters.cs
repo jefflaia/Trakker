@@ -12,7 +12,7 @@ namespace Trakker.Data
         {
             return from c in qry
                    where
-                       c.CommentId == id
+                       c.Id == id
                    select c;
         }
 

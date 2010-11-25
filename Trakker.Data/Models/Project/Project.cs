@@ -3,7 +3,7 @@ namespace Trakker.Data
 {
     public class Project
     {
-        public int ProjectId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public int Lead { get; set; }
         public string KeyName { get; set; }

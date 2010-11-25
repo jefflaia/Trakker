@@ -48,9 +48,9 @@ namespace Trakker.Data.Services
         {
             //exsiting project
             //override created / keyname with old values. These values are not allowed to be changed.
-            if (project.ProjectId > 0)
+            if (project.Id > 0)
             {
-                Project oldProject = _projectRepository.GetProjects().Where(p => p.ProjectId == project.ProjectId).Single();
+                Project oldProject = _projectRepository.GetProjects().Where(p => p.Id == project.Id).Single();
                 project.KeyName = oldProject.KeyName.ToUpper();
                 project.Created = oldProject.Created;
             }

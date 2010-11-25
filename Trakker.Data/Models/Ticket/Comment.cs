@@ -7,7 +7,7 @@ namespace Trakker.Data
 {
     public class Comment
     {
-        public int CommentId { get; set; }
+        public int Id { get; set; }
         public string Body { get; set; }
         public DateTime Created { get; set; }
         public DateTime Modified { get; set; }

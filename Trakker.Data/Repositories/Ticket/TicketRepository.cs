@@ -78,7 +78,7 @@ namespace Trakker.Data.Repositories
         public void DeleteComment(int id)
         {
             _commentsTable.DeleteAllOnSubmit(from c in _commentsTable
-                                             where c.CommentId == id
+                                             where c.Id == id
                                              select c);
         }
 
@@ -87,7 +87,7 @@ namespace Trakker.Data.Repositories
             return from c in _commentsTable
                    select new Comment
                    {
-                       CommentId = c.CommentId,
+                       Id = c.Id,
                        Body = c.Body,
                        Created = c.Created,
                        Modified = c.Modified, 
@@ -102,7 +102,7 @@ namespace Trakker.Data.Repositories
             Mapper.CreateMap<Comment, Sql.Comment>();
             Sql.Comment c = Mapper.Map<Comment, Sql.Comment>(comment);
 
-            if (comment.CommentId == 0)
+            if (comment.Id == 0)
             {
                 _commentsTable.InsertOnSubmit(c);
             }
@@ -114,7 +114,7 @@ namespace Trakker.Data.Repositories
 
             //set the id 
             //needed for inserts, updates the id will stay the same
-            comment.CommentId = c.CommentId;
+            comment.Id = c.Id;
         }
         #endregion
 
@@ -124,7 +124,7 @@ namespace Trakker.Data.Repositories
             return from t in _ticketsTable
                    select new Ticket
                    {
-                       TicketId = t.TicketId,
+                       Id = t.Id,
                        Description = t.Description,
                        Created = t.Created,
                        DueDate = t.DueDate,
@@ -149,7 +149,7 @@ namespace Trakker.Data.Repositories
             Sql.Ticket t = Mapper.Map<Ticket, Sql.Ticket>(ticket);
                 
             //check if the Ticket exists
-            if (ticket.TicketId == 0)
+            if (ticket.Id == 0)
             {
                 _ticketsTable.InsertOnSubmit(t);
             }
@@ -161,13 +161,13 @@ namespace Trakker.Data.Repositories
 
             //set the id 
             //needed for inserts, updates the id will stay the same
-            ticket.TicketId = t.TicketId;
+            ticket.Id = t.Id;
         }
         
         public void DeleteTicket(int id)
         {
             _ticketsTable.DeleteAllOnSubmit(from t in _ticketsTable
-                                            where t.TicketId == id
+                                            where t.Id == id
                                             select t);
         }
         #endregion

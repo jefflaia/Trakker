@@ -50,7 +50,7 @@ namespace Trakker.Controllers
             }
             set
             {
-                ProjectCookie.Create(value.ProjectId);
+                ProjectCookie.Create(value.Id);
                 _currentProject = value;
             }
         }
@@ -144,7 +144,7 @@ namespace Trakker.Controllers
 
             if (CurrentProject != null)
             {
-                viewData.Tickets = _ticketService.GetNewestTicketsWithProjectId(CurrentProject.ProjectId, 5);
+                viewData.Tickets = _ticketService.GetNewestTicketsWithProjectId(CurrentProject.Id, 5);
             }
             else
             {
@@ -153,7 +153,7 @@ namespace Trakker.Controllers
 
             if (viewData.CurrentUser != null)
             {
-                viewData.NumTicketsAssignedToCurrentUser = _ticketService.CountTicketsWithAssignedTo(Auth.CurrentUser.UserId);
+                viewData.NumTicketsAssignedToCurrentUser = _ticketService.CountTicketsWithAssignedTo(Auth.CurrentUser.Id);
             }
 
             return viewData;

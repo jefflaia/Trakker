@@ -12,7 +12,7 @@ namespace Trakker.Data
         {
             return from p in qry
                    where
-                       p.ProjectId == id
+                       p.Id == id
                    select p;
         }
 

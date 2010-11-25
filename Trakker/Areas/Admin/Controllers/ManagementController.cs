@@ -37,7 +37,7 @@ namespace Trakker.Areas.Admin.Controllers
                 TotalUsers = paginatedUsers.TotalItems,
                 PageSize = 10,
                 CurrentPage = 1,
-                Roles = _userService.GetAllRoles().ToDictionary(d => d.RoleId)
+                Roles = _userService.GetAllRoles().ToDictionary(d => d.Id)
             });
         }
 
@@ -213,7 +213,7 @@ namespace Trakker.Areas.Admin.Controllers
             Project projectSameName = _projectService.GetProjectByName(viewModel.Name);
             if (projectSameName != null)
             {
-                if (projectSameName.ProjectId != project.ProjectId)
+                if (projectSameName.Id != project.Id)
                 {
                     ModelState.AddModelError("Name", "A project with this name already exists. Please choose another.");
                 }

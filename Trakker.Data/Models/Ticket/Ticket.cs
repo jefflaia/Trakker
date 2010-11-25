@@ -4,7 +4,7 @@ namespace Trakker.Data
 
     public class Ticket
     {
-        public int TicketId { get; set; }
+        public int Id { get; set; }
         public bool IsClosed { get; set; }
         public string Summary { get; set; }
         public int CategoryId { get; set; }

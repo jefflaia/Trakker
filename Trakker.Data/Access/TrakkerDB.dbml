@@ -1,124 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Trakker" Class="TrakkerDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=WEBSERVER;Initial Catalog=Trakker;Persist Security Info=True;User ID=Trakker" SettingsObjectName="Trakker.Data.Properties.Settings" SettingsPropertyName="TrakkerConnectionString2" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.WorkLog" Member="WorkLogs">
-    <Type Name="WorkLog">
-      <Column Name="WorkLogId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DoneBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="TimeSpent" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TicketId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Ticket_WorkLog" Member="Ticket" ThisKey="TicketId" OtherKey="TicketId" Type="Ticket" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Comment" Member="Comments">
-    <Type Name="Comment">
-      <Column Name="CommentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Body" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Modified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="TicketId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Ticket_Comment" Member="Ticket" ThisKey="TicketId" OtherKey="TicketId" Type="Ticket" IsForeignKey="true" />
-      <Association Name="User_Comment" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Component" Member="Components">
-    <Type Name="Component">
-      <Column Name="ComponentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="TicketId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ProjectId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Component_ComponentTicket" Member="ComponentTickets" ThisKey="ComponentId" OtherKey="ComponentId" Type="ComponentTicket" />
-      <Association Name="Project_Component" Member="Project" ThisKey="ProjectId" OtherKey="ProjectId" Type="Project" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ComponentTicket" Member="ComponentTickets">
-    <Type Name="ComponentTicket">
-      <Column Name="ComponentTicketId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ComponentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TicketId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Component_ComponentTicket" Member="Component" ThisKey="ComponentId" OtherKey="ComponentId" Type="Component" IsForeignKey="true" />
-      <Association Name="Ticket_ComponentTicket" Member="Ticket" ThisKey="TicketId" OtherKey="TicketId" Type="Ticket" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Role" Member="Roles">
-    <Type Name="Role">
-      <Column Name="RoleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Association Name="Role_User" Member="Users" ThisKey="RoleId" OtherKey="RoleId" Type="User" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Ticket" Member="Tickets">
-    <Type Name="Ticket">
-      <Column Name="TicketId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Summary" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="PriorityId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="StatusId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ResolutionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IsClosed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="AssignedToUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CreatedByUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="AssignedByUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ProjectId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="KeyName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Association Name="Ticket_WorkLog" Member="WorkLogs" ThisKey="TicketId" OtherKey="TicketId" Type="WorkLog" />
-      <Association Name="Ticket_Comment" Member="Comments" ThisKey="TicketId" OtherKey="TicketId" Type="Comment" />
-      <Association Name="Ticket_ComponentTicket" Member="ComponentTickets" ThisKey="TicketId" OtherKey="TicketId" Type="ComponentTicket" />
-      <Association Name="Project_Ticket" Member="Project" ThisKey="ProjectId" OtherKey="ProjectId" Type="Project" IsForeignKey="true" />
-      <Association Name="User_Ticket" Member="User" ThisKey="AssignedToUserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
-      <Association Name="User_Ticket1" Member="User1" ThisKey="CreatedByUserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
-      <Association Name="User_Ticket2" Member="User2" ThisKey="AssignedByUserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
-      <Association Name="TicketPriority_Ticket" Member="TicketPriority" ThisKey="PriorityId" OtherKey="Id" Type="TicketPriority" IsForeignKey="true" />
-      <Association Name="TicketType_Ticket" Member="TicketType" ThisKey="CategoryId" OtherKey="Id" Type="TicketType" IsForeignKey="true" />
-      <Association Name="TicketResolution_Ticket" Member="TicketResolution" ThisKey="ResolutionId" OtherKey="Id" Type="TicketResolution" IsForeignKey="true" />
-      <Association Name="TicketStatus_Ticket" Member="TicketStatus" ThisKey="StatusId" OtherKey="Id" Type="TicketStatus" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Project" Member="Projects">
-    <Type Name="Project">
-      <Column Name="ProjectId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Lead" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="KeyName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Due" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="TicketIndex" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Url" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Association Name="Project_Component" Member="Components" ThisKey="ProjectId" OtherKey="ProjectId" Type="Component" />
-      <Association Name="Project_Ticket" Member="Tickets" ThisKey="ProjectId" OtherKey="ProjectId" Type="Ticket" />
-      <Association Name="User_Project" Member="User" ThisKey="Lead" OtherKey="UserId" Type="User" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.[User]" Member="Users">
-    <Type Name="User">
-      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Password" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="Salt" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="TotalComments" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FailedPasswordAttemptCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="RoleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LastFailedLoginAttempt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="User_Comment" Member="Comments" ThisKey="UserId" OtherKey="UserId" Type="Comment" />
-      <Association Name="User_Ticket" Member="Tickets" ThisKey="UserId" OtherKey="AssignedToUserId" Type="Ticket" />
-      <Association Name="User_Ticket1" Member="Tickets1" ThisKey="UserId" OtherKey="CreatedByUserId" Type="Ticket" />
-      <Association Name="User_Ticket2" Member="Tickets2" ThisKey="UserId" OtherKey="AssignedByUserId" Type="Ticket" />
-      <Association Name="User_Project" Member="Projects" ThisKey="UserId" OtherKey="Lead" Type="Project" />
-      <Association Name="Role_User" Member="Role" ThisKey="RoleId" OtherKey="RoleId" Type="Role" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.TicketPriority" Member="TicketPriorities">
     <Type Name="TicketPriority">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -151,6 +32,125 @@
       <Column Name="Description" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
       <Column Name="IsClosedState" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="TicketStatus_Ticket" Member="Tickets" ThisKey="Id" OtherKey="StatusId" Type="Ticket" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Salt" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalComments" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAttemptCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastFailedLoginAttempt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Project" Member="Projects" ThisKey="Id" OtherKey="Lead" Type="Project" />
+      <Association Name="User_Comment" Member="Comments" ThisKey="Id" OtherKey="UserId" Type="Comment" />
+      <Association Name="User_Ticket" Member="Tickets" ThisKey="Id" OtherKey="AssignedToUserId" Type="Ticket" />
+      <Association Name="User_Ticket1" Member="Tickets1" ThisKey="Id" OtherKey="CreatedByUserId" Type="Ticket" />
+      <Association Name="User_Ticket2" Member="Tickets2" ThisKey="Id" OtherKey="AssignedByUserId" Type="Ticket" />
+      <Association Name="Role_User" Member="Role" ThisKey="RoleId" OtherKey="Id" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Roles">
+    <Type Name="Role">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Role_User" Member="Users" ThisKey="Id" OtherKey="RoleId" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Project" Member="Projects">
+    <Type Name="Project">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Lead" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KeyName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Due" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TicketIndex" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="Project_Component" Member="Components" ThisKey="Id" OtherKey="ProjectId" Type="Component" />
+      <Association Name="Project_Ticket" Member="Tickets" ThisKey="Id" OtherKey="ProjectId" Type="Ticket" />
+      <Association Name="User_Project" Member="User" ThisKey="Lead" OtherKey="Id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Component" Member="Components">
+    <Type Name="Component">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TicketId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Component_ComponentTicket" Member="ComponentTickets" ThisKey="Id" OtherKey="ComponentId" Type="ComponentTicket" />
+      <Association Name="Project_Component" Member="Project" ThisKey="ProjectId" OtherKey="Id" Type="Project" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ComponentTicket" Member="ComponentTickets">
+    <Type Name="ComponentTicket">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ComponentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TicketId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Component_ComponentTicket" Member="Component" ThisKey="ComponentId" OtherKey="Id" Type="Component" IsForeignKey="true" />
+      <Association Name="Ticket_ComponentTicket" Member="Ticket" ThisKey="TicketId" OtherKey="Id" Type="Ticket" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkLog" Member="WorkLogs">
+    <Type Name="WorkLog">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DoneBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeSpent" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TicketId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Ticket_WorkLog" Member="Ticket" ThisKey="TicketId" OtherKey="Id" Type="Ticket" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comment" Member="Comments">
+    <Type Name="Comment">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Body" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Modified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TicketId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_Comment" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
+      <Association Name="Ticket_Comment" Member="Ticket" ThisKey="TicketId" OtherKey="Id" Type="Ticket" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket" Member="Tickets">
+    <Type Name="Ticket">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Summary" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="PriorityId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StatusId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ResolutionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsClosed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AssignedToUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssignedByUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KeyName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Ticket_ComponentTicket" Member="ComponentTickets" ThisKey="Id" OtherKey="TicketId" Type="ComponentTicket" />
+      <Association Name="Ticket_WorkLog" Member="WorkLogs" ThisKey="Id" OtherKey="TicketId" Type="WorkLog" />
+      <Association Name="Ticket_Comment" Member="Comments" ThisKey="Id" OtherKey="TicketId" Type="Comment" />
+      <Association Name="TicketType_Ticket" Member="TicketType" ThisKey="CategoryId" OtherKey="Id" Type="TicketType" IsForeignKey="true" />
+      <Association Name="TicketResolution_Ticket" Member="TicketResolution" ThisKey="ResolutionId" OtherKey="Id" Type="TicketResolution" IsForeignKey="true" />
+      <Association Name="TicketStatus_Ticket" Member="TicketStatus" ThisKey="StatusId" OtherKey="Id" Type="TicketStatus" IsForeignKey="true" />
+      <Association Name="TicketPriority_Ticket" Member="TicketPriority" ThisKey="PriorityId" OtherKey="Id" Type="TicketPriority" IsForeignKey="true" />
+      <Association Name="Project_Ticket" Member="Project" ThisKey="ProjectId" OtherKey="Id" Type="Project" IsForeignKey="true" />
+      <Association Name="User_Ticket" Member="User" ThisKey="AssignedToUserId" OtherKey="Id" Type="User" IsForeignKey="true" />
+      <Association Name="User_Ticket1" Member="User1" ThisKey="CreatedByUserId" OtherKey="Id" Type="User" IsForeignKey="true" />
+      <Association Name="User_Ticket2" Member="User2" ThisKey="AssignedByUserId" OtherKey="Id" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

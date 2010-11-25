@@ -31,7 +31,7 @@
             return from p in _projectsTable
                    select new Project()
                    {
-                       ProjectId = p.ProjectId,
+                       Id = p.Id,
                        Name = p.Name,
                        Created = p.Created,
                        Due = p.Due,
@@ -48,7 +48,7 @@
             Mapper.CreateMap<Project, Sql.Project>();
             Sql.Project p = Mapper.Map<Project, Sql.Project>(project);
 
-            if (project.ProjectId == 0)
+            if (project.Id == 0)
             {
                 _projectsTable.InsertOnSubmit(p);
             }
@@ -58,7 +58,7 @@
                 _projectsTable.Context.Refresh(RefreshMode.KeepCurrentValues, p);
             }
 
-            project.ProjectId = p.ProjectId;
+            project.Id = p.Id;
         }
 
         public IQueryable<Component> GetComponents()
@@ -66,7 +66,7 @@
             return from c in _componentsTable
                    select new Component()
                    {
-                       ComponentId = c.ComponentId,
+                       Id = c.Id,
                        Created = c.Created,
                        Description = c.Description,
                        Name = c.Name,
@@ -80,7 +80,7 @@
             Mapper.CreateMap<Component, Sql.Component>();
             Sql.Component c = Mapper.Map<Component, Sql.Component>(component);
 
-            if (component.ComponentId == 0)
+            if (component.Id == 0)
             {
                 _componentsTable.InsertOnSubmit(c);
             }
@@ -91,7 +91,7 @@
             }
 
 
-            component.ComponentId = c.ComponentId;
+            component.Id = c.Id;
         }
     }
 }

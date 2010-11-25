@@ -19,7 +19,7 @@
         #region User
         public User GetUserWithId(int id)
         {
-            return _userRepository.GetUsers().Where(x => x.UserId == id).SingleOrDefault<User>() ?? null;
+            return _userRepository.GetUsers().Where(x => x.Id == id).SingleOrDefault<User>() ?? null;
         }
 
         public User GetUserWithEmail(string email)
@@ -39,7 +39,7 @@
 
         public void Save(User user)
         {
-            if (user.UserId == 0)
+            if (user.Id == 0)
             {
                 user.Created = DateTime.Now;
                 user.Salt = Auth.SaltGenerator();

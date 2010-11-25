@@ -29,7 +29,7 @@ namespace Trakker.Controllers
 
             TicketDetailsModel viewData = new TicketDetailsModel()
             {
-                Id = ticket.TicketId,
+                Id = ticket.Id,
                 Summary = ticket.Summary,
                 Description = ticket.Description,
                 Created = ticket.Created,
@@ -39,7 +39,7 @@ namespace Trakker.Controllers
                 Cateogory = _ticketService.GetCategoryWithId(ticket.CategoryId),
                 Resolution = _ticketService.GetResolutionById(ticket.ResolutionId),
                 KeyName = ticket.KeyName,
-                Comments = _ticketService.GetCommentsWithticketId(ticket.TicketId),
+                Comments = _ticketService.GetCommentsWithticketId(ticket.Id),
                 IsClosed = ticket.IsClosed,
                 AssignedBy = _userService.GetUserWithId(ticket.AssignedByUserId),
                 CreatedBy = _userService.GetUserWithId(ticket.CreatedByUserId),
@@ -69,19 +69,19 @@ namespace Trakker.Controllers
                 if (users.ContainsKey(ticket.AssignedToUserId) == false)
                 {
                     user = _userService.GetUserWithId(ticket.AssignedToUserId);
-                    users.Add(user.UserId, user);
+                    users.Add(user.Id, user);
                 }
 
                 if (users.ContainsKey(ticket.AssignedByUserId) == false)
                 {
                     user = _userService.GetUserWithId(ticket.AssignedByUserId);
-                    users.Add(user.UserId, user);
+                    users.Add(user.Id, user);
                 }
 
                 if (users.ContainsKey(ticket.CreatedByUserId) == false)
                 {
                     user = _userService.GetUserWithId(ticket.CreatedByUserId);
-                    users.Add(user.UserId, user);
+                    users.Add(user.Id, user);
                 }
             }
             
@@ -115,7 +115,7 @@ namespace Trakker.Controllers
 
             if (IsProjectSelected())
             {
-                viewData.ProjectId = CurrentProject.ProjectId;
+                viewData.ProjectId = CurrentProject.Id;
             }
             
             return View(viewData);
@@ -129,8 +129,8 @@ namespace Trakker.Controllers
                 Mapper.CreateMap<CreateEditTicketModel, Ticket>();
                 Ticket ticket = Mapper.Map(viewData, new Ticket());
 
-                ticket.CreatedByUserId = Auth.CurrentUser.UserId;
-                ticket.AssignedByUserId = Auth.CurrentUser.UserId;
+                ticket.CreatedByUserId = Auth.CurrentUser.Id;
+                ticket.AssignedByUserId = Auth.CurrentUser.Id;
                 ticket.Created = DateTime.Now;
 
                 _ticketService.Save(ticket);
@@ -228,7 +228,7 @@ namespace Trakker.Controllers
                 comment.Created = DateTime.Today;
                 comment.Modified = DateTime.Today;
                 comment.UserId = 1;
-                comment.TicketId = ticket.TicketId;
+                comment.TicketId = ticket.Id;
                 _ticketService.Save(comment);
 
                 return RedirectToAction<TicketController>(x => x.TicketDetails(keyName));
@@ -247,7 +247,7 @@ namespace Trakker.Controllers
             if (ticket == null) throw new Exception("redirect, ticket does not exist");
             if (comment == null) throw new Exception("redirect, comment does not exist");
 
-            if (comment.TicketId != ticket.TicketId) throw new Exception("redirect, comment does not belong to this ticket");
+            if (comment.TicketId != ticket.Id) throw new Exception("redirect, comment does not belong to this ticket");
             if (comment.UserId != 1) throw new Exception("redirect comment does not belong to this user");
 
             CommentCreateEditModel viewData = new CommentCreateEditModel()
@@ -267,7 +267,7 @@ namespace Trakker.Controllers
             if (ticket == null) throw new Exception("redirect, ticket does not exist");
             if (ticket == null) throw new Exception("redirect, comment does not exist");
 
-            if (originalComment.TicketId != ticket.TicketId) throw new Exception("redirect, comment does not belong to this ticket");
+            if (originalComment.TicketId != ticket.Id) throw new Exception("redirect, comment does not belong to this ticket");
             if (originalComment.UserId != 1) throw new Exception("redirect comment does not belong to this user");
 
             try
