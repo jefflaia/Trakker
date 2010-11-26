@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Web;
+using System.Linq;
 using System.Web.Mvc;
 using Trakker.Helpers;
 using Trakker.Data;
@@ -54,14 +55,12 @@ namespace Trakker.Controllers
             const int PAGE_SIZE = 10;
             User user;
 
-            IDictionary<int, TicketPriority> priorities = new Dictionary<int, TicketPriority>();
-            IDictionary<int, TicketStatus> status = new Dictionary<int, TicketStatus>();
-            IDictionary<int, TicketType> categories = new Dictionary<int, TicketType>();
+
+            IDictionary<int, TicketPriority> priorities = _ticketService.GetAllPriorities().ToDictionary(m => m.Id);
+            IDictionary<int, TicketStatus> status = _ticketService.GetAllStatus().ToDictionary(m => m.Id);
+            IDictionary<int, TicketType> types = _ticketService.GetAllCategories().ToDictionary(m => m.Id);
             IDictionary<int, User> users = new Dictionary<int, User>();
 
-            foreach (var p in _ticketService.GetAllPriorities()) priorities.Add(p.Id, p);
-            foreach (var s in _ticketService.GetAllStatus())status.Add(s.Id, s);        
-            foreach (var c in _ticketService.GetAllCategories()) categories.Add(c.Id, c);
 
             IList<Ticket> tickets = _ticketService.TicketList(PAGE_SIZE, index ?? 1);
             foreach (Ticket ticket in tickets)
@@ -90,7 +89,7 @@ namespace Trakker.Controllers
                 Items = tickets,
                 Users = users,
                 Priorities = priorities,
-                Categories = categories,
+                Categories = types,
                 Status = status,
                 TotalTickets = _ticketService.TotalTickets(),
                 Page = index ?? 1,

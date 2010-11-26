@@ -17,9 +17,9 @@
             <% foreach(var user in Model.Users) { %>
                 <tr>
                     <td>
-                        <%= Html.RouteLink(Html.Encode(user.FullName()), "EditUser", new { userId = user.UserId }) %>
+                        <%= Html.RouteLink(Html.Encode(user.FullName()), "EditUser", new { userId = user.Id }) %>
                         <br />
-                        (<%= Html.RouteLink("Change Password", "EditUserPassword", new { userId = user.UserId }) %>)
+                        (<%= Html.RouteLink("Change Password", "EditUserPassword", new { userId = user.Id }) %>)
                     </td>
                     <td><%: user.Email %></td>
                     <td><%: user.Created %></td>

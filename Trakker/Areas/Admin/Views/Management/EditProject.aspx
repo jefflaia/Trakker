@@ -26,7 +26,7 @@
 
         <%= Html.FormRow()
             .AddToLeft(Html.LabelFor(m => m.Lead))
-            .AddToRight(Html.DropDownListFor(m => m.Lead, Model.Users.ToSelectList("UserId", "Email")))
+            .AddToRight(Html.DropDownListFor(m => m.Lead, Model.Users.ToSelectList("Id", "Email")))
             .AddToRight(Html.ValidationMessageFor(x => x.Lead))
         %>
 

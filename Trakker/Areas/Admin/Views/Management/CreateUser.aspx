@@ -30,7 +30,7 @@
 
     <%= Html.FormRow()
         .AddToLeft(Html.LabelFor(x => x.RoleId))
-        .AddToRight(Html.DropDownListFor(x => x.RoleId, new SelectList(Model.Roles, "RoleId", "Name", Model.RoleId )))
+        .AddToRight(Html.DropDownListFor(x => x.RoleId, new SelectList(Model.Roles, "Id", "Name", Model.RoleId )))
         .AddToRight(Html.ValidationMessageFor(m => m.RoleId))%>
 
     <%= Html.FormRow()

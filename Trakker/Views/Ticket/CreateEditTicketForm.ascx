@@ -2,7 +2,7 @@
 
 <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.ProjectId))
-        .AddToRight(Html.DropDownListFor(x => x.ProjectId, new SelectList(Model.Projects, "ProjectId", "Name")))
+        .AddToRight(Html.DropDownListFor(x => x.ProjectId, new SelectList(Model.Projects, "Id", "Name")))
     .AddToRight(Html.ValidationMessageFor(x => x.ProjectId))%>
 
 <%= Html.FormRow()
@@ -12,27 +12,27 @@
 
 <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.AssignedToUserId))
-    .AddToRight(Html.DropDownListFor(x => x.AssignedToUserId, Model.Users.ToSelectList("UserId", "Email")))
+    .AddToRight(Html.DropDownListFor(x => x.AssignedToUserId, Model.Users.ToSelectList("Id", "Email")))
     .AddToRight(Html.ValidationMessageFor(x => x.AssignedToUserId)) %>
 
     <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.PriorityId))
-    .AddToRight(Html.DropDownListFor(x => x.PriorityId, Model.Priorities.ToSelectList("PriorityId", "Name")))
+    .AddToRight(Html.DropDownListFor(x => x.PriorityId, Model.Priorities.ToSelectList("Id", "Name")))
     .AddToRight(Html.ValidationMessageFor(x => x.PriorityId)) %>
 
 <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.StatusId))
-    .AddToRight(Html.DropDownListFor(x => x.StatusId, Model.Status.ToSelectList("StatusId", "Name")))
+    .AddToRight(Html.DropDownListFor(x => x.StatusId, Model.Status.ToSelectList("Id", "Name")))
     .AddToRight(Html.ValidationMessageFor(x => x.StatusId)) %>
 
 <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.CategoryId))
-     .AddToRight(Html.DropDownListFor(x => x.CategoryId, Model.Categories.ToSelectList("CategoryId", "Name")))
+     .AddToRight(Html.DropDownListFor(x => x.CategoryId, Model.Categories.ToSelectList("Id", "Name")))
     .AddToRight(Html.ValidationMessageFor(x => x.CategoryId)) %>
 
 <%= Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.ResolutionId))
-    .AddToRight(Html.DropDownListFor(x => x.ResolutionId, Model.Resolutions.ToSelectList("ResolutionId", "Name")))
+    .AddToRight(Html.DropDownListFor(x => x.ResolutionId, Model.Resolutions.ToSelectList("Id", "Name")))
     .AddToRight(Html.ValidationMessageFor(x => x.ResolutionId))%>
 
 <%= Html.FormRow()
