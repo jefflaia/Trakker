@@ -20,7 +20,9 @@
             <tr>
                 <td><%: status.Name%></td>
                 <td><%: status.Description%></td>
-                <td>Edit | Delete</td>
+                <td>
+                    <%: Html.RouteLink("Edit", "EditStatus", new { statusId = status.Id }) %>
+                 | Delete</td>
             <% } %>
             </tr>
         </tbody>
@@ -29,20 +31,7 @@
     <div class="Section">
         <% Html.BeginForm(); %>
             <h1>Create Status</h1>
-
-            <%= Html.FormRow()
-                .AddToLeft(Html.LabelFor(m => m.Name))
-                .AddToRight(Html.TextBoxFor(m => m.Name))
-                .AddToRight(Html.ValidationMessageFor(x => x.Name)) %>
-
-             <%= Html.FormRow()
-                .AddToLeft(Html.LabelFor(m => m.Description))
-                .AddToRight(Html.TextAreaFor(m => m.Description))
-                .AddToRight(Html.ValidationMessageFor(x => x.Description)) %>
-
-             <%= Html.FormRow()
-                .AddToRight(Html.SaveButton("Save", null)) %>
-
+            <% Html.RenderPartial("CreateEditStatusForm", Model); %>
         <% Html.EndForm(); %>
     </div>
 

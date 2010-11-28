@@ -134,8 +134,13 @@ namespace Trakker.Areas.Admin.Controllers
         public ActionResult EditStatus(int statusId, CreateEditStatusModel viewModel)
         {
             TicketStatus status = _ticketService.GetStatusWithId(statusId);
-
             if (status == null) throw new NotImplementedException("Throw not found error");
+
+            TicketStatus existingStatus = _ticketService.GetStatusByName(viewModel.Name);
+            if (existingStatus != null && existingStatus.Id != statusId)
+            {
+                ModelState.AddModelError("Name", "This value already exists.");
+            }
             
             if (ModelState.IsValid)
             {
@@ -144,7 +149,7 @@ namespace Trakker.Areas.Admin.Controllers
 
                 _ticketService.Save(status);
                 UnitOfWork.Commit();
-                
+                return RedirectToRoute("CreateStatus");                
             }
 
             return View(viewModel);

@@ -18,6 +18,7 @@ namespace Trakker.Areas.Admin
             context.MapRoute("CreatePriority", "admin/attributes/priority/create", new { controller = "Attribute", action = "CreatePriority" });
             context.MapRoute("CreateResolution", "admin/attributes/resolution/create", new { controller = "Attribute", action = "CreateResolution" });
             context.MapRoute("CreateStatus", "admin/attributes/status/create", new { controller = "Attribute", action = "CreateStatus" });
+            context.MapRoute("EditStatus", "admin/attributes/status/{statusId}/edit", new { controller = "Attribute", action = "EditStatus" });
 
             context.MapRoute("ManagementIndex", "admin/management", new { controller = "Management", action = "Index" });
             context.MapRoute("BrowseUsers", "admin/management/users", new { controller = "Management", action = "BrowseUsers" });

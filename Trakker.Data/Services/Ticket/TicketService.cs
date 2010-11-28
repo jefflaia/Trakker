@@ -22,7 +22,7 @@ namespace Trakker.Data.Services
         #region Ticket
         public Ticket GetTicketWithId(int id)
         {
-            return _ticketRepository.GetTickets().WithId(id).Single<Ticket>();
+            return _ticketRepository.GetTickets().WithId(id).SingleOrDefault();
         }
 
         public IList<Ticket> TicketList(int pageSize, int index)
@@ -100,7 +100,7 @@ namespace Trakker.Data.Services
 
         public TicketType GetCategoryWithId(int id)
         {
-            return _ticketRepository.GetCategories().WithId(id).Single<TicketType>();
+            return _ticketRepository.GetCategories().WithId(id).SingleOrDefault();
         }
         #endregion
 
@@ -112,7 +112,7 @@ namespace Trakker.Data.Services
 
         public TicketStatus GetStatusWithId(int id)
         {
-            return _ticketRepository.GetStatus().WithId(id).Single<TicketStatus>();
+            return _ticketRepository.GetStatus().WithId(id).SingleOrDefault();
         }
 
         public TicketStatus GetStatusByName(string name)
@@ -134,7 +134,7 @@ namespace Trakker.Data.Services
 
         public TicketPriority GetPriorityByName(string name)
         {
-            return _ticketRepository.GetPriorities().Where(m => m.Name == name).Single();
+            return _ticketRepository.GetPriorities().Where(m => m.Name == name).SingleOrDefault();
         }
 
         public void Save(TicketPriority priority)
@@ -144,7 +144,7 @@ namespace Trakker.Data.Services
 
         public TicketPriority GetPriorityWithId(int id)
         {
-            return _ticketRepository.GetPriorities().WithId(id).Single<TicketPriority>();
+            return _ticketRepository.GetPriorities().WithId(id).SingleOrDefault();
         }
         #endregion
 
@@ -173,7 +173,7 @@ namespace Trakker.Data.Services
 
         public TicketResolution GetResolutionByName(string name)
         {
-           return _ticketRepository.GetResolutions().Where(m => m.Name == name).Single();
+           return _ticketRepository.GetResolutions().Where(m => m.Name == name).SingleOrDefault();
         }
 
         public IList<TicketResolution> GetAllResolutions()
