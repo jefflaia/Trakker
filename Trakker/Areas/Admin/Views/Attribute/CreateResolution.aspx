@@ -19,7 +19,9 @@
             <tr>
                 <td><%: resolution.Name %></td>
                 <td><%: resolution.Description %></td>
-                <td>Edit | Delete</td>
+                <td>
+                    <%: Html.RouteLink("Edit", "EditResolution", new { resolutionId = resolution.Id }) %>
+                 | Delete</td>
             <% } %>
             </tr>
         </tbody>

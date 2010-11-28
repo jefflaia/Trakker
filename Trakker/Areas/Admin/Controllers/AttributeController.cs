@@ -87,6 +87,46 @@ namespace Trakker.Areas.Admin.Controllers
 
             return View(viewData);
         }
+
+        [HttpGet]
+        public ActionResult EditResolution(int resolutionId)
+        {
+            TicketResolution resolution = _ticketService.GetResolutionById(resolutionId);
+            if (resolution == null)
+            {
+                throw new NotImplementedException("not found error page");
+            }
+
+            Mapper.CreateMap<TicketResolution, CreateEditResolutionModel>();
+            return View(Mapper.Map(resolution, new CreateEditResolutionModel()));
+        }
+
+        [HttpPost]
+        public ActionResult EditResolution(int resolutionId, CreateEditResolutionModel viewData)
+        {
+            TicketResolution resolution = _ticketService.GetResolutionById(resolutionId);
+            if (resolution == null)
+            {
+                throw new NotImplementedException("not found error page");
+            }
+            
+            TicketResolution existingResolution = _ticketService.GetResolutionByName(viewData.Name);
+            if (existingResolution != null && existingResolution.Id != resolutionId)
+            {
+                ModelState.AddModelError("Name", "This value already exists.");
+            }
+
+            if (ModelState.IsValid)
+            {
+                Mapper.CreateMap<CreateEditResolutionModel, TicketResolution>();
+                Mapper.Map(viewData, resolution);
+                _ticketService.Save(resolution);
+                UnitOfWork.Commit();
+                return RedirectToRoute("CreateResolution");
+            }
+
+            return View(viewData);
+        }
         #endregion
 
         #region status
