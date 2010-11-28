@@ -8,6 +8,7 @@ namespace Trakker.Areas.Admin.Models
     using System.ComponentModel.DataAnnotations;
     using Trakker.Properties;
     using Trakker.Models;
+    using Trakker.Data;
 
     public class CreateEditResolutionModel : MasterModel
     {
@@ -18,5 +19,7 @@ namespace Trakker.Areas.Admin.Models
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         [StringLength(250, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_250")]
         public string Description { get; set; }
+
+        public IList<TicketResolution> Resolutions { get; set; }
     }
 }

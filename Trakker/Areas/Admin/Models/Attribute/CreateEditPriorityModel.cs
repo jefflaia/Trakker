@@ -7,6 +7,7 @@
     using System.ComponentModel.DataAnnotations;
     using Trakker.Properties;
     using Trakker.Models;
+    using Trakker.Data;
 
     public class CreateEditPriorityModel : MasterModel
     {
@@ -21,5 +22,7 @@
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         [StringLength(6, MinimumLength = 3, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_HexColor")]
         public string HexColor { get; set; }
+
+        public IList<TicketPriority> Priorities { get; set; }
     }
 }

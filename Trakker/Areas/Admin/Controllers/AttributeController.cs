@@ -24,17 +24,24 @@ namespace Trakker.Areas.Admin.Controllers
             return View(new AttributeIndexModel());
         }
 
-
         #region Priority
 
         public ActionResult CreatePriority()
         {
-            return View(new CreateEditPriorityModel());
+            return View(new CreateEditPriorityModel()
+            {
+                Priorities = _ticketService.GetAllPriorities()
+            });
         }
 
         [HttpPost]
         public ActionResult CreatePriority(CreateEditPriorityModel viewData)
         {
+            if (_ticketService.GetPriorityByName(viewData.Name) != null)
+            {
+                ModelState.AddModelError("Name", "This value already exists.");
+            }
+            
             if (ModelState.IsValid)
             {
                 Mapper.CreateMap<CreateEditPriorityModel, TicketPriority>();
@@ -44,6 +51,8 @@ namespace Trakker.Areas.Admin.Controllers
                 UnitOfWork.Commit();
             }
 
+            viewData.Priorities = _ticketService.GetAllPriorities();
+
             return View(viewData);
         }
         #endregion
@@ -51,12 +60,20 @@ namespace Trakker.Areas.Admin.Controllers
         #region Resolution
         public ActionResult CreateResolution()
         {
-            return View(new CreateEditResolutionModel());
+            return View(new CreateEditResolutionModel()
+            {
+                Resolutions = _ticketService.GetAllResolutions()
+            });
         }
 
         [HttpPost]
         public ActionResult CreateResolution(CreateEditResolutionModel viewData)
         {
+            if (_ticketService.GetResolutionByName(viewData.Name) != null)
+            {
+                ModelState.AddModelError("Name", "This value already exists.");
+            }
+
             if (ModelState.IsValid)
             {
                 Mapper.CreateMap<CreateEditResolutionModel, TicketResolution>();
@@ -65,6 +82,8 @@ namespace Trakker.Areas.Admin.Controllers
                 _ticketService.Save(resolution);
                 UnitOfWork.Commit();
             }
+
+            viewData.Resolutions = _ticketService.GetAllResolutions();
 
             return View(viewData);
         }

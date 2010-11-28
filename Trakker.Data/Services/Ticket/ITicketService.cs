@@ -31,6 +31,7 @@
 
         /********* Priority *********/
         TicketPriority GetPriorityWithId(int id);
+        TicketPriority GetPriorityByName(string name);
         IList<TicketPriority> GetAllPriorities();
         void Save(TicketPriority priority);
 
@@ -44,6 +45,7 @@
         void Save(TicketResolution resolution);
         IList<TicketResolution> GetAllResolutions();
         TicketResolution GetResolutionById(int resoutionId);
+        TicketResolution GetResolutionByName(string name);
         #endregion
 
     }

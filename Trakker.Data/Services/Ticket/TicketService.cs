@@ -19,6 +19,12 @@ namespace Trakker.Data.Services
             _projectRepository = projectRepository;
         }
 
+        #region Ticket
+        public Ticket GetTicketWithId(int id)
+        {
+            return _ticketRepository.GetTickets().WithId(id).Single<Ticket>();
+        }
+
         public IList<Ticket> TicketList(int pageSize, int index)
         {
             return _ticketRepository.GetTickets()
@@ -27,45 +33,15 @@ namespace Trakker.Data.Services
                 .ToList<Ticket>();
         }
 
-        public IList<Ticket> GetTicketsWithAssignedTo(int userId)
+
+        public int TotalTickets()
         {
-            return _ticketRepository.GetTickets().Where(x => x.AssignedToUserId == userId).ToList<Ticket>();
+            return _ticketRepository.GetTickets().Count<Ticket>();
         }
 
         public int CountTicketsWithAssignedTo(int userId)
         {
             return _ticketRepository.GetTickets().Where(x => x.AssignedToUserId == userId).Count<Ticket>();
-        }
-
-        public TicketType GetCategoryWithId(int id)
-        {
-            return _ticketRepository.GetCategories().WithId(id).Single<TicketType>();
-        }
-
-        public TicketPriority GetPriorityWithId(int id)
-        {
-            return _ticketRepository.GetPriorities().WithId(id).Single<TicketPriority>();
-        }
-
-
-        public Comment GetCommentWithId(int id)
-        {
-            return _ticketRepository.GetComments().Where(x => x.Id == id).SingleOrDefault<Comment>() ?? null;
-        }
-
-        public IList<Comment> GetCommentsWithticketId(int id)
-        {
-            return _ticketRepository.GetComments().WithTicketId(id).ToList<Comment>();
-        }
-
-        public Ticket GetTicketWithId(int id)
-        {
-            return _ticketRepository.GetTickets().WithId(id).Single<Ticket>();
-        }
-
-        public int TotalTickets()
-        {
-            return _ticketRepository.GetTickets().Count<Ticket>();
         }
 
         public Ticket GetTicketWithKeyName(string keyName)
@@ -82,11 +58,51 @@ namespace Trakker.Data.Services
                 .ToList<Ticket>();
         }
 
+        public IList<Ticket> GetTicketsWithAssignedTo(int userId)
+        {
+            return _ticketRepository.GetTickets().Where(x => x.AssignedToUserId == userId).ToList<Ticket>();
+        }
 
+        public string GenerateTicketKeyName(Project project)
+        {
+            return String.Concat(project.KeyName, "-", project.TicketIndex);
+        }
+
+        public void Save(Ticket ticket)
+        {
+            Project project = _projectRepository.GetProjects().WithId(ticket.ProjectId).SingleOrDefault<Project>();
+            project.TicketIndex++;
+
+            if (ticket.Id == 0)
+            {
+                ticket.Created = DateTime.Now;
+            }
+            else
+            {
+                Ticket oldTicket = _ticketRepository.GetTickets().WithId(ticket.Id).Single();
+                ticket.Created = oldTicket.Created; //override any date comming in
+            }
+
+
+            ticket.KeyName = GenerateTicketKeyName(project);
+            ticket.Description = ticket.Description ?? string.Empty; //if null make it empty
+
+            _projectRepository.Save(project);
+            _ticketRepository.Save(ticket);
+        }
+        #endregion
+
+        #region Category
         public IList<TicketType> GetAllCategories()
         {
             return _ticketRepository.GetCategories().ToList<TicketType>();
         }
+
+        public TicketType GetCategoryWithId(int id)
+        {
+            return _ticketRepository.GetCategories().WithId(id).Single<TicketType>();
+        }
+        #endregion
 
         #region Status
         public IList<TicketStatus> GetAllStatus()
@@ -110,43 +126,15 @@ namespace Trakker.Data.Services
         }
         #endregion
 
+        #region priority
         public IList<TicketPriority> GetAllPriorities()
         {
             return _ticketRepository.GetPriorities().ToList<TicketPriority>();
         }
 
-
-        public string GenerateTicketKeyName(Project project)
+        public TicketPriority GetPriorityByName(string name)
         {
-            return  String.Concat(project.KeyName, "-", project.TicketIndex);
-        }
-
-        public void Save(Ticket ticket)
-        {
-            Project project = _projectRepository.GetProjects().WithId(ticket.ProjectId).SingleOrDefault<Project>();
-            project.TicketIndex++;
-
-            if (ticket.Id == 0)
-            {
-                ticket.Created = DateTime.Now;
-            }
-            else
-            {
-                Ticket oldTicket = _ticketRepository.GetTickets().WithId(ticket.Id).Single();
-                ticket.Created = oldTicket.Created; //override any date comming in
-            }
-               
-            
-            ticket.KeyName = GenerateTicketKeyName(project);
-            ticket.Description = ticket.Description ?? string.Empty; //if null make it empty
-
-            _projectRepository.Save(project);            
-            _ticketRepository.Save(ticket);
-        }
-
-        public void Save(Comment comment)
-        {
-            _ticketRepository.Save(comment);
+            return _ticketRepository.GetPriorities().Where(m => m.Name == name).Single();
         }
 
         public void Save(TicketPriority priority)
@@ -154,10 +142,38 @@ namespace Trakker.Data.Services
             _ticketRepository.Save(priority);
         }
 
+        public TicketPriority GetPriorityWithId(int id)
+        {
+            return _ticketRepository.GetPriorities().WithId(id).Single<TicketPriority>();
+        }
+        #endregion
+
+        #region Comment
+        public void Save(Comment comment)
+        {
+            _ticketRepository.Save(comment);
+        }
+
+        public Comment GetCommentWithId(int id)
+        {
+            return _ticketRepository.GetComments().Where(x => x.Id == id).SingleOrDefault<Comment>() ?? null;
+        }
+
+        public IList<Comment> GetCommentsWithticketId(int id)
+        {
+            return _ticketRepository.GetComments().WithTicketId(id).ToList<Comment>();
+        }
+        #endregion
+
         #region Resolution
         public void Save(TicketResolution resolution)
         {
             _ticketRepository.Save(resolution);
+        }
+
+        public TicketResolution GetResolutionByName(string name)
+        {
+           return _ticketRepository.GetResolutions().Where(m => m.Name == name).Single();
         }
 
         public IList<TicketResolution> GetAllResolutions()

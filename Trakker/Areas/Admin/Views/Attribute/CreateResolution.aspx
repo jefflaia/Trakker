@@ -6,17 +6,21 @@
         <p>The table below shows the resolutions used by this system.</p>
         <p>Scroll down to create a resolution.</p>
     </div>
-    <table class="App">
+    <table class="Indent">
         <thead>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Operation</th>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Operation</th>
+            </tr>
         </thead>
         <tbody>
+            <% foreach(var resolution in Model.Resolutions) { %>
             <tr>
-                <td>Fixed (Default)</td>
-                <td>A fix for this ticket is checked into the tree and tested.</td>
+                <td><%: resolution.Name %></td>
+                <td><%: resolution.Description %></td>
                 <td>Edit | Delete</td>
+            <% } %>
             </tr>
         </tbody>
     </table>
