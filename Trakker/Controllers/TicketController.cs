@@ -36,7 +36,7 @@ namespace Trakker.Controllers
                 Created = ticket.Created,
                 DueDate = ticket.DueDate,
                 Status = _ticketService.GetStatusWithId(ticket.StatusId),
-                Priority = _ticketService.GetPriorityWithId(ticket.PriorityId),
+                Priority = _ticketService.GetPriorityById(ticket.PriorityId),
                 Cateogory = _ticketService.GetCategoryWithId(ticket.CategoryId),
                 Resolution = _ticketService.GetResolutionById(ticket.ResolutionId),
                 KeyName = ticket.KeyName,

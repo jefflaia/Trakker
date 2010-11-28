@@ -181,6 +181,7 @@
     <Compile Include="WindsorControllerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Views\Attribute\EditPriority.aspx" />
     <Content Include="Areas\Admin\Views\Attribute\EditResolution.aspx" />
     <Content Include="Areas\Admin\Views\Attribute\CreateStatus.aspx" />
     <Content Include="Areas\Admin\Views\Attribute\EditStatus.aspx" />

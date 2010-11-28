@@ -55,6 +55,45 @@ namespace Trakker.Areas.Admin.Controllers
 
             return View(viewData);
         }
+
+        public ActionResult EditPriority(int priorityId)
+        {
+            TicketPriority priority = _ticketService.GetPriorityById(priorityId);
+            if (priority == null)
+            {
+                throw new NotImplementedException("not found error page");
+            }
+
+            Mapper.CreateMap<TicketPriority, CreateEditPriorityModel>();
+            return View(Mapper.Map(priority, new CreateEditPriorityModel()));
+        }
+
+        [HttpPost]
+        public ActionResult EditPriority(int priorityId, CreateEditPriorityModel viewData)
+        {
+            TicketPriority priority = _ticketService.GetPriorityById(priorityId);
+            if (priority == null)
+            {
+                throw new NotImplementedException("not found error page");
+            }
+
+            TicketPriority existingResolution = _ticketService.GetPriorityByName(viewData.Name);
+            if (existingResolution != null && existingResolution.Id != priorityId)
+            {
+                ModelState.AddModelError("Name", "This value already exists.");
+            }
+
+            if (ModelState.IsValid)
+            {
+                Mapper.CreateMap<CreateEditPriorityModel, TicketPriority>();
+                Mapper.Map(viewData, priority);
+                _ticketService.Save(priority);
+                UnitOfWork.Commit();
+                return RedirectToRoute("CreatePriority");
+            }
+
+            return View(viewData);
+        }
         #endregion
 
         #region Resolution

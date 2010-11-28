@@ -22,7 +22,9 @@
                 <td><%: priority.Name %></td>
                 <td><%: priority.Description %></td>
                 <td><%: priority.HexColor %></td>
-                <td>Edit | Delete</td>
+                <td>
+                    <%= Html.RouteLink("Edit", "EditPriority", new { priorityId = priority.Id }) %>
+                | Delete</td>
             <% } %>
             </tr>
         </tbody>

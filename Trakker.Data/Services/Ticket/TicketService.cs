@@ -142,7 +142,7 @@ namespace Trakker.Data.Services
             _ticketRepository.Save(priority);
         }
 
-        public TicketPriority GetPriorityWithId(int id)
+        public TicketPriority GetPriorityById(int id)
         {
             return _ticketRepository.GetPriorities().WithId(id).SingleOrDefault();
         }

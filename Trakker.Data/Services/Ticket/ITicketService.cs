@@ -30,7 +30,7 @@
         IList<TicketType> GetAllCategories();
 
         /********* Priority *********/
-        TicketPriority GetPriorityWithId(int id);
+        TicketPriority GetPriorityById(int id);
         TicketPriority GetPriorityByName(string name);
         IList<TicketPriority> GetAllPriorities();
         void Save(TicketPriority priority);
