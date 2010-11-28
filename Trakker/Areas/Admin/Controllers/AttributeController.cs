@@ -93,7 +93,9 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult CreateStatus()
         {
-            return View(new CreateEditStatusModel());
+            return View(new CreateEditStatusModel() { 
+                Statuses = _ticketService.GetAllStatus()
+            });
         }
 
         [HttpPost]
@@ -104,7 +106,6 @@ namespace Trakker.Areas.Admin.Controllers
                 ModelState.AddModelError("Name", "The value already exists.");
             }
 
-
             if (ModelState.IsValid)
             {
                 Mapper.CreateMap<CreateEditStatusModel, TicketStatus>();
@@ -114,6 +115,7 @@ namespace Trakker.Areas.Admin.Controllers
                 UnitOfWork.Commit();
             }
 
+            viewModel.Statuses = _ticketService.GetAllStatus();
             return View(viewModel);
         }
 
