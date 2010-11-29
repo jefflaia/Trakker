@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="Section">
-        <h1>View Statuses</h1>
+        <h1>View Ticket Statuses</h1>
         <p>The table below shows the statuses used by this system.</p>
         <p>Scroll down to create a status.</p>
     </div>
@@ -29,8 +29,9 @@
     </table>
 
     <div class="Section">
+        <h1>Create Ticket Status</h1>
+
         <% Html.BeginForm(); %>
-            <h1>Create Status</h1>
             <% Html.RenderPartial("CreateEditStatusForm", Model); %>
         <% Html.EndForm(); %>
     </div>

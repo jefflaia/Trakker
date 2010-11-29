@@ -25,9 +25,11 @@
         Comment GetCommentWithId(int id);
         void Save(Comment comment);
 
-        /********* Category *********/
-        TicketType GetCategoryWithId(int id);
-        IList<TicketType> GetAllCategories();
+        /********* Types *********/
+        TicketType GetTypeById(int id);
+        TicketType GetTypeByName(string name);
+        IList<TicketType> GetAllTypes();
+        void Save(TicketType type);
 
         /********* Priority *********/
         TicketPriority GetPriorityById(int id);

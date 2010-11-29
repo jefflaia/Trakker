@@ -92,15 +92,25 @@ namespace Trakker.Data.Services
         }
         #endregion
 
-        #region Category
-        public IList<TicketType> GetAllCategories()
+        #region Type
+        public IList<TicketType> GetAllTypes()
         {
-            return _ticketRepository.GetCategories().ToList<TicketType>();
+            return _ticketRepository.GetTypes().ToList<TicketType>();
         }
 
-        public TicketType GetCategoryWithId(int id)
+        public TicketType GetTypeById(int id)
         {
-            return _ticketRepository.GetCategories().WithId(id).SingleOrDefault();
+            return _ticketRepository.GetTypes().WithId(id).SingleOrDefault();
+        }
+
+        public void Save(TicketType type)
+        {
+            _ticketRepository.Save(type);
+        }
+
+        public TicketType GetTypeByName(string name)
+        {
+            return _ticketRepository.GetTypes().Where(m => m.Name == name).SingleOrDefault();
         }
         #endregion
 

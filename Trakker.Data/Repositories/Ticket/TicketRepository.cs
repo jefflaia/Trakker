@@ -173,13 +173,13 @@ namespace Trakker.Data.Repositories
         #endregion
 
         #region Type
-        public void Save(TicketType category)
+        public void Save(TicketType type)
         {
             //map the priority from our model to the dal object
             Mapper.CreateMap<TicketType, Sql.TicketType>();
-            Sql.TicketType c = Mapper.Map<TicketType, Sql.TicketType>(category);
+            Sql.TicketType c = Mapper.Map<TicketType, Sql.TicketType>(type);
 
-            if (category.Id == 0)
+            if (type.Id == 0)
             {
                 _typeTable.InsertOnSubmit(c);
             }
@@ -191,10 +191,10 @@ namespace Trakker.Data.Repositories
 
             //set the id 
             //needed for inserts, updates the id will stay the same
-            category.Id = c.Id;
+            type.Id = c.Id;
         }
 
-        public void DeleteCategory(int id)
+        public void DeleteType(int id)
         {
             using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
             {
@@ -205,7 +205,7 @@ namespace Trakker.Data.Repositories
             }
         }
 
-        public IQueryable<TicketType> GetCategories()
+        public IQueryable<TicketType> GetTypes()
         {
             return from t in _typeTable
                    select new TicketType

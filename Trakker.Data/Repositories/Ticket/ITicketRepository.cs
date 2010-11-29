@@ -19,10 +19,10 @@
         void DeletePriority(int id);
         #endregion
 
-        #region Categories
-        IQueryable<TicketType> GetCategories();
-        void Save(TicketType category);
-        void DeleteCategory(int id);
+        #region Types
+        IQueryable<TicketType> GetTypes();
+        void Save(TicketType type);
+        void DeleteType(int id);
         #endregion
 
         #region Status
@@ -42,7 +42,5 @@
         void Save(TicketResolution resolution);
         void DeleteResolution(int id);
         #endregion
-
-
     }
 }

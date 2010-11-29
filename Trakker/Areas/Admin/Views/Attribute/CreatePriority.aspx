@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="Section">
-        <h1>View Priorities</h1>
+        <h1>View Ticket Priorities</h1>
         <p>The table below shows all the priorities used by this system.</p>
     </div>
 
@@ -31,8 +31,9 @@
     </table>
 
     <div class="Section">
+         <h1>Create Ticket Priority</h1>
+
         <% Html.BeginForm(); %>
-            <h1>Create Priority</h1>
             <% Html.RenderPartial("CreateEditPriorityForm"); %>
         <% Html.EndForm(); %>
     </div>

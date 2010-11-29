@@ -235,5 +235,36 @@ namespace Trakker.Areas.Admin.Controllers
         }
         
         #endregion
+
+        #region Type
+        public ActionResult CreateType()
+        {
+            return View(new CreateEditTypeModel()
+            {
+                Types = _ticketService.GetAllTypes()
+            });
+        }
+
+        [HttpPost]
+        public ActionResult CreateType(CreateEditTypeModel viewModel)
+        {
+            if (_ticketService.GetTypeByName(viewModel.Name) != null)
+            {
+                ModelState.AddModelError("Name", "This value already exists.");
+            }
+
+            if (ModelState.IsValid)
+            {
+                Mapper.CreateMap<CreateEditTypeModel, TicketType>();
+                TicketType type = Mapper.Map(viewModel, new TicketType());
+                _ticketService.Save(type);
+                UnitOfWork.Commit();
+                return RedirectToRoute("CreateType");
+            }
+
+            viewModel.Types = _ticketService.GetAllTypes();
+            return View(viewModel);
+        }
+        #endregion
     }
 }

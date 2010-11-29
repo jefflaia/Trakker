@@ -15,6 +15,8 @@ namespace Trakker.Areas.Admin
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute("AttributeIndex", "admin/attributes", new { controller = "Attribute", action = "Index" });
+            context.MapRoute("CreateType", "admin/attributes/type/create", new { controller = "Attribute", action = "CreateType" });
+            context.MapRoute("EditType", "admin/attributes/type/{typeId}/edit", new { controller = "Attribute", action = "EditType" });
             context.MapRoute("CreatePriority", "admin/attributes/priority/create", new { controller = "Attribute", action = "CreatePriority" });
             context.MapRoute("EditPriority", "admin/attributes/priority/{priorityId}/edit", new { controller = "Attribute", action = "EditPriority" });
             context.MapRoute("CreateResolution", "admin/attributes/resolution/create", new { controller = "Attribute", action = "CreateResolution" });

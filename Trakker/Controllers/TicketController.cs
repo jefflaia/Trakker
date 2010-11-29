@@ -37,7 +37,7 @@ namespace Trakker.Controllers
                 DueDate = ticket.DueDate,
                 Status = _ticketService.GetStatusWithId(ticket.StatusId),
                 Priority = _ticketService.GetPriorityById(ticket.PriorityId),
-                Cateogory = _ticketService.GetCategoryWithId(ticket.CategoryId),
+                Cateogory = _ticketService.GetTypeById(ticket.CategoryId),
                 Resolution = _ticketService.GetResolutionById(ticket.ResolutionId),
                 KeyName = ticket.KeyName,
                 Comments = _ticketService.GetCommentsWithticketId(ticket.Id),
@@ -58,7 +58,7 @@ namespace Trakker.Controllers
 
             IDictionary<int, TicketPriority> priorities = _ticketService.GetAllPriorities().ToDictionary(m => m.Id);
             IDictionary<int, TicketStatus> status = _ticketService.GetAllStatus().ToDictionary(m => m.Id);
-            IDictionary<int, TicketType> types = _ticketService.GetAllCategories().ToDictionary(m => m.Id);
+            IDictionary<int, TicketType> types = _ticketService.GetAllTypes().ToDictionary(m => m.Id);
             IDictionary<int, User> users = new Dictionary<int, User>();
 
 
@@ -104,7 +104,7 @@ namespace Trakker.Controllers
         {
             CreateEditTicketModel viewData = new CreateEditTicketModel()
             {
-                Categories = _ticketService.GetAllCategories(),
+                Categories = _ticketService.GetAllTypes(),
                 Priorities = _ticketService.GetAllPriorities(),
                 Status = _ticketService.GetAllStatus(),
                 Users = _userService.GetAllUsers(),
@@ -120,7 +120,7 @@ namespace Trakker.Controllers
             return View(viewData);
         }
 
-        [AcceptVerbs(HttpVerbs.Post)]
+        [HttpPost]
         public ActionResult CreateTicket(CreateEditTicketModel viewData)
         {
             if (ModelState.IsValid)
@@ -138,7 +138,7 @@ namespace Trakker.Controllers
                 return RedirectToRoute("BrowseTickets");
             }
 
-            viewData.Categories = _ticketService.GetAllCategories();
+            viewData.Categories = _ticketService.GetAllTypes();
             viewData.Priorities = _ticketService.GetAllPriorities();
             viewData.Status = _ticketService.GetAllStatus();
             viewData.Users = _userService.GetAllUsers();
@@ -158,7 +158,7 @@ namespace Trakker.Controllers
             CreateEditTicketModel viewData = new CreateEditTicketModel()
             {
                 Projects = _projectService.GetAllProjects(),
-                Categories = _ticketService.GetAllCategories(),
+                Categories = _ticketService.GetAllTypes(),
                 Priorities = _ticketService.GetAllPriorities(),
                 Status = _ticketService.GetAllStatus(),
                 Users = _userService.GetAllUsers(),
@@ -171,7 +171,7 @@ namespace Trakker.Controllers
             return View(viewData);
         }
          
-        [AcceptVerbs(HttpVerbs.Post)]
+        [HttpPost]
         public ActionResult EditTicket(string keyName, CreateEditTicketModel viewData)
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
@@ -189,7 +189,7 @@ namespace Trakker.Controllers
                 return RedirectToAction<TicketController>(x => x.TicketDetails(ticket.KeyName));
             }
 
-            viewData.Categories = _ticketService.GetAllCategories();
+            viewData.Categories = _ticketService.GetAllTypes();
             viewData.Priorities = _ticketService.GetAllPriorities();
             viewData.Status = _ticketService.GetAllStatus();
             viewData.Users = _userService.GetAllUsers();

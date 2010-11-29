@@ -3,16 +3,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BasicContent" runat="server">
     <h2>ticketList2</h2>
     <table>
-        <tr class="Header">
-            <th>Key Name</th>
-            <th>Summary</th>
-            <th>Category</th>
-            <th>Priority</th>
-            <th>Status</th>
-            <th>Created By</th>
-            <th>Assigned To</th>
-            <th>Assigned By</th>
-        </tr>
+        <thead>
+            <tr>
+                <th>Key Name</th>
+                <th>Summary</th>
+                <th>Category</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Created By</th>
+                <th>Assigned To</th>
+                <th>Assigned By</th>
+            </tr>
+        </thead>
         <% foreach (var item in Model.Items)
            { %>
         <tr>

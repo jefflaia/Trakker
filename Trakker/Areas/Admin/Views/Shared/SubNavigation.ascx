@@ -4,6 +4,7 @@
         <li><%= Html.RouteLink("Attributes", "AttributeIndex") %>
             <a href="#" class="Toggle">V</a>
             <ul class="UI-Shadow">
+                <li><%= Html.RouteLink("Types", "CreateType") %></li>
                 <li><%= Html.RouteLink("Priorities", "CreatePriority") %></li>
                 <li><%= Html.RouteLink("Resolutions", "CreateResolution") %></li>
                 <li><%= Html.RouteLink("Statuses", "CreateStatus") %></li>
