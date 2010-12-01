@@ -265,6 +265,44 @@ namespace Trakker.Areas.Admin.Controllers
             viewModel.Types = _ticketService.GetAllTypes();
             return View(viewModel);
         }
+
+        public ActionResult EditType(int typeId)
+        {
+            TicketType type = _ticketService.GetTypeById(typeId);
+
+            if (type == null)
+            {
+                throw new NotImplementedException("Throw not found error");
+            }
+
+            Mapper.CreateMap<TicketType, CreateEditTypeModel>();
+            return View(Mapper.Map(type, new CreateEditTypeModel()));
+        }
+
+        [HttpPost]
+        public ActionResult EditType(int typeId, CreateEditTypeModel viewModel)
+        {
+            TicketType type = _ticketService.GetTypeById(typeId);
+            if (type == null) throw new NotImplementedException("Throw not found error");
+
+            TicketType existingType = _ticketService.GetTypeByName(viewModel.Name);
+            if (existingType != null && existingType.Id != typeId)
+            {
+                ModelState.AddModelError("Name", "This value already exists.");
+            }
+
+            if (ModelState.IsValid)
+            {
+                Mapper.CreateMap<CreateEditTypeModel, TicketType>();
+                Mapper.Map(viewModel, type);
+
+                _ticketService.Save(type);
+                UnitOfWork.Commit();
+                return RedirectToRoute("CreateType");
+            }
+
+            return View(viewModel);
+        }
         #endregion
     }
 }
