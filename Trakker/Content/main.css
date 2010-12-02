@@ -105,8 +105,6 @@ div.Comment p.Body{float:left; width: auto;}
 
 
 
-
-
 /***** TicketDetails *****/
 #TicketDetails {float:left; width: 100%;}
 #TicketDetails div.LeftContent{float:left; width: 70%;}
@@ -123,7 +121,7 @@ div.Comment p.Body{float:left; width: auto;}
 /**************************************** Generic Styling ******************************************/
 
 /****** basic table styling  *****/
-table.Indent { margin-left: 2%; margin-right: 2%; width: 96%;}
+table.Indent { margin-left: 1%; margin-right: 1%; width: 98%;}
 
 table { border-collapse: collapse; margin-bottom: 10px; width: 100%; border: 1px solid #bbb !important; }
 table thead tr th, table tfoot tr th  { border-bottom: 1px solid #bbb; text-align: left; padding: 5px 7px; background-color: #eee; border-left: 1px dotted #bbb; }

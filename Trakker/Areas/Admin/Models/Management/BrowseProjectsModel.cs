@@ -11,6 +11,7 @@
     public class BrowseProjectsModel : MasterModel
     {
         public IList<Project> Projects { get; set; }
+        public IDictionary<int, User> Users { get; set; }
 
     }
 }

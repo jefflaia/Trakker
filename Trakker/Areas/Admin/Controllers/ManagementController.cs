@@ -142,7 +142,8 @@ namespace Trakker.Areas.Admin.Controllers
         {
             return View(new BrowseProjectsModel()
             {
-                Projects = _projectService.GetAllProjects()
+                Projects = _projectService.GetAllProjects(),
+                Users = _userService.GetAllUsers().ToDictionary(m => m.Id)
             });
         }
 

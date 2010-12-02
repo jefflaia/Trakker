@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Areas/Admin/Views/Shared/Admin.master" Inherits="System.Web.Mvc.ViewPage<CreateProjectModel>" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <% using (Html.BeginForm())
-       {%>
-            <h2>Create Project</h2>
+    <div class="Section">
+        <h1>Create Project</h1>
+    
+    <% Html.BeginForm(); %>
 
             <%= Html.FormRow()
                 .AddToLeft(Html.LabelFor(m => m.Name))
@@ -41,6 +41,7 @@
                 .AddToRight(Html.SaveButton("Save", null))
             %>
 
-    <% } %>
+    <% Html.EndForm(); %>
+    </div>
 
 </asp:Content>
