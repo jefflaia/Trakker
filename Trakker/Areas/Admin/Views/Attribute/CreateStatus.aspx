@@ -7,7 +7,7 @@
         <p>Scroll down to create a status.</p>
     </div>
 
-    <table class="Indent">
+    <table class="Grid Indent">
         <thead>
             <tr>
                 <th>Name</th>

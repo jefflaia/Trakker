@@ -41,6 +41,14 @@ namespace Trakker.Areas.Admin.Controllers
             });
         }
 
+        public ActionResult ViewUser(int userId)
+        {
+            return View(new ViewUserModel()
+            {
+                User = _userService.GetUserWithId(userId)
+            });
+        }
+
         public ActionResult CreateUser()
         {
             return View(new CreateUserModel()
@@ -147,6 +155,17 @@ namespace Trakker.Areas.Admin.Controllers
             });
         }
 
+        public ActionResult ViewProject(string keyName)
+        {
+            Project project = _projectService.GetProjectByKeyName(keyName);
+
+            return View(new ViewProjectModel()
+                {
+                    Project = project,
+                    User = _userService.GetUserWithId(project.Lead)
+                });
+        }
+
         public ActionResult CreateProject()
         {
             return View(new CreateProjectModel()
@@ -228,7 +247,7 @@ namespace Trakker.Areas.Admin.Controllers
                 _projectService.Save(project);
                 UnitOfWork.Commit();
 
-                return RedirectToRoute("ProjectSummary", new { keyName = project.KeyName });
+                return RedirectToRoute("ViewProject", new { keyName = project.KeyName });
             }
 
             viewModel.Users = _userService.GetAllUsers();

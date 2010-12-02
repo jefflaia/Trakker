@@ -6,7 +6,7 @@
         <p><%= Html.RouteLink("Create Project", "CreateProject") %></p>
     </div>
 
-    <table class="Indent">
+    <table class="Grid Indent">
         <thead>
             <tr>
                 <th>Name</th>
@@ -14,16 +14,18 @@
                 <th>Key</th>
                 <th>Due</th>
                 <th>Created</th>
+                <th>Operations</th>
             </tr>
         </thead>
         <tbody>
             <% foreach(var project in Model.Projects) { %>
                 <tr>
-                    <td><%= Html.RouteLink(project.Name, "EditProject", new { keyName = project.KeyName }) %></td>
+                    <td><%= Html.RouteLink(project.Name, "ViewProject", new { keyName = project.KeyName.ToLower() })%></td>
                     <td><%= Model.Users[project.Lead].FullName() %></td>
                     <td><%= project.KeyName  %></td>
                     <td><%= project.Due  %></td>
                     <td><%= project.Created  %></td>
+                    <td><%= Html.RouteLink("Edit", "EditProject", new { keyName = project.KeyName.ToLower() }) %></td>
                 </tr>
             <% } %>        
         </tbody>

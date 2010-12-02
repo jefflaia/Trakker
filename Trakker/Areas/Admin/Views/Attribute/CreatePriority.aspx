@@ -7,7 +7,7 @@
         <p>The table below shows all the priorities used by this system.</p>
     </div>
 
-    <table class="Indent">
+    <table class="Grid Indent">
         <thead>
             <tr>
                 <th>Name</th>

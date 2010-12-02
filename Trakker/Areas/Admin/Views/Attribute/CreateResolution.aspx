@@ -6,7 +6,7 @@
         <p>The table below shows the resolutions used by this system.</p>
         <p>Scroll down to create a resolution.</p>
     </div>
-    <table class="Indent">
+    <table class="Grid Indent">
         <thead>
             <tr>
                 <th>Name</th>

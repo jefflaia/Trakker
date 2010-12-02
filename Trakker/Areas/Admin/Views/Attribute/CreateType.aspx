@@ -8,7 +8,7 @@
         <p>Scroll down to create a ticket type.</p>
     </div>
 
-    <table class="Indent">
+    <table class="Grid Indent">
         <thead>
             <tr>
                 <th>Name</th>
