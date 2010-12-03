@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BasicContent" runat="server">
     <h2>ticketList2</h2>
-    <table>
+    <table class="Grid">
         <thead>
             <tr>
                 <th>Key Name</th>
@@ -15,25 +15,26 @@
                 <th>Assigned By</th>
             </tr>
         </thead>
-        <% foreach (var item in Model.Items)
-           { %>
-        <tr>
-            <td><%= Html.Encode(item.KeyName) %></td>
-            <td><%= Html.ActionLink<TicketController>(x => x.TicketDetails(item.KeyName), Html.Encode(item.Summary))%></td>
-            <td><%= Html.Encode(Model.Categories[item.CategoryId].Name)%></td>
+        <tbody>
+        <% foreach (var item in Model.Items) { %>
+            <tr>
+                <td><%= Html.Encode(item.KeyName) %></td>
+                <td><%= Html.ActionLink<TicketController>(x => x.TicketDetails(item.KeyName), Html.Encode(item.Summary))%></td>
+                <td><%= Html.Encode(Model.Categories[item.CategoryId].Name)%></td>
            
-            <td >
-                <span class="ColorBar" style="background-color: #<%= Model.Priorities[item.PriorityId].HexColor %>;"></span>
-                <%= Html.Encode(Model.Priorities[item.PriorityId].Name)%>
-            </td>
-            <td><%= Html.Encode(Model.Status[item.StatusId].Name)%></td>
-            <td><%= Html.Encode(Model.Users[item.CreatedByUserId].Email)%></td>
-            <td><%= Html.Encode(Model.Users[item.AssignedToUserId].Email)%></td>
-            <td><%= Html.Encode(Model.Users[item.AssignedByUserId].Email)%></td>
+                <td >
+                    <span class="ColorBar" style="background-color: #<%= Model.Priorities[item.PriorityId].HexColor %>;"></span>
+                    <%= Html.Encode(Model.Priorities[item.PriorityId].Name)%>
+                </td>
+                <td><%= Html.Encode(Model.Status[item.StatusId].Name)%></td>
+                <td><%= Html.Encode(Model.Users[item.CreatedByUserId].Email)%></td>
+                <td><%= Html.Encode(Model.Users[item.AssignedToUserId].Email)%></td>
+                <td><%= Html.Encode(Model.Users[item.AssignedByUserId].Email)%></td>
 
 
-        </tr>
+            </tr>
        <%}%>
+       </tbody>
     </table>
 
     <% Html.RenderAction("Pagination", "Nav", new { count = Model.TotalTickets, page = Model.Page, pageSize = Model.PageSize }); %>
