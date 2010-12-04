@@ -13,7 +13,7 @@ using Trakker.Models;
 namespace Trakker.Controllers
 {
     [Authenticate]
-    public class ProjectController : MasterController
+    public partial class ProjectController : MasterController
     {
 
         public ProjectController(IProjectService projectService, IUserService userService, ITicketService ticketService)
@@ -22,7 +22,7 @@ namespace Trakker.Controllers
         }
 
         #region Project
-        public ActionResult ProjectSummary(string keyName)
+        public virtual ActionResult ProjectSummary(string keyName)
         {
             CurrentProject = _projectService.GetProjectByKeyName(keyName);
 
@@ -38,7 +38,7 @@ namespace Trakker.Controllers
 
 
         #region Component
-        public ActionResult ComponentSummary(string keyName)
+        public virtual ActionResult ComponentSummary(string keyName)
         {
             throw new NotImplementedException();
         }

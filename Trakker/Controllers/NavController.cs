@@ -9,9 +9,9 @@ using Trakker.Helpers;
 namespace Trakker.Controllers
 {
 
-    public class NavController : Controller
+    public partial class NavController : Controller
     {
-        public ActionResult Pagination(int count, int page, int pageSize)
+        public virtual ActionResult Pagination(int count, int page, int pageSize)
         {
             return PartialView(new Pagination(count, page, pageSize));
         }

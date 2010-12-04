@@ -19,21 +19,21 @@ using Trakker.Models;
 
 namespace Trakker.Controllers
 {
-    public class UserController : MasterController
+    public partial class UserController : MasterController
     {
        public UserController(IUserService userService, ITicketService ticketService, IProjectService projectService)
             : base(projectService, ticketService, userService)
         {            
         }
-        
 
-        public ActionResult Login()
+
+       public virtual ActionResult Login()
         {
             return View(new LoginModel());
         }
 
         [HttpPost]
-        public ActionResult Login(LoginModel viewData)
+       public virtual ActionResult Login(LoginModel viewData)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace Trakker.Controllers
             return View(viewData);
         }
 
-        public ActionResult Logout()
+        public virtual ActionResult Logout()
         {
             Auth.LogUserOut();
             Auth.CurrentUser = null;

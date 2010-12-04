@@ -13,21 +13,21 @@ using Trakker.Data;
 namespace Trakker.Areas.Admin.Controllers
 {
     [Authenticate]
-    public class ManagementController : MasterController
+    public partial class ManagementController : MasterController
     {
         public ManagementController(ITicketService ticketService, IUserService userService, IProjectService projectService)
             : base(projectService, ticketService, userService)
         {
         }
 
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return View(new ManagementIndexModel());
         }
 
         #region User
 
-        public ActionResult BrowseUsers()
+        public virtual ActionResult BrowseUsers()
         {
             var paginatedUsers = _userService.GetAllUsersPaginated(1, 10);
 
@@ -41,7 +41,7 @@ namespace Trakker.Areas.Admin.Controllers
             });
         }
 
-        public ActionResult ViewUser(int userId)
+        public virtual ActionResult ViewUser(int userId)
         {
             return View(new ViewUserModel()
             {
@@ -49,7 +49,7 @@ namespace Trakker.Areas.Admin.Controllers
             });
         }
 
-        public ActionResult CreateUser()
+        public virtual ActionResult CreateUser()
         {
             return View(new CreateUserModel()
             {
@@ -58,7 +58,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateUser(CreateUserModel viewModel)
+        public virtual ActionResult CreateUser(CreateUserModel viewModel)
         {
             User existingUser = _userService.GetUserWithEmail(viewModel.Email);
             if (existingUser != null)
@@ -80,7 +80,7 @@ namespace Trakker.Areas.Admin.Controllers
             return View(viewModel);
         }
 
-        public ActionResult EditUser(int userId)
+        public virtual ActionResult EditUser(int userId)
         {
             //if (userId == 0) ; //TODO:: redirect
             User user = _userService.GetUserWithId(userId);
@@ -95,7 +95,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditUser(int userId, EditUserModel viewModel)
+        public virtual ActionResult EditUser(int userId, EditUserModel viewModel)
         {
             User user = _userService.GetUserWithId(userId);
 
@@ -115,7 +115,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public ActionResult EditUserPassword(int userId)
+        public virtual ActionResult EditUserPassword(int userId)
         {
             return View(new EditUserPasswordModel() { 
                 User = _userService.GetUserWithId(userId)
@@ -123,7 +123,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditUserPassword(int userId, EditUserPasswordModel viewModel)
+        public virtual ActionResult EditUserPassword(int userId, EditUserPasswordModel viewModel)
         {
             User user = _userService.GetUserWithId(userId);
 
@@ -146,7 +146,7 @@ namespace Trakker.Areas.Admin.Controllers
         #endregion
 
         #region Project
-        public ActionResult BrowseProjects()
+        public virtual ActionResult BrowseProjects()
         {
             return View(new BrowseProjectsModel()
             {
@@ -155,7 +155,7 @@ namespace Trakker.Areas.Admin.Controllers
             });
         }
 
-        public ActionResult ViewProject(string keyName)
+        public virtual ActionResult ViewProject(string keyName)
         {
             Project project = _projectService.GetProjectByKeyName(keyName);
 
@@ -166,7 +166,7 @@ namespace Trakker.Areas.Admin.Controllers
                 });
         }
 
-        public ActionResult CreateProject()
+        public virtual ActionResult CreateProject()
         {
             return View(new CreateProjectModel()
             {
@@ -175,7 +175,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateProject(CreateProjectModel viewModel)
+        public virtual ActionResult CreateProject(CreateProjectModel viewModel)
         {
 
             if (_projectService.GetProjectByKeyName(viewModel.KeyName) != null)
@@ -205,7 +205,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public ActionResult EditProject(string keyName)
+        public virtual ActionResult EditProject(string keyName)
         {
             Project project = _projectService.GetProjectByKeyName(keyName);
 
@@ -220,7 +220,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditProject(string keyName, [Bind(Exclude = "KeyName")]EditProjectModel viewModel)
+        public virtual ActionResult EditProject(string keyName, [Bind(Exclude = "KeyName")]EditProjectModel viewModel)
         {
             Project project = _projectService.GetProjectByKeyName(keyName);
 

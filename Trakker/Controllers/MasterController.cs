@@ -18,7 +18,7 @@ namespace Trakker.Controllers
     using AutoMapper;
     using Trakker.Models;
 
-    public abstract class MasterController : Controller
+    public abstract partial class MasterController : Controller
     {
 
         protected IProjectService _projectService;
@@ -60,9 +60,10 @@ namespace Trakker.Controllers
             return CurrentProject != null;
         }
 
-        public IUnitOfWork UnitOfWork { get; set; }        
-        
-        public RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> action)
+        public IUnitOfWork UnitOfWork { get; set; }
+
+        /*
+        public virtual RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> action)
         {
             
 
@@ -86,7 +87,7 @@ namespace Trakker.Controllers
             return RedirectToAction(actionName, controllerName, parameters);
         }
 
-        public RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> actionExpression,
+        public virtual RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> actionExpression,
                                                                    IDictionary<string, object> dictionary)
         {
             string controllerName = typeof(TController).GetControllerName();
@@ -96,7 +97,7 @@ namespace Trakker.Controllers
                                     new RouteValueDictionary(dictionary));
         }
 
-        public RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> actionExpression,
+        public virtual RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> actionExpression,
                                                                    object values)
         {
             string controllerName = typeof(TController).GetControllerName();
@@ -105,6 +106,7 @@ namespace Trakker.Controllers
             return RedirectToAction(actionName, controllerName,
                                     new RouteValueDictionary(values));
         }
+         * */
       
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)

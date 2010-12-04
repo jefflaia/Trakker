@@ -14,7 +14,7 @@ using Trakker.Models;
 namespace Trakker.Controllers
 {
     [Authenticate]
-    public class TicketController : MasterController
+    public partial class TicketController : MasterController
     {
        
         public TicketController(ITicketService ticketService, IUserService userService, IProjectService projectService)
@@ -24,7 +24,7 @@ namespace Trakker.Controllers
 
 
         #region Tickets
-        public ActionResult TicketDetails(string keyName)
+        public virtual ActionResult TicketDetails(string keyName)
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
 
@@ -50,7 +50,7 @@ namespace Trakker.Controllers
             return View(viewData);
         }
 
-        public ActionResult BrowseTickets(int? index)
+        public virtual ActionResult BrowseTickets(int? index)
         {
             const int PAGE_SIZE = 10;
             User user;
@@ -100,7 +100,7 @@ namespace Trakker.Controllers
         }
 
 
-        public ActionResult CreateTicket()
+        public virtual ActionResult CreateTicket()
         {
             CreateEditTicketModel viewData = new CreateEditTicketModel()
             {
@@ -121,7 +121,7 @@ namespace Trakker.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateTicket(CreateEditTicketModel viewData)
+        public virtual ActionResult CreateTicket(CreateEditTicketModel viewData)
         {
             if (ModelState.IsValid)
             {
@@ -149,7 +149,7 @@ namespace Trakker.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Get)]
-        public ActionResult EditTicket(string keyName)
+        public virtual ActionResult EditTicket(string keyName)
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
 
@@ -172,7 +172,7 @@ namespace Trakker.Controllers
         }
          
         [HttpPost]
-        public ActionResult EditTicket(string keyName, CreateEditTicketModel viewData)
+        public virtual ActionResult EditTicket(string keyName, CreateEditTicketModel viewData)
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
 
@@ -186,7 +186,7 @@ namespace Trakker.Controllers
                 _ticketService.Save(ticket);
                 UnitOfWork.Commit();
 
-                return RedirectToAction<TicketController>(x => x.TicketDetails(ticket.KeyName));
+                return RedirectToRoute(MVC.Ticket.TicketDetails(keyName));
             }
 
             viewData.Categories = _ticketService.GetAllTypes();
@@ -203,7 +203,7 @@ namespace Trakker.Controllers
 
         #region Comment
 
-        public ActionResult CreateComment(string keyName)
+        public virtual ActionResult CreateComment(string keyName)
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
 
@@ -214,7 +214,7 @@ namespace Trakker.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult CreateComment(string keyName, Comment comment)
+        public virtual ActionResult CreateComment(string keyName, Comment comment)
         {
 
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
@@ -230,7 +230,7 @@ namespace Trakker.Controllers
                 comment.TicketId = ticket.Id;
                 _ticketService.Save(comment);
 
-                return RedirectToAction<TicketController>(x => x.TicketDetails(keyName));
+                return RedirectToRoute(MVC.Ticket.TicketDetails(keyName));
             }
             catch (Exception e)
             {
@@ -238,7 +238,7 @@ namespace Trakker.Controllers
             }
         }
 
-        public ActionResult EditComment(string keyName, int id)
+        public virtual ActionResult EditComment(string keyName, int id)
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
             Comment comment = _ticketService.GetCommentWithId(id);
@@ -258,7 +258,7 @@ namespace Trakker.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult EditComment(string keyName, int id, Comment comment)
+        public virtual ActionResult EditComment(string keyName, int id, Comment comment)
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
             Comment originalComment = _ticketService.GetCommentWithId(id);
@@ -288,7 +288,7 @@ namespace Trakker.Controllers
             return View(viewData);
         }
 
-        public ActionResult Comment(Comment comment)
+        public virtual ActionResult Comment(Comment comment)
         {
             CommentModel viewData = Mapper.Map<Comment, CommentModel>(comment);
 

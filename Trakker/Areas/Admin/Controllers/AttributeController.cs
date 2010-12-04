@@ -12,21 +12,21 @@ namespace Trakker.Areas.Admin.Controllers
     using Trakker.Controllers;
     using Trakker.Areas.Admin.Models;
 
-    public class AttributeController : MasterController
+    public partial class AttributeController : MasterController
     {
         public AttributeController(ITicketService ticketService, IUserService userService, IProjectService projectService)
             : base(projectService, ticketService, userService)
         {
         }
 
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return View(new AttributeIndexModel());
         }
 
         #region Priority
 
-        public ActionResult CreatePriority()
+        public virtual ActionResult CreatePriority()
         {
             return View(new CreateEditPriorityModel()
             {
@@ -35,7 +35,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreatePriority(CreateEditPriorityModel viewData)
+        public virtual ActionResult CreatePriority(CreateEditPriorityModel viewData)
         {
             if (_ticketService.GetPriorityByName(viewData.Name) != null)
             {
@@ -56,7 +56,7 @@ namespace Trakker.Areas.Admin.Controllers
             return View(viewData);
         }
 
-        public ActionResult EditPriority(int priorityId)
+        public virtual ActionResult EditPriority(int priorityId)
         {
             TicketPriority priority = _ticketService.GetPriorityById(priorityId);
             if (priority == null)
@@ -69,7 +69,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditPriority(int priorityId, CreateEditPriorityModel viewData)
+        public virtual ActionResult EditPriority(int priorityId, CreateEditPriorityModel viewData)
         {
             TicketPriority priority = _ticketService.GetPriorityById(priorityId);
             if (priority == null)
@@ -97,7 +97,7 @@ namespace Trakker.Areas.Admin.Controllers
         #endregion
 
         #region Resolution
-        public ActionResult CreateResolution()
+        public virtual ActionResult CreateResolution()
         {
             return View(new CreateEditResolutionModel()
             {
@@ -106,7 +106,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateResolution(CreateEditResolutionModel viewData)
+        public virtual ActionResult CreateResolution(CreateEditResolutionModel viewData)
         {
             if (_ticketService.GetResolutionByName(viewData.Name) != null)
             {
@@ -128,7 +128,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public ActionResult EditResolution(int resolutionId)
+        public virtual ActionResult EditResolution(int resolutionId)
         {
             TicketResolution resolution = _ticketService.GetResolutionById(resolutionId);
             if (resolution == null)
@@ -141,7 +141,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditResolution(int resolutionId, CreateEditResolutionModel viewData)
+        public virtual ActionResult EditResolution(int resolutionId, CreateEditResolutionModel viewData)
         {
             TicketResolution resolution = _ticketService.GetResolutionById(resolutionId);
             if (resolution == null)
@@ -170,7 +170,7 @@ namespace Trakker.Areas.Admin.Controllers
 
         #region status
         [HttpGet]
-        public ActionResult CreateStatus()
+        public virtual ActionResult CreateStatus()
         {
             return View(new CreateEditStatusModel() { 
                 Statuses = _ticketService.GetAllStatus()
@@ -178,7 +178,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateStatus(CreateEditStatusModel viewModel)
+        public virtual ActionResult CreateStatus(CreateEditStatusModel viewModel)
         {
             if (_ticketService.GetStatusByName(viewModel.Name) != null)
             {
@@ -199,7 +199,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public ActionResult EditStatus(int statusId)
+        public virtual ActionResult EditStatus(int statusId)
         {
             TicketStatus status = _ticketService.GetStatusWithId(statusId);
 
@@ -210,7 +210,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditStatus(int statusId, CreateEditStatusModel viewModel)
+        public virtual ActionResult EditStatus(int statusId, CreateEditStatusModel viewModel)
         {
             TicketStatus status = _ticketService.GetStatusWithId(statusId);
             if (status == null) throw new NotImplementedException("Throw not found error");
@@ -237,7 +237,7 @@ namespace Trakker.Areas.Admin.Controllers
         #endregion
 
         #region Type
-        public ActionResult CreateType()
+        public virtual ActionResult CreateType()
         {
             return View(new CreateEditTypeModel()
             {
@@ -246,7 +246,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateType(CreateEditTypeModel viewModel)
+        public virtual ActionResult CreateType(CreateEditTypeModel viewModel)
         {
             if (_ticketService.GetTypeByName(viewModel.Name) != null)
             {
@@ -266,7 +266,7 @@ namespace Trakker.Areas.Admin.Controllers
             return View(viewModel);
         }
 
-        public ActionResult EditType(int typeId)
+        public virtual ActionResult EditType(int typeId)
         {
             TicketType type = _ticketService.GetTypeById(typeId);
 
@@ -280,7 +280,7 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditType(int typeId, CreateEditTypeModel viewModel)
+        public virtual ActionResult EditType(int typeId, CreateEditTypeModel viewModel)
         {
             TicketType type = _ticketService.GetTypeById(typeId);
             if (type == null) throw new NotImplementedException("Throw not found error");
