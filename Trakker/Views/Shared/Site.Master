@@ -61,6 +61,24 @@
      <script type="text/javascript">
          $(document).ready(function () {
 
+
+             $("div.Nav > ul > li, div.SubNav > ul > li").hover(function () {
+                 $(this).find(">a").addClass("Hover");
+                 $(this).find("ul").eq(0).show();
+
+                 var parentWidth = $(this).find("a:first").outerWidth(true);
+                 var listWidth = $(this).find("ul:first li").outerWidth();
+
+                 if (parentWidth > listWidth) {
+                     $(this).find("ul:first li").css({ "width": parentWidth - 2 });
+                 }
+             }, function () {
+                 $(this).find(">a").removeClass("Hover");
+                 $(this).find("ul").eq(0).hide();
+             });
+
+     
+             /*
              function closeMenu(target) {
                  target.parent().removeClass("Open");
                  target.parent().find("> ul").eq(0).hide();
@@ -88,9 +106,7 @@
                  if (parentWidth > listWidth) {
                      target.parent().find("ul:first li").css({ "width": parentWidth - 2 });
                  }
-             }
-
-
+             }             
 
              $("div.Nav > ul > li a.Toggle, div.SubNav > ul > li a.Toggle").click(function (event) {
                  var self = $(this);
@@ -109,7 +125,7 @@
                      closeMenu(self);
                      $('body').unbind("click");
                  }
-             });
+             });*/
          });
 
 

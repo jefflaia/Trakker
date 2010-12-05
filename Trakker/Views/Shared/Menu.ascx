@@ -2,48 +2,45 @@
 <ul>
     <li>
         <% if (Model.HasCurrentProject) { %>
-            <%= Html.RouteLink("Projects", "ProjectSummary", new { keyName = Model.CurrentProject.KeyName }) %>
+            <%= Html.ActionLink("Projects", MVC.Project.ProjectSummary(), new { keyName = Model.CurrentProject.KeyName.ToLower() })%>
         <% } else { %>
              <a href="">Projects</a>
              <!-- add project browser here -->
         <% } %>
-        <a href="#" class="Toggle">V</a>
         <ul class="UI-Shadow">
             <% if (Model.CurrentProject != null) { %>
                 <li class="Heading">Current Project</li>
-                <li><%= Html.RouteLink(Model.CurrentProject.Name, "ProjectSummary", new { keyName = Model.CurrentProject.KeyName }) %></li>
+                <li><%= Html.ActionLink(Model.CurrentProject.Name, MVC.Project.ProjectSummary(Model.CurrentProject.KeyName.ToLower()))%></li>
                 <li class="Break"></li>
             <% } %>
            
             <% if (Model.RecentProjects.Count > 0) { %>
                 <li class="Heading">Recent Projects</li>
                 <% foreach (var project in Model.RecentProjects) { %>
-                    <li><%= Html.RouteLink(project.Name, "ProjectSummary", new { keyName = project.KeyName }) %></li>
+                    <li><%= Html.ActionLink(project.Name, MVC.Project.ProjectSummary(project.KeyName.ToLower())) %></li>
                 <% } %>
             <% } %>
         </ul>
     </li>
     <li>
-       <%= Html.RouteLink("Tickets", "BrowseTickets", new { index = 1 })%>
-       <a href="#" class="Toggle">V</a>
+       <%= Html.RouteLink("Tickets", MVC.Ticket.BrowseTickets(1)) %>
         <ul class="UI-Shadow">
-            <li><%= Html.RouteLink("Create Ticket", "CreateTicket") %></li>
+            <li><%= Html.ActionLink("Create Ticket", MVC.Ticket.CreateTicket())%></li>
             <li class="Break"></li>    
             <li class="Heading">Newest Tickets</li>   
             <% foreach (var ticket in Model.Tickets)
                { %>               
-               <li><%= Html.RouteLink(Html.Exerpt(ticket.Summary, 30), "TicketDetails", new {keyName = ticket.KeyName}) %></li>
+               <li><%= Html.ActionLink(Html.Exerpt(ticket.Summary, 30), MVC.Ticket.TicketDetails(ticket.KeyName.ToLower())) %></li>
             <% } %>
             <li class="Break"></li>
-            <li><%= Html.RouteLink("View All", "BrowseTickets", new { index = 1 })%></li>
+            <li><%= Html.ActionLink("View All", MVC.Ticket.BrowseTickets(1)) %></li>
         </ul>
     </li>
     <li>
         <a href="#">Administration</a>
-        <a href="#" class="Toggle">V</a>
         <ul class="UI-Shadow">
-            <li><%= Html.RouteLink("Attributes", "AttributeIndex") %></li>
-            <li><%= Html.RouteLink("Management", "ManagementIndex") %></li>
+            <li><%= Html.ActionLink("Attributes", MVC.Admin.Attribute.Index()) %></li>
+            <li><%= Html.ActionLink("Management", MVC.Admin.Management.Index()) %></li>
         </ul>
     </li> 
 </ul>
