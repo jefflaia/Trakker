@@ -54,24 +54,24 @@ namespace Trakker.Areas.Admin.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public AttributeController Actions { get { return MVC.Admin.Attribute; } }
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Area = "Admin";
+        public readonly string Area = "admin";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Attribute";
+        public readonly string Name = "attribute";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionNamesClass ActionNames { get { return s_actions; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass {
-            public readonly string Index = "Index";
-            public readonly string CreatePriority = "CreatePriority";
-            public readonly string EditPriority = "EditPriority";
-            public readonly string CreateResolution = "CreateResolution";
-            public readonly string EditResolution = "EditResolution";
-            public readonly string CreateStatus = "CreateStatus";
-            public readonly string EditStatus = "EditStatus";
-            public readonly string CreateType = "CreateType";
-            public readonly string EditType = "EditType";
+            public readonly string Index = ("Index").ToLowerInvariant();
+            public readonly string CreatePriority = ("CreatePriority").ToLowerInvariant();
+            public readonly string EditPriority = ("EditPriority").ToLowerInvariant();
+            public readonly string CreateResolution = ("CreateResolution").ToLowerInvariant();
+            public readonly string EditResolution = ("EditResolution").ToLowerInvariant();
+            public readonly string CreateStatus = ("CreateStatus").ToLowerInvariant();
+            public readonly string EditStatus = ("EditStatus").ToLowerInvariant();
+            public readonly string CreateType = ("CreateType").ToLowerInvariant();
+            public readonly string EditType = ("EditType").ToLowerInvariant();
         }
 
 

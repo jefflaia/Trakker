@@ -1,5 +1,4 @@
 ﻿
-div#ProjectContainer h3{ font-weight: normal; border-bottom: 1px solid #ccc;}
 div#ProjectContainer div.Left {float:left; width: 49%;}
 div#ProjectContainer div.Right{float:right; width: 49%;}
 div#ProjectContainer div.Section{margin: 10px 0px 10px 0px; float:left; width: 100%;}

@@ -34,7 +34,7 @@ public static class MVC {
 namespace T4MVC {
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public class AdminClass {
-        public readonly string Name = "Admin";
+        public readonly string Name = "admin";
         public Trakker.Areas.Admin.Controllers.AttributeController Attribute = new Trakker.Areas.Admin.Controllers.T4MVC_AttributeController();
         public Trakker.Areas.Admin.Controllers.ManagementController Management = new Trakker.Areas.Admin.Controllers.T4MVC_ManagementController();
         public T4MVC.Admin.SharedController Shared = new T4MVC.Admin.SharedController();

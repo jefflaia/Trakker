@@ -2,7 +2,7 @@
 <ul>
     <li>
         <% if (Model.HasCurrentProject) { %>
-            <%= Html.ActionLink("Projects", MVC.Project.ProjectSummary(), new { keyName = Model.CurrentProject.KeyName.ToLower() })%>
+            <%= Html.ActionLink("Projects", MVC.Project.ProjectSummary(Model.CurrentProject.KeyName.ToLower()))%>
         <% } else { %>
              <a href="">Projects</a>
              <!-- add project browser here -->

@@ -2,30 +2,33 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <% Html.BeginForm(); %>
-        <h2>Edit User: <%: Model.Email %></h2>
-        <%= Html.FormRow()
-            .AddToLeft(Html.LabelFor(x => x.FirstName))
-            .AddToRight(Html.TextBoxFor(x => x.FirstName, Model.FirstName))
-            .AddToRight(Html.ValidationMessageFor(m => m.FirstName)) %>
+    <div class="Section">
+        <h1>Edit User: <em><%: Model.FirstName %> <%: Model.LastName %></em></h1>
 
-        <%= Html.FormRow()
-            .AddToLeft(Html.LabelFor(x => x.LastName))
-            .AddToRight(Html.TextBoxFor(x => x.LastName, Model.LastName))
-            .AddToRight(Html.ValidationMessageFor(m => m.LastName)) %>
+        <% Html.BeginForm(); %>
+            <%= Html.FormRow()
+                .AddToLeft(Html.LabelFor(x => x.FirstName))
+                .AddToRight(Html.TextBoxFor(x => x.FirstName, Model.FirstName))
+                .AddToRight(Html.ValidationMessageFor(m => m.FirstName)) %>
 
-        <%= Html.FormRow()
-            .AddToLeft(Html.LabelFor(x => x.Email))
-            .AddToRight(Html.TextBoxFor(x => x.Email, Model.Email))
-            .AddToRight(Html.ValidationMessageFor(m => m.Email)) %>
+            <%= Html.FormRow()
+                .AddToLeft(Html.LabelFor(x => x.LastName))
+                .AddToRight(Html.TextBoxFor(x => x.LastName, Model.LastName))
+                .AddToRight(Html.ValidationMessageFor(m => m.LastName)) %>
 
-        <%= Html.FormRow()
-            .AddToLeft(Html.LabelFor(x => x.RoleId))
-            .AddToRight(Html.DropDownListFor(x => x.RoleId, new SelectList(Model.Roles, "Id", "Name", Model.RoleId )))
-            .AddToRight(Html.ValidationMessageFor(m => m.RoleId))%>
+            <%= Html.FormRow()
+                .AddToLeft(Html.LabelFor(x => x.Email))
+                .AddToRight(Html.TextBoxFor(x => x.Email, Model.Email))
+                .AddToRight(Html.ValidationMessageFor(m => m.Email)) %>
 
-        <%= Html.FormRow()
-            .AddToRight(Html.SaveButton("Save", null))%>
-    <% Html.EndForm(); %>
+            <%= Html.FormRow()
+                .AddToLeft(Html.LabelFor(x => x.RoleId))
+                .AddToRight(Html.DropDownListFor(x => x.RoleId, new SelectList(Model.Roles, "Id", "Name", Model.RoleId )))
+                .AddToRight(Html.ValidationMessageFor(m => m.RoleId))%>
+
+            <%= Html.FormRow()
+                .AddToRight(Html.SaveButton("Save", null))%>
+        <% Html.EndForm(); %>
+    </div>
 
 </asp:Content>

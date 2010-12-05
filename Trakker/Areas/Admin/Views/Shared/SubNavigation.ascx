@@ -11,8 +11,8 @@
         </li>
         <li><%= Html.RouteLink("Management", MVC.Admin.Management.Index()) %>
             <ul class="UI-Shadow">
-                <li><%= Html.ActionLink("Users", MVC.Admin.Management.CreateUser()) %></li>
-                <li><%= Html.ActionLink("Projects", MVC.Admin.Management.CreateProject()) %></li>
+                <li><%= Html.ActionLink("Users", MVC.Admin.Management.BrowseUsers()) %></li>
+                <li><%= Html.ActionLink("Projects", MVC.Admin.Management.BrowseProjects()) %></li>
             </ul>
         </li>
     </ul>

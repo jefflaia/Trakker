@@ -108,6 +108,7 @@ namespace Trakker.Areas.Admin.Controllers
             {
                 _userService.Save(user);
                 UnitOfWork.Commit();
+                return RedirectToRoute(MVC.Admin.Management.ViewUser(userId));
             }
 
             viewModel.Roles = _userService.GetAllRoles();

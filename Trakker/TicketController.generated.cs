@@ -66,20 +66,20 @@ namespace Trakker.Controllers {
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Ticket";
+        public readonly string Name = "ticket";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionNamesClass ActionNames { get { return s_actions; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass {
-            public readonly string TicketDetails = "TicketDetails";
-            public readonly string BrowseTickets = "BrowseTickets";
-            public readonly string CreateTicket = "CreateTicket";
-            public readonly string EditTicket = "EditTicket";
-            public readonly string CreateComment = "CreateComment";
-            public readonly string EditComment = "EditComment";
-            public readonly string Comment = "Comment";
+            public readonly string TicketDetails = ("TicketDetails").ToLowerInvariant();
+            public readonly string BrowseTickets = ("BrowseTickets").ToLowerInvariant();
+            public readonly string CreateTicket = ("CreateTicket").ToLowerInvariant();
+            public readonly string EditTicket = ("EditTicket").ToLowerInvariant();
+            public readonly string CreateComment = ("CreateComment").ToLowerInvariant();
+            public readonly string EditComment = ("EditComment").ToLowerInvariant();
+            public readonly string Comment = ("Comment").ToLowerInvariant();
         }
 
 

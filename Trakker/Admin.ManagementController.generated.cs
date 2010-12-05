@@ -59,25 +59,25 @@ namespace Trakker.Areas.Admin.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ManagementController Actions { get { return MVC.Admin.Management; } }
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Area = "Admin";
+        public readonly string Area = "admin";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Management";
+        public readonly string Name = "management";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionNamesClass ActionNames { get { return s_actions; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass {
-            public readonly string Index = "Index";
-            public readonly string BrowseUsers = "BrowseUsers";
-            public readonly string ViewUser = "ViewUser";
-            public readonly string CreateUser = "CreateUser";
-            public readonly string EditUser = "EditUser";
-            public readonly string EditUserPassword = "EditUserPassword";
-            public readonly string BrowseProjects = "BrowseProjects";
-            public readonly string ViewProject = "ViewProject";
-            public readonly string CreateProject = "CreateProject";
-            public readonly string EditProject = "EditProject";
+            public readonly string Index = ("Index").ToLowerInvariant();
+            public readonly string BrowseUsers = ("BrowseUsers").ToLowerInvariant();
+            public readonly string ViewUser = ("ViewUser").ToLowerInvariant();
+            public readonly string CreateUser = ("CreateUser").ToLowerInvariant();
+            public readonly string EditUser = ("EditUser").ToLowerInvariant();
+            public readonly string EditUserPassword = ("EditUserPassword").ToLowerInvariant();
+            public readonly string BrowseProjects = ("BrowseProjects").ToLowerInvariant();
+            public readonly string ViewProject = ("ViewProject").ToLowerInvariant();
+            public readonly string CreateProject = ("CreateProject").ToLowerInvariant();
+            public readonly string EditProject = ("EditProject").ToLowerInvariant();
         }
 
 

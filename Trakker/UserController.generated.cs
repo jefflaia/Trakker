@@ -36,15 +36,15 @@ namespace Trakker.Controllers {
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "User";
+        public readonly string Name = "user";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionNamesClass ActionNames { get { return s_actions; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass {
-            public readonly string Login = "Login";
-            public readonly string Logout = "Logout";
+            public readonly string Login = ("Login").ToLowerInvariant();
+            public readonly string Logout = ("Logout").ToLowerInvariant();
         }
 
 
