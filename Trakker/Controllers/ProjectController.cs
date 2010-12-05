@@ -20,7 +20,7 @@ namespace Trakker.Controllers
             : base(projectService, ticketService, userService)
         {
         }
-
+        
         #region Project
         public virtual ActionResult ProjectSummary(string keyName)
         {
