@@ -16,6 +16,8 @@
     using Trakker.Core.IoC;
     using System.ComponentModel;
     using Telerik.Web.Mvc;
+    using Reco;
+    using Reco.Compressors.StyleSheet;
 
 
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
@@ -34,6 +36,7 @@
             //routes.MapRoute("Pagination", "paginator/{count}/{page}/{pageSize}", new { controller = "Nav", action = "TicketListPagination" });
                                   
             routes.MapRoute("Default", "",  new { controller = "Ticket", action = "BrowseTickets"});
+            routes.MapRoute("CSS", "{fileName}.css", new { controller = "Resource", action = "CSS" });
             routes.MapRoute(null, "{controller}/{action}", new string[]{ "Trakker.Controllers" });
 
         }
@@ -47,13 +50,19 @@
             RegisterRoutes(RouteTable.Routes);
             //RouteDebug.RouteDebugger.RewriteRoutesForTesting(RouteTable.Routes);
 
-                      
+
+            RecoAssets.StyleSheet()
+                .Add("~/Content/Main.css")
+                .Media(MediaType.Screen)
+                .Combine(true)
+                .Compress(true)
+                .Version(true)
+                .SetCompressor(new MsCompressor());
 
             SharedWebAssets
                 .StyleSheets(config => config.AddGroup("css", group => group
                     .Add("~/Content/Main.css")
                     .Add("~/Content/Project.css")
-                    .Add("~/Content/Theme.css")
                     .Add("telerik.common.css")
                     .Add("telerik.vista.css")
                     .Combined(true)
