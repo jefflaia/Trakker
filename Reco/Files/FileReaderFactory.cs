@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace Reco.Files
+namespace ResourceCompiler.Files
 {
     public class FileReaderFactory: IFileReaderFactory
     {

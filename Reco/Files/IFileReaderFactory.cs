@@ -1,4 +1,4 @@
-namespace Reco.Files
+namespace ResourceCompiler.Files
 {
     public interface IFileReaderFactory
     {

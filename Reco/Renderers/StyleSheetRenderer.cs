@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Reco.Assets;
+using ResourceCompiler.Assets;
 using System.Web;
 
-namespace Reco.Renderers
+namespace ResourceCompiler.Renderers
 {
     public class StyleSheetRenderer : IStyleSheetRenderer
     {
@@ -35,7 +35,7 @@ namespace Reco.Renderers
             return String.Format(_template, media, url);
         }
 
-        public string GetFileContent()
+        public string Generate()
         {
             var content = new StringBuilder();
             foreach (var file in _registrar.GetFiles())
@@ -43,7 +43,7 @@ namespace Reco.Renderers
                 content.Append(file.GetContents());
             }
 
-            return content.ToString();
+            return CompressContent(content.ToString());
         }
 
         private string CompressContent(string content)

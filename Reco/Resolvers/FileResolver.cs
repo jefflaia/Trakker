@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Web;
 
-namespace Reco.FileResolvers
+namespace ResourceCompiler.FileResolvers
 {
     public class FileResolver: IFileResolver
     {

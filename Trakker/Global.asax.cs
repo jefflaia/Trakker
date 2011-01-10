@@ -16,8 +16,8 @@
     using Trakker.Core.IoC;
     using System.ComponentModel;
     using Telerik.Web.Mvc;
-    using Reco;
-    using Reco.Compressors.StyleSheet;
+    using ResourceCompiler;
+    using ResourceCompiler.Compressors.StyleSheet;
 
 
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
@@ -53,6 +53,7 @@
 
             RecoAssets.StyleSheet()
                 .Add("~/Content/Main.css")
+                .Add("~/Content/Project.css")
                 .Media(MediaType.Screen)
                 .Combine(true)
                 .Compress(true)

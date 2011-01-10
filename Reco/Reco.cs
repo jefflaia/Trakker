@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Reco.Renderers;
+using ResourceCompiler.Renderers;
 
-namespace Reco
+namespace ResourceCompiler
 {
-    public class Reco
+    public static class Reco
     {
-        public IStyleSheetRenderer StyleSheet()
+        public static IStyleSheetRenderer StyleSheet()
         {
             return new StyleSheetRenderer(RecoAssets.StyleSheet());
         }

@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Reco.JavaScript;
+using ResourceCompiler.JavaScript;
 using System.Web;
-using Reco.Assets;
+using ResourceCompiler.Assets;
 
-namespace Reco
+namespace ResourceCompiler
 {
     public class RecoAssets
     {

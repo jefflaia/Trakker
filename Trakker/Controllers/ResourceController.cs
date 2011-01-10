@@ -1,39 +1,27 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Text;
+using System.Web.UI.MobileControls;
+using Telerik.Web.Mvc;
+using ResourceCompiler;
 
 namespace Trakker.Controllers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
-    using System.Web.Mvc;
-    using System.Text;
-    using System.Web.UI.MobileControls;
-    using Telerik.Web.Mvc;
-    using Reco;
+
 
     //[CompressFilter]
-    public class ResourceController : Controller
+    public partial class ResourceController : Controller
     {
         
-
-        static ContentResult cr = null;
-        public static IList<string> cssFiles;
-
-        public ResourceController()
-        {
-            cssFiles = new List<string>();
-            cssFiles.Add("Main.css");
-            cssFiles.Add("Project.css");
-            cssFiles.Add("Theme.css");
-        }
-
         //[CacheFilter(Duration = 9999999)]
-        public ContentResult CSS(string fileName)
+        public virtual ContentResult CSS(string fileName)
         {
 
             return new ContentResult() {
-                Content = string.Empty
+                Content = Reco.StyleSheet().Generate()
             };
             /*
             try

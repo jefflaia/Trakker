@@ -1,6 +1,6 @@
 using System;
 
-namespace Reco.Files
+namespace ResourceCompiler.Files
 {
     public interface IFileReader: IDisposable
     {

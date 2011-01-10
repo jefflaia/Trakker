@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Reco.JavaScript
+namespace ResourceCompiler.JavaScript
 {
     public class JavaScriptRegistrar : IJavaScriptRegistrar
     {

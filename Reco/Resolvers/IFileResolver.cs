@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Reco.FileResolvers
+namespace ResourceCompiler.FileResolvers
 {
     public interface IFileResolver
     {        

@@ -1,4 +1,4 @@
-namespace Reco.Compressors.StyleSheet
+namespace ResourceCompiler.Compressors.StyleSheet
 {
     public interface ICssCompressor
     {

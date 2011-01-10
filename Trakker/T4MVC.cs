@@ -26,6 +26,7 @@ public static class MVC {
     public static AdminClass Admin { get { return s_Admin; } }
     public static Trakker.Controllers.NavController Nav = new Trakker.Controllers.T4MVC_NavController();
     public static Trakker.Controllers.ProjectController Project = new Trakker.Controllers.T4MVC_ProjectController();
+    public static Trakker.Controllers.ResourceController Resource = new Trakker.Controllers.T4MVC_ResourceController();
     public static Trakker.Controllers.TicketController Ticket = new Trakker.Controllers.T4MVC_TicketController();
     public static Trakker.Controllers.UserController User = new Trakker.Controllers.T4MVC_UserController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
@@ -257,6 +258,16 @@ public class T4MVC_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResul
     }
      
     public override void ExecuteResult(System.Web.Mvc.ControllerContext context) { }
+    
+    public string Controller { get; set; }
+    public string Action { get; set; }
+    public RouteValueDictionary RouteValueDictionary { get; set; }
+}
+[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+public class T4MVC_ContentResult : System.Web.Mvc.ContentResult, IT4MVCActionResult {
+    public T4MVC_ContentResult(string area, string controller, string action): base()  {
+        this.InitMVCT4Result(area, controller, action);
+    }
     
     public string Controller { get; set; }
     public string Action { get; set; }
@@ -543,6 +554,7 @@ namespace Links {
     
         public static readonly string Main_css = Url("Main.css");
         public static readonly string Project_css = Url("Project.css");
+        public static readonly string Theme_css = Url("Theme.css");
     }
 
 }

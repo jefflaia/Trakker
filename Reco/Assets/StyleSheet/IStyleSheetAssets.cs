@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Reco.Compressors.StyleSheet;
-using Reco.Files;
+using ResourceCompiler.Compressors.StyleSheet;
+using ResourceCompiler.Files;
 
-namespace Reco.Assets
+namespace ResourceCompiler.Assets
 {
     public interface IStyleSheetAssets
     {

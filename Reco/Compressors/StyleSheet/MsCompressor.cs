@@ -1,6 +1,6 @@
 using Microsoft.Ajax.Utilities;
 
-namespace Reco.Compressors.StyleSheet
+namespace ResourceCompiler.Compressors.StyleSheet
 {
     public class MsCompressor: ICssCompressor
     {

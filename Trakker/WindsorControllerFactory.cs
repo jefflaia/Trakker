@@ -34,7 +34,6 @@
 
             foreach (Type t in controllerTypes)
             {
-                Console.Write(t.FullName);
                 container.AddComponentLifeStyle(t.FullName, t, LifestyleType.Transient);
             }
         }
@@ -42,7 +41,15 @@
         // Constructs the controller instance needed to service each request this part is Updated to be compatible with MVC 2
         protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
         {
-            return (IController)container.Resolve(controllerType);
+            if (controllerType != null)
+            {
+                return (IController)container.Resolve(controllerType);
+            }
+            else
+            {
+                return base.GetControllerInstance(requestContext, controllerType);
+            }
+
         }
       
     }

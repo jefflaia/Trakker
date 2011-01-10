@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Web;
-using Reco.Compressors.StyleSheet;
-using Reco.Files;
+using ResourceCompiler.Compressors.StyleSheet;
+using ResourceCompiler.Files;
 using System.Web.Routing;
 
-namespace Reco.Assets
+namespace ResourceCompiler.Assets
 {
     public abstract class Assets
     {

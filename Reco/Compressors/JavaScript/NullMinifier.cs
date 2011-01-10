@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Reco.JavaScript.Minifiers
+namespace ResourceCompiler.JavaScript.Minifiers
 {
     public class NullMinifier: IJavaScriptCompressor
     {

@@ -8,7 +8,7 @@
     <ProjectGuid>{B21AFA3C-07B0-4BA8-A3F4-29D45A02D0C8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Reco</RootNamespace>
+    <RootNamespace>ResourceCompiler</RootNamespace>
     <AssemblyName>Reco</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

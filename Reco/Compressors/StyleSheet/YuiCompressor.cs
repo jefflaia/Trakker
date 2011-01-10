@@ -1,7 +1,7 @@
 
 using Yahoo.Yui.Compressor;
 
-namespace Reco.Compressors.StyleSheet
+namespace ResourceCompiler.Compressors.StyleSheet
 {
     public class YuiCompressor: ICssCompressor
     {

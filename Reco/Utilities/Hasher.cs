@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Reco.Utilities
+namespace ResourceCompiler.Utilities
 {
     public class Hasher
     {

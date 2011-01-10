@@ -18,8 +18,7 @@
         .Render();
 %>
  
-
-
+<link rel="stylesheet" href="/somerandomname.css" type="text/css" />
  
 </head>
 <body>

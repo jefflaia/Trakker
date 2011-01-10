@@ -1,5 +1,5 @@
 
-namespace Reco.Files
+namespace ResourceCompiler.Files
 {
     using System.IO;
     using System;

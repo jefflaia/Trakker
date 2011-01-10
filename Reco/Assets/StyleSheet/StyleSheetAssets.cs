@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Reco.Compressors.StyleSheet;
+using ResourceCompiler.Compressors.StyleSheet;
 using System.Web;
 using System.IO;
-using Reco.FileResolvers;
-using Reco.Files;
-using Reco.Assets;
+using ResourceCompiler.FileResolvers;
+using ResourceCompiler.Files;
+using ResourceCompiler.Assets;
 
-namespace Reco.Assets
+namespace ResourceCompiler.Assets
 {
 
 
