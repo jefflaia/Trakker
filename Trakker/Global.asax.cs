@@ -61,15 +61,6 @@
                 .SetCompressor(new MsCompressor());
 
             SharedWebAssets
-                .StyleSheets(config => config.AddGroup("css", group => group
-                    .Add("~/Content/Main.css")
-                    .Add("~/Content/Project.css")
-                    .Add("telerik.common.css")
-                    .Add("telerik.vista.css")
-                    .Combined(true)
-                 ));
-
-            SharedWebAssets
                 .Scripts(config => config.AddGroup("js", group => group
                     .Add("jquery-1.4.2.min.js")
                     .Add("telerik.common.min.js")

@@ -15,7 +15,6 @@ namespace ResourceCompiler.Assets
 
     public class StyleSheetAssets : Assets, IStyleSheetAssets
     {
-        protected ICssCompressor _cssCompressor;
         
         public StyleSheetAssets() : base()
         {
@@ -24,7 +23,7 @@ namespace ResourceCompiler.Assets
             _files = new List<IResource>();
         }
 
-        public StyleSheetAssets(ICssCompressor compressor)
+        public StyleSheetAssets(IStyleSheetCompressor compressor)
             : base()
         {
             MediaType = "screen";
@@ -35,7 +34,7 @@ namespace ResourceCompiler.Assets
         public bool Combined { get; set; }
         public bool Compressed { get; set; }
         public string MediaType { get; set; }
-        public ICssCompressor Compressor { get; set; }
+        public IStyleSheetCompressor Compressor { get; set; }
 
         public IStyleSheetAssets Add(string path)
         {
@@ -87,9 +86,9 @@ namespace ResourceCompiler.Assets
             return this;
         }
 
-        public IStyleSheetAssets SetCompressor(ICssCompressor compressor)
+        public IStyleSheetAssets SetCompressor(IStyleSheetCompressor compressor)
         {
-            _cssCompressor = compressor;
+            Compressor = compressor;
             return this;
         }
 

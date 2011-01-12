@@ -1,6 +1,6 @@
 namespace ResourceCompiler.Compressors.StyleSheet
 {
-    public interface ICssCompressor
+    public interface IStyleSheetCompressor
     {
         string Identifier { get; }
         string CompressContent(string content);

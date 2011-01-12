@@ -11,12 +11,6 @@
     <title>Trakker</title>
 
 
-<% 
-    Html.Telerik().StyleSheetRegistrar()
-        .DefaultGroup(dg => dg.Enabled(false))
-        .StyleSheets(css => css.AddSharedGroup("css"))
-        .Render();
-%>
  
 <link rel="stylesheet" href="/somerandomname.css" type="text/css" />
  

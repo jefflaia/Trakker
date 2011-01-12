@@ -14,7 +14,7 @@ namespace ResourceCompiler.Assets
         IStyleSheetAssets Version(bool value);
         IStyleSheetAssets Add(string path);
         IStyleSheetAssets Media(string value);
-        IStyleSheetAssets SetCompressor(ICssCompressor compressor);
+        IStyleSheetAssets SetCompressor(IStyleSheetCompressor compressor);
         IStyleSheetAssets RendererUrl(string url);
         IList<IResource> GetFiles();
 
@@ -22,7 +22,7 @@ namespace ResourceCompiler.Assets
         bool Combined { get; set; }
         bool Compressed { get; set; }
         string MediaType { get; set; }
-        ICssCompressor Compressor { get; set; }
+        IStyleSheetCompressor Compressor { get; set; }
         string GetLastWriteTimestamp();
     }
 }

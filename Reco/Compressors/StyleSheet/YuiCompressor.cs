@@ -3,7 +3,7 @@ using Yahoo.Yui.Compressor;
 
 namespace ResourceCompiler.Compressors.StyleSheet
 {
-    public class YuiCompressor: ICssCompressor
+    public class YuiCompressor: IStyleSheetCompressor
     {
         public static string Identifier
         {
@@ -15,7 +15,7 @@ namespace ResourceCompiler.Compressors.StyleSheet
             return CssCompressor.Compress(content, 0, CssCompressionType.StockYuiCompressor);
         }
 
-        string ICssCompressor.Identifier
+        string IStyleSheetCompressor.Identifier
         {
             get { return Identifier; }
         }

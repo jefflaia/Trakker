@@ -7,6 +7,7 @@ using System.Text;
 using System.Web.UI.MobileControls;
 using Telerik.Web.Mvc;
 using ResourceCompiler;
+using Trakker.Filters;
 
 namespace Trakker.Controllers
 {

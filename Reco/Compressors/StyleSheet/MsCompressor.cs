@@ -2,7 +2,7 @@ using Microsoft.Ajax.Utilities;
 
 namespace ResourceCompiler.Compressors.StyleSheet
 {
-    public class MsCompressor: ICssCompressor
+    public class MsCompressor: IStyleSheetCompressor
     {
         public static string Identifier
         {
@@ -15,7 +15,7 @@ namespace ResourceCompiler.Compressors.StyleSheet
             return minifier.MinifyStyleSheet(content);
         }
 
-        string ICssCompressor.Identifier
+        string IStyleSheetCompressor.Identifier
         {
             get { return Identifier; }
         }

@@ -132,6 +132,7 @@
     <Compile Include="Attributes\ActionFilters\AuthenticateAttribute.cs" />
     <Compile Include="Attributes\ActionFilters\UserInRoleAttribute.cs" />
     <Compile Include="Attributes\BaseAuthorizationActionFilterAttribute.cs" />
+    <Compile Include="Filters\CompressFilter.cs" />
     <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="Helpers\Extensions\HtmlHelper\ButtonHtmlHelperExtensions.cs" />
     <Compile Include="Helpers\Extensions\TextAreaExtensions.cs" />

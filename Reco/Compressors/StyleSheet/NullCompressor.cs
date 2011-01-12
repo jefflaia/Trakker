@@ -1,6 +1,6 @@
 namespace ResourceCompiler.Compressors.StyleSheet
 {
-    public class NullCompressor: ICssCompressor
+    public class NullCompressor: IStyleSheetCompressor
     {
         public static string Identifier
         {
@@ -12,7 +12,7 @@ namespace ResourceCompiler.Compressors.StyleSheet
             return content;
         }
 
-        string ICssCompressor.Identifier
+        string IStyleSheetCompressor.Identifier
         {
             get { return Identifier; }
         }        
