@@ -6,8 +6,6 @@ namespace ResourceCompiler.Files
 
     public class Resource : IResource
     {
-        protected IFileReader _reader;
-
         public string FilePath { get; private set; }
         public string FileType { get; private set; }
 
@@ -15,19 +13,6 @@ namespace ResourceCompiler.Files
         {
             FilePath = filePath;
             FileType = fileType;
-            _reader = new FileReader(filePath);
-        }
-
-        public Resource(string filePath, string fileType, IFileReader reader)
-        {
-            FilePath = filePath;
-            FileType = fileType;
-            _reader = reader;
-        }
-
-        public string GetContents()
-        {
-            return _reader.ReadToEnd();
         }
 
         public bool Exists()

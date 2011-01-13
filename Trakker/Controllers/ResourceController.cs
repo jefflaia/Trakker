@@ -20,6 +20,7 @@ namespace Trakker.Controllers
         //[CacheFilter(Duration = 9999999)]
         public virtual ContentResult CSS(string fileName)
         {
+            HttpContext.Response.ContentType = "text/css";
 
             return new ContentResult() {
                 Content = Reco.StyleSheet().Generate()

@@ -85,6 +85,7 @@
     <Compile Include="Resolvers\HttpResolver.cs" />
     <Compile Include="Resolvers\IFileResolver.cs" />
     <Compile Include="Utilities\Hasher.cs" />
+    <Compile Include="Utilities\StyleSheetPathRewriter.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

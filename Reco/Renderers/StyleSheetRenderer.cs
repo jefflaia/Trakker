@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using ResourceCompiler.Assets;
 using System.Web;
+using ResourceCompiler.Files;
 
 namespace ResourceCompiler.Renderers
 {
@@ -40,10 +41,16 @@ namespace ResourceCompiler.Renderers
             var content = new StringBuilder();
             foreach (var file in _registrar.GetFiles())
             {
-                content.Append(file.GetContents());
+                content.Append(GetResourceContent(file));
             }
 
             return CompressContent(content.ToString());
+        }
+
+        private string GetResourceContent(IResource resource)
+        {
+            FileReader reader = new FileReader(resource.FilePath);
+            return reader.ReadToEnd();
         }
 
         private string CompressContent(string content)
