@@ -13,11 +13,11 @@ button:focus{outline:none;}
 button::-moz-focus-inner{border:0px;}
 
 /* layout */
-div#Header{font-size: 1.2em; width: 99%; padding: 5px 0.5%; border-bottom: 1px solid #b0b0b0; height: 35px; background-image: url(/Content/Images/UI-Backgrounds.png); background-position: 0px 0px;}
+div#Header{font-size: 1.2em; width: 99%; padding: 5px 0.5%; border-bottom: 1px solid #b0b0b0; height: 35px; background-image: url(Images/UI-Backgrounds.png); background-position: 0px 0px;}
 div#Header div.Right{float: right; width: 400px; margin-right: 20px;}
 div#Header div.Right div{width: 100%; text-align: right;}
 
-div#SubHeader{font-size: 1.2em; width: 100%; background-image:url(/Content/Images/UI-Backgrounds.png); background-position: 0px -49px; height: 30px; border-bottom: 1px solid #667e9a;}
+div#SubHeader{font-size: 1.2em; width: 100%; background-image:url(/Images/UI-Backgrounds.png); background-position: 0px -49px; height: 30px; border-bottom: 1px solid #667e9a;}
 div#Content{ width: 100%; background-color: White; display:inline-block; font-size: 1.2em;}
 div#Content div.InnerBorder{ position: relative; margin: 10px 20px; background-color: White; min-height: 500px;}
 div#Footer{ font-size: 1.2em; background-color: #F7F7F7; border-top: 1px solid #bbb; width: 100%; min-height: 50px;}
@@ -65,7 +65,7 @@ div.SubNav a.Current{ font-weight: bold; }*/
 
 
 /* Forms */
-select, textarea, input {color: inherit; border: 1px solid #bbb; margin: 2px !important; padding: 2px 2px; background-color:#FFFFFF; background-image:url(Images/Field-Background.png); background-repeat:repeat-x;
+select, textarea, input {color: inherit; border: 1px solid #bbb; margin: 2px !important; padding: 2px 2px; background-color:#FFFFFF; background-image:url(/Images/Field-Background.png); background-repeat:repeat-x;
 -moz-border-radius: 2px; min-width: 200px;}
 select { min-width: 206px;}                
 select.input-validation-error, textarea.input-validation-error, input.input-validation-error{background-color: #fff7f8; border: 1px dashed #ff3131;}
@@ -88,7 +88,7 @@ form div.validation-summary-errors li{margin-left: 30px; }
 
 /* UI Buttons */
 .UI-Button{float:left; margin: 2px 0px; color: inherit; display:inline-block; height: 23px; line-height: 23px; border:1px solid #ccc; padding: 3px 5px 2px 5px; 
-background-image: url(Images/UI-Backgrounds.png);}
+background-image: url(/Images/UI-Backgrounds.png);}
 .UI-Button:hover{border-color: #999; background-position: 0px  -80px; -moz-box-shadow: 0 0 3px #aaa; -webkit-box-shadow: #aaa 0 0 3px;}
 .UI-Button:active{position: relative; top: 1px;  }
 
@@ -100,7 +100,7 @@ background-image: url(Images/UI-Backgrounds.png);}
 .UI-Button.UI-Border-Bottom{-moz-border-radius:0px 0px 5px 5px; -webkit-border-radius:0px 0px 5px 5px; margin: 0px 3px 2px 3px;}
 
 /* Icons */
-.UI-Button div.Icon{width:16px; height: 16px; margin: 0px 5px 0px 5px; float:left; border:none; background-image: url(Images/Icons.png);}
+.UI-Button div.Icon{width:16px; height: 16px; margin: 0px 5px 0px 5px; float:left; border:none; background-image: url(/Images/Icons.png);}
 
 .UI-Button div.Icon.Binocular{ background-position: 0 0; width: 16px; height: 16px; } 
 .UI-Button div.Icon.CommentAdd{ background-position: 0 -32px; width: 16px; height: 16px; } 

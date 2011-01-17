@@ -49,7 +49,7 @@ namespace ResourceCompiler.Assets
 
         protected bool FileExists(IResource inputFile)
         {
-            return _files.Any<IResource>(i => i != inputFile && i.FilePath.Equals(inputFile.FilePath));
+            return _files.Any<IResource>(i => i != inputFile && i.Path.Equals(inputFile.Path));
         }
     }    
 }

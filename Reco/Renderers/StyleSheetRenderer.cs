@@ -5,6 +5,7 @@ using System.Text;
 using ResourceCompiler.Assets;
 using System.Web;
 using ResourceCompiler.Files;
+using ResourceCompiler.Utilities;
 
 namespace ResourceCompiler.Renderers
 {
@@ -38,18 +39,28 @@ namespace ResourceCompiler.Renderers
 
         public string Generate()
         {
-            var content = new StringBuilder();
+            StringBuilder content = new StringBuilder();
+            string outputContent = String.Empty;
+
             foreach (var file in _registrar.GetFiles())
             {
-                content.Append(GetResourceContent(file));
+                string styleSheetContent = GetResourceContent(file);
+                styleSheetContent = StyleSheetPathRewriter.RewriteCssPaths(AppDomain.CurrentDomain.BaseDirectory + "Content", file.Path, styleSheetContent);
+                content.Append(styleSheetContent);
             }
 
-            return CompressContent(content.ToString());
+            outputContent = content.ToString();
+            if (_registrar.Compressed)
+            {
+                outputContent = CompressContent(content.ToString());
+            }
+
+            return outputContent;
         }
 
         private string GetResourceContent(IResource resource)
         {
-            FileReader reader = new FileReader(resource.FilePath);
+            FileReader reader = new FileReader(resource.Path);
             return reader.ReadToEnd();
         }
 

@@ -56,7 +56,7 @@
                 .Add("~/Content/Project.css")
                 .Media(MediaType.Screen)
                 .Combine(true)
-                .Compress(true)
+                .Compress(false)
                 .Version(true)
                 .SetCompressor(new MsCompressor());
 

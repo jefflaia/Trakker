@@ -6,30 +6,30 @@ namespace ResourceCompiler.Files
 
     public class Resource : IResource
     {
-        public string FilePath { get; private set; }
-        public string FileType { get; private set; }
+        public string Path { get; private set; }
+        public string Type { get; private set; }
 
-        public Resource(string filePath, string fileType)
+        public Resource(string path, string type)
         {
-            FilePath = filePath;
-            FileType = fileType;
+            Path = path;
+            Type = type;
         }
 
         public bool Exists()
         {
-            return File.Exists(FilePath);
+            return File.Exists(Path);
         }
 
         public DateTime GetLastWrite()
         {
-            string fileName = FilePath;
+            string fileName = Path;
             DateTime lastWriteDateTime = DateTime.MinValue;
             try
             {
                 if (fileName.StartsWith("~"))
                 {
                     fileName = fileName.Remove(0);
-                    fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
+                    fileName = String.Concat(AppDomain.CurrentDomain.BaseDirectory, fileName);
                 }
                 lastWriteDateTime = File.GetLastWriteTime(fileName);
             }

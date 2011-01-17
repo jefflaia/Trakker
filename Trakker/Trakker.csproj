@@ -181,9 +181,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Validation.resx</DependentUpon>
     </Compile>
-    <Compile Include="ResourceController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="Routes\ProjectRoutes.cs" />
     <Compile Include="Routes\TicketRoutes.cs" />
     <Compile Include="Routes\UserRoutes.cs" />

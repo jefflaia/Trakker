@@ -29,19 +29,24 @@ namespace ResourceCompiler.Utilities
 
         private static IEnumerable<string> FindDistinctRelativePathsIn(string css)
         {
-            var matches = Regex.Matches(css, @"url\([""']{0,1}(.+?)[""']{0,1}\)", RegexOptions.IgnoreCase);
             var matchesHash = new HashSet<string>();
+            var matches = Regex.Matches(css, @"url\([""']{0,1}(.+?)[""']{0,1}\)", RegexOptions.IgnoreCase);
+            
             foreach (Match match in matches)
             {
                 var path = match.Groups[1].Captures[0].Value;
-                if (!path.StartsWith("/"))
+                
+                //remove the starting slash if it exists
+                if (path.StartsWith("/"))
                 {
-                    if (matchesHash.Add(path))
-                    {
-                        yield return path;
-                    }
+                    path = path.Substring(1);
                 }
 
+                //if the path does not already exist, add it.
+                if (matchesHash.Add(path))
+                {
+                    yield return path;
+                }
             }
         }
     }

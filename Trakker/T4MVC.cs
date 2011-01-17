@@ -26,7 +26,6 @@ public static class MVC {
     public static AdminClass Admin { get { return s_Admin; } }
     public static Trakker.Controllers.NavController Nav = new Trakker.Controllers.T4MVC_NavController();
     public static Trakker.Controllers.ProjectController Project = new Trakker.Controllers.T4MVC_ProjectController();
-    public static Trakker.Controllers.ResourceController Resource = new Trakker.Controllers.T4MVC_ResourceController();
     public static Trakker.Controllers.TicketController Ticket = new Trakker.Controllers.T4MVC_TicketController();
     public static Trakker.Controllers.UserController User = new Trakker.Controllers.T4MVC_UserController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
