@@ -74,8 +74,8 @@
     <Compile Include="Compressors\JavaScript\MsMinifier.cs" />
     <Compile Include="Compressors\JavaScript\NullMinifier.cs" />
     <Compile Include="Compressors\JavaScript\YuiMinifier.cs" />
-    <Compile Include="Assets\JavaScript\IJavaScriptRegistrar.cs" />
-    <Compile Include="Assets\JavaScript\JavaScriptRegistrar.cs" />
+    <Compile Include="Assets\JavaScript\IJavaScriptAssets.cs" />
+    <Compile Include="Assets\JavaScript\JavaScriptAssets.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Files\FileReader.cs" />
     <Compile Include="Files\FileReaderFactory.cs" />

@@ -324,8 +324,12 @@
     <Content Include="Content\Images\TableBackgrounds.png" />
     <Content Include="Content\Images\UI-Backgrounds.png" />
     <Content Include="Content\Images\UI-Button.png" />
-    <Content Include="Content\Project.css" />
-    <Content Include="Content\Theme.css" />
+    <EmbeddedResource Include="Content\Project.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Content\Theme.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\2010.2.825\jquery-1.4.2.min.js" />
     <Content Include="Scripts\2010.2.825\jquery.validate.min.js" />
     <Content Include="Scripts\2010.2.825\telerik.autocomplete.min.js" />
@@ -381,7 +385,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Content\Main.css" />
+    <Content Include="Content\Main.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />

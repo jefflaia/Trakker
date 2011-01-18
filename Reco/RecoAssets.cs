@@ -13,14 +13,14 @@ namespace ResourceCompiler
     {
         //singleton instantiation to avoid using lock
         private static IStyleSheetAssets _styleSheetRegistrar = new StyleSheetAssets();
-        private static IJavaScriptRegistrar _jsRegistrar = new JavaScriptRegistrar();
+        private static IJavaScriptAssets _jsRegistrar = new JavaScriptAssets();
 
         public static IStyleSheetAssets StyleSheet()
         {
             return _styleSheetRegistrar;
         }
 
-        public static IJavaScriptRegistrar JavaScript()
+        public static IJavaScriptAssets JavaScript()
         {
             return _jsRegistrar;
         }

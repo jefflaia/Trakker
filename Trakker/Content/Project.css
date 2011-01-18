@@ -11,5 +11,3 @@ div#ProjectContainer div.Issues li{ margin: 10px 0px 10px 15px; list-style: squa
 div#ProjectContainer div.Issues li span{color: #666; }
 div#ProjectContainer div.Issues li p.Left{width: 49%; color:#666; float: left; }
 div#ProjectContainer div.Issues li p.Right{width: 49%; text-align: right; float:right;}
-
-

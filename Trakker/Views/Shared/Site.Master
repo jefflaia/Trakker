@@ -12,7 +12,7 @@
 
 
  
-<link rel="stylesheet" href="/somerandomname.css" type="text/css" />
+<%= Reco.Link() %>
  
 </head>
 <body>

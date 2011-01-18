@@ -11,12 +11,12 @@ namespace ResourceCompiler.Renderers
 {
     public class StyleSheetRenderer : IStyleSheetRenderer
     {
-        private readonly IStyleSheetAssets _registrar;
+        private readonly IStyleSheetAssets _assets;
         protected const string _template = "<link rel=\"stylesheet\" type=\"text/css\" {0} href=\"{1}\" />";
 
-        public StyleSheetRenderer(IStyleSheetAssets registrar)
+        public StyleSheetRenderer(IStyleSheetAssets assets)
         {
-            _registrar = registrar;
+            _assets = assets;
         }
         
         public string Render()
@@ -25,13 +25,13 @@ namespace ResourceCompiler.Renderers
             string version = string.Empty;
             string url = "{0}?v={1}";
 
-            if (_registrar.Versioned)
+            if (_assets.Versioned)
             {
-                version = _registrar.GetLastWriteTimestamp();
+                version = _assets.GetLastWriteTimestamp();
             }
 
 
-            media = string.Format(media, _registrar.MediaType);
+            media = string.Format(media, _assets.MediaType);
             url = string.Format(url, "", version);
 
             return String.Format(_template, media, url);
@@ -42,7 +42,7 @@ namespace ResourceCompiler.Renderers
             StringBuilder content = new StringBuilder();
             string outputContent = String.Empty;
 
-            foreach (var file in _registrar.GetFiles())
+            foreach (var file in _assets.GetFiles())
             {
                 string styleSheetContent = GetResourceContent(file);
                 styleSheetContent = StyleSheetPathRewriter.RewriteCssPaths(AppDomain.CurrentDomain.BaseDirectory + "Content", file.Path, styleSheetContent);
@@ -50,7 +50,7 @@ namespace ResourceCompiler.Renderers
             }
 
             outputContent = content.ToString();
-            if (_registrar.Compressed)
+            if (_assets.Compressed)
             {
                 outputContent = CompressContent(content.ToString());
             }
@@ -66,7 +66,7 @@ namespace ResourceCompiler.Renderers
 
         private string CompressContent(string content)
         {
-            return _registrar.Compressor.CompressContent(content);
+            return _assets.Compressor.CompressContent(content);
         }
 
         private bool CanGZip(HttpRequest request)
