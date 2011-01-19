@@ -14,7 +14,6 @@ namespace ResourceCompiler.Assets
     {
         public JavaScriptAssets() : base()
         {
-            MediaType = "screen";
             Compressor = new NullMinifier();
             _files = new List<IResource>();
         }
@@ -22,14 +21,12 @@ namespace ResourceCompiler.Assets
         public JavaScriptAssets(IJavaScriptCompressor compressor)
             : base()
         {
-            MediaType = "screen";
             Compressor = compressor;
         }
 
         public bool Versioned { get; set; }
         public bool Combined { get; set; }
         public bool Compressed { get; set; }
-        public string MediaType { get; set; }
         public IJavaScriptCompressor Compressor { get; set; }
 
         public IJavaScriptAssets Add(string path)
@@ -67,12 +64,6 @@ namespace ResourceCompiler.Assets
         public IJavaScriptAssets Version(bool value)
         {
             Versioned = value;
-            return this;
-        }
-
-        public IJavaScriptAssets Media(string value)
-        {
-            MediaType = value;
             return this;
         }
 

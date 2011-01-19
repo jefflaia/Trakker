@@ -1,8 +1,8 @@
-﻿/*
-using System;
+﻿using System;
 using Yahoo.Yui.Compressor;
 using System.Text;
 using System.Globalization;
+using ResourceCompiler.JavaScript.Minifiers;
 
 namespace Reco.JavaScript.Minifiers
 {
@@ -24,4 +24,3 @@ namespace Reco.JavaScript.Minifiers
         }
     }
 }
-*/

@@ -1,5 +1,6 @@
-/*
+
 using Microsoft.Ajax.Utilities;
+using ResourceCompiler.JavaScript.Minifiers;
 
 namespace Reco.JavaScript.Minifiers
 {
@@ -22,4 +23,3 @@ namespace Reco.JavaScript.Minifiers
         }
     }
 }
-*/
