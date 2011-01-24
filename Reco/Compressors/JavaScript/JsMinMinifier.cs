@@ -1,8 +1,7 @@
 using System.IO;
-using ResourceCompiler.JavaScript.Minifiers;
 using ResourceCompiler.Compressors.JavaScript.jsmin;
 
-namespace Reco.JavaScript.Minifiers
+namespace ResourceCompiler.Compressors.JavaScript
 {
     public class JsMinMinifier: IJavaScriptCompressor
     {

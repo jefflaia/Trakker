@@ -6,37 +6,24 @@ using ResourceCompiler.Assets;
 using System.Web;
 using ResourceCompiler.Files;
 using ResourceCompiler.Utilities;
+using ResourceCompiler.Resolvers;
+using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace ResourceCompiler.Renderers
 {
     public class StyleSheetRenderer : IStyleSheetRenderer
     {
         private readonly IStyleSheetAssets _assets;
-        protected const string _template = "<link rel=\"stylesheet\" type=\"text/css\" {0} href=\"{1}\" />";
+
+        //probably change this to a hashtable
+        private IDictionary<string, string> _modelProperties;
 
         public StyleSheetRenderer(IStyleSheetAssets assets)
         {
             _assets = assets;
         }
         
-        public string Render()
-        {
-            string media = "media=\"{0}\"";
-            string version = string.Empty;
-            string url = "{0}?v={1}";
-
-            if (_assets.Versioned)
-            {
-                version = _assets.GetLastWriteTimestamp();
-            }
-
-
-            media = string.Format(media, _assets.MediaType);
-            url = string.Format(url, "", version);
-
-            return String.Format(_template, media, url);
-        }
-
         public string Generate()
         {
             StringBuilder content = new StringBuilder();
@@ -45,6 +32,12 @@ namespace ResourceCompiler.Renderers
             foreach (var file in _assets.GetFiles())
             {
                 string styleSheetContent = GetResourceContent(file);
+
+                if (String.Compare(file.Type, DynamicFileResolver.Type) == 0)
+                {
+                    ApplyModel(styleSheetContent);
+                }
+
                 styleSheetContent = StyleSheetPathRewriter.RewriteCssPaths(AppDomain.CurrentDomain.BaseDirectory + "Content", file.Path, styleSheetContent);
                 content.Append(styleSheetContent);
             }
@@ -58,6 +51,8 @@ namespace ResourceCompiler.Renderers
             return outputContent;
         }
 
+        public object Model { get; set; }
+
         private string GetResourceContent(IResource resource)
         {
             FileReader reader = new FileReader(resource.Path);
@@ -69,15 +64,35 @@ namespace ResourceCompiler.Renderers
             return _assets.Compressor.CompressContent(content);
         }
 
-        private bool CanGZip(HttpRequest request)
+        private void ApplyModel(string content)
         {
-            string acceptEncoding = request.Headers["Accept-Encoding"];
-            if (!string.IsNullOrEmpty(acceptEncoding) &&
-                (acceptEncoding.Contains("gzip") || acceptEncoding.Contains("deflate")))
+            if (Model != null)
             {
-                return true;
+                if (_modelProperties == null)
+                {
+                    CacheModelProperties();
+                }
+
+                //get all words starting with @, ignore case
+               // var matches = Regex.Matches(content, @"(\b@)\w+\b", RegexOptions.IgnoreCase);
+                //Regex regex = new Regex(@"(\b@)\w+\b", RegexOptions.IgnoreCase);
+
+                StringBuilder sbcontent = new StringBuilder(content);
+                foreach (KeyValuePair<string, string> property in _modelProperties)
+                {
+                    var s = "@" + property.Key;
+                    sbcontent.Replace("@" + property.Key, property.Value);
+                }
             }
-            return false;
+        }
+
+        private void CacheModelProperties()
+        {
+            PropertyInfo[] properties = Model.GetType().GetProperties();
+            foreach (PropertyInfo property in properties)
+            {
+                _modelProperties.Add(property.Name, (string)property.GetValue(Model, null));
+            }
         }
     }
 }

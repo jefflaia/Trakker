@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Web;
 
 /*
-namespace Reco.JavaScript.Minifiers
+namespace ResourceCompiler.Compressors.JavaScript
 {
     public class ClosureMinifier: IJavaScriptCompressor
     {

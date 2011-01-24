@@ -5,7 +5,7 @@ using System.Text;
 using ResourceCompiler.Compressors.StyleSheet;
 using System.Web;
 using System.IO;
-using ResourceCompiler.FileResolvers;
+using ResourceCompiler.Resolvers;
 using ResourceCompiler.Files;
 using ResourceCompiler.Assets;
 
@@ -39,7 +39,27 @@ namespace ResourceCompiler.Assets
         public IStyleSheetAssets Add(string path)
         {
             FileResolver resolver = new FileResolver();
-            IResource file = new Resource( resolver.Resolve(path), FileResolver.Type);
+            IResource file = new Resource(resolver.Resolve(path), FileResolver.Type);
+
+            if (FileExists(file) == false)
+            {
+                if (file.Exists())
+                {
+                    AddResource(file);
+                }
+                else
+                {
+                    throw new FileNotFoundException(string.Format("File \"{0}\" could not be found.", path));
+                }
+            }
+
+            return this;
+        }
+
+        public IStyleSheetAssets AddDynamic(string path)
+        {
+            DynamicFileResolver resolver = new DynamicFileResolver();
+            IResource file = new Resource(resolver.Resolve(path), DynamicFileResolver.Type);
 
             if (FileExists(file) == false)
             {

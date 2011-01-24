@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ResourceCompiler.Compressors.StyleSheet;
-using ResourceCompiler.FileResolvers;
+using ResourceCompiler.Resolvers;
 using ResourceCompiler.Files;
 using System.IO;
-using ResourceCompiler.JavaScript.Minifiers;
+using ResourceCompiler.Compressors.JavaScript;
 
 namespace ResourceCompiler.Assets
 {
@@ -32,7 +32,7 @@ namespace ResourceCompiler.Assets
         public IJavaScriptAssets Add(string path)
         {
             FileResolver resolver = new FileResolver();
-            IResource file = new Resource( resolver.Resolve(path), FileResolver.Type);
+            IResource file = new Resource(resolver.Resolve(path), FileResolver.Type);
 
             if (FileExists(file) == false)
             {

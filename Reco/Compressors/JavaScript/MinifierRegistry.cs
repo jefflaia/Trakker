@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Reco.JavaScript.Minifiers
+namespace ResourceCompiler.Compressors.JavaScript
 {
     public class MinifierRegistry
     {

@@ -170,6 +170,7 @@
     <Compile Include="MasterController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ResourceData\ThemeModel.cs" />
     <Compile Include="NavController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>

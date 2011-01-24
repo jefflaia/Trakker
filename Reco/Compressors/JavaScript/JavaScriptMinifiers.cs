@@ -1,4 +1,4 @@
-namespace ResourceCompiler.JavaScript.Minifiers
+namespace ResourceCompiler.Compressors.JavaScript
 {
     public enum JavaScriptMinifiers
     {

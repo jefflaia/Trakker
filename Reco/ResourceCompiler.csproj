@@ -68,6 +68,7 @@
     <Compile Include="Renderers\StyleSheet\IStyleSheetRenderer.cs" />
     <Compile Include="Renderers\JavaScript\JavaScriptRenderer.cs" />
     <Compile Include="Renderers\StyleSheet\StyleSheetRenderer.cs" />
+    <Compile Include="Resolvers\DynamicFileResolver.cs" />
     <Compile Include="Utilities\MediaType.cs" />
     <Compile Include="Compressors\JavaScript\ClosureMinifier.cs" />
     <Compile Include="Compressors\JavaScript\IJavaScriptCompressor.cs" />

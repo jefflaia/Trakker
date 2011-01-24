@@ -7,5 +7,6 @@ namespace ResourceCompiler.Renderers
 {
     public interface IJavaScriptRenderer
     {
+        string Generate();
     }
 }

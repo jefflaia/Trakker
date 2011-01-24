@@ -1,8 +1,7 @@
 
 using Microsoft.Ajax.Utilities;
-using ResourceCompiler.JavaScript.Minifiers;
 
-namespace Reco.JavaScript.Minifiers
+namespace ResourceCompiler.Compressors.JavaScript
 {
     public class MsMinifier: IJavaScriptCompressor
     {

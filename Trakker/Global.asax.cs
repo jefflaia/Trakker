@@ -18,6 +18,7 @@
     using Telerik.Web.Mvc;
     using ResourceCompiler;
     using ResourceCompiler.Compressors.StyleSheet;
+    using ResourceCompiler.Compressors.JavaScript;
 
 
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
@@ -37,6 +38,7 @@
                                   
             routes.MapRoute("Default", "",  new { controller = "Ticket", action = "BrowseTickets"});
             routes.MapRoute("CSS", "{fileName}.css", new { controller = "Resource", action = "CSS" });
+            routes.MapRoute("JS", "{fileName}.js", new { controller = "Resource", action = "JS" });
             routes.MapRoute(null, "{controller}/{action}", new string[]{ "Trakker.Controllers" });
 
         }
@@ -54,12 +56,20 @@
             RecoAssets.StyleSheet()
                 .Add("~/Content/Main.css")
                 .Add("~/Content/Project.css")
+                .AddDynamic("~/Content/Theme.css")
                 .Media(MediaType.Screen)
                 .Combine(true)
                 .Compress(true)
                 .Version(true)
                 .SetCompressor(new MsCompressor());
 
+            RecoAssets.JavaScript()
+                .Add("~/Scripts/jquery-1.4.1.js")
+                .Combine(true)
+                .Compress(true)
+                .Version(true)
+                .SetCompressor(new YuiMinifier());
+            /*
             SharedWebAssets
                 .Scripts(config => config.AddGroup("js", group => group
                     .Add("jquery-1.4.2.min.js")
@@ -67,7 +77,7 @@
                     .Add("telerik.datepicker.min.js")
                     .Add("telerik.calendar.min.js")
                     .Combined(true)
-                ));
+                ));*/
         }
     }
 }

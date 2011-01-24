@@ -5,12 +5,12 @@ using System.Web;
 
 namespace ResourceCompiler.Resolvers
 {
-    public class FileResolver: IFileResolver
+    public class DynamicFileResolver: IFileResolver
     {
         public static string Type
         {
-            get { return "File"; }
-        }        
+            get { return "DynamicFile"; }
+        }
 
         public string Resolve(string file)
         {

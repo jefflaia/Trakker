@@ -13,6 +13,7 @@ namespace ResourceCompiler.Assets
         IStyleSheetAssets Compress(bool value);
         IStyleSheetAssets Version(bool value);
         IStyleSheetAssets Add(string path);
+        IStyleSheetAssets AddDynamic(string path);
         IStyleSheetAssets Media(string value);
         IStyleSheetAssets SetCompressor(IStyleSheetCompressor compressor);
         IStyleSheetAssets RendererUrl(string url);

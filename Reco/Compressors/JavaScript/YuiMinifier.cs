@@ -2,9 +2,8 @@
 using Yahoo.Yui.Compressor;
 using System.Text;
 using System.Globalization;
-using ResourceCompiler.JavaScript.Minifiers;
 
-namespace Reco.JavaScript.Minifiers
+namespace ResourceCompiler.Compressors.JavaScript
 {
     public class YuiMinifier: IJavaScriptCompressor
     {

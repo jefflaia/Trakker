@@ -1,6 +1,4 @@
-﻿
-
-a{ color: red;}
+﻿a{ color: red;}
 a:hover{color: red;}
 a:visited{color:red;}
 
@@ -25,3 +23,5 @@ div#Content table.Grid thead tr th, div#Content table.Grid tfoot tr th
 {border-left: 1px dotted pink; border-bottom: 1px solid pink;  background-color: pink;}
 div#Content table.Grid tbody tr td{ border-bottom: 1px solid pink; border-left: 1px dotted pink;}
 div#Content table.Grid tbody tr:hover td { background-color: #FFE1FF; }
+
+div { background: #@BackgroundColor; color: #@TextColor;}

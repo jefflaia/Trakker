@@ -12,7 +12,8 @@
 
 
  
-<%= Reco.Link() %>
+<%= Reco.Link("/generated.css") %>
+<%= Reco.Script("/generated.js") %>
  
 </head>
 <body>
@@ -47,10 +48,11 @@
     </div>
 
     <% 
+        /*
         Html.Telerik().ScriptRegistrar()
            .DefaultGroup(dg => dg.Enabled(false))
            .Scripts(scripts => scripts.AddSharedGroup("js"))
-           .Render();
+           .Render();*/
      %>
 
      <script type="text/javascript">

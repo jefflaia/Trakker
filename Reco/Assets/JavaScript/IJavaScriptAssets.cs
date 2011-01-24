@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ResourceCompiler.Files;
-using ResourceCompiler.JavaScript.Minifiers;
+using ResourceCompiler.Compressors.JavaScript;
 
 namespace ResourceCompiler.Assets
 {
