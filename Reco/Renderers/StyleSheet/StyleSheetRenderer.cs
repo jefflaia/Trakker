@@ -10,14 +10,15 @@ using ResourceCompiler.Resolvers;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
-namespace ResourceCompiler.Renderers
+namespace ResourceCompiler
 {
     public class StyleSheetRenderer : IStyleSheetRenderer
     {
         private readonly IStyleSheetAssets _assets;
 
         //probably change this to a hashtable
-        private IDictionary<string, string> _modelProperties;
+        //static caching for the lifetime of the app.
+        private static IDictionary<string, string> _modelProperties = new Dictionary<string, string>();
 
         public StyleSheetRenderer(IStyleSheetAssets assets)
         {
@@ -35,7 +36,7 @@ namespace ResourceCompiler.Renderers
 
                 if (String.Compare(file.Type, DynamicFileResolver.Type) == 0)
                 {
-                    ApplyModel(styleSheetContent);
+                    ApplyModel(ref styleSheetContent);
                 }
 
                 styleSheetContent = StyleSheetPathRewriter.RewriteCssPaths(AppDomain.CurrentDomain.BaseDirectory + "Content", file.Path, styleSheetContent);
@@ -64,11 +65,11 @@ namespace ResourceCompiler.Renderers
             return _assets.Compressor.CompressContent(content);
         }
 
-        private void ApplyModel(string content)
+        private void ApplyModel(ref string content)
         {
             if (Model != null)
             {
-                if (_modelProperties == null)
+                if (_modelProperties.Count <= 0)
                 {
                     CacheModelProperties();
                 }
@@ -77,11 +78,9 @@ namespace ResourceCompiler.Renderers
                // var matches = Regex.Matches(content, @"(\b@)\w+\b", RegexOptions.IgnoreCase);
                 //Regex regex = new Regex(@"(\b@)\w+\b", RegexOptions.IgnoreCase);
 
-                StringBuilder sbcontent = new StringBuilder(content);
                 foreach (KeyValuePair<string, string> property in _modelProperties)
                 {
-                    var s = "@" + property.Key;
-                    sbcontent.Replace("@" + property.Key, property.Value);
+                    content = content.Replace("@" + property.Key, property.Value);
                 }
             }
         }

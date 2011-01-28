@@ -1,27 +1,41 @@
-﻿a{ color: red;}
-a:hover{color: red;}
-a:visited{color:red;}
+﻿/*
+@NavBackgroundColor
+@SubNavBackgroundColor
+@HighlightColor
+@NavTextColor
+@SubNavTextColor
+@LinkColor
+@LinkActiveColor
+@
+
+*/
+
+
+a{ color: @LinkColor;}
+a:hover{color: @LinkColor;}
+a:visited{color: @LinkActiveColor;}
 
 /*** Header  Colors ***/
-div#Header{ background-color: red; border-bottom: 1px solid darkred;}
-div#Header a{ color:White;}
-div#Header div.Right { color:White;}
+div#Header{ background-color: @NavBackgroundColor; border-bottom: 1px solid @NavBackgroundColor;}
+div#Header a{ color: @NavTextColor;}
+div#Header div.Right { color: @NavTextColor;}
 
 /*** Nav Colors ***/
-div.Nav a{ color: White;}
-div.SubNav { background-color: pink; border-bottom: 1px solid lightpink;}
-div.Dropdown li ul li a:hover { background-color: #FFE1FF;}
+div.Nav a{ color: @NavTextColor;}
+div.SubNav { background-color: @SubNavBackgroundColor; border-bottom: 1px solid @SubNavBackgroundColor;}
+div.Dropdown li ul li a:hover { background-color: @HighlightColor;}
 
 /*** Sections ***/
+/**
 div#Content div.Section { border-color: pink;}
 div#Content div.Section h1, div#Content div.Section h2, div#Content div.Section h3, div#Content div.Section h4, div#Content div.Section h5, div#Content div.Section h6
 { background-color: pink;}
-
+*/
 /*** Table ***/
+/*
 div#Content table.Grid { border-color: pink;}
 div#Content table.Grid thead tr th, div#Content table.Grid tfoot tr th
 {border-left: 1px dotted pink; border-bottom: 1px solid pink;  background-color: pink;}
-div#Content table.Grid tbody tr td{ border-bottom: 1px solid pink; border-left: 1px dotted pink;}
-div#Content table.Grid tbody tr:hover td { background-color: #FFE1FF; }
-
-div { background: #@BackgroundColor; color: #@TextColor;}
+div#Content table.Grid tbody tr td{ border-bottom: 1px solid @; border-left: 1px dotted pink;}
+*/
+div#Content table.Grid tbody tr:hover td { background-color: @HighlightColor; }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ResourceCompiler.Renderers;
+using ResourceCompiler;
 using ResourceCompiler.Assets;
 
 namespace ResourceCompiler
@@ -11,16 +11,6 @@ namespace ResourceCompiler
     {
         private static string _linkTemplate = "<link rel=\"stylesheet\" type=\"text/css\" {0} href=\"{1}\" />";
         private static string _scriptTemplate = "<script type=\"text/javascript\" src=\"{0}\" ></script>";
-
-        public static IStyleSheetRenderer StyleSheets()
-        {
-            return new StyleSheetRenderer(RecoAssets.StyleSheet());
-        }
-
-        public static IJavaScriptRenderer JavaScript()
-        {
-            return new JavaScriptRenderer(RecoAssets.JavaScript());
-        }
 
         public static string Link(string path)
         {

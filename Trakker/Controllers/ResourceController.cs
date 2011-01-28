@@ -7,7 +7,6 @@ using System.Text;
 using System.Web.UI.MobileControls;
 using Telerik.Web.Mvc;
 using ResourceCompiler;
-using ResourceCompiler.Renderers;
 using Trakker.Filters;
 using Trakker.Models;
 
@@ -23,8 +22,13 @@ namespace Trakker.Controllers
             StyleSheetRenderer renderer = new StyleSheetRenderer(RecoAssets.StyleSheet());
             renderer.Model = new ThemeModel()
             {
-                BackgroundColor = "123123",
-                TextColor = "321321"
+                NavBackgroundColor = "Red",
+                SubNavBackgroundColor = "Pink",
+                HighlightColor = "lightpink",
+                NavTextColor = "white",
+                SubNavTextColor = "white",
+                LinkColor = "red",
+                LinkActiveColor = "red"
             };
 
             return new StyleSheetResult()
@@ -37,7 +41,7 @@ namespace Trakker.Controllers
         {
             return new JavaScriptResult()
             {
-                Script = Reco.JavaScript().Generate()
+                Script = new JavaScriptRenderer(RecoAssets.JavaScript()).Generate()
             };
         }
 

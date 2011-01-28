@@ -5,7 +5,7 @@ using System.Text;
 using ResourceCompiler.Assets;
 using ResourceCompiler.Files;
 
-namespace ResourceCompiler.Renderers
+namespace ResourceCompiler
 {
     public class JavaScriptRenderer : IJavaScriptRenderer
     {
