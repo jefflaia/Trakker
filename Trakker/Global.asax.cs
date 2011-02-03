@@ -61,7 +61,7 @@
                 .Combine(true)
                 .Compress(true)
                 .Version(true)
-                .SetCompressor(new MsCompressor());
+                .SetCompressor(new YuiCompressor());
 
             RecoAssets.JavaScript()
                 .Add("~/Scripts/jquery-1.4.1.js")

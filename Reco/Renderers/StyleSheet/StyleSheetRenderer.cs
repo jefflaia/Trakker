@@ -16,8 +16,8 @@ namespace ResourceCompiler
     {
         private readonly IStyleSheetAssets _assets;
 
-        //probably change this to a hashtable
-        //static caching for the lifetime of the app.
+        //probably change this to a hashtable for better performance
+        //static caching for the lifetime of the app. increases performance, only one iteration of reflection
         private static IDictionary<string, string> _modelProperties = new Dictionary<string, string>();
 
         public StyleSheetRenderer(IStyleSheetAssets assets)
@@ -90,7 +90,7 @@ namespace ResourceCompiler
             PropertyInfo[] properties = Model.GetType().GetProperties();
             foreach (PropertyInfo property in properties)
             {
-                _modelProperties.Add(property.Name, (string)property.GetValue(Model, null));
+                _modelProperties.Add(property.Name, property.GetValue(Model, null).ToString());
             }
         }
     }

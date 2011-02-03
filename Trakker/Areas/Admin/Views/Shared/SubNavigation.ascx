@@ -15,6 +15,11 @@
                 <li><%= Html.ActionLink("Projects", MVC.Admin.Management.BrowseProjects()) %></li>
             </ul>
         </li>
+        <li><a href="#">System Settings</a>
+            <ul class="UI-Shadow">
+                <li><%= Html.ActionLink("Color Palettes", MVC.Admin.Settings.BrowseColorPalettes()) %></li>
+            </ul>
+        </li>
     </ul>
 </div>
 

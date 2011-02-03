@@ -5,32 +5,35 @@ using System.Web;
 using System.Web.Mvc;
 using System.Text;
 using System.Web.UI.MobileControls;
-using Telerik.Web.Mvc;
 using ResourceCompiler;
 using Trakker.Filters;
 using Trakker.Models;
+using Trakker.Data;
+using Trakker.Data.Services;
 
 namespace Trakker.Controllers
 {
     [CompressFilter]
-    public class ResourceController : Controller
+    public partial class ResourceController : Controller
     {
+        protected ISystemService _systemService;
+
+        public ResourceController(ISystemService systemService)
+        {
+            _systemService = systemService;
+        }
         
         //[CacheFilter(Duration = 9999999)]
         public virtual StyleSheetResult CSS(string fileName)
         {
-            StyleSheetRenderer renderer = new StyleSheetRenderer(RecoAssets.StyleSheet());
-            renderer.Model = new ThemeModel()
-            {
-                NavBackgroundColor = "Red",
-                SubNavBackgroundColor = "Pink",
-                HighlightColor = "lightpink",
-                NavTextColor = "white",
-                SubNavTextColor = "white",
-                LinkColor = "red",
-                LinkActiveColor = "red"
-            };
+            //make the  result types do the mapping
+            //have the view returns take the model like other view results
+            //no need to know about the renderer stuff
+            //how could i handle groups?
 
+            StyleSheetRenderer renderer = new StyleSheetRenderer(RecoAssets.StyleSheet());
+            renderer.Model = _systemService.GetColorPaletteById(3);
+            
             return new StyleSheetResult()
             {
                 Content = renderer.Generate()

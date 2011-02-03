@@ -26,6 +26,7 @@ public static class MVC {
     public static AdminClass Admin { get { return s_Admin; } }
     public static Trakker.Controllers.NavController Nav = new Trakker.Controllers.T4MVC_NavController();
     public static Trakker.Controllers.ProjectController Project = new Trakker.Controllers.T4MVC_ProjectController();
+    public static Trakker.Controllers.ResourceController Resource = new Trakker.Controllers.T4MVC_ResourceController();
     public static Trakker.Controllers.TicketController Ticket = new Trakker.Controllers.T4MVC_TicketController();
     public static Trakker.Controllers.UserController User = new Trakker.Controllers.T4MVC_UserController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
@@ -37,6 +38,7 @@ namespace T4MVC {
         public readonly string Name = "admin";
         public Trakker.Areas.Admin.Controllers.AttributeController Attribute = new Trakker.Areas.Admin.Controllers.T4MVC_AttributeController();
         public Trakker.Areas.Admin.Controllers.ManagementController Management = new Trakker.Areas.Admin.Controllers.T4MVC_ManagementController();
+        public Trakker.Areas.Admin.Controllers.SettingsController Settings = new Trakker.Areas.Admin.Controllers.T4MVC_SettingsController();
         public T4MVC.Admin.SharedController Shared = new T4MVC.Admin.SharedController();
     }
 }
@@ -263,8 +265,18 @@ public class T4MVC_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResul
     public RouteValueDictionary RouteValueDictionary { get; set; }
 }
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-public class T4MVC_ContentResult : System.Web.Mvc.ContentResult, IT4MVCActionResult {
-    public T4MVC_ContentResult(string area, string controller, string action): base()  {
+public class T4MVC_StyleSheetResult : System.Web.Mvc.StyleSheetResult, IT4MVCActionResult {
+    public T4MVC_StyleSheetResult(string area, string controller, string action): base()  {
+        this.InitMVCT4Result(area, controller, action);
+    }
+    
+    public string Controller { get; set; }
+    public string Action { get; set; }
+    public RouteValueDictionary RouteValueDictionary { get; set; }
+}
+[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+public class T4MVC_JavaScriptResult : System.Web.Mvc.JavaScriptResult, IT4MVCActionResult {
+    public T4MVC_JavaScriptResult(string area, string controller, string action): base()  {
         this.InitMVCT4Result(area, controller, action);
     }
     

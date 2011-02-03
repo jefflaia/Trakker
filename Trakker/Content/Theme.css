@@ -11,19 +11,19 @@
 */
 
 
-a{ color: @LinkColor;}
-a:hover{color: @LinkColor;}
-a:visited{color: @LinkActiveColor;}
+a{ color: #@LinkColor;}
+a:hover{color: #@LinkColor;}
+a:visited{color: #@LinkActiveColor;}
 
 /*** Header  Colors ***/
-div#Header{ background-color: @NavBackgroundColor; border-bottom: 1px solid @NavBackgroundColor;}
-div#Header a{ color: @NavTextColor;}
-div#Header div.Right { color: @NavTextColor;}
+div#Header{ background-color: #@NavBackgroundColor; border-bottom: 1px solid #@NavBackgroundColor;}
+div#Header a{ color: #@NavTextColor;}
+div#Header div.Right { color: #@NavTextColor;}
 
 /*** Nav Colors ***/
-div.Nav a{ color: @NavTextColor;}
-div.SubNav { background-color: @SubNavBackgroundColor; border-bottom: 1px solid @SubNavBackgroundColor;}
-div.Dropdown li ul li a:hover { background-color: @HighlightColor;}
+div.Nav a{ color: #@NavTextColor;}
+div.SubNav { background-color: #@SubNavBackgroundColor; border-bottom: 1px solid #@SubNavBackgroundColor;}
+div.Dropdown li ul li a:hover { background-color: #@HighlightColor;}
 
 /*** Sections ***/
 /**
@@ -38,4 +38,4 @@ div#Content table.Grid thead tr th, div#Content table.Grid tfoot tr th
 {border-left: 1px dotted pink; border-bottom: 1px solid pink;  background-color: pink;}
 div#Content table.Grid tbody tr td{ border-bottom: 1px solid @; border-left: 1px dotted pink;}
 */
-div#Content table.Grid tbody tr:hover td { background-color: @HighlightColor; }
+div#Content table.Grid tbody tr:hover td { background-color: #@HighlightColor; }

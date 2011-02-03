@@ -91,8 +91,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth.cs" />
+    <Compile Include="Models\System\ColorPalette.cs" />
     <Compile Include="Models\Ticket\TicketResolution.cs" />
     <Compile Include="ProjectCookie.cs" />
+    <Compile Include="Repositories\System\ISystemRepository.cs" />
+    <Compile Include="Repositories\System\SystemRepository.cs" />
     <Compile Include="Repositories\Ticket\ITicketRepository.cs" />
     <Compile Include="Repositories\User\IUserRepository.cs" />
     <Compile Include="Repositories\Project\IProjectRepository.cs" />
@@ -133,6 +136,8 @@
     <Compile Include="Services\Authorization\RandomHash.cs" />
     <Compile Include="Services\Project\IProjectService.cs" />
     <Compile Include="Services\Project\ProjectService.cs" />
+    <Compile Include="Services\System\ISystemService.cs" />
+    <Compile Include="Services\System\SystemService.cs" />
     <Compile Include="SessionCookie.cs" />
     <Compile Include="Services\Ticket\ITicketService.cs" />
     <Compile Include="Services\Ticket\TicketService.cs" />
@@ -193,6 +198,7 @@
       <Name>Trakker.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

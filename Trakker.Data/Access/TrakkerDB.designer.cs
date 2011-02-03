@@ -66,8 +66,11 @@ namespace Trakker.Data.Access
     partial void InsertTicket(Ticket instance);
     partial void UpdateTicket(Ticket instance);
     partial void DeleteTicket(Ticket instance);
+    partial void InsertColorPalette(ColorPalette instance);
+    partial void UpdateColorPalette(ColorPalette instance);
+    partial void DeleteColorPalette(ColorPalette instance);
     #endregion
-		
+
 		
 		public TrakkerDBDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -186,6 +189,14 @@ namespace Trakker.Data.Access
 			get
 			{
 				return this.GetTable<Ticket>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ColorPalette> ColorPalettes
+		{
+			get
+			{
+				return this.GetTable<ColorPalette>();
 			}
 		}
 	}
@@ -3499,6 +3510,212 @@ namespace Trakker.Data.Access
 		{
 			this.SendPropertyChanging();
 			entity.Ticket = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ColorPalette")]
+	public partial class ColorPalette : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _NavBackgroundColor;
+		
+		private string _SubNavBackgroundColor;
+		
+		private string _HighlightColor;
+		
+		private string _NavTextColor;
+		
+		private string _SubNavTextColor;
+		
+		private string _LinkColor;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnNavBackgroundColorChanging(string value);
+    partial void OnNavBackgroundColorChanged();
+    partial void OnSubNavBackgroundColorChanging(string value);
+    partial void OnSubNavBackgroundColorChanged();
+    partial void OnHighlightColorChanging(string value);
+    partial void OnHighlightColorChanged();
+    partial void OnNavTextColorChanging(string value);
+    partial void OnNavTextColorChanged();
+    partial void OnSubNavTextColorChanging(string value);
+    partial void OnSubNavTextColorChanged();
+    partial void OnLinkColorChanging(string value);
+    partial void OnLinkColorChanged();
+    #endregion
+		
+		public ColorPalette()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NavBackgroundColor", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
+		public string NavBackgroundColor
+		{
+			get
+			{
+				return this._NavBackgroundColor;
+			}
+			set
+			{
+				if ((this._NavBackgroundColor != value))
+				{
+					this.OnNavBackgroundColorChanging(value);
+					this.SendPropertyChanging();
+					this._NavBackgroundColor = value;
+					this.SendPropertyChanged("NavBackgroundColor");
+					this.OnNavBackgroundColorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubNavBackgroundColor", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
+		public string SubNavBackgroundColor
+		{
+			get
+			{
+				return this._SubNavBackgroundColor;
+			}
+			set
+			{
+				if ((this._SubNavBackgroundColor != value))
+				{
+					this.OnSubNavBackgroundColorChanging(value);
+					this.SendPropertyChanging();
+					this._SubNavBackgroundColor = value;
+					this.SendPropertyChanged("SubNavBackgroundColor");
+					this.OnSubNavBackgroundColorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HighlightColor", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
+		public string HighlightColor
+		{
+			get
+			{
+				return this._HighlightColor;
+			}
+			set
+			{
+				if ((this._HighlightColor != value))
+				{
+					this.OnHighlightColorChanging(value);
+					this.SendPropertyChanging();
+					this._HighlightColor = value;
+					this.SendPropertyChanged("HighlightColor");
+					this.OnHighlightColorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NavTextColor", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
+		public string NavTextColor
+		{
+			get
+			{
+				return this._NavTextColor;
+			}
+			set
+			{
+				if ((this._NavTextColor != value))
+				{
+					this.OnNavTextColorChanging(value);
+					this.SendPropertyChanging();
+					this._NavTextColor = value;
+					this.SendPropertyChanged("NavTextColor");
+					this.OnNavTextColorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubNavTextColor", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
+		public string SubNavTextColor
+		{
+			get
+			{
+				return this._SubNavTextColor;
+			}
+			set
+			{
+				if ((this._SubNavTextColor != value))
+				{
+					this.OnSubNavTextColorChanging(value);
+					this.SendPropertyChanging();
+					this._SubNavTextColor = value;
+					this.SendPropertyChanged("SubNavTextColor");
+					this.OnSubNavTextColorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LinkColor", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
+		public string LinkColor
+		{
+			get
+			{
+				return this._LinkColor;
+			}
+			set
+			{
+				if ((this._LinkColor != value))
+				{
+					this.OnLinkColorChanging(value);
+					this.SendPropertyChanging();
+					this._LinkColor = value;
+					this.SendPropertyChanged("LinkColor");
+					this.OnLinkColorChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

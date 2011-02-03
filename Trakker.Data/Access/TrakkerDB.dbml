@@ -153,4 +153,15 @@
       <Association Name="User_Ticket2" Member="User2" ThisKey="AssignedByUserId" OtherKey="Id" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.ColorPalette" Member="ColorPalettes">
+    <Type Name="ColorPalette">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NavBackgroundColor" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="SubNavBackgroundColor" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="HighlightColor" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="NavTextColor" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="SubNavTextColor" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="LinkColor" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

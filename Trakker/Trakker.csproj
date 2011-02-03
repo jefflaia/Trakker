@@ -114,11 +114,15 @@
     <Compile Include="Admin.ManagementController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Admin.SettingsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Admin.SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AttributeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
     <Compile Include="Areas\Admin\Models\Attribute\CreateEditStatusModel.cs" />
     <Compile Include="Areas\Admin\Models\Attribute\CreateEditTypeModel.cs" />
     <Compile Include="Areas\Admin\Models\Management\CreateUserModel.cs" />
@@ -129,6 +133,7 @@
     <Compile Include="Areas\Admin\Models\Management\BrowseUsersModel.cs" />
     <Compile Include="Areas\Admin\Models\Management\ViewProjectModel.cs" />
     <Compile Include="Areas\Admin\Models\Management\ViewUserModel.cs" />
+    <Compile Include="Areas\Admin\Models\Settings\BrowseColorPalettes.cs" />
     <Compile Include="Attributes\ActionFilters\AuthenticateAttribute.cs" />
     <Compile Include="Attributes\ActionFilters\UserInRoleAttribute.cs" />
     <Compile Include="Attributes\BaseAuthorizationActionFilterAttribute.cs" />
@@ -170,7 +175,6 @@
     <Compile Include="MasterController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ResourceData\ThemeModel.cs" />
     <Compile Include="NavController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -181,6 +185,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Validation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Routes\ProjectRoutes.cs" />
     <Compile Include="Routes\TicketRoutes.cs" />
@@ -233,6 +240,7 @@
     <Content Include="Areas\Admin\Views\Management\BrowseUsers.aspx" />
     <Content Include="Areas\Admin\Views\Management\ViewProject.aspx" />
     <Content Include="Areas\Admin\Views\Management\ViewUser.aspx" />
+    <Content Include="Areas\Admin\Views\Settings\BrowseColorPalettes.aspx" />
     <Content Include="Content\2010.2.825\Black\editor.png" />
     <Content Include="Content\2010.2.825\Black\loading.gif" />
     <Content Include="Content\2010.2.825\Black\sprite.png" />
@@ -444,6 +452,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
