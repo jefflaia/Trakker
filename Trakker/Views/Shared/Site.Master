@@ -12,8 +12,7 @@
 
 
  
-<%= Reco.Link("/generated.css") %>
- 
+    <%= Reco.Link("/generated.css") %> 
 </head>
 <body>
 
@@ -53,8 +52,8 @@
            .Scripts(scripts => scripts.AddSharedGroup("js"))
            .Render();*/
      %>
-     <%= Reco.Script("/generated.js") %>
-
+    
+    <%= Reco.Script("/generated.js") %>
      <script type="text/javascript">
          $(document).ready(function () {
 

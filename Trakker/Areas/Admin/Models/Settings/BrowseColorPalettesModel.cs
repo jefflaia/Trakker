@@ -7,7 +7,7 @@ using Trakker.Data;
 
 namespace Trakker.Areas.Admin.Models
 {
-    public class BrowseColorPalettes : MasterModel
+    public class BrowseColorPalettesModel : MasterModel
     {
         public IList<ColorPalette> ColorPalettes { get; set; }
 

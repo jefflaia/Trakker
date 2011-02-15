@@ -3533,6 +3533,8 @@ namespace Trakker.Data.Access
 		
 		private string _LinkColor;
 		
+		private string _Name;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3551,6 +3553,8 @@ namespace Trakker.Data.Access
     partial void OnSubNavTextColorChanged();
     partial void OnLinkColorChanging(string value);
     partial void OnLinkColorChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
     #endregion
 		
 		public ColorPalette()
@@ -3694,6 +3698,26 @@ namespace Trakker.Data.Access
 					this._LinkColor = value;
 					this.SendPropertyChanged("LinkColor");
 					this.OnLinkColorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
 				}
 			}
 		}

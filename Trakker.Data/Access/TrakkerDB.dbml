@@ -162,6 +162,7 @@
       <Column Name="NavTextColor" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
       <Column Name="SubNavTextColor" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
       <Column Name="LinkColor" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

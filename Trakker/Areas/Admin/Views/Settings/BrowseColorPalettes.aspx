@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Areas/Admin/Views/Shared/Admin.master" Inherits="System.Web.Mvc.ViewPage<BrowseColorPalettes>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Areas/Admin/Views/Shared/Admin.master" Inherits="System.Web.Mvc.ViewPage<BrowseColorPalettesModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="Section">
         <h1>Browse Color Palettes</h1>
         <p>In the table below is all the available color palettes for the system.</p>
-        <p><%: Html.ActionLink("Add", MVC.Admin.Settings.BrowseColorPalettes()) %> new color palettes.</p>
+        <p><%: Html.ActionLink("Add", MVC.Admin.Settings.CreateColorPalette()) %> new color palettes.</p>
     </div>
 
     <table class="Grid Indent">
@@ -24,14 +24,14 @@
         <tbody>
             <% foreach(var palette in Model.ColorPalettes) { %>
                 <tr>
-                    <td>name</td>
+                    <td><%: palette.Name %></td>
                     <td>#<%: palette.NavBackgroundColor %></td>
                     <td>#<%: palette.NavTextColor %></td>
                     <td>#<%: palette.SubNavBackgroundColor %></td>
                     <td>#<%: palette.SubNavTextColor %></td>
                     <td>#<%: palette.HighlightColor %></td>
                     <td>#<%: palette.LinkColor %></td>
-                    <td>#<%: Html.ActionLink("Edit", MVC.Admin.Settings.BrowseColorPalettes()) %></td>
+                    <td><%: Html.ActionLink("Edit", MVC.Admin.Settings.EditColorPalette(palette.Id)) %></td>
                 </tr>
             <% } %>        
         </tbody>

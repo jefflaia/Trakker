@@ -45,8 +45,6 @@
 
         protected void Application_Start()
         {
-            
-
             AreaRegistration.RegisterAllAreas();
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory());
             RegisterRoutes(RouteTable.Routes);

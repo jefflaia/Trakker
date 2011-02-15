@@ -8,6 +8,7 @@ namespace Trakker.Data
     public class ColorPalette
     {
         public int Id { get; set; }
+        public string Name { get; set; }
         public string NavBackgroundColor { get; set; }
         public string SubNavBackgroundColor { get; set; }
         public string HighlightColor { get; set; }

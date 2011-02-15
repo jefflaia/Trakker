@@ -43,4 +43,10 @@
             <li><%= Html.ActionLink("Management", MVC.Admin.Management.Index()) %></li>
         </ul>
     </li> 
+    <li>
+        <a href="#">Settings</a>
+        <ul class="UI-Shadow">
+            <li><%= Html.ActionLink("Color Palette", MVC.Admin.Settings.BrowseColorPalettes()) %></li>
+        </ul>
+    </li> 
 </ul>

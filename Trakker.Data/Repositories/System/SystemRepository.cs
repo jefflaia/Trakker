@@ -8,6 +8,7 @@
     using System.Data.Linq;
 
     using Sql = Access;
+    using System.Globalization;
 
     public class SystemRepository : ISystemRepository
     {
@@ -22,10 +23,11 @@
 
         public IQueryable<ColorPalette> GetColorPalettes()
         {
-            return from p in _paletteTable
+             return from p in _paletteTable
                    select new ColorPalette()
                    {
                        Id = p.Id,
+                       Name = p.Name,
                        NavBackgroundColor = p.NavBackgroundColor,
                        SubNavBackgroundColor = p.SubNavBackgroundColor,
                        HighlightColor = p.HighlightColor,

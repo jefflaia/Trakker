@@ -9,5 +9,7 @@ namespace Trakker.Data.Services
     {
         ColorPalette GetColorPaletteById(int id);
         IList<ColorPalette> GetAllColorPalettes();
+        ColorPalette GetColorPaletteByName(string name);
+        void Save(ColorPalette palette);
     }
 }

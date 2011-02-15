@@ -1,0 +1,41 @@
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<Trakker.Areas.Admin.Models.CreateEditColorPaletteModel>" %>
+<% Html.BeginForm(); %>
+    <%= Html.FormRow()
+        .AddToLeft(Html.Label("Name"))
+        .AddToRight(Html.TextBoxFor(m => m.Name))
+        .AddToRight(Html.ValidationMessageFor(m => m.Name)) %>
+
+    <%= Html.FormRow()
+        .AddToLeft(Html.Label("Navgiation Background Color"))
+        .AddToRight(Html.TextBoxFor(m => m.NavBackgroundColor))
+        .AddToRight(Html.ValidationMessageFor(m => m.NavBackgroundColor)) %>
+
+    <%= Html.FormRow()
+        .AddToLeft(Html.Label("Navigation Text Color"))
+        .AddToRight(Html.TextBoxFor(m => m.NavTextColor))
+        .AddToRight(Html.ValidationMessageFor(m => m.NavTextColor)) %>
+
+    <%= Html.FormRow()
+        .AddToLeft(Html.Label("Sub-navigation Background Color"))
+        .AddToRight(Html.TextBoxFor(m => m.SubNavBackgroundColor))
+        .AddToRight(Html.ValidationMessageFor(m => m.SubNavBackgroundColor)) %>
+
+    <%= Html.FormRow()
+        .AddToLeft(Html.Label("Sub-navigation Text Color"))
+        .AddToRight(Html.TextBoxFor(m => m.SubNavTextColor))
+        .AddToRight(Html.ValidationMessageFor(m => m.SubNavTextColor)) %>
+
+    <%= Html.FormRow()
+        .AddToLeft(Html.Label("Hightlight Color"))
+        .AddToRight(Html.TextBoxFor(m => m.HighlightColor)) 
+        .AddToRight(Html.ValidationMessageFor(m => m.HighlightColor)) %>
+                
+    <%= Html.FormRow()
+        .AddToLeft(Html.Label("Link Color"))
+        .AddToRight(Html.TextBoxFor(m => m.LinkColor)) 
+        .AddToRight(Html.ValidationMessageFor(m => m.LinkColor)) %>
+
+    <%= Html.FormRow()
+        .AddToRight(Html.SaveButton("Save", null)) %>
+                
+<% Html.EndForm(); %>

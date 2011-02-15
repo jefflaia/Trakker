@@ -30,6 +30,11 @@ namespace Trakker.Areas.Admin.Controllers {
             return RedirectToRoute(callInfo.RouteValueDictionary);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult EditColorPalette() {
+            return new T4MVC_ActionResult(Area, Name, ActionNames.EditColorPalette);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public SettingsController Actions { get { return MVC.Admin.Settings; } }
@@ -44,6 +49,8 @@ namespace Trakker.Areas.Admin.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass {
             public readonly string BrowseColorPalettes = ("BrowseColorPalettes").ToLowerInvariant();
+            public readonly string CreateColorPalette = ("CreateColorPalette").ToLowerInvariant();
+            public readonly string EditColorPalette = ("EditColorPalette").ToLowerInvariant();
         }
 
 
@@ -53,6 +60,9 @@ namespace Trakker.Areas.Admin.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
             public readonly string BrowseColorPalettes = "~/Areas/Admin/Views/Settings/BrowseColorPalettes.aspx";
+            public readonly string CreateColorPalette = "~/Areas/Admin/Views/Settings/CreateColorPalette.aspx";
+            public readonly string CreateEditColorPalette = "~/Areas/Admin/Views/Settings/CreateEditColorPalette.ascx";
+            public readonly string EditColorPalette = "~/Areas/Admin/Views/Settings/EditColorPalette.aspx";
         }
     }
 
@@ -62,6 +72,30 @@ namespace Trakker.Areas.Admin.Controllers {
 
         public override System.Web.Mvc.ActionResult BrowseColorPalettes() {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.BrowseColorPalettes);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult CreateColorPalette() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.CreateColorPalette);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult CreateColorPalette(Trakker.Areas.Admin.Models.CreateEditColorPaletteModel viewModel) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.CreateColorPalette);
+            callInfo.RouteValueDictionary.Add("viewModel", viewModel);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult EditColorPalette(int paletteId) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditColorPalette);
+            callInfo.RouteValueDictionary.Add("paletteId", paletteId);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult EditColorPalette(int paletteId, Trakker.Areas.Admin.Models.CreateEditColorPaletteModel viewModel) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditColorPalette);
+            callInfo.RouteValueDictionary.Add("paletteId", paletteId);
+            callInfo.RouteValueDictionary.Add("viewModel", viewModel);
             return callInfo;
         }
 

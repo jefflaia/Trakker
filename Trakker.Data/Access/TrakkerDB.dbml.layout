@@ -38,7 +38,7 @@
         <elementListCompartment Id="20edb11a-a343-40fa-b0c4-a427699f26e9" absoluteBounds="2.765, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.0625 : 2.7612939453125); (4.0625 : 3.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.0625 : 2.7612939453125); (4.0625 : 3.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TrakkerDBDataContext/Role/Role_User" />
       <nodes>
         <classShapeMoniker Id="48363410-d07b-4605-a00b-29d7c99d375b" />
@@ -186,10 +186,10 @@
         <classShapeMoniker Id="a3a2c0d2-3605-41d5-b7d7-d222dbb0e06b" />
       </nodes>
     </associationConnector>
-    <classShape Id="96c74aee-2c8a-4f43-91d8-dad201e9e19a" absoluteBounds="0.5, 3.5, 2, 2.1554996744791666">
+    <classShape Id="9d21f949-d735-490b-a12c-cb4f1a4299f8" absoluteBounds="0.875, 3.125, 2, 2.3478011067708335">
       <DataClassMoniker Name="/TrakkerDBDataContext/ColorPalette" />
       <nestedChildShapes>
-        <elementListCompartment Id="9b380677-a7f7-4f18-8fc9-1ef36d93e0f3" absoluteBounds="0.51499999999999968, 3.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="53081ccc-367c-46e3-901a-7ede2ee1b67d" absoluteBounds="0.89000000000000012, 3.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
