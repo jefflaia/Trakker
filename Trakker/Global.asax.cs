@@ -54,6 +54,7 @@
             RecoAssets.StyleSheet()
                 .Add("~/Content/Main.css")
                 .Add("~/Content/Project.css")
+                .Add("~/Content/Admin/Settings.css")
                 .AddDynamic("~/Content/Theme.css")
                 .Media(MediaType.Screen)
                 .Combine(true)

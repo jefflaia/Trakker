@@ -8,7 +8,7 @@
         <p><%: Html.ActionLink("Add", MVC.Admin.Settings.CreateColorPalette()) %> new color palettes.</p>
     </div>
 
-    <table class="Grid Indent">
+    <table class="Grid Indent" id="ColorPalettes">
         <thead>
             <tr>
                 <th>Name</th>
@@ -25,12 +25,30 @@
             <% foreach(var palette in Model.ColorPalettes) { %>
                 <tr>
                     <td><%: palette.Name %></td>
-                    <td>#<%: palette.NavBackgroundColor %></td>
-                    <td>#<%: palette.NavTextColor %></td>
-                    <td>#<%: palette.SubNavBackgroundColor %></td>
-                    <td>#<%: palette.SubNavTextColor %></td>
-                    <td>#<%: palette.HighlightColor %></td>
-                    <td>#<%: palette.LinkColor %></td>
+                    <td>
+                        <div style="background-color: #<%: palette.NavBackgroundColor %>"></div>
+                        #<%: palette.NavBackgroundColor %> 
+                    </td>
+                    <td>
+                        <div style="background-color: #<%: palette.NavTextColor %>"></div>
+                        #<%: palette.NavTextColor %>
+                    </td>
+                    <td>
+                        <div style="background-color: #<%: palette.SubNavBackgroundColor %>"></div>
+                        #<%: palette.SubNavBackgroundColor %>
+                    </td>
+                    <td>
+                        <div style="background-color: #<%: palette.SubNavTextColor %>"></div>
+                        #<%: palette.SubNavTextColor %>
+                    </td>
+                    <td>
+                        <div style="background-color: #<%: palette.HighlightColor %>"></div>
+                        #<%: palette.HighlightColor %>
+                    </td>
+                    <td>
+                        <div style="background-color: #<%: palette.LinkColor %>"></div>
+                        #<%: palette.LinkColor %>
+                    </td>
                     <td><%: Html.ActionLink("Edit", MVC.Admin.Settings.EditColorPalette(palette.Id)) %></td>
                 </tr>
             <% } %>        

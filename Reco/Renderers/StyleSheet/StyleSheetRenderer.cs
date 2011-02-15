@@ -18,7 +18,7 @@ namespace ResourceCompiler
 
         //probably change this to a hashtable for better performance
         //static caching for the lifetime of the app. increases performance, only one iteration of reflection
-        private static IDictionary<string, string> _modelProperties = new Dictionary<string, string>();
+        private IDictionary<string, string> _modelProperties = new Dictionary<string, string>();
 
         public StyleSheetRenderer(IStyleSheetAssets assets)
         {
@@ -75,7 +75,7 @@ namespace ResourceCompiler
                 }
 
                 //get all words starting with @, ignore case
-               // var matches = Regex.Matches(content, @"(\b@)\w+\b", RegexOptions.IgnoreCase);
+                // var matches = Regex.Matches(content, @"(\b@)\w+\b", RegexOptions.IgnoreCase);
                 //Regex regex = new Regex(@"(\b@)\w+\b", RegexOptions.IgnoreCase);
 
                 foreach (KeyValuePair<string, string> property in _modelProperties)
