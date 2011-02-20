@@ -48,6 +48,7 @@ namespace Trakker.Areas.Admin.Controllers {
         public ActionNamesClass ActionNames { get { return s_actions; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass {
+            public readonly string Index = ("Index").ToLowerInvariant();
             public readonly string BrowseColorPalettes = ("BrowseColorPalettes").ToLowerInvariant();
             public readonly string CreateColorPalette = ("CreateColorPalette").ToLowerInvariant();
             public readonly string EditColorPalette = ("EditColorPalette").ToLowerInvariant();
@@ -63,12 +64,18 @@ namespace Trakker.Areas.Admin.Controllers {
             public readonly string CreateColorPalette = "~/Areas/Admin/Views/Settings/CreateColorPalette.aspx";
             public readonly string CreateEditColorPalette = "~/Areas/Admin/Views/Settings/CreateEditColorPalette.ascx";
             public readonly string EditColorPalette = "~/Areas/Admin/Views/Settings/EditColorPalette.aspx";
+            public readonly string Index = "~/Areas/Admin/Views/Settings/Index.aspx";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public class T4MVC_SettingsController: Trakker.Areas.Admin.Controllers.SettingsController {
         public T4MVC_SettingsController() : base(Dummy.Instance) { }
+
+        public override System.Web.Mvc.ActionResult Index() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Index);
+            return callInfo;
+        }
 
         public override System.Web.Mvc.ActionResult BrowseColorPalettes() {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.BrowseColorPalettes);

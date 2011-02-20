@@ -38,6 +38,7 @@ namespace Trakker.Areas.Admin
             context.MapRoute("EditProject", "admin/management/project/{keyName}/edit", new { controller = "Management", action = "EditProject" });
 
             //SettingsController
+            context.MapRoute("SettingsIndex", "admin/settings/", new { controller = "Settings", action = "Index" });
             context.MapRoute("BrowseColorPalettes", "admin/settings/color-palettes", new { controller = "Settings", action = "BrowseColorPalettes" });
             context.MapRoute("CreateColorPalette", "admin/settings/color-palette/create", new { controller = "Settings", action = "CreateColorPalette" });
             context.MapRoute("EditColorPalette", "admin/settings/color-palette/{paletteId}/edit", new { controller = "Settings", action = "EditColorPalette" });

@@ -135,6 +135,7 @@
     <Compile Include="Areas\Admin\Models\Management\ViewUserModel.cs" />
     <Compile Include="Areas\Admin\Models\Settings\BrowseColorPalettesModel.cs" />
     <Compile Include="Areas\Admin\Models\Settings\CreateEditColorPaletteModel.cs" />
+    <Compile Include="Areas\Admin\Models\Settings\SettingsIndexModel.cs" />
     <Compile Include="Attributes\ActionFilters\AuthenticateAttribute.cs" />
     <Compile Include="Attributes\ActionFilters\UserInRoleAttribute.cs" />
     <Compile Include="Attributes\BaseAuthorizationActionFilterAttribute.cs" />
@@ -245,6 +246,7 @@
     <Content Include="Areas\Admin\Views\Settings\CreateColorPalette.aspx" />
     <Content Include="Areas\Admin\Views\Settings\CreateEditColorPalette.ascx" />
     <Content Include="Areas\Admin\Views\Settings\EditColorPalette.aspx" />
+    <Content Include="Areas\Admin\Views\Settings\Index.aspx" />
     <Content Include="Content\2010.2.825\Black\editor.png" />
     <Content Include="Content\2010.2.825\Black\loading.gif" />
     <Content Include="Content\2010.2.825\Black\sprite.png" />

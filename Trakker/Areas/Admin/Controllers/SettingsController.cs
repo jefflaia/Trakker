@@ -22,6 +22,11 @@ namespace Trakker.Areas.Admin.Controllers
             _systemService = systemService;
         }
 
+        public virtual ActionResult Index()
+        {
+            return View(new SettingsIndexModel());
+        }
+
         public virtual ActionResult BrowseColorPalettes()
         {
             return View(new BrowseColorPalettesModel()
