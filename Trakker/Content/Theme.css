@@ -22,8 +22,9 @@ div#Header div.Right { color: #@NavTextColor;}
 
 /*** Nav Colors ***/
 div.Nav a{ color: #@NavTextColor;}
-div.SubNav { background-color: #@SubNavBackgroundColor; border-bottom: 1px solid #@SubNavBackgroundColor;}
+div.SubNav { background-color: #@SubNavBackgroundColor; border-bottom: 1px solid #@SubNavBackgroundColor; }
 div.Dropdown li ul li a:hover { background-color: #@HighlightColor;}
+div.SubNav.Dropdown ul li a {color: #@SubNavTextColor;}
 
 /*** Sections ***/
 /**

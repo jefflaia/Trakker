@@ -43,9 +43,7 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpPost]
         public virtual ActionResult CreateColorPalette(CreateEditColorPaletteModel viewModel)
         {
-            var o = _systemService.GetColorPaletteByName(viewModel.Name);
-
-            if (_systemService.GetColorPaletteByName(viewModel.Name) != null)
+            if (_systemService.GetColorPaletteByName(viewModel.Name ?? String.Empty) != null)
             {
                 ModelState.AddModelError("Name", "A palette with this name already exists.");
             }
@@ -61,12 +59,18 @@ namespace Trakker.Areas.Admin.Controllers
                 return RedirectToAction(MVC.Admin.Settings.BrowseColorPalettes());
             }
 
-
             return View(viewModel);
         }
 
         public virtual ActionResult EditColorPalette(int paletteId)
         {
+            var palette = _systemService.GetColorPaletteById(paletteId);
+
+            if (palette == null)
+            {
+                return RedirectToAction(MVC.Admin.Settings.BrowseColorPalettes());
+            }
+
             Mapper.CreateMap<ColorPalette, CreateEditColorPaletteModel>();
             var viewModel = Mapper.Map(_systemService.GetColorPaletteById(paletteId), new CreateEditColorPaletteModel());
             
