@@ -24,7 +24,12 @@
         <tbody>
             <% foreach(var palette in Model.ColorPalettes) { %>
                 <tr>
-                    <td><%: palette.Name %></td>
+                    <td>
+                        <strong><%: palette.Name %></strong>
+                        <% if (Model.SelectedColorPalette.Id == palette.Id) { %>                                                  
+                            (Selected)
+                        <% } %>                        
+                    </td>
                     <td>
                         <div style="background-color: #<%: palette.NavBackgroundColor %>"></div>
                         #<%: palette.NavBackgroundColor %> 
@@ -49,7 +54,13 @@
                         <div style="background-color: #<%: palette.LinkColor %>"></div>
                         #<%: palette.LinkColor %>
                     </td>
-                    <td><%: Html.ActionLink("Edit", MVC.Admin.Settings.EditColorPalette(palette.Id)) %></td>
+                    <td>
+                        <%: Html.ActionLink("Edit", MVC.Admin.Settings.EditColorPalette(palette.Id)) %> 
+                        
+                        <% if (Model.SelectedColorPalette.Id != palette.Id) { %>                                                  
+                            | <%= Html.ActionLink("Select", MVC.Admin.Settings.SelectColorPalette(palette.Id))%>
+                        <% } %>
+                    </td>
                 </tr>
             <% } %>        
         </tbody>

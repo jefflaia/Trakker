@@ -42,6 +42,7 @@ namespace Trakker.Areas.Admin
             context.MapRoute("BrowseColorPalettes", "admin/settings/color-palettes", new { controller = "Settings", action = "BrowseColorPalettes" });
             context.MapRoute("CreateColorPalette", "admin/settings/color-palette/create", new { controller = "Settings", action = "CreateColorPalette" });
             context.MapRoute("EditColorPalette", "admin/settings/color-palette/{paletteId}/edit", new { controller = "Settings", action = "EditColorPalette" });
+            context.MapRoute("SelectColorPalette", "admin/settings/color-palette/{paletteId}/select", new { controller = "Settings", action = "SelectColorPalette" });
 
         }
     }

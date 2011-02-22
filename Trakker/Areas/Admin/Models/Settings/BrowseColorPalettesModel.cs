@@ -10,6 +10,7 @@ namespace Trakker.Areas.Admin.Models
     public class BrowseColorPalettesModel : MasterModel
     {
         public IList<ColorPalette> ColorPalettes { get; set; }
+        public ColorPalette SelectedColorPalette { get; set; }
 
     }
 }

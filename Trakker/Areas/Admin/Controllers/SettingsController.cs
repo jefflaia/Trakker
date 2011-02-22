@@ -22,19 +22,23 @@ namespace Trakker.Areas.Admin.Controllers
             _systemService = systemService;
         }
 
+        [HttpGet]
         public virtual ActionResult Index()
         {
             return View(new SettingsIndexModel());
         }
 
+        [HttpGet]
         public virtual ActionResult BrowseColorPalettes()
         {
             return View(new BrowseColorPalettesModel()
             {
-                ColorPalettes = _systemService.GetAllColorPalettes()
+                ColorPalettes = _systemService.GetAllColorPalettes(),
+                SelectedColorPalette = _systemService.GetColorPaletteById(3)
             });
         }
 
+        [HttpGet]
         public virtual ActionResult CreateColorPalette()
         {
             return View(new CreateEditColorPaletteModel());
@@ -62,6 +66,7 @@ namespace Trakker.Areas.Admin.Controllers
             return View(viewModel);
         }
 
+        [HttpGet]
         public virtual ActionResult EditColorPalette(int paletteId)
         {
             var palette = _systemService.GetColorPaletteById(paletteId);
@@ -97,6 +102,16 @@ namespace Trakker.Areas.Admin.Controllers
             }
             return View(viewModel);
         }
-    
+
+        [HttpGet]
+        public virtual ActionResult SelectColorPalette(int paletteId)
+        {
+            if (_systemService.GetColorPaletteById(paletteId) != null)
+            {
+                //select color palette here
+            }
+
+            return RedirectToAction(MVC.Admin.Settings.BrowseColorPalettes());
+        }
     }
 }
