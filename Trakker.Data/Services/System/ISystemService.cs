@@ -11,5 +11,7 @@ namespace Trakker.Data.Services
         IList<ColorPalette> GetAllColorPalettes();
         ColorPalette GetColorPaletteByName(string name);
         void Save(ColorPalette palette);
+
+        SystemSettings GetSystemSettings();
     }
 }

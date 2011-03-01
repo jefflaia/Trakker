@@ -331,6 +331,8 @@ namespace Links {
         public static readonly string jquery_validate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.min.js") ? Url("jquery.validate.min.js") : Url("jquery.validate.js");
                       
         public static readonly string jquery_validate_min_js = Url("jquery.validate.min.js");
+        public static readonly string jqueryTools_tabs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jqueryTools.tabs.min.js") ? Url("jqueryTools.tabs.min.js") : Url("jqueryTools.tabs.js");
+                      
         public static readonly string MicrosoftAjax_debug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MicrosoftAjax.debug.min.js") ? Url("MicrosoftAjax.debug.min.js") : Url("MicrosoftAjax.debug.js");
                       
         public static readonly string MicrosoftAjax_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MicrosoftAjax.min.js") ? Url("MicrosoftAjax.min.js") : Url("MicrosoftAjax.js");
@@ -574,6 +576,7 @@ namespace Links {
         public static readonly string Main_css = Url("Main.css");
         public static readonly string Project_css = Url("Project.css");
         public static readonly string Theme_css = Url("Theme.css");
+        public static readonly string Ticket_css = Url("Ticket.css");
     }
 
 }

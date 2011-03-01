@@ -1,14 +1,15 @@
-<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<CommentModel>" %>
+<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IList<Trakker.Data.Comment>>" %>
 
-<div class="Comment">
-    <div class="UserInfo">
+<ul>
+    <% foreach(var comment in Model) { %>
+        <li class="Comment">
+            <div class="UserInfo">
     
-        <p>Created: <%= Model.Created%></p>
-        <p>Modified: <%= Model.Modified%></p>
-    </div>
-    <p class="Body"><%= Model.Body%></p>
-</div>
+                <p>Created: <%= comment.Created%></p>
+                <p>Modified: <%= comment.Modified%></p>
+            </div>
+            <p class="Body"><%= comment.Body%></p>
+        </li>
+    <% } %>
+</ul>
 
-
-<br />
-<br />

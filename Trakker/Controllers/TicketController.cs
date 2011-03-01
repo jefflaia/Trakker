@@ -148,7 +148,7 @@ namespace Trakker.Controllers
             return View(viewData);
         }
 
-        [AcceptVerbs(HttpVerbs.Get)]
+        [HttpGet]
         public virtual ActionResult EditTicket(string keyName)
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
@@ -213,7 +213,7 @@ namespace Trakker.Controllers
             return View(new CommentCreateEditModel());
         }
 
-        [AcceptVerbs(HttpVerbs.Post)]
+        [HttpPost]
         public virtual ActionResult CreateComment(string keyName, Comment comment)
         {
 
@@ -226,9 +226,10 @@ namespace Trakker.Controllers
             {
                 comment.Created = DateTime.Today;
                 comment.Modified = DateTime.Today;
-                comment.UserId = 1;
+                comment.UserId = Auth.CurrentUser.Id;
                 comment.TicketId = ticket.Id;
                 _ticketService.Save(comment);
+                UnitOfWork.Commit();
 
                 return RedirectToRoute(MVC.Ticket.TicketDetails(keyName));
             }
@@ -288,12 +289,6 @@ namespace Trakker.Controllers
             return View(viewData);
         }
 
-        public virtual ActionResult Comment(Comment comment)
-        {
-            CommentModel viewData = Mapper.Map<Comment, CommentModel>(comment);
-
-            return PartialView(viewData);
-        }
         #endregion
 
         

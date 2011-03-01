@@ -4,6 +4,7 @@
     
    
    <%= Html.SaveButton("Save", new {}) %>
+   <%= Html.LinkButton("Comment", Relation.Single, null, new { })%>
 
     <div id="TicketDetails">
          <h2><%= Model.Summary%></h2>
@@ -35,15 +36,41 @@
             <label>Due Date:</label>    <p class="Value"><%= Model.DueDate %></p>
             
         </div>
+        <!-- the tabs -->
+        <ul class="Tabs">
+	        <li><a href="#">All</a></li>
+	        <li><a href="#">Comments</a></li>
+	        <li><a href="#">History</a></li>
+        </ul>
+
+        <!-- tab "panes" -->
+        <div class="Panes">
+	        <div>
+                <% foreach (var comment in Model.Comments) { %>
+                    <% Html.RenderPartial(MVC.Ticket.Views.Comment, Model.Comments); %>
+                <% } %>
+            </div>
+	        <div>Second tab content</div>
+	        <div>Third tab content</div>
+        </div>
+
+
     
       <%= Html.ActionLink<TicketController>(x => x.CreateComment(Model.KeyName), "Create Comment")%>
             <br />
+            <%: Model.Comments.Count %>
             
-            <% foreach (var comment in Model.Comments)
-            { %>
-               <% Html.RenderAction<TicketController>(c => c.Comment(comment)); %>
-            <% } %>
+            
         
     </div>
+
+    <script>
+        // perform JavaScript after the document is scriptable.
+        $(document).ready(function () {
+            // setup ul.tabs to work as tabs for each div directly under div.panes
+            $("ul.Tabs").tabs("div.Panes > div", { current: "Current" });
+        });
+    
+    </script>
    
 </asp:Content>

@@ -10,6 +10,9 @@
         IQueryable<ColorPalette> GetColorPalettes();
         void Save(ColorPalette palette);
         void DeleteColorPalette(int id);
+
+        SystemSettings GetSystemSettings();
+        void Save(SystemSettings settings);
         
     }
 }

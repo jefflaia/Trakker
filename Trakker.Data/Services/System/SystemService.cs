@@ -38,5 +38,10 @@
             return _systemRepository.GetColorPalettes()
                 .Where(m => m.Name == name).SingleOrDefault() ?? null;
         }
+
+        public SystemSettings GetSystemSettings()
+        {
+            return _systemRepository.GetSystemSettings();
+        }
     }
 }

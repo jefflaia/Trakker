@@ -9,16 +9,25 @@
 
     using Sql = Access;
     using System.Globalization;
+    using System.Reflection;
 
     public class SystemRepository : ISystemRepository
     {
         protected DataContext _dataContext;
         protected Table<Sql.ColorPalette> _paletteTable;
+        protected Table<Sql.SystemSetting> _systemSettingTable;
+
+        internal class Setting
+        {
+            public String Key { get; set; }
+            public String Value { get; set; }
+        }
 
         public SystemRepository(IDataContextProvider dataContext)
         {
             _dataContext = dataContext.DataContext;
             _paletteTable = _dataContext.GetTable<Sql.ColorPalette>();
+            _systemSettingTable = _dataContext.GetTable<Sql.SystemSetting>();
         }
 
         public IQueryable<ColorPalette> GetColorPalettes()
@@ -60,5 +69,45 @@
                                             select p);
         }
 
+        public SystemSettings GetSystemSettings()
+        {
+            var systemSettings = new SystemSettings();
+            var settings  = (
+                from s in _systemSettingTable 
+                select new Setting() {
+                    Key = s.Key,
+                    Value = s.Value
+                }).ToDictionary<Setting, string>(k => k.Key);
+
+      
+
+            PropertyInfo[] properties = systemSettings.GetType().GetProperties();
+            foreach (PropertyInfo property in properties)
+            {
+                if (settings.ContainsKey(property.Name))
+                {
+                    property.SetValue(systemSettings, settings[property.Name], null);
+                }
+            }
+
+            return systemSettings;
+        }
+
+        public void Save(SystemSettings setting)
+        {
+
+            PropertyInfo[] properties = setting.GetType().GetProperties();
+            foreach (PropertyInfo property in properties)
+            {
+                _systemSettingTable.Attach(new Sql.SystemSetting() 
+                {
+                    Key = property.Name,
+                    Value = property.GetValue(setting, null).ToString()
+                });
+            }
+          
+            
+            //_paletteTable.Context.Refresh(RefreshMode.KeepCurrentValues, );
+        }
     }
 }

@@ -16,12 +16,30 @@ namespace Trakker.Helpers
             return Button(helper, innerHtml, Relation.Single, new LoginIcon(), attributes);
         }
 
+        public static string LinkButton(this HtmlHelper helper, string innerHtml, Relation relation, IIcon icon, object attributes)
+        {
+            return Link(helper, innerHtml, relation, icon, attributes);
+        }
+
         public static string SaveButton(this HtmlHelper helper, string innerHtml, object attributes)
         {
             return Button(helper, innerHtml, Relation.Single, new SaveIcon(), attributes);
         }
 
-        private static string Button(this HtmlHelper helper, string innerHtml, Relation relation, IIcon icon, object attributes)
+
+
+
+        private static string Link(HtmlHelper helper, string innerHtml, Relation relation, IIcon icon, object attributes)
+        {
+            return ButtonBuilder(helper, innerHtml, new LinkElement(), relation, icon, attributes);
+        }
+
+        private static string Button(HtmlHelper helper, string innerHtml, Relation relation, IIcon icon, object attributes)
+        {
+            return ButtonBuilder(helper, innerHtml, new ButtonElement(), relation, icon, attributes);
+        }
+
+        private static string ButtonBuilder(HtmlHelper helper, string innerHtml, IElement element, Relation relation, IIcon icon, object attributes)
         {
             SystemButtonBuilder buttonBuilder = new SystemButtonBuilder();
             buttonBuilder.SetIcon(icon);

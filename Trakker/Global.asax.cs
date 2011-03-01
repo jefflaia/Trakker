@@ -55,6 +55,7 @@
                 .Add("~/Content/Main.css")
                 .Add("~/Content/Project.css")
                 .Add("~/Content/Admin/Settings.css")
+                .Add("~/Content/Ticket.css")
                 .AddDynamic("~/Content/Theme.css")
                 .Media(MediaType.Screen)
                 .Combine(true)
@@ -64,6 +65,7 @@
 
             RecoAssets.JavaScript()
                 .Add("~/Scripts/jquery-1.4.1.js")
+                .Add("~/Scripts/jqueryTools.tabs.js")
                 .Combine(true)
                 .Compress(true)
                 .Version(true)

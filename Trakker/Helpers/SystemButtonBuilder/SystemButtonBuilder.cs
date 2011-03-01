@@ -41,7 +41,12 @@ namespace Trakker.Helpers
             tag.AddCssClass(BASE_CSSCLASS);
             tag.AddCssClass(GetRelationCss(_relation));
 
-            tag.InnerHtml = string.Concat(BuildInnerHtml(innerText), _icon.Get());
+            tag.InnerHtml = BuildInnerHtml(innerText);
+
+            if (_icon != null)
+            {
+                tag.InnerHtml = string.Concat(tag.InnerHtml, _icon.Get());
+            }
 
             return tag;
         }

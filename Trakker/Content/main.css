@@ -120,25 +120,6 @@ div.Pagination a:focus{background-position: 0px -30px; }
 div.Pagination a.Current:hover{color:black;}
 
 
-/* Comments */
-div.Comment{float:left; width: 96%; border: 1px solid black; margin: 5px 2%;}
-div.Comment div.UserInfo{float:left; width: 100px;}
-div.Comment p.Body{float:left; width: auto;}
-
-
-
-
-/***** TicketDetails *****/
-#TicketDetails {float:left; width: 100%;}
-#TicketDetails div.LeftContent{float:left; width: 70%;}
-#TicketDetails div.LeftContent label{float:left; width: 150px;  margin: 3px 0px 3px 20px ;}
-#TicketDetails div.LeftContent p.Value{float:left; width : 375px; margin: 3px 0px 3px 0px ;}
-
-#TicketDetails div.RightContent{float:right; width: 26%;}
-#TicketDetails div.RightContent label{float:left; width: 150px;  margin: 3px 0px 3px 20px ;}
-#TicketDetails div.RightContent p.Value{float:left; width : 225px; margin: 3px 0px 3px 0px ; text-align: right;}
-#TicketDetails h3.SubHeader{float:left; width: 100%;  border-bottom: 1px dashed #aaa; margin-top: 20px;}
-#TicketDetails p.Description{float:left; margin-left: 20px;}
 
 /***************************************************************************************************/
 /**************************************** Generic Styling ******************************************/
@@ -180,3 +161,17 @@ di.t-calendar table tbody tr td a{ font-size: 15px !important; }
         sa;ldka;slkdals;
     </div>
 */
+
+
+/******** jquery tools - tabs *************/
+
+ul.Tabs { margin:0 !important; 	padding:0;	height:30px; border-bottom:1px solid #666;	 	}
+ul.Tabs li { float:left; padding:0; margin:0;  list-style-type:none; margin-left: 8px;}
+ul.Tabs a { float:left;	font-size:13px;	display:block;	padding:5px 30px; text-decoration:none;	border:1px solid #666; border-bottom:0px; height:18px; background-color:white; 
+            color:#777;	margin-right:2px; position:relative; top:1px;  }
+ul.Tabs a:hover { background-color:#F7F7F7; color:#333;}
+ul.Tabs a.Current {	background-color:#ddd;	border-bottom:1px solid #ddd; color:#000; cursor:default;}
+div.Panes div { float:left; width: 100%; display:none; border:1px solid #666; border-width:1px 1px 1px 1px; min-height:150px;	}
+
+
+

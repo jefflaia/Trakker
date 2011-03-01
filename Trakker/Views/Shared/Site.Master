@@ -13,6 +13,7 @@
 
  
     <%= Reco.Link("/generated.css") %> 
+    <%= Reco.Script("/generated.js") %>
 </head>
 <body>
 
@@ -53,7 +54,7 @@
            .Render();*/
      %>
     
-    <%= Reco.Script("/generated.js") %>
+    
      <script type="text/javascript">
          $(document).ready(function () {
 
@@ -124,7 +125,7 @@
              });*/
          });
 
-
+         /*
 
         $(document).ready(function () {
             jQuery('#Due').tDatePicker({
@@ -133,6 +134,7 @@
                 maxDate: new jQuery.telerik.datetime(2100, 00, 01)
             });
         });
+        */
     </script>
 </body>
 </html>

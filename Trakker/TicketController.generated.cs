@@ -55,11 +55,6 @@ namespace Trakker.Controllers {
         public System.Web.Mvc.ActionResult EditComment() {
             return new T4MVC_ActionResult(Area, Name, ActionNames.EditComment);
         }
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public System.Web.Mvc.ActionResult Comment() {
-            return new T4MVC_ActionResult(Area, Name, ActionNames.Comment);
-        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public TicketController Actions { get { return MVC.Ticket; } }
@@ -79,7 +74,6 @@ namespace Trakker.Controllers {
             public readonly string EditTicket = ("EditTicket").ToLowerInvariant();
             public readonly string CreateComment = ("CreateComment").ToLowerInvariant();
             public readonly string EditComment = ("EditComment").ToLowerInvariant();
-            public readonly string Comment = ("Comment").ToLowerInvariant();
         }
 
 
@@ -164,12 +158,6 @@ namespace Trakker.Controllers {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditComment);
             callInfo.RouteValueDictionary.Add("keyName", keyName);
             callInfo.RouteValueDictionary.Add("id", id);
-            callInfo.RouteValueDictionary.Add("comment", comment);
-            return callInfo;
-        }
-
-        public override System.Web.Mvc.ActionResult Comment(Trakker.Data.Comment comment) {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Comment);
             callInfo.RouteValueDictionary.Add("comment", comment);
             return callInfo;
         }

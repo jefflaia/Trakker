@@ -19,6 +19,7 @@ namespace Trakker.Data
         public int AssignedToUserId { get; set; }
         public int CreatedByUserId { get; set; }
         public int AssignedByUserId { get; set; }
+		public TicketStatus Status { get; set; }
 
     }
 }
