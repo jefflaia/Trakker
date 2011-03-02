@@ -38,36 +38,25 @@
         </div>
         <!-- the tabs -->
         <ul class="Tabs">
-	        <li><a href="#">All</a></li>
-	        <li><a href="#">Comments</a></li>
-	        <li><a href="#">History</a></li>
+	        <li><a href="#comments">Comments</a></li>
+	        <li><a href="#history">History</a></li>
+            <li><a href="#activity">Activity</a></li>
         </ul>
 
         <!-- tab "panes" -->
         <div class="Panes">
 	        <div>
-                <% foreach (var comment in Model.Comments) { %>
-                    <% Html.RenderPartial(MVC.Ticket.Views.Comment, Model.Comments); %>
-                <% } %>
+                <% Html.RenderPartial(MVC.Ticket.Views.Comment, Model.Comments); %>
             </div>
 	        <div>Second tab content</div>
-	        <div>Third tab content</div>
-        </div>
-
-
-    
-      <%= Html.ActionLink<TicketController>(x => x.CreateComment(Model.KeyName), "Create Comment")%>
-            <br />
-            <%: Model.Comments.Count %>
-            
+	        <div>Third tab content</div
+        </div>         
             
         
     </div>
 
     <script>
-        // perform JavaScript after the document is scriptable.
         $(document).ready(function () {
-            // setup ul.tabs to work as tabs for each div directly under div.panes
             $("ul.Tabs").tabs("div.Panes > div", { current: "Current" });
         });
     

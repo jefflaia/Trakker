@@ -1,12 +1,4 @@
-﻿/* Comments */
-li.Comment{float:left; width: 96%; border: 1px solid black; margin: 5px 2%;}
-div.Comment div.UserInfo{float:left; width: 100px;}
-div.Comment p.Body{float:left; width: auto;}
-
-
-
-
-/***** TicketDetails *****/
+﻿/***** TicketDetails *****/
 #TicketDetails {float:left; width: 100%;}
 #TicketDetails div.LeftContent{float:left; width: 70%;}
 #TicketDetails div.LeftContent label{float:left; width: 150px;  margin: 3px 0px 3px 20px ;}
@@ -17,3 +9,8 @@ div.Comment p.Body{float:left; width: auto;}
 #TicketDetails div.RightContent p.Value{float:left; width : 225px; margin: 3px 0px 3px 0px ; text-align: right;}
 #TicketDetails h3.SubHeader{float:left; width: 100%;  border-bottom: 1px dashed #aaa; margin-top: 20px;}
 #TicketDetails p.Description{float:left; margin-left: 20px;}
+
+/* Comments */
+li.Comment{ width: auto; border: 1px solid black; margin: 5px 20px; display:inine;}
+li.Comment div.UserInfo{float:left; width: 100px;}
+li.Comment p.Body{float:left; width: auto;}
