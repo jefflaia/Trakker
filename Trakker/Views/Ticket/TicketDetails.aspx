@@ -3,39 +3,61 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BasicContent" runat="server">
     
    
-   <%= Html.SaveButton("Save", new {}) %>
-   <%= Html.LinkButton("Comment", Relation.Single, null, new { })%>
+
 
     <div id="TicketDetails">
-         <h2><%= Model.Summary%></h2>
-        
-        <div class="LeftContent">
-            <h3 class="SubHeader">Details</h3>            
-            <label>Priority:</label>    <p class="Value"><%= Model.Priority.Name%></p>
-            <label>Category:</label>    <p class="Value"><%= Model.Cateogory.Name%></p>
-            <label>Status:</label>      <p class="Value"><%= Model.Status.Name%></p>
-            <label>Created:</label>     <p class="Value"><%= Model.Created%></p>
-            <label>DueDate:</label>     <p class="Value"><%= Model.DueDate%></p>
-            <label>Resoltuion:</label>     <p class="Value"><%= Model.Resolution.Name %></p>
-            <label>Status:</label><p><%= Model.IsClosed ? "Closed" : "Open" %></p>
+        <div class="Header">
+            <img src="../../Content/Images/TestTicketIcon.png" />
+            <p><%: Model.KeyName  %></p>
+            <h1><%: Model.Summary %></h1>
+        </div>
 
-            <h3 class="SubHeader">Description:</h3>
-            <p class="Description"><%= Model.Description%></p>
+        <div class="Buttons">
+            <%= Html.SaveButton("Save", new {}) %>
+            <%= Html.LinkButton("Comment", Relation.Single, null, new { })%>
+        </div>
+
         
+        <div class="Details">
+            <h2>Details</h2>     
+            
+            <ul>
+                <li><label>Priority:</label>    <span><%= Model.Priority.Name%></span></li>
+                <li><label>Category:</label>    <span><%= Model.Cateogory.Name%></span></li>
+                <li><label>Status:</label>      <span><%= Model.Status.Name%></span></li>
+                <li><label>Created:</label>     <span><%= Model.Created%></span></li>
+                <li><label>DueDate:</label>     <span><%= Model.DueDate%></span></li>
+                <li><label>Resoltuion:</label>  <span><%= Model.Resolution.Name %></span></li>
+                <li><label>Status:</label>      <span><%= Model.IsClosed ? "Closed" : "Open" %></span></li>
+            </ul>                         
         </div>
         
-        
-        <div class="RightContent">
-            <h3 class="SubHeader">People</h3>
-            <label>Assigned To:</label>     <p class="Value"><%= Model.AssignedBy.Email %></p>
-            <label>Created By:</label>      <p class="Value"><%= Model.CreatedBy.Email %></p>
-            <label>Assigned By:</label>     <p class="Value"><%= Model.AssignedTo.Email %></p>
-            
-            <h3 class="SubHeader">Dates</h3>
+        <div class="People">
+            <h2>People</h2>
+
+            <ul>
+                <li><label>Assigned To:</label>     <span><%= Model.AssignedBy.Email %></span></li>
+                <li><label>Created By:</label>      <span><%= Model.CreatedBy.Email %></span></li>
+                <li><label>Assigned By:</label>     <span><%= Model.AssignedTo.Email %></span></li>
+            </ul>        
+        </div>
+
+        <div class="Dates">
+            <h2>Dates</h2>
             <label>Created:</label>     <p class="Value"><%= Model.Created %></p>
             <label>Due Date:</label>    <p class="Value"><%= Model.DueDate %></p>
-            
         </div>
+
+        <div class="Desc">
+            <h2>Description:</h2>
+            <div><%= Model.Description%></div>
+        </div>
+
+        <div class="TimeTracking">
+            <h2>Time Tracking</h2>
+        </div>
+
+
         <!-- the tabs -->
         <ul class="Tabs">
 	        <li><a href="#comments">Comments</a></li>

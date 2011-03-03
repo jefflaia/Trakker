@@ -1,5 +1,34 @@
 ﻿/***** TicketDetails *****/
 #TicketDetails {float:left; width: 100%;}
+#TicketDetails div.Header{height: 42px; position:relative;}
+#TicketDetails div.Header img{width: 42px; height: 42px;  position:absolute;}
+#TicketDetails div.Header h1{ margin: 0px 0px 0px 58px;}
+#TicketDetails div.Header p { margin-left: 58px;}
+
+#TicketDetails div.Buttons{margin: 5px 0px; position:relative; width:auto; display:block; height: 28px;}
+
+#TicketDetails div.Details {  float:left; width: 48%;  margin-right: 2%;}
+#TicketDetails div.Details ul li { float:left; width: 40%;}
+
+#TicketDetails div.People { float:left; width: 24%;  margin-right: 2%; }
+#TicketDetails div.People ul li span{float:right; margin-right: 20px;}
+
+
+#TicketDetails div.Dates { float:left; width: 24%;  }
+#TicketDetails div.Desc { float:left; width: 68%; margin-right: 2%; margin-bottom: 20px;}
+#TicketDetails div.Desc div{padding:0px 20px;}
+
+#TicketDetails div.TimeTracking{ float:left; width: 30%;} 
+
+#TicketDetails div ul { margin-left: 20px;}
+#TicketDetails div ul li{ list-style:none; }
+#TicketDetails div.Details h2, #TicketDetails div.People h2, #TicketDetails div.Dates h2, #TicketDetails div.Desc h2, #TicketDetails div.TimeTracking h2  
+{background-color: #eee; border-bottom: 1px solid #ccc; padding: 2px 0px 2px 20px; font-size: 1.25em;}
+
+
+
+
+
 #TicketDetails div.LeftContent{float:left; width: 70%;}
 #TicketDetails div.LeftContent label{float:left; width: 150px;  margin: 3px 0px 3px 20px ;}
 #TicketDetails div.LeftContent p.Value{float:left; width : 375px; margin: 3px 0px 3px 0px ;}

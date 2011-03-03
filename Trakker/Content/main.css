@@ -1,5 +1,5 @@
 ﻿*{margin: 0px; padding: 0px;}
-body{color: #353535; font-size: 62.5%; line-height: 1.4; font-family:"lucida grande",tahoma,verdana,arial,sans-serif; background-color: #f7f7f7; min-width: 1000px;}
+body{color: #353535; font-size: 62.5%; line-height: 1.4; font-family:"lucida grande",tahoma,verdana,arial,sans-serif; background-color: #f7f7f7; min-width: 1000px; }
 
 a{outline: none; text-decoration: none;} /* remove dotted line when clicking a link */
 h1,h2,h3,h4,h5,h6{margin: 10px 0px 10px 0px;}
@@ -18,8 +18,8 @@ div#Header div.Right{float: right; width: 400px; margin-right: 20px;}
 div#Header div.Right div{width: 100%; text-align: right;}
 
 div#SubHeader{font-size: 1.2em; width: 100%; background-image:url(/Images/UI-Backgrounds.png); background-position: 0px -49px; height: 30px; border-bottom: 1px solid #667e9a;}
-div#Content{ width: 100%; background-color: White; display:inline-block; font-size: 1.2em;}
-div#Content div.InnerBorder{ position: relative; margin: 10px 20px; background-color: White; min-height: 500px;}
+div#Content{ width: 100%;  background-color:white; display:inline-block; font-size: 1.2em; }
+div#Content div.InnerBorder{ position: relative; margin: 10px 20px;  min-height: 500px;}
 div#Footer{ font-size: 1.2em; background-color: #F7F7F7; border-top: 1px solid #bbb; width: 100%; min-height: 50px;}
 
 /* content sections */
