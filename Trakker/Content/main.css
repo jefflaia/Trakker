@@ -18,15 +18,15 @@ div#Header div.Right{float: right; width: 400px; margin-right: 20px;}
 div#Header div.Right div{width: 100%; text-align: right;}
 
 div#SubHeader{font-size: 1.2em; width: 100%; background-image:url(/Images/UI-Backgrounds.png); background-position: 0px -49px; height: 30px; border-bottom: 1px solid #667e9a;}
-div#Content{ width: 100%;  background-color:white; display:inline-block; font-size: 1.2em; }
-div#Content div.InnerBorder{ position: relative; margin: 10px 20px;  min-height: 500px;}
+div#Content{ width: 100%;  background-color:white; display:inline-block; font-size: 1.2em; background-image: url(/Images/Background.png);}
+div#Content div.InnerBorder{ position: relative; overflow:hidden; margin: 0px 20px;  min-height: 500px; border-left: 1px solid #ccc; border-right: 1px solid #ccc; background-color: White; padding: 10px 20px;}
 div#Footer{ font-size: 1.2em; background-color: #F7F7F7; border-top: 1px solid #bbb; width: 100%; min-height: 50px;}
 
 /* content sections */
 div#Content div.Section {border: 1px solid #ccc; padding: 5px 10px; margin-bottom: 10px;}
 div#Content div.Section p {margin: 5px 0px;}
 div#Content div.Section > h1, div#Content div.Section > h2, div#Content div.Section > h3, div#Content div.Section > h4, div#Content div.Section > h5, div#Content div.Section > h6
- { position: relative; top: -5px; left: -10px; padding: 5px 10px; width: 100%; background-color: #eee; margin: 0px 0px 5px 0px;}
+ { position: relative; top: -5px; left: -10px; padding: 3px 10px; width: 100%; background-color: #eee; margin: 0px 0px 5px 0px; font-size:1.3em;}
 
 /* Navigation */
 div.Dropdown { padding: 0; display:block; }
@@ -88,11 +88,11 @@ form div.validation-summary-errors li{margin-left: 30px; }
 
 /* UI Buttons */
 .UI-Button{float:left; margin: 2px 0px; color: inherit; display:inline-block; height: 23px; line-height: 23px; border:1px solid #ccc; padding: 3px 5px 2px 5px; 
-background-image: url(/Images/UI-Backgrounds.png);}
+/*background-image: url(/Images/UI-Backgrounds.png);*/}
 .UI-Button:hover{border-color: #999; background-position: 0px  -80px; -moz-box-shadow: 0 0 3px #aaa; -webkit-box-shadow: #aaa 0 0 3px;}
 .UI-Button:active{position: relative; top: 1px;  }
 
-.UI-Button.UI-Border{-moz-border-radius:4px; -webkit-border-radius:4px; margin: 2px 3px;}
+.UI-Button.UI-Border{ margin: 2px 3px;}
 .UI-Button.UI-Border-Left{-moz-border-radius:5px 0px 0px 5px; -webkit-border-radius:5px 0px 0px 5px; border-width: 1px 0px 1px 1px; margin: 2px 0px 2px 3px;}
 .UI-Button.UI-Border-Right{-moz-border-radius:0px 5px 5px 0px; -webkit-border-radius:0px 5px 5px 0px; position:relative; left: -1px; margin: 2px 3px 2px 0px;}
 .UI-Button.UI-Border-Center{border-width: 1px 0px 1px 1px; margin: 2px 0px;}
@@ -165,13 +165,13 @@ di.t-calendar table tbody tr td a{ font-size: 15px !important; }
 
 /******** jquery tools - tabs *************/
 
-ul.Tabs {  float:left; width: 100%; padding:0;	height:25px; margin-bottom: 10px; border-bottom: 1px solid #666; border-width: 1px 1px 1px 1px; min-height: }
+ul.Tabs {  float:left; width: 100%; padding:0;	height:25px; margin-bottom: 10px; border-bottom: 1px solid #ccc; border-width: 1px 1px 1px 1px; min-height: }
 ul.Tabs li { float:left; padding:0; margin:0;  list-style-type:none; margin-left: 8px;}
 ul.Tabs a { float: left;	display: block;	padding: 2px 15px; text-decoration: none;	 border-bottom: 0px; height: 18px; background-color: white; 
 	margin-right: 2px; position: relative; top:1px;  border-size: 1px; border-color: transparent;}
 ul.Tabs a:hover { }
-ul.Tabs a.Current {	color: #000; cursor: default; border:1px solid #666; border-bottom: 1px solid white;}
-div.Panes div { float:left; width: 100%; display: none; 150px;	}
+ul.Tabs a.Current {	color: inherit; cursor: default; border:1px solid #ccc; border-bottom: 1px solid white;}
+div.Panes > div { float:left; width: 100%; display: none;	}
 
 
 

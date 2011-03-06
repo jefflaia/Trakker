@@ -328,6 +328,7 @@
     <Content Include="Content\2010.2.825\Windows7\loading.gif" />
     <Content Include="Content\2010.2.825\Windows7\sprite.png" />
     <Content Include="Content\Admin\Settings.css" />
+    <Content Include="Content\Images\Background.png" />
     <Content Include="Content\Images\Icons.png" />
     <Content Include="Content\Images\Field-Background.bmp" />
     <Content Include="Content\Images\Icons\binocular.png" />
@@ -392,7 +393,7 @@
     <Content Include="Views\Ticket\EditComment.aspx" />
     <Content Include="Views\Ticket\CreateEditCommentForm.ascx" />
     <Content Include="Views\Ticket\CreateComment.aspx" />
-    <Content Include="Views\Ticket\Comment.ascx" />
+    <Content Include="Views\Ticket\TicketDetailsCommentsTab.ascx" />
     <Content Include="Views\Ticket\CreateTicket.aspx" />
     <Content Include="Views\Ticket\CreateEditTicketForm.ascx" />
     <Content Include="Views\Ticket\TicketDetails.aspx" />

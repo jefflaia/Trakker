@@ -1,8 +1,8 @@
 ﻿/***** TicketDetails *****/
 #TicketDetails {float:left; width: 100%;}
-#TicketDetails div.Header{height: 42px; position:relative;}
-#TicketDetails div.Header img{width: 42px; height: 42px;  position:absolute;}
-#TicketDetails div.Header h1{ margin: 0px 0px 0px 58px;}
+#TicketDetails div.Header{height: 40px; position:relative;}
+#TicketDetails div.Header img{width: 40px; height: 40px;  position:absolute;}
+#TicketDetails div.Header h1{ margin: 0px 0px 0px 58px; font-size:1.3em;}
 #TicketDetails div.Header p { margin-left: 58px;}
 
 #TicketDetails div.Buttons{margin: 5px 0px; position:relative; width:auto; display:block; height: 28px;}
@@ -20,26 +20,17 @@
 
 #TicketDetails div.TimeTracking{ float:left; width: 30%;} 
 
-#TicketDetails div ul { margin-left: 20px;}
-#TicketDetails div ul li{ list-style:none; }
+#TicketDetails div.List ul { margin-left: 20px;}
+#TicketDetails div.List ul li{ list-style:none; }
 #TicketDetails div.Details h2, #TicketDetails div.People h2, #TicketDetails div.Dates h2, #TicketDetails div.Desc h2, #TicketDetails div.TimeTracking h2  
-{background-color: #eee; border-bottom: 1px solid #ccc; padding: 2px 0px 2px 20px; font-size: 1.25em;}
+{background-color: #F5F5F5; border-bottom: 1px solid #ccc; padding: 2px 0px 2px 20px; font-size: 1.25em;}
 
 
-
-
-
-#TicketDetails div.LeftContent{float:left; width: 70%;}
-#TicketDetails div.LeftContent label{float:left; width: 150px;  margin: 3px 0px 3px 20px ;}
-#TicketDetails div.LeftContent p.Value{float:left; width : 375px; margin: 3px 0px 3px 0px ;}
-
-#TicketDetails div.RightContent{float:right; width: 26%;}
-#TicketDetails div.RightContent label{float:left; width: 150px;  margin: 3px 0px 3px 20px ;}
-#TicketDetails div.RightContent p.Value{float:left; width : 225px; margin: 3px 0px 3px 0px ; text-align: right;}
-#TicketDetails h3.SubHeader{float:left; width: 100%;  border-bottom: 1px dashed #aaa; margin-top: 20px;}
-#TicketDetails p.Description{float:left; margin-left: 20px;}
 
 /* Comments */
-li.Comment{ width: auto; border: 1px solid black; margin: 5px 20px; display:inine;}
-li.Comment div.UserInfo{float:left; width: 100px;}
-li.Comment p.Body{float:left; width: auto;}
+#TicketDetails div.Comments ul {}
+#TicketDetails div.Comments li.Comment{ list-style:none; margin: 5px 0px; border-bottom:1px solid #ccc; padding: 10px 0px;}
+#TicketDetails div.Comments li.Comment img{margin-left: 10px; position:absolute; width:16px; height:16px;}
+#TicketDetails div.Comments li.Comment p{margin-left: 30px; margin-bottom: 5px;}
+#TicketDetails div.Comments li.Comment div{ margin-left: 30px; }
+

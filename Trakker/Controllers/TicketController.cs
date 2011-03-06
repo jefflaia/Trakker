@@ -28,6 +28,9 @@ namespace Trakker.Controllers
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
 
+            //var users = _userService.GetUsersWhoCommentedOnTicket(int ticketId);
+          
+
             TicketDetailsModel viewData = new TicketDetailsModel()
             {
                 Id = ticket.Id,

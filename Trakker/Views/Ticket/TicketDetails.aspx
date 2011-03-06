@@ -2,9 +2,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BasicContent" runat="server">
     
-   
-
-
+ 
     <div id="TicketDetails">
         <div class="Header">
             <img src="../../Content/Images/TestTicketIcon.png" />
@@ -18,7 +16,7 @@
         </div>
 
         
-        <div class="Details">
+        <div class="Details List">
             <h2>Details</h2>     
             
             <ul>
@@ -32,7 +30,7 @@
             </ul>                         
         </div>
         
-        <div class="People">
+        <div class="People List">
             <h2>People</h2>
 
             <ul>
@@ -42,7 +40,7 @@
             </ul>        
         </div>
 
-        <div class="Dates">
+        <div class="Dates List">
             <h2>Dates</h2>
             <label>Created:</label>     <p class="Value"><%= Model.Created %></p>
             <label>Due Date:</label>    <p class="Value"><%= Model.DueDate %></p>
@@ -67,8 +65,8 @@
 
         <!-- tab "panes" -->
         <div class="Panes">
-	        <div>
-                <% Html.RenderPartial(MVC.Ticket.Views.Comment, Model.Comments); %>
+	        <div class="Comments">
+                <% Html.RenderPartial(MVC.Ticket.Views.TicketDetailsCommentsTab, Model.Comments); %>
             </div>
 	        <div>Second tab content</div>
 	        <div>Third tab content</div

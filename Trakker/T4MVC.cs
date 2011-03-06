@@ -553,6 +553,7 @@ namespace Links {
             private const string URLPATH = "~/Content/Images";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string Background_png = Url("Background.png");
             public static readonly string Field_Background_bmp = Url("Field-Background.bmp");
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public static class Icons {
@@ -569,6 +570,7 @@ namespace Links {
         
             public static readonly string Icons_png = Url("Icons.png");
             public static readonly string TableBackgrounds_png = Url("TableBackgrounds.png");
+            public static readonly string TestTicketIcon_png = Url("TestTicketIcon.png");
             public static readonly string UI_Backgrounds_png = Url("UI-Backgrounds.png");
             public static readonly string UI_Button_png = Url("UI-Button.png");
         }
