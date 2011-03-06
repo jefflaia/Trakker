@@ -28,8 +28,23 @@ namespace Trakker.Controllers
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
 
-            //var users = _userService.GetUsersWhoCommentedOnTicket(int ticketId);
-          
+            var comments = _ticketService.GetCommentsWithticketId(ticket.Id);
+            var users = new Dictionary<int, User>();
+            
+            //avoid querying for the same user more than once
+            foreach (var comment in comments)
+            {
+                if (users.ContainsKey(comment.UserId))
+                {
+                    comment.User = users[comment.UserId];
+                }
+                else
+                {
+                    users.Add(comment.UserId, _userService.GetUserWithId(comment.UserId));
+                    comment.User = users[comment.UserId];
+                }
+            }
+
 
             TicketDetailsModel viewData = new TicketDetailsModel()
             {
@@ -43,7 +58,7 @@ namespace Trakker.Controllers
                 Cateogory = _ticketService.GetTypeById(ticket.CategoryId),
                 Resolution = _ticketService.GetResolutionById(ticket.ResolutionId),
                 KeyName = ticket.KeyName,
-                Comments = _ticketService.GetCommentsWithticketId(ticket.Id),
+                Comments = comments,
                 IsClosed = ticket.IsClosed,
                 AssignedBy = _userService.GetUserWithId(ticket.AssignedByUserId),
                 CreatedBy = _userService.GetUserWithId(ticket.CreatedByUserId),

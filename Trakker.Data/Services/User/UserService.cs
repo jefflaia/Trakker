@@ -10,10 +10,12 @@
     public class UserService : IUserService
     {
         protected IUserRepository _userRepository;
+        protected ITicketRepository _ticketRepository;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, ITicketRepository ticketRepository)
         {
             _userRepository = userRepository;
+            _ticketRepository = ticketRepository;
         }
 
         #region User

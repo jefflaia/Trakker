@@ -11,11 +11,16 @@
         </div>
 
         <div class="Buttons">
-            <%= Html.SaveButton("Save", new {}) %>
-            <%= Html.LinkButton("Comment", Relation.Single, null, new { })%>
+            <%= Html.LinkButton("Edit", Relation.Single, null, new { })%>
+
+            <%= Html.LinkButton("Assign", Relation.Left, null, new { })%>
+            <%= Html.LinkButton("Comment", Relation.Center, null, new { }) %>
+            <%= Html.LinkButton("Resolve", Relation.Right, null, new { })%>
+
+            <%= Html.LinkButton("Attach File", Relation.Left, null, new { })%>
+            <%= Html.LinkButton("Attach Screenshot", Relation.Right, null, new { })%>
         </div>
 
-        
         <div class="Details List">
             <h2>Details</h2>     
             

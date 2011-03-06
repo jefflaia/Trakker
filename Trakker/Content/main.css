@@ -87,14 +87,14 @@ form div.validation-summary-errors li{margin-left: 30px; }
 .UI-Hover{-moz-box-shadow: 0 0 3px #222; -webkit-box-shadow: #222 0 0 3px;}
 
 /* UI Buttons */
-.UI-Button{float:left; margin: 2px 0px; color: inherit; display:inline-block; height: 23px; line-height: 23px; border:1px solid #ccc; padding: 3px 5px 2px 5px; 
+.UI-Button{float:left; margin: 2px 0px; color: inherit; display:inline-block; height: 23px; line-height: 23px; border:1px solid #ccc; padding: 3px 10px 3px 10px; 
 /*background-image: url(/Images/UI-Backgrounds.png);*/}
 .UI-Button:hover{border-color: #999; background-position: 0px  -80px; -moz-box-shadow: 0 0 3px #aaa; -webkit-box-shadow: #aaa 0 0 3px;}
 .UI-Button:active{position: relative; top: 1px;  }
 
 .UI-Button.UI-Border{ margin: 2px 3px;}
 .UI-Button.UI-Border-Left{-moz-border-radius:5px 0px 0px 5px; -webkit-border-radius:5px 0px 0px 5px; border-width: 1px 0px 1px 1px; margin: 2px 0px 2px 3px;}
-.UI-Button.UI-Border-Right{-moz-border-radius:0px 5px 5px 0px; -webkit-border-radius:0px 5px 5px 0px; position:relative; left: -1px; margin: 2px 3px 2px 0px;}
+.UI-Button.UI-Border-Right{-moz-border-radius:0px 5px 5px 0px; -webkit-border-radius:0px 5px 5px 0px; position:relative;  margin: 2px 3px 2px 0px;}
 .UI-Button.UI-Border-Center{border-width: 1px 0px 1px 1px; margin: 2px 0px;}
 .UI-Button.UI-Border-Top{-moz-border-radius:5px 5px 0px 0px; -webkit-border-radius:5px 5px 0px 0px; margin: 2px 3px 0px 3px;}
 .UI-Button.UI-Border-Bottom{-moz-border-radius:0px 0px 5px 5px; -webkit-border-radius:0px 0px 5px 5px; margin: 0px 3px 2px 3px;}
@@ -167,10 +167,10 @@ di.t-calendar table tbody tr td a{ font-size: 15px !important; }
 
 ul.Tabs {  float:left; width: 100%; padding:0;	height:25px; margin-bottom: 10px; border-bottom: 1px solid #ccc; border-width: 1px 1px 1px 1px; min-height: }
 ul.Tabs li { float:left; padding:0; margin:0;  list-style-type:none; margin-left: 8px;}
-ul.Tabs a { float: left;	display: block;	padding: 2px 15px; text-decoration: none;	 border-bottom: 0px; height: 18px; background-color: white; 
+ul.Tabs a { float: left;	display: block;	padding: 2px 15px; text-decoration: none;	 border-bottom: 0px; height: 18px; background-color: white;   border-top: 1px solid white;
 	margin-right: 2px; position: relative; top:1px;  border-size: 1px; border-color: transparent;}
-ul.Tabs a:hover { }
-ul.Tabs a.Current {	color: inherit; cursor: default; border:1px solid #ccc; border-bottom: 1px solid white;}
+ul.Tabs a:hover {  }
+ul.Tabs a.Current {	color: inherit; cursor: default; border:1px solid #ccc; border-bottom: 1px solid white; }
 div.Panes > div { float:left; width: 100%; display: none;	}
 
 

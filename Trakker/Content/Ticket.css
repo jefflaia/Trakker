@@ -15,15 +15,15 @@
 
 
 #TicketDetails div.Dates { float:left; width: 24%;  }
-#TicketDetails div.Desc { float:left; width: 68%; margin-right: 2%; margin-bottom: 20px;}
+#TicketDetails div.Desc { float:left; width: 68%; margin-right: 2%; margin-bottom: 20px; margin-top: 10px;}
 #TicketDetails div.Desc div{padding:0px 20px;}
 
-#TicketDetails div.TimeTracking{ float:left; width: 30%;} 
+#TicketDetails div.TimeTracking{ float:left; width: 30%; margin-top: 10px;} 
 
 #TicketDetails div.List ul { margin-left: 20px;}
 #TicketDetails div.List ul li{ list-style:none; }
 #TicketDetails div.Details h2, #TicketDetails div.People h2, #TicketDetails div.Dates h2, #TicketDetails div.Desc h2, #TicketDetails div.TimeTracking h2  
-{background-color: #F5F5F5; border-bottom: 1px solid #ccc; padding: 2px 0px 2px 20px; font-size: 1.25em;}
+{ border-bottom: 1px solid #ccc; padding: 2px 0px 2px 5px; font-size: 1.25em; margin-top: 0px;}
 
 
 
@@ -31,6 +31,6 @@
 #TicketDetails div.Comments ul {}
 #TicketDetails div.Comments li.Comment{ list-style:none; margin: 5px 0px; border-bottom:1px solid #ccc; padding: 10px 0px;}
 #TicketDetails div.Comments li.Comment img{margin-left: 10px; position:absolute; width:16px; height:16px;}
-#TicketDetails div.Comments li.Comment p{margin-left: 30px; margin-bottom: 5px;}
-#TicketDetails div.Comments li.Comment div{ margin-left: 30px; }
+#TicketDetails div.Comments li.Comment p{margin: 0px 35px 5px 35px;}
+#TicketDetails div.Comments li.Comment div{ margin: 0px 35px 0px 35px; }
 
