@@ -579,6 +579,7 @@ namespace Links {
         public static readonly string Project_css = Url("Project.css");
         public static readonly string Theme_css = Url("Theme.css");
         public static readonly string Ticket_css = Url("Ticket.css");
+        public static readonly string User_css = Url("User.css");
     }
 
 }

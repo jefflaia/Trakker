@@ -11,8 +11,9 @@ namespace Trakker.Routes
     {
         public static void AddRoutes(ref RouteCollection routes)
         {
-            routes.MapRoute("Login", "login", new { controller = "User", action = "Login" }, new []{ "Trakker.Controllers" });
-            routes.MapRoute("Logout", "logout", new { controller = "User", action = "Logout" }, new[] { "Trakker.Controllers" });
+            routes.MapRoute("Login", "login", new { controller = "User", action = "Login" });
+            routes.MapRoute("Logout", "logout", new { controller = "User", action = "Logout" });
+            routes.MapRoute("UserProfile", "user/{userId}/profile", new { controller = "User", action = "UserProfile" });
 
         }
     }

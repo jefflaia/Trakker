@@ -27,6 +27,8 @@ div#Content div.Section {border: 1px solid #ccc; padding: 5px 10px; margin-botto
 div#Content div.Section p {margin: 5px 0px;}
 div#Content div.Section > h1, div#Content div.Section > h2, div#Content div.Section > h3, div#Content div.Section > h4, div#Content div.Section > h5, div#Content div.Section > h6
  { position: relative; top: -5px; left: -10px; padding: 3px 10px; width: 100%; background-color: #eee; margin: 0px 0px 5px 0px; font-size:1.3em;}
+ 
+ div#Content div.SubSection h2{border-bottom: 1px solid #ccc; font-size: 1.25em; margin-top: 0; padding: 2px 0 2px 5px;}
 
 /* Navigation */
 div.Dropdown { padding: 0; display:block; }

@@ -56,6 +56,7 @@
                 .Add("~/Content/Project.css")
                 .Add("~/Content/Admin/Settings.css")
                 .Add("~/Content/Ticket.css")
+                .Add("~/Content/User.css")
                 .AddDynamic("~/Content/Theme.css")
                 .Media(MediaType.Screen)
                 .Combine(true)

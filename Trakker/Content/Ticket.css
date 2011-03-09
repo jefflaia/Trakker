@@ -1,36 +1,32 @@
 ﻿/***** TicketDetails *****/
-#TicketDetails {float:left; width: 100%;}
-#TicketDetails div.Header{height: 40px; position:relative;}
-#TicketDetails div.Header img{width: 40px; height: 40px;  position:absolute;}
-#TicketDetails div.Header h1{ margin: 0px 0px 0px 58px; font-size:1.3em;}
-#TicketDetails div.Header p { margin-left: 58px;}
+div#TicketDetails {float:left; width: 100%;}
+div#TicketDetails div.Header{height: 40px; position:relative;}
+div#TicketDetails div.Header img{width: 40px; height: 40px;  position:absolute;}
+div#TicketDetails div.Header h1{ margin: 0px 0px 0px 58px; font-size:1.3em;}
+div#TicketDetails div.Header p { margin-left: 58px;}
 
-#TicketDetails div.Buttons{margin: 5px 0px; position:relative; width:auto; display:block; height: 28px;}
+div#TicketDetails div.Buttons{margin: 5px 0px; position:relative; width:auto; display:block; height: 28px;}
 
-#TicketDetails div.Details {  float:left; width: 48%;  margin-right: 2%;}
-#TicketDetails div.Details ul li { float:left; width: 40%;}
+div#TicketDetails div.Details {  float:left; width: 48%;  margin-right: 2%;}
+div#TicketDetails div.Details ul li { float:left; width: 40%;}
 
-#TicketDetails div.People { float:left; width: 24%;  margin-right: 2%; }
-#TicketDetails div.People ul li span{float:right; margin-right: 20px;}
-
-
-#TicketDetails div.Dates { float:left; width: 24%;  }
-#TicketDetails div.Desc { float:left; width: 68%; margin-right: 2%; margin-bottom: 20px; margin-top: 10px;}
-#TicketDetails div.Desc div{padding:0px 20px;}
-
-#TicketDetails div.TimeTracking{ float:left; width: 30%; margin-top: 10px;} 
-
-#TicketDetails div.List ul { margin-left: 20px;}
-#TicketDetails div.List ul li{ list-style:none; }
-#TicketDetails div.Details h2, #TicketDetails div.People h2, #TicketDetails div.Dates h2, #TicketDetails div.Desc h2, #TicketDetails div.TimeTracking h2  
-{ border-bottom: 1px solid #ccc; padding: 2px 0px 2px 5px; font-size: 1.25em; margin-top: 0px;}
+div#TicketDetails div.People { float:left; width: 24%;  margin-right: 2%; }
+div#TicketDetails div.People ul li span{float:right; margin-right: 20px;}
 
 
+div#TicketDetails div.Dates { float:left; width: 24%;  }
+div#TicketDetails div.Desc { float:left; width: 68%; margin-right: 2%; margin-bottom: 20px; margin-top: 10px;}
+div#TicketDetails div.Desc div{padding:0px 20px;}
+
+div#TicketDetails div.TimeTracking{ float:left; width: 30%; margin-top: 10px;} 
+
+div#TicketDetails div.List ul { margin-left: 20px;}
+div#TicketDetails div.List ul li{ list-style:none; color:#666;}
+div#TicketDetails div.List ul li label{color: #666; width: 30%; float:left;}
 
 /* Comments */
-#TicketDetails div.Comments ul {}
-#TicketDetails div.Comments li.Comment{ list-style:none; margin: 5px 0px; border-bottom:1px solid #ccc; padding: 10px 0px;}
-#TicketDetails div.Comments li.Comment img{margin-left: 10px; position:absolute; width:16px; height:16px;}
-#TicketDetails div.Comments li.Comment p{margin: 0px 35px 5px 35px;}
-#TicketDetails div.Comments li.Comment div{ margin: 0px 35px 0px 35px; }
-
+div#TicketDetails div.Comments ul {}
+div#TicketDetails div.Comments li.Comment{ list-style:none; margin: 5px 0px; border-bottom:1px solid #ccc; padding: 10px 0px;}
+div#TicketDetails div.Comments li.Comment img{margin-left: 10px; position:absolute; width:16px; height:16px;}
+div#TicketDetails div.Comments li.Comment p{margin: 0px 35px 5px 35px;}
+div#TicketDetails div.Comments li.Comment div{ margin: 0px 35px 0px 35px; }

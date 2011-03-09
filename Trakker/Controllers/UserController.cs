@@ -25,15 +25,14 @@ namespace Trakker.Controllers
             : base(projectService, ticketService, userService)
         {            
         }
-
-
-       public virtual ActionResult Login()
+        
+        public virtual ActionResult Login()
         {
             return View(new LoginModel());
         }
 
         [HttpPost]
-       public virtual ActionResult Login(LoginModel viewData)
+        public virtual ActionResult Login(LoginModel viewData)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +73,22 @@ namespace Trakker.Controllers
             return View(new LogoutModel());
         }
 
-        
-    
+        public virtual ActionResult UserProfile(int userId)
+        {
+            var user = _userService.GetUserWithId(userId);
+
+            if (user == null)
+            {
+                //TODO:: redirect to user not found page.
+            }
+
+            var model = new UserProfileModel()
+            {
+                User = user
+            };
+
+
+            return View(model); ;
+        }    
     }
 }

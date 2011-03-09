@@ -30,6 +30,11 @@ namespace Trakker.Controllers {
             return RedirectToRoute(callInfo.RouteValueDictionary);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult UserProfile() {
+            return new T4MVC_ActionResult(Area, Name, ActionNames.UserProfile);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public UserController Actions { get { return MVC.User; } }
@@ -45,6 +50,7 @@ namespace Trakker.Controllers {
         public class ActionNamesClass {
             public readonly string Login = ("Login").ToLowerInvariant();
             public readonly string Logout = ("Logout").ToLowerInvariant();
+            public readonly string UserProfile = ("UserProfile").ToLowerInvariant();
         }
 
 
@@ -55,6 +61,7 @@ namespace Trakker.Controllers {
         public class ViewNames {
             public readonly string Login = "~/Views/User/Login.aspx";
             public readonly string Logout = "~/Views/User/Logout.aspx";
+            public readonly string UserProfile = "~/Views/User/UserProfile.aspx";
         }
     }
 
@@ -75,6 +82,12 @@ namespace Trakker.Controllers {
 
         public override System.Web.Mvc.ActionResult Logout() {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Logout);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult UserProfile(int userId) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.UserProfile);
+            callInfo.RouteValueDictionary.Add("userId", userId);
             return callInfo;
         }
 

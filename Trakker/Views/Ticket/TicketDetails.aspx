@@ -21,7 +21,7 @@
             <%= Html.LinkButton("Attach Screenshot", Relation.Right, null, new { })%>
         </div>
 
-        <div class="Details List">
+        <div class="Details List SubSection">
             <h2>Details</h2>     
             
             <ul>
@@ -35,7 +35,7 @@
             </ul>                         
         </div>
         
-        <div class="People List">
+        <div class="People List SubSection">
             <h2>People</h2>
 
             <ul>
@@ -45,18 +45,18 @@
             </ul>        
         </div>
 
-        <div class="Dates List">
+        <div class="Dates List SubSection">
             <h2>Dates</h2>
             <label>Created:</label>     <p class="Value"><%= Model.Created %></p>
             <label>Due Date:</label>    <p class="Value"><%= Model.DueDate %></p>
         </div>
 
-        <div class="Desc">
+        <div class="Desc SubSection">
             <h2>Description:</h2>
             <div><%= Model.Description%></div>
         </div>
 
-        <div class="TimeTracking">
+        <div class="TimeTracking SubSection">
             <h2>Time Tracking</h2>
         </div>
 

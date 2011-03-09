@@ -1,0 +1,9 @@
+﻿div#UserProfile div.Header{height: 40px; position:relative; margin-bottom: 10px;}
+div#UserProfile div.Header img{width: 40px; height: 40px;  position:absolute;}
+div#UserProfile div.Header h1{ margin: 0px 0px 0px 58px; font-size:1.6em; padding-top: 8px;}
+
+div#UserProfile div.Left{width: 40%; float:left; }
+div#UserProfile div.Right{width: 58%; float:right;}
+
+div#UserProfile div.Left ul li{list-style:none; margin-left: 20px;}
+div#UserProfile div.Left ul li label{color: #666; width: 60%; float:left;}
