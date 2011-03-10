@@ -76,8 +76,7 @@
 	        <div>Second tab content</div>
 	        <div>Third tab content</div
         </div>         
-            
-        
+           
     </div>
 
     <script>

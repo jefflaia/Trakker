@@ -9,7 +9,7 @@
                 <li><%= Html.ActionLink("Statuses", MVC.Admin.Attribute.CreateStatus()) %></li>
             </ul>
         </li>
-        <li><%= Html.RouteLink("Management", MVC.Admin.Management.Index()) %>
+        <li><%= Html.ActionLink("Management", MVC.Admin.Management.Index()) %>
             <ul class="UI-Shadow">
                 <li><%= Html.ActionLink("Users", MVC.Admin.Management.BrowseUsers()) %></li>
                 <li><%= Html.ActionLink("Projects", MVC.Admin.Management.BrowseProjects()) %></li>
