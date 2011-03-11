@@ -13,9 +13,12 @@ button:focus{outline:none;}
 button::-moz-focus-inner{border:0px;}
 
 /* layout */
-div#Header{font-size: 1.2em; width: 99%; padding: 5px 0.5%; border-bottom: 1px solid #b0b0b0; height: 35px; background-image: url(Images/UI-Backgrounds.png); background-position: 0px 0px;}
-div#Header div.Right{float: right; width: 400px; margin-right: 20px;}
-div#Header div.Right div{width: 100%; text-align: right;}
+div#HeadingTop{font-size: 1.2em; height:20px; height:auto; overflow:hidden; line-height:normal;}
+div#HeadingTop img{}
+div#HeadingTop div.Search{float:right; padding: 2px;}
+
+div#Header{font-size: 1.2em; width: 100%; height: 30px; background-image: url(Images/UI-Backgrounds.png); background-position: 0px 0px; display: block; position:relative;}
+div#Header div.Right{float: right; margin-right: 20px; line-height: 30px;}
 
 div#SubHeader{font-size: 1.2em; width: 100%; background-image:url(/Images/UI-Backgrounds.png); background-position: 0px -49px; height: 30px; border-bottom: 1px solid #667e9a;}
 div#Content{ width: 100%;  background-color:white; display:inline-block; font-size: 1.2em; background-image: url(/Images/Background.png);}
@@ -42,7 +45,7 @@ div.Dropdown li ul li a:hover{ background-color: #a4d6f5;}
 div.Dropdown li ul li.Heading{ font-weight: bold; padding: 10px 5px 0px 5px; border-bottom: 1px solid white; border-top: 1px solid white; display:block;}
 div.Dropdown li ul li.Break{ border-bottom: 1px dotted gray; width: 100%; height: 1px; padding: 5px 0px; }
 
-div.Nav{ margin: 15px 0px 0px 10px; }
+div.Nav{ margin: 0px 0px 0px 10px; width: 300px; }
 
 div.SubNav{ padding: 10px 10px 1px 10px; display:block; border-bottom: 1px solid #B0B0B0; height: 24px; font-size: 1.2em;}
 div.SubNav a.Hover{  }

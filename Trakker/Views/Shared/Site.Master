@@ -17,23 +17,28 @@
 </head>
 <body>
 
+    <div id="HeadingTop">
+        <img src="../../Content/Images/TestTicketIcon.png" width="100" height="30" />
+        <div class="Search">
+            <%: Html.TextBox("Search", "", new { @default = "Ticket Number" }) %>
+        </div>
+    </div>
 
     <div id="Header">
 
         <% if (Model.IsUserLoggedIn){ %>
             <div class="Right">
                 <% if (Model.CurrentProject != null) { %>
-                    <div><%= Model.CurrentProject.Name%> (<%=Model.CurrentProject.KeyName %>) </div>
+                    <span><%= Model.CurrentProject.Name%> (<%=Model.CurrentProject.KeyName %>) </span>
                 <% } %>
-                <div>
-                    <span>Assigned: <%= Model.NumTicketsAssignedToCurrentUser %></span>
-                    <span><%= Html.RouteLink("Logout (" + Model.CurrentUser.Email + ")", "Logout")%></span>
-                </div>
+                <span>Assigned: <%= Model.NumTicketsAssignedToCurrentUser %></span>
+                <span><%= Html.RouteLink("Logout (" + Model.CurrentUser.Email + ")", "Logout")%></span>
+
             </div>
 
             <div class="Dropdown Nav">
 
-                <% Html.RenderPartial("Menu", Model); %>
+                <% Html.RenderPartial(MVC.Shared.Views.Menu, Model); %>
             </div>
             
             

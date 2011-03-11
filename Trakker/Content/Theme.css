@@ -16,7 +16,7 @@ a:hover{color: #@LinkColor;}
 a:visited{color: #@LinkActiveColor;}
 
 /*** Header  Colors ***/
-div#Header{ background-color: #@NavBackgroundColor; border-bottom: 1px solid #@NavBackgroundColor;}
+div#Header{ background-color: #@NavBackgroundColor;}
 div#Header a{ color: #@NavTextColor;}
 div#Header div.Right { color: #@NavTextColor;}
 
