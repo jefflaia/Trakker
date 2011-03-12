@@ -52,6 +52,7 @@
 
 
             RecoAssets.StyleSheet()
+                .Add("~/Content/Reset.css")
                 .Add("~/Content/Main.css")
                 .Add("~/Content/Project.css")
                 .Add("~/Content/Admin/Settings.css")
@@ -71,15 +72,7 @@
                 .Compress(true)
                 .Version(true)
                 .SetCompressor(new YuiMinifier());
-            /*
-            SharedWebAssets
-                .Scripts(config => config.AddGroup("js", group => group
-                    .Add("jquery-1.4.2.min.js")
-                    .Add("telerik.common.min.js")
-                    .Add("telerik.datepicker.min.js")
-                    .Add("telerik.calendar.min.js")
-                    .Combined(true)
-                ));*/
+
         }
     }
 }

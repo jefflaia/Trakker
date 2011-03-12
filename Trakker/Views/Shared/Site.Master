@@ -16,16 +16,16 @@
     <%= Reco.Script("/generated.js") %>
 </head>
 <body>
-
     <div id="HeadingTop">
-        <img src="../../Content/Images/TestTicketIcon.png" width="100" height="30" />
+        <a href="/">
+            <img src="../../Content/Images/TestTicketIcon.png" width="100" height="30" />
+        </a>
         <div class="Search">
             <%: Html.TextBox("Search", "", new { @default = "Ticket Number" }) %>
         </div>
     </div>
 
     <div id="Header">
-
         <% if (Model.IsUserLoggedIn){ %>
             <div class="Right">
                 <% if (Model.CurrentProject != null) { %>
@@ -33,7 +33,6 @@
                 <% } %>
                 <span>Assigned: <%= Model.NumTicketsAssignedToCurrentUser %></span>
                 <span><%= Html.RouteLink("Logout (" + Model.CurrentUser.Email + ")", "Logout")%></span>
-
             </div>
 
             <div class="Dropdown Nav">

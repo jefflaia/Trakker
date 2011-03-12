@@ -345,6 +345,7 @@
     <EmbeddedResource Include="Content\Project.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Content Include="Content\Reset.css" />
     <Content Include="Content\Theme.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
