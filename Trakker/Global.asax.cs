@@ -42,8 +42,8 @@
             routes.MapRoute(null, "{controller}/{action}", new string[]{ "Trakker.Controllers" });
 
             /**** SearchController ****/
-            routes.MapRoute("SearchIndex", "", new { controller = "Search", action = "SearchIndex" });
-            routes.MapRoute("SearchIndex", "", new { controller = "Search", action = "SearchIndex" });
+            routes.MapRoute("SearchIndex", "search", new { controller = "Search", action = "SearchIndex" });
+            //routes.MapRoute("SearchIndex", "", new { controller = "Search", action = "SearchIndex" });
 
         }
 

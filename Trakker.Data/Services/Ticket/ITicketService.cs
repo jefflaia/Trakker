@@ -12,6 +12,7 @@
         /********* Ticket *********/
         Ticket GetTicketWithId(int id);
         IList<Ticket> TicketList(int pageSize, int index);
+        IList<Ticket> GetAllTickets();
         Ticket GetTicketWithKeyName(string keyName);
         int CountTicketsWithAssignedTo(int userId);
         IList<Ticket> GetTicketsWithAssignedTo(int userId);

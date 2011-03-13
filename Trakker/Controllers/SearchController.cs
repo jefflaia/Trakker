@@ -10,13 +10,20 @@ using Lucene.Net.QueryParsers;
 using Lucene.Net.Analysis;
 using Lucene.Net.Store;
 using Lucene.Net.Analysis.Standard;
+using Trakker.Data;
+using Trakker.Data.Services;
 
 namespace Trakker.Controllers
 {
-    public class SearchController : MasterController
+    public partial class SearchController : MasterController
     {
 
-        public ActionResult SearchIndex()
+        public SearchController(ITicketService ticketService, IUserService userService, IProjectService projectService)
+            : base(projectService, ticketService, userService)
+        {
+        }
+
+        public virtual ActionResult SearchIndex()
         {
 
             //Setup indexer
@@ -29,17 +36,9 @@ namespace Trakker.Controllers
             int totDocs = red.MaxDoc();
             red.Close();
 
-            //Add documents to the index
-            string text = String.Empty;
-            Console.WriteLine("Enter the text you want to add to the index:");
-            Console.Write(">");
-            int txts = totDocs;
-            int j = 0;
-            while ((text = Console.ReadLine()) != String.Empty)
+            foreach (var ticket in _ticketService.GetAllTickets())
             {
-                AddTextToIndex(txts++, text, writer);
-                j++;
-                Console.Write(">");
+                AddListingToIndex(ticket, writer);
             }
 
 
@@ -47,25 +46,18 @@ namespace Trakker.Controllers
             //Close the writer
             writer.Close();
 
-            Console.WriteLine(j + " lines added, " + txts + " documents total");
-
             //Setup searcher
             IndexSearcher searcher = new IndexSearcher(directory);
             QueryParser parser = new QueryParser("postBody", analyzer);
 
 
-            Console.WriteLine("Enter the search string:");
-            Console.Write(">");
-
-            while ((text = Console.ReadLine()) != String.Empty)
-            {
-                Search(text, searcher, parser);
-                Console.Write(">");
-            }
-
             //Clean up everything
             searcher.Close();
             directory.Close();
+
+            red = IndexReader.Open(directory);
+            totDocs = red.MaxDoc();
+            red.Close();
 
 
             return View();
@@ -93,11 +85,12 @@ namespace Trakker.Controllers
             }
         }
 
-        private static void AddTextToIndex(int txts, string text, IndexWriter writer)
+        private static void AddListingToIndex(Ticket ticket, IndexWriter writer)
         {
             Document doc = new Document();
-            doc.Add(new Field("id", txts.ToString(), Field.Store.YES, Field.Index.UN_TOKENIZED));
-            doc.Add(new Field("postBody", text, Field.Store.YES, Field.Index.TOKENIZED));
+            doc.Add(new Field("id", ticket.Id.ToString(), Field.Store.YES, Field.Index.UN_TOKENIZED));
+            doc.Add(new Field("summary", ticket.Summary, Field.Store.YES, Field.Index.TOKENIZED));
+            doc.Add(new Field("keyName", ticket.KeyName, Field.Store.YES, Field.Index.TOKENIZED));
             writer.AddDocument(doc);
         }
 

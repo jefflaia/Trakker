@@ -68,6 +68,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\Lib\Lucene.Net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Microsoft.Web.Mvc.dll</HintPath>
@@ -139,6 +142,7 @@
     <Compile Include="Attributes\ActionFilters\AuthenticateAttribute.cs" />
     <Compile Include="Attributes\ActionFilters\UserInRoleAttribute.cs" />
     <Compile Include="Attributes\BaseAuthorizationActionFilterAttribute.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Filters\CompressFilter.cs" />
     <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="Helpers\Extensions\HtmlHelper\ButtonHtmlHelperExtensions.cs" />
@@ -177,6 +181,7 @@
     <Compile Include="MasterController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Search\SearchIndex.cs" />
     <Compile Include="Models\User\UserProfileModel.cs" />
     <Compile Include="NavController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -211,6 +216,9 @@
     <Compile Include="Models\User\LogoutModel.cs" />
     <Compile Include="Models\User\LoginModel.cs" />
     <Compile Include="Models\ValidationAttributes\Email.cs" />
+    <Compile Include="SearchController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>

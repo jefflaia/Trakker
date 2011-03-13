@@ -20,6 +20,11 @@ namespace Trakker.Data.Services
         }
 
         #region Ticket
+        public IList<Ticket> GetAllTickets()
+        {
+            return _ticketRepository.GetTickets().ToList();
+        }
+
         public Ticket GetTicketWithId(int id)
         {
             return _ticketRepository.GetTickets().WithId(id).SingleOrDefault();
