@@ -35,15 +35,17 @@
             TicketRoutes.AddRoutes(ref routes);
 
             //routes.MapRoute("Pagination", "paginator/{count}/{page}/{pageSize}", new { controller = "Nav", action = "TicketListPagination" });
+
+            /**** SearchController ****/
+            routes.MapRoute("SearchIndex", "search", new { controller = "Search", action = "SearchIndex" });
+            //routes.MapRoute("SearchIndex", "", new { controller = "Search", action = "SearchIndex" });
                                   
             routes.MapRoute("Default", "",  new { controller = "Ticket", action = "BrowseTickets"});
             routes.MapRoute("CSS", "{fileName}.css", new { controller = "Resource", action = "CSS" });
             routes.MapRoute("JS", "{fileName}.js", new { controller = "Resource", action = "JS" });
             routes.MapRoute(null, "{controller}/{action}", new string[]{ "Trakker.Controllers" });
 
-            /**** SearchController ****/
-            routes.MapRoute("SearchIndex", "search", new { controller = "Search", action = "SearchIndex" });
-            //routes.MapRoute("SearchIndex", "", new { controller = "Search", action = "SearchIndex" });
+           
 
         }
 

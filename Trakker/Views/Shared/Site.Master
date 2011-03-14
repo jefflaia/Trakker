@@ -17,12 +17,22 @@
 </head>
 <body>
     <div id="HeadingTop">
-        <a href="/">
+        <a href="/" alt="Home">
             <img src="../../Content/Images/TestTicketIcon.png" width="100" height="30" />
         </a>
         <div class="Search">
-            <%: Html.TextBox("Search", "", new { @default = "Ticket Number" }) %>
+            <% Html.BeginForm(MVC.Search.SearchIndex(), FormMethod.Get); %>
+                <%: Html.TextBox("term", null, new { @default = "Ticket Number" }) %>
+            <% Html.EndForm(); %>
         </div>
+        <script type="text/javascript">
+            $('div#HeadingTop div.Search input').keypress(function (e) {
+                if (e.which == 13) {
+                    $('div#HeadingTop div.Search form').submit();
+                }
+            });
+
+        </script>
     </div>
 
     <div id="Header">

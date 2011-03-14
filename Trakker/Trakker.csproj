@@ -181,7 +181,7 @@
     <Compile Include="MasterController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Search\SearchIndex.cs" />
+    <Compile Include="Models\Search\SearchIndexModel.cs" />
     <Compile Include="Models\User\UserProfileModel.cs" />
     <Compile Include="NavController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -391,6 +391,7 @@
     <Content Include="Areas\Admin\Views\Management\EditProject.aspx" />
     <Content Include="Areas\Admin\Views\Management\CreateProject.aspx" />
     <Content Include="Views\Project\ProjectSummary.aspx" />
+    <Content Include="Views\Search\SearchIndex.aspx" />
     <Content Include="Views\Shared\Menu.ascx" />
     <Content Include="Areas\Admin\Views\Shared\SubNavigation.ascx" />
     <Content Include="Areas\Admin\Views\Attribute\CreateEditPriorityForm.ascx" />

@@ -12,6 +12,8 @@ using Lucene.Net.Store;
 using Lucene.Net.Analysis.Standard;
 using Trakker.Data;
 using Trakker.Data.Services;
+using Trakker.Models;
+using Trakker.Models.Search;
 
 namespace Trakker.Controllers
 {
@@ -23,7 +25,7 @@ namespace Trakker.Controllers
         {
         }
 
-        public virtual ActionResult SearchIndex()
+        public virtual ActionResult SearchIndex(string term)
         {
 
             //Setup indexer
@@ -48,41 +50,41 @@ namespace Trakker.Controllers
 
             //Setup searcher
             IndexSearcher searcher = new IndexSearcher(directory);
-            QueryParser parser = new QueryParser("postBody", analyzer);
+            MultiFieldQueryParser parser = new MultiFieldQueryParser(
+                                         new string[] { 
+                                             "summary", "keyName" },
+                                         analyzer);
 
+
+
+
+
+
+            Query query = parser.Parse(term);
+            Hits hits = searcher.Search(query);
+
+            var tickets = new List<Ticket>();
+
+            for (int i = 0; i < hits.Length(); i++)
+            {
+                Document doc = hits.Doc(i);
+                
+                int id = 0;
+                if (int.TryParse(doc.Get("id"), out id))
+                {
+                    tickets.Add(_ticketService.GetTicketWithId(id));
+                }              
+            }
 
             //Clean up everything
             searcher.Close();
             directory.Close();
 
-            red = IndexReader.Open(directory);
-            totDocs = red.MaxDoc();
-            red.Close();
 
-
-            return View();
-        }
-
-        private static void Search(string text, IndexSearcher searcher, QueryParser parser)
-        {
-            //Supply conditions
-            Query query = parser.Parse(text);
-
-            //Do the search
-            Hits hits = searcher.Search(query);
-
-            //Display results
-            Console.WriteLine("Searching for '" + text + "'");
-            int results = hits.Length();
-            Console.WriteLine("Found {0} results", results);
-            for (int i = 0; i < results; i++)
+            return View(new SearchIndexModel()
             {
-                Document doc = hits.Doc(i);
-                float score = hits.Score(i);
-                Console.WriteLine("--Result num {0}, score {1}", i + 1, score);
-                Console.WriteLine("--ID: {0}", doc.Get("id"));
-                Console.WriteLine("--Text found: {0}" + Environment.NewLine, doc.Get("postBody"));
-            }
+                Tickets = tickets
+            });
         }
 
         private static void AddListingToIndex(Ticket ticket, IndexWriter writer)

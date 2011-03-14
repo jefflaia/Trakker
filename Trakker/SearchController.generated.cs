@@ -30,6 +30,11 @@ namespace Trakker.Controllers {
             return RedirectToRoute(callInfo.RouteValueDictionary);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult SearchIndex() {
+            return new T4MVC_ActionResult(Area, Name, ActionNames.SearchIndex);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public SearchController Actions { get { return MVC.Search; } }
@@ -52,6 +57,7 @@ namespace Trakker.Controllers {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
+            public readonly string SearchIndex = "~/Views/Search/SearchIndex.aspx";
         }
     }
 
@@ -59,8 +65,9 @@ namespace Trakker.Controllers {
     public class T4MVC_SearchController: Trakker.Controllers.SearchController {
         public T4MVC_SearchController() : base(Dummy.Instance) { }
 
-        public override System.Web.Mvc.ActionResult SearchIndex() {
+        public override System.Web.Mvc.ActionResult SearchIndex(string term) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.SearchIndex);
+            callInfo.RouteValueDictionary.Add("term", term);
             return callInfo;
         }
 
