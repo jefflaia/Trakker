@@ -7,6 +7,9 @@ namespace Trakker.Data
 {
     public class Comment
     {
+
+        public User User { get; set; }
+
         public int Id { get; set; }
         public string Body { get; set; }
         public DateTime Created { get; set; }
@@ -14,7 +17,7 @@ namespace Trakker.Data
         public int TicketId { get; set; }
         public int UserId { get; set; }
 
-        public User User { get; set; }
+        
 
     }
 }

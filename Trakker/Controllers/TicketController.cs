@@ -225,8 +225,10 @@ namespace Trakker.Controllers
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
 
-            if(ticket == null)
+            if (ticket == null)
+            {
                 throw new Exception("need a redirect here! the ticket does not exist");
+            }
 
             return View(new CommentCreateEditModel());
         }
@@ -236,20 +238,22 @@ namespace Trakker.Controllers
         {
 
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
-            
+
             if (ticket == null)
+            {
                 throw new Exception("need a redirect here! the ticket does not exist");
+            }
                         
             try
             {
-                comment.Created = DateTime.Today;
-                comment.Modified = DateTime.Today;
+                comment.Created = DateTime.Now;
+                comment.Modified = DateTime.Now;
                 comment.UserId = Auth.CurrentUser.Id;
                 comment.TicketId = ticket.Id;
                 _ticketService.Save(comment);
                 UnitOfWork.Commit();
 
-                return RedirectToRoute(MVC.Ticket.TicketDetails(keyName));
+                return RedirectToAction(MVC.Ticket.TicketDetails(keyName));
             }
             catch (Exception e)
             {
@@ -293,6 +297,9 @@ namespace Trakker.Controllers
                 originalComment.Body = comment.Body;
                 originalComment.Modified = DateTime.Now;
                 _ticketService.Save(originalComment);
+
+                UnitOfWork.Commit();
+                return RedirectToAction(MVC.Ticket.TicketDetails(keyName));
             }
             catch (Exception e)
             {

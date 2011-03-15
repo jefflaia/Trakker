@@ -98,10 +98,16 @@ namespace Trakker.Data.Repositories
 
         public void Save(Comment comment)
         {
-            //map the priority from our model to the dal object
-            Mapper.CreateMap<Comment, Sql.Comment>();
-            Sql.Comment c = Mapper.Map<Comment, Sql.Comment>(comment);
-
+            var c = new Sql.Comment()
+            {
+                Id = comment.Id,
+                UserId = comment.UserId,
+                Body = comment.Body,
+                Created = comment.Created,
+                Modified = comment.Modified,
+                TicketId = comment.TicketId
+            };
+            
             if (comment.Id == 0)
             {
                 _commentsTable.InsertOnSubmit(c);
