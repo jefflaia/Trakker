@@ -24,6 +24,7 @@ using T4MVC;
 public static class MVC {
     static readonly AdminClass s_Admin = new AdminClass();
     public static AdminClass Admin { get { return s_Admin; } }
+    public static Trakker.Controllers.ErrorController Error = new Trakker.Controllers.T4MVC_ErrorController();
     public static Trakker.Controllers.NavController Nav = new Trakker.Controllers.T4MVC_NavController();
     public static Trakker.Controllers.ProjectController Project = new Trakker.Controllers.T4MVC_ProjectController();
     public static Trakker.Controllers.ResourceController Resource = new Trakker.Controllers.T4MVC_ResourceController();

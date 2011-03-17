@@ -39,10 +39,19 @@
             /**** SearchController ****/
             routes.MapRoute("SearchIndex", "search", new { controller = "Search", action = "SearchIndex" });
             //routes.MapRoute("SearchIndex", "", new { controller = "Search", action = "SearchIndex" });
-                                  
-            routes.MapRoute("Default", "",  new { controller = "Ticket", action = "BrowseTickets"});
+
+            /**** ErrorController ****/
+            routes.MapRoute("PageNotFound", "page-not-found", new { controller = "Error", action = "PageNotFound" });
+            routes.MapRoute("TicketNotFound", "ticket-not-found", new { controller = "Error", action = "TicketNotFound" });
+            routes.MapRoute("UnexpectedError", "unexpected-error", new { controller = "Error", action = "UnexpectedError" });
+            routes.MapRoute("InvalidAction", "invalid-action", new { controller = "Error", action = "InvalidAction" });
+
+            /**** ResourceController ****/
             routes.MapRoute("CSS", "{fileName}.css", new { controller = "Resource", action = "CSS" });
             routes.MapRoute("JS", "{fileName}.js", new { controller = "Resource", action = "JS" });
+        
+            /**** Other *****/
+            routes.MapRoute("Default", "",  new { controller = "Ticket", action = "BrowseTickets"});
             routes.MapRoute(null, "{controller}/{action}", new string[]{ "Trakker.Controllers" });
 
            

@@ -142,7 +142,11 @@
     <Compile Include="Attributes\ActionFilters\AuthenticateAttribute.cs" />
     <Compile Include="Attributes\ActionFilters\UserInRoleAttribute.cs" />
     <Compile Include="Attributes\BaseAuthorizationActionFilterAttribute.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="ErrorController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Filters\CompressFilter.cs" />
     <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="Helpers\Extensions\HtmlHelper\ButtonHtmlHelperExtensions.cs" />
@@ -181,6 +185,10 @@
     <Compile Include="MasterController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Error\InvalidActionModel.cs" />
+    <Compile Include="Models\Error\UnexpectedErrorModel.cs" />
+    <Compile Include="Models\Error\TicketNotFoundModel.cs" />
+    <Compile Include="Models\Error\PageNotFoundModel.cs" />
     <Compile Include="Models\Search\SearchIndexModel.cs" />
     <Compile Include="Models\User\UserProfileModel.cs" />
     <Compile Include="NavController.generated.cs">
@@ -390,6 +398,10 @@
     <Content Include="Areas\Admin\Views\Management\BrowseProjects.aspx" />
     <Content Include="Areas\Admin\Views\Management\EditProject.aspx" />
     <Content Include="Areas\Admin\Views\Management\CreateProject.aspx" />
+    <Content Include="Views\Error\InvalidAction.aspx" />
+    <Content Include="Views\Error\PageNotFound.aspx" />
+    <Content Include="Views\Error\TicketNotFound.aspx" />
+    <Content Include="Views\Error\UnexpectedError.aspx" />
     <Content Include="Views\Project\ProjectSummary.aspx" />
     <Content Include="Views\Search\SearchIndex.aspx" />
     <Content Include="Views\Shared\Menu.ascx" />
