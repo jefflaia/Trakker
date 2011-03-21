@@ -43,6 +43,7 @@
             /**** ErrorController ****/
             routes.MapRoute("PageNotFound", "page-not-found", new { controller = "Error", action = "PageNotFound" });
             routes.MapRoute("TicketNotFound", "ticket-not-found", new { controller = "Error", action = "TicketNotFound" });
+            routes.MapRoute("UserNotFound", "user-not-found", new { controller = "Error", action = "UserNotFound" });
             routes.MapRoute("UnexpectedError", "unexpected-error", new { controller = "Error", action = "UnexpectedError" });
             routes.MapRoute("InvalidAction", "invalid-action", new { controller = "Error", action = "InvalidAction" });
 

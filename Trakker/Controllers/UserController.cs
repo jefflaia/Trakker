@@ -45,7 +45,7 @@ namespace Trakker.Controllers
 
                     Auth.LogUserIn(user);
 
-                    return RedirectToRoute("BrowseTickets");
+                    return RedirectToAction(MVC.Ticket.BrowseTickets());
                 }
                 else
                 {
@@ -79,14 +79,18 @@ namespace Trakker.Controllers
 
             if (user == null)
             {
-                //TODO:: redirect to user not found page.
+                Response.StatusCode = 404;
+                Response.RedirectLocation = "/user-not-found";
+
+                return PermanentRedirectToAction(MVC.Error.UserNotFound());
+
+               
             }
 
             var model = new UserProfileModel()
             {
                 User = user
             };
-
 
             return View(model); ;
         }    

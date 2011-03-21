@@ -50,6 +50,7 @@ namespace Trakker.Controllers {
             public readonly string PageNotFound = ("PageNotFound").ToLowerInvariant();
             public readonly string InvalidAction = ("InvalidAction").ToLowerInvariant();
             public readonly string UnexpectedError = ("UnexpectedError").ToLowerInvariant();
+            public readonly string UserNotFound = ("UserNotFound").ToLowerInvariant();
         }
 
 
@@ -62,6 +63,7 @@ namespace Trakker.Controllers {
             public readonly string PageNotFound = "~/Views/Error/PageNotFound.aspx";
             public readonly string TicketNotFound = "~/Views/Error/TicketNotFound.aspx";
             public readonly string UnexpectedError = "~/Views/Error/UnexpectedError.aspx";
+            public readonly string UserNotFound = "~/Views/Error/UserNotFound.aspx";
         }
     }
 
@@ -86,6 +88,11 @@ namespace Trakker.Controllers {
 
         public override System.Web.Mvc.ActionResult UnexpectedError() {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.UnexpectedError);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult UserNotFound() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.UserNotFound);
             return callInfo;
         }
 

@@ -49,6 +49,7 @@ namespace Trakker.Areas.Admin.Controllers
 
                 _ticketService.Save(priority);
                 UnitOfWork.Commit();
+                return RedirectToAction(MVC.Admin.Attribute.CreatePriority());
             }
 
             viewData.Priorities = _ticketService.GetAllPriorities();
@@ -61,7 +62,7 @@ namespace Trakker.Areas.Admin.Controllers
             TicketPriority priority = _ticketService.GetPriorityById(priorityId);
             if (priority == null)
             {
-                throw new NotImplementedException("not found error page");
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
             }
 
             Mapper.CreateMap<TicketPriority, CreateEditPriorityModel>();
@@ -74,7 +75,7 @@ namespace Trakker.Areas.Admin.Controllers
             TicketPriority priority = _ticketService.GetPriorityById(priorityId);
             if (priority == null)
             {
-                throw new NotImplementedException("not found error page");
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
             }
 
             TicketPriority existingResolution = _ticketService.GetPriorityByName(viewData.Name);
@@ -89,7 +90,7 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.Map(viewData, priority);
                 _ticketService.Save(priority);
                 UnitOfWork.Commit();
-                return RedirectToRoute("CreatePriority");
+                return RedirectToAction(MVC.Admin.Attribute.CreatePriority());
             }
 
             return View(viewData);
@@ -120,6 +121,7 @@ namespace Trakker.Areas.Admin.Controllers
 
                 _ticketService.Save(resolution);
                 UnitOfWork.Commit();
+                return RedirectToAction(MVC.Admin.Attribute.CreateResolution());
             }
 
             viewData.Resolutions = _ticketService.GetAllResolutions();
@@ -133,7 +135,7 @@ namespace Trakker.Areas.Admin.Controllers
             TicketResolution resolution = _ticketService.GetResolutionById(resolutionId);
             if (resolution == null)
             {
-                throw new NotImplementedException("not found error page");
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
             }
 
             Mapper.CreateMap<TicketResolution, CreateEditResolutionModel>();
@@ -146,7 +148,7 @@ namespace Trakker.Areas.Admin.Controllers
             TicketResolution resolution = _ticketService.GetResolutionById(resolutionId);
             if (resolution == null)
             {
-                throw new NotImplementedException("not found error page");
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
             }
             
             TicketResolution existingResolution = _ticketService.GetResolutionByName(viewData.Name);
@@ -161,7 +163,7 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.Map(viewData, resolution);
                 _ticketService.Save(resolution);
                 UnitOfWork.Commit();
-                return RedirectToRoute("CreateResolution");
+                return RedirectToAction(MVC.Admin.Attribute.CreateResolution());
             }
 
             return View(viewData);
@@ -192,6 +194,7 @@ namespace Trakker.Areas.Admin.Controllers
 
                 _ticketService.Save(status);
                 UnitOfWork.Commit();
+                return RedirectToAction(MVC.Admin.Attribute.CreateStatus());
             }
 
             viewModel.Statuses = _ticketService.GetAllStatus();
@@ -203,7 +206,10 @@ namespace Trakker.Areas.Admin.Controllers
         {
             TicketStatus status = _ticketService.GetStatusWithId(statusId);
 
-            if (status == null) throw new NotImplementedException("Throw not found error");
+            if (status == null)
+            {
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
+            }
 
             Mapper.CreateMap<TicketStatus, CreateEditStatusModel>();
             return View(Mapper.Map(status, new CreateEditStatusModel()));
@@ -213,7 +219,10 @@ namespace Trakker.Areas.Admin.Controllers
         public virtual ActionResult EditStatus(int statusId, CreateEditStatusModel viewModel)
         {
             TicketStatus status = _ticketService.GetStatusWithId(statusId);
-            if (status == null) throw new NotImplementedException("Throw not found error");
+            if (status == null)
+            {
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
+            }
 
             TicketStatus existingStatus = _ticketService.GetStatusByName(viewModel.Name);
             if (existingStatus != null && existingStatus.Id != statusId)
@@ -228,7 +237,7 @@ namespace Trakker.Areas.Admin.Controllers
 
                 _ticketService.Save(status);
                 UnitOfWork.Commit();
-                return RedirectToRoute("CreateStatus");                
+                return RedirectToAction(MVC.Admin.Attribute.CreateStatus());               
             }
 
             return View(viewModel);
@@ -259,7 +268,7 @@ namespace Trakker.Areas.Admin.Controllers
                 TicketType type = Mapper.Map(viewModel, new TicketType());
                 _ticketService.Save(type);
                 UnitOfWork.Commit();
-                return RedirectToRoute("CreateType");
+                return RedirectToAction(MVC.Admin.Attribute.CreateType()); ;
             }
 
             viewModel.Types = _ticketService.GetAllTypes();
@@ -272,7 +281,7 @@ namespace Trakker.Areas.Admin.Controllers
 
             if (type == null)
             {
-                throw new NotImplementedException("Throw not found error");
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
             }
 
             Mapper.CreateMap<TicketType, CreateEditTypeModel>();
@@ -283,7 +292,10 @@ namespace Trakker.Areas.Admin.Controllers
         public virtual ActionResult EditType(int typeId, CreateEditTypeModel viewModel)
         {
             TicketType type = _ticketService.GetTypeById(typeId);
-            if (type == null) throw new NotImplementedException("Throw not found error");
+            if (type == null)
+            {
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
+            }
 
             TicketType existingType = _ticketService.GetTypeByName(viewModel.Name);
             if (existingType != null && existingType.Id != typeId)
@@ -298,7 +310,7 @@ namespace Trakker.Areas.Admin.Controllers
 
                 _ticketService.Save(type);
                 UnitOfWork.Commit();
-                return RedirectToRoute("CreateType");
+                return RedirectToAction(MVC.Admin.Attribute.CreateType());
             }
 
             return View(viewModel);

@@ -185,6 +185,7 @@
     <Compile Include="MasterController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Error\UserNotFoundModel.cs" />
     <Compile Include="Models\Error\InvalidActionModel.cs" />
     <Compile Include="Models\Error\UnexpectedErrorModel.cs" />
     <Compile Include="Models\Error\TicketNotFoundModel.cs" />
@@ -194,6 +195,7 @@
     <Compile Include="NavController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Results\CustomCodeRedirectResult.cs" />
     <Compile Include="ProjectController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -402,6 +404,7 @@
     <Content Include="Views\Error\PageNotFound.aspx" />
     <Content Include="Views\Error\TicketNotFound.aspx" />
     <Content Include="Views\Error\UnexpectedError.aspx" />
+    <Content Include="Views\Error\UserNotFound.aspx" />
     <Content Include="Views\Project\ProjectSummary.aspx" />
     <Content Include="Views\Search\SearchIndex.aspx" />
     <Content Include="Views\Shared\Menu.ascx" />

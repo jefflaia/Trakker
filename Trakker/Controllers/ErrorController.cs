@@ -24,10 +24,14 @@ namespace Trakker.Controllers
             return View(new InvalidActionModel());
         }
 
-        [HandleError]
         public virtual ActionResult UnexpectedError()
         {
             return View(new UnexpectedErrorModel());
+        }
+
+        public virtual ActionResult UserNotFound()
+        {
+            return View(new UserNotFoundModel());
         }
     }
 }

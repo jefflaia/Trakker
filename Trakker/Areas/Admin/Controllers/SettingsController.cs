@@ -73,7 +73,7 @@ namespace Trakker.Areas.Admin.Controllers
 
             if (palette == null)
             {
-                return RedirectToAction(MVC.Admin.Settings.BrowseColorPalettes());
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
             }
 
             Mapper.CreateMap<ColorPalette, CreateEditColorPaletteModel>();
@@ -89,7 +89,7 @@ namespace Trakker.Areas.Admin.Controllers
 
             if (palette == null)
             {
-                return RedirectToAction(MVC.Admin.Settings.BrowseColorPalettes());
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
             }
             
             if (ModelState.IsValid)

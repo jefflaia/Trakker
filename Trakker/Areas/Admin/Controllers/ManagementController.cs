@@ -73,6 +73,7 @@ namespace Trakker.Areas.Admin.Controllers
 
                 _userService.Save(user);
                 UnitOfWork.Commit();
+                return RedirectToAction(MVC.Admin.Management.BrowseUsers());
             }
 
             viewModel.Roles = _userService.GetAllRoles();
@@ -82,9 +83,11 @@ namespace Trakker.Areas.Admin.Controllers
 
         public virtual ActionResult EditUser(int userId)
         {
-            //if (userId == 0) ; //TODO:: redirect
             User user = _userService.GetUserWithId(userId);
-            if(user == null) throw new NotImplementedException("This should be an error page");
+            if (user == null)
+            {
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
+            }
 
             Mapper.CreateMap<User, EditUserModel>();
             EditUserModel viewModel = Mapper.Map(user, new EditUserModel() {
@@ -99,7 +102,10 @@ namespace Trakker.Areas.Admin.Controllers
         {
             User user = _userService.GetUserWithId(userId);
 
-            if (user == null) throw new NotImplementedException("This should be an error page");
+            if (user == null)
+            {
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
+            }
 
             Mapper.CreateMap<EditUserModel, User>();
             Mapper.Map(viewModel, user);
@@ -128,7 +134,10 @@ namespace Trakker.Areas.Admin.Controllers
         {
             User user = _userService.GetUserWithId(userId);
 
-            if (user == null) throw new NotImplementedException("This should be an error page");
+            if (user == null)
+            {
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
+            }
 
             Mapper.CreateMap<EditUserPasswordModel, User>();
             Mapper.Map(viewModel, user);
@@ -138,6 +147,7 @@ namespace Trakker.Areas.Admin.Controllers
                 user.Password = Auth.HashPassword(user.Password, user.Salt);
                 _userService.Save(user);
                 UnitOfWork.Commit();
+                return RedirectToAction(MVC.Admin.Management.ViewUser(userId));
             }
 
             viewModel.User = _userService.GetUserWithId(userId);
@@ -197,6 +207,7 @@ namespace Trakker.Areas.Admin.Controllers
                 project.Created = DateTime.Now;
                 _projectService.Save(project);
                 UnitOfWork.Commit();
+                return RedirectToAction(MVC.Admin.Management.ViewProject(viewModel.KeyName));
             }
 
 
@@ -210,7 +221,10 @@ namespace Trakker.Areas.Admin.Controllers
         {
             Project project = _projectService.GetProjectByKeyName(keyName);
 
-            if (project == null) throw new NotImplementedException("project not found");
+            if (project == null)
+            {
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
+            }
 
             Mapper.CreateMap<Project, EditProjectModel>();
             EditProjectModel viewModel = Mapper.Map(project, new EditProjectModel());
@@ -227,7 +241,7 @@ namespace Trakker.Areas.Admin.Controllers
 
             if (project == null)
             {
-                throw new NotImplementedException("need to redirect to a general error page");
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
             }
 
             //check if the project name already exists
@@ -247,8 +261,7 @@ namespace Trakker.Areas.Admin.Controllers
 
                 _projectService.Save(project);
                 UnitOfWork.Commit();
-
-                return RedirectToRoute("ViewProject", new { keyName = project.KeyName });
+                return RedirectToRoute(MVC.Admin.Management.ViewProject(project.KeyName));
             }
 
             viewModel.Users = _userService.GetAllUsers();

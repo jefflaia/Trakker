@@ -34,6 +34,8 @@ namespace Trakker.Controllers
             UnitOfWork = WindsorContainerProvider.Resolve<IUnitOfWork>();
         }
 
+        #region MasterPage
+
         protected Project _currentProject;
         public Project CurrentProject
         {
@@ -161,7 +163,21 @@ namespace Trakker.Controllers
             return viewData;
         }
 
-         
+        #endregion
+
+        #region Convention
+
+        protected internal ActionResult PermanentRedirectToAction(ActionResult result)
+        {
+            return new CustomCodeRedirectResult(Request.RequestContext, result, 301);
+        }
+
+        protected internal ActionResult TemporaryRedirectToAction(ActionResult result)
+        {
+            return new CustomCodeRedirectResult(Request.RequestContext, result, 307);
+        }
+
+        #endregion
     }
 
 

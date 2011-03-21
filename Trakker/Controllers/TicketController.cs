@@ -16,12 +16,10 @@ namespace Trakker.Controllers
     [Authenticate]
     public partial class TicketController : MasterController
     {
-       
         public TicketController(ITicketService ticketService, IUserService userService, IProjectService projectService)
             : base(projectService, ticketService, userService)
         {
         }
-
 
         #region Tickets
         public virtual ActionResult TicketDetails(string keyName)
@@ -171,7 +169,10 @@ namespace Trakker.Controllers
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
 
-            if (ticket == null) throw new Exception("redirect, ticket doesnt exist!");
+            if (ticket == null)
+            {
+                return RedirectToAction(MVC.Error.TicketNotFound());
+            }
 
             CreateEditTicketModel viewData = new CreateEditTicketModel()
             {
@@ -194,7 +195,10 @@ namespace Trakker.Controllers
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
 
-            if (ticket == null) throw new Exception("redirect, ticket doesnt exist!");
+            if (ticket == null)
+            {
+                return RedirectToAction(MVC.Error.TicketNotFound());
+            }
 
             if (ModelState.IsValid)
             {
@@ -227,7 +231,7 @@ namespace Trakker.Controllers
 
             if (ticket == null)
             {
-                throw new Exception("need a redirect here! the ticket does not exist");
+                return RedirectToAction(MVC.Error.InvalidAction());
             }
 
             return View(new CommentCreateEditModel());
@@ -236,15 +240,14 @@ namespace Trakker.Controllers
         [HttpPost]
         public virtual ActionResult CreateComment(string keyName, Comment comment)
         {
-
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
 
             if (ticket == null)
             {
-                throw new Exception("need a redirect here! the ticket does not exist");
+                return RedirectToAction(MVC.Error.InvalidAction());
             }
                         
-            try
+            if (ModelState.IsValid)
             {
                 comment.Created = DateTime.Now;
                 comment.Modified = DateTime.Now;
@@ -255,22 +258,6 @@ namespace Trakker.Controllers
 
                 return RedirectToAction(MVC.Ticket.TicketDetails(keyName));
             }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-        }
-
-        public virtual ActionResult EditComment(string keyName, int id)
-        {
-            Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
-            Comment comment = _ticketService.GetCommentWithId(id);
-
-            if (ticket == null) throw new Exception("redirect, ticket does not exist");
-            if (comment == null) throw new Exception("redirect, comment does not exist");
-
-            if (comment.TicketId != ticket.Id) throw new Exception("redirect, comment does not belong to this ticket");
-            if (comment.UserId != 1) throw new Exception("redirect comment does not belong to this user");
 
             CommentCreateEditModel viewData = new CommentCreateEditModel()
             {
@@ -280,19 +267,42 @@ namespace Trakker.Controllers
             return View(viewData);
         }
 
-        [AcceptVerbs(HttpVerbs.Post)]
+        public virtual ActionResult EditComment(string keyName, int id)
+        {
+            Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
+            Comment comment = _ticketService.GetCommentWithId(id);
+
+            if (ticket == null ||
+                comment == null ||
+                comment.TicketId != ticket.Id ||
+                comment.UserId != 1)
+            {
+                return RedirectToAction(MVC.Error.InvalidAction());
+            }
+
+            CommentCreateEditModel viewData = new CommentCreateEditModel()
+            {
+                Comment = comment
+            };
+
+            return View(viewData);
+        }
+
+        [HttpPost]
         public virtual ActionResult EditComment(string keyName, int id, Comment comment)
         {
             Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
             Comment originalComment = _ticketService.GetCommentWithId(id);
 
-            if (ticket == null) throw new Exception("redirect, ticket does not exist");
-            if (ticket == null) throw new Exception("redirect, comment does not exist");
+            if (ticket == null || 
+                originalComment == null ||
+                originalComment.TicketId != ticket.Id ||
+                originalComment.UserId != 1)
+            {
+                return RedirectToAction(MVC.Error.InvalidAction());
+            }
 
-            if (originalComment.TicketId != ticket.Id) throw new Exception("redirect, comment does not belong to this ticket");
-            if (originalComment.UserId != 1) throw new Exception("redirect comment does not belong to this user");
-
-            try
+            if (ModelState.IsValid)
             {
                 originalComment.Body = comment.Body;
                 originalComment.Modified = DateTime.Now;
@@ -301,21 +311,14 @@ namespace Trakker.Controllers
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Ticket.TicketDetails(keyName));
             }
-            catch (Exception e)
-            {
-                throw new Exception();
-            }
 
-            CommentCreateEditModel viewData = new CommentCreateEditModel()
+            return View(new CommentCreateEditModel()
             {
                 Comment = comment
-            };
-
-            return View(viewData);
+            });
         }
 
         #endregion
-
         
     }
 }
