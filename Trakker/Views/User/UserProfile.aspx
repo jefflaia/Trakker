@@ -33,6 +33,7 @@
         <div class="Right">
             <div class="Activity SubSection">
                 <h2>Activity</h2>
+                <% Html.RenderPartial(MVC.Shared.Views.ActivityStream, Model.ActivityStreamGroups); %>
             </div>
         </div>
 

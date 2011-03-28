@@ -27,6 +27,7 @@ namespace T4MVC {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
+            public readonly string ActivityStream = "~/Views/Shared/ActivityStream.ascx";
             public readonly string Error = "~/Views/Shared/Error.aspx";
             public readonly string Menu = "~/Views/Shared/Menu.ascx";
         }

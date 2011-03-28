@@ -15,6 +15,7 @@ using System.Web.UI.HtmlControls;
 using Trakker.Helpers.Table.Controls;
 using Trakker.Helpers.Table;
 using Trakker.Models;
+using ActivityStream.Model;
 
 
 namespace Trakker.Controllers
@@ -87,9 +88,37 @@ namespace Trakker.Controllers
                
             }
 
+            var groups = new List<ActivityGroupModel>();
+            for (var i = 1; i < 5; i++)
+            {
+                var group = new ActivityGroupModel()
+                {
+                    Created = DateTime.Now.AddDays(-1 * i)
+                };
+
+                var stream = new List<ActivityModel>();
+                for (var j = 1; j < 3; j++)
+                {
+                    
+                    stream.Add(new ActivityModel()
+                    {
+                        Id = 1,
+                        UserId = 13,
+                        Comment = "Some random comment",
+
+                    });
+                }
+                group.Activities = stream;
+                groups.Add(group);
+
+            }
+            
+
+
             var model = new UserProfileModel()
             {
-                User = user
+                User = user,
+                ActivityStreamGroups = groups
             };
 
             return View(model); ;

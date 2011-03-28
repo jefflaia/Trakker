@@ -179,3 +179,12 @@ div.Panes > div { float:left; width: 100%; display: none;	}
 
 
 
+/***** Stream *****/
+div#Stream{padding:0px 10px;}
+div#Stream ol {}
+div#Stream li {list-syle: none;}
+div#Stream li p.Date{border-bottom: 1px solid #999; color:#999;}
+div#Stream li li{ list-style:none; margin: 5px 0px;  padding: 10px 0px;}
+div#Stream li li img{margin-left: 10px; position:absolute; width:16px; height:16px;}
+div#Stream li li p{margin: 0px 35px 5px 35px;}
+div#Stream li li div{ margin: 0px 35px 0px 35px; color: #ccc;}
