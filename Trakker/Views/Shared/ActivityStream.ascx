@@ -1,9 +1,9 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IList<ActivityStream.Model.ActivityGroupModel>>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IList<Trakker.Infastructure.Streams.Activity.Model.ActivityGroupModel>>" %>
 <div id="Stream">
     <ol>
     <% foreach (var group in Model) { %>
         <li>
-            <p class="Date"><%: group.Created.ToString("D") %></p>
+            <span class="Date"><%: group.Created.ToString("D") %></span>
             <ol>
             <% foreach (var activity in group.Activities) { %>
                 <li>

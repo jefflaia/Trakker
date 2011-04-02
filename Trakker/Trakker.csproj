@@ -449,10 +449,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ActivityStream\ActivityStream.csproj">
-      <Project>{14CC1265-D402-478E-9184-EA2AD61A3AF2}</Project>
-      <Name>ActivityStream</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BaseMasterController\Trakker.Core.csproj">
       <Project>{CF243D83-CEF5-448B-8E56-DE3149AF4319}</Project>
       <Name>Trakker.Core</Name>
@@ -468,6 +464,10 @@
     <ProjectReference Include="..\Trakker.Data\Trakker.Data.csproj">
       <Project>{A9547E24-5633-4817-8B4A-E35AF672EAFB}</Project>
       <Name>Trakker.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Trakker.Infastructure\Trakker.Infastructure.csproj">
+      <Project>{7EB18BB4-26C5-4F8B-A30E-42EF404719CF}</Project>
+      <Name>Trakker.Infastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Trakker.Data;
-using ActivityStream.Model;
+using Trakker.Infastructure.Streams.Activity.Model;
 
 namespace Trakker.Models
 {

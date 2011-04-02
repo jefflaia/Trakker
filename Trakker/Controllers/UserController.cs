@@ -15,7 +15,7 @@ using System.Web.UI.HtmlControls;
 using Trakker.Helpers.Table.Controls;
 using Trakker.Helpers.Table;
 using Trakker.Models;
-using ActivityStream.Model;
+using Trakker.Infastructure.Streams.Activity.Model;
 
 
 namespace Trakker.Controllers

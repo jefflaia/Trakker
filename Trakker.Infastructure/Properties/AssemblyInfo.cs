@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ActivityStream")]
+[assembly: AssemblyTitle("Trakker.Infastructure")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("ActivityStream")]
+[assembly: AssemblyProduct("Trakker.Infastructure")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8f53fd7c-69bf-45b3-aae7-a6137a211fbc")]
+[assembly: Guid("4d49ae72-ea98-4814-9e31-6f501b8e6a3b")]
 
 // Version information for an assembly consists of the following four values:
 //
