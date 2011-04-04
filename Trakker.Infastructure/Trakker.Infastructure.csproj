@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Streams\Activity\ActivityStream.cs" />
+    <Compile Include="Streams\Activity\Mappers\CommentMapper.cs" />
+    <Compile Include="Streams\Activity\Mappers\IMapper.cs" />
     <Compile Include="Streams\Activity\Model\ActivityGroupModel.cs" />
     <Compile Include="Streams\Activity\Model\ActivityModel.cs" />
   </ItemGroup>

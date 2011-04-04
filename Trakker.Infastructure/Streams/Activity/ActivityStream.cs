@@ -8,57 +8,69 @@ using Trakker.Infastructure.Streams.Activity.Model;
 
 namespace Trakker.Core.Streams.Activity
 {
-    public class ActivityStream
+    abstract public class ActivityStream
     {
+        private IUserService _userService;
 
-        private ITicketService _ticketService;
-        private IList<User> _users;
-        private Ticket _ticket;
-
-        public ActivityStream(Ticket ticket, ITicketService ticketService, IUserService userService)
+        public ActivityStream(IUserService userService)
         {
-            _ticketService = ticketService;
+            _userService = userService;
             
         }
 
-        private IList<ActivityModel> GenerateFromComments()
-        {
-            var activities = new List<ActivityModel>();
+        abstract IList<Comment> GetComment(int step, int take);
 
-            foreach (var comment in _ticketService.GetCommentsWithticketId(_ticket.Id))
+        abstract IList<ActivityModel> MapComment(Comment comment);
+
+        protected IDictionary<int, User> GetUsers(int[] ids)
+        {
+            var users = new Dictionary<int, User>();
+
+            foreach (int id in ids)
             {
-                activities.Add(new ActivityModel()
-                {
-                    Id = comment.Id,
-                    Comment = comment.Body,
-                    Created = comment.Created,
-                    IsChange = false,
-                    UserId = comment.UserId
-                });
+                users.Add(id, _userService.GetUserWithId(id));
             }
 
-            return activities;
+            return users;
         }
 
-        private IList<ActivityModel> Sort(IList<ActivityModel> activities)
+
+        private void Sort(IList<ActivityModel> activities)
         {
-            return activities.OrderBy(m => m.Created).Reverse().ToList<ActivityModel>();
+            activities.OrderBy(m => m.Created).Reverse().ToList<ActivityModel>();
         }
 
         private IList<ActivityGroupModel> Group(IList<ActivityModel> activities)
         {
-            //get min / max date
-            //loop through each date
-            //get activities that are on that date with linq
-            //sort
-            //create group
-            //add to group
-            //add group to list
-            
-            
-            var groups = new List<ActivityGroupModel>();
+            Sort(activities);
 
-            return groups;
+            DateTime max = activities.Max(m => m.Created);
+            DateTime min = activities.Min(m => m.Created);
+            var groups = new Dictionary<DateTime, ActivityGroupModel>();
+
+            //create a new group model for each day from min to max
+            while (min < max)
+            {
+                var group = new ActivityGroupModel();
+                group.Created = min;
+                groups.Add(min.Date, group);
+
+                min.AddDays(1);
+            }
+
+            //add activities based on the date to the respected group
+            DateTime previous = activities.Min(m => m.Created).Date;
+            foreach (var activity in activities)
+            {
+                groups[activity.Created.Date].Activities.Add(activity);
+            }
+
+            return groups.Values.ToList();
+        }
+
+        public virtual IList<ActivityGroupModel> Generate()
+        {
+
         }
     }
 }
