@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Trakker.Data;
 
 namespace Trakker.Infastructure.Streams.Activity.Model
 {
@@ -14,6 +15,8 @@ namespace Trakker.Infastructure.Streams.Activity.Model
         public bool IsChange { get; set; }
         public String ChangedField { get; set; }
         public String ChangedValue { get; set; }
+
+        public User User { get; set; }
 
         public Boolean HasComment()
         {

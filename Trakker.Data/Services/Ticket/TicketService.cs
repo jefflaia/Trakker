@@ -178,6 +178,11 @@ namespace Trakker.Data.Services
         {
             return _ticketRepository.GetComments().WithTicketId(id).ToList<Comment>();
         }
+
+        public IList<Comment> GetComments(int take, int skip)
+        {
+            return _ticketRepository.GetComments().Take(take).Skip(skip).ToList();
+        }
         #endregion
 
         #region Resolution

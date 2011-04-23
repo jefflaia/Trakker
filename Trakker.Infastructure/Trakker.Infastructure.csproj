@@ -47,6 +47,7 @@
     <Compile Include="Streams\Activity\Mappers\IMapper.cs" />
     <Compile Include="Streams\Activity\Model\ActivityGroupModel.cs" />
     <Compile Include="Streams\Activity\Model\ActivityModel.cs" />
+    <Compile Include="Streams\Activity\UserActivityStream.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BaseMasterController\Trakker.Core.csproj">

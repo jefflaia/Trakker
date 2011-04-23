@@ -5,72 +5,93 @@ using System.Text;
 using Trakker.Data.Services;
 using Trakker.Data;
 using Trakker.Infastructure.Streams.Activity.Model;
+using Trakker.Infastructure.Streams.Activity.Mappers;
 
-namespace Trakker.Core.Streams.Activity
+namespace Trakker.Infastructure.Streams.Activity
 {
     abstract public class ActivityStream
     {
         private IUserService _userService;
+        private static IMapper<Comment> _commentMapper = new CommentMapper();
 
         public ActivityStream(IUserService userService)
         {
-            _userService = userService;
-            
+            _userService = userService; 
         }
 
-        abstract IList<Comment> GetComment(int step, int take);
+        public abstract IList<Comment> LoadComments(int take, int skip);
 
-        abstract IList<ActivityModel> MapComment(Comment comment);
+        public IList<ActivityModel> Transform(IList<Comment> comments)
+        {
+            var activities = new List<ActivityModel>();
+            foreach (var comment in comments)
+            {
+                activities.Add(_commentMapper.Map(comment));
+            }
 
-        protected IDictionary<int, User> GetUsers(int[] ids)
+            return activities;
+        }
+
+        public IList<ActivityGroupModel> Generate(int take, int skip)
+        {
+            //get activities
+            var activities = Transform(LoadComments(take, skip));
+
+            //load the users into each activity
+            LoadUsers(activities);
+
+            //sort them by date and time
+            activities = Sort(activities);
+
+            //group them by day
+            var groups = Group(activities);
+
+            return groups;            
+        }
+
+        private void LoadUsers(IList<ActivityModel> activities)
         {
             var users = new Dictionary<int, User>();
 
-            foreach (int id in ids)
+            //loop through getting each user and adding it to the activity
+            foreach (var activity in activities)
             {
-                users.Add(id, _userService.GetUserWithId(id));
-            }
+                //if the user does not exist, get it
+                //avoid needless queries for already existing users
+                if (users.ContainsKey(activity.UserId) == false)
+                {
+                    users.Add(activity.UserId, _userService.GetUserWithId(activity.UserId));
+                }
 
-            return users;
+                activity.User = users[activity.UserId];
+            }
         }
 
 
-        private void Sort(IList<ActivityModel> activities)
+        private IList<ActivityModel> Sort(IList<ActivityModel> activities)
         {
-            activities.OrderBy(m => m.Created).Reverse().ToList<ActivityModel>();
+            return activities.OrderByDescending(m => m.Created).ToList<ActivityModel>();
         }
 
         private IList<ActivityGroupModel> Group(IList<ActivityModel> activities)
         {
-            Sort(activities);
-
-            DateTime max = activities.Max(m => m.Created);
-            DateTime min = activities.Min(m => m.Created);
-            var groups = new Dictionary<DateTime, ActivityGroupModel>();
-
-            //create a new group model for each day from min to max
-            while (min < max)
-            {
-                var group = new ActivityGroupModel();
-                group.Created = min;
-                groups.Add(min.Date, group);
-
-                min.AddDays(1);
-            }
-
-            //add activities based on the date to the respected group
-            DateTime previous = activities.Min(m => m.Created).Date;
+            var groups = new Dictionary<string, ActivityGroupModel>();
+            
             foreach (var activity in activities)
             {
-                groups[activity.Created.Date].Activities.Add(activity);
+                string key = activity.Created.Date.ToShortDateString();
+                if (groups.ContainsKey(key) == false)
+                {
+                    var group = new ActivityGroupModel();
+                    group.Created = activity.Created.Date;
+                    group.Activities = new List<ActivityModel>();
+                    groups.Add(key, group);
+                }
+
+                groups[key].Activities.Add(activity);
             }
 
             return groups.Values.ToList();
-        }
-
-        public virtual IList<ActivityGroupModel> Generate()
-        {
-
         }
     }
 }

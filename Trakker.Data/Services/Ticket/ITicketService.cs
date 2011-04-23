@@ -24,6 +24,7 @@
         /********* Comment *********/
         IList<Comment> GetCommentsWithticketId(int id);
         Comment GetCommentWithId(int id);
+        IList<Comment> GetComments(int take, int step);
         void Save(Comment comment);
 
         /********* Types *********/
