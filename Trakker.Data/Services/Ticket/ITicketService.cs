@@ -23,6 +23,7 @@
 
         /********* Comment *********/
         IList<Comment> GetCommentsWithticketId(int id);
+        IList<Comment> GetCommentsWithticketId(int id, int take, int skip);
         Comment GetCommentWithId(int id);
         IList<Comment> GetComments(int take, int step);
         void Save(Comment comment);

@@ -9,8 +9,8 @@
                 <li>
                     <img height="16" width="16" src="/Content/Images/TestTicketIcon.png">
                     <p>
-                        <strong><%: activity.UserId %></strong> commented on 
-                        <strong><%: activity.Created.ToString() %></strong> at <strong><%: activity.Created.ToShortTimeString() %></strong> saying:
+                        <strong><%: activity.User.FullName() %></strong> commented on 
+                        <strong><%: Html.ActionLink(activity.Ticket.KeyName, MVC.Ticket.TicketDetails(activity.Ticket.KeyName))%></strong> at <strong><%: activity.Created.ToShortTimeString() %></strong> saying:
                     </p>
                     <div>
                         <%: activity.Comment %>

@@ -74,7 +74,9 @@
                 <% Html.RenderPartial(MVC.Ticket.Views.TicketDetailsCommentsTab, Model.Comments); %>
             </div>
 	        <div>Second tab content</div>
-	        <div>Third tab content</div
+	        <div>
+                <% Html.RenderPartial(MVC.Shared.Views.ActivityStream, Model.ActivityGroups); %>
+            </div
         </div>         
            
     </div>

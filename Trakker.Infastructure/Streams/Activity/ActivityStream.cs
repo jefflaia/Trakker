@@ -11,12 +11,14 @@ namespace Trakker.Infastructure.Streams.Activity
 {
     abstract public class ActivityStream
     {
-        private IUserService _userService;
+        protected IUserService _userService;
+        protected ITicketService _ticketService;
         private static IMapper<Comment> _commentMapper = new CommentMapper();
 
-        public ActivityStream(IUserService userService)
+        public ActivityStream(IUserService userService, ITicketService ticketService)
         {
-            _userService = userService; 
+            _userService = userService;
+            _ticketService = ticketService;
         }
 
         public abstract IList<Comment> LoadComments(int take, int skip);
@@ -38,7 +40,7 @@ namespace Trakker.Infastructure.Streams.Activity
             var activities = Transform(LoadComments(take, skip));
 
             //load the users into each activity
-            LoadUsers(activities);
+            LoadUsersAndTickets(activities);
 
             //sort them by date and time
             activities = Sort(activities);
@@ -49,9 +51,10 @@ namespace Trakker.Infastructure.Streams.Activity
             return groups;            
         }
 
-        private void LoadUsers(IList<ActivityModel> activities)
+        private void LoadUsersAndTickets(IList<ActivityModel> activities)
         {
             var users = new Dictionary<int, User>();
+            var tickets = new Dictionary<int, Ticket>();
 
             //loop through getting each user and adding it to the activity
             foreach (var activity in activities)
@@ -63,7 +66,13 @@ namespace Trakker.Infastructure.Streams.Activity
                     users.Add(activity.UserId, _userService.GetUserWithId(activity.UserId));
                 }
 
+                if (tickets.ContainsKey(activity.TicketId) == false)
+                {
+                    tickets.Add(activity.TicketId, _ticketService.GetTicketWithId(activity.TicketId));
+                }
+
                 activity.User = users[activity.UserId];
+                activity.Ticket = tickets[activity.TicketId];
             }
         }
 

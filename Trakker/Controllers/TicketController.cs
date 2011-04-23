@@ -10,6 +10,7 @@ using AutoMapper;
 using Trakker.Attributes;
 using System.Web.UI.HtmlControls;
 using Trakker.Models;
+using Trakker.Infastructure.Streams.Activity;
 
 namespace Trakker.Controllers
 {
@@ -43,6 +44,8 @@ namespace Trakker.Controllers
                 }
             }
 
+            var activityStream = new TicketActivityStream(_userService, _ticketService);
+            activityStream.Ticket = ticket;
 
             TicketDetailsModel viewData = new TicketDetailsModel()
             {
@@ -60,7 +63,8 @@ namespace Trakker.Controllers
                 IsClosed = ticket.IsClosed,
                 AssignedBy = _userService.GetUserWithId(ticket.AssignedByUserId),
                 CreatedBy = _userService.GetUserWithId(ticket.CreatedByUserId),
-                AssignedTo = _userService.GetUserWithId(ticket.AssignedToUserId)
+                AssignedTo = _userService.GetUserWithId(ticket.AssignedToUserId),
+                ActivityGroups = activityStream.Generate(15, 0)
             };
          
             return View(viewData);

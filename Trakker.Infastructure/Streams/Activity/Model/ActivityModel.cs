@@ -10,6 +10,7 @@ namespace Trakker.Infastructure.Streams.Activity.Model
     {
         public int Id { get; set; }
         public int UserId { get; set; }
+        public int TicketId { get; set; }
         public string Comment { get; set; }
         public DateTime Created { get; set; }
         public bool IsChange { get; set; }
@@ -17,6 +18,7 @@ namespace Trakker.Infastructure.Streams.Activity.Model
         public String ChangedValue { get; set; }
 
         public User User { get; set; }
+        public Ticket Ticket { get; set; }
 
         public Boolean HasComment()
         {

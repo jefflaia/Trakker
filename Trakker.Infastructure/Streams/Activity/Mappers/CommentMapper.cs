@@ -15,7 +15,8 @@ namespace Trakker.Infastructure.Streams.Activity.Mappers
             {
                 Comment = comment.Body,
                 Created = comment.Created,
-                UserId = comment.UserId
+                UserId = comment.UserId,
+                TicketId = comment.TicketId,
             };
         }
     }

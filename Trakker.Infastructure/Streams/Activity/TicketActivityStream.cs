@@ -7,17 +7,19 @@ using Trakker.Data;
 
 namespace Trakker.Infastructure.Streams.Activity
 {
-    public class UserActivityStream : ActivityStream
+    public class TicketActivityStream : ActivityStream
     {
-
-        public UserActivityStream(IUserService userService, ITicketService ticketService)
+        public TicketActivityStream(IUserService userService, ITicketService ticketService)
             : base(userService, ticketService)
         {
+
         }
+
+        public Ticket Ticket { get; set; }
 
         public override IList<Comment> LoadComments(int take, int skip)
         {
-            return _ticketService.GetComments(take, skip);
+            return _ticketService.GetCommentsWithticketId(Ticket.Id, take, skip);
         }
     }
 }
