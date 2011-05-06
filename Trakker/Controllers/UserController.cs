@@ -17,6 +17,7 @@ using Trakker.Helpers.Table;
 using Trakker.Models;
 using Trakker.Infastructure.Streams.Activity.Model;
 using Trakker.Infastructure.Streams.Activity;
+using Trakker.Areas.Admin.Models;
 
 
 namespace Trakker.Controllers
@@ -96,10 +97,57 @@ namespace Trakker.Controllers
             var model = new UserProfileModel()
             {
                 User = user,
-                ActivityStreamGroups = activityStream.Generate(15, 0)
+                ActivityStreamGroups = activityStream.Generate(15, 0),
+                IsOwner = user.Id == Auth.CurrentUser.Id
             };
 
             return View(model); ;
-        }    
+        }
+
+        [HttpGet]
+        public virtual ActionResult ChangePassword(int userId)
+        {
+            User user = _userService.GetUserWithId(userId);
+
+            if (user == null && user.Id != Auth.CurrentUser.Id )
+            {
+                PermanentRedirectToAction(MVC.Error.InvalidAction());
+            }
+
+            return View(new ChangePasswordModel() { 
+                User = user
+            });
+        }
+
+        [HttpPost]
+        public virtual ActionResult ChangePassword(int userId, ChangePasswordModel viewModel)
+        {
+            User user = _userService.GetUserWithId(userId);
+
+            if (user == null)
+            {
+                return PermanentRedirectToAction(MVC.Error.InvalidAction());
+            }
+
+            if (ModelState.IsValid && Auth.PasswordsMatch(viewModel.CurrentPassword, user) == false)
+            {
+                ModelState.AddModelError("CurrentPassword", "Password incorrect");
+            }
+
+            Mapper.CreateMap<ChangePasswordModel, User>();
+            Mapper.Map(viewModel, user);
+
+            if (ModelState.IsValid)
+            {
+                user.Password = Auth.HashPassword(user.Password, user.Salt);
+                _userService.Save(user);
+                UnitOfWork.Commit();
+                return RedirectToAction(MVC.User.UserProfile(userId));
+            }
+
+            viewModel.User = _userService.GetUserWithId(userId);
+
+            return View(viewModel);
+        }
     }
 }

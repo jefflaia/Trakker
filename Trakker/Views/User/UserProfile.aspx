@@ -11,11 +11,29 @@
             <div class="Details SubSection">
                 <h2>Details</h2>
                 <ul>
-                    <li><label>Avatar:</label>      <span><a href="#">Edit</a></span></li>
-                    <li><label>Name:</label>        <span><%: Model.User.FullName() %></span></li>
-                    <li><label>Username:</label>    <span><%: Model.User.Email %></span></li>
-                    <li><label>Password:</label>    <span><a href="#">Change Password</a></span></li>
-                    <li><label>Groups:</label>      <span></span>
+                    <li>
+                        <label>Avatar:</label>      
+                        <span><a href="#">Edit</a></span>
+                    </li>
+                    <li>
+                        <label>Name:</label>        
+                        <span><%: Model.User.FullName() %></span>
+                    </li>
+                    <li>
+                        <label>Username:</label>    
+                        <span><%: Model.User.Email %></span>
+                    </li>
+                    <% if (Model.IsOwner) { %>
+                        <li>
+                            <label>Password:</label>    
+                            <span>
+                                <%: Html.ActionLink("Change Password", MVC.User.ChangePassword(Model.User.Id)) %>
+                            </span>
+                        </li>
+                    <% } %>
+                    <li>
+                    <label>Groups:</label>      
+                    <span></span>
                         <ul>
                             <li>Admin</li>
                             <li>User</li>

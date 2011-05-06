@@ -91,10 +91,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth.cs" />
+    <Compile Include="Models\EntityBase.cs" />
     <Compile Include="Models\System\ColorPalette.cs" />
     <Compile Include="Models\System\SystemSettings.cs" />
     <Compile Include="Models\Ticket\TicketResolution.cs" />
     <Compile Include="ProjectCookie.cs" />
+    <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\System\ISystemRepository.cs" />
     <Compile Include="Repositories\System\SystemRepository.cs" />
     <Compile Include="Repositories\Ticket\ITicketRepository.cs" />

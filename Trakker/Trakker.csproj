@@ -142,6 +142,9 @@
     <Compile Include="Attributes\ActionFilters\AuthenticateAttribute.cs" />
     <Compile Include="Attributes\ActionFilters\UserInRoleAttribute.cs" />
     <Compile Include="Attributes\BaseAuthorizationActionFilterAttribute.cs" />
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Bootstrap\RegisterAssets.cs" />
+    <Compile Include="Bootstrap\RegisterAreas.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="ErrorController.generated.cs">
@@ -182,6 +185,7 @@
     <Compile Include="Helpers\Extensions\HtmlHelper\HtmlHelperExtensions.cs" />
     <Compile Include="Helpers\IsCurrentActionHelper.cs" />
     <Compile Include="Helpers\Pagination.cs" />
+    <Compile Include="Bootstrap\IBootstrapperTask.cs" />
     <Compile Include="MasterController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -191,10 +195,13 @@
     <Compile Include="Models\Error\TicketNotFoundModel.cs" />
     <Compile Include="Models\Error\PageNotFoundModel.cs" />
     <Compile Include="Models\Search\SearchIndexModel.cs" />
+    <Compile Include="Models\User\ChangePasswordModel.cs" />
     <Compile Include="Models\User\UserProfileModel.cs" />
     <Compile Include="NavController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bootstrap\RegisterControllerFactory.cs" />
+    <Compile Include="Bootstrap\RegisterRoutes.cs" />
     <Compile Include="Results\CustomCodeRedirectResult.cs" />
     <Compile Include="ProjectController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -416,6 +423,7 @@
     <Content Include="Areas\Admin\Views\Attribute\CreateResolution.aspx" />
     <Content Include="Areas\Admin\Views\Management\EditUser.aspx" />
     <Content Include="Areas\Admin\Views\Management\CreateUser.aspx" />
+    <Content Include="Views\User\ChangePassword.aspx" />
     <Content Include="Views\User\Login.aspx" />
     <Content Include="Views\Nav\Pagination.ascx" />
     <Content Include="Views\Ticket\EditComment.aspx" />

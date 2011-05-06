@@ -11,5 +11,7 @@ namespace Trakker.Models
     {
         public User User { get; set; }
         public IList<ActivityGroupModel> ActivityStreamGroups { get; set; }
+
+        public bool IsOwner { get; set; }
     }
 }

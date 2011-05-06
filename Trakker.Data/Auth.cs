@@ -108,6 +108,11 @@ namespace Trakker.Data
 
             return false;
         }
+                
+        public static bool PasswordsMatch(string currentPassword, User user)
+        {
+            return string.Compare(HashPassword(currentPassword, user.Salt), user.Password) == 0;
+        }
 
         public static void LogUserIn(User user)
         {

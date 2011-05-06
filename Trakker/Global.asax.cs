@@ -6,19 +6,10 @@
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Routing;
-    using AutoMapper;
-    using Sql = Trakker.Data.Access;
-    using Trakker.Data;
     using System.Web.Security;
     using System.Security.Principal;
-    using Trakker.Routes;
     using System.Configuration;
-    using Trakker.Core.IoC;
     using System.ComponentModel;
-    using Telerik.Web.Mvc;
-    using ResourceCompiler;
-    using ResourceCompiler.Compressors.StyleSheet;
-    using ResourceCompiler.Compressors.JavaScript;
 
 
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
@@ -28,67 +19,12 @@
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             
-            UserRoutes.AddRoutes(ref routes);
-            ProjectRoutes.AddRoutes(ref routes);
-            TicketRoutes.AddRoutes(ref routes);
-
-            //routes.MapRoute("Pagination", "paginator/{count}/{page}/{pageSize}", new { controller = "Nav", action = "TicketListPagination" });
-
-            /**** SearchController ****/
-            routes.MapRoute("SearchIndex", "search", new { controller = "Search", action = "SearchIndex" });
-            //routes.MapRoute("SearchIndex", "", new { controller = "Search", action = "SearchIndex" });
-
-            /**** ErrorController ****/
-            routes.MapRoute("PageNotFound", "page-not-found", new { controller = "Error", action = "PageNotFound" });
-            routes.MapRoute("TicketNotFound", "ticket-not-found", new { controller = "Error", action = "TicketNotFound" });
-            routes.MapRoute("UserNotFound", "user-not-found", new { controller = "Error", action = "UserNotFound" });
-            routes.MapRoute("UnexpectedError", "unexpected-error", new { controller = "Error", action = "UnexpectedError" });
-            routes.MapRoute("InvalidAction", "invalid-action", new { controller = "Error", action = "InvalidAction" });
-
-            /**** ResourceController ****/
-            routes.MapRoute("CSS", "{fileName}.css", new { controller = "Resource", action = "CSS" });
-            routes.MapRoute("JS", "{fileName}.js", new { controller = "Resource", action = "JS" });
-        
-            /**** Other *****/
-            routes.MapRoute("Default", "",  new { controller = "Ticket", action = "BrowseTickets"});
-            routes.MapRoute(null, "{controller}/{action}", new string[]{ "Trakker.Controllers" });
-
-           
-
         }
 
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
-            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory());
-            RegisterRoutes(RouteTable.Routes);
-            //RouteDebug.RouteDebugger.RewriteRoutesForTesting(RouteTable.Routes);
-
-
-            RecoAssets.StyleSheet()
-                .Add("~/Content/Reset.css")
-                .Add("~/Content/Main.css")
-                .Add("~/Content/Project.css")
-                .Add("~/Content/Admin/Settings.css")
-                .Add("~/Content/Ticket.css")
-                .Add("~/Content/User.css")
-                .AddDynamic("~/Content/Theme.css")
-                .Media(MediaType.Screen)
-                .Combine(true)
-                .Compress(true)
-                .Version(true)
-                .SetCompressor(new YuiCompressor());
-
-            RecoAssets.JavaScript()
-                .Add("~/Scripts/jquery-1.4.1.js")
-                .Add("~/Scripts/jqueryTools.tabs.js")
-                .Combine(true)
-                .Compress(true)
-                .Version(true)
-                .SetCompressor(new YuiMinifier());
-
+            Bootstrapper.Run();
         }
     }
 }
