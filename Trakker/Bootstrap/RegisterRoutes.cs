@@ -28,7 +28,6 @@ namespace Trakker.Bootstrap
         public void Execute()
         {
             //all routes must be added starting here
-            _routes.Clear();
 
             _routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 

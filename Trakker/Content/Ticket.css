@@ -10,19 +10,25 @@ div#TicketDetails div.Buttons{margin: 5px 0px; position:relative; width:auto; di
 div#TicketDetails div.Details {  float:left; width: 48%;  margin-right: 2%;}
 div#TicketDetails div.Details ul li { float:left; width: 40%;}
 
+div#TicketDetails div.List ul { margin-left: 20px;}
+div#TicketDetails div.List ul li{ list-style:none; color:#666; float:left;}
+div#TicketDetails div.List ul li label{color: #666; width: 30%; float:left;}
+
 div#TicketDetails div.People { float:left; width: 24%;  margin-right: 2%; }
+div#TicketDetails div.People li {width: 100%;}
 div#TicketDetails div.People ul li span{float:right; margin-right: 20px;}
 
 
 div#TicketDetails div.Dates { float:left; width: 24%;  }
+div#TicketDetails div.Dates li {width: 100%;}
+div#TicketDetails div.Dates li span {float:right; margin-right: 20px;}
+
 div#TicketDetails div.Desc { float:left; width: 68%; margin-right: 2%; margin-bottom: 20px; margin-top: 10px;}
+div#TicketDetails div.Desc li {width: 100%;}
 div#TicketDetails div.Desc div{padding:0px 20px;}
 
 div#TicketDetails div.TimeTracking{ float:left; width: 30%; margin-top: 10px;} 
 
-div#TicketDetails div.List ul { margin-left: 20px;}
-div#TicketDetails div.List ul li{ list-style:none; color:#666;}
-div#TicketDetails div.List ul li label{color: #666; width: 30%; float:left;}
 
 /* Comments */
 div#TicketDetails div.Comments ul {}

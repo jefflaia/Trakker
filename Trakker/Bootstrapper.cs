@@ -16,8 +16,8 @@ namespace Trakker
 
             
             tasks.Add(new RegisterControllerFactory(new WindsorControllerFactory()));
+            tasks.Add(new RegisterAreas()); //must come before routes
             tasks.Add(new RegisterRoutes());
-            tasks.Add(new RegisterAreas()); //must come after routes
             tasks.Add(new RegisterAssets());
 
 

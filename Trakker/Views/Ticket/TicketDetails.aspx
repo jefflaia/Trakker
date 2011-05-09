@@ -39,16 +39,18 @@
             <h2>People</h2>
 
             <ul>
-                <li><label>Assigned To:</label>     <span><%= Model.AssignedBy.Email %></span></li>
-                <li><label>Created By:</label>      <span><%= Model.CreatedBy.Email %></span></li>
-                <li><label>Assigned By:</label>     <span><%= Model.AssignedTo.Email %></span></li>
+                <li><label>Assigned To:</label>     <span><%: Html.ActionLink(Model.AssignedBy.FullName(), MVC.User.UserProfile(Model.AssignedBy.Id)) %></span></li>
+                <li><label>Created By:</label>      <span><%: Html.ActionLink(Model.CreatedBy.FullName(), MVC.User.UserProfile(Model.CreatedBy.Id)) %></span></li>
+                <li><label>Assigned By:</label>     <span><%: Html.ActionLink(Model.AssignedTo.FullName(), MVC.User.UserProfile(Model.AssignedTo.Id)) %></span></li>
             </ul>        
         </div>
 
         <div class="Dates List SubSection">
             <h2>Dates</h2>
-            <label>Created:</label>     <p class="Value"><%= Model.Created %></p>
-            <label>Due Date:</label>    <p class="Value"><%= Model.DueDate %></p>
+            <ul>
+            <li><label>Created:</label>     <span><%= Model.Created %></span></li>
+            <li><label>Due Date:</label>    <span><%= Model.DueDate %></span></li>
+            </ul>
         </div>
 
         <div class="Desc SubSection">
