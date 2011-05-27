@@ -33,3 +33,16 @@ F:\Trakker\Trakker.Data\bin\Debug\Mvc.Validation.dll
 F:\Trakker\Trakker.Data\obj\Debug\ResolveAssemblyReference.cache
 F:\Trakker\Trakker.Data\obj\Debug\Trakker.Data.dll
 F:\Trakker\Trakker.Data\obj\Debug\Trakker.Data.pdb
+D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Trakker.Data.dll
+D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Trakker.Data.pdb
+D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\AutoMapper.dll
+D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Mvc.Validation.dll
+D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Trakker.Core.dll
+D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Castle.Windsor.dll
+D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Castle.MicroKernel.dll
+D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Castle.DynamicProxy2.dll
+D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Castle.Core.dll
+D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Trakker.Core.pdb
+D:\Projects\ASPNET\Trakker\Trakker.Data\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\ASPNET\Trakker\Trakker.Data\obj\Debug\Trakker.Data.dll
+D:\Projects\ASPNET\Trakker\Trakker.Data\obj\Debug\Trakker.Data.pdb

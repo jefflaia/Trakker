@@ -13,3 +13,13 @@ F:\Trakker\BaseMasterController\bin\Debug\Trakker.Core.pdb
 F:\Trakker\BaseMasterController\obj\Debug\ResolveAssemblyReference.cache
 F:\Trakker\BaseMasterController\obj\Debug\Trakker.Core.dll
 F:\Trakker\BaseMasterController\obj\Debug\Trakker.Core.pdb
+D:\Projects\ASPNET\Trakker\BaseMasterController\bin\Debug\Trakker.Core.dll
+D:\Projects\ASPNET\Trakker\BaseMasterController\bin\Debug\Trakker.Core.pdb
+D:\Projects\ASPNET\Trakker\BaseMasterController\bin\Debug\Castle.Core.dll
+D:\Projects\ASPNET\Trakker\BaseMasterController\bin\Debug\Castle.DynamicProxy2.dll
+D:\Projects\ASPNET\Trakker\BaseMasterController\bin\Debug\Castle.MicroKernel.dll
+D:\Projects\ASPNET\Trakker\BaseMasterController\bin\Debug\Castle.Windsor.dll
+D:\Projects\ASPNET\Trakker\BaseMasterController\bin\Debug\Telerik.Web.Mvc.dll
+D:\Projects\ASPNET\Trakker\BaseMasterController\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\ASPNET\Trakker\BaseMasterController\obj\Debug\Trakker.Core.dll
+D:\Projects\ASPNET\Trakker\BaseMasterController\obj\Debug\Trakker.Core.pdb
