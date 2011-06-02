@@ -39,9 +39,14 @@
                 .Where(m => m.Name == name).SingleOrDefault() ?? null;
         }
 
-        public SystemSettings GetSystemSettings()
+        public Property<T> GetPropertyByName<T>(string name)
         {
-            return _systemRepository.GetSystemSettings();
+            return _systemRepository.GetPropertyByName<T>(name);
+        }
+
+        public void Save<T>(Property<T> property)
+        {
+            _systemRepository.Save<T>(property);
         }
     }
 }

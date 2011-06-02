@@ -32,7 +32,10 @@ namespace Trakker.Controllers
             //how could i handle groups?
 
             StyleSheetRenderer renderer = new StyleSheetRenderer(RecoAssets.StyleSheet());
-            renderer.Model = _systemService.GetColorPaletteById(3);
+
+            var property = _systemService.GetPropertyByName<int>("colorPaletteId");
+
+            renderer.Model = _systemService.GetColorPaletteById(property.Value);
             
             return new StyleSheetResult()
             {

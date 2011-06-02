@@ -11,8 +11,8 @@
         void Save(ColorPalette palette);
         void DeleteColorPalette(int id);
 
-        SystemSettings GetSystemSettings();
-        void Save(SystemSettings settings);
+        Property<T> GetPropertyByName<T>(string name);
+        void Save<T>(Property<T> property);
         
     }
 }

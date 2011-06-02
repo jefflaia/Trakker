@@ -106,10 +106,12 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpGet]
         public virtual ActionResult SelectColorPalette(int paletteId)
         {
-            if (_systemService.GetColorPaletteById(paletteId) != null)
-            {
-                //select color palette here
-            }
+            var property = _systemService.GetPropertyByName<int>("colorPaletteId");
+
+            property.Value = paletteId;
+
+            _systemService.Save<int>(property);
+            UnitOfWork.Commit();
 
             return RedirectToAction(MVC.Admin.Settings.BrowseColorPalettes());
         }

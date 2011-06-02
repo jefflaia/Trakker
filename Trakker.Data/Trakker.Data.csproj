@@ -93,6 +93,7 @@
     <Compile Include="Auth.cs" />
     <Compile Include="Models\EntityBase.cs" />
     <Compile Include="Models\System\ColorPalette.cs" />
+    <Compile Include="Models\System\Property.cs" />
     <Compile Include="Models\System\SystemSettings.cs" />
     <Compile Include="Models\Ticket\TicketResolution.cs" />
     <Compile Include="ProjectCookie.cs" />

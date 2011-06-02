@@ -12,6 +12,7 @@ namespace Trakker.Data.Services
         ColorPalette GetColorPaletteByName(string name);
         void Save(ColorPalette palette);
 
-        SystemSettings GetSystemSettings();
+        Property<T> GetPropertyByName<T>(string name);
+        void Save<T>(Property<T> property);
     }
 }

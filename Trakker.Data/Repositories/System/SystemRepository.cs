@@ -15,7 +15,7 @@
     {
         protected DataContext _dataContext;
         protected Table<Sql.ColorPalette> _paletteTable;
-        protected Table<Sql.SystemSetting> _systemSettingTable;
+        private Table<Sql.Property> _propertyTable;
 
         internal class Setting
         {
@@ -27,7 +27,8 @@
         {
             _dataContext = dataContext.DataContext;
             _paletteTable = _dataContext.GetTable<Sql.ColorPalette>();
-            _systemSettingTable = _dataContext.GetTable<Sql.SystemSetting>();
+            _propertyTable = _dataContext.GetTable<Sql.Property>();
+
         }
 
         public IQueryable<ColorPalette> GetColorPalettes()
@@ -60,6 +61,8 @@
                 _paletteTable.Attach(p);
                 _paletteTable.Context.Refresh(RefreshMode.KeepCurrentValues, p);
             }
+
+            palette.Id = p.Id;
         }
 
         public void DeleteColorPalette(int id)
@@ -69,45 +72,49 @@
                                             select p);
         }
 
-        public SystemSettings GetSystemSettings()
+        public Property<T> GetPropertyByName<T>(string name)
         {
-            var systemSettings = new SystemSettings();
-            var settings  = (
-                from s in _systemSettingTable 
-                select new Setting() {
-                    Key = s.Key,
-                    Value = s.Value
-                }).ToDictionary<Setting, string>(k => k.Key);
+            var property = (from p in _propertyTable
+                where p.Identifier == name
+                select p).SingleOrDefault() ?? null;
 
-      
-
-            PropertyInfo[] properties = systemSettings.GetType().GetProperties();
-            foreach (PropertyInfo property in properties)
+            Property<T> typeProperty = new Property<T>
             {
-                if (settings.ContainsKey(property.Name))
-                {
-                    property.SetValue(systemSettings, settings[property.Name], null);
-                }
-            }
+                Id = property.Id,
+                Name = property.Name,
+                Created = property.Created,
+                Identifier = property.Identifier,
+                Type = property.Type,
+                Value = (T)Convert.ChangeType(property.Value, typeof(T)),
 
-            return systemSettings;
+            };
+
+            return typeProperty;
         }
 
-        public void Save(SystemSettings setting)
+        public void Save<T>(Property<T> property)
         {
-
-            PropertyInfo[] properties = setting.GetType().GetProperties();
-            foreach (PropertyInfo property in properties)
+            Sql.Property rowProperty = new Sql.Property
             {
-                _systemSettingTable.Attach(new Sql.SystemSetting() 
-                {
-                    Key = property.Name,
-                    Value = property.GetValue(setting, null).ToString()
-                });
+                Id = property.Id,
+                Name = property.Name,
+                Identifier = property.Identifier,
+                Created = property.Created,
+                Type = property.Type,
+                Value = property.Value.ToString()
+            };
+
+            if (rowProperty.Id == 0)
+            {
+                _propertyTable.InsertOnSubmit(rowProperty);
             }
-          
-            
-            //_paletteTable.Context.Refresh(RefreshMode.KeepCurrentValues, );
+            else
+            {
+                _propertyTable.Attach(rowProperty);
+                _propertyTable.Context.Refresh(RefreshMode.KeepCurrentValues, rowProperty);
+            }
+
+            property.Id = rowProperty.Id;
         }
     }
 }
