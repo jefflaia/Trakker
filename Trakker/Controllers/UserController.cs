@@ -18,6 +18,7 @@ using Trakker.Models;
 using Trakker.Infastructure.Streams.Activity.Model;
 using Trakker.Infastructure.Streams.Activity;
 using Trakker.Areas.Admin.Models;
+using NHibernate;
 
 
 namespace Trakker.Controllers
@@ -148,6 +149,19 @@ namespace Trakker.Controllers
             viewModel.User = _userService.GetUserWithId(userId);
 
             return View(viewModel);
+        }
+
+
+
+        public virtual ActionResult Testing()
+        {
+            using (ISession session = NHibernateHelper.OpenSession())
+            {
+
+            }
+
+            throw new NotImplementedException();
+            return View();
         }
     }
 }

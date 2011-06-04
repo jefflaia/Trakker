@@ -66,18 +66,30 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\Lib\nHibernate\fluent 1.2\FluentNHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="Mvc.Validation, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Mvc.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\Lib\nHibernate\Required_Bins\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\Lib\nHibernate\Required_For_LazyLoading\Castle\NHibernate.ByteCode.Castle.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq">
@@ -96,6 +108,7 @@
     <Compile Include="Models\System\Property.cs" />
     <Compile Include="Models\System\SystemSettings.cs" />
     <Compile Include="Models\Ticket\TicketResolution.cs" />
+    <Compile Include="NHibernateHelper.cs" />
     <Compile Include="ProjectCookie.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\System\ISystemRepository.cs" />
@@ -166,6 +179,13 @@
       <LastGenOutput>TrakkerDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="App.Config" />
+    <None Include="nhibernate-configuration.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="nhibernate-mapping.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -202,7 +222,15 @@
       <Name>Trakker.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Access\Mappings\Comment.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

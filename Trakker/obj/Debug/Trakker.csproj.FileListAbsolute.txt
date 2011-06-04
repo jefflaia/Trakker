@@ -75,3 +75,11 @@ D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\Trakker.dll
 D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\Trakker.pdb
 D:\Projects\ASPNET\Trakker\Trakker\bin\Trakker.Infastructure.dll
 D:\Projects\ASPNET\Trakker\Trakker\bin\Trakker.Infastructure.pdb
+D:\Projects\ASPNET\Trakker\Trakker\bin\Access\Mappings\Comment.hbm.xml
+D:\Projects\ASPNET\Trakker\Trakker\bin\NHibernate.dll
+D:\Projects\ASPNET\Trakker\Trakker\bin\Iesi.Collections.dll
+D:\Projects\ASPNET\Trakker\Trakker\bin\NHibernate.pdb
+D:\Projects\ASPNET\Trakker\Trakker\bin\NHibernate.xml
+D:\Projects\ASPNET\Trakker\Trakker\bin\Iesi.Collections.pdb
+D:\Projects\ASPNET\Trakker\Trakker\bin\Iesi.Collections.xml
+D:\Projects\ASPNET\Trakker\Trakker\bin\hibernate.cfg.xml

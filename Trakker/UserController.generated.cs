@@ -57,6 +57,7 @@ namespace Trakker.Controllers {
             public readonly string Logout = ("Logout").ToLowerInvariant();
             public readonly string UserProfile = ("UserProfile").ToLowerInvariant();
             public readonly string ChangePassword = ("ChangePassword").ToLowerInvariant();
+            public readonly string Testing = ("Testing").ToLowerInvariant();
         }
 
 
@@ -108,6 +109,11 @@ namespace Trakker.Controllers {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ChangePassword);
             callInfo.RouteValueDictionary.Add("userId", userId);
             callInfo.RouteValueDictionary.Add("viewModel", viewModel);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult Testing() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Testing);
             return callInfo;
         }
 

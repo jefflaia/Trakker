@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping namespace="Trakker.Data.Models">
+
+<class name="Comment">
+  <id name="Id">
+    <generator class="identity" />
+  </id>
+  <property name="Body" />
+  <property name="Created" />
+  <property name="Modified" />
+  <property name="TicketId" />
+  <property name="UserId" />
+
+  <bag name="Users">
+    <key column="UserId" />
+    <one-to-many class="User" />
+  </bag>
+</class>
+
+</hibernate-mapping>
+
