@@ -2,9 +2,8 @@
 namespace Trakker.Data
 {
 
-    public class Ticket
+    public class Ticket : BaseEntity
     {
-        public virtual int Id { get; set; }
         public virtual bool IsClosed { get; set; }
         public virtual string Summary { get; set; }
         public virtual int CategoryId { get; set; }

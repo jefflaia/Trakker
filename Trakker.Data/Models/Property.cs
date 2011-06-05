@@ -5,9 +5,8 @@ using System.Text;
 
 namespace Trakker.Data
 {
-    public class Property<T>
+    public class Property<T> : BaseEntity
     {
-        public virtual int Id { get; set; }
         public virtual string Identifier { get; set; }
         public virtual string Name { get; set; }
         public virtual T Value { get; set; }

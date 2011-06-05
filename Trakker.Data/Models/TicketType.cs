@@ -1,10 +1,7 @@
 ﻿namespace Trakker.Data
 {
-    public class TicketType
+    public class TicketType : NamedEntity
     {
-        public virtual int Id { get; set; }
-        public virtual string Name { get; set; }
-        public virtual string Description { get; set; }
 
     }
 }

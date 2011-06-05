@@ -5,10 +5,8 @@ using System.Text;
 
 namespace Trakker.Data
 {
-    public class TicketResolution
+    public class TicketResolution : NamedEntity
     {
-        public virtual int Id { get; set; }
-        public virtual string Name { get; set; }
-        public virtual string Description { get; set; }
+
     }
 }

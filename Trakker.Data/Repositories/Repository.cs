@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Linq;
-using Trakker.Data.Models;
+using Trakker.Data;
 
 namespace Trakker.Data.Repositories
 {
-    public abstract class Repository<TEntity> : IDisposable where TEntity : EntityBase
+    public abstract class Repository<TEntity> : IDisposable where TEntity : BaseEntity
     {
         private DataContext _context;
 

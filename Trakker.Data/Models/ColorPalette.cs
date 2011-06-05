@@ -5,9 +5,8 @@ using System.Text;
 
 namespace Trakker.Data
 {
-    public class ColorPalette
+    public class ColorPalette : BaseEntity
     {
-        public virtual int Id { get; set; }
         public virtual string Name { get; set; }
         public virtual string NavBackgroundColor { get; set; }
         public virtual string SubNavBackgroundColor { get; set; }

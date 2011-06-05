@@ -5,10 +5,9 @@ using System.Text;
 
 namespace Trakker.Data
 {
-    public class User
+    public class User : BaseEntity
     {
         #region Properties
-        public virtual int Id { get; set; }
         public virtual string Email { get; set; }
         public virtual string Password { get; set; }
         public virtual string Salt { get; set; }

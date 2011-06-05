@@ -5,8 +5,9 @@ using System.Text;
 
 namespace Trakker.Data
 {
-    public class Role : NamedEntity
+    public interface INamedEntity : IBaseEntity
     {
-        public virtual IList<User> Users { get; set; }
+        string Name { get; set; }
+        string Description { get; set; }
     }
 }
