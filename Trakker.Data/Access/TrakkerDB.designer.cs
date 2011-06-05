@@ -76,7 +76,7 @@ namespace Trakker.Data.Access
     partial void UpdateProperty(Property instance);
     partial void DeleteProperty(Property instance);
     #endregion
-		
+
 		
 		public TrakkerDBDataContext(string connection) : 
 				base(connection, mappingSource)

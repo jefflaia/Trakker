@@ -2,45 +2,13 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Trakker.Data.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="TrakkerConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=JUSTIN-PC\SQLEXPRESS;Initial Catalog=Trakker;Integrated Security=True&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=JUSTIN-PC\SQLEXPRESS;Initial Catalog=Trakker;Integrated Security=True</Value>
-    </Setting>
-    <Setting Name="TrakkerConnectionString1" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=WEBSERVER;Initial Catalog=Trakker;User ID=Justin&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=WEBSERVER;Initial Catalog=Trakker;User ID=Justin</Value>
-    </Setting>
-    <Setting Name="DataSourceConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=WEBSERVER;User ID=Trakker&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=WEBSERVER;User ID=Trakker</Value>
-    </Setting>
     <Setting Name="TrakkerConnectionString2" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=WEBSERVER;Initial Catalog=Trakker;Persist Security Info=True;User ID=Trakker;Password=Molly12132008&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=WEBSERVER;Initial Catalog=Trakker;Persist Security Info=True;User ID=Trakker&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=WEBSERVER;Initial Catalog=Trakker;Persist Security Info=True;User ID=Trakker;Password=Molly12132008</Value>
-    </Setting>
-    <Setting Name="TrakkerConnectionString3" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=WEBSERVER;Initial Catalog=Trakker;User ID=Justin;Password=Molly12132008&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=WEBSERVER;Initial Catalog=Trakker;User ID=Justin;Password=Molly12132008</Value>
+      <Value Profile="(Default)">Data Source=WEBSERVER;Initial Catalog=Trakker;Persist Security Info=True;User ID=Trakker</Value>
     </Setting>
   </Settings>
 </SettingsFile>

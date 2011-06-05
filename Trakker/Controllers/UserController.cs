@@ -19,6 +19,7 @@ using Trakker.Infastructure.Streams.Activity.Model;
 using Trakker.Infastructure.Streams.Activity;
 using Trakker.Areas.Admin.Models;
 using NHibernate;
+using NHibernate.Criterion;
 
 
 namespace Trakker.Controllers
@@ -155,10 +156,18 @@ namespace Trakker.Controllers
 
         public virtual ActionResult Testing()
         {
+            IList<User> users = new List<User>();
             using (ISession session = NHibernateHelper.OpenSession())
             {
+                var hqlQuery = session.CreateQuery("from User s");
+                users = hqlQuery.List<User>();
 
             }
+
+            if (users.Count > 0) throw new Exception("working");
+         
+
+
 
             throw new NotImplementedException();
             return View();

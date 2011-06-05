@@ -7,6 +7,6 @@ namespace Trakker.Data.Models
 {
     public class EntityBase
     {
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
     }
 }
