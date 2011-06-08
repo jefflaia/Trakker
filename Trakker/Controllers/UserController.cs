@@ -20,15 +20,16 @@ using Trakker.Infastructure.Streams.Activity;
 using Trakker.Areas.Admin.Models;
 using NHibernate;
 using NHibernate.Criterion;
+using Trakker.Data.Repositories;
 
 
 namespace Trakker.Controllers
 {
     public partial class UserController : MasterController
     {
-       public UserController(IUserService userService, ITicketService ticketService, IProjectService projectService)
-            : base(projectService, ticketService, userService)
-        {            
+       public UserController(IUserService userService, ITicketService ticketService, IProjectService projectService, IUserRepository userRepo)
+            : base(projectService, ticketService, userService, userRepo)
+        {
         }
         
         public virtual ActionResult Login()
@@ -43,7 +44,7 @@ namespace Trakker.Controllers
             {
                 if (Auth.ValidateCredentials(viewData.Email, viewData.Password))
                 {
-                    User user = _userService.GetUserWithEmail(viewData.Email);
+                    User user = _userRepo.GetUserByEmail(viewData.Email);
                     user.LastLogin = DateTime.Now;
                     _userService.Save(user);
                     UnitOfWork.Commit();
@@ -55,7 +56,7 @@ namespace Trakker.Controllers
                 else
                 {
                     ModelState.AddModelError("Invalid", "Invalid email or password");
-                    User user = _userService.GetUserWithEmail(viewData.Email);
+                    User user = _userRepo.GetUserByEmail(viewData.Email);
 
                     if (user != null)
                     {
@@ -80,7 +81,7 @@ namespace Trakker.Controllers
 
         public virtual ActionResult UserProfile(int userId)
         {
-            var user = _userService.GetUserWithId(userId);
+            var user = _userRepo.GetUserById(userId);
 
             if (user == null)
             {
@@ -109,7 +110,7 @@ namespace Trakker.Controllers
         [HttpGet]
         public virtual ActionResult ChangePassword(int userId)
         {
-            User user = _userService.GetUserWithId(userId);
+            User user = _userRepo.GetUserById(userId);
 
             if (user == null && user.Id != Auth.CurrentUser.Id )
             {
@@ -124,7 +125,7 @@ namespace Trakker.Controllers
         [HttpPost]
         public virtual ActionResult ChangePassword(int userId, ChangePasswordModel viewModel)
         {
-            User user = _userService.GetUserWithId(userId);
+            User user = _userRepo.GetUserById(userId);
 
             if (user == null)
             {
@@ -147,7 +148,7 @@ namespace Trakker.Controllers
                 return RedirectToAction(MVC.User.UserProfile(userId));
             }
 
-            viewModel.User = _userService.GetUserWithId(userId);
+            viewModel.User = _userRepo.GetUserById(userId);
 
             return View(viewModel);
         }
@@ -156,15 +157,9 @@ namespace Trakker.Controllers
 
         public virtual ActionResult Testing()
         {
-            IList<User> users = new List<User>();
-            using (ISession session = NHibernateHelper.OpenSession())
-            {
-                var hqlQuery = session.CreateQuery("from User s");
-                users = hqlQuery.List<User>();
 
-            }
-
-            if (users.Count > 0) throw new Exception("working");
+            var user = _userRepo.GetUserById(2);
+            if (user != null) throw new Exception("working");
          
 
 

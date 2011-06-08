@@ -8,6 +8,7 @@
     using System.Data.Linq;
 
     using Sql = Access;
+    using NHibernate;
 
     public class UserRepository : IUserRepository
     {
@@ -15,11 +16,15 @@
         protected Table<Sql.Role> _rolesTable;
         protected Table<Sql.User> _usersTable;
 
-        public UserRepository(IDataContextProvider dataContext)
+        protected ISession _session;
+
+        public UserRepository(IDataContextProvider dataContext, ISession session)
         {
             _dataContext = dataContext.DataContext;
             _rolesTable = _dataContext.GetTable<Sql.Role>();
             _usersTable = _dataContext.GetTable<Sql.User>();
+
+            _session = session;
         }
 
         public IQueryable<User> GetUsers()
@@ -42,10 +47,43 @@
                    };
         }
 
+        public User GetUserById(int userId)
+        {
+            return _session.Get<User>(userId);
+        }
+
+        public User GetUserByEmail(string email)
+        {
+            return _session.CreateQuery("from User s where s.Email = ?")
+                .SetString(0, email)
+                .UniqueResult<User>();
+        }
+
+        public IList<User> GetAllUsers()
+        {
+            return _session.CreateCriteria("from Users s")
+                .List<User>();
+        }
+
         public void Save(User user)
         {
-            Mapper.CreateMap<User, Sql.User>();
-            Sql.User u = Mapper.Map<User, Sql.User>(user);
+            Sql.User u = new Sql.User
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                Created = user.Created,
+                Email = user.Email,
+                FailedPasswordAttemptCount = user.FailedPasswordAttemptCount,
+                LastFailedLoginAttempt = user.LastFailedLoginAttempt,
+                Password = user.Password,
+                Salt = user.Salt,
+                LastLogin = user.LastLogin,
+                LastName = user.LastName,
+                TotalComments = user.TotalComments,
+                RoleId = user.RoleId
+            };
+            
+
 
             if (user.Id == 0)
             {

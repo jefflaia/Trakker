@@ -19,12 +19,12 @@
         }
 
         #region User
-        public User GetUserWithId(int id)
+        public User GetUserById(int id)
         {
             return _userRepository.GetUsers().Where(x => x.Id == id).SingleOrDefault<User>() ?? null;
         }
 
-        public User GetUserWithEmail(string email)
+        public User GetUserByEmail(string email)
         {
             return _userRepository.GetUsers().Where(x => x.Email == email).SingleOrDefault<User>() ?? null;
         }

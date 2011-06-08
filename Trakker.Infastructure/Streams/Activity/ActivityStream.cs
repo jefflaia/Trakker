@@ -63,7 +63,7 @@ namespace Trakker.Infastructure.Streams.Activity
                 //avoid needless queries for already existing users
                 if (users.ContainsKey(activity.UserId) == false)
                 {
-                    users.Add(activity.UserId, _userService.GetUserWithId(activity.UserId));
+                    users.Add(activity.UserId, _userService.GetUserById(activity.UserId));
                 }
 
                 if (tickets.ContainsKey(activity.TicketId) == false)

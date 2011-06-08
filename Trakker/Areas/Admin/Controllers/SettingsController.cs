@@ -9,6 +9,7 @@ using Trakker.Data.Services;
 using Trakker.Areas.Admin.Models;
 using AutoMapper;
 using Trakker.Data;
+using Trakker.Data.Repositories;
 
 namespace Trakker.Areas.Admin.Controllers
 {
@@ -16,8 +17,8 @@ namespace Trakker.Areas.Admin.Controllers
     {
         protected ISystemService _systemService;
 
-        public SettingsController(ITicketService ticketService, IUserService userService, IProjectService projectService, ISystemService systemService)
-            : base(projectService, ticketService, userService)
+        public SettingsController(ITicketService ticketService, IUserService userService, IProjectService projectService, ISystemService systemService, IUserRepository userRepo)
+            : base(projectService, ticketService, userService, userRepo)
         {
             _systemService = systemService;
         }

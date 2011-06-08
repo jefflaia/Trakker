@@ -19,7 +19,7 @@
   <property name="FirstName" />
   <property name="LastName" />
 
-  <many-to-one name="Role" column="RoleId" />
+  <one-to-one name="Role" class="Role"/>
 
 </class>
 

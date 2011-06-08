@@ -17,6 +17,7 @@ namespace Trakker.Controllers
     using Trakker.Core.Extensions;
     using AutoMapper;
     using Trakker.Models;
+    using Trakker.Data.Repositories;
 
     public abstract partial class MasterController : Controller
     {
@@ -24,12 +25,14 @@ namespace Trakker.Controllers
         protected IProjectService _projectService;
         protected ITicketService _ticketService;
         protected IUserService _userService;
+        protected IUserRepository _userRepo;
         
-        public MasterController(IProjectService projectService, ITicketService ticketService, IUserService userSerivice)
+        public MasterController(IProjectService projectService, ITicketService ticketService, IUserService userSerivice, IUserRepository userRepo)
         {
             _projectService = projectService;
             _ticketService = ticketService;
             _userService = userSerivice;
+            _userRepo = userRepo;
 
             UnitOfWork = WindsorContainerProvider.Resolve<IUnitOfWork>();
         }

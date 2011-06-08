@@ -11,8 +11,8 @@ using System.Linq;
         IList<Role> GetAllRoles();
         IList<User> GetAllUsers();
         Paginated<User> GetAllUsersPaginated(int page, int pageSize);
-        User GetUserWithEmail(string email);
-        User GetUserWithId(int id);
+        User GetUserByEmail(string email);
+        User GetUserById(int id);
         void Save(User user);
 
 

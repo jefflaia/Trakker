@@ -11,14 +11,15 @@ using Trakker.Attributes;
 using System.Web.UI.HtmlControls;
 using Trakker.Models;
 using Trakker.Infastructure.Streams.Activity;
+using Trakker.Data.Repositories;
 
 namespace Trakker.Controllers
 {
     [Authenticate]
     public partial class TicketController : MasterController
     {
-        public TicketController(ITicketService ticketService, IUserService userService, IProjectService projectService)
-            : base(projectService, ticketService, userService)
+        public TicketController(ITicketService ticketService, IUserService userService, IProjectService projectService, IUserRepository userRepo)
+            : base(projectService, ticketService, userService, userRepo)
         {
         }
 
@@ -39,7 +40,7 @@ namespace Trakker.Controllers
                 }
                 else
                 {
-                    users.Add(comment.UserId, _userService.GetUserWithId(comment.UserId));
+                    users.Add(comment.UserId, _userRepo.GetUserById(comment.UserId));
                     comment.User = users[comment.UserId];
                 }
             }
@@ -61,9 +62,9 @@ namespace Trakker.Controllers
                 KeyName = ticket.KeyName,
                 Comments = comments,
                 IsClosed = ticket.IsClosed,
-                AssignedBy = _userService.GetUserWithId(ticket.AssignedByUserId),
-                CreatedBy = _userService.GetUserWithId(ticket.CreatedByUserId),
-                AssignedTo = _userService.GetUserWithId(ticket.AssignedToUserId),
+                AssignedBy = _userRepo.GetUserById(ticket.AssignedByUserId),
+                CreatedBy = _userRepo.GetUserById(ticket.CreatedByUserId),
+                AssignedTo = _userRepo.GetUserById(ticket.AssignedToUserId),
                 ActivityGroups = activityStream.Generate(15, 0)
             };
          
@@ -87,19 +88,19 @@ namespace Trakker.Controllers
             {
                 if (users.ContainsKey(ticket.AssignedToUserId) == false)
                 {
-                    user = _userService.GetUserWithId(ticket.AssignedToUserId);
+                    user = _userRepo.GetUserById(ticket.AssignedToUserId);
                     users.Add(user.Id, user);
                 }
 
                 if (users.ContainsKey(ticket.AssignedByUserId) == false)
                 {
-                    user = _userService.GetUserWithId(ticket.AssignedByUserId);
+                    user = _userRepo.GetUserById(ticket.AssignedByUserId);
                     users.Add(user.Id, user);
                 }
 
                 if (users.ContainsKey(ticket.CreatedByUserId) == false)
                 {
-                    user = _userService.GetUserWithId(ticket.CreatedByUserId);
+                    user = _userRepo.GetUserById(ticket.CreatedByUserId);
                     users.Add(user.Id, user);
                 }
             }

@@ -55,6 +55,7 @@ D:\Projects\ASPNET\Trakker\Trakker\bin\Foolproof.dll
 D:\Projects\ASPNET\Trakker\Trakker\bin\Lucene.Net.dll
 D:\Projects\ASPNET\Trakker\Trakker\bin\Microsoft.Web.Mvc.dll
 D:\Projects\ASPNET\Trakker\Trakker\bin\Mvc.Validation.dll
+D:\Projects\ASPNET\Trakker\Trakker\bin\NHibernate.ByteCode.Castle.dll
 D:\Projects\ASPNET\Trakker\Trakker\bin\NHibernate.dll
 D:\Projects\ASPNET\Trakker\Trakker\bin\Reco.dll
 D:\Projects\ASPNET\Trakker\Trakker\bin\RouteDebug.dll
@@ -73,6 +74,8 @@ D:\Projects\ASPNET\Trakker\Trakker\bin\Trakker.Data.pdb
 D:\Projects\ASPNET\Trakker\Trakker\bin\Trakker.Infastructure.pdb
 D:\Projects\ASPNET\Trakker\Trakker\bin\NHibernate.pdb
 D:\Projects\ASPNET\Trakker\Trakker\bin\NHibernate.xml
+D:\Projects\ASPNET\Trakker\Trakker\bin\NHibernate.ByteCode.Castle.pdb
+D:\Projects\ASPNET\Trakker\Trakker\bin\NHibernate.ByteCode.Castle.xml
 D:\Projects\ASPNET\Trakker\Trakker\bin\Iesi.Collections.pdb
 D:\Projects\ASPNET\Trakker\Trakker\bin\Iesi.Collections.xml
 D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\ResolveAssemblyReference.cache

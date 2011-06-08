@@ -9,14 +9,15 @@ using Trakker.Data.Services;
 using Trakker.Attributes;
 using AutoMapper;
 using Trakker.Data;
+using Trakker.Data.Repositories;
 
 namespace Trakker.Areas.Admin.Controllers
 {
     [Authenticate]
     public partial class ManagementController : MasterController
     {
-        public ManagementController(ITicketService ticketService, IUserService userService, IProjectService projectService)
-            : base(projectService, ticketService, userService)
+        public ManagementController(ITicketService ticketService, IUserService userService, IProjectService projectService, IUserRepository userRepo)
+            : base(projectService, ticketService, userService, userRepo)
         {
         }
 
@@ -45,7 +46,7 @@ namespace Trakker.Areas.Admin.Controllers
         {
             return View(new ViewUserModel()
             {
-                User = _userService.GetUserWithId(userId)
+                User = _userRepo.GetUserById(userId)
             });
         }
 
@@ -60,7 +61,7 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpPost]
         public virtual ActionResult CreateUser(CreateUserModel viewModel)
         {
-            User existingUser = _userService.GetUserWithEmail(viewModel.Email);
+            User existingUser = _userRepo.GetUserByEmail(viewModel.Email);
             if (existingUser != null)
             {
                 ModelState.AddModelError("Email", "A user with this email already exists.");
@@ -83,7 +84,7 @@ namespace Trakker.Areas.Admin.Controllers
 
         public virtual ActionResult EditUser(int userId)
         {
-            User user = _userService.GetUserWithId(userId);
+            User user = _userRepo.GetUserById(userId);
             if (user == null)
             {
                 return PermanentRedirectToAction(MVC.Error.InvalidAction());
@@ -100,7 +101,7 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpPost]
         public virtual ActionResult EditUser(int userId, EditUserModel viewModel)
         {
-            User user = _userService.GetUserWithId(userId);
+            User user = _userRepo.GetUserById(userId);
 
             if (user == null)
             {
@@ -125,14 +126,14 @@ namespace Trakker.Areas.Admin.Controllers
         public virtual ActionResult EditUserPassword(int userId)
         {
             return View(new EditUserPasswordModel() { 
-                User = _userService.GetUserWithId(userId)
+                User = _userRepo.GetUserById(userId)
             });
         }
 
         [HttpPost]
         public virtual ActionResult EditUserPassword(int userId, EditUserPasswordModel viewModel)
         {
-            User user = _userService.GetUserWithId(userId);
+            User user = _userRepo.GetUserById(userId);
 
             if (user == null)
             {
@@ -150,7 +151,7 @@ namespace Trakker.Areas.Admin.Controllers
                 return RedirectToAction(MVC.Admin.Management.ViewUser(userId));
             }
 
-            viewModel.User = _userService.GetUserWithId(userId);
+            viewModel.User = _userRepo.GetUserById(userId);
             return View(viewModel);
         }
 
@@ -173,7 +174,7 @@ namespace Trakker.Areas.Admin.Controllers
             return View(new ViewProjectModel()
                 {
                     Project = project,
-                    User = _userService.GetUserWithId(project.Lead)
+                    User = _userRepo.GetUserById(project.Lead)
                 });
         }
 

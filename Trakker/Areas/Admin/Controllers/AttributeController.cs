@@ -11,11 +11,12 @@ namespace Trakker.Areas.Admin.Controllers
     using Trakker.Data;
     using Trakker.Controllers;
     using Trakker.Areas.Admin.Models;
+    using Trakker.Data.Repositories;
 
     public partial class AttributeController : MasterController
     {
-        public AttributeController(ITicketService ticketService, IUserService userService, IProjectService projectService)
-            : base(projectService, ticketService, userService)
+        public AttributeController(ITicketService ticketService, IUserService userService, IProjectService projectService, IUserRepository userRepo)
+            : base(projectService, ticketService, userService, userRepo)
         {
         }
 

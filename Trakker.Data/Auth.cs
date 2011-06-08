@@ -5,6 +5,7 @@ using System.Text;
 using Trakker.Data.Services;
 using Trakker.Core.IoC;
 using System.Security.Cryptography;
+using Trakker.Data.Repositories;
 
 namespace Trakker.Data
 {
@@ -92,8 +93,8 @@ namespace Trakker.Data
 
         public static bool ValidateCredentials(string email, string password)
         {
-            IUserService userService = WindsorContainerProvider.Resolve<IUserService>();
-            User user = userService.GetUserWithEmail(email);
+            IUserRepository userRepo = WindsorContainerProvider.Resolve<IUserRepository>();
+            User user = userRepo.GetUserByEmail(email);
 
             if (user == null)
             {
@@ -116,8 +117,8 @@ namespace Trakker.Data
 
         public static void LogUserIn(User user)
         {
-            IUserService userService = WindsorContainerProvider.Resolve<IUserService>();
-            CurrentUser = userService.GetUserWithEmail(user.Email);
+            IUserRepository userRepo = WindsorContainerProvider.Resolve<IUserRepository>();
+            CurrentUser = userRepo.GetUserByEmail(user.Email);
             SessionCookie.Create(user.Email);
         }
 
@@ -133,8 +134,8 @@ namespace Trakker.Data
 
             if (!cookieValue.Equals(string.Empty))
             {
-                IUserService userService = WindsorContainerProvider.Resolve<IUserService>();
-                return userService.GetUserWithEmail(cookieValue);
+                IUserRepository userRepo = WindsorContainerProvider.Resolve<IUserRepository>();
+                return userRepo.GetUserByEmail(cookieValue);
             }
 
             return null;
