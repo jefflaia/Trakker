@@ -15,7 +15,7 @@
 
         private WindsorContainerProvider() { }
 
-        public static IWindsorContainer GetInstance()
+        public static IWindsorContainer Instance()
         {
             if (_container == null)
             {
@@ -35,7 +35,7 @@
 
         public static T Resolve<T>()
         {
-            return GetInstance().Resolve<T>();
+            return Instance().Resolve<T>();
         }
     }
 }

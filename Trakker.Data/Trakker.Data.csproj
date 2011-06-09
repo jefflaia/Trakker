@@ -66,10 +66,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\nHibernate\Required_For_LazyLoading\Castle\Castle.Core.dll</HintPath>
-    </Reference>
     <Reference Include="FluentNHibernate">
       <HintPath>..\Lib\nHibernate\fluent 1.2\FluentNHibernate.dll</HintPath>
     </Reference>
@@ -115,7 +111,6 @@
     <Compile Include="Models\Property.cs" />
     <Compile Include="Models\SystemSettings.cs" />
     <Compile Include="Models\TicketResolution.cs" />
-    <Compile Include="NHibernateHelper.cs" />
     <Compile Include="ProjectCookie.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

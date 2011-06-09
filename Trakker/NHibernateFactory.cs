@@ -5,9 +5,9 @@ using System.Text;
 using NHibernate.Cfg;
 using NHibernate;
 
-namespace Trakker.Data
+namespace Trakker
 {
-    public class NHibernateHelper
+    public class NHibernateFactory
     {
         private static ISessionFactory _sessionFactory;
 

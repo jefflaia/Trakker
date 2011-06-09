@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Reflection;
 using Trakker.Bootstrap;
+using Trakker.Core.IoC;
+using Castle.MicroKernel.Registration;
+using NHibernate;
+using Castle.Windsor;
 
 namespace Trakker
 {
@@ -14,8 +18,8 @@ namespace Trakker
             //RouteDebug.RouteDebugger.RewriteRoutesForTesting(RouteTable.Routes);
             IList<IBootstrapperTask> tasks = new List<IBootstrapperTask>();
 
-            
-            tasks.Add(new RegisterControllerFactory(new WindsorControllerFactory()));
+            tasks.Add(new ConfigureContainer());
+            tasks.Add(new RegisterControllerFactory());
             tasks.Add(new RegisterAreas()); //must come before routes
             tasks.Add(new RegisterRoutes());
             tasks.Add(new RegisterAssets());
@@ -30,8 +34,8 @@ namespace Trakker
             foreach (IBootstrapperTask task in tasks)
             {
                 task.Execute();
-            }
-             
+            }           
+                
         }
     }
 }

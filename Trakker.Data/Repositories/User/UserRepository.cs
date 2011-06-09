@@ -4,11 +4,11 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using AutoMapper;
     using System.Data.Linq;
 
     using Sql = Access;
     using NHibernate;
+    using NHibernate.Cfg;
 
     public class UserRepository : IUserRepository
     {
@@ -25,6 +25,7 @@
             _usersTable = _dataContext.GetTable<Sql.User>();
 
             _session = session;
+
         }
 
         public IQueryable<User> GetUsers()
@@ -117,8 +118,9 @@
 
         public void Save(Role role)
         {
-            Mapper.CreateMap<Role, Sql.Role>();
-            Sql.Role r = Mapper.Map<Role, Sql.Role>(role);
+            //Mapper.CreateMap<Role, Sql.Role>();
+            //Sql.Role r = Mapper.Map<Role, Sql.Role>(role);
+            Sql.Role r = null;
 
             if (r.Id == 0)
             {

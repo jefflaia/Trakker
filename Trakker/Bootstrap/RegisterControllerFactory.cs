@@ -8,16 +8,10 @@ namespace Trakker.Bootstrap
 {
     public class RegisterControllerFactory : IBootstrapperTask
     {
-        private readonly IControllerFactory _factory;
-
-        public RegisterControllerFactory(IControllerFactory factory)
-        {
-            _factory = factory;
-        }
 
         public void Execute()
         {
-            ControllerBuilder.Current.SetControllerFactory(_factory);
+            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory());
         }
     }
 }
