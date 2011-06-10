@@ -33,6 +33,7 @@ F:\Trakker\Trakker.Data\bin\Debug\Mvc.Validation.dll
 F:\Trakker\Trakker.Data\obj\Debug\ResolveAssemblyReference.cache
 F:\Trakker\Trakker.Data\obj\Debug\Trakker.Data.dll
 F:\Trakker\Trakker.Data\obj\Debug\Trakker.Data.pdb
+D:\Projects\ASPNET\Trakker\Trakker.Data\obj\Debug\ResolveAssemblyReference.cache
 D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Mappings\Comment.hbm.xml
 D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\hibernate.cfg.xml
 D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Trakker.Data.dll.config
@@ -57,6 +58,5 @@ D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\NHibernate.ByteCode.Castle.xml
 D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Iesi.Collections.pdb
 D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Iesi.Collections.xml
 D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Castle.Core.xml
-D:\Projects\ASPNET\Trakker\Trakker.Data\obj\Debug\ResolveAssemblyReference.cache
 D:\Projects\ASPNET\Trakker\Trakker.Data\obj\Debug\Trakker.Data.dll
 D:\Projects\ASPNET\Trakker\Trakker.Data\obj\Debug\Trakker.Data.pdb

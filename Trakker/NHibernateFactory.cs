@@ -15,13 +15,21 @@ namespace Trakker
         {
             get
             {
-                if (_sessionFactory == null)
+                try 
                 {
-                    var configuration = new Configuration();
-                    configuration.Configure();
-                    _sessionFactory = configuration.BuildSessionFactory();
+                    if (_sessionFactory == null)
+                    {
+                        var configuration = new Configuration();
+                        configuration.Configure();
+                        _sessionFactory = configuration.BuildSessionFactory();
+                    }
+                    return _sessionFactory;
                 }
-                return _sessionFactory;
+                catch (Exception ex)
+                {
+                    Console.Error.WriteLine(ex);
+                    throw new Exception("NHibernate initialization failed", ex);
+                }
             }
         }
 

@@ -7,17 +7,15 @@
 
     public interface IUserRepository
     {
-        IQueryable<User> GetUsers();
+        IList<User> GetUsers();
         void Save(User user);
-        void DeleteUser(int id);
         User GetUserById(int userId);
         User GetUserByEmail(string email);
-        //IList<User> GetAllUser();
-        //Paginated<User> GetAllUsersPaginated(int page, int pageSize);
+        Paginated<User> GetUsersPaginated(int page, int pageSize);
 
-        IQueryable<Role> GetRoles();
+
+        IList<Role> GetRoles();
         void Save(Role role);
-        //IList<Role> GetAllRoles();
         
     }
 }

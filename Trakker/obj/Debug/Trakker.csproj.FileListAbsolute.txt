@@ -40,6 +40,10 @@ F:\Trakker\Trakker\bin\Trakker.Data.pdb
 F:\Trakker\Trakker\bin\Trakker.Services.pdb
 F:\Trakker\Trakker\obj\Debug\Trakker.dll
 F:\Trakker\Trakker\obj\Debug\Trakker.pdb
+D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\Trakker.Properties.Validation.resources
+D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\GenerateResource.read.1.tlog
+D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\GenerateResource.write.1.tlog
 D:\Projects\ASPNET\Trakker\Trakker\bin\Mappings\Comment.hbm.xml
 D:\Projects\ASPNET\Trakker\Trakker\bin\hibernate.cfg.xml
 D:\Projects\ASPNET\Trakker\Trakker\bin\Content\Theme.css
@@ -78,9 +82,5 @@ D:\Projects\ASPNET\Trakker\Trakker\bin\NHibernate.ByteCode.Castle.pdb
 D:\Projects\ASPNET\Trakker\Trakker\bin\NHibernate.ByteCode.Castle.xml
 D:\Projects\ASPNET\Trakker\Trakker\bin\Iesi.Collections.pdb
 D:\Projects\ASPNET\Trakker\Trakker\bin\Iesi.Collections.xml
-D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\ResolveAssemblyReference.cache
-D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\Trakker.Properties.Validation.resources
-D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\GenerateResource.read.1.tlog
-D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\GenerateResource.write.1.tlog
 D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\Trakker.dll
 D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\Trakker.pdb

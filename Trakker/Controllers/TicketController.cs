@@ -45,7 +45,7 @@ namespace Trakker.Controllers
                 }
             }
 
-            var activityStream = new TicketActivityStream(_userService, _ticketService);
+            var activityStream = new TicketActivityStream(_userService, _ticketService, _userRepo);
             activityStream.Ticket = ticket;
 
             TicketDetailsModel viewData = new TicketDetailsModel()
@@ -128,7 +128,7 @@ namespace Trakker.Controllers
                 Categories = _ticketService.GetAllTypes(),
                 Priorities = _ticketService.GetAllPriorities(),
                 Status = _ticketService.GetAllStatus(),
-                Users = _userService.GetAllUsers(),
+                Users = _userRepo.GetUsers(),
                 Projects = _projectService.GetAllProjects(),
                 Resolutions = _ticketService.GetAllResolutions()
             };
@@ -162,7 +162,7 @@ namespace Trakker.Controllers
             viewData.Categories = _ticketService.GetAllTypes();
             viewData.Priorities = _ticketService.GetAllPriorities();
             viewData.Status = _ticketService.GetAllStatus();
-            viewData.Users = _userService.GetAllUsers();
+            viewData.Users = _userRepo.GetUsers();
             viewData.Projects = _projectService.GetAllProjects();
             viewData.Resolutions = _ticketService.GetAllResolutions();
 
@@ -185,7 +185,7 @@ namespace Trakker.Controllers
                 Categories = _ticketService.GetAllTypes(),
                 Priorities = _ticketService.GetAllPriorities(),
                 Status = _ticketService.GetAllStatus(),
-                Users = _userService.GetAllUsers(),
+                Users = _userRepo.GetUsers(),
                 Resolutions = _ticketService.GetAllResolutions()
             };
 
@@ -219,7 +219,7 @@ namespace Trakker.Controllers
             viewData.Categories = _ticketService.GetAllTypes();
             viewData.Priorities = _ticketService.GetAllPriorities();
             viewData.Status = _ticketService.GetAllStatus();
-            viewData.Users = _userService.GetAllUsers();
+            viewData.Users = _userRepo.GetUsers();
             viewData.Projects = _projectService.GetAllProjects();
             viewData.Resolutions = _ticketService.GetAllResolutions();
 

@@ -30,7 +30,7 @@ namespace Trakker.Areas.Admin.Controllers
 
         public virtual ActionResult BrowseUsers()
         {
-            var paginatedUsers = _userService.GetAllUsersPaginated(1, 10);
+            var paginatedUsers = _userRepo.GetUsersPaginated(1, 10);
 
             return View(new BrowseUsersModel()
             {
@@ -38,7 +38,7 @@ namespace Trakker.Areas.Admin.Controllers
                 TotalUsers = paginatedUsers.TotalItems,
                 PageSize = 10,
                 CurrentPage = 1,
-                Roles = _userService.GetAllRoles().ToDictionary(d => d.Id)
+                Roles = _userRepo.GetRoles().ToDictionary(d => d.Id)
             });
         }
 
@@ -54,7 +54,7 @@ namespace Trakker.Areas.Admin.Controllers
         {
             return View(new CreateUserModel()
             {
-                Roles = _userService.GetAllRoles()
+                Roles = _userRepo.GetRoles()
             });
         }
 
@@ -72,12 +72,12 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.CreateMap<CreateUserModel, User>();
                 User user = Mapper.Map(viewModel, new User());
 
-                _userService.Save(user);
+                _userRepo.Save(user);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Management.BrowseUsers());
             }
 
-            viewModel.Roles = _userService.GetAllRoles();
+            viewModel.Roles = _userRepo.GetRoles();
 
             return View(viewModel);
         }
@@ -92,7 +92,7 @@ namespace Trakker.Areas.Admin.Controllers
 
             Mapper.CreateMap<User, EditUserModel>();
             EditUserModel viewModel = Mapper.Map(user, new EditUserModel() {
-                Roles = _userService.GetAllRoles()
+                Roles = _userRepo.GetRoles()
             });
             
             return View(viewModel);
@@ -113,12 +113,12 @@ namespace Trakker.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                _userService.Save(user);
+                _userRepo.Save(user);
                 UnitOfWork.Commit();
                 return RedirectToRoute(MVC.Admin.Management.ViewUser(userId));
             }
 
-            viewModel.Roles = _userService.GetAllRoles();
+            viewModel.Roles = _userRepo.GetRoles();
             return View(viewModel);
         }
 
@@ -146,7 +146,7 @@ namespace Trakker.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 user.Password = Auth.HashPassword(user.Password, user.Salt);
-                _userService.Save(user);
+                _userRepo.Save(user);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Management.ViewUser(userId));
             }
@@ -163,7 +163,7 @@ namespace Trakker.Areas.Admin.Controllers
             return View(new BrowseProjectsModel()
             {
                 Projects = _projectService.GetAllProjects(),
-                Users = _userService.GetAllUsers().ToDictionary(m => m.Id)
+                Users = _userRepo.GetUsers().ToDictionary(m => m.Id)
             });
         }
 
@@ -182,7 +182,7 @@ namespace Trakker.Areas.Admin.Controllers
         {
             return View(new CreateProjectModel()
             {
-                Users = _userService.GetAllUsers()
+                Users = _userRepo.GetUsers()
             });
         }
 
@@ -212,7 +212,7 @@ namespace Trakker.Areas.Admin.Controllers
             }
 
 
-            viewModel.Users = _userService.GetAllUsers();
+            viewModel.Users = _userRepo.GetUsers();
 
             return View(viewModel);
         }
@@ -230,7 +230,7 @@ namespace Trakker.Areas.Admin.Controllers
             Mapper.CreateMap<Project, EditProjectModel>();
             EditProjectModel viewModel = Mapper.Map(project, new EditProjectModel());
 
-            viewModel.Users = _userService.GetAllUsers();
+            viewModel.Users = _userRepo.GetUsers();
 
             return View(viewModel);
         }
@@ -265,7 +265,7 @@ namespace Trakker.Areas.Admin.Controllers
                 return RedirectToRoute(MVC.Admin.Management.ViewProject(project.KeyName));
             }
 
-            viewModel.Users = _userService.GetAllUsers();
+            viewModel.Users = _userRepo.GetUsers();
 
             return View(viewModel);
         }

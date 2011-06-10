@@ -46,7 +46,7 @@ namespace Trakker.Controllers
                 {
                     User user = _userRepo.GetUserByEmail(viewData.Email);
                     user.LastLogin = DateTime.Now;
-                    _userService.Save(user);
+                    _userRepo.Save(user);
                     UnitOfWork.Commit();
 
                     Auth.LogUserIn(user);
@@ -62,7 +62,7 @@ namespace Trakker.Controllers
                     {
                         user.FailedPasswordAttemptCount++;
                         user.LastFailedLoginAttempt = DateTime.Now;
-                        _userService.Save(user);
+                        _userRepo.Save(user);
                         UnitOfWork.Commit();
                     }
                 }
@@ -93,7 +93,7 @@ namespace Trakker.Controllers
                
             }
 
-            var activityStream = new UserActivityStream(_userService, _ticketService);
+            var activityStream = new UserActivityStream(_userService, _ticketService, _userRepo);
 
 
 
@@ -143,7 +143,7 @@ namespace Trakker.Controllers
             if (ModelState.IsValid)
             {
                 user.Password = Auth.HashPassword(user.Password, user.Salt);
-                _userService.Save(user);
+                _userRepo.Save(user);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.User.UserProfile(userId));
             }
@@ -160,9 +160,6 @@ namespace Trakker.Controllers
 
             var user = _userRepo.GetUserById(2);
             if (user != null) throw new Exception("working");
-         
-
-
 
             throw new NotImplementedException();
             return View();

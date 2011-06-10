@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using Trakker.Data.Services;
 using Trakker.Data;
+using Trakker.Data.Repositories;
 
 namespace Trakker.Infastructure.Streams.Activity
 {
     public class UserActivityStream : ActivityStream
     {
 
-        public UserActivityStream(IUserService userService, ITicketService ticketService)
-            : base(userService, ticketService)
+        public UserActivityStream(IUserService userService, ITicketService ticketService, IUserRepository userRepo)
+            : base(userService, ticketService, userRepo)
         {
         }
 
