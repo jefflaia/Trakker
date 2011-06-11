@@ -65,9 +65,9 @@ namespace Trakker.Controllers
         {
             MasterModel viewData = new MasterModel()
             {
-                Projects = _projectService.GetAllProjects(),
+                Projects = _userRepo.GetProjects(),
                 HasCurrentProject = true,
-                CurrentProject = _projectService.GetProjectByProjectId(ProjectService.SelectedProjectId),
+                CurrentProject = _projectRepo.GetProjectById(ProjectService.SelectedProjectId),
                 CurrentUser = _userService.CurrentUser,
                 IsUserLoggedIn = _userService.IsUserLoggedIn(),
                 Tickets = _ticketService.GetNewestTicketsWithProjectId(ProjectService.SelectedProjectId, 5),

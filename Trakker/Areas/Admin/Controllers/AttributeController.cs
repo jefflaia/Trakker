@@ -15,8 +15,8 @@ namespace Trakker.Areas.Admin.Controllers
 
     public partial class AttributeController : MasterController
     {
-        public AttributeController(ITicketService ticketService, IUserService userService, IProjectService projectService, IUserRepository userRepo)
-            : base(projectService, ticketService, userService, userRepo)
+        public AttributeController(ITicketService ticketService, IUserService userService, IProjectService projectService, IUserRepository userRepo, IProjectRepository projectRepo)
+            : base(projectService, ticketService, userService, userRepo, projectRepo)
         {
         }
 

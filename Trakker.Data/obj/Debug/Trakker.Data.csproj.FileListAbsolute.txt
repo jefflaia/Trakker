@@ -60,3 +60,4 @@ D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Iesi.Collections.xml
 D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Castle.Core.xml
 D:\Projects\ASPNET\Trakker\Trakker.Data\obj\Debug\Trakker.Data.dll
 D:\Projects\ASPNET\Trakker\Trakker.Data\obj\Debug\Trakker.Data.pdb
+D:\Projects\ASPNET\Trakker\Trakker.Data\bin\Debug\Mappings\Property.hbm.xml

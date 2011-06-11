@@ -84,3 +84,4 @@ D:\Projects\ASPNET\Trakker\Trakker\bin\Iesi.Collections.pdb
 D:\Projects\ASPNET\Trakker\Trakker\bin\Iesi.Collections.xml
 D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\Trakker.dll
 D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\Trakker.pdb
+D:\Projects\ASPNET\Trakker\Trakker\bin\Mappings\Property.hbm.xml

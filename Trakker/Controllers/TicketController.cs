@@ -18,8 +18,8 @@ namespace Trakker.Controllers
     [Authenticate]
     public partial class TicketController : MasterController
     {
-        public TicketController(ITicketService ticketService, IUserService userService, IProjectService projectService, IUserRepository userRepo)
-            : base(projectService, ticketService, userService, userRepo)
+        public TicketController(ITicketService ticketService, IUserService userService, IProjectService projectService, IUserRepository userRepo, IProjectRepository projectRepo)
+            : base(projectService, ticketService, userService, userRepo, projectRepo)
         {
         }
 
@@ -129,7 +129,7 @@ namespace Trakker.Controllers
                 Priorities = _ticketService.GetAllPriorities(),
                 Status = _ticketService.GetAllStatus(),
                 Users = _userRepo.GetUsers(),
-                Projects = _projectService.GetAllProjects(),
+                Projects = _projectRepo.GetProjects(),
                 Resolutions = _ticketService.GetAllResolutions()
             };
 
@@ -163,7 +163,7 @@ namespace Trakker.Controllers
             viewData.Priorities = _ticketService.GetAllPriorities();
             viewData.Status = _ticketService.GetAllStatus();
             viewData.Users = _userRepo.GetUsers();
-            viewData.Projects = _projectService.GetAllProjects();
+            viewData.Projects = _projectRepo.GetProjects();
             viewData.Resolutions = _ticketService.GetAllResolutions();
 
             return View(viewData);
@@ -181,7 +181,7 @@ namespace Trakker.Controllers
 
             CreateEditTicketModel viewData = new CreateEditTicketModel()
             {
-                Projects = _projectService.GetAllProjects(),
+                Projects = _projectRepo.GetProjects(),
                 Categories = _ticketService.GetAllTypes(),
                 Priorities = _ticketService.GetAllPriorities(),
                 Status = _ticketService.GetAllStatus(),
@@ -220,7 +220,7 @@ namespace Trakker.Controllers
             viewData.Priorities = _ticketService.GetAllPriorities();
             viewData.Status = _ticketService.GetAllStatus();
             viewData.Users = _userRepo.GetUsers();
-            viewData.Projects = _projectService.GetAllProjects();
+            viewData.Projects = _projectRepo.GetProjects();
             viewData.Resolutions = _ticketService.GetAllResolutions();
 
             return View(viewData);

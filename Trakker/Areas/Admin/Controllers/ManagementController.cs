@@ -16,8 +16,8 @@ namespace Trakker.Areas.Admin.Controllers
     [Authenticate]
     public partial class ManagementController : MasterController
     {
-        public ManagementController(ITicketService ticketService, IUserService userService, IProjectService projectService, IUserRepository userRepo)
-            : base(projectService, ticketService, userService, userRepo)
+        public ManagementController(ITicketService ticketService, IUserService userService, IProjectService projectService, IUserRepository userRepo, IProjectRepository projectRepo)
+            : base(projectService, ticketService, userService, userRepo, projectRepo)
         {
         }
 
@@ -162,14 +162,14 @@ namespace Trakker.Areas.Admin.Controllers
         {
             return View(new BrowseProjectsModel()
             {
-                Projects = _projectService.GetAllProjects(),
+                Projects = _projectRepo.GetProjects(),
                 Users = _userRepo.GetUsers().ToDictionary(m => m.Id)
             });
         }
 
         public virtual ActionResult ViewProject(string keyName)
         {
-            Project project = _projectService.GetProjectByKeyName(keyName);
+            Project project = _projectRepo.GetProjectByKey(keyName);
 
             return View(new ViewProjectModel()
                 {
@@ -190,12 +190,12 @@ namespace Trakker.Areas.Admin.Controllers
         public virtual ActionResult CreateProject(CreateProjectModel viewModel)
         {
 
-            if (_projectService.GetProjectByKeyName(viewModel.KeyName) != null)
+            if (_projectRepo.GetProjectByKey(viewModel.KeyName) != null)
             {
                 ModelState.AddModelError("KeyName", "A project with this key already exists. Please choose another.");
             }
 
-            if (_projectService.GetProjectByName(viewModel.Name) != null)
+            if (_projectRepo.GetProjectByName(viewModel.Name) != null)
             {
                 ModelState.AddModelError("Name", "A project with this name already exists. Please choose another.");
             }
@@ -206,7 +206,7 @@ namespace Trakker.Areas.Admin.Controllers
                 Project project = Mapper.Map(viewModel, new Project());
 
                 project.Created = DateTime.Now;
-                _projectService.Save(project);
+                _projectRepo.Save(project);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Management.ViewProject(viewModel.KeyName));
             }
@@ -220,7 +220,7 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpGet]
         public virtual ActionResult EditProject(string keyName)
         {
-            Project project = _projectService.GetProjectByKeyName(keyName);
+            Project project = _projectRepo.GetProjectByKey(keyName);
 
             if (project == null)
             {
@@ -238,7 +238,7 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpPost]
         public virtual ActionResult EditProject(string keyName, [Bind(Exclude = "KeyName")]EditProjectModel viewModel)
         {
-            Project project = _projectService.GetProjectByKeyName(keyName);
+            Project project = _projectRepo.GetProjectByKey(keyName);
 
             if (project == null)
             {
@@ -246,7 +246,7 @@ namespace Trakker.Areas.Admin.Controllers
             }
 
             //check if the project name already exists
-            Project projectSameName = _projectService.GetProjectByName(viewModel.Name);
+            Project projectSameName = _projectRepo.GetProjectByName(viewModel.Name);
             if (projectSameName != null)
             {
                 if (projectSameName.Id != project.Id)
@@ -260,7 +260,7 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.CreateMap<EditProjectModel, Project>();
                 project = Mapper.Map(viewModel, project);
 
-                _projectService.Save(project);
+                _projectRepo.Save(project);
                 UnitOfWork.Commit();
                 return RedirectToRoute(MVC.Admin.Management.ViewProject(project.KeyName));
             }

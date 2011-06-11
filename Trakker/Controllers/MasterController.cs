@@ -26,13 +26,15 @@ namespace Trakker.Controllers
         protected ITicketService _ticketService;
         protected IUserService _userService;
         protected IUserRepository _userRepo;
+        protected IProjectRepository _projectRepo;
         
-        public MasterController(IProjectService projectService, ITicketService ticketService, IUserService userSerivice, IUserRepository userRepo)
+        public MasterController(IProjectService projectService, ITicketService ticketService, IUserService userSerivice, IUserRepository userRepo, IProjectRepository projectRepo)
         {
             _projectService = projectService;
             _ticketService = ticketService;
             _userService = userSerivice;
             _userRepo = userRepo;
+            _projectRepo = projectRepo;
 
             UnitOfWork = WindsorContainerProvider.Resolve<IUnitOfWork>();
         }
@@ -46,7 +48,7 @@ namespace Trakker.Controllers
             {
                 if (_currentProject == null)
                 {
-                    return _projectService.GetProjectByProjectId(ProjectCookie.Read());
+                    return _projectRepo.GetProjectById(ProjectCookie.Read());
                 }
                 else
                 {
@@ -141,7 +143,7 @@ namespace Trakker.Controllers
         {
             MasterModel viewData = new MasterModel()
             {
-                RecentProjects = _projectService.GetAllProjects(),
+                RecentProjects = _projectRepo.GetProjects(),
                 HasCurrentProject = CurrentProject != null ? true : false,
                 CurrentProject = CurrentProject,
                 CurrentUser = Auth.CurrentUser,

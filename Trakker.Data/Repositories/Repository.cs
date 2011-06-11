@@ -10,7 +10,7 @@ using NHibernate;
 using NHibernate.Criterion;
 using System.Reflection;
 
-namespace Trakker.Data.Repositories
+namespace Trakker.Data
 {
     public abstract class Repository : IRepository
     {

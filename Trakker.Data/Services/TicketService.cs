@@ -75,7 +75,7 @@ namespace Trakker.Data.Services
 
         public void Save(Ticket ticket)
         {
-            Project project = _projectRepository.GetProjects().WithId(ticket.ProjectId).SingleOrDefault<Project>();
+            Project project = _projectRepository.GetProjectById(ticket.ProjectId);
             project.TicketIndex++;
 
             if (ticket.Id == 0)

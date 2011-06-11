@@ -10,8 +10,9 @@
     using Sql = Access;
     using System.Globalization;
     using System.Reflection;
+    using NHibernate;
 
-    public class SystemRepository : ISystemRepository
+    public class SystemRepository : Repository, ISystemRepository
     {
         protected DataContext _dataContext;
         protected Table<Sql.ColorPalette> _paletteTable;
@@ -23,7 +24,7 @@
             public String Value { get; set; }
         }
 
-        public SystemRepository(IDataContextProvider dataContext)
+        public SystemRepository(IDataContextProvider dataContext, ISession session) : base (session)
         {
             _dataContext = dataContext.DataContext;
             _paletteTable = _dataContext.GetTable<Sql.ColorPalette>();

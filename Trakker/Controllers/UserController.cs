@@ -27,8 +27,8 @@ namespace Trakker.Controllers
 {
     public partial class UserController : MasterController
     {
-       public UserController(IUserService userService, ITicketService ticketService, IProjectService projectService, IUserRepository userRepo)
-            : base(projectService, ticketService, userService, userRepo)
+        public UserController(IUserService userService, ITicketService ticketService, IProjectService projectService, IUserRepository userRepo, IProjectRepository projectRepo)
+            : base(projectService, ticketService, userService, userRepo, projectRepo)
         {
         }
         

@@ -52,7 +52,6 @@
         }
         #endregion
 
-
         #region Role
         public IList<Role> GetRoles()
         {

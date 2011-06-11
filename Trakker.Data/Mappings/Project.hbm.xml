@@ -15,7 +15,7 @@
   <property name="TicketIndex" />
   <property name="Url" />
 
-  <one-to-one name="Lead" class="User"/>
+  <!--<one-to-one name="Lead" class="User"/>-->
 
 </class>
 

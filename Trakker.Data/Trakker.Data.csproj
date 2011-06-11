@@ -122,13 +122,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Repositories\Repository.cs" />
-    <Compile Include="Repositories\System\ISystemRepository.cs" />
-    <Compile Include="Repositories\System\SystemRepository.cs" />
-    <Compile Include="Repositories\Ticket\ITicketRepository.cs" />
-    <Compile Include="Repositories\User\IUserRepository.cs" />
-    <Compile Include="Repositories\Project\IProjectRepository.cs" />
-    <Compile Include="Repositories\Project\ProjectRepository.cs" />
-    <Compile Include="Repositories\Ticket\TicketRepository.cs" />
+    <Compile Include="Repositories\ISystemRepository.cs" />
+    <Compile Include="Repositories\SystemRepository.cs" />
+    <Compile Include="Repositories\ITicketRepository.cs" />
+    <Compile Include="Repositories\IUserRepository.cs" />
+    <Compile Include="Repositories\IProjectRepository.cs" />
+    <Compile Include="Repositories\ProjectRepository.cs" />
+    <Compile Include="Repositories\TicketRepository.cs" />
     <Compile Include="Access\TrakkerDB.cs">
       <DependentUpon>TrakkerDB.dbml</DependentUpon>
     </Compile>
@@ -138,7 +138,7 @@
       <DependentUpon>TrakkerDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="Access\TrakkerDBDataContext.cs" />
-    <Compile Include="Repositories\User\UserRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Access\ConnectionStringProvider.cs" />
     <Compile Include="Access\DataContextProvider.cs" />
     <Compile Include="Filter\BaseFilters.cs" />
@@ -148,7 +148,6 @@
     <Compile Include="Filter\Ticket\PriorityFilters.cs" />
     <Compile Include="Filter\Ticket\StatusFilters.cs" />
     <Compile Include="Filter\Ticket\TicketFilters.cs" />
-    <Compile Include="Filter\User\UserFilters.cs" />
     <Compile Include="Access\IConnectionStringProvider.cs" />
     <Compile Include="Access\IDataContextProvider.cs" />
     <Compile Include="Models\Paginated.cs" />
@@ -161,16 +160,16 @@
     <Compile Include="Models\TicketType.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Services\Authorization\RandomHash.cs" />
-    <Compile Include="Services\Project\IProjectService.cs" />
-    <Compile Include="Services\Project\ProjectService.cs" />
-    <Compile Include="Services\System\ISystemService.cs" />
-    <Compile Include="Services\System\SystemService.cs" />
+    <Compile Include="Services\RandomHash.cs" />
+    <Compile Include="Services\IProjectService.cs" />
+    <Compile Include="Services\ProjectService.cs" />
+    <Compile Include="Services\ISystemService.cs" />
+    <Compile Include="Services\SystemService.cs" />
     <Compile Include="SessionCookie.cs" />
-    <Compile Include="Services\Ticket\ITicketService.cs" />
-    <Compile Include="Services\Ticket\TicketService.cs" />
-    <Compile Include="Services\User\IUserService.cs" />
-    <Compile Include="Services\User\UserService.cs" />
+    <Compile Include="Services\ITicketService.cs" />
+    <Compile Include="Services\TicketService.cs" />
+    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="UnitOfWork.cs" />
     <Compile Include="Utilities\NameValue.cs" />
     <Compile Include="Utilities\ObjectExtensions.cs" />
@@ -231,6 +230,10 @@
     <Content Include="Mappings\Comment.hbm.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Mappings\Property.hbm.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="Mappings\Component.hbm.xml">
       <SubType>Designer</SubType>

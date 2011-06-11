@@ -17,15 +17,15 @@ namespace Trakker.Controllers
     public partial class ProjectController : MasterController
     {
 
-        public ProjectController(IProjectService projectService, IUserService userService, ITicketService ticketService, IUserRepository userRepo)
-            : base(projectService, ticketService, userService, userRepo)
+        public ProjectController(IProjectService projectService, IUserService userService, ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo)
+            : base(projectService, ticketService, userService, userRepo, projectRepo)
         {
         }
         
         #region Project
         public virtual ActionResult ProjectSummary(string keyName)
         {
-            CurrentProject = _projectService.GetProjectByKeyName(keyName);
+            CurrentProject = _projectRepo.GetProjectByKey(keyName);
 
             return View(new ProjectSummaryModel()
             {
