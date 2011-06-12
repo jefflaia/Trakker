@@ -10,8 +10,10 @@ namespace Trakker.Data.Repositories
     using Trakker.Core.Extensions;
 
     using Sql = Trakker.Data.Access;
+    using NHibernate;
+    using NHibernate.Criterion;
 
-    public class TicketRepository : ITicketRepository
+    public class TicketRepository : Repository, ITicketRepository
     {
         protected DataContext _dataContext;
         protected Table<Sql.TicketPriority> _prioritiesTable;
@@ -21,7 +23,7 @@ namespace Trakker.Data.Repositories
         protected Table<Sql.Comment> _commentsTable;
         protected Table<Sql.TicketResolution> _resolutionTable;
 
-        public TicketRepository(IDataContextProvider dataContextProvider)
+        public TicketRepository(IDataContextProvider dataContextProvider, ISession session) : base(session)
         {
             DataContext dataContext = dataContextProvider.DataContext;
 
@@ -34,97 +36,117 @@ namespace Trakker.Data.Repositories
         }
 
         #region Status
-        public IQueryable<TicketStatus> GetStatus()
+        public TicketStatus GetStatusById(int id)
         {
-            return from s in _statusesTable
-                   select new TicketStatus
-                   {
-                       Id = s.Id,
-                       Name = s.Name,
-                       Description = s.Description
-                   };
+            return GetById<TicketStatus>(id);
+        }
+
+        public TicketStatus GetStatusByName(string name)
+        {
+            return GetSingleBy<TicketStatus>(m => m.Name, name);
+        }
+        
+        public IList<TicketStatus> GetStatus()
+        {
+            return GetAll<TicketStatus>();
         }
 
         public void Save(TicketStatus status)
         {
-            //map the priority from our model to the dal object
-            Mapper.CreateMap<TicketStatus, Sql.TicketStatus>();
-            Sql.TicketStatus s = Mapper.Map<TicketStatus, Sql.TicketStatus>(status);
-
-            if (status.Id == 0)
-            {
-                _statusesTable.InsertOnSubmit(s);
-            }
-            else
-            {
-                _statusesTable.Attach(s);
-                _statusesTable.Context.Refresh(RefreshMode.KeepCurrentValues, s);
-            }
-
-            //set the id 
-            //needed for inserts, updates the id will stay the same
-            status.Id = s.Id;
+            base.Save(status);
         }
 
-        public void DeleteStatus(int id)
-        {
-            _statusesTable.DeleteAllOnSubmit(from t in _statusesTable
-                                             where t.Id == id
-                                             select t);
-        }
         #endregion
 
         #region Comment
-        public void DeleteComment(int id)
+
+        public Comment GetCommentById(int id)
         {
-            _commentsTable.DeleteAllOnSubmit(from c in _commentsTable
-                                             where c.Id == id
-                                             select c);
+            return GetById<Comment>(id);
         }
 
-        public IQueryable<Comment> GetComments()
+        public IList<Comment> GetComments()
         {
-            return from c in _commentsTable
-                   select new Comment
-                   {
-                       Id = c.Id,
-                       Body = c.Body,
-                       Created = c.Created,
-                       Modified = c.Modified, 
-                       TicketId = c.TicketId,
-                       UserId = c.UserId
-                   };
+            return GetAll<Comment>();
+        }
+
+        public IList<Comment> GetCommentsByUser(User user, int page, int pageSize)
+        {
+            return GetManyBy<Comment>(m => m.UserId, user.Id);
+        }
+
+        public IList<Comment> GetCommentsByTicket(Ticket ticket)
+        {
+            return GetManyBy<Comment>(m => m.TicketId, ticket.Id);
+        }
+
+        public Paginated<Comment> GetCommentsByTicket(Ticket ticket, int page, int pageSize)
+        {
+
+            return GetPaginated<Comment>(page, pageSize);
         }
 
         public void Save(Comment comment)
         {
-            var c = new Sql.Comment()
-            {
-                Id = comment.Id,
-                UserId = comment.UserId,
-                Body = comment.Body,
-                Created = comment.Created,
-                Modified = comment.Modified,
-                TicketId = comment.TicketId
-            };
-            
-            if (comment.Id == 0)
-            {
-                _commentsTable.InsertOnSubmit(c);
-            }
-            else
-            {
-                _commentsTable.Attach(c);
-                _commentsTable.Context.Refresh(RefreshMode.KeepCurrentValues, c);
-            }
-
-            //set the id 
-            //needed for inserts, updates the id will stay the same
-            comment.Id = c.Id;
+            base.Save(comment);
         }
         #endregion
 
         #region Ticket
+
+        public Ticket GetTicketById(int id)
+        {
+            return GetById<Ticket>(id);
+        }
+
+        public int TotalTickets()
+        {
+            // Get the total row count in the database.
+            return Session.CreateCriteria<Ticket>()
+                .SetProjection(Projections.RowCount())
+                .UniqueResult<int>();
+        }
+
+        public int TotalTicketsByAssignedToUser(User user)
+        {
+            // Get the total row count in the database.
+            return Session.CreateCriteria<Ticket>()
+                .Add(Restrictions.Eq("AssignedToUserId", user.Id))
+                .SetProjection(Projections.RowCount())
+                .UniqueResult<int>();
+        }
+
+        public Ticket GetTicketByKey(string key)
+        {
+            return Session.CreateQuery("from Ticket t where t.KeyName = ?")
+                .SetString(0, key)
+                .UniqueResult<Ticket>();
+        }
+
+        public Paginated<Ticket> GetTicketsByProject(Project project, int page, int pageSize)
+        {
+            ICriteria criteria = Session.CreateCriteria<Ticket>()
+               .Add(Expression.Eq("ProjectId", project.Id));
+
+            return GetPaginated<Ticket>(criteria, page, pageSize);
+        }
+
+        public Paginated<Ticket> GetNewestTicketsByProject(Project project, int page, int pageSize)
+        {
+            ICriteria criteria = Session.CreateCriteria<Ticket>()
+                .Add(Expression.Eq("ProjectId", project.Id))
+                .AddOrder(Order.Desc("Created"));
+
+            return GetPaginated<Ticket>(criteria, page, pageSize);
+        }
+
+        public IList<Ticket> GetTicketsByAssignedToUser(User user)
+        {
+            return Session.CreateQuery("from Ticket t where t.AssignedToUserId = ?")
+                .SetInt32(0, user.Id)
+                .List<Ticket>();
+        }
+
         public IQueryable<Ticket> GetTickets()
         {
             return from t in _ticketsTable
@@ -150,168 +172,83 @@ namespace Trakker.Data.Repositories
 
         public void Save(Ticket ticket)
         {
-            //map the priority from our model to the dal object
-            Mapper.CreateMap<Ticket, Sql.Ticket>();
-            Sql.Ticket t = Mapper.Map<Ticket, Sql.Ticket>(ticket);
-                
-            //check if the Ticket exists
             if (ticket.Id == 0)
             {
-                _ticketsTable.InsertOnSubmit(t);
-            }
-            else
-            {
-                _ticketsTable.Attach(t);
-                _ticketsTable.Context.Refresh(RefreshMode.KeepCurrentValues, t);
+                ticket.Created = DateTime.Now;
             }
 
-            //set the id 
-            //needed for inserts, updates the id will stay the same
-            ticket.Id = t.Id;
+            ticket.Description = ticket.Description ?? string.Empty; //if null make it empty
+            base.Save(ticket);
         }
         
-        public void DeleteTicket(int id)
-        {
-            _ticketsTable.DeleteAllOnSubmit(from t in _ticketsTable
-                                            where t.Id == id
-                                            select t);
-        }
         #endregion
 
         #region Type
+        public TicketType GetTypeById(int id)
+        {
+            return GetById<TicketType>(id);
+        }
+
+        public TicketType GetTypeByName(string name)
+        {
+            return GetSingleBy<TicketType>(m => m.Name, name);
+        }
+
+        public IList<TicketType> GetTypes()
+        {
+            return GetAll<TicketType>();
+        }
+
         public void Save(TicketType type)
         {
-            //map the priority from our model to the dal object
-            Mapper.CreateMap<TicketType, Sql.TicketType>();
-            Sql.TicketType c = Mapper.Map<TicketType, Sql.TicketType>(type);
-
-            if (type.Id == 0)
-            {
-                _typeTable.InsertOnSubmit(c);
-            }
-            else
-            {
-                _typeTable.Attach(c);
-                _typeTable.Context.Refresh(RefreshMode.KeepCurrentValues, c);
-            }
-
-            //set the id 
-            //needed for inserts, updates the id will stay the same
-            type.Id = c.Id;
-        }
-
-        public void DeleteType(int id)
-        {
-            using (Sql.TrakkerDBDataContext ctx = new Sql.TrakkerDBDataContext())
-            {
-                _typeTable.DeleteAllOnSubmit(from t in _typeTable
-                                                   where t.Id == id
-                                                   select t);
-
-            }
-        }
-
-        public IQueryable<TicketType> GetTypes()
-        {
-            return from t in _typeTable
-                   select new TicketType
-                   {
-                       Id = t.Id,
-                       Name = t.Name,
-                       Description = t.Description
-                   };
+            base.Save(type);
         }
         
         #endregion
 
         #region Priority
-        public IQueryable<TicketPriority> GetPriorities()
+        public TicketPriority GetPriorityById(int id)
         {
-            return from p in _prioritiesTable
-                   select new TicketPriority
-                   {
-                       Id = p.Id,
-                       Name = p.Name,
-                       Description = p.Description,
-                       HexColor = p.HexColor
-                   };
+            return GetById<TicketPriority>(id);
+        }
+
+        public TicketPriority GetPriorityByName(string name)
+        {
+            return GetSingleBy<TicketPriority>(m => m.Name, name);
+        }
+
+        public IList<TicketPriority> GetPriorities()
+        {
+            return GetAll<TicketPriority>();
         }
 
         public void Save(TicketPriority priority)
         {
-
-            //map the priority from our model to the dal object
-            Mapper.CreateMap<TicketPriority, Sql.TicketPriority>();
-            Sql.TicketPriority p = Mapper.Map<TicketPriority, Sql.TicketPriority>(priority);
-
-            if (priority.Id == 0)
-            {
-                _prioritiesTable.InsertOnSubmit(p);
-            }
-            else
-            {
-                _prioritiesTable.Attach(p);
-                _prioritiesTable.Context.Refresh(RefreshMode.KeepCurrentValues, p);
-            }
-
-
-            //set the id 
-            //needed for inserts, updates the id will stay the same
-            priority.Id = p.Id;
+            base.Save(priority);
         }
 
-        public void DeletePriority(int id)
-        {
-            _prioritiesTable.DeleteAllOnSubmit(from t in _prioritiesTable
-                                               where t.Id == id
-                                               select t);
-        }
         #endregion
 
         #region Resolution
-        public IQueryable<TicketResolution> GetResolutions()
+        public TicketResolution GetResolutionById(int id)
         {
-            return from r in _resolutionTable
-                   select new TicketResolution
-                   {
-                       Id = r.Id,
-                       Name = r.Name,
-                       Description = r.Description
-                   };
+            return GetById<TicketResolution>(id);
+        }
+
+        public TicketResolution GetResolutionByName(string name)
+        {
+            return GetSingleBy<TicketResolution>(m => m.Name, name);
+        }
+
+        public IList<TicketResolution> GetResolutions()
+        {
+            return GetAll<TicketResolution>();
         }
 
         public void Save(TicketResolution resolution)
         {
-            //map the priority from our model to the dal object
-            Mapper.CreateMap<TicketResolution, Sql.TicketResolution>();
-            Sql.TicketResolution r = Mapper.Map<TicketResolution, Sql.TicketResolution>(resolution);
-
-            r.Description = r.Description ?? string.Empty;
-
-            //check if the Ticket exists
-            if (resolution.Id == 0)
-            {
-                _resolutionTable.InsertOnSubmit(r);
-            }
-            else
-            {
-                _resolutionTable.Attach(r);
-                _resolutionTable.Context.Refresh(RefreshMode.KeepCurrentValues, r);
-            }
-
-            //set the id 
-            //needed for inserts, updates the id will stay the same
-            resolution.Id = r.Id;
+            base.Save(resolution);
         }
-
-        public void DeleteResolution(int id)
-        {
-            _resolutionTable.DeleteAllOnSubmit(from r in _resolutionTable
-                                            where r.Id == id
-                                            select r);
-        }
-
-
         #endregion
     }
 }

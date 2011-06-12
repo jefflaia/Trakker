@@ -3,17 +3,20 @@
   xmlns="urn:nhibernate-mapping-2.2" namespace="Trakker.Data"
                    assembly="Trakker.Data">
 
-<class name="Comment">
+<class name="TicketType">
   <id name="Id">
     <generator class="identity" />
   </id>
-  <property name="Body" />
-  <property name="Created" />
-  <property name="Modified" />
-  <property name="TicketId" />
-  <property name="UserId" />
+  
+  <property name="Name" />
+  <property name="Description" />
 
-  <one-to-one name="User" class="User" />
+  <!--
+  <bag name="Ticket">
+    <key column="StatusId" />
+    <one-to-many class="Ticket" />
+  </bag>
+  -->
 </class>
 
 </hibernate-mapping>

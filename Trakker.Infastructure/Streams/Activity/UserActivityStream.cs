@@ -11,14 +11,16 @@ namespace Trakker.Infastructure.Streams.Activity
     public class UserActivityStream : ActivityStream
     {
 
-        public UserActivityStream(IUserService userService, ITicketService ticketService, IUserRepository userRepo)
-            : base(userService, ticketService, userRepo)
+        public UserActivityStream(IUserRepository userRepo, ITicketRepository ticketRepo)
+            : base(userRepo, ticketRepo)
         {
         }
 
+        public User User { get; set; }
+
         public override IList<Comment> LoadComments(int take, int skip)
         {
-            return _ticketService.GetComments(take, skip);
+            return _ticketRepo.GetCommentsByUser(User, take, skip);
         }
     }
 }

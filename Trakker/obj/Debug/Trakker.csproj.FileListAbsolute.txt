@@ -44,7 +44,13 @@ D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\ResolveAssemblyReference.cache
 D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\Trakker.Properties.Validation.resources
 D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\GenerateResource.read.1.tlog
 D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\GenerateResource.write.1.tlog
+D:\Projects\ASPNET\Trakker\Trakker\bin\Mappings\Property.hbm.xml
 D:\Projects\ASPNET\Trakker\Trakker\bin\Mappings\Comment.hbm.xml
+D:\Projects\ASPNET\Trakker\Trakker\bin\Mappings\TicketStatus.hbm.xml
+D:\Projects\ASPNET\Trakker\Trakker\bin\Mappings\TicketPriority.hbm.xml
+D:\Projects\ASPNET\Trakker\Trakker\bin\Mappings\TicketType.hbm.xml
+D:\Projects\ASPNET\Trakker\Trakker\bin\Mappings\TicketResolution.hbm.xml
+D:\Projects\ASPNET\Trakker\Trakker\bin\Mappings\Ticket.hbm.xml
 D:\Projects\ASPNET\Trakker\Trakker\bin\hibernate.cfg.xml
 D:\Projects\ASPNET\Trakker\Trakker\bin\Content\Theme.css
 D:\Projects\ASPNET\Trakker\Trakker\bin\Web.config
@@ -84,4 +90,3 @@ D:\Projects\ASPNET\Trakker\Trakker\bin\Iesi.Collections.pdb
 D:\Projects\ASPNET\Trakker\Trakker\bin\Iesi.Collections.xml
 D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\Trakker.dll
 D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\Trakker.pdb
-D:\Projects\ASPNET\Trakker\Trakker\bin\Mappings\Property.hbm.xml

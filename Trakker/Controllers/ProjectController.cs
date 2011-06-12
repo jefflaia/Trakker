@@ -17,8 +17,8 @@ namespace Trakker.Controllers
     public partial class ProjectController : MasterController
     {
 
-        public ProjectController(IProjectService projectService, IUserService userService, ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo)
-            : base(projectService, ticketService, userService, userRepo, projectRepo)
+        public ProjectController(IProjectService projectService, IUserService userService, ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
+            : base(projectService, ticketService, userService, userRepo, projectRepo, ticketRepo)
         {
         }
         
@@ -30,7 +30,7 @@ namespace Trakker.Controllers
             return View(new ProjectSummaryModel()
             {
                 Project = CurrentProject,
-                NewestTickets = _ticketService.GetNewestTicketsWithProjectId(CurrentProject.Id, 5),
+                NewestTickets = _ticketRepo.GetNewestTicketsByProject(CurrentProject, 0, 5).Items,
                 Lead = _userRepo.GetUserById(CurrentProject.Lead)
             });
         }

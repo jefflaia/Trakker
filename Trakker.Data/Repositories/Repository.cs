@@ -38,7 +38,7 @@ namespace Trakker.Data
                 .List<TEntity>();
         }
 
-        public Paginated<TEntity> GetAllPaginated<TEntity>(int page, int pageSize)
+        public Paginated<TEntity> GetPaginated<TEntity>(int page, int pageSize)
         {
             // Get the total row count in the database.
             var rowCount = this.Session.CreateCriteria(typeof(TEntity))
@@ -59,16 +59,14 @@ namespace Trakker.Data
 
         }
 
-        public Paginated<TEntity> GetPaginated<TEntity>(ICriterion criterion, int page, int pageSize)
+        public Paginated<TEntity> GetPaginated<TEntity>(ICriteria criteria, int page, int pageSize)
         {
             // Get the total row count in the database.
-            var rowCount = Session.CreateCriteria(typeof(TEntity))
-                .Add(criterion)
+            var rowCount = criteria
                 .SetProjection(Projections.RowCount()).FutureValue<Int32>();
 
             // Get the actual log entries, respecting the paging.
-            var items = Session.CreateCriteria(typeof(TEntity))
-                .Add(criterion)
+            var items = criteria
                 .SetFirstResult(page * pageSize)
                 .SetMaxResults(pageSize)
                 .Future<TEntity>();
@@ -81,13 +79,22 @@ namespace Trakker.Data
             };
         }        
 
-        public TEntity GetBy<TEntity>(Expression<Func<TEntity, object>> expression, object value)
+        public TEntity GetSingleBy<TEntity>(Expression<Func<TEntity, object>> expression, object value)
         {
             string propertyName = expression.GetPropertyName();
 
             return Session.CreateCriteria(typeof(TEntity))
                 .Add(Restrictions.Eq(propertyName, value))
                 .UniqueResult<TEntity>();
+        }
+
+        public IList<TEntity> GetManyBy<TEntity>(Expression<Func<TEntity, object>> expression, object value)
+        {
+            string propertyName = expression.GetPropertyName();
+
+            return Session.CreateCriteria(typeof(TEntity))
+                .Add(Restrictions.Eq(propertyName, value))
+                .List<TEntity>();
         }
         
         public void Delete(object entity)

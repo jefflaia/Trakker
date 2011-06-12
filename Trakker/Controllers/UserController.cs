@@ -27,8 +27,8 @@ namespace Trakker.Controllers
 {
     public partial class UserController : MasterController
     {
-        public UserController(IUserService userService, ITicketService ticketService, IProjectService projectService, IUserRepository userRepo, IProjectRepository projectRepo)
-            : base(projectService, ticketService, userService, userRepo, projectRepo)
+        public UserController(IUserService userService, ITicketService ticketService, IProjectService projectService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
+            : base(projectService, ticketService, userService, userRepo, projectRepo, ticketRepo)
         {
         }
         
@@ -93,10 +93,9 @@ namespace Trakker.Controllers
                
             }
 
-            var activityStream = new UserActivityStream(_userService, _ticketService, _userRepo);
-
-
-
+            var activityStream = new UserActivityStream(_userRepo, _ticketRepo);
+            activityStream.User = user;
+            
             var model = new UserProfileModel()
             {
                 User = user,

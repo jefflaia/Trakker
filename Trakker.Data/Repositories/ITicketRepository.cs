@@ -8,39 +8,57 @@
     public interface ITicketRepository
     {
         #region Ticket
-        IQueryable<Ticket> GetTickets();
+        Ticket GetTicketById(int id);
+        int TotalTickets();
+        int TotalTicketsByAssignedToUser(User user);
+        IList<Ticket> GetTicketsByAssignedToUser(User user);
+        Ticket GetTicketByKey(string key);
+
+        Paginated<Ticket> GetTicketsByProject(Project project, int page, int pageSize);
+        Paginated<Ticket> GetNewestTicketsByProject(Project project, int page, int pageSize);
+
+
         void Save(Ticket ticket);
-        void DeleteTicket(int id);
+
         #endregion
 
         #region Priority
-        IQueryable<TicketPriority> GetPriorities();
+        TicketPriority GetPriorityByName(string name);
+        TicketPriority GetPriorityById(int id);
+        IList<TicketPriority> GetPriorities();
         void Save(TicketPriority priority);
-        void DeletePriority(int id);
         #endregion
 
         #region Types
-        IQueryable<TicketType> GetTypes();
+        TicketType GetTypeById(int id);
+        TicketType GetTypeByName(string name);
+        IList<TicketType> GetTypes();
         void Save(TicketType type);
-        void DeleteType(int id);
         #endregion
 
         #region Status
-        IQueryable<TicketStatus> GetStatus();
+
+        TicketStatus GetStatusById(int id);
+        TicketStatus GetStatusByName(string name);
+        IList<TicketStatus> GetStatus();
         void Save(TicketStatus status);
-        void DeleteStatus(int id);
+
         #endregion
 
         #region Comments
-        IQueryable<Comment> GetComments();
+        Comment GetCommentById(int id);
+        IList<Comment> GetComments();
+        IList<Comment> GetCommentsByTicket(Ticket ticket);
+        IList<Comment> GetCommentsByUser(User user, int page, int pageSize);
+        Paginated<Comment> GetCommentsByTicket(Ticket ticket, int page, int pageSize);
         void Save(Comment comment);
-        void DeleteComment(int id);
         #endregion
 
         #region Resolution
-        IQueryable<TicketResolution> GetResolutions();
+        TicketResolution GetResolutionById(int id);
+        TicketResolution GetResolutionByName(string name);
+        IList<TicketResolution> GetResolutions();
         void Save(TicketResolution resolution);
-        void DeleteResolution(int id);
         #endregion
     }
 }

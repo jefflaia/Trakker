@@ -13,15 +13,10 @@
 
     public class ProjectRepository : Repository, IProjectRepository
     {
-        protected DataContext _dataContext;
-        protected Table<Sql.Project> _projectsTable;
-        protected Table<Sql.Component> _componentsTable;
 
-        public ProjectRepository(IDataContextProvider dataContext, ISession session) : base(session)
+        public ProjectRepository(ISession session) : base(session)
         {
-            _dataContext = dataContext.DataContext;
-            _projectsTable = _dataContext.GetTable<Sql.Project>();
-            _componentsTable = _dataContext.GetTable<Sql.Component>();
+
         }
 
         #region Project
@@ -32,12 +27,12 @@
 
         public Project GetProjectByName(string name)
         {
-            return GetBy<Project>(m => m.Name, name);
+            return GetSingleBy<Project>(m => m.Name, name);
         }
 
         public Project GetProjectByKey(string key)
         {
-            return GetBy<Project>(m => m.KeyName, key);
+            return GetSingleBy<Project>(m => m.KeyName, key);
         }
 
         public Project GetProjectById(int id)

@@ -18,17 +18,17 @@ namespace Trakker.Controllers
     [Authenticate]
     public partial class TicketController : MasterController
     {
-        public TicketController(ITicketService ticketService, IUserService userService, IProjectService projectService, IUserRepository userRepo, IProjectRepository projectRepo)
-            : base(projectService, ticketService, userService, userRepo, projectRepo)
+        public TicketController(ITicketService ticketService, IUserService userService, IProjectService projectService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
+            : base(projectService, ticketService, userService, userRepo, projectRepo, ticketRepo)
         {
         }
 
         #region Tickets
         public virtual ActionResult TicketDetails(string keyName)
         {
-            Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
+            Ticket ticket = _ticketRepo.GetTicketByKey(keyName);
 
-            var comments = _ticketService.GetCommentsWithticketId(ticket.Id);
+            var comments = _ticketRepo.GetCommentsByTicket(ticket);
             var users = new Dictionary<int, User>();
             
             //avoid querying for the same user more than once
@@ -45,7 +45,7 @@ namespace Trakker.Controllers
                 }
             }
 
-            var activityStream = new TicketActivityStream(_userService, _ticketService, _userRepo);
+            var activityStream = new TicketActivityStream(_userRepo, _ticketRepo);
             activityStream.Ticket = ticket;
 
             TicketDetailsModel viewData = new TicketDetailsModel()
@@ -55,10 +55,10 @@ namespace Trakker.Controllers
                 Description = ticket.Description,
                 Created = ticket.Created,
                 DueDate = ticket.DueDate,
-                Status = _ticketService.GetStatusWithId(ticket.StatusId),
-                Priority = _ticketService.GetPriorityById(ticket.PriorityId),
-                Cateogory = _ticketService.GetTypeById(ticket.CategoryId),
-                Resolution = _ticketService.GetResolutionById(ticket.ResolutionId),
+                Status = _ticketRepo.GetStatusById(ticket.StatusId),
+                Priority = _ticketRepo.GetPriorityById(ticket.PriorityId),
+                Cateogory = _ticketRepo.GetTypeById(ticket.CategoryId),
+                Resolution = _ticketRepo.GetResolutionById(ticket.ResolutionId),
                 KeyName = ticket.KeyName,
                 Comments = comments,
                 IsClosed = ticket.IsClosed,
@@ -75,16 +75,14 @@ namespace Trakker.Controllers
         {
             const int PAGE_SIZE = 10;
             User user;
-
-
-            IDictionary<int, TicketPriority> priorities = _ticketService.GetAllPriorities().ToDictionary(m => m.Id);
-            IDictionary<int, TicketStatus> status = _ticketService.GetAllStatus().ToDictionary(m => m.Id);
-            IDictionary<int, TicketType> types = _ticketService.GetAllTypes().ToDictionary(m => m.Id);
+            
+            IDictionary<int, TicketPriority> priorities = _ticketRepo.GetPriorities().ToDictionary(m => m.Id);
+            IDictionary<int, TicketStatus> status = _ticketRepo.GetStatus().ToDictionary(m => m.Id);
+            IDictionary<int, TicketType> types = _ticketRepo.GetTypes().ToDictionary(m => m.Id);
             IDictionary<int, User> users = new Dictionary<int, User>();
 
-
-            IList<Ticket> tickets = _ticketService.TicketList(PAGE_SIZE, index ?? 1);
-            foreach (Ticket ticket in tickets)
+            Paginated<Ticket> tickets = _ticketRepo.GetTicketsByProject(CurrentProject, index ?? 1, PAGE_SIZE);
+            foreach (Ticket ticket in tickets.Items)
             {
                 if (users.ContainsKey(ticket.AssignedToUserId) == false)
                 {
@@ -107,12 +105,12 @@ namespace Trakker.Controllers
             
             BrowseTicketsModel viewData = new BrowseTicketsModel()
             {
-                Items = tickets,
+                Items = tickets.Items,
                 Users = users,
                 Priorities = priorities,
                 Categories = types,
                 Status = status,
-                TotalTickets = _ticketService.TotalTickets(),
+                TotalTickets = tickets.TotalItems,
                 Page = index ?? 1,
                 PageSize = PAGE_SIZE
             };
@@ -125,12 +123,12 @@ namespace Trakker.Controllers
         {
             CreateEditTicketModel viewData = new CreateEditTicketModel()
             {
-                Categories = _ticketService.GetAllTypes(),
-                Priorities = _ticketService.GetAllPriorities(),
-                Status = _ticketService.GetAllStatus(),
+                Categories = _ticketRepo.GetTypes(),
+                Priorities = _ticketRepo.GetPriorities(),
+                Status = _ticketRepo.GetStatus(),
                 Users = _userRepo.GetUsers(),
                 Projects = _projectRepo.GetProjects(),
-                Resolutions = _ticketService.GetAllResolutions()
+                Resolutions = _ticketRepo.GetResolutions()
             };
 
             if (IsProjectSelected())
@@ -152,19 +150,20 @@ namespace Trakker.Controllers
                 ticket.CreatedByUserId = Auth.CurrentUser.Id;
                 ticket.AssignedByUserId = Auth.CurrentUser.Id;
                 ticket.Created = DateTime.Now;
+                ticket.KeyName = _ticketService.GenerateTicketKey(CurrentProject);
 
-                _ticketService.Save(ticket);
+                _ticketService.AddTicketToProject(ticket, CurrentProject);
                 UnitOfWork.Commit();
 
                 return RedirectToRoute("BrowseTickets");
             }
 
-            viewData.Categories = _ticketService.GetAllTypes();
-            viewData.Priorities = _ticketService.GetAllPriorities();
-            viewData.Status = _ticketService.GetAllStatus();
+            viewData.Categories = _ticketRepo.GetTypes();
+            viewData.Priorities = _ticketRepo.GetPriorities();
+            viewData.Status = _ticketRepo.GetStatus();
             viewData.Users = _userRepo.GetUsers();
             viewData.Projects = _projectRepo.GetProjects();
-            viewData.Resolutions = _ticketService.GetAllResolutions();
+            viewData.Resolutions = _ticketRepo.GetResolutions();
 
             return View(viewData);
         }
@@ -172,7 +171,7 @@ namespace Trakker.Controllers
         [HttpGet]
         public virtual ActionResult EditTicket(string keyName)
         {
-            Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
+            Ticket ticket = _ticketRepo.GetTicketByKey(keyName);
 
             if (ticket == null)
             {
@@ -182,11 +181,11 @@ namespace Trakker.Controllers
             CreateEditTicketModel viewData = new CreateEditTicketModel()
             {
                 Projects = _projectRepo.GetProjects(),
-                Categories = _ticketService.GetAllTypes(),
-                Priorities = _ticketService.GetAllPriorities(),
-                Status = _ticketService.GetAllStatus(),
+                Categories = _ticketRepo.GetTypes(),
+                Priorities = _ticketRepo.GetPriorities(),
+                Status = _ticketRepo.GetStatus(),
                 Users = _userRepo.GetUsers(),
-                Resolutions = _ticketService.GetAllResolutions()
+                Resolutions = _ticketRepo.GetResolutions()
             };
 
             Mapper.CreateMap<Ticket, CreateEditTicketModel>();
@@ -198,7 +197,7 @@ namespace Trakker.Controllers
         [HttpPost]
         public virtual ActionResult EditTicket(string keyName, CreateEditTicketModel viewData)
         {
-            Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
+            Ticket ticket = _ticketRepo.GetTicketByKey(keyName);
 
             if (ticket == null)
             {
@@ -210,18 +209,18 @@ namespace Trakker.Controllers
                 Mapper.CreateMap<CreateEditTicketModel, Ticket>();
                 ticket = Mapper.Map(viewData, ticket);
 
-                _ticketService.Save(ticket);
+                _ticketRepo.Save(ticket);
                 UnitOfWork.Commit();
 
                 return RedirectToRoute(MVC.Ticket.TicketDetails(keyName));
             }
 
-            viewData.Categories = _ticketService.GetAllTypes();
-            viewData.Priorities = _ticketService.GetAllPriorities();
-            viewData.Status = _ticketService.GetAllStatus();
+            viewData.Categories = _ticketRepo.GetTypes();
+            viewData.Priorities = _ticketRepo.GetPriorities();
+            viewData.Status = _ticketRepo.GetStatus();
             viewData.Users = _userRepo.GetUsers();
             viewData.Projects = _projectRepo.GetProjects();
-            viewData.Resolutions = _ticketService.GetAllResolutions();
+            viewData.Resolutions = _ticketRepo.GetResolutions();
 
             return View(viewData);
         }
@@ -232,7 +231,7 @@ namespace Trakker.Controllers
 
         public virtual ActionResult CreateComment(string keyName)
         {
-            Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
+            Ticket ticket = _ticketRepo.GetTicketByKey(keyName);
 
             if (ticket == null)
             {
@@ -245,7 +244,7 @@ namespace Trakker.Controllers
         [HttpPost]
         public virtual ActionResult CreateComment(string keyName, Comment comment)
         {
-            Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
+            Ticket ticket = _ticketRepo.GetTicketByKey(keyName);
 
             if (ticket == null)
             {
@@ -258,7 +257,7 @@ namespace Trakker.Controllers
                 comment.Modified = DateTime.Now;
                 comment.UserId = Auth.CurrentUser.Id;
                 comment.TicketId = ticket.Id;
-                _ticketService.Save(comment);
+                _ticketRepo.Save(comment);
                 UnitOfWork.Commit();
 
                 return RedirectToAction(MVC.Ticket.TicketDetails(keyName));
@@ -274,8 +273,8 @@ namespace Trakker.Controllers
 
         public virtual ActionResult EditComment(string keyName, int id)
         {
-            Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
-            Comment comment = _ticketService.GetCommentWithId(id);
+            Ticket ticket = _ticketRepo.GetTicketByKey(keyName);
+            Comment comment = _ticketRepo.GetCommentById(id);
 
             if (ticket == null ||
                 comment == null ||
@@ -296,8 +295,8 @@ namespace Trakker.Controllers
         [HttpPost]
         public virtual ActionResult EditComment(string keyName, int id, Comment comment)
         {
-            Ticket ticket = _ticketService.GetTicketWithKeyName(keyName);
-            Comment originalComment = _ticketService.GetCommentWithId(id);
+            Ticket ticket = _ticketRepo.GetTicketByKey(keyName);
+            Comment originalComment = _ticketRepo.GetCommentById(id);
 
             if (ticket == null || 
                 originalComment == null ||
@@ -311,7 +310,7 @@ namespace Trakker.Controllers
             {
                 originalComment.Body = comment.Body;
                 originalComment.Modified = DateTime.Now;
-                _ticketService.Save(originalComment);
+                _ticketRepo.Save(originalComment);
 
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Ticket.TicketDetails(keyName));

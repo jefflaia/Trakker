@@ -27,14 +27,16 @@ namespace Trakker.Controllers
         protected IUserService _userService;
         protected IUserRepository _userRepo;
         protected IProjectRepository _projectRepo;
+        protected ITicketRepository _ticketRepo;
         
-        public MasterController(IProjectService projectService, ITicketService ticketService, IUserService userSerivice, IUserRepository userRepo, IProjectRepository projectRepo)
+        public MasterController(IProjectService projectService, ITicketService ticketService, IUserService userSerivice, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
         {
             _projectService = projectService;
             _ticketService = ticketService;
             _userService = userSerivice;
             _userRepo = userRepo;
             _projectRepo = projectRepo;
+            _ticketRepo = ticketRepo;
 
             UnitOfWork = WindsorContainerProvider.Resolve<IUnitOfWork>();
         }
@@ -153,7 +155,7 @@ namespace Trakker.Controllers
 
             if (CurrentProject != null)
             {
-                viewData.Tickets = _ticketService.GetNewestTicketsWithProjectId(CurrentProject.Id, 5);
+                viewData.Tickets = _ticketRepo.GetNewestTicketsByProject(CurrentProject, 0, 5).Items;
             }
             else
             {
@@ -162,7 +164,7 @@ namespace Trakker.Controllers
 
             if (viewData.CurrentUser != null)
             {
-                viewData.NumTicketsAssignedToCurrentUser = _ticketService.CountTicketsWithAssignedTo(Auth.CurrentUser.Id);
+                viewData.NumTicketsAssignedToCurrentUser = _ticketRepo.TotalTicketsByAssignedToUser(Auth.CurrentUser);
             }
 
             return viewData;

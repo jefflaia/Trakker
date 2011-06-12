@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+  xmlns="urn:nhibernate-mapping-2.2" namespace="Trakker.Data"
+                   assembly="Trakker.Data">
+
+<class name="Ticket">
+  <id name="Id">
+    <generator class="identity" />
+  </id>
+  
+  <property name="CategoryId" />
+  <property name="Summary" />
+  <property name="PriorityId" />
+  <property name="Description" />
+  <property name="Created" />
+  <property name="DueDate" />
+  <property name="StatusId" />
+  <property name="ResolutionId" />
+  <property name="IsClosed" />
+  <property name="AssignedToUserId" />
+  <property name="CreatedByUserId" />
+  <property name="AssignedByUserId" />
+  <property name="ProjectId" />
+  <property name="KeyName" />
+
+  
+</class>
+
+</hibernate-mapping>
+

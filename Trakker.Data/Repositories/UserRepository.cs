@@ -26,7 +26,7 @@
 
         public User GetUserByEmail(string email)
         {
-            return GetBy<User>(x => x.Email, email);
+            return GetSingleBy<User>(x => x.Email, email);
         }
 
         public void Save(User user)
@@ -48,7 +48,7 @@
 
         public Paginated<User> GetUsersPaginated(int page, int pageSize)
         {
-            return GetAllPaginated<User>(page, pageSize);
+            return GetPaginated<User>(page, pageSize);
         }
         #endregion
 

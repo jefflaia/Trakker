@@ -13,7 +13,6 @@ namespace Trakker.Data
         public virtual int TicketId { get; set; }
         public virtual int UserId { get; set; }
 
-        public virtual User User { get; set; }
-        
+        public virtual User User { get; set; }        
     }
 }
