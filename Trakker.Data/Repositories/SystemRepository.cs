@@ -32,47 +32,7 @@
 
         }
 
-        public IQueryable<ColorPalette> GetColorPalettes()
-        {
-             return from p in _paletteTable
-                   select new ColorPalette()
-                   {
-                       Id = p.Id,
-                       Name = p.Name,
-                       NavBackgroundColor = p.NavBackgroundColor,
-                       SubNavBackgroundColor = p.SubNavBackgroundColor,
-                       HighlightColor = p.HighlightColor,
-                       LinkColor = p.LinkColor,
-                       NavTextColor = p.NavTextColor,
-                       SubNavTextColor = p.SubNavTextColor
-                   };
-        }
-
-        public void Save(ColorPalette palette)
-        {
-            Mapper.CreateMap<ColorPalette, Sql.ColorPalette>();
-            Sql.ColorPalette p = Mapper.Map<ColorPalette, Sql.ColorPalette>(palette);
-
-            if (palette.Id == 0)
-            {
-                _paletteTable.InsertOnSubmit(p);
-            }
-            else
-            {
-                _paletteTable.Attach(p);
-                _paletteTable.Context.Refresh(RefreshMode.KeepCurrentValues, p);
-            }
-
-            palette.Id = p.Id;
-        }
-
-        public void DeleteColorPalette(int id)
-        {
-            _paletteTable.DeleteAllOnSubmit(from p in _paletteTable
-                                            where p.Id == id
-                                            select p);
-        }
-
+        
         public Property<T> GetPropertyByName<T>(string name)
         {
             var property = (from p in _propertyTable

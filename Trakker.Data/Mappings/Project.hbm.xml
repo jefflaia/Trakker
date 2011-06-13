@@ -15,6 +15,7 @@
   <property name="Created" />
   <property name="TicketIndex" />
   <property name="Url" />
+  <property name="ColorPaletteId" />
 
   <!--<one-to-one name="Lead" class="User"/>-->
 

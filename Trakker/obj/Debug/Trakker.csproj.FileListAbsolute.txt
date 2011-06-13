@@ -90,3 +90,4 @@ D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\GenerateResource.read.1.tlog
 D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\GenerateResource.write.1.tlog
 D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\Trakker.dll
 D:\Projects\ASPNET\Trakker\Trakker\obj\Debug\Trakker.pdb
+D:\Projects\ASPNET\Trakker\Trakker\bin\Mappings\ColorPalette.hbm.xml

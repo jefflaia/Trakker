@@ -16,29 +16,6 @@
             _systemRepository = systemRepository;
         }
 
-        public ColorPalette GetColorPaletteById(int id)
-        {
-            return _systemRepository.GetColorPalettes().Where(p => p.Id == id).SingleOrDefault() ?? null;
-        }
-
-        public IList<ColorPalette> GetAllColorPalettes()
-        {
-            return _systemRepository.GetColorPalettes().ToList();
-        }
-
-        public void Save(ColorPalette palette)
-        {
-            palette.Name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(palette.Name);
-            _systemRepository.Save(palette);
-        }
-
-        public ColorPalette GetColorPaletteByName(string name)
-        {
-            name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(name);
-            return _systemRepository.GetColorPalettes()
-                .Where(m => m.Name == name).SingleOrDefault() ?? null;
-        }
-
         public Property<T> GetPropertyByName<T>(string name)
         {
             return _systemRepository.GetPropertyByName<T>(name);

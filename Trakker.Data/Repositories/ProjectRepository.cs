@@ -62,6 +62,28 @@
         }
         #endregion
 
+        #region ColorPalette
+        public ColorPalette GetColorPaletteById(int id)
+        {
+            return GetById<ColorPalette>(id);
+        }
+
+        public ColorPalette GetColorPaletteByName(string name)
+        {
+            return GetSingleBy<ColorPalette>(m => m.Name, name);
+        }
+
+        public IList<ColorPalette> GetColorPalettes()
+        {
+            return GetAll<ColorPalette>();
+        }
+
+        public void Save(ColorPalette palette)
+        {
+            base.Save(palette);
+        }
+        #endregion
+
         #region Component
         public IList<Component> GetComponents()
         {

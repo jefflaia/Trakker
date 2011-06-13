@@ -64,54 +64,7 @@ namespace Trakker.Controllers
             return CurrentProject != null;
         }
 
-        public IUnitOfWork UnitOfWork { get; set; }
-
-        /*
-        public virtual RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> action)
-        {
-            
-
-            MethodCallExpression body = action.Body as MethodCallExpression;
-
-            if (body == null)
-            {
-                throw new InvalidOperationException("Expression must be a method call.");
-            }
-
-            if (body.Object != action.Parameters[0])
-            {
-                throw new InvalidOperationException("Method call must target lambda argument.");
-            }
-
-            string controllerName = typeof(TController).GetControllerName();
-            string actionName = body.Method.Name;
-
-            RouteValueDictionary parameters = LinkBuilder.BuildParameterValuesFromExpression(body);
-
-            return RedirectToAction(actionName, controllerName, parameters);
-        }
-
-        public virtual RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> actionExpression,
-                                                                   IDictionary<string, object> dictionary)
-        {
-            string controllerName = typeof(TController).GetControllerName();
-            string actionName = actionExpression.GetActionName();
-
-            return RedirectToAction(actionName, controllerName,
-                                    new RouteValueDictionary(dictionary));
-        }
-
-        public virtual RedirectToRouteResult RedirectToAction<TController>(Expression<Func<TController, object>> actionExpression,
-                                                                   object values)
-        {
-            string controllerName = typeof(TController).GetControllerName();
-            string actionName = actionExpression.GetActionName();
-
-            return RedirectToAction(actionName, controllerName,
-                                    new RouteValueDictionary(values));
-        }
-         * */
-      
+        public IUnitOfWork UnitOfWork { get; set; }      
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {

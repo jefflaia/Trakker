@@ -10,17 +10,18 @@ using Trakker.Filters;
 using Trakker.Models;
 using Trakker.Data;
 using Trakker.Data.Services;
+using Trakker.Data.Repositories;
 
 namespace Trakker.Controllers
 {
     [CompressFilter]
     public partial class ResourceController : Controller
     {
-        protected ISystemService _systemService;
+        protected IProjectRepository _projectRepo;
 
-        public ResourceController(ISystemService systemService)
+        public ResourceController(IProjectRepository projectRepo) 
         {
-            _systemService = systemService;
+            _projectRepo = projectRepo;
         }
         
         //[CacheFilter(Duration = 9999999)]
@@ -33,9 +34,11 @@ namespace Trakker.Controllers
 
             StyleSheetRenderer renderer = new StyleSheetRenderer(RecoAssets.StyleSheet());
 
-            var property = _systemService.GetPropertyByName<int>("colorPaletteId");
+            Project project = _projectRepo.GetProjectById(ProjectCookie.Read());
 
-            renderer.Model = _systemService.GetColorPaletteById(property.Value);
+
+            renderer.Model = _projectRepo.GetColorPaletteById(project == null ? 3 : project.ColorPaletteId);
+
             
             return new StyleSheetResult()
             {
