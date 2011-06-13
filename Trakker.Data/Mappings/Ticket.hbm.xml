@@ -13,7 +13,7 @@
   <property name="PriorityId" />
   <property name="Description" />
   <property name="Created" />
-  <property name="DueDate" />
+  <property name="DueDate" type="DateTime"/>
   <property name="StatusId" />
   <property name="ResolutionId" />
   <property name="IsClosed" />

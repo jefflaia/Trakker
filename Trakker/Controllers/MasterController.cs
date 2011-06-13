@@ -21,19 +21,14 @@ namespace Trakker.Controllers
 
     public abstract partial class MasterController : Controller
     {
-
-        protected IProjectService _projectService;
         protected ITicketService _ticketService;
-        protected IUserService _userService;
         protected IUserRepository _userRepo;
         protected IProjectRepository _projectRepo;
         protected ITicketRepository _ticketRepo;
         
-        public MasterController(IProjectService projectService, ITicketService ticketService, IUserService userSerivice, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
+        public MasterController(ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
         {
-            _projectService = projectService;
             _ticketService = ticketService;
-            _userService = userSerivice;
             _userRepo = userRepo;
             _projectRepo = projectRepo;
             _ticketRepo = ticketRepo;

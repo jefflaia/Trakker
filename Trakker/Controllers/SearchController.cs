@@ -21,8 +21,8 @@ namespace Trakker.Controllers
     public partial class SearchController : MasterController
     {
 
-        public SearchController(ITicketService ticketService, IUserService userService, IProjectService projectService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
-            : base(projectService, ticketService, userService, userRepo, projectRepo, ticketRepo)
+        public SearchController(ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
+            : base(ticketService, userRepo, projectRepo, ticketRepo)
         {
         }
 

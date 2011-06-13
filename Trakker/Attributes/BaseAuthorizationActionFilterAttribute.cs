@@ -10,11 +10,11 @@ namespace Trakker.Attributes
 {
     public class BaseAuthorizationActionFilterAttribute : ActionFilterAttribute
     {
-        public IUserService _userService;
+        //public IUserService _userService;
 
         public BaseAuthorizationActionFilterAttribute()
         {
-            _userService = WindsorContainerProvider.Resolve<IUserService>();
+            //_userService = WindsorContainerProvider.Resolve<IUserService>();
         }
     }
 }

@@ -17,8 +17,8 @@ namespace Trakker.Areas.Admin.Controllers
     {
         protected ISystemService _systemService;
 
-        public SettingsController(ITicketService ticketService, IUserService userService, IProjectService projectService, ISystemService systemService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
-            : base(projectService, ticketService, userService, userRepo, projectRepo, ticketRepo)
+        public SettingsController(ITicketService ticketService, ISystemService systemService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
+            : base(ticketService, userRepo, projectRepo, ticketRepo)
         {
             _systemService = systemService;
         }

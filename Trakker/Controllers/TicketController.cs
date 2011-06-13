@@ -18,8 +18,8 @@ namespace Trakker.Controllers
     [Authenticate]
     public partial class TicketController : MasterController
     {
-        public TicketController(ITicketService ticketService, IUserService userService, IProjectService projectService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
-            : base(projectService, ticketService, userService, userRepo, projectRepo, ticketRepo)
+        public TicketController(ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
+            : base(ticketService, userRepo, projectRepo, ticketRepo)
         {
         }
 
@@ -75,13 +75,22 @@ namespace Trakker.Controllers
         {
             const int PAGE_SIZE = 10;
             User user;
+            Paginated<Ticket> tickets;
             
             IDictionary<int, TicketPriority> priorities = _ticketRepo.GetPriorities().ToDictionary(m => m.Id);
             IDictionary<int, TicketStatus> status = _ticketRepo.GetStatus().ToDictionary(m => m.Id);
             IDictionary<int, TicketType> types = _ticketRepo.GetTypes().ToDictionary(m => m.Id);
             IDictionary<int, User> users = new Dictionary<int, User>();
 
-            Paginated<Ticket> tickets = _ticketRepo.GetTicketsByProject(CurrentProject, index ?? 1, PAGE_SIZE);
+            if (CurrentProject != null)
+            {
+                tickets = _ticketRepo.GetTicketsByProject(CurrentProject, index ?? 1, PAGE_SIZE);
+            }
+            else
+            {
+                tickets = _ticketRepo.GetTickets(index ?? 1, PAGE_SIZE);
+            }
+            
             foreach (Ticket ticket in tickets.Items)
             {
                 if (users.ContainsKey(ticket.AssignedToUserId) == false)

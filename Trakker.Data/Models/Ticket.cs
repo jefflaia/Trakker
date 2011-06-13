@@ -18,6 +18,7 @@ namespace Trakker.Data
         public virtual int AssignedToUserId { get; set; }
         public virtual int CreatedByUserId { get; set; }
         public virtual int AssignedByUserId { get; set; }
+
         public virtual TicketStatus Status { get; set; }
 
     }

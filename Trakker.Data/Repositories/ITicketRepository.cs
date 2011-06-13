@@ -14,6 +14,7 @@
         IList<Ticket> GetTicketsByAssignedToUser(User user);
         Ticket GetTicketByKey(string key);
 
+        Paginated<Ticket> GetTickets(int page, int pageSize);
         Paginated<Ticket> GetTicketsByProject(Project project, int page, int pageSize);
         Paginated<Ticket> GetNewestTicketsByProject(Project project, int page, int pageSize);
 

@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using NHibernate.Criterion;
 using NHibernate;
 
-namespace Trakker.Data
+namespace Trakker.Data.Repositories
 {
     public interface IRepository : IDisposable
     {

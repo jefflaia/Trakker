@@ -10,7 +10,7 @@ using NHibernate;
 using NHibernate.Criterion;
 using System.Reflection;
 
-namespace Trakker.Data
+namespace Trakker.Data.Repositories
 {
     public abstract class Repository : IRepository
     {
@@ -61,21 +61,26 @@ namespace Trakker.Data
 
         public Paginated<TEntity> GetPaginated<TEntity>(ICriteria criteria, int page, int pageSize)
         {
+
+            ICriteria criteriaCount = CriteriaTransformer.Clone(criteria);
+            criteriaCount.ClearOrders();
+
             // Get the total row count in the database.
-            var rowCount = criteria
-                .SetProjection(Projections.RowCount()).FutureValue<Int32>();
+            int rowCount = criteriaCount
+                .SetProjection(Projections.RowCount())
+                .UniqueResult<Int32>();
 
             // Get the actual log entries, respecting the paging.
-            var items = criteria
+            IList<TEntity> items = criteria
                 .SetFirstResult(page * pageSize)
                 .SetMaxResults(pageSize)
-                .Future<TEntity>();
+                .List<TEntity>();
 
             return new Paginated<TEntity>
             {
-                Items = items.ToList<TEntity>(),
+                Items = items,
                 Index = page,
-                TotalItems = rowCount.Value
+                TotalItems = rowCount
             };
         }        
 

@@ -16,8 +16,8 @@ namespace Trakker.Areas.Admin.Controllers
     [Authenticate]
     public partial class ManagementController : MasterController
     {
-        public ManagementController(ITicketService ticketService, IUserService userService, IProjectService projectService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
-            : base(projectService, ticketService, userService, userRepo, projectRepo, ticketRepo)
+        public ManagementController(ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
+            : base(ticketService, userRepo, projectRepo, ticketRepo)
         {
         }
 

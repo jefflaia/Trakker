@@ -3,7 +3,7 @@
   xmlns="urn:nhibernate-mapping-2.2" namespace="Trakker.Data"
                    assembly="Trakker.Data">
 
-<class name="TicketResolution">
+<class name="TicketType">
   <id name="Id">
     <generator class="identity" />
   </id>

@@ -123,10 +123,17 @@ namespace Trakker.Data.Repositories
                 .UniqueResult<Ticket>();
         }
 
+        public Paginated<Ticket> GetTickets(int page, int pageSize)
+        {
+            return GetPaginated<Ticket>(page, pageSize);
+        }
+
         public Paginated<Ticket> GetTicketsByProject(Project project, int page, int pageSize)
         {
-            ICriteria criteria = Session.CreateCriteria<Ticket>()
-               .Add(Expression.Eq("ProjectId", project.Id));
+            ICriteria criteria = Session
+               .CreateCriteria<Ticket>()
+               .Add(Restrictions.Eq("ProjectId", project.Id));
+
 
             return GetPaginated<Ticket>(criteria, page, pageSize);
         }
@@ -134,7 +141,7 @@ namespace Trakker.Data.Repositories
         public Paginated<Ticket> GetNewestTicketsByProject(Project project, int page, int pageSize)
         {
             ICriteria criteria = Session.CreateCriteria<Ticket>()
-                .Add(Expression.Eq("ProjectId", project.Id))
+                .Add(Restrictions.Eq("ProjectId", project.Id))
                 .AddOrder(Order.Desc("Created"));
 
             return GetPaginated<Ticket>(criteria, page, pageSize);

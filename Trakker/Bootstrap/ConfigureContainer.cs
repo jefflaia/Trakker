@@ -10,6 +10,9 @@ using Castle.Windsor;
 using Trakker.Core.IoC;
 using NHibernate;
 using Castle.MicroKernel.Registration;
+using Trakker.Data.Repositories;
+using Trakker.Data.Services;
+
 
 
 
@@ -30,6 +33,37 @@ namespace Trakker.Bootstrap
                 Component.For<ISession>()
                 .UsingFactoryMethod(() => NHibernateFactory.OpenSession())
                 .LifeStyle.PerWebRequest);
+            
+            _container.Register(
+                Component.For<ITicketRepository>()
+                .ImplementedBy<TicketRepository>()
+                .LifeStyle.PerWebRequest);
+
+            _container.Register(
+                Component.For<IProjectRepository>()
+                .ImplementedBy<ProjectRepository>()
+                .LifeStyle.PerWebRequest);
+
+            _container.Register(
+                Component.For<IUserRepository>()
+                .ImplementedBy<UserRepository>()
+                .LifeStyle.PerWebRequest);
+
+            _container.Register(
+                Component.For<ISystemRepository>()
+                .ImplementedBy<SystemRepository>()
+                .LifeStyle.PerWebRequest);
+
+            _container.Register(
+                Component.For<ISystemService>()
+                .ImplementedBy<SystemService>()
+                .LifeStyle.PerWebRequest);
+
+            _container.Register(
+                Component.For<ITicketService>()
+                .ImplementedBy<TicketService>()
+                .LifeStyle.PerWebRequest);
+            
         }
     }
 }
