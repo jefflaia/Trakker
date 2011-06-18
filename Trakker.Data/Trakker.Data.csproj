@@ -154,8 +154,6 @@
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Services\RandomHash.cs" />
-    <Compile Include="Services\ISystemService.cs" />
-    <Compile Include="Services\SystemService.cs" />
     <Compile Include="SessionCookie.cs" />
     <Compile Include="Services\ITicketService.cs" />
     <Compile Include="Services\TicketService.cs" />
@@ -165,6 +163,7 @@
     <Compile Include="Utilities\PropertyInfoExtensions.cs" />
     <Compile Include="Utilities\LazyList.cs" />
     <Compile Include="Utilities\SlugGenerator.cs" />
+    <Compile Include="Utilities\SystemSettingsLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Access\TrakkerDB.dbml">

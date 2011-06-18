@@ -18,10 +18,12 @@ namespace Trakker.Controllers
     public partial class ResourceController : Controller
     {
         protected IProjectRepository _projectRepo;
+        protected ISystemRepository _systemRepo;
 
-        public ResourceController(IProjectRepository projectRepo) 
+        public ResourceController(IProjectRepository projectRepo, ISystemRepository systemRepo) 
         {
             _projectRepo = projectRepo;
+            _systemRepo = systemRepo;
         }
         
         //[CacheFilter(Duration = 9999999)]
@@ -33,13 +35,11 @@ namespace Trakker.Controllers
             //how could i handle groups?
 
             StyleSheetRenderer renderer = new StyleSheetRenderer(RecoAssets.StyleSheet());
-
             Project project = _projectRepo.GetProjectById(ProjectCookie.Read());
+            Property<int> property = _systemRepo.GetPropertyByName<int>("ColorPaletteId");
 
-
-            renderer.Model = _projectRepo.GetColorPaletteById(project == null ? 3 : project.ColorPaletteId);
-
-            
+            renderer.Model = _projectRepo.GetColorPaletteById(project == null ? property.Value : project.ColorPaletteId);
+                        
             return new StyleSheetResult()
             {
                 Content = renderer.Generate()

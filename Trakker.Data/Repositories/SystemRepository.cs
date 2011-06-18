@@ -35,6 +35,7 @@
         
         public Property<T> GetPropertyByName<T>(string name)
         {
+
             var property = (from p in _propertyTable
                 where p.Identifier == name
                 select p).SingleOrDefault() ?? null;

@@ -25,7 +25,7 @@ namespace Trakker.Controllers
         protected IUserRepository _userRepo;
         protected IProjectRepository _projectRepo;
         protected ITicketRepository _ticketRepo;
-        
+
         public MasterController(ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
         {
             _ticketService = ticketService;

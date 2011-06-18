@@ -15,12 +15,12 @@ namespace Trakker.Areas.Admin.Controllers
 {
     public partial class SettingsController : MasterController
     {
-        protected ISystemService _systemService;
+        protected ISystemRepository _systemRepo;
 
-        public SettingsController(ITicketService ticketService, ISystemService systemService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
+        public SettingsController(ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo, ISystemRepository systemRepo)
             : base(ticketService, userRepo, projectRepo, ticketRepo)
         {
-            _systemService = systemService;
+            _systemRepo = systemRepo;
         }
 
         [HttpGet]
@@ -107,11 +107,11 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpGet]
         public virtual ActionResult SelectColorPalette(int paletteId)
         {
-            var property = _systemService.GetPropertyByName<int>("colorPaletteId");
+            var property = _systemRepo.GetPropertyByName<int>("colorPaletteId");
 
             property.Value = paletteId;
 
-            _systemService.Save<int>(property);
+            _systemRepo.Save<int>(property);
             UnitOfWork.Commit();
 
             return RedirectToAction(MVC.Admin.Settings.BrowseColorPalettes());

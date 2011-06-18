@@ -55,11 +55,6 @@ namespace Trakker.Bootstrap
                 .LifeStyle.PerWebRequest);
 
             _container.Register(
-                Component.For<ISystemService>()
-                .ImplementedBy<SystemService>()
-                .LifeStyle.PerWebRequest);
-
-            _container.Register(
                 Component.For<ITicketService>()
                 .ImplementedBy<TicketService>()
                 .LifeStyle.PerWebRequest);
