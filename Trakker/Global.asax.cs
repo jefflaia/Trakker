@@ -17,14 +17,21 @@
 
     public class MvcApplication : System.Web.HttpApplication
     {
-        public static void RegisterRoutes(RouteCollection routes)
-        {
-            
-        }
 
         protected void Application_Start()
         {
             Bootstrapper.Run();
         }
+
+        protected void Application_BeginRequest()
+        {
+           //may want boostrapping to run here
+        }
+
+        protected void Application_EndRequest()
+        {
+            //may want bootstrapping to run here
+        }
+
     }
 }

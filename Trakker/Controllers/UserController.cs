@@ -18,15 +18,18 @@ using Trakker.Models;
 using Trakker.Infastructure.Streams.Activity.Model;
 using Trakker.Infastructure.Streams.Activity;
 using Trakker.Areas.Admin.Models;
+using NHibernate;
+using NHibernate.Criterion;
+using Trakker.Data.Repositories;
 
 
 namespace Trakker.Controllers
 {
     public partial class UserController : MasterController
     {
-       public UserController(IUserService userService, ITicketService ticketService, IProjectService projectService)
-            : base(projectService, ticketService, userService)
-        {            
+        public UserController(ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
+            : base( ticketService, userRepo, projectRepo, ticketRepo)
+        {
         }
         
         public virtual ActionResult Login()
@@ -41,9 +44,9 @@ namespace Trakker.Controllers
             {
                 if (Auth.ValidateCredentials(viewData.Email, viewData.Password))
                 {
-                    User user = _userService.GetUserWithEmail(viewData.Email);
+                    User user = _userRepo.GetUserByEmail(viewData.Email);
                     user.LastLogin = DateTime.Now;
-                    _userService.Save(user);
+                    _userRepo.Save(user);
                     UnitOfWork.Commit();
 
                     Auth.LogUserIn(user);
@@ -53,13 +56,13 @@ namespace Trakker.Controllers
                 else
                 {
                     ModelState.AddModelError("Invalid", "Invalid email or password");
-                    User user = _userService.GetUserWithEmail(viewData.Email);
+                    User user = _userRepo.GetUserByEmail(viewData.Email);
 
                     if (user != null)
                     {
                         user.FailedPasswordAttemptCount++;
                         user.LastFailedLoginAttempt = DateTime.Now;
-                        _userService.Save(user);
+                        _userRepo.Save(user);
                         UnitOfWork.Commit();
                     }
                 }
@@ -78,7 +81,7 @@ namespace Trakker.Controllers
 
         public virtual ActionResult UserProfile(int userId)
         {
-            var user = _userService.GetUserWithId(userId);
+            var user = _userRepo.GetUserById(userId);
 
             if (user == null)
             {
@@ -90,10 +93,9 @@ namespace Trakker.Controllers
                
             }
 
-            var activityStream = new UserActivityStream(_userService, _ticketService);
-
-
-
+            var activityStream = new UserActivityStream(_userRepo, _ticketRepo);
+            activityStream.User = user;
+            
             var model = new UserProfileModel()
             {
                 User = user,
@@ -107,7 +109,7 @@ namespace Trakker.Controllers
         [HttpGet]
         public virtual ActionResult ChangePassword(int userId)
         {
-            User user = _userService.GetUserWithId(userId);
+            User user = _userRepo.GetUserById(userId);
 
             if (user == null && user.Id != Auth.CurrentUser.Id )
             {
@@ -122,7 +124,7 @@ namespace Trakker.Controllers
         [HttpPost]
         public virtual ActionResult ChangePassword(int userId, ChangePasswordModel viewModel)
         {
-            User user = _userService.GetUserWithId(userId);
+            User user = _userRepo.GetUserById(userId);
 
             if (user == null)
             {
@@ -140,14 +142,26 @@ namespace Trakker.Controllers
             if (ModelState.IsValid)
             {
                 user.Password = Auth.HashPassword(user.Password, user.Salt);
-                _userService.Save(user);
+                _userRepo.Save(user);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.User.UserProfile(userId));
             }
 
-            viewModel.User = _userService.GetUserWithId(userId);
+            viewModel.User = _userRepo.GetUserById(userId);
 
             return View(viewModel);
+        }
+
+
+
+        public virtual ActionResult Testing()
+        {
+
+            var user = _userRepo.GetUserById(2);
+            if (user != null) throw new Exception("working");
+
+            throw new NotImplementedException();
+            return View();
         }
     }
 }

@@ -6,19 +6,23 @@ using Trakker.Data.Services;
 using Trakker.Data;
 using Trakker.Infastructure.Streams.Activity.Model;
 using Trakker.Infastructure.Streams.Activity.Mappers;
+using Trakker.Data.Repositories;
 
 namespace Trakker.Infastructure.Streams.Activity
 {
     abstract public class ActivityStream
     {
-        protected IUserService _userService;
-        protected ITicketService _ticketService;
+        protected IUserRepository _userRepo;
+        protected ITicketRepository _ticketRepo;
+
+
         private static IMapper<Comment> _commentMapper = new CommentMapper();
 
-        public ActivityStream(IUserService userService, ITicketService ticketService)
+        public ActivityStream(IUserRepository userRepo, ITicketRepository ticketRepo)
         {
-            _userService = userService;
-            _ticketService = ticketService;
+
+            _userRepo = userRepo;
+            _ticketRepo = ticketRepo;
         }
 
         public abstract IList<Comment> LoadComments(int take, int skip);
@@ -63,12 +67,12 @@ namespace Trakker.Infastructure.Streams.Activity
                 //avoid needless queries for already existing users
                 if (users.ContainsKey(activity.UserId) == false)
                 {
-                    users.Add(activity.UserId, _userService.GetUserWithId(activity.UserId));
+                    users.Add(activity.UserId, _userRepo.GetUserById(activity.UserId));
                 }
 
                 if (tickets.ContainsKey(activity.TicketId) == false)
                 {
-                    tickets.Add(activity.TicketId, _ticketService.GetTicketWithId(activity.TicketId));
+                    tickets.Add(activity.TicketId, _ticketRepo.GetTicketById(activity.TicketId));
                 }
 
                 activity.User = users[activity.UserId];

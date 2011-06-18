@@ -9,14 +9,15 @@ using Trakker.Data.Services;
 using Trakker.Attributes;
 using AutoMapper;
 using Trakker.Data;
+using Trakker.Data.Repositories;
 
 namespace Trakker.Areas.Admin.Controllers
 {
     [Authenticate]
     public partial class ManagementController : MasterController
     {
-        public ManagementController(ITicketService ticketService, IUserService userService, IProjectService projectService)
-            : base(projectService, ticketService, userService)
+        public ManagementController(ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
+            : base(ticketService, userRepo, projectRepo, ticketRepo)
         {
         }
 
@@ -29,7 +30,7 @@ namespace Trakker.Areas.Admin.Controllers
 
         public virtual ActionResult BrowseUsers()
         {
-            var paginatedUsers = _userService.GetAllUsersPaginated(1, 10);
+            var paginatedUsers = _userRepo.GetUsersPaginated(1, 10);
 
             return View(new BrowseUsersModel()
             {
@@ -37,7 +38,7 @@ namespace Trakker.Areas.Admin.Controllers
                 TotalUsers = paginatedUsers.TotalItems,
                 PageSize = 10,
                 CurrentPage = 1,
-                Roles = _userService.GetAllRoles().ToDictionary(d => d.Id)
+                Roles = _userRepo.GetRoles().ToDictionary(d => d.Id)
             });
         }
 
@@ -45,7 +46,7 @@ namespace Trakker.Areas.Admin.Controllers
         {
             return View(new ViewUserModel()
             {
-                User = _userService.GetUserWithId(userId)
+                User = _userRepo.GetUserById(userId)
             });
         }
 
@@ -53,14 +54,14 @@ namespace Trakker.Areas.Admin.Controllers
         {
             return View(new CreateUserModel()
             {
-                Roles = _userService.GetAllRoles()
+                Roles = _userRepo.GetRoles()
             });
         }
 
         [HttpPost]
         public virtual ActionResult CreateUser(CreateUserModel viewModel)
         {
-            User existingUser = _userService.GetUserWithEmail(viewModel.Email);
+            User existingUser = _userRepo.GetUserByEmail(viewModel.Email);
             if (existingUser != null)
             {
                 ModelState.AddModelError("Email", "A user with this email already exists.");
@@ -71,19 +72,19 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.CreateMap<CreateUserModel, User>();
                 User user = Mapper.Map(viewModel, new User());
 
-                _userService.Save(user);
+                _userRepo.Save(user);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Management.BrowseUsers());
             }
 
-            viewModel.Roles = _userService.GetAllRoles();
+            viewModel.Roles = _userRepo.GetRoles();
 
             return View(viewModel);
         }
 
         public virtual ActionResult EditUser(int userId)
         {
-            User user = _userService.GetUserWithId(userId);
+            User user = _userRepo.GetUserById(userId);
             if (user == null)
             {
                 return PermanentRedirectToAction(MVC.Error.InvalidAction());
@@ -91,7 +92,7 @@ namespace Trakker.Areas.Admin.Controllers
 
             Mapper.CreateMap<User, EditUserModel>();
             EditUserModel viewModel = Mapper.Map(user, new EditUserModel() {
-                Roles = _userService.GetAllRoles()
+                Roles = _userRepo.GetRoles()
             });
             
             return View(viewModel);
@@ -100,7 +101,7 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpPost]
         public virtual ActionResult EditUser(int userId, EditUserModel viewModel)
         {
-            User user = _userService.GetUserWithId(userId);
+            User user = _userRepo.GetUserById(userId);
 
             if (user == null)
             {
@@ -112,12 +113,12 @@ namespace Trakker.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                _userService.Save(user);
+                _userRepo.Save(user);
                 UnitOfWork.Commit();
                 return RedirectToRoute(MVC.Admin.Management.ViewUser(userId));
             }
 
-            viewModel.Roles = _userService.GetAllRoles();
+            viewModel.Roles = _userRepo.GetRoles();
             return View(viewModel);
         }
 
@@ -125,14 +126,14 @@ namespace Trakker.Areas.Admin.Controllers
         public virtual ActionResult EditUserPassword(int userId)
         {
             return View(new EditUserPasswordModel() { 
-                User = _userService.GetUserWithId(userId)
+                User = _userRepo.GetUserById(userId)
             });
         }
 
         [HttpPost]
         public virtual ActionResult EditUserPassword(int userId, EditUserPasswordModel viewModel)
         {
-            User user = _userService.GetUserWithId(userId);
+            User user = _userRepo.GetUserById(userId);
 
             if (user == null)
             {
@@ -145,12 +146,12 @@ namespace Trakker.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 user.Password = Auth.HashPassword(user.Password, user.Salt);
-                _userService.Save(user);
+                _userRepo.Save(user);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Management.ViewUser(userId));
             }
 
-            viewModel.User = _userService.GetUserWithId(userId);
+            viewModel.User = _userRepo.GetUserById(userId);
             return View(viewModel);
         }
 
@@ -161,19 +162,19 @@ namespace Trakker.Areas.Admin.Controllers
         {
             return View(new BrowseProjectsModel()
             {
-                Projects = _projectService.GetAllProjects(),
-                Users = _userService.GetAllUsers().ToDictionary(m => m.Id)
+                Projects = _projectRepo.GetProjects(),
+                Users = _userRepo.GetUsers().ToDictionary(m => m.Id)
             });
         }
 
         public virtual ActionResult ViewProject(string keyName)
         {
-            Project project = _projectService.GetProjectByKeyName(keyName);
+            Project project = _projectRepo.GetProjectByKey(keyName);
 
             return View(new ViewProjectModel()
                 {
                     Project = project,
-                    User = _userService.GetUserWithId(project.Lead)
+                    User = _userRepo.GetUserById(project.Lead)
                 });
         }
 
@@ -181,7 +182,7 @@ namespace Trakker.Areas.Admin.Controllers
         {
             return View(new CreateProjectModel()
             {
-                Users = _userService.GetAllUsers()
+                Users = _userRepo.GetUsers()
             });
         }
 
@@ -189,12 +190,12 @@ namespace Trakker.Areas.Admin.Controllers
         public virtual ActionResult CreateProject(CreateProjectModel viewModel)
         {
 
-            if (_projectService.GetProjectByKeyName(viewModel.KeyName) != null)
+            if (_projectRepo.GetProjectByKey(viewModel.KeyName) != null)
             {
                 ModelState.AddModelError("KeyName", "A project with this key already exists. Please choose another.");
             }
 
-            if (_projectService.GetProjectByName(viewModel.Name) != null)
+            if (_projectRepo.GetProjectByName(viewModel.Name) != null)
             {
                 ModelState.AddModelError("Name", "A project with this name already exists. Please choose another.");
             }
@@ -205,13 +206,13 @@ namespace Trakker.Areas.Admin.Controllers
                 Project project = Mapper.Map(viewModel, new Project());
 
                 project.Created = DateTime.Now;
-                _projectService.Save(project);
+                _projectRepo.Save(project);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Management.ViewProject(viewModel.KeyName));
             }
 
 
-            viewModel.Users = _userService.GetAllUsers();
+            viewModel.Users = _userRepo.GetUsers();
 
             return View(viewModel);
         }
@@ -219,7 +220,7 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpGet]
         public virtual ActionResult EditProject(string keyName)
         {
-            Project project = _projectService.GetProjectByKeyName(keyName);
+            Project project = _projectRepo.GetProjectByKey(keyName);
 
             if (project == null)
             {
@@ -229,7 +230,7 @@ namespace Trakker.Areas.Admin.Controllers
             Mapper.CreateMap<Project, EditProjectModel>();
             EditProjectModel viewModel = Mapper.Map(project, new EditProjectModel());
 
-            viewModel.Users = _userService.GetAllUsers();
+            viewModel.Users = _userRepo.GetUsers();
 
             return View(viewModel);
         }
@@ -237,7 +238,7 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpPost]
         public virtual ActionResult EditProject(string keyName, [Bind(Exclude = "KeyName")]EditProjectModel viewModel)
         {
-            Project project = _projectService.GetProjectByKeyName(keyName);
+            Project project = _projectRepo.GetProjectByKey(keyName);
 
             if (project == null)
             {
@@ -245,7 +246,7 @@ namespace Trakker.Areas.Admin.Controllers
             }
 
             //check if the project name already exists
-            Project projectSameName = _projectService.GetProjectByName(viewModel.Name);
+            Project projectSameName = _projectRepo.GetProjectByName(viewModel.Name);
             if (projectSameName != null)
             {
                 if (projectSameName.Id != project.Id)
@@ -259,12 +260,12 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.CreateMap<EditProjectModel, Project>();
                 project = Mapper.Map(viewModel, project);
 
-                _projectService.Save(project);
+                _projectRepo.Save(project);
                 UnitOfWork.Commit();
                 return RedirectToRoute(MVC.Admin.Management.ViewProject(project.KeyName));
             }
 
-            viewModel.Users = _userService.GetAllUsers();
+            viewModel.Users = _userRepo.GetUsers();
 
             return View(viewModel);
         }

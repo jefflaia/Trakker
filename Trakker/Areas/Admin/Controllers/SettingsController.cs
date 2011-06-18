@@ -9,17 +9,18 @@ using Trakker.Data.Services;
 using Trakker.Areas.Admin.Models;
 using AutoMapper;
 using Trakker.Data;
+using Trakker.Data.Repositories;
 
 namespace Trakker.Areas.Admin.Controllers
 {
     public partial class SettingsController : MasterController
     {
-        protected ISystemService _systemService;
+        protected ISystemRepository _systemRepo;
 
-        public SettingsController(ITicketService ticketService, IUserService userService, IProjectService projectService, ISystemService systemService)
-            : base(projectService, ticketService, userService)
+        public SettingsController(ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo, ISystemRepository systemRepo)
+            : base(ticketService, userRepo, projectRepo, ticketRepo)
         {
-            _systemService = systemService;
+            _systemRepo = systemRepo;
         }
 
         [HttpGet]
@@ -33,8 +34,8 @@ namespace Trakker.Areas.Admin.Controllers
         {
             return View(new BrowseColorPalettesModel()
             {
-                ColorPalettes = _systemService.GetAllColorPalettes(),
-                SelectedColorPalette = _systemService.GetColorPaletteById(3)
+                ColorPalettes = _projectRepo.GetColorPalettes(),
+                SelectedColorPalette = _projectRepo.GetColorPaletteById(3)
             });
         }
 
@@ -47,7 +48,7 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpPost]
         public virtual ActionResult CreateColorPalette(CreateEditColorPaletteModel viewModel)
         {
-            if (_systemService.GetColorPaletteByName(viewModel.Name ?? String.Empty) != null)
+            if (_projectRepo.GetColorPaletteByName(viewModel.Name ?? String.Empty) != null)
             {
                 ModelState.AddModelError("Name", "A palette with this name already exists.");
             }
@@ -58,7 +59,7 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.CreateMap<CreateEditColorPaletteModel, ColorPalette>();
                 ColorPalette palette = Mapper.Map(viewModel, new ColorPalette());
 
-                _systemService.Save(palette);
+                _projectRepo.Save(palette);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Settings.BrowseColorPalettes());
             }
@@ -69,7 +70,7 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpGet]
         public virtual ActionResult EditColorPalette(int paletteId)
         {
-            var palette = _systemService.GetColorPaletteById(paletteId);
+            var palette = _projectRepo.GetColorPaletteById(paletteId);
 
             if (palette == null)
             {
@@ -77,7 +78,7 @@ namespace Trakker.Areas.Admin.Controllers
             }
 
             Mapper.CreateMap<ColorPalette, CreateEditColorPaletteModel>();
-            var viewModel = Mapper.Map(_systemService.GetColorPaletteById(paletteId), new CreateEditColorPaletteModel());
+            var viewModel = Mapper.Map(_projectRepo.GetColorPaletteById(paletteId), new CreateEditColorPaletteModel());
             
             return View(viewModel);
         }
@@ -85,7 +86,7 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpPost]
         public virtual ActionResult EditColorPalette(int paletteId, CreateEditColorPaletteModel viewModel)
         {
-            var palette = _systemService.GetColorPaletteById(paletteId);
+            var palette = _projectRepo.GetColorPaletteById(paletteId);
 
             if (palette == null)
             {
@@ -96,7 +97,7 @@ namespace Trakker.Areas.Admin.Controllers
             {
                 Mapper.CreateMap<CreateEditColorPaletteModel, ColorPalette>();
                 palette = Mapper.Map(viewModel, palette);
-                _systemService.Save(palette);
+                _projectRepo.Save(palette);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Settings.BrowseColorPalettes());
             }
@@ -106,11 +107,11 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpGet]
         public virtual ActionResult SelectColorPalette(int paletteId)
         {
-            var property = _systemService.GetPropertyByName<int>("colorPaletteId");
+            var property = _systemRepo.GetPropertyByName<int>("colorPaletteId");
 
             property.Value = paletteId;
 
-            _systemService.Save<int>(property);
+            _systemRepo.Save<int>(property);
             UnitOfWork.Commit();
 
             return RedirectToAction(MVC.Admin.Settings.BrowseColorPalettes());

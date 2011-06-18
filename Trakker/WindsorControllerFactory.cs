@@ -24,7 +24,7 @@
         public WindsorControllerFactory()
         {
             // Instantiate a container, taking configuration from web.config
-            container = WindsorContainerProvider.GetInstance();
+            container = WindsorContainerProvider.Instance();
 
             // Also register all the controller types as transient
             var controllerTypes =

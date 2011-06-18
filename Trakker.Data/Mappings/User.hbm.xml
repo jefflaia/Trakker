@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   namespace="Trakker.Data"
+                   assembly="Trakker.Data">
+
+<class name="User" table="[User]">
+  <id name="Id">
+    <generator class="identity" />
+  </id>
+  
+  <property name="Email" />
+  <property name="Password" />
+  <property name="Salt" />
+  <property name="Created" />
+  <property name="LastLogin" />
+  <property name="TotalComments" />
+  <property name="FailedPasswordAttemptCount" />
+  <property name="LastFailedLoginAttempt" />
+  <property name="FirstName" />
+  <property name="LastName" />
+
+  <one-to-one name="Role" class="Role"/>
+
+</class>
+
+</hibernate-mapping>
+

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   namespace="Trakker.Data"
+                   assembly="Trakker.Data">
+
+<class name="Project" >
+  <id name="Id">
+    <generator class="identity" />
+  </id>
+  
+  <property name="Name" />
+  <property name="KeyName" />
+  <property name="Lead" />
+  <property name="Due" />
+  <property name="Created" />
+  <property name="TicketIndex" />
+  <property name="Url" />
+  <property name="ColorPaletteId" />
+
+  <!--<one-to-one name="Lead" class="User"/>-->
+
+</class>
+
+</hibernate-mapping>
+

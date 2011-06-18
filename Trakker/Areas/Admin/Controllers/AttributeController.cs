@@ -11,11 +11,12 @@ namespace Trakker.Areas.Admin.Controllers
     using Trakker.Data;
     using Trakker.Controllers;
     using Trakker.Areas.Admin.Models;
+    using Trakker.Data.Repositories;
 
     public partial class AttributeController : MasterController
     {
-        public AttributeController(ITicketService ticketService, IUserService userService, IProjectService projectService)
-            : base(projectService, ticketService, userService)
+        public AttributeController(ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
+            : base(ticketService, userRepo, projectRepo, ticketRepo)
         {
         }
 
@@ -30,14 +31,14 @@ namespace Trakker.Areas.Admin.Controllers
         {
             return View(new CreateEditPriorityModel()
             {
-                Priorities = _ticketService.GetAllPriorities()
+                Priorities = _ticketRepo.GetPriorities()
             });
         }
 
         [HttpPost]
         public virtual ActionResult CreatePriority(CreateEditPriorityModel viewData)
         {
-            if (_ticketService.GetPriorityByName(viewData.Name) != null)
+            if (_ticketRepo.GetPriorityByName(viewData.Name) != null)
             {
                 ModelState.AddModelError("Name", "This value already exists.");
             }
@@ -47,19 +48,19 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.CreateMap<CreateEditPriorityModel, TicketPriority>();
                 TicketPriority priority = Mapper.Map(viewData, new TicketPriority());
 
-                _ticketService.Save(priority);
+                _ticketRepo.Save(priority);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Attribute.CreatePriority());
             }
 
-            viewData.Priorities = _ticketService.GetAllPriorities();
+            viewData.Priorities = _ticketRepo.GetPriorities();
 
             return View(viewData);
         }
 
         public virtual ActionResult EditPriority(int priorityId)
         {
-            TicketPriority priority = _ticketService.GetPriorityById(priorityId);
+            TicketPriority priority = _ticketRepo.GetPriorityById(priorityId);
             if (priority == null)
             {
                 return PermanentRedirectToAction(MVC.Error.InvalidAction());
@@ -72,13 +73,13 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpPost]
         public virtual ActionResult EditPriority(int priorityId, CreateEditPriorityModel viewData)
         {
-            TicketPriority priority = _ticketService.GetPriorityById(priorityId);
+            TicketPriority priority = _ticketRepo.GetPriorityById(priorityId);
             if (priority == null)
             {
                 return PermanentRedirectToAction(MVC.Error.InvalidAction());
             }
 
-            TicketPriority existingResolution = _ticketService.GetPriorityByName(viewData.Name);
+            TicketPriority existingResolution = _ticketRepo.GetPriorityByName(viewData.Name);
             if (existingResolution != null && existingResolution.Id != priorityId)
             {
                 ModelState.AddModelError("Name", "This value already exists.");
@@ -88,7 +89,7 @@ namespace Trakker.Areas.Admin.Controllers
             {
                 Mapper.CreateMap<CreateEditPriorityModel, TicketPriority>();
                 Mapper.Map(viewData, priority);
-                _ticketService.Save(priority);
+                _ticketRepo.Save(priority);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Attribute.CreatePriority());
             }
@@ -102,14 +103,14 @@ namespace Trakker.Areas.Admin.Controllers
         {
             return View(new CreateEditResolutionModel()
             {
-                Resolutions = _ticketService.GetAllResolutions()
+                Resolutions = _ticketRepo.GetResolutions()
             });
         }
 
         [HttpPost]
         public virtual ActionResult CreateResolution(CreateEditResolutionModel viewData)
         {
-            if (_ticketService.GetResolutionByName(viewData.Name) != null)
+            if (_ticketRepo.GetResolutionByName(viewData.Name) != null)
             {
                 ModelState.AddModelError("Name", "This value already exists.");
             }
@@ -119,12 +120,12 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.CreateMap<CreateEditResolutionModel, TicketResolution>();
                 TicketResolution resolution = Mapper.Map(viewData, new TicketResolution());
 
-                _ticketService.Save(resolution);
+                _ticketRepo.Save(resolution);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Attribute.CreateResolution());
             }
 
-            viewData.Resolutions = _ticketService.GetAllResolutions();
+            viewData.Resolutions = _ticketRepo.GetResolutions();
 
             return View(viewData);
         }
@@ -132,7 +133,7 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpGet]
         public virtual ActionResult EditResolution(int resolutionId)
         {
-            TicketResolution resolution = _ticketService.GetResolutionById(resolutionId);
+            TicketResolution resolution = _ticketRepo.GetResolutionById(resolutionId);
             if (resolution == null)
             {
                 return PermanentRedirectToAction(MVC.Error.InvalidAction());
@@ -145,13 +146,13 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpPost]
         public virtual ActionResult EditResolution(int resolutionId, CreateEditResolutionModel viewData)
         {
-            TicketResolution resolution = _ticketService.GetResolutionById(resolutionId);
+            TicketResolution resolution = _ticketRepo.GetResolutionById(resolutionId);
             if (resolution == null)
             {
                 return PermanentRedirectToAction(MVC.Error.InvalidAction());
             }
-            
-            TicketResolution existingResolution = _ticketService.GetResolutionByName(viewData.Name);
+
+            TicketResolution existingResolution = _ticketRepo.GetResolutionByName(viewData.Name);
             if (existingResolution != null && existingResolution.Id != resolutionId)
             {
                 ModelState.AddModelError("Name", "This value already exists.");
@@ -161,7 +162,7 @@ namespace Trakker.Areas.Admin.Controllers
             {
                 Mapper.CreateMap<CreateEditResolutionModel, TicketResolution>();
                 Mapper.Map(viewData, resolution);
-                _ticketService.Save(resolution);
+                _ticketRepo.Save(resolution);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Attribute.CreateResolution());
             }
@@ -175,14 +176,14 @@ namespace Trakker.Areas.Admin.Controllers
         public virtual ActionResult CreateStatus()
         {
             return View(new CreateEditStatusModel() { 
-                Statuses = _ticketService.GetAllStatus()
+                Statuses = _ticketRepo.GetStatus()
             });
         }
 
         [HttpPost]
         public virtual ActionResult CreateStatus(CreateEditStatusModel viewModel)
         {
-            if (_ticketService.GetStatusByName(viewModel.Name) != null)
+            if (_ticketRepo.GetStatusByName(viewModel.Name) != null)
             {
                 ModelState.AddModelError("Name", "The value already exists.");
             }
@@ -192,19 +193,19 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.CreateMap<CreateEditStatusModel, TicketStatus>();
                 TicketStatus status = Mapper.Map(viewModel, new TicketStatus());
 
-                _ticketService.Save(status);
+                _ticketRepo.Save(status);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Attribute.CreateStatus());
             }
 
-            viewModel.Statuses = _ticketService.GetAllStatus();
+            viewModel.Statuses = _ticketRepo.GetStatus();
             return View(viewModel);
         }
 
         [HttpGet]
         public virtual ActionResult EditStatus(int statusId)
         {
-            TicketStatus status = _ticketService.GetStatusWithId(statusId);
+            TicketStatus status = _ticketRepo.GetStatusById(statusId);
 
             if (status == null)
             {
@@ -218,13 +219,13 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpPost]
         public virtual ActionResult EditStatus(int statusId, CreateEditStatusModel viewModel)
         {
-            TicketStatus status = _ticketService.GetStatusWithId(statusId);
+            TicketStatus status = _ticketRepo.GetStatusById(statusId);
             if (status == null)
             {
                 return PermanentRedirectToAction(MVC.Error.InvalidAction());
             }
 
-            TicketStatus existingStatus = _ticketService.GetStatusByName(viewModel.Name);
+            TicketStatus existingStatus = _ticketRepo.GetStatusByName(viewModel.Name);
             if (existingStatus != null && existingStatus.Id != statusId)
             {
                 ModelState.AddModelError("Name", "This value already exists.");
@@ -235,7 +236,7 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.CreateMap<CreateEditStatusModel, TicketStatus>();
                 Mapper.Map(viewModel, status);
 
-                _ticketService.Save(status);
+                _ticketRepo.Save(status);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Attribute.CreateStatus());               
             }
@@ -250,14 +251,14 @@ namespace Trakker.Areas.Admin.Controllers
         {
             return View(new CreateEditTypeModel()
             {
-                Types = _ticketService.GetAllTypes()
+                Types = _ticketRepo.GetTypes()
             });
         }
 
         [HttpPost]
         public virtual ActionResult CreateType(CreateEditTypeModel viewModel)
         {
-            if (_ticketService.GetTypeByName(viewModel.Name) != null)
+            if (_ticketRepo.GetTypeByName(viewModel.Name) != null)
             {
                 ModelState.AddModelError("Name", "This value already exists.");
             }
@@ -266,18 +267,18 @@ namespace Trakker.Areas.Admin.Controllers
             {
                 Mapper.CreateMap<CreateEditTypeModel, TicketType>();
                 TicketType type = Mapper.Map(viewModel, new TicketType());
-                _ticketService.Save(type);
+                _ticketRepo.Save(type);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Attribute.CreateType()); ;
             }
 
-            viewModel.Types = _ticketService.GetAllTypes();
+            viewModel.Types = _ticketRepo.GetTypes();
             return View(viewModel);
         }
 
         public virtual ActionResult EditType(int typeId)
         {
-            TicketType type = _ticketService.GetTypeById(typeId);
+            TicketType type = _ticketRepo.GetTypeById(typeId);
 
             if (type == null)
             {
@@ -291,13 +292,13 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpPost]
         public virtual ActionResult EditType(int typeId, CreateEditTypeModel viewModel)
         {
-            TicketType type = _ticketService.GetTypeById(typeId);
+            TicketType type = _ticketRepo.GetTypeById(typeId);
             if (type == null)
             {
                 return PermanentRedirectToAction(MVC.Error.InvalidAction());
             }
 
-            TicketType existingType = _ticketService.GetTypeByName(viewModel.Name);
+            TicketType existingType = _ticketRepo.GetTypeByName(viewModel.Name);
             if (existingType != null && existingType.Id != typeId)
             {
                 ModelState.AddModelError("Name", "This value already exists.");
@@ -308,7 +309,7 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.CreateMap<CreateEditTypeModel, TicketType>();
                 Mapper.Map(viewModel, type);
 
-                _ticketService.Save(type);
+                _ticketRepo.Save(type);
                 UnitOfWork.Commit();
                 return RedirectToAction(MVC.Admin.Attribute.CreateType());
             }

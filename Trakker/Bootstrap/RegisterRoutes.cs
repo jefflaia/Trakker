@@ -35,6 +35,8 @@ namespace Trakker.Bootstrap
             ProjectRoutes.AddRoutes(ref _routes);
             TicketRoutes.AddRoutes(ref _routes);
 
+            _routes.MapRoute("Testing", "testing", new { controller = "User", action = "Testing" });
+
             //routes.MapRoute("Pagination", "paginator/{count}/{page}/{pageSize}", new { controller = "Nav", action = "TicketListPagination" });
 
             /**** SearchController ****/

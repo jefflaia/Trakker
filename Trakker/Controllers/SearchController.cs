@@ -14,14 +14,15 @@ using Trakker.Data;
 using Trakker.Data.Services;
 using Trakker.Models;
 using Trakker.Models.Search;
+using Trakker.Data.Repositories;
 
 namespace Trakker.Controllers
 {
     public partial class SearchController : MasterController
     {
 
-        public SearchController(ITicketService ticketService, IUserService userService, IProjectService projectService)
-            : base(projectService, ticketService, userService)
+        public SearchController(ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
+            : base(ticketService, userRepo, projectRepo, ticketRepo)
         {
         }
 
@@ -38,7 +39,7 @@ namespace Trakker.Controllers
             int totDocs = red.MaxDoc();
             red.Close();
 
-            foreach (var ticket in _ticketService.GetAllTickets())
+            foreach (var ticket in _ticketRepo.GetTicketsByProject(CurrentProject, 0, 1000).Items)
             {
                 AddListingToIndex(ticket, writer);
             }
@@ -72,7 +73,7 @@ namespace Trakker.Controllers
                 int id = 0;
                 if (int.TryParse(doc.Get("id"), out id))
                 {
-                    tickets.Add(_ticketService.GetTicketWithId(id));
+                    tickets.Add(_ticketRepo.GetTicketById(id));
                 }              
             }
 

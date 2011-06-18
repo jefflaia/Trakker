@@ -9,6 +9,7 @@ using Trakker.Data;
 using Trakker.Attributes;
 using AutoMapper;
 using Trakker.Models;
+using Trakker.Data.Repositories;
 
 namespace Trakker.Controllers
 {
@@ -16,21 +17,21 @@ namespace Trakker.Controllers
     public partial class ProjectController : MasterController
     {
 
-        public ProjectController(IProjectService projectService, IUserService userService, ITicketService ticketService)
-            : base(projectService, ticketService, userService)
+        public ProjectController(ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
+            : base(ticketService, userRepo, projectRepo, ticketRepo)
         {
         }
         
         #region Project
         public virtual ActionResult ProjectSummary(string keyName)
         {
-            CurrentProject = _projectService.GetProjectByKeyName(keyName);
+            CurrentProject = _projectRepo.GetProjectByKey(keyName);
 
             return View(new ProjectSummaryModel()
             {
                 Project = CurrentProject,
-                NewestTickets = _ticketService.GetNewestTicketsWithProjectId(CurrentProject.Id, 5),
-                Lead = _userService.GetUserWithId(CurrentProject.Lead)
+                NewestTickets = _ticketRepo.GetNewestTicketsByProject(CurrentProject, 0, 5).Items,
+                Lead = _userRepo.GetUserById(CurrentProject.Lead)
             });
         }
 
