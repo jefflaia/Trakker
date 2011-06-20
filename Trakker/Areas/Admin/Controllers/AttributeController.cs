@@ -49,7 +49,7 @@ namespace Trakker.Areas.Admin.Controllers
                 TicketPriority priority = Mapper.Map(viewData, new TicketPriority());
 
                 _ticketRepo.Save(priority);
-                UnitOfWork.Commit();
+                
                 return RedirectToAction(MVC.Admin.Attribute.CreatePriority());
             }
 
@@ -90,7 +90,7 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.CreateMap<CreateEditPriorityModel, TicketPriority>();
                 Mapper.Map(viewData, priority);
                 _ticketRepo.Save(priority);
-                UnitOfWork.Commit();
+                
                 return RedirectToAction(MVC.Admin.Attribute.CreatePriority());
             }
 
@@ -121,7 +121,7 @@ namespace Trakker.Areas.Admin.Controllers
                 TicketResolution resolution = Mapper.Map(viewData, new TicketResolution());
 
                 _ticketRepo.Save(resolution);
-                UnitOfWork.Commit();
+                
                 return RedirectToAction(MVC.Admin.Attribute.CreateResolution());
             }
 
@@ -163,7 +163,7 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.CreateMap<CreateEditResolutionModel, TicketResolution>();
                 Mapper.Map(viewData, resolution);
                 _ticketRepo.Save(resolution);
-                UnitOfWork.Commit();
+                
                 return RedirectToAction(MVC.Admin.Attribute.CreateResolution());
             }
 
@@ -194,7 +194,7 @@ namespace Trakker.Areas.Admin.Controllers
                 TicketStatus status = Mapper.Map(viewModel, new TicketStatus());
 
                 _ticketRepo.Save(status);
-                UnitOfWork.Commit();
+                
                 return RedirectToAction(MVC.Admin.Attribute.CreateStatus());
             }
 
@@ -237,7 +237,7 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.Map(viewModel, status);
 
                 _ticketRepo.Save(status);
-                UnitOfWork.Commit();
+                
                 return RedirectToAction(MVC.Admin.Attribute.CreateStatus());               
             }
 
@@ -268,7 +268,7 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.CreateMap<CreateEditTypeModel, TicketType>();
                 TicketType type = Mapper.Map(viewModel, new TicketType());
                 _ticketRepo.Save(type);
-                UnitOfWork.Commit();
+                
                 return RedirectToAction(MVC.Admin.Attribute.CreateType()); ;
             }
 
@@ -310,7 +310,7 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.Map(viewModel, type);
 
                 _ticketRepo.Save(type);
-                UnitOfWork.Commit();
+                
                 return RedirectToAction(MVC.Admin.Attribute.CreateType());
             }
 

@@ -3,7 +3,7 @@
   xmlns="urn:nhibernate-mapping-2.2" namespace="Trakker.Data"
                    assembly="Trakker.Data">
 
-<class name="Property">
+<class name="Property" table="[Property]">
   <id name="Id">
     <generator class="identity" />
   </id>

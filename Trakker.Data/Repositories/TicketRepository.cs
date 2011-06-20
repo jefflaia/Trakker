@@ -15,24 +15,9 @@ namespace Trakker.Data.Repositories
 
     public class TicketRepository : Repository, ITicketRepository
     {
-        protected DataContext _dataContext;
-        protected Table<Sql.TicketPriority> _prioritiesTable;
-        protected Table<Sql.TicketType> _typeTable;
-        protected Table<Sql.Ticket> _ticketsTable;
-        protected Table<Sql.TicketStatus> _statusesTable;
-        protected Table<Sql.Comment> _commentsTable;
-        protected Table<Sql.TicketResolution> _resolutionTable;
-
-        public TicketRepository(IDataContextProvider dataContextProvider, ISession session) : base(session)
+        public TicketRepository(ISession session) : base(session)
         {
-            DataContext dataContext = dataContextProvider.DataContext;
 
-            _prioritiesTable = dataContext.GetTable<Sql.TicketPriority>();
-            _typeTable = dataContext.GetTable<Sql.TicketType>();
-            _ticketsTable = dataContext.GetTable<Sql.Ticket>();
-            _statusesTable = dataContext.GetTable<Sql.TicketStatus>();
-            _commentsTable = dataContext.GetTable<Sql.Comment>();
-            _resolutionTable = dataContext.GetTable<Sql.TicketResolution>();
         }
 
         #region Status
@@ -152,29 +137,6 @@ namespace Trakker.Data.Repositories
             return Session.CreateQuery("from Ticket t where t.AssignedToUserId = ?")
                 .SetInt32(0, user.Id)
                 .List<Ticket>();
-        }
-
-        public IQueryable<Ticket> GetTickets()
-        {
-            return from t in _ticketsTable
-                   select new Ticket
-                   {
-                       Id = t.Id,
-                       Description = t.Description,
-                       Created = t.Created,
-                       DueDate = t.DueDate,
-                       PriorityId = t.PriorityId,
-                       CategoryId = t.CategoryId,
-                       ResolutionId = t.ResolutionId,
-                       Summary = t.Summary,
-                       StatusId = t.StatusId,
-                       KeyName = t.KeyName,
-                       AssignedByUserId = t.AssignedByUserId,
-                       AssignedToUserId = t.AssignedToUserId,
-                       ProjectId = t.ProjectId,
-                       CreatedByUserId = t.CreatedByUserId,
-                       IsClosed = t.IsClosed
-                   };
         }
 
         public void Save(Ticket ticket)

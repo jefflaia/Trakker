@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using NHibernate;
 
-namespace Trakker.Data
+namespace Trakker.Data.Utilities
 {
-    public interface INHUnitOfWork : IDisposable
+    public interface IUnitOfWork : IDisposable
     {
-         ISession Context { get; }
+         ISession Current { get; }
+         void Begin();
          void Commit();
          void Rollback();
     }

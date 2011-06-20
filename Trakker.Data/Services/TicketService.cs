@@ -7,16 +7,19 @@ namespace Trakker.Data.Services
     using System.Linq;
     using System.Text;
     using Trakker.Data.Repositories;
+    using Trakker.Data.Utilities;
 
     public class TicketService : ITicketService
     {
         ITicketRepository _ticketRepository;
         IProjectRepository _projectRepository;
+        IUnitOfWork _uow;
 
-        public TicketService(ITicketRepository ticketRepository, IProjectRepository projectRepository)
+        public TicketService(IUnitOfWork uow, ITicketRepository ticketRepository, IProjectRepository projectRepository)
         {
             _ticketRepository = ticketRepository;
             _projectRepository = projectRepository;
+            _uow = uow;
         }
 
         #region Ticket
@@ -27,10 +30,13 @@ namespace Trakker.Data.Services
 
         public void AddTicketToProject(Ticket ticket, Project project)
         {
+            _uow.Begin();
             project.TicketIndex++;
 
             _projectRepository.Save(project);
             _ticketRepository.Save(ticket);
+            _uow.Commit();
+
         }
         #endregion
 

@@ -36,9 +36,9 @@ namespace Trakker.Controllers
 
             StyleSheetRenderer renderer = new StyleSheetRenderer(RecoAssets.StyleSheet());
             Project project = _projectRepo.GetProjectById(ProjectCookie.Read());
-            Property<int> property = _systemRepo.GetPropertyByName<int>("ColorPaletteId");
+            Property property = _systemRepo.GetPropertyByKey<int>("ColorPaletteId");
 
-            renderer.Model = _projectRepo.GetColorPaletteById(project == null ? property.Value : project.ColorPaletteId);
+            renderer.Model = _projectRepo.GetColorPaletteById(project == null ? 3 : project.ColorPaletteId);
                         
             return new StyleSheetResult()
             {

@@ -73,7 +73,7 @@ namespace Trakker.Areas.Admin.Controllers
                 User user = Mapper.Map(viewModel, new User());
 
                 _userRepo.Save(user);
-                UnitOfWork.Commit();
+                
                 return RedirectToAction(MVC.Admin.Management.BrowseUsers());
             }
 
@@ -114,7 +114,7 @@ namespace Trakker.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 _userRepo.Save(user);
-                UnitOfWork.Commit();
+                
                 return RedirectToRoute(MVC.Admin.Management.ViewUser(userId));
             }
 
@@ -147,7 +147,7 @@ namespace Trakker.Areas.Admin.Controllers
             {
                 user.Password = Auth.HashPassword(user.Password, user.Salt);
                 _userRepo.Save(user);
-                UnitOfWork.Commit();
+                
                 return RedirectToAction(MVC.Admin.Management.ViewUser(userId));
             }
 
@@ -174,6 +174,7 @@ namespace Trakker.Areas.Admin.Controllers
             return View(new ViewProjectModel()
                 {
                     Project = project,
+                    Palette = _projectRepo.GetColorPaletteById(project.ColorPaletteId),
                     User = _userRepo.GetUserById(project.Lead)
                 });
         }
@@ -182,7 +183,8 @@ namespace Trakker.Areas.Admin.Controllers
         {
             return View(new CreateProjectModel()
             {
-                Users = _userRepo.GetUsers()
+                Users = _userRepo.GetUsers(),
+                ColorPalettes = _projectRepo.GetColorPalettes()
             });
         }
 
@@ -207,12 +209,13 @@ namespace Trakker.Areas.Admin.Controllers
 
                 project.Created = DateTime.Now;
                 _projectRepo.Save(project);
-                UnitOfWork.Commit();
+                
                 return RedirectToAction(MVC.Admin.Management.ViewProject(viewModel.KeyName));
             }
 
 
             viewModel.Users = _userRepo.GetUsers();
+            viewModel.ColorPalettes = _projectRepo.GetColorPalettes();
 
             return View(viewModel);
         }
@@ -231,6 +234,7 @@ namespace Trakker.Areas.Admin.Controllers
             EditProjectModel viewModel = Mapper.Map(project, new EditProjectModel());
 
             viewModel.Users = _userRepo.GetUsers();
+            viewModel.ColorPalettes = _projectRepo.GetColorPalettes();
 
             return View(viewModel);
         }
@@ -261,11 +265,12 @@ namespace Trakker.Areas.Admin.Controllers
                 project = Mapper.Map(viewModel, project);
 
                 _projectRepo.Save(project);
-                UnitOfWork.Commit();
+                
                 return RedirectToRoute(MVC.Admin.Management.ViewProject(project.KeyName));
             }
 
             viewModel.Users = _userRepo.GetUsers();
+            viewModel.ColorPalettes = _projectRepo.GetColorPalettes();
 
             return View(viewModel);
         }

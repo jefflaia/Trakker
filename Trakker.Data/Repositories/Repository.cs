@@ -110,6 +110,12 @@ namespace Trakker.Data.Repositories
         public void Save(object entity)
         {
             Session.SaveOrUpdate(entity);
+
+            //only flush imediately if we are not in a transaction
+            if (Session.Transaction.IsActive == false)
+            {
+                Session.Flush();
+            }
         }
 
         public void Dispose()

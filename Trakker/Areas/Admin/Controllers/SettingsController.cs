@@ -60,7 +60,7 @@ namespace Trakker.Areas.Admin.Controllers
                 ColorPalette palette = Mapper.Map(viewModel, new ColorPalette());
 
                 _projectRepo.Save(palette);
-                UnitOfWork.Commit();
+                
                 return RedirectToAction(MVC.Admin.Settings.BrowseColorPalettes());
             }
 
@@ -98,7 +98,7 @@ namespace Trakker.Areas.Admin.Controllers
                 Mapper.CreateMap<CreateEditColorPaletteModel, ColorPalette>();
                 palette = Mapper.Map(viewModel, palette);
                 _projectRepo.Save(palette);
-                UnitOfWork.Commit();
+                
                 return RedirectToAction(MVC.Admin.Settings.BrowseColorPalettes());
             }
             return View(viewModel);
@@ -107,12 +107,12 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpGet]
         public virtual ActionResult SelectColorPalette(int paletteId)
         {
-            var property = _systemRepo.GetPropertyByName<int>("colorPaletteId");
+            var property = _systemRepo.GetPropertyByKey<int>("colorPaletteId");
 
-            property.Value = paletteId;
+            //property.Value = paletteId;
 
-            _systemRepo.Save<int>(property);
-            UnitOfWork.Commit();
+           // _systemRepo.Save<int>(property);
+            
 
             return RedirectToAction(MVC.Admin.Settings.BrowseColorPalettes());
         }

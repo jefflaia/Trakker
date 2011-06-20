@@ -113,8 +113,8 @@
     <Compile Include="Models\Property.cs" />
     <Compile Include="Models\SystemSettings.cs" />
     <Compile Include="Models\TicketResolution.cs" />
-    <Compile Include="INHUnitOfWork.cs" />
-    <Compile Include="NHUnitOfWork.cs" />
+    <Compile Include="Utilities\IUnitOfWork.cs" />
+    <Compile Include="Utilities\UnitOfWork.cs" />
     <Compile Include="ProjectCookie.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -157,7 +157,6 @@
     <Compile Include="SessionCookie.cs" />
     <Compile Include="Services\ITicketService.cs" />
     <Compile Include="Services\TicketService.cs" />
-    <Compile Include="UnitOfWork.cs" />
     <Compile Include="Utilities\NameValue.cs" />
     <Compile Include="Utilities\ObjectExtensions.cs" />
     <Compile Include="Utilities\PropertyInfoExtensions.cs" />

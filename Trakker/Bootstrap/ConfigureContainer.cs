@@ -12,8 +12,7 @@ using NHibernate;
 using Castle.MicroKernel.Registration;
 using Trakker.Data.Repositories;
 using Trakker.Data.Services;
-
-
+using Trakker.Data.Utilities;
 
 
 namespace Trakker.Bootstrap
@@ -58,7 +57,11 @@ namespace Trakker.Bootstrap
                 Component.For<ITicketService>()
                 .ImplementedBy<TicketService>()
                 .LifeStyle.PerWebRequest);
-            
+
+            _container.Register(
+                Component.For<IUnitOfWork>()
+                .ImplementedBy<UnitOfWork>()
+                .LifeStyle.PerWebRequest);   
         }
     }
 }

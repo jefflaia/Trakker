@@ -162,7 +162,7 @@ namespace Trakker.Controllers
                 ticket.KeyName = _ticketService.GenerateTicketKey(CurrentProject);
 
                 _ticketService.AddTicketToProject(ticket, CurrentProject);
-                UnitOfWork.Commit();
+                
 
                 return RedirectToRoute("BrowseTickets");
             }
@@ -219,7 +219,7 @@ namespace Trakker.Controllers
                 ticket = Mapper.Map(viewData, ticket);
 
                 _ticketRepo.Save(ticket);
-                UnitOfWork.Commit();
+                
 
                 return RedirectToRoute(MVC.Ticket.TicketDetails(keyName));
             }
@@ -267,7 +267,7 @@ namespace Trakker.Controllers
                 comment.UserId = Auth.CurrentUser.Id;
                 comment.TicketId = ticket.Id;
                 _ticketRepo.Save(comment);
-                UnitOfWork.Commit();
+                
 
                 return RedirectToAction(MVC.Ticket.TicketDetails(keyName));
             }
@@ -321,7 +321,7 @@ namespace Trakker.Controllers
                 originalComment.Modified = DateTime.Now;
                 _ticketRepo.Save(originalComment);
 
-                UnitOfWork.Commit();
+                
                 return RedirectToAction(MVC.Ticket.TicketDetails(keyName));
             }
 

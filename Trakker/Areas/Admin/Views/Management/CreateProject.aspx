@@ -38,6 +38,12 @@
             %>
 
             <%= Html.FormRow()
+                .AddToLeft(Html.LabelFor(m => m.ColorPaletteId))
+                .AddToRight(Html.DropDownListFor(m => m.ColorPaletteId, Model.ColorPalettes.ToSelectList("Id", "Name")))
+                .AddToRight(Html.ValidationMessageFor(x => x.ColorPaletteId))
+            %>
+
+            <%= Html.FormRow()
                 .AddToRight(Html.SaveButton("Save", null))
             %>
 

@@ -32,8 +32,6 @@ namespace Trakker.Controllers
             _userRepo = userRepo;
             _projectRepo = projectRepo;
             _ticketRepo = ticketRepo;
-
-            UnitOfWork = WindsorContainerProvider.Resolve<IUnitOfWork>();
         }
 
         #region MasterPage
@@ -62,9 +60,7 @@ namespace Trakker.Controllers
         public bool IsProjectSelected()
         {
             return CurrentProject != null;
-        }
-
-        public IUnitOfWork UnitOfWork { get; set; }      
+        }     
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {

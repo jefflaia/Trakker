@@ -8,6 +8,7 @@
         <p><strong>Url:</strong> <%: Model.Project.Url %></p>
         <p><strong>Created:</strong> <%: Model.Project.Created %></p>
         <p><strong>Due:</strong> <%: Model.Project.Due %></p>
+        <p><strong>Palette:</strong> <%: Model.Palette.Name %></p>
         <p><%: Html.RouteLink("Edit",  "EditProject", new { keyName = Model.Project.KeyName.ToLower() }) %></p>
     </div>
     

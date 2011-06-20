@@ -47,7 +47,7 @@ namespace Trakker.Controllers
                     User user = _userRepo.GetUserByEmail(viewData.Email);
                     user.LastLogin = DateTime.Now;
                     _userRepo.Save(user);
-                    UnitOfWork.Commit();
+                    
 
                     Auth.LogUserIn(user);
 
@@ -63,7 +63,7 @@ namespace Trakker.Controllers
                         user.FailedPasswordAttemptCount++;
                         user.LastFailedLoginAttempt = DateTime.Now;
                         _userRepo.Save(user);
-                        UnitOfWork.Commit();
+                        
                     }
                 }
             }
@@ -143,7 +143,7 @@ namespace Trakker.Controllers
             {
                 user.Password = Auth.HashPassword(user.Password, user.Salt);
                 _userRepo.Save(user);
-                UnitOfWork.Commit();
+                
                 return RedirectToAction(MVC.User.UserProfile(userId));
             }
 

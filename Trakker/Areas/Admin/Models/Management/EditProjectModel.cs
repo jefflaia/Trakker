@@ -27,7 +27,11 @@
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         public int Lead { get; set; }
 
+        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
+        public int ColorPaletteId { get; set; }
+
         public IList<User> Users { get; set; }
+        public IList<ColorPalette> ColorPalettes { get; set; }
 
     }
 }

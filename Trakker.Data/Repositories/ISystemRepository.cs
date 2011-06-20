@@ -9,8 +9,8 @@
     {
 
 
-        Property<T> GetPropertyByName<T>(string name);
-        void Save<T>(Property<T> property);
+        Property GetPropertyByKey<T>(string key);
+        void Save(Property property);
         
     }
 }
