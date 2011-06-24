@@ -5,8 +5,6 @@
     using System.Linq;
     using System.Text;
     using System.Data.Linq;
-
-    using Sql = Access;
     using NHibernate;
     using NHibernate.Cfg;
 

@@ -129,20 +129,7 @@
     <Compile Include="Repositories\IProjectRepository.cs" />
     <Compile Include="Repositories\ProjectRepository.cs" />
     <Compile Include="Repositories\TicketRepository.cs" />
-    <Compile Include="Access\TrakkerDB.cs">
-      <DependentUpon>TrakkerDB.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Access\TrakkerDB.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TrakkerDB.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Access\TrakkerDBDataContext.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
-    <Compile Include="Access\ConnectionStringProvider.cs" />
-    <Compile Include="Access\DataContextProvider.cs" />
-    <Compile Include="Access\IConnectionStringProvider.cs" />
-    <Compile Include="Access\IDataContextProvider.cs" />
     <Compile Include="Models\Paginated.cs" />
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -153,7 +140,7 @@
     <Compile Include="Models\TicketType.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Services\RandomHash.cs" />
+    <Compile Include="Utilities\RandomHash.cs" />
     <Compile Include="SessionCookie.cs" />
     <Compile Include="Services\ITicketService.cs" />
     <Compile Include="Services\TicketService.cs" />
@@ -165,11 +152,6 @@
     <Compile Include="Utilities\SystemSettingsLoader.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Access\TrakkerDB.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>TrakkerDB.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="App.Config" />
     <None Include="nhibernate-configuration.xsd">
       <SubType>Designer</SubType>
@@ -184,11 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Access\TrakkerDB.dbml.layout">
-      <DependentUpon>TrakkerDB.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

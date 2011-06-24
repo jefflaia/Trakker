@@ -62,13 +62,17 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gallio, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Gallio.dll</HintPath>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq">
+      <HintPath>..\Lib\Moq.dll</HintPath>
     </Reference>
-    <Reference Include="MbUnit, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+    <Reference Include="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\MbUnit.dll</HintPath>
+      <HintPath>..\Lib\nHibernate\Required_Bins\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations">
@@ -92,18 +96,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Filters\CommentFiltersTests.cs" />
-    <Compile Include="Data\Filters\BaseFiltersTests.cs" />
-    <Compile Include="Data\Filters\UserFiltersTests.cs" />
-    <Compile Include="Data\Filters\StatusFiltersTests.cs" />
-    <Compile Include="Data\Filters\CategoryFiltersTests.cs" />
-    <Compile Include="Data\Filters\SeverityFiltersTests.cs" />
-    <Compile Include="Data\Filters\PriorityFiltersTests.cs" />
-    <Compile Include="Data\Filters\TaskFiltersTests.cs" />
-    <Compile Include="Data\Repositorys\TaskRepositoryTest.cs" />
-    <Compile Include="Data\Repositorys\UserRepositoryTest.cs" />
+    <Compile Include="Data\Services\TicketServiceTests.cs" />
+    <Compile Include="Data\Utilities\RandomHashTests.cs" />
+    <Compile Include="Data\Utilities\UnitOfWorkTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\PaginationTests.cs" />
+    <Compile Include="Data\Utilities\SlugGeneratorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AuthoringTests.txt" />
@@ -113,13 +111,18 @@
       <Project>{A9547E24-5633-4817-8B4A-E35AF672EAFB}</Project>
       <Name>Trakker.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Trakker.Infastructure\Trakker.Infastructure.csproj">
+      <Project>{7EB18BB4-26C5-4F8B-A30E-42EF404719CF}</Project>
+      <Name>Trakker.Infastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Trakker\Trakker.csproj">
       <Project>{389ADED5-60D1-4C97-B2A5-FEE75CDA20E3}</Project>
       <Name>Trakker</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <Folder Include="Data\Repositories\" />
+    <Folder Include="Infastructure\ActivityStream\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

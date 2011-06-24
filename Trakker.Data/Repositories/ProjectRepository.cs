@@ -7,8 +7,6 @@
     using AutoMapper;
     using System.Data.Linq;
     using Trakker.Data;
-
-    using Sql = Access;
     using NHibernate;
 
     public class ProjectRepository : Repository, IProjectRepository

@@ -6,8 +6,6 @@
     using System.Text;
     using AutoMapper;
     using System.Data.Linq;
-
-    using Sql = Access;
     using System.Globalization;
     using System.Reflection;
     using NHibernate;

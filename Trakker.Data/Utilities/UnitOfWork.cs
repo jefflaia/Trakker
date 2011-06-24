@@ -15,6 +15,7 @@ namespace Trakker.Data.Utilities
         public UnitOfWork(ISession session)
         {
             session.FlushMode = FlushMode.Auto; //default
+            _session = session;
         }
  
         public ISession Current
@@ -46,8 +47,6 @@ namespace Trakker.Data.Utilities
 
             _transaction.Commit();
 
-            //start a new transaction
-            _transaction = _session.BeginTransaction();
         }
  
         /// <summary>

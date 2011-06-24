@@ -31,7 +31,9 @@ namespace Trakker.Data.Services
         public void AddTicketToProject(Ticket ticket, Project project)
         {
             _uow.Begin();
+
             project.TicketIndex++;
+            ticket.ProjectId = project.Id;
 
             _projectRepository.Save(project);
             _ticketRepository.Save(ticket);

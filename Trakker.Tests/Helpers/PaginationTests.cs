@@ -2,9 +2,8 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using MbUnit.Framework;
-using Gallio.Framework;
 using Trakker.Helpers;
+using NUnit.Framework;
 
 namespace Trakker.Tests.ViewModels
 {
@@ -123,21 +122,21 @@ namespace Trakker.Tests.ViewModels
         public void LowerboundCannotBeGreaterThanIndex()
         {
             Pagination p = new Pagination(10, 1, 1, -10);
-            Assert.LessThanOrEqualTo(p.Lowerbound, p.Index);
+            Assert.LessOrEqual(p.Lowerbound, p.Index);
         }
 
         [Test]
         public void UpperboundCannotBeLessThanIndex()
         {
             Pagination p = new Pagination(10, 1, 1, -10);
-            Assert.GreaterThanOrEqualTo(p.Upperbound, p.Index);
+            Assert.GreaterOrEqual(p.Upperbound, p.Index);
         }
 
         [Test]
         public void UpperboundCannotBeGreaterThanTotalPages()
         {
             Pagination p = new Pagination(20, 9, 2, 10);
-            Assert.GreaterThanOrEqualTo(p.Upperbound, p.Index);
+            Assert.GreaterOrEqual(p.Upperbound, p.Index);
         }
 
         [Test]

@@ -1,5 +1,5 @@
 ﻿
-namespace Trakker.Data.Services
+namespace Trakker.Data.Utilities
 {
     using System;
     using System.Collections.Generic;

@@ -6,6 +6,7 @@ using Trakker.Data.Services;
 using Trakker.Core.IoC;
 using System.Security.Cryptography;
 using Trakker.Data.Repositories;
+using Trakker.Data.Utilities;
 
 namespace Trakker.Data
 {

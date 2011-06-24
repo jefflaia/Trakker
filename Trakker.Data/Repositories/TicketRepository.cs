@@ -8,8 +8,6 @@ namespace Trakker.Data.Repositories
     using System.Web;
     using AutoMapper;
     using Trakker.Core.Extensions;
-
-    using Sql = Trakker.Data.Access;
     using NHibernate;
     using NHibernate.Criterion;
 
