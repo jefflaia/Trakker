@@ -46,6 +46,7 @@ namespace Trakker.Data.Utilities
             }
 
             _transaction.Commit();
+            _transaction = null;
 
         }
  
@@ -66,7 +67,7 @@ namespace Trakker.Data.Utilities
  
         public void Dispose()
         {
-            if (_session != null)
+            if (_session != null && _session.IsOpen)
             {
                 _session.Close();
             }

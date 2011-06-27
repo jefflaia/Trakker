@@ -21,3 +21,5 @@ D:\Projects\ASPNET\Trakker\BaseMasterController\bin\Debug\Telerik.Web.Mvc.dll
 D:\Projects\ASPNET\Trakker\BaseMasterController\obj\Debug\ResolveAssemblyReference.cache
 D:\Projects\ASPNET\Trakker\BaseMasterController\obj\Debug\Trakker.Core.dll
 D:\Projects\ASPNET\Trakker\BaseMasterController\obj\Debug\Trakker.Core.pdb
+D:\Projects\ASPNET\Trakker\building\Trakker.Core.dll
+D:\Projects\ASPNET\Trakker\building\Trakker.Core.pdb
