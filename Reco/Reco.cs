@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using ResourceCompiler;
 using ResourceCompiler.Assets;
+using System.Web;
 
 namespace ResourceCompiler
 {
@@ -12,7 +13,7 @@ namespace ResourceCompiler
         private static string _linkTemplate = "<link rel=\"stylesheet\" type=\"text/css\" {0} href=\"{1}\" />";
         private static string _scriptTemplate = "<script type=\"text/javascript\" src=\"{0}\" ></script>";
 
-        public static string Link(string path)
+        public static HtmlString Link(string path)
         {
             //check if path has a starting slash, if not add it
             //dont add v=? if not versioning
@@ -30,10 +31,10 @@ namespace ResourceCompiler
 
             media = string.Format(media, assets.MediaType);
             url = string.Format(url, path, version);
-            return String.Format(_linkTemplate, media, url);
+            return new HtmlString(String.Format(_linkTemplate, media, url));
         }
 
-        public static string Script(string path)
+        public static HtmlString Script(string path)
         {
             IJavaScriptAssets assets = RecoAssets.JavaScript();
 
@@ -46,7 +47,7 @@ namespace ResourceCompiler
             }
 
             url = string.Format(url, path, version);
-            return String.Format(_scriptTemplate, url);
+            return new HtmlString(String.Format(_scriptTemplate, url));
         }
     }
 }

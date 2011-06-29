@@ -11,6 +11,7 @@ using System;
 using System.Diagnostics;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.Hosting;
@@ -41,14 +42,14 @@ namespace Trakker.Controllers {
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "search";
+        public readonly string Name = "Search";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionNamesClass ActionNames { get { return s_actions; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass {
-            public readonly string SearchIndex = ("SearchIndex").ToLowerInvariant();
+            public readonly string SearchIndex = "SearchIndex";
         }
 
 

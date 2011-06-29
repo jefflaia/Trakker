@@ -11,6 +11,7 @@ using System;
 using System.Diagnostics;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.Hosting;
@@ -28,7 +29,9 @@ namespace T4MVC {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
             public readonly string ActivityStream = "~/Views/Shared/ActivityStream.ascx";
+            public readonly string Basic = "~/Views/Shared/Basic.cshtml";
             public readonly string Error = "~/Views/Shared/Error.aspx";
+            public readonly string Master = "~/Views/Shared/Master.cshtml";
             public readonly string Menu = "~/Views/Shared/Menu.ascx";
         }
     }

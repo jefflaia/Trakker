@@ -4,7 +4,7 @@
 
     <% if (Model.HasPreviousPage)
        { %>
-         <%= Html.ActionLink<TicketController>(x => x.BrowseTickets(Model.PreviousPage), "«")%>
+         <%= Html.ActionLink( "«", MVC.Ticket.BrowseTickets(Model.PreviousPage))%>
     <% } else {%>
         <a>«</a>
     <% } %>
@@ -14,14 +14,14 @@
 
         <% if (i == Model.Index)
            { %>
-            <%= Html.ActionLink<TicketController>(x => x.BrowseTickets(i), i.ToString(), new { @class = "Current" })%>
+            <%= Html.ActionLink(i.ToString(), MVC.Ticket.BrowseTickets(i), new { @class = "Current" })%>
         <% } else { %>
-           <%= Html.ActionLink<TicketController>(x => x.BrowseTickets(i), i.ToString())%>
+           <%= Html.ActionLink(i.ToString(), MVC.Ticket.BrowseTickets(i))%>
         <% } %>
     <% } %>
     
     <% if (Model.HasNextPage){ %>
-        <%= Html.ActionLink<TicketController>(x => x.BrowseTickets(Model.NextPage), "»")%>
+        <%= Html.ActionLink("»", MVC.Ticket.BrowseTickets(Model.NextPage))%>
     <% } else {%>
         <a>»</a>
     <% } %>

@@ -11,6 +11,7 @@ using System;
 using System.Diagnostics;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.Hosting;
@@ -37,7 +38,7 @@ public static class MVC {
 namespace T4MVC {
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public class AdminClass {
-        public readonly string Name = "admin";
+        public readonly string Name = "Admin";
         public Trakker.Areas.Admin.Controllers.AttributeController Attribute = new Trakker.Areas.Admin.Controllers.T4MVC_AttributeController();
         public Trakker.Areas.Admin.Controllers.ManagementController Management = new Trakker.Areas.Admin.Controllers.T4MVC_ManagementController();
         public Trakker.Areas.Admin.Controllers.SettingsController Settings = new Trakker.Areas.Admin.Controllers.T4MVC_SettingsController();
@@ -45,6 +46,7 @@ namespace T4MVC {
     }
 }
 
+   
 namespace System.Web.Mvc {
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public static class T4Extensions {
@@ -56,8 +58,16 @@ namespace System.Web.Mvc {
             return ActionLink(htmlHelper, linkText, result, new RouteValueDictionary(htmlAttributes));
         }
 
-        public static MvcHtmlString ActionLink(this HtmlHelper htmlHelper, string linkText, ActionResult result, IDictionary<string, object> htmlAttributes) {
-            return htmlHelper.RouteLink(linkText, result.GetRouteValueDictionary(), htmlAttributes);
+        public static MvcHtmlString ActionLink(this HtmlHelper htmlHelper, string linkText, ActionResult result, object htmlAttributes, string protocol = null, string hostName = null, string fragment = null) {
+            return ActionLink(htmlHelper, linkText, result, new RouteValueDictionary(htmlAttributes), protocol, hostName, fragment);
+        }
+
+        public static MvcHtmlString ActionLink(this HtmlHelper htmlHelper, string linkText, ActionResult result, IDictionary<string, object> htmlAttributes, string protocol = null, string hostName = null, string fragment = null) {
+            return htmlHelper.RouteLink(linkText, null, protocol, hostName, fragment, result.GetRouteValueDictionary(), htmlAttributes);
+        }
+
+        public static MvcForm BeginForm(this HtmlHelper htmlHelper, ActionResult result) {
+            return htmlHelper.BeginForm(result, FormMethod.Post);
         }
 
         public static MvcForm BeginForm(this HtmlHelper htmlHelper, ActionResult result, FormMethod formMethod) {
@@ -83,7 +93,11 @@ namespace System.Web.Mvc {
             return htmlHelper.Action(callInfo.Action, callInfo.Controller, callInfo.RouteValueDictionary);
         }
         public static string Action(this UrlHelper urlHelper, ActionResult result) {
-            return urlHelper.RouteUrl(result.GetRouteValueDictionary());
+            return urlHelper.RouteUrl(null, result.GetRouteValueDictionary());
+        }
+
+        public static string Action(this UrlHelper urlHelper, ActionResult result, string protocol = null, string hostName = null) {
+            return urlHelper.RouteUrl(null, result.GetRouteValueDictionary(), protocol, hostName);
         }
 
         public static string ActionAbsolute(this UrlHelper urlHelper, ActionResult result) {
@@ -101,6 +115,19 @@ namespace System.Web.Mvc {
 
         public static MvcHtmlString ActionLink(this AjaxHelper ajaxHelper, string linkText, ActionResult result, AjaxOptions ajaxOptions, IDictionary<string, object> htmlAttributes) {
             return ajaxHelper.RouteLink(linkText, result.GetRouteValueDictionary(), ajaxOptions, htmlAttributes);
+        }
+
+        public static MvcForm BeginForm(this AjaxHelper ajaxHelper, ActionResult result, AjaxOptions ajaxOptions) {
+            return ajaxHelper.BeginForm(result, ajaxOptions, null);
+        }
+
+        public static MvcForm BeginForm(this AjaxHelper ajaxHelper, ActionResult result, AjaxOptions ajaxOptions, object htmlAttributes) {
+            return BeginForm(ajaxHelper, result, ajaxOptions, new RouteValueDictionary(htmlAttributes));
+        }
+
+        public static MvcForm BeginForm(this AjaxHelper ajaxHelper, ActionResult result, AjaxOptions ajaxOptions, IDictionary<string, object> htmlAttributes) {
+            var callInfo = result.GetT4MVCResult();
+            return ajaxHelper.BeginForm(callInfo.Action, callInfo.Controller, callInfo.RouteValueDictionary, ajaxOptions, htmlAttributes);
         }
 
         public static Route MapRoute(this RouteCollection routes, string name, string url, ActionResult result) {
@@ -153,9 +180,14 @@ namespace System.Web.Mvc {
 
         public static Route MapRouteArea(this AreaRegistrationContext context, string name, string url, ActionResult result, object defaults, object constraints, string[] namespaces) {
             // Create and add the route
+            if ((namespaces == null) && (context.Namespaces != null)) {
+                 namespaces = context.Namespaces.ToArray();
+            }
             var route = CreateRoute(url, result, defaults, constraints, namespaces);
             context.Routes.Add(name, route);
             route.DataTokens["area"] = context.AreaName;
+            bool useNamespaceFallback = (namespaces == null) || (namespaces.Length == 0);
+            route.DataTokens["UseNamespaceFallback"] = useNamespaceFallback;
             return route;
         }
 
@@ -245,6 +277,19 @@ namespace System.Web.Mvc {
     }
 }
 
+
+
+namespace T4MVC {
+    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+    public class Dummy {
+        private Dummy() { }
+        public static Dummy Instance = new Dummy();
+    }
+}
+
+
+  
+
    
 [GeneratedCode("T4MVC", "2.0")]   
 public interface IT4MVCActionResult {   
@@ -327,10 +372,14 @@ namespace Links {
                       
         public static readonly string jquery_1_4_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.4.1.min.js") ? Url("jquery-1.4.1.min.js") : Url("jquery-1.4.1.js");
                       
+        public static readonly string jquery_1_4_1_min_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.4.1.min-vsdoc.min.js") ? Url("jquery-1.4.1.min-vsdoc.min.js") : Url("jquery-1.4.1.min-vsdoc.js");
+                      
         public static readonly string jquery_1_4_1_min_js = Url("jquery-1.4.1.min.js");
         public static readonly string jquery_validate_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate-vsdoc.min.js") ? Url("jquery.validate-vsdoc.min.js") : Url("jquery.validate-vsdoc.js");
                       
         public static readonly string jquery_validate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.min.js") ? Url("jquery.validate.min.js") : Url("jquery.validate.js");
+                      
+        public static readonly string jquery_validate_min_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.min-vsdoc.min.js") ? Url("jquery.validate.min-vsdoc.min.js") : Url("jquery.validate.min-vsdoc.js");
                       
         public static readonly string jquery_validate_min_js = Url("jquery.validate.min.js");
         public static readonly string jqueryTools_tabs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jqueryTools.tabs.min.js") ? Url("jqueryTools.tabs.min.js") : Url("jqueryTools.tabs.js");
@@ -611,14 +660,6 @@ static class T4MVCHelpers {
 
 
 
-
-namespace T4MVC {
-    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public class Dummy {
-        private Dummy() { }
-        public static Dummy Instance = new Dummy();
-    }
-}
 
 	
 

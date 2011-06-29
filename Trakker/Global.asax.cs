@@ -11,7 +11,6 @@
     using System.Configuration;
     using System.ComponentModel;
 
-
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
 
@@ -21,6 +20,7 @@
         protected void Application_Start()
         {
             Bootstrapper.Run();
+            ViewEngines.Engines.Add(new RazorViewEngine());
         }
 
         protected void Application_BeginRequest()

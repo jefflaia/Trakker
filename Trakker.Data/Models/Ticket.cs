@@ -20,6 +20,14 @@ namespace Trakker.Data
         public virtual int AssignedByUserId { get; set; }
 
         public virtual TicketStatus Status { get; set; }
+        public virtual TicketType Type { get; set; }
+        public virtual TicketResolution Resolution { get; set; }
+        public virtual TicketPriority Priority { get; set; }
+
+        public virtual User AssignedTo { get; set; }
+        public virtual User AssignedBy { get; set; }
+        public virtual User CreatedBy { get; set; }
+
 
     }
 }

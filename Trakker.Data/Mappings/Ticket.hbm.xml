@@ -23,6 +23,10 @@
   <property name="ProjectId" />
   <property name="KeyName" />
 
+  <many-to-one name="Type" class="TicketType" column="CategoryId"/>
+  <many-to-one name="Priority" class="TicketPriority" column="PriorityId"/>
+  <many-to-one name="Status" class="TicketStatus" column="StatusId"/>
+  <many-to-one name="Resolution" class="TicketResolution" column="ResolutionId"/>
   
 </class>
 

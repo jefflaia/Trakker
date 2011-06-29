@@ -27,44 +27,23 @@ namespace Trakker.Controllers
         public virtual ActionResult TicketDetails(string keyName)
         {
             Ticket ticket = _ticketRepo.GetTicketByKey(keyName);
+            ticket.AssignedBy = _userRepo.GetUserById(ticket.AssignedByUserId);
+            ticket.CreatedBy = _userRepo.GetUserById(ticket.CreatedByUserId);
+            ticket.AssignedTo = _userRepo.GetUserById(ticket.AssignedToUserId);
 
             var comments = _ticketRepo.GetCommentsByTicket(ticket);
-            var users = new Dictionary<int, User>();
-            
-            //avoid querying for the same user more than once
             foreach (var comment in comments)
             {
-                if (users.ContainsKey(comment.UserId))
-                {
-                    comment.User = users[comment.UserId];
-                }
-                else
-                {
-                    users.Add(comment.UserId, _userRepo.GetUserById(comment.UserId));
-                    comment.User = users[comment.UserId];
-                }
+                comment.User = _userRepo.GetUserById(comment.UserId);
             }
-
+            
             var activityStream = new TicketActivityStream(_userRepo, _ticketRepo);
             activityStream.Ticket = ticket;
 
             TicketDetailsModel viewData = new TicketDetailsModel()
             {
-                Id = ticket.Id,
-                Summary = ticket.Summary,
-                Description = ticket.Description,
-                Created = ticket.Created,
-                DueDate = ticket.DueDate,
-                Status = _ticketRepo.GetStatusById(ticket.StatusId),
-                Priority = _ticketRepo.GetPriorityById(ticket.PriorityId),
-                Cateogory = _ticketRepo.GetTypeById(ticket.CategoryId),
-                Resolution = _ticketRepo.GetResolutionById(ticket.ResolutionId),
-                KeyName = ticket.KeyName,
+                Ticket = ticket,
                 Comments = comments,
-                IsClosed = ticket.IsClosed,
-                AssignedBy = _userRepo.GetUserById(ticket.AssignedByUserId),
-                CreatedBy = _userRepo.GetUserById(ticket.CreatedByUserId),
-                AssignedTo = _userRepo.GetUserById(ticket.AssignedToUserId),
                 ActivityGroups = activityStream.Generate(15, 0)
             };
          

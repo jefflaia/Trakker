@@ -11,6 +11,7 @@ using System;
 using System.Diagnostics;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.Hosting;
@@ -44,20 +45,20 @@ namespace Trakker.Areas.Admin.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public SettingsController Actions { get { return MVC.Admin.Settings; } }
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Area = "admin";
+        public readonly string Area = "Admin";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "settings";
+        public readonly string Name = "Settings";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionNamesClass ActionNames { get { return s_actions; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass {
-            public readonly string Index = ("Index").ToLowerInvariant();
-            public readonly string BrowseColorPalettes = ("BrowseColorPalettes").ToLowerInvariant();
-            public readonly string CreateColorPalette = ("CreateColorPalette").ToLowerInvariant();
-            public readonly string EditColorPalette = ("EditColorPalette").ToLowerInvariant();
-            public readonly string SelectColorPalette = ("SelectColorPalette").ToLowerInvariant();
+            public readonly string Index = "Index";
+            public readonly string BrowseColorPalettes = "BrowseColorPalettes";
+            public readonly string CreateColorPalette = "CreateColorPalette";
+            public readonly string EditColorPalette = "EditColorPalette";
+            public readonly string SelectColorPalette = "SelectColorPalette";
         }
 
 

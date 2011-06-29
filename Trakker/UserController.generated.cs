@@ -11,6 +11,7 @@ using System;
 using System.Diagnostics;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.Hosting;
@@ -46,18 +47,18 @@ namespace Trakker.Controllers {
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "user";
+        public readonly string Name = "User";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionNamesClass ActionNames { get { return s_actions; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass {
-            public readonly string Login = ("Login").ToLowerInvariant();
-            public readonly string Logout = ("Logout").ToLowerInvariant();
-            public readonly string UserProfile = ("UserProfile").ToLowerInvariant();
-            public readonly string ChangePassword = ("ChangePassword").ToLowerInvariant();
-            public readonly string Testing = ("Testing").ToLowerInvariant();
+            public readonly string Login = "Login";
+            public readonly string Logout = "Logout";
+            public readonly string UserProfile = "UserProfile";
+            public readonly string ChangePassword = "ChangePassword";
+            public readonly string Testing = "Testing";
         }
 
 

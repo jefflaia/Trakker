@@ -6,8 +6,8 @@
     <div id="TicketDetails">
         <div class="Header">
             <img src="../../Content/Images/TestTicketIcon.png" />
-            <p><%: Model.KeyName  %></p>
-            <h1><%: Model.Summary %></h1>
+            <p><%: Model.Ticket.KeyName%></p>
+            <h1><%: Model.Ticket.Summary%></h1>
         </div>
 
         <div class="Buttons">
@@ -25,13 +25,13 @@
             <h2>Details</h2>     
             
             <ul>
-                <li><label>Priority:</label>    <span><%= Model.Priority.Name%></span></li>
-                <li><label>Category:</label>    <span><%= Model.Cateogory.Name%></span></li>
-                <li><label>Status:</label>      <span><%= Model.Status.Name%></span></li>
-                <li><label>Created:</label>     <span><%= Model.Created%></span></li>
-                <li><label>DueDate:</label>     <span><%= Model.DueDate%></span></li>
-                <li><label>Resoltuion:</label>  <span><%= Model.Resolution.Name %></span></li>
-                <li><label>Status:</label>      <span><%= Model.IsClosed ? "Closed" : "Open" %></span></li>
+                <li><label>Priority:</label>    <span><%= Model.Ticket.Priority.Name %></span></li>
+                <li><label>Category:</label>    <span><%= Model.Ticket.Type.Name %></span></li>
+                <li><label>Status:</label>      <span><%= Model.Ticket.Status.Name %></span></li>
+                <li><label>Created:</label>     <span><%= Model.Ticket.Created %></span></li>
+                <li><label>Due Date:</label>     <span><%= Model.Ticket.DueDate.ToString()%></span></li>
+                <li><label>Resoltuion:</label>  <span><%= Model.Ticket.Resolution.Name%></span></li>
+                <li><label>Status:</label>      <span><%= Model.Ticket.IsClosed ? "Closed" : "Open"%></span></li>
             </ul>                         
         </div>
         
@@ -39,23 +39,23 @@
             <h2>People</h2>
 
             <ul>
-                <li><label>Assigned To:</label>     <span><%: Html.ActionLink(Model.AssignedBy.FullName(), MVC.User.UserProfile(Model.AssignedBy.Id)) %></span></li>
-                <li><label>Created By:</label>      <span><%: Html.ActionLink(Model.CreatedBy.FullName(), MVC.User.UserProfile(Model.CreatedBy.Id)) %></span></li>
-                <li><label>Assigned By:</label>     <span><%: Html.ActionLink(Model.AssignedTo.FullName(), MVC.User.UserProfile(Model.AssignedTo.Id)) %></span></li>
+                <li><label>Assigned To:</label>     <span><%: Html.ActionLink(Model.Ticket.AssignedBy.FullName(), MVC.User.UserProfile(Model.Ticket.AssignedBy.Id))%></span></li>
+                <li><label>Created By:</label>      <span><%: Html.ActionLink(Model.Ticket.CreatedBy.FullName(), MVC.User.UserProfile(Model.Ticket.CreatedBy.Id))%></span></li>
+                <li><label>Assigned By:</label>     <span><%: Html.ActionLink(Model.Ticket.AssignedTo.FullName(), MVC.User.UserProfile(Model.Ticket.AssignedTo.Id))%></span></li>
             </ul>        
         </div>
 
         <div class="Dates List SubSection">
             <h2>Dates</h2>
             <ul>
-            <li><label>Created:</label>     <span><%= Model.Created %></span></li>
-            <li><label>Due Date:</label>    <span><%= Model.DueDate %></span></li>
+            <li><label>Created:</label>     <span><%= Model.Ticket.Created %></span></li>
+            <li><label>Due Date:</label>    <span><%= Model.Ticket.DueDate %></span></li>
             </ul>
         </div>
 
         <div class="Desc SubSection">
             <h2>Description:</h2>
-            <div><%= Model.Description%></div>
+            <div><%= Model.Ticket.Description%></div>
         </div>
 
         <div class="TimeTracking SubSection">
