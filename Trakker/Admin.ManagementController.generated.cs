@@ -87,7 +87,7 @@ namespace Trakker.Areas.Admin.Controllers {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
-            public readonly string BrowseProjects = "~/Areas/Admin/Views/Management/BrowseProjects.aspx";
+            public readonly string BrowseProjects = "~/Areas/Admin/Views/Management/BrowseProjects.cshtml";
             public readonly string BrowseUsers = "~/Areas/Admin/Views/Management/BrowseUsers.aspx";
             public readonly string CreateProject = "~/Areas/Admin/Views/Management/CreateProject.aspx";
             public readonly string CreateUser = "~/Areas/Admin/Views/Management/CreateUser.aspx";

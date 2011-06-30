@@ -1,0 +1,14 @@
+﻿@model MasterModel
+
+@{
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+@{Html.RenderPartial("SubNavigation");}
+<div id="Content">
+    <div class="InnerBorder">
+        @RenderBody()
+    </div>
+</div>
+
+

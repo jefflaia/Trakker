@@ -401,7 +401,7 @@
     <Content Include="Scripts\jqueryTools.tabs.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
-    <Content Include="Areas\Admin\Views\Management\BrowseProjects.aspx" />
+    <None Include="Areas\Admin\Views\Management\BrowseProjects.cshtml" />
     <Content Include="Areas\Admin\Views\Management\EditProject.aspx" />
     <Content Include="Areas\Admin\Views\Management\CreateProject.aspx" />
     <Content Include="Views\Error\InvalidAction.aspx" />
@@ -426,6 +426,8 @@
     <Content Include="Views\Ticket\EditComment.aspx" />
     <Content Include="Views\Ticket\CreateEditCommentForm.ascx" />
     <Content Include="Views\Ticket\CreateComment.aspx" />
+    <None Include="Areas\Admin\Views\Shared\Admin.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <None Include="Views\Ticket\_TicketDetailsCommentsTab.cshtml" />
     <Content Include="Views\Ticket\CreateTicket.aspx" />
     <Content Include="Views\Ticket\CreateEditTicketForm.ascx" />
