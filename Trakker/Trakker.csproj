@@ -426,10 +426,10 @@
     <Content Include="Views\Ticket\EditComment.aspx" />
     <Content Include="Views\Ticket\CreateEditCommentForm.ascx" />
     <Content Include="Views\Ticket\CreateComment.aspx" />
-    <Content Include="Views\Ticket\TicketDetailsCommentsTab.ascx" />
+    <None Include="Views\Ticket\_TicketDetailsCommentsTab.cshtml" />
     <Content Include="Views\Ticket\CreateTicket.aspx" />
     <Content Include="Views\Ticket\CreateEditTicketForm.ascx" />
-    <Content Include="Views\Ticket\TicketDetails.aspx" />
+    <None Include="Views\Ticket\TicketDetails.cshtml" />
     <Content Include="Views\Ticket\EditTicket.aspx" />
     <Content Include="Views\User\Logout.aspx" />
     <Content Include="Views\User\UserProfile.aspx" />

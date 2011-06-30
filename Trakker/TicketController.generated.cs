@@ -83,6 +83,7 @@ namespace Trakker.Controllers {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
+            public readonly string _TicketDetailsCommentsTab = "~/Views/Ticket/_TicketDetailsCommentsTab.cshtml";
             public readonly string BrowseTickets = "~/Views/Ticket/BrowseTickets.cshtml";
             public readonly string CreateComment = "~/Views/Ticket/CreateComment.aspx";
             public readonly string CreateEditCommentForm = "~/Views/Ticket/CreateEditCommentForm.ascx";
@@ -90,8 +91,7 @@ namespace Trakker.Controllers {
             public readonly string CreateTicket = "~/Views/Ticket/CreateTicket.aspx";
             public readonly string EditComment = "~/Views/Ticket/EditComment.aspx";
             public readonly string EditTicket = "~/Views/Ticket/EditTicket.aspx";
-            public readonly string TicketDetails = "~/Views/Ticket/TicketDetails.aspx";
-            public readonly string TicketDetailsCommentsTab = "~/Views/Ticket/TicketDetailsCommentsTab.ascx";
+            public readonly string TicketDetails = "~/Views/Ticket/TicketDetails.cshtml";
         }
     }
 
