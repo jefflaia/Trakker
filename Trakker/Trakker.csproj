@@ -59,6 +59,10 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\Lib\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="FluentNHibernate, Version=1.2.0.712, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\nHibernate\fluent 1.2\FluentNHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="Lucene.Net">
       <HintPath>..\Lib\Lucene.Net.dll</HintPath>
     </Reference>
@@ -199,7 +203,6 @@
     </Compile>
     <Compile Include="Bootstrap\RegisterControllerFactory.cs" />
     <Compile Include="Bootstrap\RegisterRoutes.cs" />
-    <Compile Include="NHibernateFactory.cs" />
     <Compile Include="Results\CustomCodeRedirectResult.cs" />
     <Compile Include="ProjectController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>

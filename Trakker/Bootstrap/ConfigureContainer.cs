@@ -13,6 +13,7 @@ using Castle.MicroKernel.Registration;
 using Trakker.Data.Repositories;
 using Trakker.Data.Services;
 using Trakker.Data.Utilities;
+using FluentNHibernate.Cfg;
 
 
 namespace Trakker.Bootstrap
@@ -30,7 +31,7 @@ namespace Trakker.Bootstrap
         {
             _container.Register(
                 Component.For<ISession>()
-                .UsingFactoryMethod(() => NHibernateFactory.OpenSession())
+                .UsingFactoryMethod(() => Trakker.Data.NHibernateFactory.OpenSession())
                 .LifeStyle.PerWebRequest);
             
             _container.Register(
@@ -61,7 +62,11 @@ namespace Trakker.Bootstrap
             _container.Register(
                 Component.For<IUnitOfWork>()
                 .ImplementedBy<UnitOfWork>()
-                .LifeStyle.PerWebRequest);   
+                .LifeStyle.PerWebRequest);
+
+
+            FluentConfiguration configuration = Fluently.Configure()
+                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<Trakker.Data.Project>()); 
         }
     }
 }

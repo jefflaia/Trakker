@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using NHibernate.Cfg;
 using NHibernate;
+using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;
 
-namespace Trakker
+namespace Trakker.Data
 {
     public class NHibernateFactory
     {
