@@ -10,7 +10,7 @@ using Telerik.Web.Mvc.UI;
 
 namespace Trakker.Core.Forms
 {
-    public class FormRow
+    public class FormRow : IHtmlString
     {
         protected IList<string> _rightMarkup;
         protected IList<string> _leftMarkup;
@@ -68,11 +68,6 @@ namespace Trakker.Core.Forms
             return containerDiv.ToString();
         }
 
-        public override string ToString()
-        {
-            return Render();
-        }
-
         protected string BuildLeft()
         {
             TagBuilder leftDiv = new TagBuilder("div");
@@ -127,6 +122,11 @@ namespace Trakker.Core.Forms
         {
             AddToRight(viewComponentBuilderBase.ToString());
             return this;
+        }
+
+        string IHtmlString.ToHtmlString()
+        {
+            return Render();
         }
     }
 }

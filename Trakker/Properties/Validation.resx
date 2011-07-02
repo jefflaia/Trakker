@@ -121,6 +121,10 @@
     <value>Not a valid email address.</value>
     <comment>Checks for a valid email address.</comment>
   </data>
+  <data name="InvalidUri" xml:space="preserve">
+    <value>Not a valid Url.</value>
+    <comment>Poorly formatted</comment>
+  </data>
   <data name="PasswordLength" xml:space="preserve">
     <value>This field must be 8 to 100 characters long.</value>
     <comment>Min and max length of a password</comment>

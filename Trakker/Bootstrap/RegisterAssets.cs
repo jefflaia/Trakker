@@ -21,6 +21,7 @@ namespace Trakker.Bootstrap
                 .Add("~/Content/Admin/Settings.css")
                 .Add("~/Content/Ticket.css")
                 .Add("~/Content/User.css")
+                .Add("~/Content/smoothness/jquery-ui-1.8.14.custom.css")
                 .AddDynamic("~/Content/Theme.css")
                 .Media(MediaType.Screen)
                 .Combine(true)
@@ -29,8 +30,10 @@ namespace Trakker.Bootstrap
                 .SetCompressor(new YuiCompressor());
 
             RecoAssets.JavaScript()
-                .Add("~/Scripts/jquery-1.4.1.js")
-                .Add("~/Scripts/jqueryTools.tabs.js")
+                .Add("~/Scripts/Libraries/jquery-1.5.1.min.js")
+                .Add("~/Scripts/Libraries/jqueryTools.tabs.js")
+                .Add("~/Scripts/Libraries/jquery-ui-1.8.14.custom.min.js")
+                .Add("~/Scripts/global-onload.js")
                 .Combine(true)
                 .Compress(true)
                 .Version(true)

@@ -8,22 +8,30 @@ using Trakker.Core.Forms;
 using System.Web.Mvc.Html;
 using System.Linq.Expressions;
 using Trakker.Core;
+using System.Web;
 
 namespace Trakker.Helpers
 {
 
     public static class HtmlHelperExtentions
     {
+
         public static FormRow FormRow(this HtmlHelper helper)
         {
             return new FormRow();
         }
 
-        public static string FormHR(this HtmlHelper helper)
+        public static HtmlString DatePickerFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression)
+        {
+            return htmlHelper.TextBoxFor<TModel, TProperty>(expression, new { @class = "DatePicker" });
+        }
+
+
+        public static HtmlString FormHR(this HtmlHelper helper)
         {
             TagBuilder tag = new TagBuilder("div");
             tag.AddCssClass("HorizontalRule");
-            return tag.ToString();
+            return new HtmlString(tag.ToString());
         }
 
         public static string StyledSubmitButton(this HtmlHelper helper, string text, object attributes)

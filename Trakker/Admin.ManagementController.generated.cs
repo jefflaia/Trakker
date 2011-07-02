@@ -91,7 +91,7 @@ namespace Trakker.Areas.Admin.Controllers {
             public readonly string BrowseUsers = "~/Areas/Admin/Views/Management/BrowseUsers.aspx";
             public readonly string CreateProject = "~/Areas/Admin/Views/Management/CreateProject.aspx";
             public readonly string CreateUser = "~/Areas/Admin/Views/Management/CreateUser.aspx";
-            public readonly string EditProject = "~/Areas/Admin/Views/Management/EditProject.aspx";
+            public readonly string EditProject = "~/Areas/Admin/Views/Management/EditProject.cshtml";
             public readonly string EditUser = "~/Areas/Admin/Views/Management/EditUser.aspx";
             public readonly string EditUserPassword = "~/Areas/Admin/Views/Management/EditUserPassword.aspx";
             public readonly string Index = "~/Areas/Admin/Views/Management/Index.aspx";

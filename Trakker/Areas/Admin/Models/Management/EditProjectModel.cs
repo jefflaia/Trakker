@@ -9,6 +9,7 @@
     using System.ComponentModel;
     using Trakker.Data;
     using Trakker.Models;
+    using Trakker.Core;
 
     public class EditProjectModel : MasterModel
     {
@@ -18,6 +19,7 @@
 
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         [StringLength(100, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_100")]
+        [Uri(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "InvalidUri")]
         public string Url { get; set; }
 
         [DisplayName("Due Date")]
@@ -27,6 +29,7 @@
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         public int Lead { get; set; }
 
+        [DisplayName("Color Palette")]
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         public int ColorPaletteId { get; set; }
 
