@@ -94,6 +94,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Validation\UriTest.cs" />
     <Compile Include="Data\Services\TicketServiceTests.cs" />
     <Compile Include="Data\Utilities\RandomHashTests.cs" />
     <Compile Include="Data\Utilities\UnitOfWorkTests.cs" />
@@ -106,6 +107,10 @@
     <Content Include="AuthoringTests.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BaseMasterController\Trakker.Core.csproj">
+      <Project>{CF243D83-CEF5-448B-8E56-DE3149AF4319}</Project>
+      <Name>Trakker.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Trakker.Data\Trakker.Data.csproj">
       <Project>{A9547E24-5633-4817-8B4A-E35AF672EAFB}</Project>
       <Name>Trakker.Data</Name>
