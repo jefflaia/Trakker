@@ -31,8 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,6 +53,11 @@
     <Compile Include="Streams\Activity\Model\ActivityGroupModel.cs" />
     <Compile Include="Streams\Activity\Model\ActivityModel.cs" />
     <Compile Include="Streams\Activity\UserActivityStream.cs" />
+    <Compile Include="Uploading\FileUploader.cs" />
+    <Compile Include="Uploading\File.cs" />
+    <Compile Include="Uploading\IFileUploader.cs" />
+    <Compile Include="Uploading\IPathResolver.cs" />
+    <Compile Include="Uploading\ProjectResolver.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BaseMasterController\Trakker.Core.csproj">

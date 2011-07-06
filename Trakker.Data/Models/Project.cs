@@ -11,7 +11,9 @@ namespace Trakker.Data
         public virtual int TicketIndex { get; set; }
         public virtual string Url { get; set; }
         public virtual int ColorPaletteId { get; set; }
+        public virtual int AvatarId { get; set; }
 
         public virtual ColorPalette ColorPalette { get; set; }
+        public virtual File Avatar { get; set; }
     }
 }

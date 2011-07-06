@@ -10,6 +10,8 @@ using Trakker.Attributes;
 using AutoMapper;
 using Trakker.Data;
 using Trakker.Data.Repositories;
+using System.IO;
+using Trakker.Infastructure;
 
 namespace Trakker.Areas.Admin.Controllers
 {
@@ -273,6 +275,18 @@ namespace Trakker.Areas.Admin.Controllers
             viewModel.ColorPalettes = _projectRepo.GetColorPalettes();
 
             return View(viewModel);
+        }
+
+        [HttpPost]
+        public virtual ActionResult UploadFile()
+        {
+            Project project = _projectRepo.GetProjectById(1);
+
+            IPathResolver pathResolver = new ProjectAvatarPathResolver("D:", project);
+            IFileUploader fileUploader = new FileUploader(Request, pathResolver);
+            fileUploader.Upload();
+
+            return View();
         }
         #endregion
     }

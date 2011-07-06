@@ -58,6 +58,7 @@
 
             base.Save(project);
         }
+
         #endregion
 
         #region ColorPalette

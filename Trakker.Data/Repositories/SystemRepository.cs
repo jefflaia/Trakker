@@ -27,5 +27,10 @@
         {
             base.Save(property);
         }
+
+        public void Save(File file)
+        {
+            base.Save(file);
+        }
     }
 }

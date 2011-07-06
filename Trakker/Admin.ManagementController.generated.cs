@@ -79,6 +79,7 @@ namespace Trakker.Areas.Admin.Controllers {
             public readonly string ViewProject = "ViewProject";
             public readonly string CreateProject = "CreateProject";
             public readonly string EditProject = "EditProject";
+            public readonly string UploadFile = "UploadFile";
         }
 
 
@@ -189,6 +190,11 @@ namespace Trakker.Areas.Admin.Controllers {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditProject);
             callInfo.RouteValueDictionary.Add("keyName", keyName);
             callInfo.RouteValueDictionary.Add("viewModel", viewModel);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult UploadFile() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.UploadFile);
             return callInfo;
         }
 

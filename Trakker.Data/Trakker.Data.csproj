@@ -104,7 +104,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth.cs" />
+    <Compile Include="Mappings\FileMap.cs" />
     <Compile Include="Mappings\ProjectMap.cs" />
+    <Compile Include="Models\File.cs" />
     <Compile Include="NHibernateFactory.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Models\BaseEntity.cs" />
@@ -221,6 +223,7 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\File.hbm.xml" />
     <Content Include="Mappings\Property.hbm.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

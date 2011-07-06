@@ -24,6 +24,11 @@ namespace Trakker.Data.Mappings
                 .Column("ColorPaletteId")
                 .Not.Insert()
                 .Not.Update();
+
+            References<File>(p => p.Avatar)
+                .Column("AvatarId")
+                .Not.Insert()
+                .Not.Update();
             
         }
     }
