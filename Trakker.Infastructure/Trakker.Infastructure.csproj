@@ -54,10 +54,10 @@
     <Compile Include="Streams\Activity\Model\ActivityModel.cs" />
     <Compile Include="Streams\Activity\UserActivityStream.cs" />
     <Compile Include="Uploading\FileUploader.cs" />
-    <Compile Include="Uploading\File.cs" />
     <Compile Include="Uploading\IFileUploader.cs" />
     <Compile Include="Uploading\IPathResolver.cs" />
-    <Compile Include="Uploading\ProjectResolver.cs" />
+    <Compile Include="Uploading\ProjectAvatarPathResolver.cs" />
+    <Compile Include="Uploading\UploadManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BaseMasterController\Trakker.Core.csproj">

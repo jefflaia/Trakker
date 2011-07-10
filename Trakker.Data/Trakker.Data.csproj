@@ -117,6 +117,8 @@
     <Compile Include="Models\Property.cs" />
     <Compile Include="Models\SystemSettings.cs" />
     <Compile Include="Models\TicketResolution.cs" />
+    <Compile Include="Services\IProjectService.cs" />
+    <Compile Include="Services\ProjectService.cs" />
     <Compile Include="Utilities\IUnitOfWork.cs" />
     <Compile Include="Utilities\UnitOfWork.cs" />
     <Compile Include="ProjectCookie.cs" />

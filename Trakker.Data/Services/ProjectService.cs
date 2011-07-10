@@ -18,5 +18,11 @@ namespace Trakker.Data.Services
 
         }
 
+
+        public void ChangeProjectAvatar(File file)
+        {
+            file.Usage = FileUsage.ProjectAvatar;
+            _systemRepo.Save(file);
+        }
     }
 }

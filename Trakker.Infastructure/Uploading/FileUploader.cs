@@ -9,47 +9,27 @@ namespace Trakker.Infastructure
 {
     public class FileUploader : IFileUploader
     {
-        private string _path;
         private IList<HttpPostedFileBase> _postedFiles;
 
 
-        public IList<File> Files { get; set; }
-
-        public FileUploader(HttpRequestBase request, IPathResolver pathResolver)
+        public FileUploader(HttpRequestBase request)
         {
-            _path = pathResolver.ResolvePath(); ;
             _postedFiles = GetPostedFiles(request);
-            Files = new List<File>();
         }
 
-        public virtual void Upload()
+        public virtual void Upload(string destinationPath)
         {
             foreach (HttpPostedFileBase postedFile in _postedFiles)
             {
-                string filename = GenerateFileName(postedFile.FileName);
+                string filename = GenerateFileName(destinationPath, postedFile.FileName);
                 postedFile.SaveAs(filename);
-                AddFile(postedFile);
             }
         }
 
         #region Private Members
-        private string GenerateFileName(string postedFileName)
+        private string GenerateFileName(string path, string postedFileName)
         {
-            return Path.Combine(
-                   _path,
-                   Path.GetFileName(postedFileName));
-        }
-
-        private void AddFile(HttpPostedFileBase postedFile)
-        {
-            Files.Add(new File
-            {
-                Name = Path.GetFileName(postedFile.FileName),
-                Ext = Path.GetExtension(postedFile.FileName),
-                Path = Path.GetFullPath(postedFile.FileName),
-                ContentType = postedFile.ContentType,
-                ContentLength = postedFile.ContentLength,
-            });
+            return Path.Combine(path, Path.GetFileName(postedFileName));
         }
 
         private IList<HttpPostedFileBase> GetPostedFiles(HttpRequestBase request)

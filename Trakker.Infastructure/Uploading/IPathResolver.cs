@@ -8,5 +8,7 @@ namespace Trakker.Infastructure
     public interface IPathResolver
     {
         string ResolvePath();
+        bool PathExists();
+        void CreatePath();
     }
 }

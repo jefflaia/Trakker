@@ -8,7 +8,7 @@ namespace Trakker.Infastructure
 {
     public interface IFileUploader
     {
-        void Upload();
-        IList<File> Files{ get; set; }
+        void Upload(string destinationPath);
+
     }
 }
