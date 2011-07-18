@@ -5,7 +5,7 @@ using System.Text;
 using Trakker.Data;
 using System.IO;
 
-namespace Trakker.Infastructure
+namespace Trakker.Infastructure.Uploading
 {
     public class ProjectAvatarPathResolver : IPathResolver
     {

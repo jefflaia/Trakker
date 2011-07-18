@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
@@ -53,10 +54,12 @@
     <Compile Include="Streams\Activity\Model\ActivityGroupModel.cs" />
     <Compile Include="Streams\Activity\Model\ActivityModel.cs" />
     <Compile Include="Streams\Activity\UserActivityStream.cs" />
-    <Compile Include="Uploading\FileUploader.cs" />
+    <Compile Include="Uploading\IImageProfile.cs" />
+    <Compile Include="Uploading\ImageUploader.cs" />
     <Compile Include="Uploading\IFileUploader.cs" />
     <Compile Include="Uploading\IPathResolver.cs" />
     <Compile Include="Uploading\ProjectAvatarPathResolver.cs" />
+    <Compile Include="Uploading\ProjectImageProfile.cs" />
     <Compile Include="Uploading\UploadManager.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -12,6 +12,7 @@ using Trakker.Data;
 using Trakker.Data.Repositories;
 using System.IO;
 using Trakker.Infastructure;
+using Trakker.Infastructure.Uploading;
 
 namespace Trakker.Areas.Admin.Controllers
 {
@@ -283,8 +284,8 @@ namespace Trakker.Areas.Admin.Controllers
             Project project = _projectRepo.GetProjectById(1);
 
             IPathResolver pathResolver = new ProjectAvatarPathResolver("D:\\TestHome", project);
-            IFileUploader fileUploader = new FileUploader(Request);
-            UploadManager uploader = new UploadManager(pathResolver, fileUploader);
+            IFileUploader fileUploader = new ImageUploader(new ProjectImageProfile());
+            UploadManager uploader = new UploadManager(Request, pathResolver, fileUploader);
 
             uploader.Upload();
 

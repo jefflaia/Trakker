@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
 
 
-namespace Trakker.Infastructure
+namespace Trakker.Infastructure.Uploading
 {
     public interface IFileUploader
     {
-        void Upload(string destinationPath);
+        void Upload(HttpPostedFileBase file, string destinationPath);
 
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Trakker.Infastructure
+namespace Trakker.Infastructure.Uploading
 {
     public interface IPathResolver
     {
