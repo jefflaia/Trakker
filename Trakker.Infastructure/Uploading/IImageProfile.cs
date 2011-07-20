@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Trakker.Infastructure.Uploading
 {
-    public class ImageProperties
+    public class ImageAttributes
     {
         public int Width { get; set; }
         public int Height { get; set; }
@@ -16,9 +16,9 @@ namespace Trakker.Infastructure.Uploading
     public interface IImageProfile
     {
         string Identifier { get; }
-        ImageProperties Icon{ get; }
-        ImageProperties Thumbnail { get; }
-        ImageProperties Large { get; }
+        ImageAttributes Icon{ get; }
+        ImageAttributes Thumbnail { get; }
+        ImageAttributes Large { get; }
         bool KeepOriginal { get; }
     }
 }

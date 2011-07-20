@@ -59,7 +59,7 @@
     <Compile Include="Uploading\IFileUploader.cs" />
     <Compile Include="Uploading\IPathResolver.cs" />
     <Compile Include="Uploading\ProjectAvatarPathResolver.cs" />
-    <Compile Include="Uploading\ProjectImageProfile.cs" />
+    <Compile Include="Uploading\AvatarImageProfile.cs" />
     <Compile Include="Uploading\UploadManager.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -284,7 +284,7 @@ namespace Trakker.Areas.Admin.Controllers
             Project project = _projectRepo.GetProjectById(1);
 
             IPathResolver pathResolver = new ProjectAvatarPathResolver("D:\\TestHome", project);
-            IFileUploader fileUploader = new ImageUploader(new ProjectImageProfile());
+            IFileUploader fileUploader = new ImageUploader(new AvatarImageProfile());
             UploadManager uploader = new UploadManager(Request, pathResolver, fileUploader);
 
             uploader.Upload();
