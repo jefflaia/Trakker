@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Trakker.Infastructure.UI
 {
-    public interface IImageHtmlBuilderFactory<T> where T : struct
+    public interface IImageHtmlBuilderFactory
     {
         IImageBaseHtmlBuilder Create(ImageBase element);
     }

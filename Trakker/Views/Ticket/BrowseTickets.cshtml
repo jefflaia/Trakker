@@ -34,4 +34,10 @@
     </tbody>
 </table>
 
-@Html.Action("Pagination", "Nav", new { count = Model.TotalTickets, page = Model.Page, pageSize = Model.PageSize }); 
+@Html.Action("Pagination", "Nav", new { count = Model.TotalTickets, page = Model.Page, pageSize = Model.PageSize })
+
+@Html.Ctm().Avatar(new Trakker.Data.File
+{
+    FileName = "Test.jpg",
+    Path = "C://"
+})

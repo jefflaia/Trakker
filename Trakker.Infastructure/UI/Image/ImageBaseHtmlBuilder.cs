@@ -7,7 +7,7 @@ using Trakker.Core;
 
 namespace Trakker.Infastructure.UI
 {
-    public class ImageBaseHtmlBuilder<T> : IImageBaseHtmlBuilder where T : struct
+    public class ImageBaseHtmlBuilder : IImageBaseHtmlBuilder
     {
         public ImageBase Element { get; set; }
         

@@ -6,7 +6,7 @@ using Trakker.Infastructure.Uploading;
 
 namespace Trakker.Infastructure.UI
 {
-    public class ImageBuilderBase<TComponent, TBuilder>
+    public class ImageBuilderBase<TComponent, TBuilder> : ViewComponentBuilderBase<TComponent, TBuilder>
         where TComponent : ImageBase
         where TBuilder : ImageBuilderBase<TComponent, TBuilder>
     {
@@ -14,7 +14,8 @@ namespace Trakker.Infastructure.UI
         public TComponent Component { get; set; }
         public IImageProfile Profile { get; set; }
 
-        public ImageBuilderBase(TComponent component, IImageProfile profile)
+        public ImageBuilderBase(TComponent component, IImageProfile profile) :
+            base(component)
         {
             Component = component;
             Profile = profile;

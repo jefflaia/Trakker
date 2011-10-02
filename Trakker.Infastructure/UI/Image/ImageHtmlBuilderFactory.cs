@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Trakker.Infastructure.UI
 {
-    public class ImageHtmlBuilderFactory<T> : IImageHtmlBuilderFactory<T> where T : struct
+    public class ImageHtmlBuilderFactory : IImageHtmlBuilderFactory
     {
         public IImageBaseHtmlBuilder Create(ImageBase element)
         {
-            return new ImageBaseHtmlBuilder<T>(element);
+            return new ImageBaseHtmlBuilder(element);
         }
     }
 }

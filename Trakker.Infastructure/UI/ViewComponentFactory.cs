@@ -5,6 +5,7 @@ using System.Text;
 using Trakker.Data;
 using System.Web.Mvc;
 using Trakker.Infastructure.Uploading;
+using System.ComponentModel;
 
 namespace Trakker.Infastructure.UI
 {
@@ -21,9 +22,9 @@ namespace Trakker.Infastructure.UI
         public HtmlHelper HtmlHelper { get; set; }
 
 
-        public virtual ImageBuilder Image(File file)
+        public virtual ImageBuilder Avatar(File file)
         {
-            return new ImageBuilder(new ImageBase(HtmlHelper.ViewContext, ClientSideObjectWriterFactory), new AvatarImageProfile());
+            return new ImageBuilder(new ImageBase(HtmlHelper.ViewContext, ClientSideObjectWriterFactory, new ImageHtmlBuilderFactory()), new AvatarImageProfile());
         }
 
     }

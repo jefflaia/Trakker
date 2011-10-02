@@ -5,10 +5,11 @@ using System.Text;
 using System.Web.Mvc;
 using System.Web.UI;
 using System.IO;
+using System.Web;
 
 namespace Trakker.Infastructure.UI
 {
-    public abstract class ViewComponentBase : IScriptableComponent
+    public abstract class ViewComponentBase : IScriptableComponent, IAttributesContainer
     {
         protected ViewComponentBase(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory)
         {
@@ -44,6 +45,8 @@ namespace Trakker.Infastructure.UI
             get { throw new NotImplementedException(); }
         }
 
+        public string Name { get; set; }
+
         public IClientSideObjectWriterFactory ClientSideObjectWriterFactory
         {
             get;
@@ -52,7 +55,7 @@ namespace Trakker.Infastructure.UI
 
         public void WriteInitializationScript(System.IO.TextWriter writer)
         {
-            throw new NotImplementedException();
+            
         }
 
         public ViewContext ViewContext
@@ -94,6 +97,12 @@ namespace Trakker.Infastructure.UI
             writer.RenderBeginTag(HtmlTextWriterTag.Script);
             WriteInitializationScript(writer);
             writer.RenderEndTag();
+        }
+
+        public IDictionary<string, object> HtmlAttributes
+        {
+            get;
+            set;
         }
     }
 }
