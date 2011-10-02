@@ -9,16 +9,11 @@ using System.Web;
 
 namespace Trakker.Infastructure.UI
 {
-    public static class CtmHtml
+    public static class CtmHtmlExtension
     {
-        /*
-        public static ImageBaseHtmlBuilder Image(File file)
+        public static ViewComponentFactory Ctm(this HtmlHelper helper)
         {
-            var imageBuilder = new ImageBaseHtmlBuilder(new AvatarImageProfile())
-                .Alt(file.FileName)
-                .Src(file.Path);
-
-            return imageBuilder;
-        }*/
+            return new ViewComponentFactory(helper, new ClientSideObjectWriterFactory());
+        }
     }
 }

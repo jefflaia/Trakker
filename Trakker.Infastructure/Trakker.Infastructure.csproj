@@ -76,6 +76,10 @@
     <Compile Include="UI\ClientSideObjectWriterFactory.cs" />
     <Compile Include="UI\ComponentBuilderBase.cs" />
     <Compile Include="UI\IClientSideObjectWriterFactory.cs" />
+    <Compile Include="UI\Image\Fluent\ImageBuilder.cs" />
+    <Compile Include="UI\Image\IImage.cs" />
+    <Compile Include="UI\IScriptableComponent.cs" />
+    <Compile Include="UI\ViewComponentBase.cs" />
     <Compile Include="UI\ViewComponentFactory.cs" />
     <Compile Include="UI\CtmHtml.cs" />
     <Compile Include="UI\HtmlTag.cs" />
