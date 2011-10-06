@@ -5,18 +5,18 @@
     <% using (Html.BeginForm(400)) { %>
         <h2>Login</h2>
 
-        <%= Html.FormRow()
+        <%: Html.FormRow()
             .AddToLeft(Html.LabelFor(x => x.Email))
             .AddToRight(Html.TextBoxFor(x => x.Email))
             .AddToRight(Html.ValidationMessageFor(x => x.Email)) %>
 
-        <%= Html.FormRow()
+        <%: Html.FormRow()
             .AddToLeft(Html.LabelFor(x => x.Password))
             .AddToRight(Html.PasswordFor(x => x.Password))
             .AddToRight(Html.ValidationMessageFor(x => x.Password))
             .AddToRight(Html.ValidationMessage("Invalid")) %>
         
-        <%= Html.FormRow()
+        <%: Html.FormRow()
             .AddToRight(Html.LoginButton("Login", new { }))%>  
 
     <% } %>

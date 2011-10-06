@@ -12,7 +12,6 @@ namespace Trakker.Data.Repositories
         Project GetProjectById(int id);
         void Save(Project project);
 
-
         ColorPalette GetColorPaletteById(int id);
         ColorPalette GetColorPaletteByName(string name);
         IList<ColorPalette> GetColorPalettes();

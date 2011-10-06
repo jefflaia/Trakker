@@ -44,6 +44,8 @@ namespace Trakker.Areas.Admin
             context.MapRoute("EditColorPalette", "admin/settings/color-palette/{paletteId}/edit", new { controller = "Settings", action = "EditColorPalette" });
             context.MapRoute("SelectColorPalette", "admin/settings/color-palette/{paletteId}/select", new { controller = "Settings", action = "SelectColorPalette" });
 
+            context.MapRoute("TestUploading", "admin/upload-file", MVC.Admin.Management.UploadFile());
+
         }
     }
 }

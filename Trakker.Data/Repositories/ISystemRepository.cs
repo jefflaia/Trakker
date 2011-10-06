@@ -8,9 +8,10 @@
     public interface ISystemRepository
     {
 
-
         Property GetPropertyByKey<T>(string key);
         void Save(Property property);
+
+        void Save(File file);
         
     }
 }

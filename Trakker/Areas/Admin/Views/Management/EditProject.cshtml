@@ -36,5 +36,15 @@
         @(Html.FormRow()
             .AddToRight(Html.SaveButton("Save", null)))
     }
+
+    @using (Html.BeginForm(MVC.Admin.Management.UploadFile(), FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @(Html.FormRow()
+            .AddToLeft(Html.LabelFor(m => m.Name))
+            .AddToRight("<input type=\"file\" name=\"image\" />"))
+        
+         @(Html.FormRow()
+            .AddToRight(Html.SaveButton("Save", null)))
+    }
 </div>
 

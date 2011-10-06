@@ -1,6 +1,7 @@
 <%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Basic.Master" Inherits="System.Web.Mvc.ViewPage<ProjectSummaryModel>" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="BasicContent" runat="server">
 
+    <img src="../../Content/Images/TestTicketIcon.png" />
     <h2><%= Model.Project.Name %>: <em><%= Model.Project.KeyName %></em></h2>
     
     <div id="ProjectContainer">
@@ -20,7 +21,7 @@
                 <% foreach (var ticket in Model.Tickets)
                    { %>
                     <li>
-                        <p class="Left"><%= Html.ActionLink<TicketController>(c => c.TicketDetails(ticket.KeyName), ticket.KeyName) %> </p>
+                        <p class="Left"><%= Html.ActionLink(ticket.KeyName, MVC.Ticket.TicketDetails(ticket.KeyName))%> </p>
                         <p class="Right"><span>Created:</span> <%: ticket.Created %></p>
                         <p><%: ticket.Summary %></p>
                     </li>
