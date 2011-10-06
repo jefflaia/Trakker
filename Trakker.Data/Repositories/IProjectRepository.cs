@@ -18,6 +18,9 @@ namespace Trakker.Data.Repositories
         void Save(ColorPalette palette);
 
 
-        void SaveComponent(Trakker.Data.Component component);
+        void Save(Trakker.Data.Component component);
+
+        void Save(ProjectVersion version);
+        ProjectVersion GetVersionById(int id);
     }
 }

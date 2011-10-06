@@ -89,9 +89,21 @@
             return GetAll<Component>();    
         }
 
-        public void SaveComponent(Component component)
+        public void Save(Component component)
         {
             base.Save(component);
+        }
+        #endregion
+
+        #region Version
+        public void Save(ProjectVersion version)
+        {
+            base.Save(version);
+        }
+
+        public ProjectVersion GetVersionById(int id)
+        {
+            return GetById<ProjectVersion>(id);
         }
         #endregion
     }

@@ -104,9 +104,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth.cs" />
+    <Compile Include="Mappings\ProjectVersionMap.cs" />
     <Compile Include="Mappings\FileMap.cs" />
     <Compile Include="Mappings\ProjectMap.cs" />
     <Compile Include="Models\File.cs" />
+    <Compile Include="Models\ProjectVersion.cs" />
     <Compile Include="NHibernateFactory.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Models\BaseEntity.cs" />
