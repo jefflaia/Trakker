@@ -195,6 +195,7 @@
     <Compile Include="Models\Error\UnexpectedErrorModel.cs" />
     <Compile Include="Models\Error\TicketNotFoundModel.cs" />
     <Compile Include="Models\Error\PageNotFoundModel.cs" />
+    <Compile Include="Models\Project\ProjectRoadMapTabModel.cs" />
     <Compile Include="Models\Search\SearchIndexModel.cs" />
     <Compile Include="Models\User\ChangePasswordModel.cs" />
     <Compile Include="Models\User\UserProfileModel.cs" />
@@ -221,7 +222,7 @@
     <Compile Include="Areas\Admin\Models\Management\BrowseProjectsModel.cs" />
     <Compile Include="Areas\Admin\Models\Management\CreateProjectModel.cs" />
     <Compile Include="Areas\Admin\Models\Management\EditProjectModel.cs" />
-    <Compile Include="Models\Project\ProjectSummaryModel.cs" />
+    <Compile Include="Models\Project\ProjectOverviewTabModel.cs" />
     <Compile Include="Models\Shared\MasterModel.cs" />
     <Compile Include="Models\Ticket\CommentCreateEditModel.cs" />
     <Compile Include="Areas\Admin\Models\Attribute\CreateEditPriorityModel.cs" />
@@ -427,7 +428,7 @@
     <Content Include="Views\Error\TicketNotFound.aspx" />
     <Content Include="Views\Error\UnexpectedError.aspx" />
     <Content Include="Views\Error\UserNotFound.aspx" />
-    <Content Include="Views\Project\ProjectSummary.aspx" />
+    <Content Include="Views\Project\OverviewTab.aspx" />
     <Content Include="Views\Search\SearchIndex.aspx" />
     <Content Include="Views\Shared\ActivityStream.ascx" />
     <Content Include="Views\Shared\Menu.ascx" />
@@ -446,6 +447,7 @@
     <Content Include="Views\Ticket\CreateComment.aspx" />
     <None Include="Areas\Admin\Views\Shared\Admin.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Views\Project\RoadMapTab.cshtml" />
     <None Include="Views\Ticket\_TicketDetailsCommentsTab.cshtml" />
     <Content Include="Views\Ticket\CreateTicket.aspx" />
     <Content Include="Views\Ticket\CreateEditTicketForm.ascx" />

@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Basic.Master" Inherits="System.Web.Mvc.ViewPage<ProjectSummaryModel>" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Basic.Master" Inherits="System.Web.Mvc.ViewPage<ProjectOverviewTabModel>" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="BasicContent" runat="server">
 
     <img src="../../Content/Images/TestTicketIcon.png" />

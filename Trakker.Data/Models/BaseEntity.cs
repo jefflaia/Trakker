@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Trakker.Data
 {
-    public class BaseEntity : IBaseEntity
+    public abstract class BaseEntity : IBaseEntity
     {
         public virtual int Id { get; set; }
     }

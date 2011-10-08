@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   namespace="Trakker.Data"
+                   assembly="Trakker.Data">
+
+<class name="ProjectVersion" >
+  <id name="Id">
+    <generator class="identity" />
+  </id>
+  
+  <property name="Name" />
+  <property name="Description" />
+  <property name="ReleaseDate" />
+  <property name="ProjectId" />
+  <property name="IsReleased" />
+  <property name="SortOrder" />
+
+<many-to-one name="Project" class="Project" column="ProjectId" insert="false" update="false"/>
+
+</class>
+
+</hibernate-mapping>
+

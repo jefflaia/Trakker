@@ -105,6 +105,14 @@
         {
             return GetById<ProjectVersion>(id);
         }
+
+        public IList<ProjectVersion> GetAllByProject(Project project)
+        {
+            return Session.CreateQuery("from ProjectVersion pv where pv.ProjectId = ? order by pv.SortOrder asc")
+                .SetInt32(0, project.Id)
+                .List<ProjectVersion>();
+        }
         #endregion
+
     }
 }

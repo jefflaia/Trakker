@@ -33,8 +33,13 @@ namespace Trakker.Controllers {
 
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public System.Web.Mvc.ActionResult ProjectSummary() {
-            return new T4MVC_ActionResult(Area, Name, ActionNames.ProjectSummary);
+        public System.Web.Mvc.ActionResult OverviewTab() {
+            return new T4MVC_ActionResult(Area, Name, ActionNames.OverviewTab);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult RoadMapTab() {
+            return new T4MVC_ActionResult(Area, Name, ActionNames.RoadMapTab);
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -54,7 +59,8 @@ namespace Trakker.Controllers {
         public ActionNamesClass ActionNames { get { return s_actions; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass {
-            public readonly string ProjectSummary = "ProjectSummary";
+            public readonly string OverviewTab = "OverviewTab";
+            public readonly string RoadMapTab = "RoadMapTab";
             public readonly string ComponentSummary = "ComponentSummary";
         }
 
@@ -64,7 +70,8 @@ namespace Trakker.Controllers {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
-            public readonly string ProjectSummary = "~/Views/Project/ProjectSummary.aspx";
+            public readonly string OverviewTab = "~/Views/Project/OverviewTab.aspx";
+            public readonly string RoadMapTab = "~/Views/Project/RoadMapTab.cshtml";
         }
     }
 
@@ -72,8 +79,14 @@ namespace Trakker.Controllers {
     public class T4MVC_ProjectController: Trakker.Controllers.ProjectController {
         public T4MVC_ProjectController() : base(Dummy.Instance) { }
 
-        public override System.Web.Mvc.ActionResult ProjectSummary(string keyName) {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ProjectSummary);
+        public override System.Web.Mvc.ActionResult OverviewTab(string keyName) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.OverviewTab);
+            callInfo.RouteValueDictionary.Add("keyName", keyName);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult RoadMapTab(string keyName) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.RoadMapTab);
             callInfo.RouteValueDictionary.Add("keyName", keyName);
             return callInfo;
         }

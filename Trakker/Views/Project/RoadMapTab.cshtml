@@ -1,0 +1,14 @@
+﻿@model ProjectRoadMapTabModel
+<h2>Road Map Tab</h2>
+
+<ul id="road-map-list">
+    @foreach (var version in Model.Versions)
+    {
+        <li>
+            <div class="name">@version.Name</div>
+            <div class="progress"></div>
+            <span>10% (10 of 100)  have been resolved</span>
+            <span class="notes"><a href="#">Release Notes</a></span>
+        </li>
+     }
+</ul>

@@ -3,7 +3,7 @@
     using Trakker.Data;
     using System.Collections.Generic;
 
-    public class ProjectSummaryModel : MasterModel
+    public class ProjectOverviewTabModel : MasterModel
     {
         public Project Project { get; set; }
         public User Lead { get; set; }

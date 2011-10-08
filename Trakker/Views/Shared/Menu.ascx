@@ -2,7 +2,7 @@
 <ul>
     <li>
         <% if (Model.HasCurrentProject) { %>
-            <%= Html.ActionLink("Projects", MVC.Project.ProjectSummary(Model.CurrentProject.KeyName.ToLower()))%>
+            <%= Html.ActionLink("Projects", MVC.Project.OverviewTab(Model.CurrentProject.KeyName.ToLower()))%>
         <% } else { %>
              <a href="">Projects</a>
              <!-- add project browser here -->
@@ -10,14 +10,14 @@
         <ul class="UI-Shadow">
             <% if (Model.CurrentProject != null) { %>
                 <li class="Heading">Current Project</li>
-                <li><%= Html.ActionLink(Model.CurrentProject.Name, MVC.Project.ProjectSummary(Model.CurrentProject.KeyName.ToLower()))%></li>
+                <li><%= Html.ActionLink(Model.CurrentProject.Name, MVC.Project.OverviewTab(Model.CurrentProject.KeyName.ToLower()))%></li>
                 <li class="Break"></li>
             <% } %>
            
             <% if (Model.RecentProjects.Count > 0) { %>
                 <li class="Heading">Recent Projects</li>
                 <% foreach (var project in Model.RecentProjects) { %>
-                    <li><%= Html.ActionLink(project.Name, MVC.Project.ProjectSummary(project.KeyName.ToLower())) %></li>
+                    <li><%= Html.ActionLink(project.Name, MVC.Project.OverviewTab(project.KeyName.ToLower()))%></li>
                 <% } %>
             <% } %>
         </ul>

@@ -14,7 +14,9 @@ namespace Trakker.Data.Mappings
             Map(pv => pv.Name);
             Map(pv => pv.Description);
             Map(pv => pv.ReleaseDate);
+            Map(pv => pv.ProjectId);
             Map(pv => pv.IsReleased);
+            Map(pv => pv.SortOrder);
 
 
             References<Project>(pv => pv.Project)

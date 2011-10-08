@@ -23,15 +23,25 @@ namespace Trakker.Controllers
         }
         
         #region Project
-        public virtual ActionResult ProjectSummary(string keyName)
+        public virtual ActionResult OverviewTab(string keyName)
         {
             CurrentProject = _projectRepo.GetProjectByKey(keyName);
 
-            return View(new ProjectSummaryModel()
+            return View(new ProjectOverviewTabModel()
             {
                 Project = CurrentProject,
                 NewestTickets = _ticketRepo.GetNewestTicketsByProject(CurrentProject, 0, 5).Items,
                 Lead = _userRepo.GetUserById(CurrentProject.Lead)
+            });
+        }
+
+        public virtual ActionResult RoadMapTab(string keyName)
+        {
+            Project project = _projectRepo.GetProjectByKey(keyName);
+
+            return View(new ProjectRoadMapTabModel()
+            {
+                Versions = _projectRepo.GetAllByProject(project)
             });
         }
 
@@ -44,6 +54,8 @@ namespace Trakker.Controllers
             throw new NotImplementedException();
         }
         #endregion
+
+
 
     }
 }
