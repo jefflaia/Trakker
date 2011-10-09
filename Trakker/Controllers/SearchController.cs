@@ -13,7 +13,6 @@ using Lucene.Net.Analysis.Standard;
 using Trakker.Data;
 using Trakker.Data.Services;
 using Trakker.Models;
-using Trakker.Models.Search;
 using Trakker.Data.Repositories;
 
 namespace Trakker.Controllers

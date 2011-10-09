@@ -60,11 +60,11 @@ namespace Trakker.Controllers {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
-            public readonly string InvalidAction = "~/Views/Error/InvalidAction.aspx";
-            public readonly string PageNotFound = "~/Views/Error/PageNotFound.aspx";
-            public readonly string TicketNotFound = "~/Views/Error/TicketNotFound.aspx";
-            public readonly string UnexpectedError = "~/Views/Error/UnexpectedError.aspx";
-            public readonly string UserNotFound = "~/Views/Error/UserNotFound.aspx";
+            public readonly string InvalidAction = "~/Views/Error/InvalidAction.cshtml";
+            public readonly string PageNotFound = "~/Views/Error/PageNotFound.cshtml";
+            public readonly string TicketNotFound = "~/Views/Error/TicketNotFound.cshtml";
+            public readonly string UnexpectedError = "~/Views/Error/UnexpectedError.cshtml";
+            public readonly string UserNotFound = "~/Views/Error/UserNotFound.cshtml";
         }
     }
 

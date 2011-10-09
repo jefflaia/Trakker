@@ -67,11 +67,11 @@ namespace Trakker.Areas.Admin.Controllers {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
-            public readonly string BrowseColorPalettes = "~/Areas/Admin/Views/Settings/BrowseColorPalettes.aspx";
-            public readonly string CreateColorPalette = "~/Areas/Admin/Views/Settings/CreateColorPalette.aspx";
-            public readonly string CreateEditColorPalette = "~/Areas/Admin/Views/Settings/CreateEditColorPalette.ascx";
-            public readonly string EditColorPalette = "~/Areas/Admin/Views/Settings/EditColorPalette.aspx";
-            public readonly string Index = "~/Areas/Admin/Views/Settings/Index.aspx";
+            public readonly string _CreateEditColorPalette = "~/Areas/Admin/Views/Settings/_CreateEditColorPalette.cshtml";
+            public readonly string BrowseColorPalettes = "~/Areas/Admin/Views/Settings/BrowseColorPalettes.cshtml";
+            public readonly string CreateColorPalette = "~/Areas/Admin/Views/Settings/CreateColorPalette.cshtml";
+            public readonly string EditColorPalette = "~/Areas/Admin/Views/Settings/EditColorPalette.cshtml";
+            public readonly string Index = "~/Areas/Admin/Views/Settings/Index.cshtml";
         }
     }
 
@@ -94,7 +94,7 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult CreateColorPalette(Trakker.Areas.Admin.Models.CreateEditColorPaletteModel viewModel) {
+        public override System.Web.Mvc.ActionResult CreateColorPalette(Trakker.Models.Admin.Settings.CreateEditColorPaletteModel viewModel) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.CreateColorPalette);
             callInfo.RouteValueDictionary.Add("viewModel", viewModel);
             return callInfo;
@@ -106,7 +106,7 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult EditColorPalette(int paletteId, Trakker.Areas.Admin.Models.CreateEditColorPaletteModel viewModel) {
+        public override System.Web.Mvc.ActionResult EditColorPalette(int paletteId, Trakker.Models.Admin.Settings.CreateEditColorPaletteModel viewModel) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditColorPalette);
             callInfo.RouteValueDictionary.Add("paletteId", paletteId);
             callInfo.RouteValueDictionary.Add("viewModel", viewModel);

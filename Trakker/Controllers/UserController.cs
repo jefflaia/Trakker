@@ -17,7 +17,6 @@ using Trakker.Helpers.Table;
 using Trakker.Models;
 using Trakker.Infastructure.Streams.Activity.Model;
 using Trakker.Infastructure.Streams.Activity;
-using Trakker.Areas.Admin.Models;
 using NHibernate;
 using NHibernate.Criterion;
 using Trakker.Data.Repositories;

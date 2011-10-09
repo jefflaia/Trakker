@@ -19,8 +19,7 @@
   <property name="FirstName" />
   <property name="LastName" />
 
-  <one-to-one name="Role" class="Role"/>
-
+  <many-to-one name="Role" class="Role" column="RoleId" insert="false" update="false"/>
 </class>
 
 </hibernate-mapping>

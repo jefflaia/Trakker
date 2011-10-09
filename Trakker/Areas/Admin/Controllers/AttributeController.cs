@@ -10,9 +10,11 @@ namespace Trakker.Areas.Admin.Controllers
     using AutoMapper;
     using Trakker.Data;
     using Trakker.Controllers;
-    using Trakker.Areas.Admin.Models;
     using Trakker.Data.Repositories;
+    using Trakker.Models.Admin.Attribute;
+    using Trakker.Attributes;
 
+    [Authenticate]
     public partial class AttributeController : MasterController
     {
         public AttributeController(ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
@@ -22,7 +24,7 @@ namespace Trakker.Areas.Admin.Controllers
 
         public virtual ActionResult Index()
         {
-            return View(new AttributeIndexModel());
+            return View(new IndexModel());
         }
 
         #region Priority

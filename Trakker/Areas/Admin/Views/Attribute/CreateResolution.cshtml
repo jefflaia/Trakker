@@ -1,0 +1,37 @@
+﻿@model Trakker.Models.Admin.Attribute.CreateEditResolutionModel
+
+<div class="Section">
+    <h1>View Ticket Resolutions</h1>
+    <p>The table below shows the resolutions used by this system.</p>
+    <p>Scroll down to create a resolution.</p>
+</div>
+<table class="Grid Indent">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var resolution in Model.Resolutions)
+        {
+            <tr>
+                <td>@resolution.Name</td>
+                <td>@resolution.Description</td>
+                <td>
+                    @Html.RouteLink("Edit", "EditResolution", new { resolutionId = resolution.Id })
+                    | Delete</td>
+        
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="Section">
+    <h1>Create Ticket Resolution</h1>
+    @{Html.BeginForm();}
+        @{Html.RenderPartial("_CreateEditResolutionForm");}
+    @{Html.EndForm();}
+</div>
+

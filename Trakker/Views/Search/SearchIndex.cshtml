@@ -1,0 +1,11 @@
+﻿@model SearchIndexModel
+
+<h2>SearchIndex</h2>
+
+<ul>
+    @foreach (var ticket in Model.Tickets)
+    {
+        <li>@ticket.Summary</li>    
+    }
+</ul>
+

@@ -18,12 +18,12 @@ namespace Trakker.Data
         public virtual Project Project { get; set; }
         public virtual IList<Ticket> Tickets { get; set; }
 
-        public int ClosedTicketCount()
+        public virtual int ClosedTicketCount()
         {
             return Tickets.Where(t => t.IsClosed == true).Count();
         }
 
-        public int OpenTicketCount()
+        public virtual int OpenTicketCount()
         {
             return Tickets.Where(t => t.IsClosed == false).Count();
         }

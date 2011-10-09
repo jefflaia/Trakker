@@ -1,0 +1,8 @@
+﻿@model Trakker.Models.Admin.Attribute.CreateEditStatusModel
+
+<div class="Section">
+    <h1>Edit Status</h1>
+    @{Html.BeginForm();}
+        @{Html.RenderPartial("_CreateEditStatusForm", Model);}
+    @{Html.EndForm();}
+</div>

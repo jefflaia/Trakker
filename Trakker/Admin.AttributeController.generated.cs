@@ -81,19 +81,19 @@ namespace Trakker.Areas.Admin.Controllers {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
-            public readonly string CreateEditPriorityForm = "~/Areas/Admin/Views/Attribute/CreateEditPriorityForm.ascx";
-            public readonly string CreateEditResolutionForm = "~/Areas/Admin/Views/Attribute/CreateEditResolutionForm.ascx";
-            public readonly string CreateEditStatusForm = "~/Areas/Admin/Views/Attribute/CreateEditStatusForm.ascx";
-            public readonly string CreateEditTypeForm = "~/Areas/Admin/Views/Attribute/CreateEditTypeForm.ascx";
-            public readonly string CreatePriority = "~/Areas/Admin/Views/Attribute/CreatePriority.aspx";
-            public readonly string CreateResolution = "~/Areas/Admin/Views/Attribute/CreateResolution.aspx";
-            public readonly string CreateStatus = "~/Areas/Admin/Views/Attribute/CreateStatus.aspx";
-            public readonly string CreateType = "~/Areas/Admin/Views/Attribute/CreateType.aspx";
-            public readonly string EditPriority = "~/Areas/Admin/Views/Attribute/EditPriority.aspx";
-            public readonly string EditResolution = "~/Areas/Admin/Views/Attribute/EditResolution.aspx";
-            public readonly string EditStatus = "~/Areas/Admin/Views/Attribute/EditStatus.aspx";
-            public readonly string EditType = "~/Areas/Admin/Views/Attribute/EditType.aspx";
-            public readonly string Index = "~/Areas/Admin/Views/Attribute/Index.aspx";
+            public readonly string _CreateEditPriorityForm = "~/Areas/Admin/Views/Attribute/_CreateEditPriorityForm.cshtml";
+            public readonly string _CreateEditResolutionForm = "~/Areas/Admin/Views/Attribute/_CreateEditResolutionForm.cshtml";
+            public readonly string _CreateEditStatusForm = "~/Areas/Admin/Views/Attribute/_CreateEditStatusForm.cshtml";
+            public readonly string _CreateEditTypeForm = "~/Areas/Admin/Views/Attribute/_CreateEditTypeForm.cshtml";
+            public readonly string CreatePriority = "~/Areas/Admin/Views/Attribute/CreatePriority.cshtml";
+            public readonly string CreateResolution = "~/Areas/Admin/Views/Attribute/CreateResolution.cshtml";
+            public readonly string CreateStatus = "~/Areas/Admin/Views/Attribute/CreateStatus.cshtml";
+            public readonly string CreateType = "~/Areas/Admin/Views/Attribute/CreateType.cshtml";
+            public readonly string EditPriority = "~/Areas/Admin/Views/Attribute/EditPriority.cshtml";
+            public readonly string EditResolution = "~/Areas/Admin/Views/Attribute/EditResolution.cshtml";
+            public readonly string EditStatus = "~/Areas/Admin/Views/Attribute/EditStatus.cshtml";
+            public readonly string EditType = "~/Areas/Admin/Views/Attribute/EditType.cshtml";
+            public readonly string Index = "~/Areas/Admin/Views/Attribute/Index.cshtml";
         }
     }
 
@@ -111,7 +111,7 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult CreatePriority(Trakker.Areas.Admin.Models.CreateEditPriorityModel viewData) {
+        public override System.Web.Mvc.ActionResult CreatePriority(Trakker.Models.Admin.Attribute.CreateEditPriorityModel viewData) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.CreatePriority);
             callInfo.RouteValueDictionary.Add("viewData", viewData);
             return callInfo;
@@ -123,7 +123,7 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult EditPriority(int priorityId, Trakker.Areas.Admin.Models.CreateEditPriorityModel viewData) {
+        public override System.Web.Mvc.ActionResult EditPriority(int priorityId, Trakker.Models.Admin.Attribute.CreateEditPriorityModel viewData) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditPriority);
             callInfo.RouteValueDictionary.Add("priorityId", priorityId);
             callInfo.RouteValueDictionary.Add("viewData", viewData);
@@ -135,7 +135,7 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult CreateResolution(Trakker.Areas.Admin.Models.CreateEditResolutionModel viewData) {
+        public override System.Web.Mvc.ActionResult CreateResolution(Trakker.Models.Admin.Attribute.CreateEditResolutionModel viewData) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.CreateResolution);
             callInfo.RouteValueDictionary.Add("viewData", viewData);
             return callInfo;
@@ -147,7 +147,7 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult EditResolution(int resolutionId, Trakker.Areas.Admin.Models.CreateEditResolutionModel viewData) {
+        public override System.Web.Mvc.ActionResult EditResolution(int resolutionId, Trakker.Models.Admin.Attribute.CreateEditResolutionModel viewData) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditResolution);
             callInfo.RouteValueDictionary.Add("resolutionId", resolutionId);
             callInfo.RouteValueDictionary.Add("viewData", viewData);
@@ -159,7 +159,7 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult CreateStatus(Trakker.Areas.Admin.Models.CreateEditStatusModel viewModel) {
+        public override System.Web.Mvc.ActionResult CreateStatus(Trakker.Models.Admin.Attribute.CreateEditStatusModel viewModel) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.CreateStatus);
             callInfo.RouteValueDictionary.Add("viewModel", viewModel);
             return callInfo;
@@ -171,7 +171,7 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult EditStatus(int statusId, Trakker.Areas.Admin.Models.CreateEditStatusModel viewModel) {
+        public override System.Web.Mvc.ActionResult EditStatus(int statusId, Trakker.Models.Admin.Attribute.CreateEditStatusModel viewModel) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditStatus);
             callInfo.RouteValueDictionary.Add("statusId", statusId);
             callInfo.RouteValueDictionary.Add("viewModel", viewModel);
@@ -183,7 +183,7 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult CreateType(Trakker.Areas.Admin.Models.CreateEditTypeModel viewModel) {
+        public override System.Web.Mvc.ActionResult CreateType(Trakker.Models.Admin.Attribute.CreateEditTypeModel viewModel) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.CreateType);
             callInfo.RouteValueDictionary.Add("viewModel", viewModel);
             return callInfo;
@@ -195,7 +195,7 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult EditType(int typeId, Trakker.Areas.Admin.Models.CreateEditTypeModel viewModel) {
+        public override System.Web.Mvc.ActionResult EditType(int typeId, Trakker.Models.Admin.Attribute.CreateEditTypeModel viewModel) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditType);
             callInfo.RouteValueDictionary.Add("typeId", typeId);
             callInfo.RouteValueDictionary.Add("viewModel", viewModel);

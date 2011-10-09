@@ -70,7 +70,7 @@ namespace Trakker.Controllers {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
-            public readonly string OverviewTab = "~/Views/Project/OverviewTab.aspx";
+            public readonly string OverviewTab = "~/Views/Project/OverviewTab.cshtml";
             public readonly string RoadMapTab = "~/Views/Project/RoadMapTab.cshtml";
         }
     }

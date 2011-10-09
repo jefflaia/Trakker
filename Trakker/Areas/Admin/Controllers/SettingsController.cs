@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Trakker.Areas.Admin.Models;
 using Trakker.Controllers;
 using Trakker.Data.Services;
-using Trakker.Areas.Admin.Models;
 using AutoMapper;
 using Trakker.Data;
 using Trakker.Data.Repositories;
+using Trakker.Models.Admin.Settings;
+using Trakker.Attributes;
 
 namespace Trakker.Areas.Admin.Controllers
 {
+    [Authenticate]
     public partial class SettingsController : MasterController
     {
         protected ISystemRepository _systemRepo;
@@ -26,7 +27,7 @@ namespace Trakker.Areas.Admin.Controllers
         [HttpGet]
         public virtual ActionResult Index()
         {
-            return View(new SettingsIndexModel());
+            return View(new IndexModel());
         }
 
         [HttpGet]

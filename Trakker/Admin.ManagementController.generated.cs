@@ -89,7 +89,7 @@ namespace Trakker.Areas.Admin.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
             public readonly string BrowseProjects = "~/Areas/Admin/Views/Management/BrowseProjects.cshtml";
-            public readonly string BrowseUsers = "~/Areas/Admin/Views/Management/BrowseUsers.aspx";
+            public readonly string BrowseUsers = "~/Areas/Admin/Views/Management/BrowseUsers.cshtml";
             public readonly string CreateProject = "~/Areas/Admin/Views/Management/CreateProject.aspx";
             public readonly string CreateUser = "~/Areas/Admin/Views/Management/CreateUser.aspx";
             public readonly string EditProject = "~/Areas/Admin/Views/Management/EditProject.cshtml";
@@ -97,7 +97,7 @@ namespace Trakker.Areas.Admin.Controllers {
             public readonly string EditUserPassword = "~/Areas/Admin/Views/Management/EditUserPassword.aspx";
             public readonly string Index = "~/Areas/Admin/Views/Management/Index.aspx";
             public readonly string ViewProject = "~/Areas/Admin/Views/Management/ViewProject.aspx";
-            public readonly string ViewUser = "~/Areas/Admin/Views/Management/ViewUser.aspx";
+            public readonly string ViewUser = "~/Areas/Admin/Views/Management/ViewUser.cshtml";
         }
     }
 
@@ -126,7 +126,7 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult CreateUser(Trakker.Areas.Admin.Models.CreateUserModel viewModel) {
+        public override System.Web.Mvc.ActionResult CreateUser(Trakker.Models.Admin.Management.CreateUserModel viewModel) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.CreateUser);
             callInfo.RouteValueDictionary.Add("viewModel", viewModel);
             return callInfo;
@@ -138,7 +138,7 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult EditUser(int userId, Trakker.Areas.Admin.Models.EditUserModel viewModel) {
+        public override System.Web.Mvc.ActionResult EditUser(int userId, Trakker.Models.Admin.Management.EditUserModel viewModel) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditUser);
             callInfo.RouteValueDictionary.Add("userId", userId);
             callInfo.RouteValueDictionary.Add("viewModel", viewModel);
@@ -151,7 +151,7 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult EditUserPassword(int userId, Trakker.Areas.Admin.Models.EditUserPasswordModel viewModel) {
+        public override System.Web.Mvc.ActionResult EditUserPassword(int userId, Trakker.Models.Admin.Management.EditUserPasswordModel viewModel) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditUserPassword);
             callInfo.RouteValueDictionary.Add("userId", userId);
             callInfo.RouteValueDictionary.Add("viewModel", viewModel);
@@ -174,7 +174,7 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult CreateProject(Trakker.Areas.Admin.Models.CreateProjectModel viewModel) {
+        public override System.Web.Mvc.ActionResult CreateProject(Trakker.Models.Admin.Management.CreateProjectModel viewModel) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.CreateProject);
             callInfo.RouteValueDictionary.Add("viewModel", viewModel);
             return callInfo;
@@ -186,7 +186,7 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult EditProject(string keyName, Trakker.Areas.Admin.Models.EditProjectModel viewModel) {
+        public override System.Web.Mvc.ActionResult EditProject(string keyName, Trakker.Models.Admin.Management.EditProjectModel viewModel) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditProject);
             callInfo.RouteValueDictionary.Add("keyName", keyName);
             callInfo.RouteValueDictionary.Add("viewModel", viewModel);

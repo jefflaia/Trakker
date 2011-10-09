@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Trakker.Data;
 
-namespace Trakker.Models.Search
+namespace Trakker.Models
 {
     public class SearchIndexModel : MasterModel
     {
