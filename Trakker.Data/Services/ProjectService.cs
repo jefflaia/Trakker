@@ -24,5 +24,6 @@ namespace Trakker.Data.Services
             file.Usage = FileUsage.ProjectAvatar;
             _systemRepo.Save(file);
         }
+
     }
 }

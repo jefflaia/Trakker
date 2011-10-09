@@ -147,6 +147,13 @@ namespace Trakker.Data.Repositories
             ticket.Description = ticket.Description ?? string.Empty; //if null make it empty
             base.Save(ticket);
         }
+
+        public IList<Ticket> GetTicketsByVersion(ProjectVersion version)
+        {
+            return Session.CreateQuery("from Ticket t inner join t.Versions v where v.Id = ?")
+                .SetInt32(0, version.Id)
+                .List<Ticket>();
+        }
         
         #endregion
 

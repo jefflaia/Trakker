@@ -15,7 +15,13 @@
   <property name="IsReleased" />
   <property name="SortOrder" />
 
-<many-to-one name="Project" class="Project" column="ProjectId" insert="false" update="false"/>
+  <many-to-one name="Project" class="Project" column="ProjectId" insert="false" update="false"/>
+
+  <bag name="Tickets" table="ProjectVersionToTicket">
+    <key column="VersionId" />
+    <many-to-many column="TicketId" class="Ticket" />
+  </bag>
+
 
 </class>
 

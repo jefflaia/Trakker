@@ -27,7 +27,12 @@
   <many-to-one name="Priority" class="TicketPriority" column="PriorityId" insert="false" update="false"/>
   <many-to-one name="Status" class="TicketStatus" column="StatusId" insert="false" update="false"/>
   <many-to-one name="Resolution" class="TicketResolution" column="ResolutionId" insert="false" update="false"/>
-  
+
+  <bag name="Versions" table="ProjectVersionToTicket">
+    <key column="TicketId" />
+    <many-to-many column="VersionId" class="ProjectVersion" />
+  </bag>
+
 </class>
 
 </hibernate-mapping>

@@ -22,7 +22,14 @@ namespace Trakker.Data.Mappings
             References<Project>(pv => pv.Project)
                 .Column("ProjectId")
                 .Not.Insert()
-                .Not.Update();            
+                .Not.Update();
+
+            HasManyToMany<Ticket>(m => m.Tickets)
+                .Table("ProjectVerionToTicket")
+                .ParentKeyColumn("TicketId")
+                .ChildKeyColumn("VersionId")
+                .Cascade.SaveUpdate();
+
         }
     }
 }

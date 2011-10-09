@@ -38,6 +38,12 @@ namespace Trakker.Controllers
         public virtual ActionResult RoadMapTab(string keyName)
         {
             Project project = _projectRepo.GetProjectByKey(keyName);
+            IList<ProjectVersion> versions = new List<ProjectVersion>();
+
+            foreach (var version in versions)
+            {
+                version.Tickets = _ticketRepo.GetTicketsByVersion(version);
+            }
 
             return View(new ProjectRoadMapTabModel()
             {
