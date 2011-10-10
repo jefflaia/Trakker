@@ -430,9 +430,9 @@
     <None Include="Views\Error\UserNotFound.cshtml" />
     <None Include="Views\Project\OverviewTab.cshtml" />
     <None Include="Views\Search\SearchIndex.cshtml" />
-    <Content Include="Views\Shared\ActivityStream.ascx" />
+    <None Include="Views\Shared\_ActivityStream.cshtml" />
     <Content Include="Views\Shared\Error.aspx" />
-    <Content Include="Views\Shared\Menu.ascx" />
+    <None Include="Views\Shared\_Menu.cshtml" />
     <None Include="Areas\Admin\Views\Shared\_SubNavigation.cshtml" />
     <None Include="Areas\Admin\Views\Attribute\_CreateEditPriorityForm.cshtml" />
     <None Include="Areas\Admin\Views\Attribute\_CreateEditResolutionForm.cshtml" />
@@ -440,8 +440,8 @@
     <None Include="Areas\Admin\Views\Attribute\CreateResolution.cshtml" />
     <None Include="Areas\Admin\Views\Management\EditUser.cshtml" />
     <None Include="Areas\Admin\Views\Management\CreateUser.cshtml" />
-    <Content Include="Views\User\ChangePassword.aspx" />
-    <Content Include="Views\User\Login.aspx" />
+    <None Include="Views\User\ChangePassword.cshtml" />
+    <None Include="Views\User\Login.cshtml" />
     <None Include="Views\Nav\Pagination.cshtml" />
     <None Include="Views\Ticket\EditComment.cshtml" />
     <None Include="Views\Ticket\_CreateEditCommentForm.cshtml" />
@@ -455,7 +455,7 @@
     <None Include="Views\Ticket\TicketDetails.cshtml" />
     <None Include="Views\Ticket\EditTicket.cshtml" />
     <None Include="Views\User\Logout.cshtml" />
-    <Content Include="Views\User\UserProfile.aspx" />
+    <None Include="Views\User\UserProfile.cshtml" />
     <Content Include="Web.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
@@ -471,7 +471,6 @@
     <Content Include="Scripts\Libraries\MicrosoftMvcAjax.js" />
     <Content Include="Scripts\Libraries\MicrosoftMvcAjax.debug.js" />
     <Content Include="Scripts\Libraries\MicrosoftMvcJQueryValidation.js" />
-    <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
@@ -507,7 +506,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Web.config" />
-    <Content Include="Views\Shared\Basic.master" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>

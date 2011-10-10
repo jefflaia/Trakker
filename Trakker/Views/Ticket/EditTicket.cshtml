@@ -3,6 +3,6 @@
 <div class="Section">
     @{Html.BeginForm();}
         <h1>Ticket: @Model.KeyName</h1>
-        @{Html.RenderPartial("_CreateEditTicketForm", Model);}
+        @{Html.RenderPartial(MVC.Ticket.Views._CreateEditTicketForm, Model);}
     @{Html.EndForm();}
 </div>

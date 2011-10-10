@@ -67,10 +67,10 @@ namespace Trakker.Controllers {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
-            public readonly string ChangePassword = "~/Views/User/ChangePassword.aspx";
-            public readonly string Login = "~/Views/User/Login.aspx";
+            public readonly string ChangePassword = "~/Views/User/ChangePassword.cshtml";
+            public readonly string Login = "~/Views/User/Login.cshtml";
             public readonly string Logout = "~/Views/User/Logout.cshtml";
-            public readonly string UserProfile = "~/Views/User/UserProfile.aspx";
+            public readonly string UserProfile = "~/Views/User/UserProfile.cshtml";
         }
     }
 
