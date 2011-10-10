@@ -31,5 +31,10 @@ namespace Trakker.Infastructure.UI
 
         }
 
+        public virtual ProgressBarBuilder ProgressBar()
+        {
+            return new ProgressBarBuilder(new ProgressBarBase(HtmlHelper.ViewContext, ClientSideObjectWriterFactory, new ProgressBarHtmlBuilderFactory()));
+        }
+
     }
 }

@@ -21,6 +21,7 @@ namespace Trakker.Bootstrap
                 .Add("~/Content/Admin/Settings.css")
                 .Add("~/Content/Ticket.css")
                 .Add("~/Content/User.css")
+                .Add("~/Content/UI.css")
                 .Add("~/Content/smoothness/jquery-ui-1.8.14.custom.css")
                 .AddDynamic("~/Content/Theme.css")
                 .Media(MediaType.Screen)

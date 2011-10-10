@@ -390,6 +390,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Ticket.css" />
+    <Content Include="Content\UI.css" />
     <Content Include="Content\User.css" />
     <Content Include="Scripts\2010.2.825\jquery-1.4.2.min.js" />
     <Content Include="Scripts\2010.2.825\jquery.validate.min.js" />

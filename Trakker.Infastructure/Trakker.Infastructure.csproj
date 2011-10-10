@@ -78,12 +78,21 @@
     <Compile Include="UI\ClientSideObjectWriter.cs" />
     <Compile Include="UI\ClientSideObjectWriterFactory.cs" />
     <Compile Include="UI\ComponentBuilderBase.cs" />
+    <Compile Include="UI\CssPrimitives.cs" />
     <Compile Include="UI\IAttributesContainer.cs" />
     <Compile Include="UI\IClientSideObjectWriterFactory.cs" />
     <Compile Include="UI\IHideObjectMembers.cs" />
     <Compile Include="UI\Image\Fluent\ImageBuilder.cs" />
     <Compile Include="UI\Image\IImage.cs" />
     <Compile Include="UI\IScriptableComponent.cs" />
+    <Compile Include="UI\ProgressBar\Fluent\ProgressBarBuilder.cs" />
+    <Compile Include="UI\ProgressBar\Fluent\ProgressBarBuilderBase.cs" />
+    <Compile Include="UI\ProgressBar\IProgressBar.cs" />
+    <Compile Include="UI\ProgressBar\IProgressBarBaseHtmlBuilder.cs" />
+    <Compile Include="UI\ProgressBar\IProgressBarHtmlBuilderFactory.cs" />
+    <Compile Include="UI\ProgressBar\ProgressBarBase.cs" />
+    <Compile Include="UI\ProgressBar\ProgressBarBaseHtmlBuilder.cs" />
+    <Compile Include="UI\ProgressBar\ProgressBarHtmlBuilderFactory.cs" />
     <Compile Include="UI\ViewComponentBase.cs" />
     <Compile Include="UI\ViewComponentBuilderBase.cs" />
     <Compile Include="UI\ViewComponentFactory.cs" />
@@ -123,6 +132,7 @@
       <LastGenOutput>TextResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -27,5 +27,13 @@ namespace Trakker.Data
         {
             return Tickets.Where(t => t.IsClosed == false).Count();
         }
+
+        public virtual double PercentClosed()
+        {
+            double total = Convert.ToDouble(Tickets.Count > 0 ? Tickets.Count : 1);
+            double count = Convert.ToDouble(this.ClosedTicketCount());
+
+            return ((count / total) * 100);
+        }
     }
 }

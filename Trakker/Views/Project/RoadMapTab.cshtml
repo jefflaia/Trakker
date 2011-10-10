@@ -5,25 +5,30 @@
     @foreach (var version in Model.Versions)
     {
         <li>
-            <div class="name">@version.Name</div>
-            <div class="progress"></div>
-            <span>10% (10 of 100)  have been resolved</span>
-            <span class="notes"><a href="#">Release Notes</a></span>
-
-            <ul>
+            <div class="top">
+                <div class="name">@version.Name</div>
+                <div class="progress">
+                @(Html.Ctm().ProgressBar()
+                    .Current(version.ClosedTicketCount())
+                    .Max(version.Tickets.Count)
+                    .Green())
+                </div>
+                <span>@version.PercentClosed().ToString("#.0")% (@version.ClosedTicketCount() of @version.Tickets.Count)  have been resolved</span>
+                <span class="notes"><a href="#">Release Notes</a></span>
+            </div>
+            <table>
                 @foreach (var ticket in version.Tickets)
                 {
-                    <li>
-                        <span>@ticket.Type.Name</span
-                        <span>@ticket.KeyName</span>
-                        <span>@ticket.Resolution.Name</span>
-                        <span>@ticket.Summary</span>
-                        <span>@ticket.Priority.Name</span>
-                        <span>@ticket.Status.Name</span>
-                    </li>
+                    <tr>
+                        <td>@ticket.Type.Name</td>
+                        <td>@Html.RouteLink(ticket.KeyName, MVC.Ticket.TicketDetails(ticket.KeyName))</td>
+                        <td>@ticket.Resolution.Name</td>
+                        <td>@Html.RouteLink(ticket.Summary, MVC.Ticket.TicketDetails(ticket.KeyName))</td>
+                        <td>@ticket.Priority.Name</td>
+                        <td>@ticket.Status.Name</td>
+                    </tr>
                 }
-                
-            </ul>
+            </table>
         </li>
-     }
+    }
 </ul>

@@ -28,7 +28,7 @@
             <li><label>Created:</label>     <span>@Model.Ticket.Created </span></li>
             <li><label>Due Date:</label>     <span>@Model.Ticket.DueDate.ToString()</span></li>
             <li><label>Resoltuion:</label>  <span>@Model.Ticket.Resolution.Name</span></li>
-            <li><label>Status:</label>      <span>@Model.Ticket.IsClosed ? "Closed" : "Open"</span></li>
+            <li><label>Status:</label>      <span>@(Model.Ticket.IsClosed ? "Closed" : "Open")</span></li>
         </ul>                         
     </div>
         
