@@ -20,6 +20,7 @@ using Trakker.Infastructure.Streams.Activity;
 using NHibernate;
 using NHibernate.Criterion;
 using Trakker.Data.Repositories;
+using Trakker.Models.User;
 
 
 namespace Trakker.Controllers

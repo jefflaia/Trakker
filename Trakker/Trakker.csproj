@@ -263,10 +263,10 @@
     <None Include="Areas\Admin\Views\Attribute\EditStatus.cshtml" />
     <None Include="Areas\Admin\Views\Attribute\Index.cshtml" />
     <None Include="Areas\Admin\Views\Attribute\_CreateEditStatusForm.cshtml" />
-    <Content Include="Areas\Admin\Views\Management\EditUserPassword.aspx" />
-    <Content Include="Areas\Admin\Views\Management\Index.aspx" />
+    <None Include="Areas\Admin\Views\Management\EditUserPassword.cshtml" />
+    <None Include="Areas\Admin\Views\Management\Index.cshtml" />
     <None Include="Areas\Admin\Views\Management\BrowseUsers.cshtml" />
-    <Content Include="Areas\Admin\Views\Management\ViewProject.aspx" />
+    <None Include="Areas\Admin\Views\Management\ViewProject.cshtml" />
     <None Include="Areas\Admin\Views\Management\ViewUser.cshtml" />
     <None Include="Areas\Admin\Views\Settings\BrowseColorPalettes.cshtml" />
     <None Include="Areas\Admin\Views\Settings\CreateColorPalette.cshtml" />
@@ -421,7 +421,7 @@
     <Content Include="Scripts\Libraries\MicrosoftMvcValidation.js" />
     <None Include="Areas\Admin\Views\Management\BrowseProjects.cshtml" />
     <None Include="Areas\Admin\Views\Management\EditProject.cshtml" />
-    <Content Include="Areas\Admin\Views\Management\CreateProject.aspx" />
+    <None Include="Areas\Admin\Views\Management\CreateProject.cshtml" />
     <Content Include="Scripts\global-onload.js" />
     <None Include="Views\Error\InvalidAction.cshtml" />
     <None Include="Views\Error\PageNotFound.cshtml" />
@@ -433,28 +433,28 @@
     <Content Include="Views\Shared\ActivityStream.ascx" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\Menu.ascx" />
-    <Content Include="Areas\Admin\Views\Shared\SubNavigation.ascx" />
+    <None Include="Areas\Admin\Views\Shared\_SubNavigation.cshtml" />
     <None Include="Areas\Admin\Views\Attribute\_CreateEditPriorityForm.cshtml" />
     <None Include="Areas\Admin\Views\Attribute\_CreateEditResolutionForm.cshtml" />
     <None Include="Areas\Admin\Views\Attribute\CreatePriority.cshtml" />
     <None Include="Areas\Admin\Views\Attribute\CreateResolution.cshtml" />
-    <Content Include="Areas\Admin\Views\Management\EditUser.aspx" />
-    <Content Include="Areas\Admin\Views\Management\CreateUser.aspx" />
+    <None Include="Areas\Admin\Views\Management\EditUser.cshtml" />
+    <None Include="Areas\Admin\Views\Management\CreateUser.cshtml" />
     <Content Include="Views\User\ChangePassword.aspx" />
     <Content Include="Views\User\Login.aspx" />
-    <Content Include="Views\Nav\Pagination.ascx" />
-    <Content Include="Views\Ticket\EditComment.aspx" />
-    <Content Include="Views\Ticket\CreateEditCommentForm.ascx" />
-    <Content Include="Views\Ticket\CreateComment.aspx" />
+    <None Include="Views\Nav\Pagination.cshtml" />
+    <None Include="Views\Ticket\EditComment.cshtml" />
+    <None Include="Views\Ticket\_CreateEditCommentForm.cshtml" />
+    <None Include="Views\Ticket\CreateComment.cshtml" />
     <None Include="Areas\Admin\Views\Shared\Admin.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Views\Project\RoadMapTab.cshtml" />
     <None Include="Views\Ticket\_TicketDetailsCommentsTab.cshtml" />
-    <Content Include="Views\Ticket\CreateTicket.aspx" />
-    <Content Include="Views\Ticket\CreateEditTicketForm.ascx" />
+    <None Include="Views\Ticket\CreateTicket.cshtml" />
+    <None Include="Views\Ticket\_CreateEditTicketForm.cshtml" />
     <None Include="Views\Ticket\TicketDetails.cshtml" />
-    <Content Include="Views\Ticket\EditTicket.aspx" />
-    <Content Include="Views\User\Logout.aspx" />
+    <None Include="Views\Ticket\EditTicket.cshtml" />
+    <None Include="Views\User\Logout.cshtml" />
     <Content Include="Views\User\UserProfile.aspx" />
     <Content Include="Web.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -507,7 +507,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Web.config" />
-    <Content Include="Areas\Admin\Views\Shared\Admin.master" />
     <Content Include="Views\Shared\Basic.master" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

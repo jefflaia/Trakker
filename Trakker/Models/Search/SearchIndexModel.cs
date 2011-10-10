@@ -8,6 +8,6 @@ namespace Trakker.Models
 {
     public class SearchIndexModel : MasterModel
     {
-        public IList<Ticket> Tickets { get; set; }
+        public IList<Trakker.Data.Ticket> Tickets { get; set; }
     }
 }

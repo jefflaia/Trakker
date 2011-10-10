@@ -1,25 +1,26 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Basic.Master" Inherits="System.Web.Mvc.ViewPage<LoginModel>" %>
+@model Trakker.Models.User.LoginModel
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BasicContent" runat="server">
 
-    <% using (Html.BeginForm(400)) { %>
+    @using (Html.BeginForm(400))
+    { 
         <h2>Login</h2>
 
-        <%: Html.FormRow()
+        @(Html.FormRow()
             .AddToLeft(Html.LabelFor(x => x.Email))
             .AddToRight(Html.TextBoxFor(x => x.Email))
-            .AddToRight(Html.ValidationMessageFor(x => x.Email)) %>
+            .AddToRight(Html.ValidationMessageFor(x => x.Email)))
 
-        <%: Html.FormRow()
+        @(Html.FormRow()
             .AddToLeft(Html.LabelFor(x => x.Password))
             .AddToRight(Html.PasswordFor(x => x.Password))
             .AddToRight(Html.ValidationMessageFor(x => x.Password))
-            .AddToRight(Html.ValidationMessage("Invalid")) %>
+            .AddToRight(Html.ValidationMessage("Invalid")))
         
-        <%: Html.FormRow()
-            .AddToRight(Html.LoginButton("Login", new { }))%>  
+        @(Html.FormRow()
+            .AddToRight(Html.LoginButton("Login", new { })))
 
-    <% } %>
+    }
 
  
  <!--

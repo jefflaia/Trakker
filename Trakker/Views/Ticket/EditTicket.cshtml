@@ -1,0 +1,8 @@
+@model Trakker.Models.Ticket.CreateEditTicketModel
+
+<div class="Section">
+    @{Html.BeginForm();}
+        <h1>Ticket: @Model.KeyName</h1>
+        @{Html.RenderPartial("_CreateEditTicketForm", Model);}
+    @{Html.EndForm();}
+</div>

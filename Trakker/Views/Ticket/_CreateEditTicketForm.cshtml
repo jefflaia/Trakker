@@ -1,55 +1,55 @@
-<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<CreateEditTicketModel>" %>
+@model Trakker.Models.Ticket.CreateEditTicketModel
 
-<%= Html.FormRow()
+@(Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.ProjectId))
         .AddToRight(Html.DropDownListFor(x => x.ProjectId, new SelectList(Model.Projects, "Id", "Name")))
-    .AddToRight(Html.ValidationMessageFor(x => x.ProjectId))%>
+    .AddToRight(Html.ValidationMessageFor(x => x.ProjectId)))
 
-<%= Html.FormRow()
+@(Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.Summary))
     .AddToRight(Html.TextBoxFor(x => x.Summary, new { style = "width: 450px;" }))
-    .AddToRight(Html.ValidationMessageFor(x => x.Summary))%>
+    .AddToRight(Html.ValidationMessageFor(x => x.Summary)))
 
-<%= Html.FormRow()
+@(Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.AssignedToUserId))
     .AddToRight(Html.DropDownListFor(x => x.AssignedToUserId, Model.Users.ToSelectList("Id", "Email")))
-    .AddToRight(Html.ValidationMessageFor(x => x.AssignedToUserId)) %>
+    .AddToRight(Html.ValidationMessageFor(x => x.AssignedToUserId)))
 
-    <%= Html.FormRow()
+@(Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.PriorityId))
     .AddToRight(Html.DropDownListFor(x => x.PriorityId, Model.Priorities.ToSelectList("Id", "Name")))
-    .AddToRight(Html.ValidationMessageFor(x => x.PriorityId)) %>
+    .AddToRight(Html.ValidationMessageFor(x => x.PriorityId)))
 
-<%= Html.FormRow()
+@(Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.StatusId))
     .AddToRight(Html.DropDownListFor(x => x.StatusId, Model.Status.ToSelectList("Id", "Name")))
-    .AddToRight(Html.ValidationMessageFor(x => x.StatusId)) %>
+    .AddToRight(Html.ValidationMessageFor(x => x.StatusId)))
 
-<%= Html.FormRow()
+@(Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.CategoryId))
      .AddToRight(Html.DropDownListFor(x => x.CategoryId, Model.Categories.ToSelectList("Id", "Name")))
-    .AddToRight(Html.ValidationMessageFor(x => x.CategoryId)) %>
+    .AddToRight(Html.ValidationMessageFor(x => x.CategoryId)))
 
-<%= Html.FormRow()
+@(Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.ResolutionId))
     .AddToRight(Html.DropDownListFor(x => x.ResolutionId, Model.Resolutions.ToSelectList("Id", "Name")))
-    .AddToRight(Html.ValidationMessageFor(x => x.ResolutionId))%>
+    .AddToRight(Html.ValidationMessageFor(x => x.ResolutionId)))
 
-<%= Html.FormRow()
+@(Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.DueDate))
         .AddToRight(
             Html.Telerik().DatePickerFor(x => x.DueDate)
                 .Value(Model.DueDate)
                 .ShowButton(true))
-        .AddToRight(Html.ValidationMessageFor(x => x.DueDate)) %>
+        .AddToRight(Html.ValidationMessageFor(x => x.DueDate)))
 
-<%= Html.FormRow()
+@(Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.Description))
     .AddToRight(Html.TextAreaFor(x => x.Description, new { style = "width: 450px; height: 70px;" }))
-    .AddToRight(Html.ValidationMessageFor(x => x.Description))%>
+    .AddToRight(Html.ValidationMessageFor(x => x.Description)))
 
-<%= Html.FormRow()
-    .AddToRight(Html.SaveButton("Save", new {})) %>
+@(Html.FormRow()
+    .AddToRight(Html.SaveButton("Save", new {})))
 
 
 

@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using Trakker.Data;
 using System.Collections.Generic;
 
-namespace Trakker.Models
+namespace Trakker.Models.User
 {
 
     public class LogoutModel : MasterModel

@@ -90,13 +90,13 @@ namespace Trakker.Areas.Admin.Controllers {
         public class ViewNames {
             public readonly string BrowseProjects = "~/Areas/Admin/Views/Management/BrowseProjects.cshtml";
             public readonly string BrowseUsers = "~/Areas/Admin/Views/Management/BrowseUsers.cshtml";
-            public readonly string CreateProject = "~/Areas/Admin/Views/Management/CreateProject.aspx";
-            public readonly string CreateUser = "~/Areas/Admin/Views/Management/CreateUser.aspx";
+            public readonly string CreateProject = "~/Areas/Admin/Views/Management/CreateProject.cshtml";
+            public readonly string CreateUser = "~/Areas/Admin/Views/Management/CreateUser.cshtml";
             public readonly string EditProject = "~/Areas/Admin/Views/Management/EditProject.cshtml";
-            public readonly string EditUser = "~/Areas/Admin/Views/Management/EditUser.aspx";
-            public readonly string EditUserPassword = "~/Areas/Admin/Views/Management/EditUserPassword.aspx";
-            public readonly string Index = "~/Areas/Admin/Views/Management/Index.aspx";
-            public readonly string ViewProject = "~/Areas/Admin/Views/Management/ViewProject.aspx";
+            public readonly string EditUser = "~/Areas/Admin/Views/Management/EditUser.cshtml";
+            public readonly string EditUserPassword = "~/Areas/Admin/Views/Management/EditUserPassword.cshtml";
+            public readonly string Index = "~/Areas/Admin/Views/Management/Index.cshtml";
+            public readonly string ViewProject = "~/Areas/Admin/Views/Management/ViewProject.cshtml";
             public readonly string ViewUser = "~/Areas/Admin/Views/Management/ViewUser.cshtml";
         }
     }

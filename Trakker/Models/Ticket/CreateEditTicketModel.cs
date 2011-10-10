@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using Trakker.Properties;
 using System.ComponentModel;
 
-namespace Trakker.Models
+namespace Trakker.Models.Ticket
 {
 
     public class CreateEditTicketModel : MasterModel
@@ -50,7 +50,7 @@ namespace Trakker.Models
         public IList<TicketStatus> Status { get; set; }
         public IList<Project> Projects { get; set; }
         public IList<TicketResolution> Resolutions { get; set; }
-        public IList<User> Users { get; set; }
+        public IList<Trakker.Data.User> Users { get; set; }
 
     }
 }

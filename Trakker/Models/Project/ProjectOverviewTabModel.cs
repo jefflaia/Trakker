@@ -6,8 +6,8 @@
     public class ProjectOverviewTabModel : MasterModel
     {
         public Project Project { get; set; }
-        public User Lead { get; set; }
-        public IList<Ticket> NewestTickets { get; set; }
+        public Trakker.Data.User Lead { get; set; }
+        public IList<Trakker.Data.Ticket> NewestTickets { get; set; }
         
     }
 }

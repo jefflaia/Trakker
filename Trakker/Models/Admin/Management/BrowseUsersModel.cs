@@ -9,7 +9,7 @@ namespace Trakker.Models.Admin.Management
 {
     public class BrowseUsersModel : MasterModel
     {
-        public IList<User> Users { get; set; }
+        public IList<Trakker.Data.User> Users { get; set; }
         public int TotalUsers { get; set; }
         public int PageSize { get; set; }
         public int CurrentPage { get; set; }

@@ -14,9 +14,9 @@ namespace Trakker.Models
         public Project CurrentProject { get; set; }
 
         public bool IsUserLoggedIn { get; set; }
-        public User CurrentUser { get; set; }
+        public Trakker.Data.User CurrentUser { get; set; }
 
-        public IList<Ticket> Tickets { get; set; }
+        public IList<Trakker.Data.Ticket> Tickets { get; set; }
 
         public int NumTicketsAssignedToCurrentUser { get; set; }
 

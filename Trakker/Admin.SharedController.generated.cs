@@ -28,8 +28,8 @@ namespace T4MVC.Admin {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
+            public readonly string _SubNavigation = "~/Areas/Admin/Views/Shared/_SubNavigation.cshtml";
             public readonly string Admin = "~/Areas/Admin/Views/Shared/Admin.cshtml";
-            public readonly string SubNavigation = "~/Areas/Admin/Views/Shared/SubNavigation.ascx";
         }
     }
 

@@ -10,7 +10,7 @@ using System.ComponentModel.DataAnnotations;
 using Trakker.Properties;
 
 
-namespace Trakker.Models
+namespace Trakker.Models.User
 {
     public class LoginModel : MasterModel
     {

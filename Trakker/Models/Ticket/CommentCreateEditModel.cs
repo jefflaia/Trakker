@@ -5,7 +5,7 @@ using System.Web;
 using Trakker.Data;
 
 
-namespace Trakker.Models
+namespace Trakker.Models.Ticket
 {
     public class CommentCreateEditModel : MasterModel
     {

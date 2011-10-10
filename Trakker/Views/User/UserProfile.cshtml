@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Basic.Master" Inherits="System.Web.Mvc.ViewPage<Trakker.Models.UserProfileModel>" %>
+﻿@model Trakker.Models.User.UserProfileModel
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BasicContent" runat="server">
     <div id="UserProfile">
         <div class="Header">
             <img src="../../Content/Images/TestTicketIcon.png" />
-            <h1><%: Model.User.FullName() %></h1>
+            <h1>@Model.User.FullName()</h1>
         </div>
 
         <div class="Left">
@@ -17,20 +17,21 @@
                     </li>
                     <li>
                         <label>Name:</label>        
-                        <span><%: Model.User.FullName() %></span>
+                        <span>@Model.User.FullName()</span>
                     </li>
                     <li>
                         <label>Username:</label>    
-                        <span><%: Model.User.Email %></span>
+                        <span>@Model.User.Email</span>
                     </li>
-                    <% if (Model.IsOwner) { %>
+                    @if (Model.IsOwner)
+                    {
                         <li>
                             <label>Password:</label>    
                             <span>
-                                <%: Html.ActionLink("Change Password", MVC.User.ChangePassword(Model.User.Id)) %>
+                                @Html.ActionLink("Change Password", MVC.User.ChangePassword(Model.User.Id))
                             </span>
                         </li>
-                    <% } %>
+                    }
                     <li>
                     <label>Groups:</label>      
                     <span></span>
@@ -51,7 +52,7 @@
         <div class="Right">
             <div class="Activity SubSection">
                 <h2>Activity</h2>
-                <% Html.RenderPartial(MVC.Shared.Views.ActivityStream, Model.ActivityStreamGroups); %>
+                @{Html.RenderPartial(MVC.Shared.Views.ActivityStream, Model.ActivityStreamGroups);}
             </div>
         </div>
 

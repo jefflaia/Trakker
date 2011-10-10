@@ -69,7 +69,7 @@ namespace Trakker.Controllers {
         public class ViewNames {
             public readonly string ChangePassword = "~/Views/User/ChangePassword.aspx";
             public readonly string Login = "~/Views/User/Login.aspx";
-            public readonly string Logout = "~/Views/User/Logout.aspx";
+            public readonly string Logout = "~/Views/User/Logout.cshtml";
             public readonly string UserProfile = "~/Views/User/UserProfile.aspx";
         }
     }
@@ -83,7 +83,7 @@ namespace Trakker.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult Login(Trakker.Models.LoginModel viewData) {
+        public override System.Web.Mvc.ActionResult Login(Trakker.Models.User.LoginModel viewData) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Login);
             callInfo.RouteValueDictionary.Add("viewData", viewData);
             return callInfo;
@@ -106,7 +106,7 @@ namespace Trakker.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult ChangePassword(int userId, Trakker.Models.ChangePasswordModel viewModel) {
+        public override System.Web.Mvc.ActionResult ChangePassword(int userId, Trakker.Models.User.ChangePasswordModel viewModel) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ChangePassword);
             callInfo.RouteValueDictionary.Add("userId", userId);
             callInfo.RouteValueDictionary.Add("viewModel", viewModel);

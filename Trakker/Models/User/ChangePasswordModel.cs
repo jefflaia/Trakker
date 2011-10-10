@@ -9,7 +9,7 @@ using Trakker.Properties;
 using Trakker.Models;
 using Trakker.Data;
 
-namespace Trakker.Models
+namespace Trakker.Models.User
 {
     public class ChangePasswordModel : MasterModel
     {
@@ -32,6 +32,6 @@ namespace Trakker.Models
         [StringLength(100, MinimumLength = 8, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "PasswordLength")]
         public string RePassword { get; set; }
 
-        public User User { get; set; }
+        public Trakker.Data.User User { get; set; }
     }
 }

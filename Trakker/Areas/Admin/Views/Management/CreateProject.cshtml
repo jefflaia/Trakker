@@ -1,9 +1,10 @@
-﻿@model Trakker.Models.Admin.Management.EditProjectModel
-
+﻿@model Trakker.Models.Admin.Management.CreateProjectModel
 
 <div class="Section">
-    <h1>Edit Project</h1>
-    @using(Html.BeginForm()) {
+    <h1>Create Project</h1>
+    
+    @{Html.BeginForm();}
+
         @(Html.FormRow()
             .AddToLeft(Html.LabelFor(m => m.Name))
             .AddToRight(Html.TextBoxFor(m => m.Name))
@@ -16,35 +17,28 @@
             .AppendDescription("A url pertaining to this project."))
 
         @(Html.FormRow()
-            .AddToLeft(Html.LabelFor(m => m.Due))
-            .AddToRight(Html.DatePickerFor(m => m.Due))
-            .AddToRight(Html.ValidationMessageFor(x => x.Due)))
+            .AddToLeft(Html.LabelFor(m => m.KeyName))
+            .AddToRight(Html.TextBoxFor(m => m.KeyName))
+            .AddToRight(Html.ValidationMessageFor(x => x.KeyName))
+            .AppendDescription("A unique key for this project."))
 
+        @(Html.FormRow()
+            .AddToLeft(Html.LabelFor(m => m.Due))
+            .AddToRight(Html.Telerik().DatePickerFor(m => m.Due))
+            .AddToRight(Html.ValidationMessageFor(x => x.Due)))
 
         @(Html.FormRow()
             .AddToLeft(Html.LabelFor(m => m.Lead))
             .AddToRight(Html.DropDownListFor(m => m.Lead, Model.Users.ToSelectList("Id", "Email")))
-                .AddToRight(Html.ValidationMessageFor(x => x.Lead)))
- 
+            .AddToRight(Html.ValidationMessageFor(x => x.Lead)))
 
         @(Html.FormRow()
             .AddToLeft(Html.LabelFor(m => m.ColorPaletteId))
             .AddToRight(Html.DropDownListFor(m => m.ColorPaletteId, Model.ColorPalettes.ToSelectList("Id", "Name")))
-                .AddToRight(Html.ValidationMessageFor(x => x.ColorPaletteId)))
-     
+            .AddToRight(Html.ValidationMessageFor(x => x.ColorPaletteId)))
 
         @(Html.FormRow()
             .AddToRight(Html.SaveButton("Save", null)))
-    }
 
-    @using (Html.BeginForm(MVC.Admin.Management.UploadFile(), FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        @(Html.FormRow()
-            .AddToLeft(Html.LabelFor(m => m.Name))
-            .AddToRight("<input type=\"file\" name=\"image\" />"))
-        
-         @(Html.FormRow()
-            .AddToRight(Html.SaveButton("Save", null)))
-    }
+    @{Html.EndForm();}
 </div>
-

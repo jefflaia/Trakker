@@ -9,6 +9,6 @@ namespace Trakker.Models.Admin.Management
 {
     public class ViewUserModel : MasterModel
     {
-        public User User { get; set; }
+        public Trakker.Data.User User { get; set; }
     }
 }

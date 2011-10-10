@@ -83,14 +83,14 @@ namespace Trakker.Controllers {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
+            public readonly string _CreateEditCommentForm = "~/Views/Ticket/_CreateEditCommentForm.cshtml";
+            public readonly string _CreateEditTicketForm = "~/Views/Ticket/_CreateEditTicketForm.cshtml";
             public readonly string _TicketDetailsCommentsTab = "~/Views/Ticket/_TicketDetailsCommentsTab.cshtml";
             public readonly string BrowseTickets = "~/Views/Ticket/BrowseTickets.cshtml";
-            public readonly string CreateComment = "~/Views/Ticket/CreateComment.aspx";
-            public readonly string CreateEditCommentForm = "~/Views/Ticket/CreateEditCommentForm.ascx";
-            public readonly string CreateEditTicketForm = "~/Views/Ticket/CreateEditTicketForm.ascx";
-            public readonly string CreateTicket = "~/Views/Ticket/CreateTicket.aspx";
-            public readonly string EditComment = "~/Views/Ticket/EditComment.aspx";
-            public readonly string EditTicket = "~/Views/Ticket/EditTicket.aspx";
+            public readonly string CreateComment = "~/Views/Ticket/CreateComment.cshtml";
+            public readonly string CreateTicket = "~/Views/Ticket/CreateTicket.cshtml";
+            public readonly string EditComment = "~/Views/Ticket/EditComment.cshtml";
+            public readonly string EditTicket = "~/Views/Ticket/EditTicket.cshtml";
             public readonly string TicketDetails = "~/Views/Ticket/TicketDetails.cshtml";
         }
     }
@@ -116,7 +116,7 @@ namespace Trakker.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult CreateTicket(Trakker.Models.CreateEditTicketModel viewData) {
+        public override System.Web.Mvc.ActionResult CreateTicket(Trakker.Models.Ticket.CreateEditTicketModel viewData) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.CreateTicket);
             callInfo.RouteValueDictionary.Add("viewData", viewData);
             return callInfo;
@@ -128,7 +128,7 @@ namespace Trakker.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult EditTicket(string keyName, Trakker.Models.CreateEditTicketModel viewData) {
+        public override System.Web.Mvc.ActionResult EditTicket(string keyName, Trakker.Models.Ticket.CreateEditTicketModel viewData) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditTicket);
             callInfo.RouteValueDictionary.Add("keyName", keyName);
             callInfo.RouteValueDictionary.Add("viewData", viewData);

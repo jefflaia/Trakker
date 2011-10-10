@@ -12,6 +12,7 @@ using System.Web.UI.HtmlControls;
 using Trakker.Models;
 using Trakker.Infastructure.Streams.Activity;
 using Trakker.Data.Repositories;
+using Trakker.Models.Ticket;
 
 namespace Trakker.Controllers
 {
@@ -176,8 +177,8 @@ namespace Trakker.Controllers
                 Resolutions = _ticketRepo.GetResolutions()
             };
 
-            Mapper.CreateMap<Ticket, CreateEditTicketModel>();
-            viewData = Mapper.Map(ticket, viewData);
+            //Mapper.CreateMap<Ticket, CreateEditTicketModel>();
+            //viewData = Mapper.Map(ticket, viewData);
 
             return View(viewData);
         }
