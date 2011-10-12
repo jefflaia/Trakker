@@ -10,6 +10,7 @@ using Trakker.Attributes;
 using AutoMapper;
 using Trakker.Models;
 using Trakker.Data.Repositories;
+using Trakker.Models.Project;
 
 namespace Trakker.Controllers
 {
@@ -47,7 +48,15 @@ namespace Trakker.Controllers
 
             return View(new ProjectRoadMapTabModel()
             {
-                Versions = _projectRepo.GetAllByProject(project)
+                Versions = _projectRepo.GetAllByProject(project),
+                Project = project
+            });
+        }
+
+        public virtual ActionResult ReleaseNotes(string keyName, int versionId)
+        {
+            return View(new ReleaseNotesModel()
+            {
             });
         }
 

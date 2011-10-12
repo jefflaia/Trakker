@@ -8,10 +8,10 @@ namespace Trakker.Models
 {
     public class MasterModel
     {
-        public IList<Project> RecentProjects { get; set; }
+        public IList<Trakker.Data.Project> RecentProjects { get; set; }
 
         public bool HasCurrentProject { get; set; }
-        public Project CurrentProject { get; set; }
+        public Trakker.Data.Project CurrentProject { get; set; }
 
         public bool IsUserLoggedIn { get; set; }
         public Trakker.Data.User CurrentUser { get; set; }

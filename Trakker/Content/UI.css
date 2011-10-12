@@ -1,8 +1,17 @@
-﻿div.ui-progress-bar{height: 10px; background-color: #ddd; width: 100%; overflow: hidden; }
+﻿/***** Progress Bar *****/
+div.ui-progress-bar{height: 10px; background-color: #ddd; width: 100%; overflow: hidden; }
 div.ui-progress-bar div{height:10px;}
-div.ui-progress-bar div.ui-progress-bar-blue{background-color: #89afd7;}
-div.ui-progress-bar div.ui-progress-bar-orange{background-color: #ec8e00;}
-div.ui-progress-bar div.ui-progress-bar-yellow{background-color: #EBDF5B;}
-div.ui-progress-bar div.ui-progress-bar-green{background-color: #51a825;}
-div.ui-progress-bar div.ui-progress-bar-red{background-color: #e1484a;}
-div.ui-progress-bar div.ui-progress-bar-purple{background-color: #AB62CF;}
+
+div.ui-progress-bar-blue{background-color: #89afd7;}
+div.ui-progress-bar-orange{background-color: #ec8e00;}
+div.ui-progress-bar-yellow{background-color: #EBDF5B;}
+div.ui-progress-bar-green{background-color: #51a825;}
+div.ui-progress-bar-red{background-color: #e1484a;}
+div.ui-progress-bar-purple{background-color: #AB62CF;}
+
+
+/***** Arrows *****/
+div.ui-arrow-up { width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 10px solid blue; }
+div.ui-arrow-down { width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 10px solid blue; }
+div.ui-arrow-right { width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 10px solid blue; }
+div.ui-arrow-left { width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-right: 10px solid blue; }

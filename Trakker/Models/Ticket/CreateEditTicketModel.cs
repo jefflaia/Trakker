@@ -48,7 +48,7 @@ namespace Trakker.Models.Ticket
         public IList<TicketPriority> Priorities { get; set; }
         public IList<TicketType> Categories { get; set; }
         public IList<TicketStatus> Status { get; set; }
-        public IList<Project> Projects { get; set; }
+        public IList<Trakker.Data.Project> Projects { get; set; }
         public IList<TicketResolution> Resolutions { get; set; }
         public IList<Trakker.Data.User> Users { get; set; }
 

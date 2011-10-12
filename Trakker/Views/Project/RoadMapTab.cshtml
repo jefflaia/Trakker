@@ -14,16 +14,16 @@
                     .Green())
                 </div>
                 <span>@version.PercentClosed().ToString("#.0")% (@version.ClosedTicketCount() of @version.Tickets.Count)  have been resolved</span>
-                <span class="notes"><a href="#">Release Notes</a></span>
+                <span class="notes">@Html.ActionLink("Release Notes", MVC.Project.ReleaseNotes(Model.Project.KeyName.ToLower(), version.Id))</span>
             </div>
             <table>
                 @foreach (var ticket in version.Tickets)
                 {
                     <tr>
                         <td>@ticket.Type.Name</td>
-                        <td>@Html.RouteLink(ticket.KeyName, MVC.Ticket.TicketDetails(ticket.KeyName))</td>
+                        <td>@Html.ActionLink(ticket.KeyName, MVC.Ticket.TicketDetails(ticket.KeyName))</td>
                         <td>@ticket.Resolution.Name</td>
-                        <td>@Html.RouteLink(ticket.Summary, MVC.Ticket.TicketDetails(ticket.KeyName))</td>
+                        <td>@Html.ActionLink(ticket.Summary, MVC.Ticket.TicketDetails(ticket.KeyName))</td>
                         <td>@ticket.Priority.Name</td>
                         <td>@ticket.Status.Name</td>
                     </tr>

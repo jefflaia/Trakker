@@ -43,6 +43,11 @@ namespace Trakker.Controllers {
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult ReleaseNotes() {
+            return new T4MVC_ActionResult(Area, Name, ActionNames.ReleaseNotes);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public System.Web.Mvc.ActionResult ComponentSummary() {
             return new T4MVC_ActionResult(Area, Name, ActionNames.ComponentSummary);
         }
@@ -61,6 +66,7 @@ namespace Trakker.Controllers {
         public class ActionNamesClass {
             public readonly string OverviewTab = "OverviewTab";
             public readonly string RoadMapTab = "RoadMapTab";
+            public readonly string ReleaseNotes = "ReleaseNotes";
             public readonly string ComponentSummary = "ComponentSummary";
         }
 
@@ -71,6 +77,7 @@ namespace Trakker.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
             public readonly string OverviewTab = "~/Views/Project/OverviewTab.cshtml";
+            public readonly string ReleaseNotes = "~/Views/Project/ReleaseNotes.cshtml";
             public readonly string RoadMapTab = "~/Views/Project/RoadMapTab.cshtml";
         }
     }
@@ -88,6 +95,13 @@ namespace Trakker.Controllers {
         public override System.Web.Mvc.ActionResult RoadMapTab(string keyName) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.RoadMapTab);
             callInfo.RouteValueDictionary.Add("keyName", keyName);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult ReleaseNotes(string keyName, int versionId) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ReleaseNotes);
+            callInfo.RouteValueDictionary.Add("keyName", keyName);
+            callInfo.RouteValueDictionary.Add("versionId", versionId);
             return callInfo;
         }
 

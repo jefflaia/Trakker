@@ -15,7 +15,8 @@ div#ProjectContainer div.Issues li p.Right{width: 49%; text-align: right; float:
 
 /************************/
 /****** Road Map Tab ****/
-ul#road-map-list > li div.top{padding: 0px 10px 0px 10px;  display: block; line-height: 40px; font-size: 1.2em;}
+ul#road-map-list > li { margin-left: 25px;}
+ul#road-map-list > li div.top{padding: 0px 10px 0px 10px;  display: block; line-height: 40px; font-size: 1.2em; border-top: 1px solid #ccc; margin: 5px 0px 0px 0px;}
 ul#road-map-list > li div.top:hover {background-color: #eee;}
 ul#road-map-list > li div.top div { float: left;}
 ul#road-map-list > li div.top div.name {width: 150px;}

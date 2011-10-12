@@ -126,6 +126,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AttributeController.cs" />
     <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
+    <Compile Include="Models\Project\ReleaseNotesModel.cs" />
     <Compile Include="Models\Admin\Attribute\CreateEditStatusModel.cs" />
     <Compile Include="Models\Admin\Attribute\CreateEditTypeModel.cs" />
     <Compile Include="Models\Admin\Management\CreateUserModel.cs" />
@@ -430,6 +431,7 @@
     <None Include="Views\Error\UnexpectedError.cshtml" />
     <None Include="Views\Error\UserNotFound.cshtml" />
     <None Include="Views\Project\OverviewTab.cshtml" />
+    <Content Include="Views\Project\ReleaseNotes.cshtml" />
     <None Include="Views\Search\SearchIndex.cshtml" />
     <None Include="Views\Shared\_ActivityStream.cshtml" />
     <Content Include="Views\Shared\Error.aspx" />

@@ -9,7 +9,7 @@ namespace Trakker.Models.Admin.Management
 {
     public class ViewProjectModel : MasterModel
     {
-        public Project Project { get; set; }
+        public Trakker.Data.Project Project { get; set; }
         public ColorPalette Palette { get; set; }
         public Trakker.Data.User User { get; set; }
     }

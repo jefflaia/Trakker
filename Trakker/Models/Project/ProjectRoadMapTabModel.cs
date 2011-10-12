@@ -6,6 +6,6 @@
     public class ProjectRoadMapTabModel : MasterModel
     {
         public IList<ProjectVersion> Versions { get; set; }
-        public Project Project { get; set; }
+        public Trakker.Data.Project Project { get; set; }
     }
 }
