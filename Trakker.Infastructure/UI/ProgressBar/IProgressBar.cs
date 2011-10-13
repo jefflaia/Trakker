@@ -8,6 +8,7 @@ namespace Trakker.Infastructure.UI
         double Max { get; set; }
         double Current { get; set; }
         string ColorClass { get; set; }
+        string BackgroundColorClass { get; set; }
         int Width { get; set; }
         int Height { get; set; }
 

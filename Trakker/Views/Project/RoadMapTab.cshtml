@@ -11,6 +11,7 @@
                 @(Html.Ctm().ProgressBar()
                     .Current(version.ClosedTicketCount())
                     .Max(version.Tickets.Count)
+                    .Background.Red()
                     .Green())
                 </div>
                 <span>@version.PercentClosed().ToString("#.0")% (@version.ClosedTicketCount() of @version.Tickets.Count)  have been resolved</span>

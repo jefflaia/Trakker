@@ -19,6 +19,7 @@ namespace Trakker.Infastructure.UI
             public const string Red = "ui-progress-bar-red";
             public const string Yellow = "ui-progress-bar-yellow";
             public const string Green = "ui-progress-bar-green";
+            public const string Grey = "ui-progress-bar-grey";
         }
     }
 }

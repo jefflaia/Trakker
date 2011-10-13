@@ -22,12 +22,14 @@ namespace Trakker.Infastructure.UI
             Current = 0;
             Max = 100;
             ColorClass = CssPrimitives.ProgressBar.Blue;
+            BackgroundColorClass = CssPrimitives.ProgressBar.Grey;
         }
 
         public IDictionary<string, object> InputHtmlAttributes { get; set; }
         public double Max { get; set; }
         public double Current { get; set; }
         public string ColorClass { get; set; }
+        public string BackgroundColorClass { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
 

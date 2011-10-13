@@ -20,7 +20,8 @@ namespace Trakker.Infastructure.UI
         {
             IDictionary<string, object> attributes = new Dictionary<string, object>();
             var tag = new HtmlTag("div")
-                .AddClass(CssPrimitives.ProgressBar.Container);
+                .AddClass(CssPrimitives.ProgressBar.Container)
+                .AddClass(Element.BackgroundColorClass);
 
             //add the bar    
             tag.Children.Add(this.Bar());

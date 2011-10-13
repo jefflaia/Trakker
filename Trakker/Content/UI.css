@@ -1,5 +1,5 @@
 ﻿/***** Progress Bar *****/
-div.ui-progress-bar{height: 10px; background-color: #ddd; width: 100%; overflow: hidden; }
+div.ui-progress-bar{height: 10px; width: 100%; overflow: hidden; }
 div.ui-progress-bar div{height:10px;}
 
 div.ui-progress-bar-blue{background-color: #89afd7;}
@@ -8,7 +8,7 @@ div.ui-progress-bar-yellow{background-color: #EBDF5B;}
 div.ui-progress-bar-green{background-color: #51a825;}
 div.ui-progress-bar-red{background-color: #e1484a;}
 div.ui-progress-bar-purple{background-color: #AB62CF;}
-
+div.ui-progress-bar-grey{background-color: #ddd;}
 
 /***** Arrows *****/
 div.ui-arrow-up { width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 10px solid blue; }

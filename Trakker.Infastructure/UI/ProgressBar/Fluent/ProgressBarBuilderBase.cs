@@ -11,7 +11,8 @@ namespace Trakker.Infastructure.UI
         where TBuilder : ProgressBarBuilderBase<TComponent, TBuilder>
     {
 
-        public TComponent Component { get; set; }
+        private TComponent Component { get; set; }
+        private bool _isBackground = false;
 
         public ProgressBarBuilderBase(TComponent component) :
             base(component)
@@ -56,39 +57,57 @@ namespace Trakker.Infastructure.UI
             return this as TBuilder;
         }
 
+        public TBuilder Background
+        {
+            get
+            {
+                _isBackground = true;
+                return this as TBuilder;
+            }
+        }
+
         public TBuilder Blue()
         {
-            Component.ColorClass = CssPrimitives.ProgressBar.Blue;
-            return this as TBuilder;
+            return Color(CssPrimitives.ProgressBar.Blue);
         }
 
         public TBuilder Red()
         {
-            Component.ColorClass = CssPrimitives.ProgressBar.Red;
-            return this as TBuilder;
+            return Color(CssPrimitives.ProgressBar.Red);
         }
 
         public TBuilder Green()
         {
-            Component.ColorClass = CssPrimitives.ProgressBar.Green;
-            return this as TBuilder;
+            return Color(CssPrimitives.ProgressBar.Green);
         }
 
         public TBuilder Orange()
         {
-            Component.ColorClass = CssPrimitives.ProgressBar.Orange;
-            return this as TBuilder;
+            return Color(CssPrimitives.ProgressBar.Orange);
         }
 
         public TBuilder Yellow()
         {
-            Component.ColorClass = CssPrimitives.ProgressBar.Yellow;
-            return this as TBuilder;
+            return Color(CssPrimitives.ProgressBar.Yellow);
         }
 
         public TBuilder Purple()
         {
-            Component.ColorClass = CssPrimitives.ProgressBar.Purple;
+            return Color(CssPrimitives.ProgressBar.Purple);
+        }
+
+        private TBuilder Color(string colorClass)
+        {
+            if (_isBackground)
+            {
+                Component.BackgroundColorClass = colorClass;
+                _isBackground = false;
+            }
+            else
+            {
+                Component.ColorClass = colorClass;
+            }
+
             return this as TBuilder;
         }
     }
