@@ -27,7 +27,7 @@ namespace Trakker.Data.Services
 
         public void AddVersion(ProjectVersion version, ProjectVersion afterVersion)
         {
-            version.SortOrder = afterVersion.SortOrder + 1;
+            version.SortOrder = afterVersion.SortOrder;
             _projectRepo.Save(version);
         }
     }

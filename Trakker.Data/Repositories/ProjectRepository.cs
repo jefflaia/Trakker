@@ -100,8 +100,10 @@
         {
             if (version.Id == 0)
             {
-                Session.CreateQuery("update ProjectVersion set SortOrder = SortOrder + 1 where SortOrder >= ?")
-                    .SetInt32(0, version.SortOrder);
+                Session.CreateQuery("update ProjectVersion set SortOrder = SortOrder + 1 where SortOrder >= ? and ProjectId = ?")
+                    .SetInt32(0, version.SortOrder)
+                    .SetInt32(1, version.ProjectId)
+                    .ExecuteUpdate();
             }
             
             base.Save(version);
@@ -122,7 +124,7 @@
 
         public IList<ProjectVersion> GetVersionsByProject(Project project)
         {
-            return Session.CreateQuery("from ProjectVersion pv where pv.ProjectId = ? order by pv.SortOrder asc")
+            return Session.CreateQuery("from ProjectVersion pv where pv.ProjectId = ? order by pv.SortOrder desc")
                 .SetInt32(0, project.Id)
                 .List<ProjectVersion>();
         }

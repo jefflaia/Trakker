@@ -19,7 +19,12 @@
             <tr>
                 <td>@version.Name</td>
                 <td>@version.Description</td>
-                <td>@version.ReleaseDate.Value</td>
+                <td> 
+                    @if (version.ReleaseDate != null)
+                    {
+                        @version.ReleaseDate.Value
+                    }
+                </td>
             </tr>       
         }
     </table>

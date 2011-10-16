@@ -18,7 +18,7 @@
     
         @(Html.FormRow()
             .AddToLeft(Html.Label("Description:"))
-            .AddToRight(Html.TextBoxFor(x => x.Description, Model.Description))
+            .AddToRight(Html.TextAreaFor(x => x.Description, Model.Description))
             .AddToRight(Html.ValidationMessageFor(m => m.Description)))
 
     
@@ -28,7 +28,7 @@
             .AddToRight(Html.ValidationMessageFor(m => m.ReleaseDate)))
     
         @(Html.FormRow()
-            .AddToLeft(Html.Label("Add After:"))
+            .AddToLeft(Html.Label("Schedule Before:"))
             .AddToRight(Html.DropDownListFor(x => x.AfterVersionId, Model.Versions.ToSelectList("Id", "Name")))
             .AddToRight(Html.ValidationMessageFor(m => m.AfterVersionId)))
     
@@ -58,7 +58,7 @@
                 }
             </td>
             <td>
-                <a href="">Edit</a> |
+                @Html.ActionLink("Edit", MVC.Admin.Management.EditVersion(Model.Project.KeyName, version.Id)) |
                 <a href="">Release</a> |
                 <a href="">Delete</a>
             </td>

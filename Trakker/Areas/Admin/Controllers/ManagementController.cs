@@ -314,15 +314,60 @@ namespace Trakker.Areas.Admin.Controllers
                     ProjectVersion afterVersion = _projectRepo.GetVersionById(model.AfterVersionId);
 
                     _projectService.AddVersion(version, afterVersion);
+
+                    return RedirectToAction(MVC.Admin.Management.ManageVersions(keyName));
                 }
             }
 
             return View(new ManageVersionsModel
             {
-                Versions = _projectRepo.GetVersionsByProject(project)
+                Versions = _projectRepo.GetVersionsByProject(project),
+                Project = project
             });
         }
 
+        [HttpGet]
+        public virtual ActionResult EditVersion(string keyName, int versionId)
+        {
+            return EditVersion(keyName, versionId, new EditVersionModel());
+        }
+
+        [HttpPost]
+        public virtual ActionResult EditVersion(string keyName, int versionId, EditVersionModel model)
+        {
+            Project project = _projectRepo.GetProjectByKey(keyName);
+            ProjectVersion version = _projectRepo.GetVersionById(versionId);
+
+            model.Name = version.Name;
+            model.Description = version.Description;
+            model.ReleaseDate = version.ReleaseDate;
+
+            if (IsPost)
+            {
+                //if the name exists and its not the version we are editing add an error
+                if (_projectRepo.GetVersionByName(model.Name) != null)
+                {
+                    if (_projectRepo.GetVersionByName(model.Name).Id != versionId)
+                    {
+                        ModelState.AddModelError("Name", "A verison with that name already exists.");
+                    }
+                }
+
+                if (ModelState.IsValid)
+                {
+                    version.Name = model.Name;
+                    version.Description = model.Description;
+                    version.ReleaseDate = model.ReleaseDate;
+
+                    _projectRepo.Save(version);
+
+                    return RedirectToAction(MVC.Admin.Management.ManageVersions(project.KeyName));
+                }
+            }
+
+            model.Project = project;
+            return View(model);
+        }
         #endregion
 
         [HttpPost]

@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Trakker.Data;
 using System.ComponentModel.DataAnnotations;
 using Trakker.Properties;
-using Trakker.Data;
 
 namespace Trakker.Models.Admin.Management
 {
-    public class ManageVersionsModel : MasterModel
+    public class EditVersionModel : MasterModel
     {
         [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
         [StringLength(50, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_50")]
@@ -20,11 +18,6 @@ namespace Trakker.Models.Admin.Management
 
         public DateTime? ReleaseDate { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
-        public int AfterVersionId { get; set; }
-
-
         public Data.Project Project { get; set; }
-        public IList<ProjectVersion> Versions { get; set; }
     }
 }
