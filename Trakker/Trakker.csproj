@@ -126,6 +126,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AttributeController.cs" />
     <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
+    <Compile Include="Models\Admin\Management\ManageVersionsModel.cs" />
     <Compile Include="Models\Project\ReleaseNotesModel.cs" />
     <Compile Include="Models\Admin\Attribute\CreateEditStatusModel.cs" />
     <Compile Include="Models\Admin\Attribute\CreateEditTypeModel.cs" />
@@ -267,6 +268,7 @@
     <None Include="Areas\Admin\Views\Management\EditUserPassword.cshtml" />
     <None Include="Areas\Admin\Views\Management\Index.cshtml" />
     <None Include="Areas\Admin\Views\Management\BrowseUsers.cshtml" />
+    <Content Include="Areas\Admin\Views\Management\ManageVersions.cshtml" />
     <None Include="Areas\Admin\Views\Management\ViewProject.cshtml" />
     <None Include="Areas\Admin\Views\Management\ViewUser.cshtml" />
     <None Include="Areas\Admin\Views\Settings\BrowseColorPalettes.cshtml" />

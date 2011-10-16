@@ -56,6 +56,11 @@ namespace Trakker.Areas.Admin.Controllers {
         public System.Web.Mvc.ActionResult EditProject() {
             return new T4MVC_ActionResult(Area, Name, ActionNames.EditProject);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult ManageVersions() {
+            return new T4MVC_ActionResult(Area, Name, ActionNames.ManageVersions);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ManagementController Actions { get { return MVC.Admin.Management; } }
@@ -79,6 +84,7 @@ namespace Trakker.Areas.Admin.Controllers {
             public readonly string ViewProject = "ViewProject";
             public readonly string CreateProject = "CreateProject";
             public readonly string EditProject = "EditProject";
+            public readonly string ManageVersions = "ManageVersions";
             public readonly string UploadFile = "UploadFile";
         }
 
@@ -96,6 +102,7 @@ namespace Trakker.Areas.Admin.Controllers {
             public readonly string EditUser = "~/Areas/Admin/Views/Management/EditUser.cshtml";
             public readonly string EditUserPassword = "~/Areas/Admin/Views/Management/EditUserPassword.cshtml";
             public readonly string Index = "~/Areas/Admin/Views/Management/Index.cshtml";
+            public readonly string ManageVersions = "~/Areas/Admin/Views/Management/ManageVersions.cshtml";
             public readonly string ViewProject = "~/Areas/Admin/Views/Management/ViewProject.cshtml";
             public readonly string ViewUser = "~/Areas/Admin/Views/Management/ViewUser.cshtml";
         }
@@ -190,6 +197,19 @@ namespace Trakker.Areas.Admin.Controllers {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditProject);
             callInfo.RouteValueDictionary.Add("keyName", keyName);
             callInfo.RouteValueDictionary.Add("viewModel", viewModel);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult ManageVersions(string keyName) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ManageVersions);
+            callInfo.RouteValueDictionary.Add("keyName", keyName);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult ManageVersions(string keyName, Trakker.Models.Admin.Management.ManageVersionsModel model) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ManageVersions);
+            callInfo.RouteValueDictionary.Add("keyName", keyName);
+            callInfo.RouteValueDictionary.Add("model", model);
             return callInfo;
         }
 

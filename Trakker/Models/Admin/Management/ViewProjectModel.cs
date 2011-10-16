@@ -12,5 +12,6 @@ namespace Trakker.Models.Admin.Management
         public Trakker.Data.Project Project { get; set; }
         public ColorPalette Palette { get; set; }
         public Trakker.Data.User User { get; set; }
+        public IList<ProjectVersion> Versions { get; set; }
     }
 }

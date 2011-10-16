@@ -98,7 +98,14 @@
         #region Version
         public void Save(ProjectVersion version)
         {
+            if (version.Id == 0)
+            {
+                Session.CreateQuery("update ProjectVersion set SortOrder = SortOrder + 1 where SortOrder >= ?")
+                    .SetInt32(0, version.SortOrder);
+            }
+            
             base.Save(version);
+
         }
 
         public ProjectVersion GetVersionById(int id)
@@ -106,7 +113,14 @@
             return GetById<ProjectVersion>(id);
         }
 
-        public IList<ProjectVersion> GetAllByProject(Project project)
+        public ProjectVersion GetVersionByName(string name)
+        {
+            return Session.CreateQuery("from ProjectVersion pv where pv.Name = ?")
+                .SetString(0, name)
+                .UniqueResult<ProjectVersion>();
+        }
+
+        public IList<ProjectVersion> GetVersionsByProject(Project project)
         {
             return Session.CreateQuery("from ProjectVersion pv where pv.ProjectId = ? order by pv.SortOrder asc")
                 .SetInt32(0, project.Id)

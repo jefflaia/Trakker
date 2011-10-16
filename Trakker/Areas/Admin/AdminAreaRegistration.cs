@@ -36,6 +36,7 @@ namespace Trakker.Areas.Admin
             context.MapRoute("CreateProject", "admin/management/project/create", new { controller = "Management", action = "CreateProject" });
             context.MapRoute("ViewProject", "admin/management/project/{keyName}", new { controller = "Management", action = "ViewProject" });
             context.MapRoute("EditProject", "admin/management/project/{keyName}/edit", new { controller = "Management", action = "EditProject" });
+            context.MapRoute("ManageVersions", "admin/management/project/{keyName}/versions", MVC.Admin.Management.ManageVersions());
 
             //SettingsController
             context.MapRoute("SettingsIndex", "admin/settings/", new { controller = "Settings", action = "Index" });

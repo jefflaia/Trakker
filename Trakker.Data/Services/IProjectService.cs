@@ -8,5 +8,7 @@ namespace Trakker.Data.Services
     public interface IProjectService
     {
         void ChangeProjectAvatar(File file);
+
+        void AddVersion(ProjectVersion version, ProjectVersion afterVersion);
     }
 }

@@ -1,0 +1,67 @@
+﻿@model Trakker.Models.Admin.Management.ManageVersionsModel
+
+<div class="Section">
+    <h1>Manage Versions</h1>
+    <p>You can add, remove, or merge verions for the selected project.</p>
+    <p>The list of versions is shows all versions ordered by the newest first.</p>
+</div>
+
+<div class="Section">
+    <h1>Add Version</h1>
+    @using (Html.BeginForm())
+    {
+
+        @(Html.FormRow()
+            .AddToLeft(Html.Label("Version Name:"))
+            .AddToRight(Html.TextBoxFor(x => x.Name, Model.Name))
+            .AddToRight(Html.ValidationMessageFor(m => m.Name)))
+    
+        @(Html.FormRow()
+            .AddToLeft(Html.Label("Description:"))
+            .AddToRight(Html.TextBoxFor(x => x.Description, Model.Description))
+            .AddToRight(Html.ValidationMessageFor(m => m.Description)))
+
+    
+        @(Html.FormRow()
+            .AddToLeft(Html.Label("Release Date:"))
+            .AddToRight(Html.TextBoxFor(x => x.ReleaseDate, Model.ReleaseDate))
+            .AddToRight(Html.ValidationMessageFor(m => m.ReleaseDate)))
+    
+        @(Html.FormRow()
+            .AddToLeft(Html.Label("Add After:"))
+            .AddToRight(Html.DropDownListFor(x => x.AfterVersionId, Model.Versions.ToSelectList("Id", "Name")))
+            .AddToRight(Html.ValidationMessageFor(m => m.AfterVersionId)))
+    
+        @(Html.FormRow()
+            .AddToRight(Html.SaveButton("Save", null)))
+    }
+</div>
+
+<table class="Grid">
+    <thead>
+        <tr>
+            <th width="20%">Name</th>
+            <th width="50%">Description</th>
+            <th>Release Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var version in Model.Versions)
+    {
+        <tr>
+            <td>@version.Name</td>
+            <td>@version.Description</td>
+            <td>
+                @if (version.ReleaseDate != null)
+                {
+                    @version.ReleaseDate.Value
+                }
+            </td>
+            <td>
+                <a href="">Edit</a> |
+                <a href="">Release</a> |
+                <a href="">Delete</a>
+            </td>
+        </tr>       
+    }
+</table>

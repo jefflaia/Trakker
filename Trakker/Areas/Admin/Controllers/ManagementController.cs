@@ -19,9 +19,12 @@ namespace Trakker.Areas.Admin.Controllers
     [Authenticate]
     public partial class ManagementController : MasterController
     {
-        public ManagementController(ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
+        private IProjectService _projectService;
+
+        public ManagementController(IProjectService projectService, ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
             : base(ticketService, userRepo, projectRepo, ticketRepo)
         {
+            _projectService = projectService;
         }
 
         public virtual ActionResult Index()
@@ -178,7 +181,8 @@ namespace Trakker.Areas.Admin.Controllers
                 {
                     Project = project,
                     Palette = _projectRepo.GetColorPaletteById(project.ColorPaletteId),
-                    User = _userRepo.GetUserById(project.Lead)
+                    User = _userRepo.GetUserById(project.Lead),
+                    Versions = _projectRepo.GetVersionsByProject(project)
                 });
         }
 
@@ -277,6 +281,49 @@ namespace Trakker.Areas.Admin.Controllers
 
             return View(viewModel);
         }
+
+        #region Version
+        [HttpGet]
+        public virtual ActionResult ManageVersions(string keyName)
+        {
+            return ManageVersions(keyName, new ManageVersionsModel());
+        }
+
+        [HttpPost]
+        public virtual ActionResult ManageVersions(string keyName, ManageVersionsModel model)
+        {
+            Project project = _projectRepo.GetProjectByKey(keyName);
+
+            if (IsPost)
+            {
+                if (_projectRepo.GetVersionByName(model.Name) != null)
+                {
+                    ModelState.AddModelError("Name", "A verison with that name already exists.");
+                }
+
+                if (ModelState.IsValid)
+                {
+                    ProjectVersion version = new ProjectVersion
+                    {
+                        Name = model.Name,
+                        Description = model.Description,
+                        ReleaseDate = model.ReleaseDate,
+                        ProjectId = project.Id
+                    };
+
+                    ProjectVersion afterVersion = _projectRepo.GetVersionById(model.AfterVersionId);
+
+                    _projectService.AddVersion(version, afterVersion);
+                }
+            }
+
+            return View(new ManageVersionsModel
+            {
+                Versions = _projectRepo.GetVersionsByProject(project)
+            });
+        }
+
+        #endregion
 
         [HttpPost]
         public virtual ActionResult UploadFile()

@@ -22,12 +22,13 @@ namespace Trakker.Data.Repositories
 
         void Save(ProjectVersion version);
         ProjectVersion GetVersionById(int id);
+        ProjectVersion GetVersionByName(string name);
 
         /// <summary>   Gets all by versions for the specificed project ordered by SortOrder asc. </summary>
         ///
         /// <param name="project">  The project. </param>
         ///
         /// <returns>   all versions by project. </returns>
-        IList<ProjectVersion> GetAllByProject(Project project);
+        IList<ProjectVersion> GetVersionsByProject(Project project);
     }
 }

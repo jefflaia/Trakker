@@ -48,7 +48,7 @@ namespace Trakker.Controllers
 
             return View(new ProjectRoadMapTabModel()
             {
-                Versions = _projectRepo.GetAllByProject(project),
+                Versions = _projectRepo.GetVersionsByProject(project),
                 Project = project
             });
         }

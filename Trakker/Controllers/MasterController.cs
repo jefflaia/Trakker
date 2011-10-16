@@ -25,6 +25,9 @@ namespace Trakker.Controllers
         protected IProjectRepository _projectRepo;
         protected ITicketRepository _ticketRepo;
 
+        private const string REQUEST_TYPE_POST = "POST";
+        private const string REQUEST_TYPE_GET = "GET";
+
         public MasterController(ITicketService ticketService, IUserRepository userRepo, IProjectRepository projectRepo, ITicketRepository ticketRepo)
         {
             _ticketService = ticketService;
@@ -125,6 +128,22 @@ namespace Trakker.Controllers
         protected internal ActionResult TemporaryRedirectToAction(ActionResult result)
         {
             return new CustomCodeRedirectResult(Request.RequestContext, result, 307);
+        }
+
+        protected internal bool IsPost
+        {
+            get 
+            {
+                return Request.HttpMethod.Equals(REQUEST_TYPE_POST, StringComparison.OrdinalIgnoreCase);
+            }
+        }
+
+        protected internal bool IsGet
+        {
+            get
+            {
+                return Request.HttpMethod.Equals(REQUEST_TYPE_GET, StringComparison.OrdinalIgnoreCase);
+            }
         }
 
         #endregion

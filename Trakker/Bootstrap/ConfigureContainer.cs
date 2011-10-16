@@ -60,6 +60,11 @@ namespace Trakker.Bootstrap
                 .LifeStyle.PerWebRequest);
 
             _container.Register(
+                Component.For<IProjectService>()
+                .ImplementedBy<ProjectService>()
+                .LifeStyle.PerWebRequest);
+
+            _container.Register(
                 Component.For<IUnitOfWork>()
                 .ImplementedBy<UnitOfWork>()
                 .LifeStyle.PerWebRequest);
