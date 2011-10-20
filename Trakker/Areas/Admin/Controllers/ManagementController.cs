@@ -319,11 +319,9 @@ namespace Trakker.Areas.Admin.Controllers
                 }
             }
 
-            return View(new ManageVersionsModel
-            {
-                Versions = _projectRepo.GetVersionsByProject(project),
-                Project = project
-            });
+            model.Versions = _projectRepo.GetVersionsByProject(project);
+            model.Project = project;
+            return View(model);
         }
 
         [HttpGet]
@@ -337,10 +335,6 @@ namespace Trakker.Areas.Admin.Controllers
         {
             Project project = _projectRepo.GetProjectByKey(keyName);
             ProjectVersion version = _projectRepo.GetVersionById(versionId);
-
-            model.Name = version.Name;
-            model.Description = version.Description;
-            model.ReleaseDate = version.ReleaseDate;
 
             if (IsPost)
             {
@@ -365,9 +359,38 @@ namespace Trakker.Areas.Admin.Controllers
                 }
             }
 
+            model.Name = version.Name;
+            model.Description = version.Description;
+            model.ReleaseDate = version.ReleaseDate;
             model.Project = project;
             return View(model);
         }
+
+        [HttpGet]
+        public virtual ActionResult DeleteVersion(int projectId, int versionId)
+        {
+            return DeleteVersion(projectId, versionId, new DeleteVersionModel());
+        }
+
+        [HttpPost]
+        public virtual ActionResult DeleteVersion(int projectId, int versionId, DeleteVersionModel model)
+        {
+            Project project = _projectRepo.GetProjectById(projectId);
+            ProjectVersion version = _projectRepo.GetVersionById(versionId);
+
+            if (IsPost)
+            {
+
+            }
+
+            model.NumberOfTicketsToBeFixed = _projectRepo.NumberOfTicketsToBeFixed(version);
+            model.NumberOfTicketsFound = _projectRepo.NumberOfTicketsFound(version);
+            model.Project = project;
+            model.Version = version;
+            model.Versions = _projectRepo.GetVersionsByProject(project);
+            return View(model);
+        }
+
         #endregion
 
         [HttpPost]

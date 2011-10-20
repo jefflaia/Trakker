@@ -9,16 +9,16 @@
                 <div class="name">@version.Name</div>
                 <div class="progress">
                 @(Html.Ctm().ProgressBar()
-                    .Current(version.ClosedTicketCount())
-                    .Max(version.Tickets.Count)
+                    .Current(version.ClosedFixedTickets.Count)
+                    .Max(version.FixedTickets.Count)
                     .Background.Red()
                     .Green())
                 </div>
-                <span>@version.PercentClosed().ToString("#.0")% (@version.ClosedTicketCount() of @version.Tickets.Count)  have been resolved</span>
+                <span>@version.FixedPercentClosed().ToString("#.0")% (@version.ClosedFixedTickets.Count of @version.FixedTickets.Count)  have been resolved</span>
                 <span class="notes">@Html.ActionLink("Release Notes", MVC.Project.ReleaseNotes(Model.Project.KeyName.ToLower(), version.Id))</span>
             </div>
             <table>
-                @foreach (var ticket in version.Tickets)
+                @foreach (var ticket in version.FixedTickets)
                 {
                     <tr>
                         <td>@ticket.Type.Name</td>

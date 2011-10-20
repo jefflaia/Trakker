@@ -43,7 +43,7 @@ namespace Trakker.Controllers
 
             foreach (var version in versions)
             {
-                version.Tickets = _ticketRepo.GetTicketsByVersion(version);
+                version.FixedTickets = _ticketRepo.GetTicketsByVersion(version);
             }
 
             return View(new ProjectRoadMapTabModel()

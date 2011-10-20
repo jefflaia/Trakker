@@ -128,6 +128,28 @@
                 .SetInt32(0, project.Id)
                 .List<ProjectVersion>();
         }
+
+        public int NumberOfTicketsToBeFixed(ProjectVersion version)
+        {
+            return Convert.ToInt32(Session.CreateQuery(@"
+                    select count(v.Id) 
+                    from ProjectVersion v 
+                    left join v.FixedTickets ft
+                    where v.Id = ?")
+                .SetInt32(0, version.Id)
+                .UniqueResult<Int64>());
+        }
+
+        public int NumberOfTicketsFound(ProjectVersion version)
+        {
+            return Convert.ToInt32(Session.CreateQuery(@"
+                    select count(v.Id) 
+                    from ProjectVersion v 
+                    left join v.FoundTickets ft
+                    where v.Id = ?")
+                .SetInt32(0, version.Id)
+                .UniqueResult<Int64>());
+        }
         #endregion
 
     }

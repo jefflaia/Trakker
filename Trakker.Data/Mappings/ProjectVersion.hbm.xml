@@ -17,7 +17,12 @@
 
   <many-to-one name="Project" class="Project" column="ProjectId" insert="false" update="false"/>
 
-  <bag name="Tickets" table="ProjectVersionToTicket">
+  <bag name="FixedTickets" table="TicketFixedOnVersion">
+    <key column="VersionId" />
+    <many-to-many column="TicketId" class="Ticket" />
+  </bag>
+
+  <bag name="FoundTickets" table="TicketFoundOnVersion">
     <key column="VersionId" />
     <many-to-many column="TicketId" class="Ticket" />
   </bag>

@@ -23,6 +23,8 @@ namespace Trakker.Data.Repositories
         void Save(ProjectVersion version);
         ProjectVersion GetVersionById(int id);
         ProjectVersion GetVersionByName(string name);
+        int NumberOfTicketsToBeFixed(ProjectVersion version);
+        int NumberOfTicketsFound(ProjectVersion version);
 
         /// <summary>   Gets all by versions for the specificed project ordered by SortOrder asc. </summary>
         ///

@@ -28,7 +28,12 @@
   <many-to-one name="Status" class="TicketStatus" column="StatusId" insert="false" update="false"/>
   <many-to-one name="Resolution" class="TicketResolution" column="ResolutionId" insert="false" update="false"/>
 
-  <bag name="Versions" table="ProjectVersionToTicket">
+  <bag name="FoundOnVersions" table="TicketFoundOnVersion">
+    <key column="TicketId" />
+    <many-to-many column="VersionId" class="ProjectVersion" />
+  </bag>
+
+  <bag name="FixedOnVersions" table="TicketFixedOnVersion">
     <key column="TicketId" />
     <many-to-many column="VersionId" class="ProjectVersion" />
   </bag>

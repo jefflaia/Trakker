@@ -60,7 +60,7 @@
             <td>
                 @Html.ActionLink("Edit", MVC.Admin.Management.EditVersion(Model.Project.KeyName, version.Id)) |
                 <a href="">Release</a> |
-                <a href="">Delete</a>
+                @Html.ActionLink("Delete", MVC.Admin.Management.DeleteVersion(Model.Project.Id, version.Id))
             </td>
         </tr>       
     }

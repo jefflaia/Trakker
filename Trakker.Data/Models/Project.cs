@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace Trakker.Data
 {
     public class Project : BaseEntity
@@ -15,5 +16,6 @@ namespace Trakker.Data
 
         public virtual ColorPalette ColorPalette { get; set; }
         public virtual File Avatar { get; set; }
+        public virtual IList<ProjectVersion> Versions { get; set; }
     }
 }

@@ -29,8 +29,7 @@ namespace Trakker.Data
         public virtual User AssignedBy { get; set; }
         public virtual User CreatedBy { get; set; }
 
-        public virtual IList<ProjectVersion> Versions { get; set; }
-
-
+        public virtual IList<ProjectVersion> FixedOnVersions { get; set; }
+        public virtual IList<ProjectVersion> FoundOnVersions { get; set; }
     }
 }

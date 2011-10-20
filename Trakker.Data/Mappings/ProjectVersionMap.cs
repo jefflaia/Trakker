@@ -24,8 +24,14 @@ namespace Trakker.Data.Mappings
                 .Not.Insert()
                 .Not.Update();
 
-            HasManyToMany<Ticket>(m => m.Tickets)
-                .Table("ProjectVerionToTicket")
+            HasManyToMany<Ticket>(m => m.FixedTickets)
+                .Table("TicketFixedOnVersion")
+                .ParentKeyColumn("TicketId")
+                .ChildKeyColumn("VersionId")
+                .Cascade.SaveUpdate();
+
+            HasManyToMany<Ticket>(m => m.FoundTickets)
+                .Table("TicketFoundOnVersion")
                 .ParentKeyColumn("TicketId")
                 .ChildKeyColumn("VersionId")
                 .Cascade.SaveUpdate();

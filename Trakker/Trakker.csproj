@@ -126,6 +126,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AttributeController.cs" />
     <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
+    <Compile Include="Models\Admin\Management\DeleteVersionModel.cs" />
     <Compile Include="Models\Admin\Management\EditVersionModel.cs" />
     <Compile Include="Models\Admin\Management\ManageVersionsModel.cs" />
     <Compile Include="Models\Project\ReleaseNotesModel.cs" />
@@ -266,6 +267,7 @@
     <None Include="Areas\Admin\Views\Attribute\EditStatus.cshtml" />
     <None Include="Areas\Admin\Views\Attribute\Index.cshtml" />
     <None Include="Areas\Admin\Views\Attribute\_CreateEditStatusForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Management\DeleteVersion.cshtml" />
     <None Include="Areas\Admin\Views\Management\EditUserPassword.cshtml" />
     <Content Include="Areas\Admin\Views\Management\EditVersion.cshtml" />
     <None Include="Areas\Admin\Views\Management\Index.cshtml" />

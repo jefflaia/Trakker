@@ -19,6 +19,12 @@
 
   <many-to-one name="ColorPalette" class="ColorPalette" column="ColorPaletteId" insert="false" update="false"/>
   <many-to-one name="Avatar" class="File" column="AvatarId" insert="false" update="false"/>
+  
+  <bag name="Versions" inverse="false">
+    <key column="ProjectId" />
+    <one-to-many class="ProjectVersion"/>
+  </bag>
+
 
 </class>
 

@@ -16,22 +16,29 @@ namespace Trakker.Data
 
 
         public virtual Project Project { get; set; }
-        public virtual IList<Ticket> Tickets { get; set; }
+        public virtual IList<Ticket> FixedTickets { get; set; }
+        public virtual IList<Ticket> FoundTickets { get; set; }
 
-        public virtual int ClosedTicketCount()
+        public virtual IList<Ticket> ClosedFixedTickets
         {
-            return Tickets.Where(t => t.IsClosed == true).Count();
+            get
+            {
+                return FixedTickets.Where(t => t.IsClosed == true).ToList();
+            }
         }
 
-        public virtual int OpenTicketCount()
+        public virtual IList<Ticket> OpenFixedTickets
         {
-            return Tickets.Where(t => t.IsClosed == false).Count();
+            get
+            {
+                return FixedTickets.Where(t => t.IsClosed == false).ToList();
+            }
         }
 
-        public virtual double PercentClosed()
+        public virtual double FixedPercentClosed()
         {
-            double total = Convert.ToDouble(Tickets.Count > 0 ? Tickets.Count : 1);
-            double count = Convert.ToDouble(this.ClosedTicketCount());
+            double total = Convert.ToDouble(FixedTickets.Count > 0 ? FixedTickets.Count : 1);
+            double count = Convert.ToDouble(this.ClosedFixedTickets.Count);
 
             return ((count / total) * 100);
         }

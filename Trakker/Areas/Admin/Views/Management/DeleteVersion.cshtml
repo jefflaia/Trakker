@@ -1,0 +1,17 @@
+﻿@model Trakker.Models.Admin.Management.DeleteVersionModel
+
+<div class="Section">
+    <h1>Delete Version: <em>@Model.Version.Name</em></h1>
+    <p>Number of tickets assigned to be fixed in this version: @Model.NumberOfTicketsToBeFixed</p>
+    <p>Number of tickets found in this version: @Model.NumberOfTicketsFound</p>
+    <br />
+
+    <h2>Re-assign and/or Delete</h2>
+    @using (Html.BeginForm())
+    {
+        @(Html.FormRow()
+            .AddToLeft(Html.LabelFor(x => x.VersionId, "Assign To Version:"))
+            .AddToRight(Html.DropDownListFor(x => x.VersionId, Model.Versions.ToSelectList("Id", "Name")))
+            .AppendDescription("Re-assigns all the tickets to be fixed to the selected version."))
+    }
+</div>
