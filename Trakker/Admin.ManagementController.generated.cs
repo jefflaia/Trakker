@@ -71,6 +71,11 @@ namespace Trakker.Areas.Admin.Controllers {
         public System.Web.Mvc.ActionResult DeleteVersion() {
             return new T4MVC_ActionResult(Area, Name, ActionNames.DeleteVersion);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult ReleaseVersion() {
+            return new T4MVC_ActionResult(Area, Name, ActionNames.ReleaseVersion);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ManagementController Actions { get { return MVC.Admin.Management; } }
@@ -97,6 +102,7 @@ namespace Trakker.Areas.Admin.Controllers {
             public readonly string ManageVersions = "ManageVersions";
             public readonly string EditVersion = "EditVersion";
             public readonly string DeleteVersion = "DeleteVersion";
+            public readonly string ReleaseVersion = "ReleaseVersion";
             public readonly string UploadFile = "UploadFile";
         }
 
@@ -117,6 +123,7 @@ namespace Trakker.Areas.Admin.Controllers {
             public readonly string EditVersion = "~/Areas/Admin/Views/Management/EditVersion.cshtml";
             public readonly string Index = "~/Areas/Admin/Views/Management/Index.cshtml";
             public readonly string ManageVersions = "~/Areas/Admin/Views/Management/ManageVersions.cshtml";
+            public readonly string ReleaseVersion = "~/Areas/Admin/Views/Management/ReleaseVersion.cshtml";
             public readonly string ViewProject = "~/Areas/Admin/Views/Management/ViewProject.cshtml";
             public readonly string ViewUser = "~/Areas/Admin/Views/Management/ViewUser.cshtml";
         }
@@ -251,6 +258,21 @@ namespace Trakker.Areas.Admin.Controllers {
 
         public override System.Web.Mvc.ActionResult DeleteVersion(int projectId, int versionId, Trakker.Models.Admin.Management.DeleteVersionModel model) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.DeleteVersion);
+            callInfo.RouteValueDictionary.Add("projectId", projectId);
+            callInfo.RouteValueDictionary.Add("versionId", versionId);
+            callInfo.RouteValueDictionary.Add("model", model);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult ReleaseVersion(int projectId, int versionId) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ReleaseVersion);
+            callInfo.RouteValueDictionary.Add("projectId", projectId);
+            callInfo.RouteValueDictionary.Add("versionId", versionId);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult ReleaseVersion(int projectId, int versionId, Trakker.Models.Admin.Management.ReleaseVersionModel model) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ReleaseVersion);
             callInfo.RouteValueDictionary.Add("projectId", projectId);
             callInfo.RouteValueDictionary.Add("versionId", versionId);
             callInfo.RouteValueDictionary.Add("model", model);

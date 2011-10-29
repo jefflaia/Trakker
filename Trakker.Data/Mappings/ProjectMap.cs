@@ -6,7 +6,7 @@ using FluentNHibernate.Mapping;
 
 namespace Trakker.Data.Mappings
 {
-    class ProjectMap : ClassMap<Project>
+    public class ProjectMap : ClassMap<Project>
     {
         public ProjectMap()
         {

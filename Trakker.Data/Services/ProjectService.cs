@@ -30,5 +30,16 @@ namespace Trakker.Data.Services
             version.SortOrder = afterVersion.SortOrder;
             _projectRepo.Save(version);
         }
+        
+        public void MergeVersions(ProjectVersion fromVersion, ProjectVersion toVersion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteVersion(ProjectVersion version)
+        {
+            _projectRepo.RemoveTicketOnVersionRelations(version);
+            _projectRepo.Delete(version);
+        }
     }
 }

@@ -10,5 +10,7 @@ namespace Trakker.Data.Services
         void ChangeProjectAvatar(File file);
 
         void AddVersion(ProjectVersion version, ProjectVersion afterVersion);
+        void MergeVersions(ProjectVersion fromVersion, ProjectVersion toVersion);
+        void DeleteVersion(ProjectVersion version);
     }
 }

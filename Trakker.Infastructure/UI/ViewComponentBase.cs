@@ -93,10 +93,13 @@ namespace Trakker.Infastructure.UI
 
         protected virtual void WriteHtml(HtmlTextWriter writer)
         {
-            writer.AddAttribute(HtmlTextWriterAttribute.Type, "text/javascript");
-            writer.RenderBeginTag(HtmlTextWriterTag.Script);
-            WriteInitializationScript(writer);
-            writer.RenderEndTag();
+            if (IsSelfInitialized)
+            {
+                writer.AddAttribute(HtmlTextWriterAttribute.Type, "text/javascript");
+                writer.RenderBeginTag(HtmlTextWriterTag.Script);
+                WriteInitializationScript(writer);
+                writer.RenderEndTag();
+            }
         }
 
         public IDictionary<string, object> HtmlAttributes

@@ -6,7 +6,7 @@ using FluentNHibernate.Mapping;
 
 namespace Trakker.Data.Mappings
 {
-    class FileMap : ClassMap<File>
+    public class FileMap : ClassMap<File>
     {
         public FileMap()
         {

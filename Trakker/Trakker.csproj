@@ -129,6 +129,7 @@
     <Compile Include="Models\Admin\Management\DeleteVersionModel.cs" />
     <Compile Include="Models\Admin\Management\EditVersionModel.cs" />
     <Compile Include="Models\Admin\Management\ManageVersionsModel.cs" />
+    <Compile Include="Models\Admin\Management\ReleaseVersionModel.cs" />
     <Compile Include="Models\Project\ReleaseNotesModel.cs" />
     <Compile Include="Models\Admin\Attribute\CreateEditStatusModel.cs" />
     <Compile Include="Models\Admin\Attribute\CreateEditTypeModel.cs" />
@@ -273,6 +274,7 @@
     <None Include="Areas\Admin\Views\Management\Index.cshtml" />
     <None Include="Areas\Admin\Views\Management\BrowseUsers.cshtml" />
     <Content Include="Areas\Admin\Views\Management\ManageVersions.cshtml" />
+    <Content Include="Areas\Admin\Views\Management\ReleaseVersion.cshtml" />
     <None Include="Areas\Admin\Views\Management\ViewProject.cshtml" />
     <None Include="Areas\Admin\Views\Management\ViewUser.cshtml" />
     <None Include="Areas\Admin\Views\Settings\BrowseColorPalettes.cshtml" />

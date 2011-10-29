@@ -13,5 +13,10 @@
             .AddToLeft(Html.LabelFor(x => x.VersionId, "Assign To Version:"))
             .AddToRight(Html.DropDownListFor(x => x.VersionId, Model.Versions.ToSelectList("Id", "Name")))
             .AppendDescription("Re-assigns all the tickets to be fixed to the selected version."))
+        
+
+        
+        @(Html.FormRow()
+            .AddToRight(Html.SaveButton("Delete", new { })))
     }
 </div>

@@ -150,7 +150,45 @@
                 .SetInt32(0, version.Id)
                 .UniqueResult<Int64>());
         }
-        #endregion
 
+        public int NumberOfTicketsOpen(ProjectVersion version)
+        {
+            return Convert.ToInt32(Session.CreateQuery(@"
+                    select count(ft.Id) 
+                    from ProjectVersion v 
+                    left join v.FixedTickets ft
+                    where v.Id = ?
+                    and ft.IsClosed = ?")
+                .SetInt32(0, version.Id)
+                .SetBoolean(1, true)
+                .UniqueResult<Int64>());
+        }
+        
+
+        public void Delete(ProjectVersion version)
+        {
+            base.Delete(version);
+        }
+
+        public void RemoveTicketOnVersionRelations(ProjectVersion version)
+        {
+            Session.Delete("from ProjectVersion v left join v.FixedTickets ft where v.Id = ?", version.Id, NHibernateUtil.Int32);
+
+            /*
+            Session.CreateQuery(@"
+                    delete from ProjectVersion v 
+                    left join v.FixedTickets ft
+                    where v.Id = ?")
+                .SetInt32(0, version.Id)
+                .ExecuteUpdate();
+
+            Session.CreateQuery(@"
+                    delete from ProjectVersion v 
+                    left join v.FoundTickets ft
+                    where v.Id = ?")
+                .SetInt32(0, version.Id)
+                .ExecuteUpdate();*/
+        }
+        #endregion
     }
 }

@@ -25,6 +25,7 @@ namespace Trakker.Data.Repositories
         ProjectVersion GetVersionByName(string name);
         int NumberOfTicketsToBeFixed(ProjectVersion version);
         int NumberOfTicketsFound(ProjectVersion version);
+        int NumberOfTicketsOpen(ProjectVersion version);
 
         /// <summary>   Gets all by versions for the specificed project ordered by SortOrder asc. </summary>
         ///
@@ -32,5 +33,9 @@ namespace Trakker.Data.Repositories
         ///
         /// <returns>   all versions by project. </returns>
         IList<ProjectVersion> GetVersionsByProject(Project project);
+
+        void Delete(ProjectVersion version);
+
+        void RemoveTicketOnVersionRelations(ProjectVersion version);
     }
 }

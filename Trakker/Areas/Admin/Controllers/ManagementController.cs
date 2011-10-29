@@ -281,6 +281,7 @@ namespace Trakker.Areas.Admin.Controllers
 
             return View(viewModel);
         }
+        #endregion
 
         #region Version
         [HttpGet]
@@ -380,7 +381,7 @@ namespace Trakker.Areas.Admin.Controllers
 
             if (IsPost)
             {
-
+                _projectService.DeleteVersion(version);
             }
 
             model.NumberOfTicketsToBeFixed = _projectRepo.NumberOfTicketsToBeFixed(version);
@@ -391,6 +392,23 @@ namespace Trakker.Areas.Admin.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public virtual ActionResult ReleaseVersion(int projectId, int versionId)
+        {
+            return ReleaseVersion(projectId, versionId, new ReleaseVersionModel());
+        }
+
+        [HttpPost]
+        public virtual ActionResult ReleaseVersion(int projectId, int versionId, ReleaseVersionModel model)
+        {
+            Project project = _projectRepo.GetProjectById(projectId);
+            ProjectVersion version = _projectRepo.GetVersionById(versionId);
+
+            model.Project = project;
+            model.Version = version;
+            model.NumberOfTicketsOpen = _projectRepo.NumberOfTicketsOpen(version);
+            return View(model);
+        }
         #endregion
 
         [HttpPost]
@@ -406,6 +424,6 @@ namespace Trakker.Areas.Admin.Controllers
 
             return View();
         }
-        #endregion
+
     }
 }
