@@ -69,6 +69,9 @@
     <Reference Include="FluentNHibernate">
       <HintPath>..\Lib\nHibernate\fluent 1.2\FluentNHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Lib\Log4Net\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Mvc.Validation, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Mvc.Validation.dll</HintPath>
@@ -249,6 +252,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

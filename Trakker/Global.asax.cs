@@ -10,15 +10,15 @@
     using System.Security.Principal;
     using System.Configuration;
     using System.ComponentModel;
+    using log4net;
 
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
-
     public class MvcApplication : System.Web.HttpApplication
     {
-
         protected void Application_Start()
         {
+            log4net.Config.XmlConfigurator.Configure();
             Bootstrapper.Run();
             ViewEngines.Engines.Add(new RazorViewEngine());
         }
