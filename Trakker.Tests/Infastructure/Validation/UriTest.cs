@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using Trakker.Core;
+using Trakker.Infastructure.Validation;
 
 
-namespace Trakker.Tests.Core.Validation
+namespace Trakker.Tests.Infastructure.Validation
 {
     [TestFixture]
     public class UriTest

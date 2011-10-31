@@ -2,9 +2,8 @@
 using System.Web.Mvc;
 using Trakker.Data;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using Trakker.Properties;
 using System.ComponentModel;
+using Trakker.Infastructure.Validation;
 
 namespace Trakker.Models.Ticket
 {
@@ -12,31 +11,31 @@ namespace Trakker.Models.Ticket
     public class CreateEditTicketModel : MasterModel
     {
         [DisplayName("Project")]
-        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
+        [Required]
         public int ProjectId { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
-        [StringLength(100, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "StringLength_100")]
+        [Required]
+        [StringLength(100)]
         public string Summary { get; set; }
 
         [DisplayName("Assigned To")]
-        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
+        [Required]
         public int AssignedToUserId { get; set; }
 
         [DisplayName("Priority")]
-        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
+        [Required]
         public int PriorityId { get; set; }
 
         [DisplayName("Status")]
-        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
+        [Required]
         public int StatusId { get; set; }
 
         [DisplayName("Category")]
-        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
+        [Required]
         public int CategoryId { get; set; }
 
         [DisplayName("Resolution")]
-        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
+        [Required]
         public int ResolutionId { get; set; }
 
         [DisplayName("Due Date")]

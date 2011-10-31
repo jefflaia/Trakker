@@ -35,6 +35,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -64,6 +65,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TextResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Validation.Designer.cs">
+      <DependentUpon>Validation.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Streams\Activity\ActivityStream.cs" />
     <Compile Include="Streams\Activity\TicketActivityStream.cs" />
@@ -115,6 +121,13 @@
     <Compile Include="Uploading\ProjectAvatarPathResolver.cs" />
     <Compile Include="Uploading\AvatarImageProfile.cs" />
     <Compile Include="Uploading\UploadManager.cs" />
+    <Compile Include="Validation\EmailAttribute.cs" />
+    <Compile Include="Validation\PasswordAttribute.cs" />
+    <Compile Include="Validation\HexColorAttribute.cs" />
+    <Compile Include="Validation\StringLengthAttribute.cs" />
+    <Compile Include="Validation\DateAttribute.cs" />
+    <Compile Include="Validation\RequiredAttribute.cs" />
+    <Compile Include="Validation\UriAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BaseMasterController\Trakker.Core.csproj">
@@ -130,6 +143,11 @@
     <EmbeddedResource Include="Resources\TextResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>TextResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Validation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Validation.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

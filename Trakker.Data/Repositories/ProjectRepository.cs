@@ -160,7 +160,7 @@
                     where v.Id = ?
                     and ft.IsClosed = ?")
                 .SetInt32(0, version.Id)
-                .SetBoolean(1, true)
+                .SetBoolean(1, false)
                 .UniqueResult<Int64>());
         }
         
@@ -190,5 +190,8 @@
                 .ExecuteUpdate();*/
         }
         #endregion
+
+
+        
     }
 }

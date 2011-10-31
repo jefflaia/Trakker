@@ -37,5 +37,7 @@ namespace Trakker.Data.Repositories
         void Delete(ProjectVersion version);
 
         void RemoveTicketOnVersionRelations(ProjectVersion version);
+
+        
     }
 }

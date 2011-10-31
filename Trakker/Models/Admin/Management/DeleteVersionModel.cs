@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
-using Trakker.Properties;
+using Trakker.Infastructure.Validation;
 
 namespace Trakker.Models.Admin.Management
 {
     public class DeleteVersionModel : MasterModel
     {
-        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
+        [Required()]
         public int VersionId { get; set; }
 
         public int NumberOfTicketsToBeFixed { get; set; }

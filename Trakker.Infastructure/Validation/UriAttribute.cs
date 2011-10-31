@@ -2,12 +2,15 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace Trakker.Core
+namespace Trakker.Infastructure.Validation
 {
     public class UriAttribute : ValidationAttribute
     {
         public UriAttribute() : base()
-        {}
+        {
+            ErrorMessageResourceType = typeof(Resources.Validation);
+            ErrorMessageResourceName = "InvalidUri";
+        }
 
         public override bool IsValid(object uri)
         {

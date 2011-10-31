@@ -404,6 +404,16 @@ namespace Trakker.Areas.Admin.Controllers
             Project project = _projectRepo.GetProjectById(projectId);
             ProjectVersion version = _projectRepo.GetVersionById(versionId);
 
+            if (IsPost)
+            {
+                if (ModelState.IsValid)
+                {
+                    version.ReleaseDate = model.ReleaseDate;
+                    _projectService.ReleaseVersion(version);
+                }
+            }
+
+            model.ReleaseDate = version.ReleaseDate;
             model.Project = project;
             model.Version = version;
             model.NumberOfTicketsOpen = _projectRepo.NumberOfTicketsOpen(version);

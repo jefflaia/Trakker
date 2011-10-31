@@ -94,7 +94,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Validation\UriTest.cs" />
+    <Compile Include="Infastructure\Validation\UriTest.cs" />
     <Compile Include="Data\Services\TicketServiceTests.cs" />
     <Compile Include="Data\Utilities\RandomHashTests.cs" />
     <Compile Include="Data\Utilities\UnitOfWorkTests.cs" />
@@ -125,6 +125,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Core\" />
     <Folder Include="Data\Repositories\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,14 +1,15 @@
 ﻿@model Trakker.Models.Admin.Management.ReleaseVersionModel
 
 <div class="Section">
-    <h2>Re-assign and/or Delete</h2>
+    <h2>Release Version: <em>@Model.Version.Name</em></h2>
     <p>Before setting a version to release you can change the release date and see any tickets that have yet to be closed.</p>
 
     @using (Html.BeginForm())
     {
         @(Html.FormRow()
-            .AddToLeft(Html.LabelFor(x => x.Version, "Release Date"))
-            .AddToRight(Html.DatePickerFor(x => x.Version.ReleaseDate))
+            .AddToLeft(Html.LabelFor(x => x.ReleaseDate, "Release Date"))
+            .AddToRight(Html.DatePickerFor(x => x.ReleaseDate))
+            .AddToRight(Html.ValidationMessageFor(x => x.ReleaseDate))
             .AppendDescription("Re-assigns all the tickets to be fixed to the selected version."))
         
         @(Html.FormRow()

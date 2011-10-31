@@ -3,23 +3,22 @@
     using Trakker.Data;
     using System.Collections.Generic;
     using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-    using Trakker.Properties;
     using Foolproof;
     using Trakker.Models;
+    using Trakker.Infastructure.Validation;
 
     public class CreateUserModel : EditUserModel
     {
-        [DataType(DataType.Password)]
-        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
-        [StringLength(100, MinimumLength = 8, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "PasswordLength")]
+        [Password]
+        [Required()]
+        [StringLength(100)]
         public string Password { get; set; }
 
         [DisplayName("Confirm Password")]
-        [DataType(DataType.Password)]
-        [EqualTo("Password", ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "PasswordsMustMatch")]
-        [Required(ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "Required")]
-        [StringLength(100, MinimumLength = 8, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = "PasswordLength")]
+        [Password]
+        [EqualTo("Password", ErrorMessageResourceType = typeof(Trakker.Infastructure.Resources.Validation), ErrorMessageResourceName = "PasswordsMustMatch")]
+        [Required()]
+        [StringLength(100)]
         public string RePassword { get; set; }
         
     }
