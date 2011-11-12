@@ -85,6 +85,14 @@
     <Compile Include="UI\ClientSideObjectWriterFactory.cs" />
     <Compile Include="UI\ComponentBuilderBase.cs" />
     <Compile Include="UI\CssPrimitives.cs" />
+    <Compile Include="UI\DatePicker\DatePickerClientEvents.cs" />
+    <Compile Include="UI\DatePicker\Fluent\DatePickerBuilder.cs" />
+    <Compile Include="UI\DatePicker\Fluent\DatePickerBuilderBase.cs" />
+    <Compile Include="UI\DatePicker\IDatePickerBaseHtmlBuilder.cs" />
+    <Compile Include="UI\DatePicker\IDatePickerHtmlBuilderFactory.cs" />
+    <Compile Include="UI\DatePicker\DatePickerBase.cs" />
+    <Compile Include="UI\DatePicker\DatePickerBaseHtmlBuilder.cs" />
+    <Compile Include="UI\DatePicker\DatePickerHtmlBuilderFactory.cs" />
     <Compile Include="UI\IAttributesContainer.cs" />
     <Compile Include="UI\IClientSideObjectWriterFactory.cs" />
     <Compile Include="UI\IHideObjectMembers.cs" />

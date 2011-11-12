@@ -23,7 +23,7 @@ namespace Trakker.Infastructure.UI
         public HtmlHelper HtmlHelper { get; set; }
 
 
-        public virtual ImageBuilder Avatar(Trakker.Data.File file)
+        public ImageBuilder Avatar(Trakker.Data.File file)
         {
             var builder = new ImageBuilder(new ImageBase(HtmlHelper.ViewContext, ClientSideObjectWriterFactory, new ImageHtmlBuilderFactory()), new AvatarImageProfile());
             builder.Src(Path.Combine(file.Path, file.FileName));
@@ -31,9 +31,14 @@ namespace Trakker.Infastructure.UI
 
         }
 
-        public virtual ProgressBarBuilder ProgressBar()
+        public ProgressBarBuilder ProgressBar()
         {
             return new ProgressBarBuilder(new ProgressBarBase(HtmlHelper.ViewContext, ClientSideObjectWriterFactory, new ProgressBarHtmlBuilderFactory()));
+        }
+
+        public DatePickerBuilder DatePicker()
+        {
+            return new DatePickerBuilder(new DatePickerBase(HtmlHelper.ViewContext, ClientSideObjectWriterFactory, new DatePickerHtmlBuilderFactory()));
         }
 
     }

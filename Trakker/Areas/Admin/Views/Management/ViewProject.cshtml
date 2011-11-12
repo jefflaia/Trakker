@@ -12,7 +12,7 @@
 </div>
     
 <div class="Section">
-    @Html.ActionLink("Manage Versions", MVC.Admin.Management.ManageVersions(Model.Project.KeyName))
+    @Html.ActionLink("Manage Versions", MVC.Admin.Management.ManageVersions(Model.Project.Id))
     <table>
         @foreach (var version in Model.Versions)
         {

@@ -13,7 +13,8 @@ namespace Trakker.Infastructure.UI
     {
         protected ViewComponentBase(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory)
         {
-
+            ViewContext = viewContext;
+            ClientSideObjectWriterFactory = clientSideObjectWriterFactory;
         }
         
         public string AssetKey
@@ -53,7 +54,7 @@ namespace Trakker.Infastructure.UI
             private set;
         }
 
-        public void WriteInitializationScript(System.IO.TextWriter writer)
+        public virtual void WriteInitializationScript(System.IO.TextWriter writer)
         {
             
         }
@@ -76,12 +77,6 @@ namespace Trakker.Infastructure.UI
         {
         }
 
-        public bool IsSelfInitialized
-        {
-            get;
-            private set;
-        }
-
         public string ToHtmlString()
         {
             using (var output = new StringWriter())
@@ -93,13 +88,10 @@ namespace Trakker.Infastructure.UI
 
         protected virtual void WriteHtml(HtmlTextWriter writer)
         {
-            if (IsSelfInitialized)
-            {
-                writer.AddAttribute(HtmlTextWriterAttribute.Type, "text/javascript");
-                writer.RenderBeginTag(HtmlTextWriterTag.Script);
-                WriteInitializationScript(writer);
-                writer.RenderEndTag();
-            }
+            writer.AddAttribute(HtmlTextWriterAttribute.Type, "text/javascript");
+            writer.RenderBeginTag(HtmlTextWriterTag.Script);
+            WriteInitializationScript(writer);
+            writer.RenderEndTag();
         }
 
         public IDictionary<string, object> HtmlAttributes

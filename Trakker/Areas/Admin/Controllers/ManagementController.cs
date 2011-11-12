@@ -285,15 +285,15 @@ namespace Trakker.Areas.Admin.Controllers
 
         #region Version
         [HttpGet]
-        public virtual ActionResult ManageVersions(string keyName)
+        public virtual ActionResult ManageVersions(int projectId)
         {
-            return ManageVersions(keyName, new ManageVersionsModel());
+            return ManageVersions(projectId, new ManageVersionsModel());
         }
 
         [HttpPost]
-        public virtual ActionResult ManageVersions(string keyName, ManageVersionsModel model)
+        public virtual ActionResult ManageVersions(int projectId, ManageVersionsModel model)
         {
-            Project project = _projectRepo.GetProjectByKey(keyName);
+            Project project = _projectRepo.GetProjectById(projectId);
 
             if (IsPost)
             {
@@ -316,7 +316,7 @@ namespace Trakker.Areas.Admin.Controllers
 
                     _projectService.AddVersion(version, afterVersion);
 
-                    return RedirectToAction(MVC.Admin.Management.ManageVersions(keyName));
+                    return RedirectToAction(MVC.Admin.Management.ManageVersions(project.Id));
                 }
             }
 
@@ -326,15 +326,15 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public virtual ActionResult EditVersion(string keyName, int versionId)
+        public virtual ActionResult EditVersion(int projectId, int versionId)
         {
-            return EditVersion(keyName, versionId, new EditVersionModel());
+            return EditVersion(projectId, versionId, new EditVersionModel());
         }
 
         [HttpPost]
-        public virtual ActionResult EditVersion(string keyName, int versionId, EditVersionModel model)
+        public virtual ActionResult EditVersion(int projectId, int versionId, EditVersionModel model)
         {
-            Project project = _projectRepo.GetProjectByKey(keyName);
+            Project project = _projectRepo.GetProjectById(projectId);
             ProjectVersion version = _projectRepo.GetVersionById(versionId);
 
             if (IsPost)
@@ -356,7 +356,7 @@ namespace Trakker.Areas.Admin.Controllers
 
                     _projectRepo.Save(version);
 
-                    return RedirectToAction(MVC.Admin.Management.ManageVersions(project.KeyName));
+                    return RedirectToAction(MVC.Admin.Management.ManageVersions(project.Id));
                 }
             }
 
@@ -410,6 +410,8 @@ namespace Trakker.Areas.Admin.Controllers
                 {
                     version.ReleaseDate = model.ReleaseDate;
                     _projectService.ReleaseVersion(version);
+
+                    return RedirectToAction(MVC.Admin.Management.ManageVersions(project.Id));
                 }
             }
 

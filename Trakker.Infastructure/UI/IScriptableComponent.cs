@@ -43,10 +43,6 @@ namespace Trakker.Infastructure.UI
             get;
         }
 
-        bool IsSelfInitialized
-        {
-            get;
-        }
 
         void WriteInitializationScript(TextWriter writer);
 

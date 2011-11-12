@@ -34,10 +34,10 @@ namespace Trakker.Areas.Admin
             context.MapRoute("EditUserPassword", "admin/management/user/{userId}/password/edit", new { controller = "Management", action = "EditUserPassword" });
             context.MapRoute("BrowseProjects", "admin/management/projects", new { controller = "Management", action = "BrowseProjects" });
             context.MapRoute("CreateProject", "admin/management/project/create", new { controller = "Management", action = "CreateProject" });
-            context.MapRoute("ViewProject", "admin/management/project/{keyName}", new { controller = "Management", action = "ViewProject" });
-            context.MapRoute("EditProject", "admin/management/project/{keyName}/edit", new { controller = "Management", action = "EditProject" });
-            context.MapRoute("ManageVersions", "admin/management/project/{keyName}/versions", MVC.Admin.Management.ManageVersions());
-            context.MapRoute("EditVersion", "admin/management/project/{keyName}/version/{versionId}/edit", MVC.Admin.Management.EditVersion());
+            context.MapRoute("ViewProject", "admin/management/project/{projectId}", new { controller = "Management", action = "ViewProject" });
+            context.MapRoute("EditProject", "admin/management/project/{projectId}/edit", new { controller = "Management", action = "EditProject" });
+            context.MapRoute("ManageVersions", "admin/management/project/{projectId}/versions", MVC.Admin.Management.ManageVersions());
+            context.MapRoute("EditVersion", "admin/management/project/{projectId}/version/{versionId}/edit", MVC.Admin.Management.EditVersion());
             context.MapRoute("DeleteVersion", "admin/management/project/{projectId}/version/{versionId}/delete", MVC.Admin.Management.DeleteVersion());
             context.MapRoute("ReleaseVersion", "admin/management/project/{projectId}/version/{versionId}/release", MVC.Admin.Management.ReleaseVersion());
 

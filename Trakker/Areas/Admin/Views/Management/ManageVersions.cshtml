@@ -58,7 +58,7 @@
                 }
             </td>
             <td>
-                @Html.ActionLink("Edit", MVC.Admin.Management.EditVersion(Model.Project.KeyName, version.Id)) |
+                @Html.ActionLink("Edit", MVC.Admin.Management.EditVersion(Model.Project.Id, version.Id)) |
                 @Html.ActionLink("Release", MVC.Admin.Management.ReleaseVersion(Model.Project.Id, version.Id)) |
                 @Html.ActionLink("Delete", MVC.Admin.Management.DeleteVersion(Model.Project.Id, version.Id))
             </td>

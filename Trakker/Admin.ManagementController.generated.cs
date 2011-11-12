@@ -221,29 +221,29 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult ManageVersions(string keyName) {
+        public override System.Web.Mvc.ActionResult ManageVersions(int projectId) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ManageVersions);
-            callInfo.RouteValueDictionary.Add("keyName", keyName);
+            callInfo.RouteValueDictionary.Add("projectId", projectId);
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult ManageVersions(string keyName, Trakker.Models.Admin.Management.ManageVersionsModel model) {
+        public override System.Web.Mvc.ActionResult ManageVersions(int projectId, Trakker.Models.Admin.Management.ManageVersionsModel model) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ManageVersions);
-            callInfo.RouteValueDictionary.Add("keyName", keyName);
+            callInfo.RouteValueDictionary.Add("projectId", projectId);
             callInfo.RouteValueDictionary.Add("model", model);
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult EditVersion(string keyName, int versionId) {
+        public override System.Web.Mvc.ActionResult EditVersion(int projectId, int versionId) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditVersion);
-            callInfo.RouteValueDictionary.Add("keyName", keyName);
+            callInfo.RouteValueDictionary.Add("projectId", projectId);
             callInfo.RouteValueDictionary.Add("versionId", versionId);
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult EditVersion(string keyName, int versionId, Trakker.Models.Admin.Management.EditVersionModel model) {
+        public override System.Web.Mvc.ActionResult EditVersion(int projectId, int versionId, Trakker.Models.Admin.Management.EditVersionModel model) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditVersion);
-            callInfo.RouteValueDictionary.Add("keyName", keyName);
+            callInfo.RouteValueDictionary.Add("projectId", projectId);
             callInfo.RouteValueDictionary.Add("versionId", versionId);
             callInfo.RouteValueDictionary.Add("model", model);
             return callInfo;

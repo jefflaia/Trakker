@@ -1,0 +1,896 @@
+2011.11.11 02:54:10 INFO  [5] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.11 02:54:10 INFO  [5] - hibernate-configuration section not found in application configuration file
+2011.11.11 02:54:10 INFO  [5] - Bytecode provider name : lcg
+2011.11.11 02:54:10 INFO  [5] - Using reflection optimizer
+2011.11.11 02:57:15 INFO  [9] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.11 02:57:15 INFO  [9] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.11 02:57:15 INFO  [9] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 02:57:15 INFO  [9] - Mapping class: Trakker.Data.Project -> Project
+2011.11.11 02:57:15 INFO  [9] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.11 02:57:15 INFO  [9] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 02:57:15 INFO  [9] - Mapping class: Trakker.Data.User -> [User]
+2011.11.11 02:57:15 INFO  [9] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.11 02:57:15 INFO  [9] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 02:57:15 INFO  [9] - Mapping class: Trakker.Data.TicketType -> TicketType
+2011.11.11 02:57:15 INFO  [9] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.11 02:57:15 INFO  [9] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 02:57:15 INFO  [9] - Mapping class: Trakker.Data.TicketPriority -> TicketPriority
+2011.11.11 02:57:15 INFO  [9] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.11 02:57:15 INFO  [9] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 02:57:15 INFO  [9] - Mapping class: Trakker.Data.Role -> Role
+2011.11.11 02:57:15 INFO  [9] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.11 02:57:15 INFO  [9] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 02:57:15 INFO  [9] - Mapping class: Trakker.Data.TicketStatus -> TicketStatus
+2011.11.11 02:57:15 INFO  [9] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.11 02:57:15 INFO  [9] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 02:57:15 INFO  [9] - Mapping class: Trakker.Data.ColorPalette -> ColorPalette
+2011.11.11 02:57:15 INFO  [9] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.11 02:57:15 INFO  [9] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 02:57:15 INFO  [9] - Mapping class: Trakker.Data.TicketResolution -> TicketResolution
+2011.11.11 02:57:15 INFO  [9] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.11 02:57:15 INFO  [9] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 02:57:15 INFO  [9] - Mapping class: Trakker.Data.Component -> Component
+2011.11.11 02:57:15 INFO  [9] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.11 02:57:15 INFO  [9] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 02:57:15 INFO  [9] - Mapping class: Trakker.Data.ProjectVersion -> ProjectVersion
+2011.11.11 02:57:15 INFO  [9] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.11 02:57:15 INFO  [9] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.11 02:57:15 INFO  [9] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.11 02:57:15 INFO  [9] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 02:57:15 INFO  [9] - Mapping class: Trakker.Data.File -> File
+2011.11.11 02:57:15 INFO  [9] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.11 02:57:15 INFO  [9] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 02:57:15 INFO  [9] - Mapping class: Trakker.Data.Ticket -> Ticket
+2011.11.11 02:57:15 INFO  [9] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.11 02:57:15 INFO  [9] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.11 02:57:15 INFO  [9] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.11 02:57:15 INFO  [9] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 02:57:15 INFO  [9] - Mapping class: Trakker.Data.Comment -> Comment
+2011.11.11 02:57:15 INFO  [9] - checking mappings queue
+2011.11.11 02:57:15 INFO  [9] - processing one-to-many association mappings
+2011.11.11 02:57:15 INFO  [9] - mapping collection: Trakker.Data.Project.Versions -> ProjectVersion
+2011.11.11 02:57:15 INFO  [9] - mapping collection: Trakker.Data.Role.Users -> [User]
+2011.11.11 02:57:15 INFO  [9] - processing one-to-one association property references
+2011.11.11 02:57:15 INFO  [9] - processing foreign key constraints
+2011.11.11 02:57:15 INFO  [9] - processing filters (second pass)
+2011.11.11 02:57:15 INFO  [9] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 02:57:15 INFO  [9] - Using dialect defined converter
+2011.11.11 02:57:15 INFO  [9] - Generate SQL with comments: disabled
+2011.11.11 02:57:15 INFO  [9] - Configuring ConnectionProvider
+2011.11.11 02:57:15 INFO  [9] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.11 02:57:15 INFO  [9] - Optimize cache for minimal puts: False
+2011.11.11 02:57:15 INFO  [9] - Connection release mode: auto
+2011.11.11 02:57:15 INFO  [9] - Default batch fetch size: 1
+2011.11.11 02:57:15 INFO  [9] - echoing all SQL to stdout
+2011.11.11 02:57:15 INFO  [9] - Statistics: disabled
+2011.11.11 02:57:15 INFO  [9] - Deleted entity synthetic identifier rollback: disabled
+2011.11.11 02:57:15 INFO  [9] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.11 02:57:15 INFO  [9] - Query language substitutions: {}
+2011.11.11 02:57:15 INFO  [9] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 02:57:15 INFO  [9] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.11 02:57:15 INFO  [9] - Batcher factory: NHibernate.AdoNet.SqlClientBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 02:57:15 INFO  [9] - Default entity-mode: Poco
+2011.11.11 02:57:15 INFO  [9] - Named query checking : enabled
+2011.11.11 02:57:15 INFO  [9] - building session factory
+2011.11.11 02:57:16 INFO  [9] - no name configured
+2011.11.11 02:57:16 INFO  [9] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.11 02:57:16 WARN  [9] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 02:57:16 INFO  [9] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.11 02:57:16 WARN  [9] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 02:57:16 INFO  [9] - SELECT this_.Id as Id3_0_, this_.Name as Name3_0_, this_.Description as Descript3_3_0_, this_.HexColor as HexColor3_0_ FROM TicketPriority this_
+2011.11.11 02:57:16 INFO  [4] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 02:57:16 INFO  [9] - SELECT this_.Id as Id5_0_, this_.Name as Name5_0_, this_.Description as Descript3_5_0_, this_.IsClosedState as IsClosed4_5_0_ FROM TicketStatus this_
+2011.11.11 02:57:16 INFO  [9] - SELECT this_.Id as Id2_0_, this_.Name as Name2_0_, this_.Description as Descript3_2_0_ FROM TicketType this_
+2011.11.11 02:57:16 INFO  [9] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 02:57:16 INFO  [9] - SELECT user0_.Id as Id1_0_, user0_.Email as Email1_0_, user0_.Password as Password1_0_, user0_.Salt as Salt1_0_, user0_.Created as Created1_0_, user0_.LastLogin as LastLogin1_0_, user0_.TotalComments as TotalCom7_1_0_, user0_.FailedPasswordAttemptCount as FailedPa8_1_0_, user0_.LastFailedLoginAttempt as LastFail9_1_0_, user0_.FirstName as FirstName1_0_, user0_.LastName as LastName1_0_, user0_.RoleId as RoleId1_0_ FROM [User] user0_ WHERE user0_.Id=@p0
+2011.11.11 02:57:16 INFO  [4] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 02:57:16 INFO  [4] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 02:57:16 INFO  [9] - SELECT user0_.Id as Id1_0_, user0_.Email as Email1_0_, user0_.Password as Password1_0_, user0_.Salt as Salt1_0_, user0_.Created as Created1_0_, user0_.LastLogin as LastLogin1_0_, user0_.TotalComments as TotalCom7_1_0_, user0_.FailedPasswordAttemptCount as FailedPa8_1_0_, user0_.LastFailedLoginAttempt as LastFail9_1_0_, user0_.FirstName as FirstName1_0_, user0_.LastName as LastName1_0_, user0_.RoleId as RoleId1_0_ FROM [User] user0_ WHERE user0_.Id=@p0
+2011.11.11 02:57:16 INFO  [4] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 02:57:16 INFO  [9] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 02:57:16 INFO  [9] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 02:57:16 INFO  [9] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 02:57:16 INFO  [9] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 02:57:51 INFO  [10] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 02:57:51 INFO  [10] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 02:57:51 INFO  [10] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 02:57:51 INFO  [10] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 03:02:55 INFO  [4] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.11 03:02:55 INFO  [4] - hibernate-configuration section not found in application configuration file
+2011.11.11 03:02:55 INFO  [4] - Bytecode provider name : lcg
+2011.11.11 03:02:55 INFO  [4] - Using reflection optimizer
+2011.11.11 03:02:55 INFO  [4] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.11 03:02:55 INFO  [4] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.11 03:02:55 INFO  [4] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:02:56 INFO  [4] - Mapping class: Trakker.Data.Project -> Project
+2011.11.11 03:02:56 INFO  [4] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.11 03:02:56 INFO  [4] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:02:56 INFO  [4] - Mapping class: Trakker.Data.User -> [User]
+2011.11.11 03:02:56 INFO  [4] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.11 03:02:56 INFO  [4] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:02:56 INFO  [4] - Mapping class: Trakker.Data.TicketType -> TicketType
+2011.11.11 03:02:56 INFO  [4] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.11 03:02:56 INFO  [4] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:02:56 INFO  [4] - Mapping class: Trakker.Data.TicketPriority -> TicketPriority
+2011.11.11 03:02:56 INFO  [4] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.11 03:02:56 INFO  [4] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:02:56 INFO  [4] - Mapping class: Trakker.Data.Role -> Role
+2011.11.11 03:02:56 INFO  [4] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.11 03:02:56 INFO  [4] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:02:56 INFO  [4] - Mapping class: Trakker.Data.TicketStatus -> TicketStatus
+2011.11.11 03:02:56 INFO  [4] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.11 03:02:56 INFO  [4] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:02:56 INFO  [4] - Mapping class: Trakker.Data.ColorPalette -> ColorPalette
+2011.11.11 03:02:56 INFO  [4] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.11 03:02:56 INFO  [4] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:02:56 INFO  [4] - Mapping class: Trakker.Data.TicketResolution -> TicketResolution
+2011.11.11 03:02:56 INFO  [4] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.11 03:02:56 INFO  [4] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:02:56 INFO  [4] - Mapping class: Trakker.Data.Component -> Component
+2011.11.11 03:02:56 INFO  [4] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.11 03:02:56 INFO  [4] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:02:56 INFO  [4] - Mapping class: Trakker.Data.ProjectVersion -> ProjectVersion
+2011.11.11 03:02:56 INFO  [4] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.11 03:02:56 INFO  [4] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.11 03:02:56 INFO  [4] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.11 03:02:56 INFO  [4] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:02:56 INFO  [4] - Mapping class: Trakker.Data.File -> File
+2011.11.11 03:02:56 INFO  [4] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.11 03:02:56 INFO  [4] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:02:56 INFO  [4] - Mapping class: Trakker.Data.Ticket -> Ticket
+2011.11.11 03:02:56 INFO  [4] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.11 03:02:56 INFO  [4] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.11 03:02:56 INFO  [4] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.11 03:02:56 INFO  [4] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:02:56 INFO  [4] - Mapping class: Trakker.Data.Comment -> Comment
+2011.11.11 03:02:56 INFO  [4] - checking mappings queue
+2011.11.11 03:02:56 INFO  [4] - processing one-to-many association mappings
+2011.11.11 03:02:56 INFO  [4] - mapping collection: Trakker.Data.Project.Versions -> ProjectVersion
+2011.11.11 03:02:56 INFO  [4] - mapping collection: Trakker.Data.Role.Users -> [User]
+2011.11.11 03:02:56 INFO  [4] - processing one-to-one association property references
+2011.11.11 03:02:56 INFO  [4] - processing foreign key constraints
+2011.11.11 03:02:56 INFO  [4] - processing filters (second pass)
+2011.11.11 03:02:56 INFO  [4] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:02:56 INFO  [4] - Using dialect defined converter
+2011.11.11 03:02:56 INFO  [4] - Generate SQL with comments: disabled
+2011.11.11 03:02:56 INFO  [4] - Configuring ConnectionProvider
+2011.11.11 03:02:56 INFO  [4] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.11 03:02:56 INFO  [4] - Optimize cache for minimal puts: False
+2011.11.11 03:02:56 INFO  [4] - Connection release mode: auto
+2011.11.11 03:02:56 INFO  [4] - Default batch fetch size: 1
+2011.11.11 03:02:56 INFO  [4] - echoing all SQL to stdout
+2011.11.11 03:02:56 INFO  [4] - Statistics: disabled
+2011.11.11 03:02:56 INFO  [4] - Deleted entity synthetic identifier rollback: disabled
+2011.11.11 03:02:56 INFO  [4] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.11 03:02:56 INFO  [4] - Query language substitutions: {}
+2011.11.11 03:02:56 INFO  [4] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 03:02:56 INFO  [4] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.11 03:02:56 INFO  [4] - Batcher factory: NHibernate.AdoNet.SqlClientBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 03:02:56 INFO  [4] - Default entity-mode: Poco
+2011.11.11 03:02:56 INFO  [4] - Named query checking : enabled
+2011.11.11 03:02:56 INFO  [4] - building session factory
+2011.11.11 03:02:56 INFO  [4] - no name configured
+2011.11.11 03:02:56 INFO  [4] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.11 03:02:56 WARN  [4] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 03:02:56 INFO  [4] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.11 03:02:56 WARN  [4] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 03:02:56 INFO  [4] - SELECT this_.Id as Id3_0_, this_.Name as Name3_0_, this_.Description as Descript3_3_0_, this_.HexColor as HexColor3_0_ FROM TicketPriority this_
+2011.11.11 03:02:56 INFO  [5] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 03:02:56 INFO  [4] - SELECT this_.Id as Id5_0_, this_.Name as Name5_0_, this_.Description as Descript3_5_0_, this_.IsClosedState as IsClosed4_5_0_ FROM TicketStatus this_
+2011.11.11 03:02:56 INFO  [4] - SELECT this_.Id as Id2_0_, this_.Name as Name2_0_, this_.Description as Descript3_2_0_ FROM TicketType this_
+2011.11.11 03:02:56 INFO  [4] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 03:02:57 INFO  [4] - SELECT user0_.Id as Id1_0_, user0_.Email as Email1_0_, user0_.Password as Password1_0_, user0_.Salt as Salt1_0_, user0_.Created as Created1_0_, user0_.LastLogin as LastLogin1_0_, user0_.TotalComments as TotalCom7_1_0_, user0_.FailedPasswordAttemptCount as FailedPa8_1_0_, user0_.LastFailedLoginAttempt as LastFail9_1_0_, user0_.FirstName as FirstName1_0_, user0_.LastName as LastName1_0_, user0_.RoleId as RoleId1_0_ FROM [User] user0_ WHERE user0_.Id=@p0
+2011.11.11 03:02:57 INFO  [5] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 03:02:57 INFO  [5] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 03:02:57 INFO  [4] - SELECT user0_.Id as Id1_0_, user0_.Email as Email1_0_, user0_.Password as Password1_0_, user0_.Salt as Salt1_0_, user0_.Created as Created1_0_, user0_.LastLogin as LastLogin1_0_, user0_.TotalComments as TotalCom7_1_0_, user0_.FailedPasswordAttemptCount as FailedPa8_1_0_, user0_.LastFailedLoginAttempt as LastFail9_1_0_, user0_.FirstName as FirstName1_0_, user0_.LastName as LastName1_0_, user0_.RoleId as RoleId1_0_ FROM [User] user0_ WHERE user0_.Id=@p0
+2011.11.11 03:02:57 INFO  [5] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 03:02:57 INFO  [4] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 03:02:57 INFO  [4] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 03:02:57 INFO  [4] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 03:02:57 INFO  [4] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 03:05:04 INFO  [5] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.11 03:05:04 INFO  [5] - hibernate-configuration section not found in application configuration file
+2011.11.11 03:05:04 INFO  [5] - Bytecode provider name : lcg
+2011.11.11 03:05:04 INFO  [5] - Using reflection optimizer
+2011.11.11 03:05:05 INFO  [5] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.11 03:05:05 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.11 03:05:05 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:05 INFO  [5] - Mapping class: Trakker.Data.Project -> Project
+2011.11.11 03:05:05 INFO  [5] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.11 03:05:05 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:05 INFO  [5] - Mapping class: Trakker.Data.User -> [User]
+2011.11.11 03:05:05 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.11 03:05:05 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:05 INFO  [5] - Mapping class: Trakker.Data.TicketType -> TicketType
+2011.11.11 03:05:05 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.11 03:05:05 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:05 INFO  [5] - Mapping class: Trakker.Data.TicketPriority -> TicketPriority
+2011.11.11 03:05:05 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.11 03:05:05 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:05 INFO  [5] - Mapping class: Trakker.Data.Role -> Role
+2011.11.11 03:05:05 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.11 03:05:05 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:05 INFO  [5] - Mapping class: Trakker.Data.TicketStatus -> TicketStatus
+2011.11.11 03:05:05 INFO  [5] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.11 03:05:05 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:05 INFO  [5] - Mapping class: Trakker.Data.ColorPalette -> ColorPalette
+2011.11.11 03:05:05 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.11 03:05:05 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:05 INFO  [5] - Mapping class: Trakker.Data.TicketResolution -> TicketResolution
+2011.11.11 03:05:05 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.11 03:05:05 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:05 INFO  [5] - Mapping class: Trakker.Data.Component -> Component
+2011.11.11 03:05:05 INFO  [5] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.11 03:05:05 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:05 INFO  [5] - Mapping class: Trakker.Data.ProjectVersion -> ProjectVersion
+2011.11.11 03:05:05 INFO  [5] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.11 03:05:05 INFO  [5] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.11 03:05:05 INFO  [5] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.11 03:05:05 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:05 INFO  [5] - Mapping class: Trakker.Data.File -> File
+2011.11.11 03:05:05 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.11 03:05:05 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:05 INFO  [5] - Mapping class: Trakker.Data.Ticket -> Ticket
+2011.11.11 03:05:05 INFO  [5] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.11 03:05:05 INFO  [5] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.11 03:05:05 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.11 03:05:05 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:05 INFO  [5] - Mapping class: Trakker.Data.Comment -> Comment
+2011.11.11 03:05:05 INFO  [5] - checking mappings queue
+2011.11.11 03:05:05 INFO  [5] - processing one-to-many association mappings
+2011.11.11 03:05:05 INFO  [5] - mapping collection: Trakker.Data.Project.Versions -> ProjectVersion
+2011.11.11 03:05:05 INFO  [5] - mapping collection: Trakker.Data.Role.Users -> [User]
+2011.11.11 03:05:05 INFO  [5] - processing one-to-one association property references
+2011.11.11 03:05:05 INFO  [5] - processing foreign key constraints
+2011.11.11 03:05:05 INFO  [5] - processing filters (second pass)
+2011.11.11 03:05:05 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:05 INFO  [5] - Using dialect defined converter
+2011.11.11 03:05:05 INFO  [5] - Generate SQL with comments: disabled
+2011.11.11 03:05:05 INFO  [5] - Configuring ConnectionProvider
+2011.11.11 03:05:05 INFO  [5] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.11 03:05:05 INFO  [5] - Optimize cache for minimal puts: False
+2011.11.11 03:05:05 INFO  [5] - Connection release mode: auto
+2011.11.11 03:05:05 INFO  [5] - Default batch fetch size: 1
+2011.11.11 03:05:05 INFO  [5] - echoing all SQL to stdout
+2011.11.11 03:05:05 INFO  [5] - Statistics: disabled
+2011.11.11 03:05:05 INFO  [5] - Deleted entity synthetic identifier rollback: disabled
+2011.11.11 03:05:05 INFO  [5] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.11 03:05:05 INFO  [5] - Query language substitutions: {}
+2011.11.11 03:05:05 INFO  [5] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 03:05:05 INFO  [5] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.11 03:05:05 INFO  [5] - Batcher factory: NHibernate.AdoNet.SqlClientBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 03:05:05 INFO  [5] - Default entity-mode: Poco
+2011.11.11 03:05:05 INFO  [5] - Named query checking : enabled
+2011.11.11 03:05:05 INFO  [5] - building session factory
+2011.11.11 03:05:05 INFO  [5] - no name configured
+2011.11.11 03:05:05 INFO  [5] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.11 03:05:05 WARN  [5] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 03:05:05 INFO  [5] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.11 03:05:05 WARN  [5] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 03:05:05 INFO  [5] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 03:05:06 INFO  [5] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 03:05:06 INFO  [5] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 03:05:06 INFO  [5] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 03:05:50 INFO  [5] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.11 03:05:50 INFO  [5] - hibernate-configuration section not found in application configuration file
+2011.11.11 03:05:50 INFO  [5] - Bytecode provider name : lcg
+2011.11.11 03:05:50 INFO  [5] - Using reflection optimizer
+2011.11.11 03:05:51 INFO  [5] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.11 03:05:51 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.11 03:05:51 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:51 INFO  [5] - Mapping class: Trakker.Data.Project -> Project
+2011.11.11 03:05:51 INFO  [5] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.11 03:05:51 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:51 INFO  [5] - Mapping class: Trakker.Data.User -> [User]
+2011.11.11 03:05:51 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.11 03:05:51 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:51 INFO  [5] - Mapping class: Trakker.Data.TicketType -> TicketType
+2011.11.11 03:05:51 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.11 03:05:51 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:51 INFO  [5] - Mapping class: Trakker.Data.TicketPriority -> TicketPriority
+2011.11.11 03:05:51 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.11 03:05:51 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:51 INFO  [5] - Mapping class: Trakker.Data.Role -> Role
+2011.11.11 03:05:51 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.11 03:05:51 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:51 INFO  [5] - Mapping class: Trakker.Data.TicketStatus -> TicketStatus
+2011.11.11 03:05:51 INFO  [5] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.11 03:05:51 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:51 INFO  [5] - Mapping class: Trakker.Data.ColorPalette -> ColorPalette
+2011.11.11 03:05:51 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.11 03:05:51 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:51 INFO  [5] - Mapping class: Trakker.Data.TicketResolution -> TicketResolution
+2011.11.11 03:05:51 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.11 03:05:51 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:51 INFO  [5] - Mapping class: Trakker.Data.Component -> Component
+2011.11.11 03:05:51 INFO  [5] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.11 03:05:51 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:51 INFO  [5] - Mapping class: Trakker.Data.ProjectVersion -> ProjectVersion
+2011.11.11 03:05:51 INFO  [5] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.11 03:05:51 INFO  [5] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.11 03:05:51 INFO  [5] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.11 03:05:51 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:51 INFO  [5] - Mapping class: Trakker.Data.File -> File
+2011.11.11 03:05:51 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.11 03:05:51 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:51 INFO  [5] - Mapping class: Trakker.Data.Ticket -> Ticket
+2011.11.11 03:05:51 INFO  [5] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.11 03:05:51 INFO  [5] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.11 03:05:51 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.11 03:05:51 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:51 INFO  [5] - Mapping class: Trakker.Data.Comment -> Comment
+2011.11.11 03:05:51 INFO  [5] - checking mappings queue
+2011.11.11 03:05:51 INFO  [5] - processing one-to-many association mappings
+2011.11.11 03:05:51 INFO  [5] - mapping collection: Trakker.Data.Project.Versions -> ProjectVersion
+2011.11.11 03:05:51 INFO  [5] - mapping collection: Trakker.Data.Role.Users -> [User]
+2011.11.11 03:05:51 INFO  [5] - processing one-to-one association property references
+2011.11.11 03:05:51 INFO  [5] - processing foreign key constraints
+2011.11.11 03:05:51 INFO  [5] - processing filters (second pass)
+2011.11.11 03:05:51 INFO  [5] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 03:05:51 INFO  [5] - Using dialect defined converter
+2011.11.11 03:05:51 INFO  [5] - Generate SQL with comments: disabled
+2011.11.11 03:05:51 INFO  [5] - Configuring ConnectionProvider
+2011.11.11 03:05:51 INFO  [5] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.11 03:05:51 INFO  [5] - Optimize cache for minimal puts: False
+2011.11.11 03:05:51 INFO  [5] - Connection release mode: auto
+2011.11.11 03:05:51 INFO  [5] - Default batch fetch size: 1
+2011.11.11 03:05:51 INFO  [5] - echoing all SQL to stdout
+2011.11.11 03:05:51 INFO  [5] - Statistics: disabled
+2011.11.11 03:05:51 INFO  [5] - Deleted entity synthetic identifier rollback: disabled
+2011.11.11 03:05:51 INFO  [5] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.11 03:05:51 INFO  [5] - Query language substitutions: {}
+2011.11.11 03:05:51 INFO  [5] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 03:05:51 INFO  [5] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.11 03:05:51 INFO  [5] - Batcher factory: NHibernate.AdoNet.SqlClientBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 03:05:51 INFO  [5] - Default entity-mode: Poco
+2011.11.11 03:05:51 INFO  [5] - Named query checking : enabled
+2011.11.11 03:05:51 INFO  [5] - building session factory
+2011.11.11 03:05:51 INFO  [5] - no name configured
+2011.11.11 03:05:51 INFO  [5] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.11 03:05:51 WARN  [5] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 03:05:51 INFO  [5] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.11 03:05:51 WARN  [5] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 03:05:51 INFO  [5] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 03:05:52 INFO  [5] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 03:05:52 INFO  [5] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 03:05:52 INFO  [5] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:23:28 INFO  [35] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 04:23:28 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:23:28 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:23:28 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:26:02 INFO  [34] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 04:26:02 INFO  [34] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:26:02 INFO  [34] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:26:02 INFO  [34] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:26:10 INFO  [39] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.11 04:26:10 INFO  [39] - hibernate-configuration section not found in application configuration file
+2011.11.11 04:26:10 INFO  [39] - Bytecode provider name : lcg
+2011.11.11 04:26:10 INFO  [39] - Using reflection optimizer
+2011.11.11 04:26:10 INFO  [39] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.11 04:26:10 INFO  [39] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.11 04:26:11 INFO  [39] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:26:11 INFO  [39] - Mapping class: Trakker.Data.Project -> Project
+2011.11.11 04:26:11 INFO  [39] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.11 04:26:11 INFO  [39] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:26:11 INFO  [39] - Mapping class: Trakker.Data.User -> [User]
+2011.11.11 04:26:11 INFO  [39] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.11 04:26:11 INFO  [39] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:26:11 INFO  [39] - Mapping class: Trakker.Data.TicketType -> TicketType
+2011.11.11 04:26:11 INFO  [39] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.11 04:26:11 INFO  [39] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:26:11 INFO  [39] - Mapping class: Trakker.Data.TicketPriority -> TicketPriority
+2011.11.11 04:26:11 INFO  [39] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.11 04:26:11 INFO  [39] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:26:11 INFO  [39] - Mapping class: Trakker.Data.Role -> Role
+2011.11.11 04:26:11 INFO  [39] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.11 04:26:11 INFO  [39] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:26:11 INFO  [39] - Mapping class: Trakker.Data.TicketStatus -> TicketStatus
+2011.11.11 04:26:11 INFO  [39] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.11 04:26:11 INFO  [39] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:26:11 INFO  [39] - Mapping class: Trakker.Data.ColorPalette -> ColorPalette
+2011.11.11 04:26:11 INFO  [39] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.11 04:26:11 INFO  [39] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:26:11 INFO  [39] - Mapping class: Trakker.Data.TicketResolution -> TicketResolution
+2011.11.11 04:26:11 INFO  [39] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.11 04:26:11 INFO  [39] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:26:11 INFO  [39] - Mapping class: Trakker.Data.Component -> Component
+2011.11.11 04:26:11 INFO  [39] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.11 04:26:11 INFO  [39] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:26:11 INFO  [39] - Mapping class: Trakker.Data.ProjectVersion -> ProjectVersion
+2011.11.11 04:26:11 INFO  [39] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.11 04:26:11 INFO  [39] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.11 04:26:11 INFO  [39] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.11 04:26:11 INFO  [39] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:26:11 INFO  [39] - Mapping class: Trakker.Data.File -> File
+2011.11.11 04:26:11 INFO  [39] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.11 04:26:11 INFO  [39] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:26:11 INFO  [39] - Mapping class: Trakker.Data.Ticket -> Ticket
+2011.11.11 04:26:11 INFO  [39] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.11 04:26:11 INFO  [39] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.11 04:26:11 INFO  [39] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.11 04:26:11 INFO  [39] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:26:11 INFO  [39] - Mapping class: Trakker.Data.Comment -> Comment
+2011.11.11 04:26:11 INFO  [39] - checking mappings queue
+2011.11.11 04:26:11 INFO  [39] - processing one-to-many association mappings
+2011.11.11 04:26:11 INFO  [39] - mapping collection: Trakker.Data.Project.Versions -> ProjectVersion
+2011.11.11 04:26:11 INFO  [39] - mapping collection: Trakker.Data.Role.Users -> [User]
+2011.11.11 04:26:11 INFO  [39] - processing one-to-one association property references
+2011.11.11 04:26:11 INFO  [39] - processing foreign key constraints
+2011.11.11 04:26:11 INFO  [39] - processing filters (second pass)
+2011.11.11 04:26:11 INFO  [39] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:26:11 INFO  [39] - Using dialect defined converter
+2011.11.11 04:26:11 INFO  [39] - Generate SQL with comments: disabled
+2011.11.11 04:26:11 INFO  [39] - Configuring ConnectionProvider
+2011.11.11 04:26:11 INFO  [39] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.11 04:26:11 INFO  [39] - Optimize cache for minimal puts: False
+2011.11.11 04:26:11 INFO  [39] - Connection release mode: auto
+2011.11.11 04:26:11 INFO  [39] - Default batch fetch size: 1
+2011.11.11 04:26:11 INFO  [39] - echoing all SQL to stdout
+2011.11.11 04:26:11 INFO  [39] - Statistics: disabled
+2011.11.11 04:26:11 INFO  [39] - Deleted entity synthetic identifier rollback: disabled
+2011.11.11 04:26:11 INFO  [39] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.11 04:26:11 INFO  [39] - Query language substitutions: {}
+2011.11.11 04:26:11 INFO  [39] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 04:26:11 INFO  [39] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.11 04:26:11 INFO  [39] - Batcher factory: NHibernate.AdoNet.SqlClientBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 04:26:11 INFO  [39] - Default entity-mode: Poco
+2011.11.11 04:26:11 INFO  [39] - Named query checking : enabled
+2011.11.11 04:26:11 INFO  [39] - building session factory
+2011.11.11 04:26:11 INFO  [39] - no name configured
+2011.11.11 04:26:11 INFO  [39] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.11 04:26:11 WARN  [39] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 04:26:11 INFO  [39] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.11 04:26:11 WARN  [39] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 04:26:11 INFO  [39] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 04:26:11 INFO  [39] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:26:11 INFO  [39] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:26:11 INFO  [39] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:26:13 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:26:13 INFO  [35] - SELECT colorpalet0_.Id as Id6_0_, colorpalet0_.NavBackgroundColor as NavBackg2_6_0_, colorpalet0_.SubNavBackgroundColor as SubNavBa3_6_0_, colorpalet0_.HighlightColor as Highligh4_6_0_, colorpalet0_.NavTextColor as NavTextC5_6_0_, colorpalet0_.SubNavTextColor as SubNavTe6_6_0_, colorpalet0_.LinkColor as LinkColor6_0_, colorpalet0_.Name as Name6_0_ FROM ColorPalette colorpalet0_ WHERE colorpalet0_.Id=@p0
+2011.11.11 04:29:23 INFO  [39] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 04:29:23 INFO  [39] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:29:23 INFO  [39] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:29:23 INFO  [39] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:29:24 INFO  [10] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:29:24 INFO  [10] - SELECT colorpalet0_.Id as Id6_0_, colorpalet0_.NavBackgroundColor as NavBackg2_6_0_, colorpalet0_.SubNavBackgroundColor as SubNavBa3_6_0_, colorpalet0_.HighlightColor as Highligh4_6_0_, colorpalet0_.NavTextColor as NavTextC5_6_0_, colorpalet0_.SubNavTextColor as SubNavTe6_6_0_, colorpalet0_.LinkColor as LinkColor6_0_, colorpalet0_.Name as Name6_0_ FROM ColorPalette colorpalet0_ WHERE colorpalet0_.Id=@p0
+2011.11.11 04:36:45 INFO  [10] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.11 04:36:45 INFO  [10] - hibernate-configuration section not found in application configuration file
+2011.11.11 04:36:45 INFO  [10] - Bytecode provider name : lcg
+2011.11.11 04:36:45 INFO  [10] - Using reflection optimizer
+2011.11.11 04:36:45 INFO  [10] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.11 04:36:45 INFO  [10] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.11 04:36:45 INFO  [10] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:36:46 INFO  [10] - Mapping class: Trakker.Data.Project -> Project
+2011.11.11 04:36:46 INFO  [10] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.11 04:36:46 INFO  [10] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:36:46 INFO  [10] - Mapping class: Trakker.Data.User -> [User]
+2011.11.11 04:36:46 INFO  [10] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.11 04:36:46 INFO  [10] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:36:46 INFO  [10] - Mapping class: Trakker.Data.TicketType -> TicketType
+2011.11.11 04:36:46 INFO  [10] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.11 04:36:46 INFO  [10] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:36:46 INFO  [10] - Mapping class: Trakker.Data.TicketPriority -> TicketPriority
+2011.11.11 04:36:46 INFO  [10] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.11 04:36:46 INFO  [10] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:36:46 INFO  [10] - Mapping class: Trakker.Data.Role -> Role
+2011.11.11 04:36:46 INFO  [10] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.11 04:36:46 INFO  [10] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:36:46 INFO  [10] - Mapping class: Trakker.Data.TicketStatus -> TicketStatus
+2011.11.11 04:36:46 INFO  [10] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.11 04:36:46 INFO  [10] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:36:46 INFO  [10] - Mapping class: Trakker.Data.ColorPalette -> ColorPalette
+2011.11.11 04:36:46 INFO  [10] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.11 04:36:46 INFO  [10] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:36:46 INFO  [10] - Mapping class: Trakker.Data.TicketResolution -> TicketResolution
+2011.11.11 04:36:46 INFO  [10] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.11 04:36:46 INFO  [10] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:36:46 INFO  [10] - Mapping class: Trakker.Data.Component -> Component
+2011.11.11 04:36:46 INFO  [10] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.11 04:36:46 INFO  [10] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:36:46 INFO  [10] - Mapping class: Trakker.Data.ProjectVersion -> ProjectVersion
+2011.11.11 04:36:46 INFO  [10] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.11 04:36:46 INFO  [10] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.11 04:36:46 INFO  [10] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.11 04:36:46 INFO  [10] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:36:46 INFO  [10] - Mapping class: Trakker.Data.File -> File
+2011.11.11 04:36:46 INFO  [10] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.11 04:36:46 INFO  [10] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:36:46 INFO  [10] - Mapping class: Trakker.Data.Ticket -> Ticket
+2011.11.11 04:36:46 INFO  [10] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.11 04:36:46 INFO  [10] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.11 04:36:46 INFO  [10] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.11 04:36:46 INFO  [10] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:36:46 INFO  [10] - Mapping class: Trakker.Data.Comment -> Comment
+2011.11.11 04:36:46 INFO  [10] - checking mappings queue
+2011.11.11 04:36:46 INFO  [10] - processing one-to-many association mappings
+2011.11.11 04:36:46 INFO  [10] - mapping collection: Trakker.Data.Project.Versions -> ProjectVersion
+2011.11.11 04:36:46 INFO  [10] - mapping collection: Trakker.Data.Role.Users -> [User]
+2011.11.11 04:36:46 INFO  [10] - processing one-to-one association property references
+2011.11.11 04:36:46 INFO  [10] - processing foreign key constraints
+2011.11.11 04:36:46 INFO  [10] - processing filters (second pass)
+2011.11.11 04:36:46 INFO  [10] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:36:46 INFO  [10] - Using dialect defined converter
+2011.11.11 04:36:46 INFO  [10] - Generate SQL with comments: disabled
+2011.11.11 04:36:46 INFO  [10] - Configuring ConnectionProvider
+2011.11.11 04:36:46 INFO  [10] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.11 04:36:46 INFO  [10] - Optimize cache for minimal puts: False
+2011.11.11 04:36:46 INFO  [10] - Connection release mode: auto
+2011.11.11 04:36:46 INFO  [10] - Default batch fetch size: 1
+2011.11.11 04:36:46 INFO  [10] - echoing all SQL to stdout
+2011.11.11 04:36:46 INFO  [10] - Statistics: disabled
+2011.11.11 04:36:46 INFO  [10] - Deleted entity synthetic identifier rollback: disabled
+2011.11.11 04:36:46 INFO  [10] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.11 04:36:46 INFO  [10] - Query language substitutions: {}
+2011.11.11 04:36:46 INFO  [10] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 04:36:46 INFO  [10] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.11 04:36:46 INFO  [10] - Batcher factory: NHibernate.AdoNet.SqlClientBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 04:36:46 INFO  [10] - Default entity-mode: Poco
+2011.11.11 04:36:46 INFO  [10] - Named query checking : enabled
+2011.11.11 04:36:46 INFO  [10] - building session factory
+2011.11.11 04:36:46 INFO  [10] - no name configured
+2011.11.11 04:36:46 INFO  [10] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.11 04:36:46 WARN  [10] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 04:36:46 INFO  [10] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.11 04:36:46 WARN  [10] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 04:36:47 INFO  [10] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 04:36:47 INFO  [10] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:36:47 INFO  [10] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:36:47 INFO  [10] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:37:51 INFO  [10] - SELECT this_.Id as Id3_0_, this_.Name as Name3_0_, this_.Description as Descript3_3_0_, this_.HexColor as HexColor3_0_ FROM TicketPriority this_
+2011.11.11 04:37:51 INFO  [34] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 04:37:51 INFO  [10] - SELECT this_.Id as Id5_0_, this_.Name as Name5_0_, this_.Description as Descript3_5_0_, this_.IsClosedState as IsClosed4_5_0_ FROM TicketStatus this_
+2011.11.11 04:37:51 INFO  [34] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:37:51 INFO  [34] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:37:51 INFO  [34] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:38:19 INFO  [10] - SELECT this_.Id as Id2_0_, this_.Name as Name2_0_, this_.Description as Descript3_2_0_ FROM TicketType this_
+2011.11.11 04:38:43 INFO  [10] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:38:43 INFO  [10] - SELECT user0_.Id as Id1_0_, user0_.Email as Email1_0_, user0_.Password as Password1_0_, user0_.Salt as Salt1_0_, user0_.Created as Created1_0_, user0_.LastLogin as LastLogin1_0_, user0_.TotalComments as TotalCom7_1_0_, user0_.FailedPasswordAttemptCount as FailedPa8_1_0_, user0_.LastFailedLoginAttempt as LastFail9_1_0_, user0_.FirstName as FirstName1_0_, user0_.LastName as LastName1_0_, user0_.RoleId as RoleId1_0_ FROM [User] user0_ WHERE user0_.Id=@p0
+2011.11.11 04:38:43 INFO  [10] - SELECT user0_.Id as Id1_0_, user0_.Email as Email1_0_, user0_.Password as Password1_0_, user0_.Salt as Salt1_0_, user0_.Created as Created1_0_, user0_.LastLogin as LastLogin1_0_, user0_.TotalComments as TotalCom7_1_0_, user0_.FailedPasswordAttemptCount as FailedPa8_1_0_, user0_.LastFailedLoginAttempt as LastFail9_1_0_, user0_.FirstName as FirstName1_0_, user0_.LastName as LastName1_0_, user0_.RoleId as RoleId1_0_ FROM [User] user0_ WHERE user0_.Id=@p0
+2011.11.11 04:38:43 INFO  [10] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 04:38:43 INFO  [10] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:38:43 INFO  [10] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:38:43 INFO  [10] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:39:08 INFO  [35] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.11 04:39:08 INFO  [35] - hibernate-configuration section not found in application configuration file
+2011.11.11 04:39:08 INFO  [35] - Bytecode provider name : lcg
+2011.11.11 04:39:08 INFO  [35] - Using reflection optimizer
+2011.11.11 04:39:08 INFO  [35] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.11 04:39:08 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.11 04:39:08 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:39:08 INFO  [35] - Mapping class: Trakker.Data.Project -> Project
+2011.11.11 04:39:09 INFO  [35] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.11 04:39:09 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:39:09 INFO  [35] - Mapping class: Trakker.Data.User -> [User]
+2011.11.11 04:39:09 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.11 04:39:09 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:39:09 INFO  [35] - Mapping class: Trakker.Data.TicketType -> TicketType
+2011.11.11 04:39:09 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.11 04:39:09 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:39:09 INFO  [35] - Mapping class: Trakker.Data.TicketPriority -> TicketPriority
+2011.11.11 04:39:09 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.11 04:39:09 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:39:09 INFO  [35] - Mapping class: Trakker.Data.Role -> Role
+2011.11.11 04:39:09 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.11 04:39:09 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:39:09 INFO  [35] - Mapping class: Trakker.Data.TicketStatus -> TicketStatus
+2011.11.11 04:39:09 INFO  [35] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.11 04:39:09 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:39:09 INFO  [35] - Mapping class: Trakker.Data.ColorPalette -> ColorPalette
+2011.11.11 04:39:09 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.11 04:39:09 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:39:09 INFO  [35] - Mapping class: Trakker.Data.TicketResolution -> TicketResolution
+2011.11.11 04:39:09 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.11 04:39:09 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:39:09 INFO  [35] - Mapping class: Trakker.Data.Component -> Component
+2011.11.11 04:39:09 INFO  [35] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.11 04:39:09 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:39:09 INFO  [35] - Mapping class: Trakker.Data.ProjectVersion -> ProjectVersion
+2011.11.11 04:39:09 INFO  [35] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.11 04:39:09 INFO  [35] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.11 04:39:09 INFO  [35] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.11 04:39:09 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:39:09 INFO  [35] - Mapping class: Trakker.Data.File -> File
+2011.11.11 04:39:09 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.11 04:39:09 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:39:09 INFO  [35] - Mapping class: Trakker.Data.Ticket -> Ticket
+2011.11.11 04:39:09 INFO  [35] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.11 04:39:09 INFO  [35] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.11 04:39:09 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.11 04:39:09 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:39:09 INFO  [35] - Mapping class: Trakker.Data.Comment -> Comment
+2011.11.11 04:39:09 INFO  [35] - checking mappings queue
+2011.11.11 04:39:09 INFO  [35] - processing one-to-many association mappings
+2011.11.11 04:39:09 INFO  [35] - mapping collection: Trakker.Data.Project.Versions -> ProjectVersion
+2011.11.11 04:39:09 INFO  [35] - mapping collection: Trakker.Data.Role.Users -> [User]
+2011.11.11 04:39:09 INFO  [35] - processing one-to-one association property references
+2011.11.11 04:39:09 INFO  [35] - processing foreign key constraints
+2011.11.11 04:39:09 INFO  [35] - processing filters (second pass)
+2011.11.11 04:39:09 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:39:09 INFO  [35] - Using dialect defined converter
+2011.11.11 04:39:09 INFO  [35] - Generate SQL with comments: disabled
+2011.11.11 04:39:09 INFO  [35] - Configuring ConnectionProvider
+2011.11.11 04:39:09 INFO  [35] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.11 04:39:09 INFO  [35] - Optimize cache for minimal puts: False
+2011.11.11 04:39:09 INFO  [35] - Connection release mode: auto
+2011.11.11 04:39:09 INFO  [35] - Default batch fetch size: 1
+2011.11.11 04:39:09 INFO  [35] - echoing all SQL to stdout
+2011.11.11 04:39:09 INFO  [35] - Statistics: disabled
+2011.11.11 04:39:09 INFO  [35] - Deleted entity synthetic identifier rollback: disabled
+2011.11.11 04:39:09 INFO  [35] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.11 04:39:09 INFO  [35] - Query language substitutions: {}
+2011.11.11 04:39:09 INFO  [35] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 04:39:09 INFO  [35] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.11 04:39:09 INFO  [35] - Batcher factory: NHibernate.AdoNet.SqlClientBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 04:39:09 INFO  [35] - Default entity-mode: Poco
+2011.11.11 04:39:09 INFO  [35] - Named query checking : enabled
+2011.11.11 04:39:09 INFO  [35] - building session factory
+2011.11.11 04:39:09 INFO  [35] - no name configured
+2011.11.11 04:39:09 INFO  [35] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.11 04:39:09 WARN  [35] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 04:39:09 INFO  [35] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.11 04:39:09 WARN  [35] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 04:39:09 INFO  [35] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 04:39:09 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:39:09 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:39:09 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:42:10 INFO  [35] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.11 04:42:10 INFO  [35] - hibernate-configuration section not found in application configuration file
+2011.11.11 04:42:10 INFO  [35] - Bytecode provider name : lcg
+2011.11.11 04:42:10 INFO  [35] - Using reflection optimizer
+2011.11.11 04:42:10 INFO  [35] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.11 04:42:10 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.11 04:42:10 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:42:11 INFO  [35] - Mapping class: Trakker.Data.Project -> Project
+2011.11.11 04:42:11 INFO  [35] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.11 04:42:11 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:42:11 INFO  [35] - Mapping class: Trakker.Data.User -> [User]
+2011.11.11 04:42:11 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.11 04:42:11 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:42:11 INFO  [35] - Mapping class: Trakker.Data.TicketType -> TicketType
+2011.11.11 04:42:11 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.11 04:42:11 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:42:11 INFO  [35] - Mapping class: Trakker.Data.TicketPriority -> TicketPriority
+2011.11.11 04:42:11 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.11 04:42:11 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:42:11 INFO  [35] - Mapping class: Trakker.Data.Role -> Role
+2011.11.11 04:42:11 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.11 04:42:11 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:42:11 INFO  [35] - Mapping class: Trakker.Data.TicketStatus -> TicketStatus
+2011.11.11 04:42:11 INFO  [35] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.11 04:42:11 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:42:11 INFO  [35] - Mapping class: Trakker.Data.ColorPalette -> ColorPalette
+2011.11.11 04:42:11 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.11 04:42:11 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:42:11 INFO  [35] - Mapping class: Trakker.Data.TicketResolution -> TicketResolution
+2011.11.11 04:42:11 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.11 04:42:11 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:42:11 INFO  [35] - Mapping class: Trakker.Data.Component -> Component
+2011.11.11 04:42:11 INFO  [35] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.11 04:42:11 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:42:11 INFO  [35] - Mapping class: Trakker.Data.ProjectVersion -> ProjectVersion
+2011.11.11 04:42:11 INFO  [35] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.11 04:42:11 INFO  [35] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.11 04:42:11 INFO  [35] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.11 04:42:11 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:42:11 INFO  [35] - Mapping class: Trakker.Data.File -> File
+2011.11.11 04:42:11 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.11 04:42:11 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:42:11 INFO  [35] - Mapping class: Trakker.Data.Ticket -> Ticket
+2011.11.11 04:42:11 INFO  [35] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.11 04:42:11 INFO  [35] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.11 04:42:11 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.11 04:42:11 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:42:11 INFO  [35] - Mapping class: Trakker.Data.Comment -> Comment
+2011.11.11 04:42:11 INFO  [35] - checking mappings queue
+2011.11.11 04:42:11 INFO  [35] - processing one-to-many association mappings
+2011.11.11 04:42:11 INFO  [35] - mapping collection: Trakker.Data.Project.Versions -> ProjectVersion
+2011.11.11 04:42:11 INFO  [35] - mapping collection: Trakker.Data.Role.Users -> [User]
+2011.11.11 04:42:11 INFO  [35] - processing one-to-one association property references
+2011.11.11 04:42:11 INFO  [35] - processing foreign key constraints
+2011.11.11 04:42:11 INFO  [35] - processing filters (second pass)
+2011.11.11 04:42:11 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:42:11 INFO  [35] - Using dialect defined converter
+2011.11.11 04:42:11 INFO  [35] - Generate SQL with comments: disabled
+2011.11.11 04:42:11 INFO  [35] - Configuring ConnectionProvider
+2011.11.11 04:42:11 INFO  [35] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.11 04:42:11 INFO  [35] - Optimize cache for minimal puts: False
+2011.11.11 04:42:11 INFO  [35] - Connection release mode: auto
+2011.11.11 04:42:11 INFO  [35] - Default batch fetch size: 1
+2011.11.11 04:42:11 INFO  [35] - echoing all SQL to stdout
+2011.11.11 04:42:11 INFO  [35] - Statistics: disabled
+2011.11.11 04:42:11 INFO  [35] - Deleted entity synthetic identifier rollback: disabled
+2011.11.11 04:42:11 INFO  [35] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.11 04:42:11 INFO  [35] - Query language substitutions: {}
+2011.11.11 04:42:11 INFO  [35] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 04:42:11 INFO  [35] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.11 04:42:11 INFO  [35] - Batcher factory: NHibernate.AdoNet.SqlClientBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 04:42:11 INFO  [35] - Default entity-mode: Poco
+2011.11.11 04:42:11 INFO  [35] - Named query checking : enabled
+2011.11.11 04:42:11 INFO  [35] - building session factory
+2011.11.11 04:42:11 INFO  [35] - no name configured
+2011.11.11 04:42:11 INFO  [35] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.11 04:42:11 WARN  [35] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 04:42:11 INFO  [35] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.11 04:42:11 WARN  [35] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 04:42:11 INFO  [35] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 04:42:11 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:42:11 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:42:11 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:44:00 INFO  [35] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.11 04:44:00 INFO  [35] - hibernate-configuration section not found in application configuration file
+2011.11.11 04:44:00 INFO  [35] - Bytecode provider name : lcg
+2011.11.11 04:44:00 INFO  [35] - Using reflection optimizer
+2011.11.11 04:44:00 INFO  [35] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.11 04:44:00 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.11 04:44:00 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:00 INFO  [35] - Mapping class: Trakker.Data.Project -> Project
+2011.11.11 04:44:00 INFO  [35] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.11 04:44:00 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:00 INFO  [35] - Mapping class: Trakker.Data.User -> [User]
+2011.11.11 04:44:00 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.11 04:44:00 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:00 INFO  [35] - Mapping class: Trakker.Data.TicketType -> TicketType
+2011.11.11 04:44:00 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.11 04:44:00 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:00 INFO  [35] - Mapping class: Trakker.Data.TicketPriority -> TicketPriority
+2011.11.11 04:44:00 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.11 04:44:00 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:00 INFO  [35] - Mapping class: Trakker.Data.Role -> Role
+2011.11.11 04:44:00 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.11 04:44:00 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:00 INFO  [35] - Mapping class: Trakker.Data.TicketStatus -> TicketStatus
+2011.11.11 04:44:00 INFO  [35] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.11 04:44:00 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:00 INFO  [35] - Mapping class: Trakker.Data.ColorPalette -> ColorPalette
+2011.11.11 04:44:00 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.11 04:44:00 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:00 INFO  [35] - Mapping class: Trakker.Data.TicketResolution -> TicketResolution
+2011.11.11 04:44:00 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.11 04:44:00 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:00 INFO  [35] - Mapping class: Trakker.Data.Component -> Component
+2011.11.11 04:44:00 INFO  [35] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.11 04:44:00 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:00 INFO  [35] - Mapping class: Trakker.Data.ProjectVersion -> ProjectVersion
+2011.11.11 04:44:00 INFO  [35] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.11 04:44:00 INFO  [35] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.11 04:44:00 INFO  [35] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.11 04:44:00 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:00 INFO  [35] - Mapping class: Trakker.Data.File -> File
+2011.11.11 04:44:00 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.11 04:44:00 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:00 INFO  [35] - Mapping class: Trakker.Data.Ticket -> Ticket
+2011.11.11 04:44:00 INFO  [35] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.11 04:44:00 INFO  [35] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.11 04:44:00 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.11 04:44:00 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:00 INFO  [35] - Mapping class: Trakker.Data.Comment -> Comment
+2011.11.11 04:44:00 INFO  [35] - checking mappings queue
+2011.11.11 04:44:00 INFO  [35] - processing one-to-many association mappings
+2011.11.11 04:44:00 INFO  [35] - mapping collection: Trakker.Data.Project.Versions -> ProjectVersion
+2011.11.11 04:44:00 INFO  [35] - mapping collection: Trakker.Data.Role.Users -> [User]
+2011.11.11 04:44:00 INFO  [35] - processing one-to-one association property references
+2011.11.11 04:44:00 INFO  [35] - processing foreign key constraints
+2011.11.11 04:44:00 INFO  [35] - processing filters (second pass)
+2011.11.11 04:44:00 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:00 INFO  [35] - Using dialect defined converter
+2011.11.11 04:44:00 INFO  [35] - Generate SQL with comments: disabled
+2011.11.11 04:44:00 INFO  [35] - Configuring ConnectionProvider
+2011.11.11 04:44:00 INFO  [35] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.11 04:44:00 INFO  [35] - Optimize cache for minimal puts: False
+2011.11.11 04:44:00 INFO  [35] - Connection release mode: auto
+2011.11.11 04:44:00 INFO  [35] - Default batch fetch size: 1
+2011.11.11 04:44:00 INFO  [35] - echoing all SQL to stdout
+2011.11.11 04:44:00 INFO  [35] - Statistics: disabled
+2011.11.11 04:44:00 INFO  [35] - Deleted entity synthetic identifier rollback: disabled
+2011.11.11 04:44:00 INFO  [35] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.11 04:44:00 INFO  [35] - Query language substitutions: {}
+2011.11.11 04:44:00 INFO  [35] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 04:44:00 INFO  [35] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.11 04:44:00 INFO  [35] - Batcher factory: NHibernate.AdoNet.SqlClientBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 04:44:00 INFO  [35] - Default entity-mode: Poco
+2011.11.11 04:44:00 INFO  [35] - Named query checking : enabled
+2011.11.11 04:44:00 INFO  [35] - building session factory
+2011.11.11 04:44:01 INFO  [35] - no name configured
+2011.11.11 04:44:01 INFO  [35] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.11 04:44:01 WARN  [35] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 04:44:01 INFO  [35] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.11 04:44:01 WARN  [35] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 04:44:01 INFO  [5] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 04:44:01 INFO  [35] - SELECT this_.Id as Id3_0_, this_.Name as Name3_0_, this_.Description as Descript3_3_0_, this_.HexColor as HexColor3_0_ FROM TicketPriority this_
+2011.11.11 04:44:01 INFO  [35] - SELECT this_.Id as Id5_0_, this_.Name as Name5_0_, this_.Description as Descript3_5_0_, this_.IsClosedState as IsClosed4_5_0_ FROM TicketStatus this_
+2011.11.11 04:44:01 INFO  [35] - SELECT this_.Id as Id2_0_, this_.Name as Name2_0_, this_.Description as Descript3_2_0_ FROM TicketType this_
+2011.11.11 04:44:01 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:44:02 INFO  [35] - SELECT user0_.Id as Id1_0_, user0_.Email as Email1_0_, user0_.Password as Password1_0_, user0_.Salt as Salt1_0_, user0_.Created as Created1_0_, user0_.LastLogin as LastLogin1_0_, user0_.TotalComments as TotalCom7_1_0_, user0_.FailedPasswordAttemptCount as FailedPa8_1_0_, user0_.LastFailedLoginAttempt as LastFail9_1_0_, user0_.FirstName as FirstName1_0_, user0_.LastName as LastName1_0_, user0_.RoleId as RoleId1_0_ FROM [User] user0_ WHERE user0_.Id=@p0
+2011.11.11 04:44:02 INFO  [5] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:44:02 INFO  [5] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:44:02 INFO  [35] - SELECT user0_.Id as Id1_0_, user0_.Email as Email1_0_, user0_.Password as Password1_0_, user0_.Salt as Salt1_0_, user0_.Created as Created1_0_, user0_.LastLogin as LastLogin1_0_, user0_.TotalComments as TotalCom7_1_0_, user0_.FailedPasswordAttemptCount as FailedPa8_1_0_, user0_.LastFailedLoginAttempt as LastFail9_1_0_, user0_.FirstName as FirstName1_0_, user0_.LastName as LastName1_0_, user0_.RoleId as RoleId1_0_ FROM [User] user0_ WHERE user0_.Id=@p0
+2011.11.11 04:44:02 INFO  [5] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:44:02 INFO  [35] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 04:44:02 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:44:02 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:44:02 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:44:51 INFO  [35] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.11 04:44:51 INFO  [35] - hibernate-configuration section not found in application configuration file
+2011.11.11 04:44:51 INFO  [35] - Bytecode provider name : lcg
+2011.11.11 04:44:51 INFO  [35] - Using reflection optimizer
+2011.11.11 04:44:52 INFO  [35] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.11 04:44:52 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.11 04:44:52 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:52 INFO  [35] - Mapping class: Trakker.Data.Project -> Project
+2011.11.11 04:44:52 INFO  [35] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.11 04:44:52 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:52 INFO  [35] - Mapping class: Trakker.Data.User -> [User]
+2011.11.11 04:44:52 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.11 04:44:52 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:52 INFO  [35] - Mapping class: Trakker.Data.TicketType -> TicketType
+2011.11.11 04:44:52 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.11 04:44:52 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:52 INFO  [35] - Mapping class: Trakker.Data.TicketPriority -> TicketPriority
+2011.11.11 04:44:52 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.11 04:44:52 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:52 INFO  [35] - Mapping class: Trakker.Data.Role -> Role
+2011.11.11 04:44:52 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.11 04:44:52 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:52 INFO  [35] - Mapping class: Trakker.Data.TicketStatus -> TicketStatus
+2011.11.11 04:44:52 INFO  [35] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.11 04:44:52 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:52 INFO  [35] - Mapping class: Trakker.Data.ColorPalette -> ColorPalette
+2011.11.11 04:44:52 INFO  [35] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.11 04:44:52 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:52 INFO  [35] - Mapping class: Trakker.Data.TicketResolution -> TicketResolution
+2011.11.11 04:44:52 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.11 04:44:52 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:52 INFO  [35] - Mapping class: Trakker.Data.Component -> Component
+2011.11.11 04:44:52 INFO  [35] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.11 04:44:52 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:52 INFO  [35] - Mapping class: Trakker.Data.ProjectVersion -> ProjectVersion
+2011.11.11 04:44:52 INFO  [35] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.11 04:44:52 INFO  [35] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.11 04:44:52 INFO  [35] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.11 04:44:52 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:52 INFO  [35] - Mapping class: Trakker.Data.File -> File
+2011.11.11 04:44:52 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.11 04:44:52 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:52 INFO  [35] - Mapping class: Trakker.Data.Ticket -> Ticket
+2011.11.11 04:44:52 INFO  [35] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.11 04:44:52 INFO  [35] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.11 04:44:52 INFO  [35] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.11 04:44:52 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:52 INFO  [35] - Mapping class: Trakker.Data.Comment -> Comment
+2011.11.11 04:44:52 INFO  [35] - checking mappings queue
+2011.11.11 04:44:52 INFO  [35] - processing one-to-many association mappings
+2011.11.11 04:44:52 INFO  [35] - mapping collection: Trakker.Data.Project.Versions -> ProjectVersion
+2011.11.11 04:44:52 INFO  [35] - mapping collection: Trakker.Data.Role.Users -> [User]
+2011.11.11 04:44:52 INFO  [35] - processing one-to-one association property references
+2011.11.11 04:44:52 INFO  [35] - processing foreign key constraints
+2011.11.11 04:44:52 INFO  [35] - processing filters (second pass)
+2011.11.11 04:44:52 INFO  [35] - Using dialect: NHibernate.Dialect.MsSql2008Dialect
+2011.11.11 04:44:52 INFO  [35] - Using dialect defined converter
+2011.11.11 04:44:52 INFO  [35] - Generate SQL with comments: disabled
+2011.11.11 04:44:52 INFO  [35] - Configuring ConnectionProvider
+2011.11.11 04:44:52 INFO  [35] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.11 04:44:52 INFO  [35] - Optimize cache for minimal puts: False
+2011.11.11 04:44:52 INFO  [35] - Connection release mode: auto
+2011.11.11 04:44:52 INFO  [35] - Default batch fetch size: 1
+2011.11.11 04:44:52 INFO  [35] - echoing all SQL to stdout
+2011.11.11 04:44:52 INFO  [35] - Statistics: disabled
+2011.11.11 04:44:52 INFO  [35] - Deleted entity synthetic identifier rollback: disabled
+2011.11.11 04:44:52 INFO  [35] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.11 04:44:52 INFO  [35] - Query language substitutions: {}
+2011.11.11 04:44:52 INFO  [35] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 04:44:52 INFO  [35] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.11 04:44:52 INFO  [35] - Batcher factory: NHibernate.AdoNet.SqlClientBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.11 04:44:52 INFO  [35] - Default entity-mode: Poco
+2011.11.11 04:44:52 INFO  [35] - Named query checking : enabled
+2011.11.11 04:44:52 INFO  [35] - building session factory
+2011.11.11 04:44:53 INFO  [35] - no name configured
+2011.11.11 04:44:53 INFO  [35] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.11 04:44:53 WARN  [35] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 04:44:53 INFO  [35] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.11 04:44:53 WARN  [35] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.11 04:44:53 INFO  [35] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.11 04:44:53 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:44:53 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:44:53 INFO  [35] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:44:54 INFO  [4] - SELECT project0_.Id as Id0_0_, project0_.Name as Name0_0_, project0_.KeyName as KeyName0_0_, project0_.Lead as Lead0_0_, project0_.Due as Due0_0_, project0_.Created as Created0_0_, project0_.TicketIndex as TicketIn7_0_0_, project0_.Url as Url0_0_, project0_.ColorPaletteId as ColorPal9_0_0_, project0_.AvatarId as AvatarId0_0_ FROM Project project0_ WHERE project0_.Id=@p0
+2011.11.11 04:44:54 INFO  [4] - SELECT colorpalet0_.Id as Id6_0_, colorpalet0_.NavBackgroundColor as NavBackg2_6_0_, colorpalet0_.SubNavBackgroundColor as SubNavBa3_6_0_, colorpalet0_.HighlightColor as Highligh4_6_0_, colorpalet0_.NavTextColor as NavTextC5_6_0_, colorpalet0_.SubNavTextColor as SubNavTe6_6_0_, colorpalet0_.LinkColor as LinkColor6_0_, colorpalet0_.Name as Name6_0_ FROM ColorPalette colorpalet0_ WHERE colorpalet0_.Id=@p0
