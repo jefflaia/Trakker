@@ -340,35 +340,11 @@ namespace Links {
         private const string URLPATH = "~/Scripts";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public static class _2010_2_825 {
-            private const string URLPATH = "~/Scripts/2010.2.825";
-            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            public static readonly string jquery_1_4_2_min_js = Url("jquery-1.4.2.min.js");
-            public static readonly string jquery_validate_min_js = Url("jquery.validate.min.js");
-            public static readonly string telerik_autocomplete_min_js = Url("telerik.autocomplete.min.js");
-            public static readonly string telerik_calendar_min_js = Url("telerik.calendar.min.js");
-            public static readonly string telerik_combobox_min_js = Url("telerik.combobox.min.js");
-            public static readonly string telerik_common_min_js = Url("telerik.common.min.js");
-            public static readonly string telerik_datepicker_min_js = Url("telerik.datepicker.min.js");
-            public static readonly string telerik_draganddrop_min_js = Url("telerik.draganddrop.min.js");
-            public static readonly string telerik_editor_min_js = Url("telerik.editor.min.js");
-            public static readonly string telerik_grid_editing_min_js = Url("telerik.grid.editing.min.js");
-            public static readonly string telerik_grid_filtering_min_js = Url("telerik.grid.filtering.min.js");
-            public static readonly string telerik_grid_grouping_min_js = Url("telerik.grid.grouping.min.js");
-            public static readonly string telerik_grid_min_js = Url("telerik.grid.min.js");
-            public static readonly string telerik_grid_resizing_min_js = Url("telerik.grid.resizing.min.js");
-            public static readonly string telerik_list_min_js = Url("telerik.list.min.js");
-            public static readonly string telerik_menu_min_js = Url("telerik.menu.min.js");
-            public static readonly string telerik_panelbar_min_js = Url("telerik.panelbar.min.js");
-            public static readonly string telerik_tabstrip_min_js = Url("telerik.tabstrip.min.js");
-            public static readonly string telerik_textbox_min_js = Url("telerik.textbox.min.js");
-            public static readonly string telerik_treeview_min_js = Url("telerik.treeview.min.js");
-            public static readonly string telerik_window_min_js = Url("telerik.window.min.js");
-        }
-    
         public static readonly string global_onload_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/global-onload.min.js") ? Url("global-onload.min.js") : Url("global-onload.js");
+                      
+        public static readonly string jquery_1_6_2_min_js = Url("jquery-1.6.2.min.js");
+        public static readonly string jquery_ui_1_8_16_custom_min_js = Url("jquery-ui-1.8.16.custom.min.js");
+        public static readonly string jqueryTools_tabs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jqueryTools.tabs.min.js") ? Url("jqueryTools.tabs.min.js") : Url("jqueryTools.tabs.js");
                       
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class Libraries {
@@ -377,8 +353,6 @@ namespace Links {
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
             public static readonly string jquery_1_5_1_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.5.1-vsdoc.min.js") ? Url("jquery-1.5.1-vsdoc.min.js") : Url("jquery-1.5.1-vsdoc.js");
                           
-            public static readonly string jquery_1_5_1_min_js = Url("jquery-1.5.1.min.js");
-            public static readonly string jquery_ui_1_8_14_custom_min_js = Url("jquery-ui-1.8.14.custom.min.js");
             public static readonly string jquery_validate_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate-vsdoc.min.js") ? Url("jquery.validate-vsdoc.min.js") : Url("jquery.validate-vsdoc.js");
                           
             public static readonly string jquery_validate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.min.js") ? Url("jquery.validate.min.js") : Url("jquery.validate.js");
@@ -386,8 +360,6 @@ namespace Links {
             public static readonly string jquery_validate_min_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.min-vsdoc.min.js") ? Url("jquery.validate.min-vsdoc.min.js") : Url("jquery.validate.min-vsdoc.js");
                           
             public static readonly string jquery_validate_min_js = Url("jquery.validate.min.js");
-            public static readonly string jqueryTools_tabs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jqueryTools.tabs.min.js") ? Url("jqueryTools.tabs.min.js") : Url("jqueryTools.tabs.js");
-                          
             public static readonly string MicrosoftAjax_debug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MicrosoftAjax.debug.min.js") ? Url("MicrosoftAjax.debug.min.js") : Url("MicrosoftAjax.debug.js");
                           
             public static readonly string MicrosoftAjax_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MicrosoftAjax.min.js") ? Url("MicrosoftAjax.min.js") : Url("MicrosoftAjax.js");
@@ -404,6 +376,8 @@ namespace Links {
                           
         }
     
+        public static readonly string ui_jquery_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ui.jquery.min.js") ? Url("ui.jquery.min.js") : Url("ui.jquery.js");
+                      
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

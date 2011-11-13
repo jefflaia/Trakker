@@ -15,6 +15,8 @@ namespace Trakker.Infastructure.UI
         {
             ViewContext = viewContext;
             ClientSideObjectWriterFactory = clientSideObjectWriterFactory;
+
+            HtmlAttributes = new Dictionary<string, object>();
         }
         
         public string AssetKey
@@ -47,6 +49,24 @@ namespace Trakker.Infastructure.UI
         }
 
         public string Name { get; set; }
+
+        public string Id
+        {
+            get
+            {
+                // Return from htmlattributes if user has specified
+                // otherwise build it from name
+                return (HtmlAttributes.ContainsKey("id") ?
+                       HtmlAttributes["id"].ToString() :
+                       (!string.IsNullOrEmpty(Name) ? Name.Replace(".", HtmlHelper.IdAttributeDotReplacement) : null)).ToLower() + "-input";
+            }
+        }
+
+        public IDictionary<string, object> HtmlAttributes
+        {
+            get;
+            private set;
+        }
 
         public IClientSideObjectWriterFactory ClientSideObjectWriterFactory
         {
@@ -86,18 +106,23 @@ namespace Trakker.Infastructure.UI
             }
         }
 
+        protected virtual void EnsureRequiredSettings()
+        {
+            if (string.IsNullOrEmpty(Name))
+            {
+                throw new InvalidOperationException(Resources.TextResource.NameCannotBeBlank);
+            }
+        }
+
         protected virtual void WriteHtml(HtmlTextWriter writer)
         {
+            EnsureRequiredSettings();
+
             writer.AddAttribute(HtmlTextWriterAttribute.Type, "text/javascript");
             writer.RenderBeginTag(HtmlTextWriterTag.Script);
             WriteInitializationScript(writer);
             writer.RenderEndTag();
         }
 
-        public IDictionary<string, object> HtmlAttributes
-        {
-            get;
-            set;
-        }
     }
 }

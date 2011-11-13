@@ -22,12 +22,6 @@ namespace Trakker.Infastructure.UI
         public string Src { get; set; }
         public string Alt { get; set; }
 
-        public IDictionary<string, object> InputHtmlAttributes
-        {
-            get;
-            set;
-        }
-
         protected override void WriteHtml(System.Web.UI.HtmlTextWriter writer)
         {
             var builder = _renderFactory.Create(this);

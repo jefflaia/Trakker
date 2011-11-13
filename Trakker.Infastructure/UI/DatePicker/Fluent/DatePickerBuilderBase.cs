@@ -12,8 +12,6 @@ namespace Trakker.Infastructure.UI
         where TBuilder : DatePickerBuilderBase<TComponent, TBuilder>
     {
 
-        private TComponent Component { get; set; }
-
         public DatePickerBuilderBase(TComponent component) :
             base(component)
         {
@@ -39,13 +37,6 @@ namespace Trakker.Infastructure.UI
             {
                 Component.Value = null;
             }
-            return this as TBuilder;
-        }
-
-        public TBuilder Name(string name)
-        {
-            Component.Name = name;
-
             return this as TBuilder;
         }
     }

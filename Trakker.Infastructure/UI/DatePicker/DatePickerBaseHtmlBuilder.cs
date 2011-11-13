@@ -51,7 +51,7 @@ namespace Trakker.Infastructure.UI
 
             if (date != null)
             {
-                /*
+                
                 if (string.IsNullOrEmpty(Element.Format))
                 {
                     value = date.Value.ToShortDateString();
@@ -60,16 +60,16 @@ namespace Trakker.Infastructure.UI
                 {
                     value = date.Value.ToString(Element.Format);
                 }
-                 */
             }
 
             return new HtmlTag("input", TagRenderMode.SelfClosing)
                 .Attributes(new { 
+                    type = "text",
                     name = Element.Name, 
-                    id = Element.Id + "-input", 
+                    id = Element.Id,
                     value = value
                 })
-                .Attributes(Element.InputHtmlAttributes);
+                .Attributes(Element.HtmlAttributes);
         }
     }
 }

@@ -17,23 +17,21 @@ namespace Trakker.Infastructure.UI
         {
             _renderFactory = renderFactory;
             ClientEvents = new DatePickerClientEvents();
+            Format = Culture.Current.DateTimeFormat.ShortDatePattern;
         }
 
-        public IDictionary<string, object> InputHtmlAttributes { get; set; }
         public DatePickerClientEvents ClientEvents { get; set; }
 
         public DateTime? Value { get; set; }
-        public string Id { get; set; }
-        public string Name { get; set; }
+        public string Format { get; set; }
 
         public override void WriteInitializationScript(TextWriter writer)
         {
-            Id = "datepicker1";
             IClientSideObjectWriter objectWriter = ClientSideObjectWriterFactory.Create(Id, "tDatePicker", writer);
 
             objectWriter.Start();
-            objectWriter.AppendDateOnly("selectedDate", this.Value);
 
+            objectWriter.Append("dateFormat", Format);
 
             objectWriter.AppendClientEvent("onLoad", ClientEvents.OnLoad);
             objectWriter.AppendClientEvent("onChange", ClientEvents.OnChange);
@@ -53,9 +51,6 @@ namespace Trakker.Infastructure.UI
             rootTag.WriteTo(writer);
             base.WriteHtml(writer);
         }
-    
-
-
 
     }
 }

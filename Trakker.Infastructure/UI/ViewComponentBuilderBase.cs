@@ -45,9 +45,9 @@ namespace Trakker.Infastructure.UI
         /// </summary>
         /// <param name="componentName">The name.</param>
         /// <returns></returns>
-        public virtual TBuilder Name(string componentName)
+        public virtual TBuilder Name(string name)
         {
-            Component.Name = componentName;
+            Component.Name = name;
 
             return this as TBuilder;
         }

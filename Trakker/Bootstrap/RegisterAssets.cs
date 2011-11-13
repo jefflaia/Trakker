@@ -32,10 +32,10 @@ namespace Trakker.Bootstrap
                 .SetCompressor(new YuiCompressor());
 
             RecoAssets.JavaScript()
-                .Add("~/Scripts/Libraries/jquery-1.5.1.min.js")
-                .Add("~/Scripts/Libraries/jqueryTools.tabs.js")
-                .Add("~/Scripts/Libraries/jquery-ui-1.8.14.custom.min.js")
-                .Add("~/Scripts/global-onload.js")
+                .Add("~/Scripts/jquery-1.6.2.min.js")
+                .Add("~/Scripts/jqueryTools.tabs.js")
+                .Add("~/Scripts/jquery-ui-1.8.16.custom.min.js")
+                .Add("~/Scripts/ui.jquery.js")
                 .Combine(true)
                 .Compress(true)
                 .Version(true)

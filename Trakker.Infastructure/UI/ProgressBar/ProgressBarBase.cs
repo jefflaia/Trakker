@@ -25,7 +25,6 @@ namespace Trakker.Infastructure.UI
             BackgroundColorClass = CssPrimitives.ProgressBar.Grey;
         }
 
-        public IDictionary<string, object> InputHtmlAttributes { get; set; }
         public double Max { get; set; }
         public double Current { get; set; }
         public string ColorClass { get; set; }
