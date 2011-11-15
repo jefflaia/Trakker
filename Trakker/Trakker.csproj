@@ -409,7 +409,6 @@
     <None Include="Areas\Admin\Views\Management\BrowseProjects.cshtml" />
     <None Include="Areas\Admin\Views\Management\EditProject.cshtml" />
     <None Include="Areas\Admin\Views\Management\CreateProject.cshtml" />
-    <Content Include="Scripts\global-onload.js" />
     <None Include="Views\Error\InvalidAction.cshtml" />
     <None Include="Views\Error\PageNotFound.cshtml" />
     <None Include="Views\Error\TicketNotFound.cshtml" />

@@ -79,6 +79,7 @@
     <Compile Include="Streams\Activity\Model\ActivityModel.cs" />
     <Compile Include="Streams\Activity\UserActivityStream.cs" />
     <Compile Include="SubscriptionToken.cs" />
+    <Compile Include="UI\RecoAssetManagerFactory.cs" />
     <Compile Include="UI\ClientSideEnumValueAttribute.cs" />
     <Compile Include="UI\ClientEvent.cs" />
     <Compile Include="UI\ClientSideObjectWriter.cs" />
@@ -93,6 +94,8 @@
     <Compile Include="UI\DatePicker\DatePickerBase.cs" />
     <Compile Include="UI\DatePicker\DatePickerBaseHtmlBuilder.cs" />
     <Compile Include="UI\DatePicker\DatePickerHtmlBuilderFactory.cs" />
+    <Compile Include="UI\IAssetManagerFactory.cs" />
+    <Compile Include="UI\IAssetManager.cs" />
     <Compile Include="UI\IAttributesContainer.cs" />
     <Compile Include="UI\IClientSideObjectWriterFactory.cs" />
     <Compile Include="UI\IHideObjectMembers.cs" />
@@ -107,6 +110,7 @@
     <Compile Include="UI\ProgressBar\ProgressBarBase.cs" />
     <Compile Include="UI\ProgressBar\ProgressBarBaseHtmlBuilder.cs" />
     <Compile Include="UI\ProgressBar\ProgressBarHtmlBuilderFactory.cs" />
+    <Compile Include="UI\RecoAssetAdapter.cs" />
     <Compile Include="UI\ViewComponentBase.cs" />
     <Compile Include="UI\ViewComponentBuilderBase.cs" />
     <Compile Include="UI\ViewComponentFactory.cs" />
@@ -141,6 +145,10 @@
     <ProjectReference Include="..\BaseMasterController\Trakker.Core.csproj">
       <Project>{CF243D83-CEF5-448B-8E56-DE3149AF4319}</Project>
       <Name>Trakker.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reco\ResourceCompiler.csproj">
+      <Project>{B21AFA3C-07B0-4BA8-A3F4-29D45A02D0C8}</Project>
+      <Name>ResourceCompiler</Name>
     </ProjectReference>
     <ProjectReference Include="..\Trakker.Data\Trakker.Data.csproj">
       <Project>{A9547E24-5633-4817-8B4A-E35AF672EAFB}</Project>

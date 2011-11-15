@@ -13,15 +13,16 @@ namespace Trakker.Infastructure.UI
     public class ViewComponentFactory
     {
 
-        public ViewComponentFactory(HtmlHelper helper, IClientSideObjectWriterFactory clientSideObjectWriterFactory)
+        public ViewComponentFactory(HtmlHelper helper, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IAssetManagerFactory assetManagerFactory)
         {
             ClientSideObjectWriterFactory = clientSideObjectWriterFactory;
+            AssetManagerFactory = assetManagerFactory;
             HtmlHelper = helper;
         }
 
+        public IAssetManagerFactory AssetManagerFactory { get; set; }
         public IClientSideObjectWriterFactory ClientSideObjectWriterFactory { get; set; }
         public HtmlHelper HtmlHelper { get; set; }
-
 
         public ImageBuilder Avatar(Trakker.Data.File file)
         {
