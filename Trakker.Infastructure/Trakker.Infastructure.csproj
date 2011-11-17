@@ -55,7 +55,6 @@
     <Compile Include="Extensions\CollectionExtensions.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
-    <Compile Include="Extensions\HtmlHelperExtension.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="IEventAggregator.cs" />
@@ -79,7 +78,6 @@
     <Compile Include="Streams\Activity\Model\ActivityModel.cs" />
     <Compile Include="Streams\Activity\UserActivityStream.cs" />
     <Compile Include="SubscriptionToken.cs" />
-    <Compile Include="UI\RecoAssetManagerFactory.cs" />
     <Compile Include="UI\ClientSideEnumValueAttribute.cs" />
     <Compile Include="UI\ClientEvent.cs" />
     <Compile Include="UI\ClientSideObjectWriter.cs" />
@@ -94,7 +92,6 @@
     <Compile Include="UI\DatePicker\DatePickerBase.cs" />
     <Compile Include="UI\DatePicker\DatePickerBaseHtmlBuilder.cs" />
     <Compile Include="UI\DatePicker\DatePickerHtmlBuilderFactory.cs" />
-    <Compile Include="UI\IAssetManagerFactory.cs" />
     <Compile Include="UI\IAssetManager.cs" />
     <Compile Include="UI\IAttributesContainer.cs" />
     <Compile Include="UI\IClientSideObjectWriterFactory.cs" />
@@ -111,6 +108,7 @@
     <Compile Include="UI\ProgressBar\ProgressBarBaseHtmlBuilder.cs" />
     <Compile Include="UI\ProgressBar\ProgressBarHtmlBuilderFactory.cs" />
     <Compile Include="UI\RecoAssetAdapter.cs" />
+    <Compile Include="UI\UniqueViewComponent.cs" />
     <Compile Include="UI\ViewComponentBase.cs" />
     <Compile Include="UI\ViewComponentBuilderBase.cs" />
     <Compile Include="UI\ViewComponentFactory.cs" />

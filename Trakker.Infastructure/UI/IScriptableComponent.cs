@@ -8,41 +8,10 @@ namespace Trakker.Infastructure.UI
 {
     public interface IScriptableComponent
     {
-        /// <summary>
-        /// Gets or sets the asset key.
-        /// </summary>
-        /// <value>The asset key.</value>
-        string AssetKey
-        {
-            get;
-            set;
-        }
 
-        /// <summary>
-        /// Gets or sets the script files path. Path must be a virtual path.
-        /// </summary>
-        /// <value>The script files path.</value>
-        string ScriptFilesPath
-        {
-            get;
-            set;
-        }
+        IAssetManager AssetManager { get; }
 
-        /// <summary>
-        /// Gets or sets the script file names.
-        /// </summary>
-        /// <value>The script file names.</value>
-        IList<string> ScriptFileNames
-        {
-            get;
-        }
-
-
-        IClientSideObjectWriterFactory ClientSideObjectWriterFactory
-        {
-            get;
-        }
-
+        IClientSideObjectWriterFactory ClientSideObjectWriterFactory { get; }
 
         void WriteInitializationScript(TextWriter writer);
 

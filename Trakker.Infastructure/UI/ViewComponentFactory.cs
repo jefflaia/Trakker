@@ -13,20 +13,20 @@ namespace Trakker.Infastructure.UI
     public class ViewComponentFactory
     {
 
-        public ViewComponentFactory(HtmlHelper helper, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IAssetManagerFactory assetManagerFactory)
+        public ViewComponentFactory(HtmlHelper helper, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IAssetManager assetManager)
         {
             ClientSideObjectWriterFactory = clientSideObjectWriterFactory;
-            AssetManagerFactory = assetManagerFactory;
+            AssetManager = assetManager;
             HtmlHelper = helper;
         }
 
-        public IAssetManagerFactory AssetManagerFactory { get; set; }
-        public IClientSideObjectWriterFactory ClientSideObjectWriterFactory { get; set; }
+        public IAssetManager AssetManager { get; private set; }
+        public IClientSideObjectWriterFactory ClientSideObjectWriterFactory { get; private set; }
         public HtmlHelper HtmlHelper { get; set; }
 
         public ImageBuilder Avatar(Trakker.Data.File file)
         {
-            var builder = new ImageBuilder(new ImageBase(HtmlHelper.ViewContext, ClientSideObjectWriterFactory, new ImageHtmlBuilderFactory()), new AvatarImageProfile());
+            var builder = new ImageBuilder(new ImageBase(HtmlHelper.ViewContext, ClientSideObjectWriterFactory, new ImageHtmlBuilderFactory(), AssetManager), new AvatarImageProfile());
             builder.Src(Path.Combine(file.Path, file.FileName));
             return builder;
 
@@ -34,12 +34,12 @@ namespace Trakker.Infastructure.UI
 
         public ProgressBarBuilder ProgressBar()
         {
-            return new ProgressBarBuilder(new ProgressBarBase(HtmlHelper.ViewContext, ClientSideObjectWriterFactory, new ProgressBarHtmlBuilderFactory()));
+            return new ProgressBarBuilder(new ProgressBarBase(HtmlHelper.ViewContext, ClientSideObjectWriterFactory, new ProgressBarHtmlBuilderFactory(), AssetManager));
         }
 
         public DatePickerBuilder DatePicker()
         {
-            return new DatePickerBuilder(new DatePickerBase(HtmlHelper.ViewContext, ClientSideObjectWriterFactory, new DatePickerHtmlBuilderFactory()));
+            return new DatePickerBuilder(new DatePickerBase(HtmlHelper.ViewContext, ClientSideObjectWriterFactory, new DatePickerHtmlBuilderFactory(), AssetManager));
         }
 
     }

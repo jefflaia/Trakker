@@ -12,8 +12,8 @@ namespace Trakker.Infastructure.UI
 
         protected IDatePickerHtmlBuilderFactory _renderFactory;
 
-        public DatePickerBase(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IDatePickerHtmlBuilderFactory renderFactory) :
-            base(viewContext, clientSideObjectWriterFactory)
+        public DatePickerBase(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IDatePickerHtmlBuilderFactory renderFactory, IAssetManager assetManager) :
+            base(viewContext, clientSideObjectWriterFactory, assetManager)
         {
             _renderFactory = renderFactory;
             ClientEvents = new DatePickerClientEvents();

@@ -11,55 +11,19 @@ namespace Trakker.Infastructure.UI
 {
     public abstract class ViewComponentBase : IScriptableComponent, IAttributesContainer
     {
-        protected ViewComponentBase(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory)
+        protected ViewComponentBase(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IAssetManager assetManager)
         {
             ViewContext = viewContext;
             ClientSideObjectWriterFactory = clientSideObjectWriterFactory;
+            AssetManager = assetManager;
 
             HtmlAttributes = new Dictionary<string, object>();
         }
-        
-        public string AssetKey
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
 
-        public string ScriptFilesPath
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public IList<string> ScriptFileNames
-        {
-            get { throw new NotImplementedException(); }
-        }
-
-        public string Name { get; set; }
-
-        public string Id
-        {
-            get
-            {
-                // Return from htmlattributes if user has specified
-                // otherwise build it from name
-                return (HtmlAttributes.ContainsKey("id") ?
-                       HtmlAttributes["id"].ToString() :
-                       (!string.IsNullOrEmpty(Name) ? Name.Replace(".", HtmlHelper.IdAttributeDotReplacement) : null)).ToLower() + "-input";
-            }
+        public IAssetManager AssetManager 
+        { 
+            get; 
+            private set; 
         }
 
         public IDictionary<string, object> HtmlAttributes
@@ -108,10 +72,7 @@ namespace Trakker.Infastructure.UI
 
         protected virtual void EnsureRequiredSettings()
         {
-            if (string.IsNullOrEmpty(Name))
-            {
-                throw new InvalidOperationException(Resources.TextResource.NameCannotBeBlank);
-            }
+            
         }
 
         protected virtual void WriteHtml(HtmlTextWriter writer)

@@ -340,8 +340,6 @@ namespace Links {
         private const string URLPATH = "~/Scripts";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-        public static readonly string global_onload_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/global-onload.min.js") ? Url("global-onload.min.js") : Url("global-onload.js");
-                      
         public static readonly string jquery_1_6_2_min_js = Url("jquery-1.6.2.min.js");
         public static readonly string jquery_ui_1_8_16_custom_min_js = Url("jquery-ui-1.8.16.custom.min.js");
         public static readonly string jqueryTools_tabs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jqueryTools.tabs.min.js") ? Url("jqueryTools.tabs.min.js") : Url("jqueryTools.tabs.js");
