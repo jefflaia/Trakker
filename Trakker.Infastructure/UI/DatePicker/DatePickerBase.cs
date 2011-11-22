@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Trakker.Infastructure.UI
 {
-    public class DatePickerBase : ViewComponentBase
+    public class DatePickerBase : ScriptableViewComponent
     {
 
         protected IDatePickerHtmlBuilderFactory _renderFactory;

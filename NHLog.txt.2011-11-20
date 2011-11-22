@@ -1,0 +1,1713 @@
+2011.11.20 07:49:43 INFO  [5] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.20 07:49:43 INFO  [5] - hibernate-configuration section not found in application configuration file
+2011.11.20 07:49:43 INFO  [5] - Bytecode provider name : lcg
+2011.11.20 07:49:43 INFO  [5] - Using reflection optimizer
+2011.11.20 07:49:44 INFO  [5] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.20 07:49:44 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.20 07:49:44 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:49:44 INFO  [5] - Mapping class: Trakker.Data.Project -> Project
+2011.11.20 07:49:44 INFO  [5] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.20 07:49:44 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:49:45 INFO  [5] - Mapping class: Trakker.Data.User -> [User]
+2011.11.20 07:49:45 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.20 07:49:45 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:49:45 INFO  [5] - Mapping class: Trakker.Data.TicketType -> TicketType
+2011.11.20 07:49:45 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.20 07:49:45 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:49:45 INFO  [5] - Mapping class: Trakker.Data.TicketPriority -> TicketPriority
+2011.11.20 07:49:45 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.20 07:49:45 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:49:45 INFO  [5] - Mapping class: Trakker.Data.Role -> Role
+2011.11.20 07:49:45 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.20 07:49:45 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:49:45 INFO  [5] - Mapping class: Trakker.Data.TicketStatus -> TicketStatus
+2011.11.20 07:49:45 INFO  [5] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.20 07:49:45 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:49:45 INFO  [5] - Mapping class: Trakker.Data.ColorPalette -> ColorPalette
+2011.11.20 07:49:45 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.20 07:49:45 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:49:45 INFO  [5] - Mapping class: Trakker.Data.TicketResolution -> TicketResolution
+2011.11.20 07:49:45 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.20 07:49:45 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:49:45 INFO  [5] - Mapping class: Trakker.Data.Component -> Component
+2011.11.20 07:49:45 INFO  [5] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.20 07:49:45 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:49:45 INFO  [5] - Mapping class: Trakker.Data.ProjectVersion -> ProjectVersion
+2011.11.20 07:49:45 INFO  [5] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.20 07:49:45 INFO  [5] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.20 07:49:45 INFO  [5] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.20 07:49:45 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:49:45 INFO  [5] - Mapping class: Trakker.Data.File -> File
+2011.11.20 07:49:45 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.20 07:49:45 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:49:45 INFO  [5] - Mapping class: Trakker.Data.Ticket -> Ticket
+2011.11.20 07:49:45 INFO  [5] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.20 07:49:45 INFO  [5] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.20 07:49:45 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.20 07:49:45 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:49:45 INFO  [5] - Mapping class: Trakker.Data.Comment -> Comment
+2011.11.20 07:49:45 INFO  [5] - checking mappings queue
+2011.11.20 07:49:45 INFO  [5] - processing one-to-many association mappings
+2011.11.20 07:49:45 INFO  [5] - mapping collection: Trakker.Data.Project.Versions -> ProjectVersion
+2011.11.20 07:49:45 INFO  [5] - mapping collection: Trakker.Data.Role.Users -> [User]
+2011.11.20 07:49:45 INFO  [5] - processing one-to-one association property references
+2011.11.20 07:49:45 INFO  [5] - processing foreign key constraints
+2011.11.20 07:49:45 INFO  [5] - processing filters (second pass)
+2011.11.20 07:49:45 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:49:45 INFO  [5] - Using dialect defined converter
+2011.11.20 07:49:45 INFO  [5] - Generate SQL with comments: disabled
+2011.11.20 07:49:45 INFO  [5] - Configuring ConnectionProvider
+2011.11.20 07:49:45 INFO  [5] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.20 07:49:45 INFO  [5] - Optimize cache for minimal puts: False
+2011.11.20 07:49:45 INFO  [5] - Connection release mode: auto
+2011.11.20 07:49:45 INFO  [5] - Default batch fetch size: 1
+2011.11.20 07:49:45 INFO  [5] - echoing all SQL to stdout
+2011.11.20 07:49:45 INFO  [5] - Statistics: disabled
+2011.11.20 07:49:45 INFO  [5] - Deleted entity synthetic identifier rollback: disabled
+2011.11.20 07:49:45 INFO  [5] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.20 07:49:45 INFO  [5] - Query language substitutions: {}
+2011.11.20 07:49:45 INFO  [5] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.20 07:49:45 INFO  [5] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.20 07:49:45 INFO  [5] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.20 07:49:45 INFO  [5] - Default entity-mode: Poco
+2011.11.20 07:49:45 INFO  [5] - Named query checking : enabled
+2011.11.20 07:49:45 INFO  [5] - building session factory
+2011.11.20 07:49:45 INFO  [5] - no name configured
+2011.11.20 07:49:45 INFO  [5] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.20 07:49:45 WARN  [5] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.20 07:49:45 INFO  [5] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.20 07:49:45 WARN  [5] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.20 07:49:45 INFO  [5] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.20 07:49:45 ERROR [5] - Could not execute query: SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+Npgsql.NpgsqlException:
+relation "project" does not exist
+Severity: ERROR
+Code: 42P01
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.20 07:49:45 WARN  [5] - Npgsql.NpgsqlException:
+relation "project" does not exist
+Severity: ERROR
+Code: 42P01
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.20 07:49:45 ERROR [5] - ERROR: 42P01: relation "project" does not exist
+2011.11.20 07:49:45 WARN  [5] - Npgsql.NpgsqlException:
+relation "project" does not exist
+Severity: ERROR
+Code: 42P01
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 07:49:45 ERROR [5] - ERROR: 42P01: relation "project" does not exist
+2011.11.20 07:49:45 WARN  [5] - Npgsql.NpgsqlException:
+relation "project" does not exist
+Severity: ERROR
+Code: 42P01
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 07:49:45 ERROR [5] - ERROR: 42P01: relation "project" does not exist
+2011.11.20 07:56:57 INFO  [18] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.20 07:56:57 INFO  [18] - hibernate-configuration section not found in application configuration file
+2011.11.20 07:56:57 INFO  [18] - Bytecode provider name : lcg
+2011.11.20 07:56:57 INFO  [18] - Using reflection optimizer
+2011.11.20 07:56:58 INFO  [18] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.20 07:56:58 INFO  [18] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.20 07:56:58 INFO  [18] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:56:58 INFO  [18] - Mapping class: Trakker.Data.Project -> Project
+2011.11.20 07:56:58 INFO  [18] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.20 07:56:58 INFO  [18] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:56:58 INFO  [18] - Mapping class: Trakker.Data.User -> [User]
+2011.11.20 07:56:58 INFO  [18] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.20 07:56:58 INFO  [18] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:56:58 INFO  [18] - Mapping class: Trakker.Data.TicketType -> TicketType
+2011.11.20 07:56:58 INFO  [18] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.20 07:56:58 INFO  [18] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:56:58 INFO  [18] - Mapping class: Trakker.Data.TicketPriority -> TicketPriority
+2011.11.20 07:56:58 INFO  [18] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.20 07:56:58 INFO  [18] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:56:58 INFO  [18] - Mapping class: Trakker.Data.Role -> Role
+2011.11.20 07:56:58 INFO  [18] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.20 07:56:58 INFO  [18] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:56:58 INFO  [18] - Mapping class: Trakker.Data.TicketStatus -> TicketStatus
+2011.11.20 07:56:58 INFO  [18] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.20 07:56:58 INFO  [18] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:56:58 INFO  [18] - Mapping class: Trakker.Data.ColorPalette -> ColorPalette
+2011.11.20 07:56:58 INFO  [18] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.20 07:56:58 INFO  [18] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:56:58 INFO  [18] - Mapping class: Trakker.Data.TicketResolution -> TicketResolution
+2011.11.20 07:56:58 INFO  [18] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.20 07:56:58 INFO  [18] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:56:58 INFO  [18] - Mapping class: Trakker.Data.Component -> Component
+2011.11.20 07:56:58 INFO  [18] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.20 07:56:58 INFO  [18] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:56:58 INFO  [18] - Mapping class: Trakker.Data.ProjectVersion -> ProjectVersion
+2011.11.20 07:56:58 INFO  [18] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.20 07:56:58 INFO  [18] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.20 07:56:58 INFO  [18] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.20 07:56:58 INFO  [18] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:56:58 INFO  [18] - Mapping class: Trakker.Data.File -> File
+2011.11.20 07:56:58 INFO  [18] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.20 07:56:58 INFO  [18] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:56:58 INFO  [18] - Mapping class: Trakker.Data.Ticket -> Ticket
+2011.11.20 07:56:58 INFO  [18] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.20 07:56:58 INFO  [18] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.20 07:56:58 INFO  [18] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.20 07:56:58 INFO  [18] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:56:58 INFO  [18] - Mapping class: Trakker.Data.Comment -> Comment
+2011.11.20 07:56:58 INFO  [18] - checking mappings queue
+2011.11.20 07:56:58 INFO  [18] - processing one-to-many association mappings
+2011.11.20 07:56:58 INFO  [18] - mapping collection: Trakker.Data.Project.Versions -> ProjectVersion
+2011.11.20 07:56:58 INFO  [18] - mapping collection: Trakker.Data.Role.Users -> [User]
+2011.11.20 07:56:58 INFO  [18] - processing one-to-one association property references
+2011.11.20 07:56:58 INFO  [18] - processing foreign key constraints
+2011.11.20 07:56:58 INFO  [18] - processing filters (second pass)
+2011.11.20 07:56:58 INFO  [18] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 07:56:58 INFO  [18] - Using dialect defined converter
+2011.11.20 07:56:58 INFO  [18] - Generate SQL with comments: disabled
+2011.11.20 07:56:58 INFO  [18] - Configuring ConnectionProvider
+2011.11.20 07:56:58 INFO  [18] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.20 07:56:58 INFO  [18] - Optimize cache for minimal puts: False
+2011.11.20 07:56:58 INFO  [18] - Connection release mode: auto
+2011.11.20 07:56:58 INFO  [18] - Default batch fetch size: 1
+2011.11.20 07:56:58 INFO  [18] - echoing all SQL to stdout
+2011.11.20 07:56:58 INFO  [18] - Statistics: disabled
+2011.11.20 07:56:58 INFO  [18] - Deleted entity synthetic identifier rollback: disabled
+2011.11.20 07:56:58 INFO  [18] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.20 07:56:58 INFO  [18] - Query language substitutions: {}
+2011.11.20 07:56:58 INFO  [18] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.20 07:56:58 INFO  [18] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.20 07:56:58 INFO  [18] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.20 07:56:58 INFO  [18] - Default entity-mode: Poco
+2011.11.20 07:56:58 INFO  [18] - Named query checking : enabled
+2011.11.20 07:56:58 INFO  [18] - building session factory
+2011.11.20 07:56:59 INFO  [18] - no name configured
+2011.11.20 07:56:59 INFO  [18] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.20 07:56:59 WARN  [18] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.20 07:56:59 INFO  [18] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.20 07:56:59 WARN  [18] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.20 07:56:59 INFO  [18] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.20 07:56:59 ERROR [18] - Could not execute query: SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+Npgsql.NpgsqlException:
+relation "project" does not exist
+Severity: ERROR
+Code: 42P01
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.20 07:56:59 WARN  [18] - Npgsql.NpgsqlException:
+relation "project" does not exist
+Severity: ERROR
+Code: 42P01
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.20 07:56:59 ERROR [18] - ERROR: 42P01: relation "project" does not exist
+2011.11.20 07:56:59 WARN  [18] - Npgsql.NpgsqlException:
+relation "project" does not exist
+Severity: ERROR
+Code: 42P01
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 07:56:59 ERROR [18] - ERROR: 42P01: relation "project" does not exist
+2011.11.20 07:56:59 WARN  [18] - Npgsql.NpgsqlException:
+relation "project" does not exist
+Severity: ERROR
+Code: 42P01
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 07:56:59 ERROR [18] - ERROR: 42P01: relation "project" does not exist
+2011.11.20 08:00:24 INFO  [13] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.20 08:00:24 INFO  [13] - hibernate-configuration section not found in application configuration file
+2011.11.20 08:00:24 INFO  [13] - Bytecode provider name : lcg
+2011.11.20 08:00:24 INFO  [13] - Using reflection optimizer
+2011.11.20 08:00:25 ERROR [13] - Problem parsing configuration
+NHibernate.Cfg.HibernateConfigException: An exception occurred parsing configuration :The 'name' attribute is invalid - The value 'hbm3ddl.keywords' is invalid according to its datatype 'String' - The Enumeration constraint failed. ---> System.Xml.Schema.XmlSchemaValidationException: The 'name' attribute is invalid - The value 'hbm3ddl.keywords' is invalid according to its datatype 'String' - The Enumeration constraint failed. ---> System.Xml.Schema.XmlSchemaException: The Enumeration constraint failed.
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlSchemas.ConfigSettingsValidationEventHandler(Object sender, ValidationEventArgs e) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Cfg\XmlSchemas.cs:line 50
+   at System.Xml.Schema.XmlSchemaValidator.SendValidationEvent(XmlSchemaValidationException e, XmlSeverityType severity)
+   at System.Xml.Schema.XmlSchemaValidator.SendValidationEvent(String code, String[] args, Exception innerException)
+   at System.Xml.Schema.XmlSchemaValidator.CheckAttributeValue(Object value, SchemaAttDef attdef)
+   at System.Xml.Schema.XmlSchemaValidator.ValidateAttribute(String lName, String ns, XmlValueGetter attributeValueGetter, String attributeStringValue, XmlSchemaInfo schemaInfo)
+   at System.Xml.Schema.XmlSchemaValidator.ValidateAttribute(String localName, String namespaceUri, XmlValueGetter attributeValue, XmlSchemaInfo schemaInfo)
+   at System.Xml.XsdValidatingReader.ValidateAttributes()
+   at System.Xml.XsdValidatingReader.ProcessElementEvent()
+   at System.Xml.XsdValidatingReader.ProcessReaderEvent()
+   at System.Xml.XsdValidatingReader.Read()
+   at System.Xml.XPath.XPathDocument.LoadFromReader(XmlReader reader, XmlSpace space)
+   at System.Xml.XPath.XPathDocument..ctor(XmlReader reader, XmlSpace space)
+   at NHibernate.Cfg.ConfigurationSchema.HibernateConfiguration..ctor(XmlReader hbConfigurationReader, Boolean fromAppSetting) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Cfg\ConfigurationSchema\HibernateConfiguration.cs:line 48
+   at NHibernate.Cfg.Configuration.Configure(XmlReader textReader) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Cfg\Configuration.cs:line 1505
+2011.11.20 08:09:34 INFO  [19] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.20 08:09:34 INFO  [19] - hibernate-configuration section not found in application configuration file
+2011.11.20 08:09:34 INFO  [19] - Bytecode provider name : lcg
+2011.11.20 08:09:34 INFO  [19] - Using reflection optimizer
+2011.11.20 08:09:35 INFO  [19] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.20 08:09:35 INFO  [19] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.20 08:09:35 INFO  [19] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:09:35 INFO  [19] - Mapping class: Trakker.Data.Project -> "Trakker.Data.Project"
+2011.11.20 08:09:35 INFO  [19] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.20 08:09:35 INFO  [19] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:09:35 INFO  [19] - Mapping class: Trakker.Data.User -> "[User]"
+2011.11.20 08:09:35 INFO  [19] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.20 08:09:35 INFO  [19] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:09:35 INFO  [19] - Mapping class: Trakker.Data.TicketType -> "Trakker.Data.TicketType"
+2011.11.20 08:09:35 INFO  [19] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.20 08:09:35 INFO  [19] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:09:35 INFO  [19] - Mapping class: Trakker.Data.TicketPriority -> "Trakker.Data.TicketPriority"
+2011.11.20 08:09:35 INFO  [19] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.20 08:09:35 INFO  [19] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:09:35 INFO  [19] - Mapping class: Trakker.Data.Role -> "Trakker.Data.Role"
+2011.11.20 08:09:35 INFO  [19] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.20 08:09:35 INFO  [19] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:09:35 INFO  [19] - Mapping class: Trakker.Data.TicketStatus -> "Trakker.Data.TicketStatus"
+2011.11.20 08:09:35 INFO  [19] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.20 08:09:35 INFO  [19] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:09:35 INFO  [19] - Mapping class: Trakker.Data.ColorPalette -> "Trakker.Data.ColorPalette"
+2011.11.20 08:09:35 INFO  [19] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.20 08:09:35 INFO  [19] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:09:35 INFO  [19] - Mapping class: Trakker.Data.TicketResolution -> "Trakker.Data.TicketResolution"
+2011.11.20 08:09:35 INFO  [19] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.20 08:09:35 INFO  [19] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:09:35 INFO  [19] - Mapping class: Trakker.Data.Component -> "Trakker.Data.Component"
+2011.11.20 08:09:35 INFO  [19] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.20 08:09:35 INFO  [19] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:09:35 INFO  [19] - Mapping class: Trakker.Data.ProjectVersion -> "Trakker.Data.ProjectVersion"
+2011.11.20 08:09:35 INFO  [19] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> "TicketFixedOnVersion"
+2011.11.20 08:09:35 INFO  [19] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> "TicketFoundOnVersion"
+2011.11.20 08:09:35 INFO  [19] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.20 08:09:35 INFO  [19] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:09:35 INFO  [19] - Mapping class: Trakker.Data.File -> "Trakker.Data.File"
+2011.11.20 08:09:35 INFO  [19] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.20 08:09:35 INFO  [19] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:09:35 INFO  [19] - Mapping class: Trakker.Data.Ticket -> "Trakker.Data.Ticket"
+2011.11.20 08:09:35 INFO  [19] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> "TicketFoundOnVersion"
+2011.11.20 08:09:35 INFO  [19] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> "TicketFixedOnVersion"
+2011.11.20 08:09:35 INFO  [19] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.20 08:09:35 INFO  [19] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:09:35 INFO  [19] - Mapping class: Trakker.Data.Comment -> "Trakker.Data.Comment"
+2011.11.20 08:09:35 INFO  [19] - checking mappings queue
+2011.11.20 08:09:35 INFO  [19] - processing one-to-many association mappings
+2011.11.20 08:09:35 INFO  [19] - mapping collection: Trakker.Data.Project.Versions -> "Trakker.Data.ProjectVersion"
+2011.11.20 08:09:35 INFO  [19] - mapping collection: Trakker.Data.Role.Users -> "[User]"
+2011.11.20 08:09:35 INFO  [19] - processing one-to-one association property references
+2011.11.20 08:09:35 INFO  [19] - processing foreign key constraints
+2011.11.20 08:09:35 INFO  [19] - processing filters (second pass)
+2011.11.20 08:09:35 INFO  [19] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:09:35 INFO  [19] - Using dialect defined converter
+2011.11.20 08:09:35 INFO  [19] - Generate SQL with comments: disabled
+2011.11.20 08:09:35 INFO  [19] - Configuring ConnectionProvider
+2011.11.20 08:09:35 INFO  [19] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.20 08:09:35 INFO  [19] - Optimize cache for minimal puts: False
+2011.11.20 08:09:35 INFO  [19] - Connection release mode: auto
+2011.11.20 08:09:35 INFO  [19] - Default batch fetch size: 1
+2011.11.20 08:09:35 INFO  [19] - echoing all SQL to stdout
+2011.11.20 08:09:35 INFO  [19] - Statistics: disabled
+2011.11.20 08:09:35 INFO  [19] - Deleted entity synthetic identifier rollback: disabled
+2011.11.20 08:09:35 INFO  [19] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.20 08:09:35 INFO  [19] - Query language substitutions: {}
+2011.11.20 08:09:35 INFO  [19] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.20 08:09:35 INFO  [19] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.20 08:09:35 INFO  [19] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.20 08:09:35 INFO  [19] - Default entity-mode: Poco
+2011.11.20 08:09:35 INFO  [19] - Named query checking : enabled
+2011.11.20 08:09:35 INFO  [19] - building session factory
+2011.11.20 08:09:36 INFO  [19] - no name configured
+2011.11.20 08:09:36 INFO  [19] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.20 08:09:36 WARN  [19] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.20 08:09:36 INFO  [19] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.20 08:09:36 WARN  [19] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.20 08:09:36 INFO  [19] - SELECT this_."Id" as column1_0_0_, this_.""Name"" as column2_0_0_, this_.""KeyName"" as column3_0_0_, this_.""Lead"" as column4_0_0_, this_.""Due"" as column5_0_0_, this_.""Created"" as column6_0_0_, this_.""TicketIndex"" as column7_0_0_, this_.""Url"" as column8_0_0_, this_.""ColorPaletteId"" as column9_0_0_, this_."ColorPaletteId" as column10_0_0_, this_."AvatarId" as column11_0_0_ FROM "Trakker.Data.Project" this_
+2011.11.20 08:09:36 ERROR [19] - Could not execute query: SELECT this_."Id" as column1_0_0_, this_.""Name"" as column2_0_0_, this_.""KeyName"" as column3_0_0_, this_.""Lead"" as column4_0_0_, this_.""Due"" as column5_0_0_, this_.""Created"" as column6_0_0_, this_.""TicketIndex"" as column7_0_0_, this_.""Url"" as column8_0_0_, this_.""ColorPaletteId"" as column9_0_0_, this_."ColorPaletteId" as column10_0_0_, this_."AvatarId" as column11_0_0_ FROM "Trakker.Data.Project" this_
+Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.20 08:09:36 WARN  [19] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.20 08:09:36 ERROR [19] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:09:36 WARN  [19] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:09:36 ERROR [19] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:09:36 WARN  [19] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:09:36 ERROR [19] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:10:38 INFO  [4] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.20 08:10:38 INFO  [4] - hibernate-configuration section not found in application configuration file
+2011.11.20 08:10:38 INFO  [4] - Bytecode provider name : lcg
+2011.11.20 08:10:38 INFO  [4] - Using reflection optimizer
+2011.11.20 08:10:40 INFO  [4] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.20 08:10:40 INFO  [4] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.20 08:10:40 INFO  [4] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:11:04 INFO  [4] - Mapping class: Trakker.Data.Project -> "Trakker.Data.Project"
+2011.11.20 08:11:04 INFO  [4] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.20 08:11:04 INFO  [4] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:11:04 INFO  [4] - Mapping class: Trakker.Data.User -> "[User]"
+2011.11.20 08:11:04 INFO  [4] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.20 08:11:04 INFO  [4] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:11:04 INFO  [4] - Mapping class: Trakker.Data.TicketType -> "Trakker.Data.TicketType"
+2011.11.20 08:11:04 INFO  [4] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.20 08:11:04 INFO  [4] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:11:04 INFO  [4] - Mapping class: Trakker.Data.TicketPriority -> "Trakker.Data.TicketPriority"
+2011.11.20 08:11:04 INFO  [4] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.20 08:11:04 INFO  [4] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:11:04 INFO  [4] - Mapping class: Trakker.Data.Role -> "Trakker.Data.Role"
+2011.11.20 08:11:04 INFO  [4] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.20 08:11:04 INFO  [4] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:11:04 INFO  [4] - Mapping class: Trakker.Data.TicketStatus -> "Trakker.Data.TicketStatus"
+2011.11.20 08:11:04 INFO  [4] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.20 08:11:04 INFO  [4] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:11:04 INFO  [4] - Mapping class: Trakker.Data.ColorPalette -> "Trakker.Data.ColorPalette"
+2011.11.20 08:11:04 INFO  [4] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.20 08:11:04 INFO  [4] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:11:04 INFO  [4] - Mapping class: Trakker.Data.TicketResolution -> "Trakker.Data.TicketResolution"
+2011.11.20 08:11:04 INFO  [4] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.20 08:11:04 INFO  [4] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:11:04 INFO  [4] - Mapping class: Trakker.Data.Component -> "Trakker.Data.Component"
+2011.11.20 08:11:04 INFO  [4] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.20 08:11:04 INFO  [4] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:11:04 INFO  [4] - Mapping class: Trakker.Data.ProjectVersion -> "Trakker.Data.ProjectVersion"
+2011.11.20 08:11:04 INFO  [4] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> "TicketFixedOnVersion"
+2011.11.20 08:11:04 INFO  [4] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> "TicketFoundOnVersion"
+2011.11.20 08:11:04 INFO  [4] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.20 08:11:04 INFO  [4] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:11:04 INFO  [4] - Mapping class: Trakker.Data.File -> "Trakker.Data.File"
+2011.11.20 08:11:04 INFO  [4] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.20 08:11:04 INFO  [4] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:11:04 INFO  [4] - Mapping class: Trakker.Data.Ticket -> "Trakker.Data.Ticket"
+2011.11.20 08:11:04 INFO  [4] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> "TicketFoundOnVersion"
+2011.11.20 08:11:04 INFO  [4] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> "TicketFixedOnVersion"
+2011.11.20 08:11:04 INFO  [4] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.20 08:11:04 INFO  [4] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:11:04 INFO  [4] - Mapping class: Trakker.Data.Comment -> "Trakker.Data.Comment"
+2011.11.20 08:11:04 INFO  [4] - checking mappings queue
+2011.11.20 08:11:04 INFO  [4] - processing one-to-many association mappings
+2011.11.20 08:11:04 INFO  [4] - mapping collection: Trakker.Data.Project.Versions -> "Trakker.Data.ProjectVersion"
+2011.11.20 08:11:04 INFO  [4] - mapping collection: Trakker.Data.Role.Users -> "[User]"
+2011.11.20 08:11:04 INFO  [4] - processing one-to-one association property references
+2011.11.20 08:11:04 INFO  [4] - processing foreign key constraints
+2011.11.20 08:11:04 INFO  [4] - processing filters (second pass)
+2011.11.20 08:11:04 INFO  [4] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:11:04 INFO  [4] - Using dialect defined converter
+2011.11.20 08:11:04 INFO  [4] - Generate SQL with comments: disabled
+2011.11.20 08:11:04 INFO  [4] - Configuring ConnectionProvider
+2011.11.20 08:11:04 INFO  [4] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.20 08:11:04 INFO  [4] - Optimize cache for minimal puts: False
+2011.11.20 08:11:04 INFO  [4] - Connection release mode: auto
+2011.11.20 08:11:04 INFO  [4] - Default batch fetch size: 1
+2011.11.20 08:11:04 INFO  [4] - echoing all SQL to stdout
+2011.11.20 08:11:04 INFO  [4] - Statistics: disabled
+2011.11.20 08:11:04 INFO  [4] - Deleted entity synthetic identifier rollback: disabled
+2011.11.20 08:11:04 INFO  [4] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.20 08:11:04 INFO  [4] - Query language substitutions: {}
+2011.11.20 08:11:04 INFO  [4] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.20 08:11:04 INFO  [4] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.20 08:11:04 INFO  [4] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.20 08:11:04 INFO  [4] - Default entity-mode: Poco
+2011.11.20 08:11:04 INFO  [4] - Named query checking : enabled
+2011.11.20 08:11:04 INFO  [4] - building session factory
+2011.11.20 08:11:05 INFO  [4] - no name configured
+2011.11.20 08:11:05 INFO  [4] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.20 08:11:05 WARN  [4] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.20 08:11:05 INFO  [4] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.20 08:11:05 WARN  [4] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.20 08:11:05 INFO  [5] - SELECT this_."Id" as column1_0_0_, this_.""Name"" as column2_0_0_, this_.""KeyName"" as column3_0_0_, this_.""Lead"" as column4_0_0_, this_.""Due"" as column5_0_0_, this_.""Created"" as column6_0_0_, this_.""TicketIndex"" as column7_0_0_, this_.""Url"" as column8_0_0_, this_.""ColorPaletteId"" as column9_0_0_, this_."ColorPaletteId" as column10_0_0_, this_."AvatarId" as column11_0_0_ FROM "Trakker.Data.Project" this_
+2011.11.20 08:11:05 INFO  [4] - SELECT this_."Id" as column1_3_0_, this_.""Name"" as column2_3_0_, this_.""Description"" as column3_3_0_, this_.""HexColor"" as column4_3_0_ FROM "Trakker.Data.TicketPriority" this_
+2011.11.20 08:11:05 INFO  [9] - SELECT this_."Id" as column1_3_0_, this_.""Name"" as column2_3_0_, this_.""Description"" as column3_3_0_, this_.""HexColor"" as column4_3_0_ FROM "Trakker.Data.TicketPriority" this_
+2011.11.20 08:11:05 ERROR [5] - Could not execute query: SELECT this_."Id" as column1_0_0_, this_.""Name"" as column2_0_0_, this_.""KeyName"" as column3_0_0_, this_.""Lead"" as column4_0_0_, this_.""Due"" as column5_0_0_, this_.""Created"" as column6_0_0_, this_.""TicketIndex"" as column7_0_0_, this_.""Url"" as column8_0_0_, this_.""ColorPaletteId"" as column9_0_0_, this_."ColorPaletteId" as column10_0_0_, this_."AvatarId" as column11_0_0_ FROM "Trakker.Data.Project" this_
+Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.20 08:11:05 ERROR [4] - Could not execute query: SELECT this_."Id" as column1_3_0_, this_.""Name"" as column2_3_0_, this_.""Description"" as column3_3_0_, this_.""HexColor"" as column4_3_0_ FROM "Trakker.Data.TicketPriority" this_
+Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.20 08:11:05 ERROR [9] - Could not execute query: SELECT this_."Id" as column1_3_0_, this_.""Name"" as column2_3_0_, this_.""Description"" as column3_3_0_, this_.""HexColor"" as column4_3_0_ FROM "Trakker.Data.TicketPriority" this_
+Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.20 08:11:05 WARN  [4] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.20 08:11:05 WARN  [9] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.20 08:11:05 ERROR [9] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:11:05 ERROR [4] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:11:05 WARN  [5] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.20 08:11:05 ERROR [5] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:11:05 WARN  [5] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:11:05 ERROR [5] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:11:05 WARN  [4] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:11:05 ERROR [4] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:11:05 WARN  [9] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:11:05 ERROR [9] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:11:05 WARN  [5] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:11:05 ERROR [5] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:11:05 WARN  [4] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:11:05 ERROR [4] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:11:05 WARN  [9] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:11:05 ERROR [9] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:12:08 INFO  [5] - SELECT this_."Id" as column1_0_0_, this_.""Name"" as column2_0_0_, this_.""KeyName"" as column3_0_0_, this_.""Lead"" as column4_0_0_, this_.""Due"" as column5_0_0_, this_.""Created"" as column6_0_0_, this_.""TicketIndex"" as column7_0_0_, this_.""Url"" as column8_0_0_, this_.""ColorPaletteId"" as column9_0_0_, this_."ColorPaletteId" as column10_0_0_, this_."AvatarId" as column11_0_0_ FROM "Trakker.Data.Project" this_
+2011.11.20 08:12:08 ERROR [5] - Could not execute query: SELECT this_."Id" as column1_0_0_, this_.""Name"" as column2_0_0_, this_.""KeyName"" as column3_0_0_, this_.""Lead"" as column4_0_0_, this_.""Due"" as column5_0_0_, this_.""Created"" as column6_0_0_, this_.""TicketIndex"" as column7_0_0_, this_.""Url"" as column8_0_0_, this_.""ColorPaletteId"" as column9_0_0_, this_."ColorPaletteId" as column10_0_0_, this_."AvatarId" as column11_0_0_ FROM "Trakker.Data.Project" this_
+Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.20 08:12:08 WARN  [5] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.20 08:12:08 ERROR [5] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:12:08 WARN  [5] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:12:08 ERROR [5] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:12:08 WARN  [5] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:12:08 ERROR [5] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:12:11 INFO  [5] - SELECT this_."Id" as column1_3_0_, this_.""Name"" as column2_3_0_, this_.""Description"" as column3_3_0_, this_.""HexColor"" as column4_3_0_ FROM "Trakker.Data.TicketPriority" this_
+2011.11.20 08:12:11 INFO  [9] - SELECT this_."Id" as column1_0_0_, this_.""Name"" as column2_0_0_, this_.""KeyName"" as column3_0_0_, this_.""Lead"" as column4_0_0_, this_.""Due"" as column5_0_0_, this_.""Created"" as column6_0_0_, this_.""TicketIndex"" as column7_0_0_, this_.""Url"" as column8_0_0_, this_.""ColorPaletteId"" as column9_0_0_, this_."ColorPaletteId" as column10_0_0_, this_."AvatarId" as column11_0_0_ FROM "Trakker.Data.Project" this_
+2011.11.20 08:12:11 ERROR [5] - Could not execute query: SELECT this_."Id" as column1_3_0_, this_.""Name"" as column2_3_0_, this_.""Description"" as column3_3_0_, this_.""HexColor"" as column4_3_0_ FROM "Trakker.Data.TicketPriority" this_
+Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.20 08:12:11 ERROR [9] - Could not execute query: SELECT this_."Id" as column1_0_0_, this_.""Name"" as column2_0_0_, this_.""KeyName"" as column3_0_0_, this_.""Lead"" as column4_0_0_, this_.""Due"" as column5_0_0_, this_.""Created"" as column6_0_0_, this_.""TicketIndex"" as column7_0_0_, this_.""Url"" as column8_0_0_, this_.""ColorPaletteId"" as column9_0_0_, this_."ColorPaletteId" as column10_0_0_, this_."AvatarId" as column11_0_0_ FROM "Trakker.Data.Project" this_
+Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.20 08:12:11 WARN  [5] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.20 08:12:11 ERROR [5] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:12:11 WARN  [9] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.20 08:12:11 ERROR [9] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:12:11 WARN  [5] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:12:11 ERROR [5] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:12:11 WARN  [5] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:12:11 ERROR [5] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:12:11 WARN  [9] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:12:11 ERROR [9] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:12:11 WARN  [9] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:12:58 ERROR [9] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:12:59 INFO  [4] - SELECT this_."Id" as column1_3_0_, this_.""Name"" as column2_3_0_, this_.""Description"" as column3_3_0_, this_.""HexColor"" as column4_3_0_ FROM "Trakker.Data.TicketPriority" this_
+2011.11.20 08:13:00 ERROR [4] - Could not execute query: SELECT this_."Id" as column1_3_0_, this_.""Name"" as column2_3_0_, this_.""Description"" as column3_3_0_, this_.""HexColor"" as column4_3_0_ FROM "Trakker.Data.TicketPriority" this_
+Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.20 08:13:00 WARN  [4] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.20 08:13:00 ERROR [4] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:13:00 INFO  [5] - SELECT this_."Id" as column1_0_0_, this_.""Name"" as column2_0_0_, this_.""KeyName"" as column3_0_0_, this_.""Lead"" as column4_0_0_, this_.""Due"" as column5_0_0_, this_.""Created"" as column6_0_0_, this_.""TicketIndex"" as column7_0_0_, this_.""Url"" as column8_0_0_, this_.""ColorPaletteId"" as column9_0_0_, this_."ColorPaletteId" as column10_0_0_, this_."AvatarId" as column11_0_0_ FROM "Trakker.Data.Project" this_
+2011.11.20 08:13:00 WARN  [4] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:13:00 ERROR [4] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:13:00 WARN  [4] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:13:00 ERROR [4] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:13:00 ERROR [5] - Could not execute query: SELECT this_."Id" as column1_0_0_, this_.""Name"" as column2_0_0_, this_.""KeyName"" as column3_0_0_, this_.""Lead"" as column4_0_0_, this_.""Due"" as column5_0_0_, this_.""Created"" as column6_0_0_, this_.""TicketIndex"" as column7_0_0_, this_.""Url"" as column8_0_0_, this_.""ColorPaletteId"" as column9_0_0_, this_."ColorPaletteId" as column10_0_0_, this_."AvatarId" as column11_0_0_ FROM "Trakker.Data.Project" this_
+Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.20 08:13:05 WARN  [5] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.20 08:13:05 ERROR [5] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:13:05 WARN  [5] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:13:05 ERROR [5] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:13:05 WARN  [5] - Npgsql.NpgsqlException:
+zero-length delimited identifier at or near """"
+Severity: ERROR
+Code: 42601
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:13:05 ERROR [5] - ERROR: 42601: zero-length delimited identifier at or near """"
+2011.11.20 08:14:31 INFO  [11] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.20 08:14:31 INFO  [11] - hibernate-configuration section not found in application configuration file
+2011.11.20 08:14:31 INFO  [11] - Bytecode provider name : lcg
+2011.11.20 08:14:31 INFO  [11] - Using reflection optimizer
+2011.11.20 08:14:32 INFO  [11] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.20 08:14:32 INFO  [11] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.20 08:14:32 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:14:32 INFO  [11] - Mapping class: Trakker.Data.Project -> Trakker.Data.Project
+2011.11.20 08:14:32 INFO  [11] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.20 08:14:32 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:14:32 INFO  [11] - Mapping class: Trakker.Data.User -> "[User]"
+2011.11.20 08:14:32 INFO  [11] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.20 08:14:32 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:14:32 INFO  [11] - Mapping class: Trakker.Data.TicketType -> Trakker.Data.TicketType
+2011.11.20 08:14:32 INFO  [11] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.20 08:14:32 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:14:32 INFO  [11] - Mapping class: Trakker.Data.TicketPriority -> Trakker.Data.TicketPriority
+2011.11.20 08:14:32 INFO  [11] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.20 08:14:32 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:14:32 INFO  [11] - Mapping class: Trakker.Data.Role -> Trakker.Data.Role
+2011.11.20 08:14:32 INFO  [11] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.20 08:14:32 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:14:32 INFO  [11] - Mapping class: Trakker.Data.TicketStatus -> Trakker.Data.TicketStatus
+2011.11.20 08:14:32 INFO  [11] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.20 08:14:32 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:14:32 INFO  [11] - Mapping class: Trakker.Data.ColorPalette -> Trakker.Data.ColorPalette
+2011.11.20 08:14:32 INFO  [11] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.20 08:14:32 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:14:32 INFO  [11] - Mapping class: Trakker.Data.TicketResolution -> Trakker.Data.TicketResolution
+2011.11.20 08:14:32 INFO  [11] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.20 08:14:32 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:14:32 INFO  [11] - Mapping class: Trakker.Data.Component -> Trakker.Data.Component
+2011.11.20 08:14:32 INFO  [11] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.20 08:14:32 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:14:32 INFO  [11] - Mapping class: Trakker.Data.ProjectVersion -> Trakker.Data.ProjectVersion
+2011.11.20 08:14:32 INFO  [11] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> "TicketFixedOnVersion"
+2011.11.20 08:14:32 INFO  [11] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> "TicketFoundOnVersion"
+2011.11.20 08:14:32 INFO  [11] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.20 08:14:32 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:14:32 INFO  [11] - Mapping class: Trakker.Data.File -> Trakker.Data.File
+2011.11.20 08:14:32 INFO  [11] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.20 08:14:32 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:14:32 INFO  [11] - Mapping class: Trakker.Data.Ticket -> Trakker.Data.Ticket
+2011.11.20 08:14:32 INFO  [11] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> "TicketFoundOnVersion"
+2011.11.20 08:14:32 INFO  [11] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> "TicketFixedOnVersion"
+2011.11.20 08:14:32 INFO  [11] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.20 08:14:32 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:14:32 INFO  [11] - Mapping class: Trakker.Data.Comment -> Trakker.Data.Comment
+2011.11.20 08:14:32 INFO  [11] - checking mappings queue
+2011.11.20 08:14:32 INFO  [11] - processing one-to-many association mappings
+2011.11.20 08:14:32 INFO  [11] - mapping collection: Trakker.Data.Project.Versions -> Trakker.Data.ProjectVersion
+2011.11.20 08:14:32 INFO  [11] - mapping collection: Trakker.Data.Role.Users -> "[User]"
+2011.11.20 08:14:32 INFO  [11] - processing one-to-one association property references
+2011.11.20 08:14:32 INFO  [11] - processing foreign key constraints
+2011.11.20 08:14:32 INFO  [11] - processing filters (second pass)
+2011.11.20 08:14:32 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:14:32 INFO  [11] - Using dialect defined converter
+2011.11.20 08:14:32 INFO  [11] - Generate SQL with comments: disabled
+2011.11.20 08:14:32 INFO  [11] - Configuring ConnectionProvider
+2011.11.20 08:14:32 INFO  [11] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.20 08:14:32 INFO  [11] - Optimize cache for minimal puts: False
+2011.11.20 08:14:32 INFO  [11] - Connection release mode: auto
+2011.11.20 08:14:32 INFO  [11] - Default batch fetch size: 1
+2011.11.20 08:14:32 INFO  [11] - echoing all SQL to stdout
+2011.11.20 08:14:32 INFO  [11] - Statistics: disabled
+2011.11.20 08:14:32 INFO  [11] - Deleted entity synthetic identifier rollback: disabled
+2011.11.20 08:14:32 INFO  [11] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.20 08:14:32 INFO  [11] - Query language substitutions: {}
+2011.11.20 08:14:32 INFO  [11] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.20 08:14:32 INFO  [11] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.20 08:14:32 INFO  [11] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.20 08:14:32 INFO  [11] - Default entity-mode: Poco
+2011.11.20 08:14:32 INFO  [11] - Named query checking : enabled
+2011.11.20 08:14:32 INFO  [11] - building session factory
+2011.11.20 08:14:32 INFO  [11] - no name configured
+2011.11.20 08:14:32 INFO  [11] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.20 08:14:32 WARN  [11] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.20 08:14:32 INFO  [11] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.20 08:14:32 WARN  [11] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.20 08:14:33 INFO  [11] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Trakker.Data.Project this_
+2011.11.20 08:14:33 ERROR [11] - Could not execute query: SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Trakker.Data.Project this_
+Npgsql.NpgsqlException:
+cross-database references are not implemented: "trakker.data.project"
+Severity: ERROR
+Code: 0A000
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.20 08:14:33 WARN  [11] - Npgsql.NpgsqlException:
+cross-database references are not implemented: "trakker.data.project"
+Severity: ERROR
+Code: 0A000
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.20 08:14:33 ERROR [11] - ERROR: 0A000: cross-database references are not implemented: "trakker.data.project"
+2011.11.20 08:14:33 WARN  [11] - Npgsql.NpgsqlException:
+cross-database references are not implemented: "trakker.data.project"
+Severity: ERROR
+Code: 0A000
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:14:33 ERROR [11] - ERROR: 0A000: cross-database references are not implemented: "trakker.data.project"
+2011.11.20 08:14:33 WARN  [11] - Npgsql.NpgsqlException:
+cross-database references are not implemented: "trakker.data.project"
+Severity: ERROR
+Code: 0A000
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:14:33 ERROR [11] - ERROR: 0A000: cross-database references are not implemented: "trakker.data.project"
+2011.11.20 08:15:00 INFO  [5] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.20 08:15:00 INFO  [5] - hibernate-configuration section not found in application configuration file
+2011.11.20 08:15:00 INFO  [5] - Bytecode provider name : lcg
+2011.11.20 08:15:00 INFO  [5] - Using reflection optimizer
+2011.11.20 08:15:01 INFO  [5] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.20 08:15:01 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.20 08:15:01 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:01 INFO  [5] - Mapping class: Trakker.Data.Project -> Trakker.Data.Project
+2011.11.20 08:15:02 INFO  [5] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.20 08:15:02 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:02 INFO  [5] - Mapping class: Trakker.Data.User -> [User]
+2011.11.20 08:15:02 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.20 08:15:02 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:02 INFO  [5] - Mapping class: Trakker.Data.TicketType -> Trakker.Data.TicketType
+2011.11.20 08:15:02 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.20 08:15:02 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:02 INFO  [5] - Mapping class: Trakker.Data.TicketPriority -> Trakker.Data.TicketPriority
+2011.11.20 08:15:02 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.20 08:15:02 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:02 INFO  [5] - Mapping class: Trakker.Data.Role -> Trakker.Data.Role
+2011.11.20 08:15:02 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.20 08:15:02 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:02 INFO  [5] - Mapping class: Trakker.Data.TicketStatus -> Trakker.Data.TicketStatus
+2011.11.20 08:15:02 INFO  [5] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.20 08:15:02 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:02 INFO  [5] - Mapping class: Trakker.Data.ColorPalette -> Trakker.Data.ColorPalette
+2011.11.20 08:15:02 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.20 08:15:02 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:02 INFO  [5] - Mapping class: Trakker.Data.TicketResolution -> Trakker.Data.TicketResolution
+2011.11.20 08:15:02 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.20 08:15:02 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:02 INFO  [5] - Mapping class: Trakker.Data.Component -> Trakker.Data.Component
+2011.11.20 08:15:02 INFO  [5] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.20 08:15:02 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:02 INFO  [5] - Mapping class: Trakker.Data.ProjectVersion -> Trakker.Data.ProjectVersion
+2011.11.20 08:15:02 INFO  [5] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.20 08:15:02 INFO  [5] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.20 08:15:02 INFO  [5] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.20 08:15:02 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:02 INFO  [5] - Mapping class: Trakker.Data.File -> Trakker.Data.File
+2011.11.20 08:15:02 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.20 08:15:02 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:02 INFO  [5] - Mapping class: Trakker.Data.Ticket -> Trakker.Data.Ticket
+2011.11.20 08:15:02 INFO  [5] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.20 08:15:02 INFO  [5] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.20 08:15:02 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.20 08:15:02 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:02 INFO  [5] - Mapping class: Trakker.Data.Comment -> Trakker.Data.Comment
+2011.11.20 08:15:02 INFO  [5] - checking mappings queue
+2011.11.20 08:15:02 INFO  [5] - processing one-to-many association mappings
+2011.11.20 08:15:02 INFO  [5] - mapping collection: Trakker.Data.Project.Versions -> Trakker.Data.ProjectVersion
+2011.11.20 08:15:02 INFO  [5] - mapping collection: Trakker.Data.Role.Users -> [User]
+2011.11.20 08:15:02 INFO  [5] - processing one-to-one association property references
+2011.11.20 08:15:02 INFO  [5] - processing foreign key constraints
+2011.11.20 08:15:02 INFO  [5] - processing filters (second pass)
+2011.11.20 08:15:02 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:02 INFO  [5] - Using dialect defined converter
+2011.11.20 08:15:02 INFO  [5] - Generate SQL with comments: disabled
+2011.11.20 08:15:02 INFO  [5] - Configuring ConnectionProvider
+2011.11.20 08:15:02 INFO  [5] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.20 08:15:02 INFO  [5] - Optimize cache for minimal puts: False
+2011.11.20 08:15:02 INFO  [5] - Connection release mode: auto
+2011.11.20 08:15:02 INFO  [5] - Default batch fetch size: 1
+2011.11.20 08:15:02 INFO  [5] - echoing all SQL to stdout
+2011.11.20 08:15:02 INFO  [5] - Statistics: disabled
+2011.11.20 08:15:02 INFO  [5] - Deleted entity synthetic identifier rollback: disabled
+2011.11.20 08:15:02 INFO  [5] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.20 08:15:02 INFO  [5] - Query language substitutions: {}
+2011.11.20 08:15:02 INFO  [5] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.20 08:15:02 INFO  [5] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.20 08:15:02 INFO  [5] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.20 08:15:02 INFO  [5] - Default entity-mode: Poco
+2011.11.20 08:15:02 INFO  [5] - Named query checking : enabled
+2011.11.20 08:15:02 INFO  [5] - building session factory
+2011.11.20 08:15:02 INFO  [5] - no name configured
+2011.11.20 08:15:02 INFO  [5] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.20 08:15:02 WARN  [5] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.20 08:15:02 INFO  [5] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.20 08:15:02 WARN  [5] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.20 08:15:02 INFO  [5] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Trakker.Data.Project this_
+2011.11.20 08:15:02 ERROR [5] - Could not execute query: SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Trakker.Data.Project this_
+Npgsql.NpgsqlException:
+cross-database references are not implemented: "trakker.data.project"
+Severity: ERROR
+Code: 0A000
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.20 08:15:02 WARN  [5] - Npgsql.NpgsqlException:
+cross-database references are not implemented: "trakker.data.project"
+Severity: ERROR
+Code: 0A000
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.20 08:15:02 ERROR [5] - ERROR: 0A000: cross-database references are not implemented: "trakker.data.project"
+2011.11.20 08:15:02 WARN  [5] - Npgsql.NpgsqlException:
+cross-database references are not implemented: "trakker.data.project"
+Severity: ERROR
+Code: 0A000
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:15:02 ERROR [5] - ERROR: 0A000: cross-database references are not implemented: "trakker.data.project"
+2011.11.20 08:15:02 WARN  [5] - Npgsql.NpgsqlException:
+cross-database references are not implemented: "trakker.data.project"
+Severity: ERROR
+Code: 0A000
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:15:02 ERROR [5] - ERROR: 0A000: cross-database references are not implemented: "trakker.data.project"
+2011.11.20 08:15:21 INFO  [5] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.20 08:15:21 INFO  [5] - hibernate-configuration section not found in application configuration file
+2011.11.20 08:15:21 INFO  [5] - Bytecode provider name : lcg
+2011.11.20 08:15:21 INFO  [5] - Using reflection optimizer
+2011.11.20 08:15:22 INFO  [5] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.20 08:15:22 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.20 08:15:22 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:22 INFO  [5] - Mapping class: Trakker.Data.Project -> Project
+2011.11.20 08:15:22 INFO  [5] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.20 08:15:22 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:22 INFO  [5] - Mapping class: Trakker.Data.User -> [User]
+2011.11.20 08:15:22 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.20 08:15:22 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:22 INFO  [5] - Mapping class: Trakker.Data.TicketType -> TicketType
+2011.11.20 08:15:22 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.20 08:15:22 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:22 INFO  [5] - Mapping class: Trakker.Data.TicketPriority -> TicketPriority
+2011.11.20 08:15:22 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.20 08:15:22 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:22 INFO  [5] - Mapping class: Trakker.Data.Role -> Role
+2011.11.20 08:15:22 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.20 08:15:22 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:22 INFO  [5] - Mapping class: Trakker.Data.TicketStatus -> TicketStatus
+2011.11.20 08:15:22 INFO  [5] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.20 08:15:22 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:22 INFO  [5] - Mapping class: Trakker.Data.ColorPalette -> ColorPalette
+2011.11.20 08:15:22 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.20 08:15:22 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:22 INFO  [5] - Mapping class: Trakker.Data.TicketResolution -> TicketResolution
+2011.11.20 08:15:22 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.20 08:15:22 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:22 INFO  [5] - Mapping class: Trakker.Data.Component -> Component
+2011.11.20 08:15:22 INFO  [5] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.20 08:15:22 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:22 INFO  [5] - Mapping class: Trakker.Data.ProjectVersion -> ProjectVersion
+2011.11.20 08:15:22 INFO  [5] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.20 08:15:22 INFO  [5] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.20 08:15:22 INFO  [5] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.20 08:15:22 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:22 INFO  [5] - Mapping class: Trakker.Data.File -> File
+2011.11.20 08:15:22 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.20 08:15:22 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:22 INFO  [5] - Mapping class: Trakker.Data.Ticket -> Ticket
+2011.11.20 08:15:22 INFO  [5] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.20 08:15:22 INFO  [5] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.20 08:15:22 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.20 08:15:22 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:22 INFO  [5] - Mapping class: Trakker.Data.Comment -> Comment
+2011.11.20 08:15:22 INFO  [5] - checking mappings queue
+2011.11.20 08:15:22 INFO  [5] - processing one-to-many association mappings
+2011.11.20 08:15:22 INFO  [5] - mapping collection: Trakker.Data.Project.Versions -> ProjectVersion
+2011.11.20 08:15:22 INFO  [5] - mapping collection: Trakker.Data.Role.Users -> [User]
+2011.11.20 08:15:22 INFO  [5] - processing one-to-one association property references
+2011.11.20 08:15:22 INFO  [5] - processing foreign key constraints
+2011.11.20 08:15:22 INFO  [5] - processing filters (second pass)
+2011.11.20 08:15:22 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:15:22 INFO  [5] - Using dialect defined converter
+2011.11.20 08:15:22 INFO  [5] - Generate SQL with comments: disabled
+2011.11.20 08:15:22 INFO  [5] - Configuring ConnectionProvider
+2011.11.20 08:15:22 INFO  [5] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.20 08:15:22 INFO  [5] - Optimize cache for minimal puts: False
+2011.11.20 08:15:22 INFO  [5] - Connection release mode: auto
+2011.11.20 08:15:22 INFO  [5] - Default batch fetch size: 1
+2011.11.20 08:15:22 INFO  [5] - echoing all SQL to stdout
+2011.11.20 08:15:22 INFO  [5] - Statistics: disabled
+2011.11.20 08:15:22 INFO  [5] - Deleted entity synthetic identifier rollback: disabled
+2011.11.20 08:15:22 INFO  [5] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.20 08:15:22 INFO  [5] - Query language substitutions: {}
+2011.11.20 08:15:22 INFO  [5] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.20 08:15:22 INFO  [5] - query cache factory: NHibernate.Cache.StandardQueryCacheFactory
+2011.11.20 08:15:22 INFO  [5] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.20 08:15:22 INFO  [5] - Default entity-mode: Poco
+2011.11.20 08:15:22 INFO  [5] - Named query checking : enabled
+2011.11.20 08:15:22 INFO  [5] - building session factory
+2011.11.20 08:15:22 INFO  [5] - no name configured
+2011.11.20 08:15:22 INFO  [5] - starting update timestamps cache at region: UpdateTimestampsCache
+2011.11.20 08:15:22 WARN  [5] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.20 08:15:22 INFO  [5] - starting query cache at region: NHibernate.Cache.StandardQueryCache
+2011.11.20 08:15:22 WARN  [5] - Second-level cache is enabled in a class, but no cache provider was selected. Fake cache used.
+2011.11.20 08:15:22 INFO  [5] - SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+2011.11.20 08:15:22 ERROR [5] - Could not execute query: SELECT this_.Id as Id0_0_, this_.Name as Name0_0_, this_.KeyName as KeyName0_0_, this_.Lead as Lead0_0_, this_.Due as Due0_0_, this_.Created as Created0_0_, this_.TicketIndex as TicketIn7_0_0_, this_.Url as Url0_0_, this_.ColorPaletteId as ColorPal9_0_0_, this_.AvatarId as AvatarId0_0_ FROM Project this_
+Npgsql.NpgsqlException:
+relation "project" does not exist
+Severity: ERROR
+Code: 42P01
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.20 08:15:22 WARN  [5] - Npgsql.NpgsqlException:
+relation "project" does not exist
+Severity: ERROR
+Code: 42P01
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.20 08:15:22 ERROR [5] - ERROR: 42P01: relation "project" does not exist
+2011.11.20 08:15:22 WARN  [5] - Npgsql.NpgsqlException:
+relation "project" does not exist
+Severity: ERROR
+Code: 42P01
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:15:22 ERROR [5] - ERROR: 42P01: relation "project" does not exist
+2011.11.20 08:15:22 WARN  [5] - Npgsql.NpgsqlException:
+relation "project" does not exist
+Severity: ERROR
+Code: 42P01
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.20 08:15:22 ERROR [5] - ERROR: 42P01: relation "project" does not exist
+2011.11.20 08:17:00 INFO  [10] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.20 08:17:00 INFO  [10] - hibernate-configuration section not found in application configuration file
+2011.11.20 08:17:00 INFO  [10] - Bytecode provider name : lcg
+2011.11.20 08:17:00 INFO  [10] - Using reflection optimizer
+2011.11.20 08:17:31 INFO  [5] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.20 08:17:31 INFO  [5] - hibernate-configuration section not found in application configuration file
+2011.11.20 08:17:31 INFO  [5] - Bytecode provider name : lcg
+2011.11.20 08:17:31 INFO  [5] - Using reflection optimizer
+2011.11.20 08:17:32 INFO  [5] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.20 08:17:32 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.20 08:17:32 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:17:32 INFO  [5] - Mapping class: Trakker.Data.Project -> Project
+2011.11.20 08:17:32 INFO  [5] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.20 08:17:32 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:17:32 INFO  [5] - Mapping class: Trakker.Data.User -> [User]
+2011.11.20 08:17:32 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.20 08:17:32 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:17:32 INFO  [5] - Mapping class: Trakker.Data.TicketType -> TicketType
+2011.11.20 08:17:32 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.20 08:17:32 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:17:32 INFO  [5] - Mapping class: Trakker.Data.TicketPriority -> TicketPriority
+2011.11.20 08:17:32 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.20 08:17:32 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:17:32 INFO  [5] - Mapping class: Trakker.Data.Role -> Role
+2011.11.20 08:17:32 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.20 08:17:32 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:17:32 INFO  [5] - Mapping class: Trakker.Data.TicketStatus -> TicketStatus
+2011.11.20 08:17:32 INFO  [5] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.20 08:17:32 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:17:32 INFO  [5] - Mapping class: Trakker.Data.ColorPalette -> ColorPalette
+2011.11.20 08:17:32 INFO  [5] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.20 08:17:32 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:17:32 INFO  [5] - Mapping class: Trakker.Data.TicketResolution -> TicketResolution
+2011.11.20 08:17:32 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.20 08:17:32 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:17:32 INFO  [5] - Mapping class: Trakker.Data.Component -> Component
+2011.11.20 08:17:32 INFO  [5] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.20 08:17:32 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:17:32 INFO  [5] - Mapping class: Trakker.Data.ProjectVersion -> ProjectVersion
+2011.11.20 08:17:32 INFO  [5] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.20 08:17:32 INFO  [5] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.20 08:17:32 INFO  [5] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.20 08:17:32 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:17:32 INFO  [5] - Mapping class: Trakker.Data.File -> File
+2011.11.20 08:17:32 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.20 08:17:32 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:17:32 INFO  [5] - Mapping class: Trakker.Data.Ticket -> Ticket
+2011.11.20 08:17:32 INFO  [5] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.20 08:17:32 INFO  [5] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.20 08:17:32 INFO  [5] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.20 08:17:32 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:17:32 INFO  [5] - Mapping class: Trakker.Data.Comment -> Comment
+2011.11.20 08:17:32 INFO  [5] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:17:32 INFO  [5] - Configuring ConnectionProvider
+2011.11.20 08:18:38 INFO  [12] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.20 08:18:38 INFO  [12] - hibernate-configuration section not found in application configuration file
+2011.11.20 08:18:38 INFO  [12] - Bytecode provider name : lcg
+2011.11.20 08:18:38 INFO  [12] - Using reflection optimizer
+2011.11.20 08:18:39 INFO  [12] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.20 08:18:39 INFO  [12] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.20 08:18:39 INFO  [12] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:18:39 INFO  [12] - Mapping class: Trakker.Data.Project -> Trakker.Data.Project
+2011.11.20 08:18:39 INFO  [12] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.20 08:18:39 INFO  [12] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:18:39 INFO  [12] - Mapping class: Trakker.Data.User -> [User]
+2011.11.20 08:18:39 INFO  [12] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.20 08:18:39 INFO  [12] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:18:39 INFO  [12] - Mapping class: Trakker.Data.TicketType -> Trakker.Data.TicketType
+2011.11.20 08:18:39 INFO  [12] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.20 08:18:39 INFO  [12] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:18:39 INFO  [12] - Mapping class: Trakker.Data.TicketPriority -> Trakker.Data.TicketPriority
+2011.11.20 08:18:39 INFO  [12] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.20 08:18:39 INFO  [12] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:18:39 INFO  [12] - Mapping class: Trakker.Data.Role -> Trakker.Data.Role
+2011.11.20 08:18:39 INFO  [12] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.20 08:18:39 INFO  [12] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:18:39 INFO  [12] - Mapping class: Trakker.Data.TicketStatus -> Trakker.Data.TicketStatus
+2011.11.20 08:18:39 INFO  [12] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.20 08:18:39 INFO  [12] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:18:39 INFO  [12] - Mapping class: Trakker.Data.ColorPalette -> Trakker.Data.ColorPalette
+2011.11.20 08:18:39 INFO  [12] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.20 08:18:39 INFO  [12] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:18:39 INFO  [12] - Mapping class: Trakker.Data.TicketResolution -> Trakker.Data.TicketResolution
+2011.11.20 08:18:39 INFO  [12] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.20 08:18:39 INFO  [12] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:18:39 INFO  [12] - Mapping class: Trakker.Data.Component -> Trakker.Data.Component
+2011.11.20 08:18:39 INFO  [12] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.20 08:18:39 INFO  [12] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:18:39 INFO  [12] - Mapping class: Trakker.Data.ProjectVersion -> Trakker.Data.ProjectVersion
+2011.11.20 08:18:39 INFO  [12] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> TicketFixedOnVersion
+2011.11.20 08:18:39 INFO  [12] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> TicketFoundOnVersion
+2011.11.20 08:18:39 INFO  [12] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.20 08:18:39 INFO  [12] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:18:39 INFO  [12] - Mapping class: Trakker.Data.File -> Trakker.Data.File
+2011.11.20 08:18:39 INFO  [12] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.20 08:18:39 INFO  [12] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:18:39 INFO  [12] - Mapping class: Trakker.Data.Ticket -> Trakker.Data.Ticket
+2011.11.20 08:18:39 INFO  [12] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> TicketFoundOnVersion
+2011.11.20 08:18:39 INFO  [12] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> TicketFixedOnVersion
+2011.11.20 08:18:39 INFO  [12] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.20 08:18:39 INFO  [12] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:18:39 INFO  [12] - Mapping class: Trakker.Data.Comment -> Trakker.Data.Comment
+2011.11.20 08:18:39 INFO  [12] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:18:39 INFO  [12] - Configuring ConnectionProvider
+2011.11.20 08:19:11 INFO  [11] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.20 08:19:11 INFO  [11] - hibernate-configuration section not found in application configuration file
+2011.11.20 08:19:11 INFO  [11] - Bytecode provider name : lcg
+2011.11.20 08:19:11 INFO  [11] - Using reflection optimizer
+2011.11.20 08:19:12 INFO  [11] - Searching for mapped documents in assembly: Trakker.Data
+2011.11.20 08:19:12 INFO  [11] - Mapping resource: Trakker.Data.Mappings.Project.hbm.xml
+2011.11.20 08:19:12 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:19:12 INFO  [11] - Mapping class: Trakker.Data.Project -> "Trakker.Data.Project"
+2011.11.20 08:19:12 INFO  [11] - Mapping resource: Trakker.Data.Mappings.User.hbm.xml
+2011.11.20 08:19:12 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:19:12 INFO  [11] - Mapping class: Trakker.Data.User -> "[User]"
+2011.11.20 08:19:12 INFO  [11] - Mapping resource: Trakker.Data.Mappings.TicketType.hbm.xml
+2011.11.20 08:19:12 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:19:12 INFO  [11] - Mapping class: Trakker.Data.TicketType -> "Trakker.Data.TicketType"
+2011.11.20 08:19:12 INFO  [11] - Mapping resource: Trakker.Data.Mappings.TicketPriority.hbm.xml
+2011.11.20 08:19:12 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:19:12 INFO  [11] - Mapping class: Trakker.Data.TicketPriority -> "Trakker.Data.TicketPriority"
+2011.11.20 08:19:12 INFO  [11] - Mapping resource: Trakker.Data.Mappings.Role.hbm.xml
+2011.11.20 08:19:12 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:19:12 INFO  [11] - Mapping class: Trakker.Data.Role -> "Trakker.Data.Role"
+2011.11.20 08:19:12 INFO  [11] - Mapping resource: Trakker.Data.Mappings.TicketStatus.hbm.xml
+2011.11.20 08:19:12 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:19:12 INFO  [11] - Mapping class: Trakker.Data.TicketStatus -> "Trakker.Data.TicketStatus"
+2011.11.20 08:19:12 INFO  [11] - Mapping resource: Trakker.Data.Mappings.ColorPalette.hbm.xml
+2011.11.20 08:19:12 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:19:12 INFO  [11] - Mapping class: Trakker.Data.ColorPalette -> "Trakker.Data.ColorPalette"
+2011.11.20 08:19:12 INFO  [11] - Mapping resource: Trakker.Data.Mappings.TicketResolution.hbm.xml
+2011.11.20 08:19:12 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:19:12 INFO  [11] - Mapping class: Trakker.Data.TicketResolution -> "Trakker.Data.TicketResolution"
+2011.11.20 08:19:12 INFO  [11] - Mapping resource: Trakker.Data.Mappings.Component.hbm.xml
+2011.11.20 08:19:12 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:19:12 INFO  [11] - Mapping class: Trakker.Data.Component -> "Trakker.Data.Component"
+2011.11.20 08:19:12 INFO  [11] - Mapping resource: Trakker.Data.Mappings.ProjectVersion.hbm.xml
+2011.11.20 08:19:12 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:19:12 INFO  [11] - Mapping class: Trakker.Data.ProjectVersion -> "Trakker.Data.ProjectVersion"
+2011.11.20 08:19:12 INFO  [11] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> "TicketFixedOnVersion"
+2011.11.20 08:19:12 INFO  [11] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> "TicketFoundOnVersion"
+2011.11.20 08:19:12 INFO  [11] - Mapping resource: Trakker.Data.Mappings.File.hbm.xml
+2011.11.20 08:19:12 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:19:12 INFO  [11] - Mapping class: Trakker.Data.File -> "Trakker.Data.File"
+2011.11.20 08:19:12 INFO  [11] - Mapping resource: Trakker.Data.Mappings.Ticket.hbm.xml
+2011.11.20 08:19:12 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:19:12 INFO  [11] - Mapping class: Trakker.Data.Ticket -> "Trakker.Data.Ticket"
+2011.11.20 08:19:12 INFO  [11] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> "TicketFoundOnVersion"
+2011.11.20 08:19:12 INFO  [11] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> "TicketFixedOnVersion"
+2011.11.20 08:19:12 INFO  [11] - Mapping resource: Trakker.Data.Mappings.Comment.hbm.xml
+2011.11.20 08:19:12 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:19:12 INFO  [11] - Mapping class: Trakker.Data.Comment -> "Trakker.Data.Comment"
+2011.11.20 08:19:12 INFO  [11] - Using dialect: NHibernate.Dialect.PostgreSQLDialect
+2011.11.20 08:19:12 INFO  [11] - Configuring ConnectionProvider
+2011.11.20 08:21:49 INFO  [14] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.20 08:21:49 INFO  [14] - hibernate-configuration section not found in application configuration file
+2011.11.20 08:21:49 INFO  [14] - Bytecode provider name : lcg
+2011.11.20 08:21:49 INFO  [14] - Using reflection optimizer

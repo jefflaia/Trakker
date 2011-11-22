@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace Trakker.Infastructure.UI
 {
-    public class DatePickerBuilderBase<TComponent, TBuilder> : ViewComponentBuilderBase<TComponent, TBuilder>
+    public class DatePickerBuilderBase<TComponent, TBuilder> : ScriptableViewComponentBuilder<TComponent, TBuilder>
         where TComponent : DatePickerBase
         where TBuilder : DatePickerBuilderBase<TComponent, TBuilder>
     {

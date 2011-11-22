@@ -3,7 +3,7 @@
                    namespace="Trakker.Data"
                    assembly="Trakker.Data">
 
-<class name="Project" >
+<class name="Project">
   <id name="Id">
     <generator class="identity" />
   </id>

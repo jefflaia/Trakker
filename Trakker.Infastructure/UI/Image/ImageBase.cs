@@ -11,8 +11,8 @@ namespace Trakker.Infastructure.UI
 
         protected IImageHtmlBuilderFactory _renderFactory;
 
-        public ImageBase(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IImageHtmlBuilderFactory renderFactory, IAssetManager assetManager) :
-            base(viewContext, clientSideObjectWriterFactory, assetManager)
+        public ImageBase(ViewContext viewContext, IImageHtmlBuilderFactory renderFactory, IAssetManager assetManager) :
+            base(viewContext, assetManager)
         {
             _renderFactory = renderFactory;
         }

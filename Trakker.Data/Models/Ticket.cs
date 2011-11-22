@@ -7,7 +7,7 @@ namespace Trakker.Data
     {
         public virtual bool IsClosed { get; set; }
         public virtual string Summary { get; set; }
-        public virtual int CategoryId { get; set; }
+        public virtual int TypeId { get; set; }
         public virtual int ResolutionId { get; set; }
         public virtual string Description { get; set; }
         public virtual DateTime Created { get; set; }

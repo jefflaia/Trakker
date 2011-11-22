@@ -3,21 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace Trakker.Infastructure.UI
 {
-    public class UniqueViewComponent : ViewComponentBase
+    public class ScriptableViewComponent : ViewComponentBase, IScriptableComponent
     {
-        public UniqueViewComponent(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IAssetManager assetManager) :
-            base(viewContext, clientSideObjectWriterFactory, assetManager)
+        public ScriptableViewComponent(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IAssetManager assetManager) :
+            base(viewContext, assetManager)
         {
-
+            ClientSideObjectWriterFactory = clientSideObjectWriterFactory;
         }
 
         public string Name
         {
             get;
             set;
+        }
+
+        public IClientSideObjectWriterFactory ClientSideObjectWriterFactory
+        {
+            get;
+            private set;
         }
 
         public string Id
@@ -32,14 +39,18 @@ namespace Trakker.Infastructure.UI
             }
         }
 
-        protected override void EnsureRequiredSettings()
+        protected virtual void EnsureRequiredSettings()
         {
             if (string.IsNullOrEmpty(Name))
             {
                 throw new InvalidOperationException(Resources.TextResource.NameCannotBeBlank);
             }
+        }
 
-            base.EnsureRequiredSettings();
+        protected override void WriteHtml(HtmlTextWriter writer)
+        {
+            EnsureRequiredSettings();
+            base.WriteHtml(writer);
         }
     }
 }

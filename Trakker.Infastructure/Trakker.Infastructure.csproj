@@ -83,6 +83,7 @@
     <Compile Include="UI\ClientSideObjectWriter.cs" />
     <Compile Include="UI\ClientSideObjectWriterFactory.cs" />
     <Compile Include="UI\ComponentBuilderBase.cs" />
+    <Compile Include="UI\ViewComponentBuilderBase.cs" />
     <Compile Include="UI\CssPrimitives.cs" />
     <Compile Include="UI\DatePicker\DatePickerClientEvents.cs" />
     <Compile Include="UI\DatePicker\Fluent\DatePickerBuilder.cs" />
@@ -110,7 +111,7 @@
     <Compile Include="UI\RecoAssetAdapter.cs" />
     <Compile Include="UI\UniqueViewComponent.cs" />
     <Compile Include="UI\ViewComponentBase.cs" />
-    <Compile Include="UI\ViewComponentBuilderBase.cs" />
+    <Compile Include="UI\ScriptableViewComponentBuilder.cs" />
     <Compile Include="UI\ViewComponentFactory.cs" />
     <Compile Include="UI\CtmHtmlExtension.cs" />
     <Compile Include="UI\HtmlTag.cs" />

@@ -41,18 +41,6 @@ namespace Trakker.Infastructure.UI
         }
 
         /// <summary>
-        /// Sets the name of the component.
-        /// </summary>
-        /// <param name="componentName">The name.</param>
-        /// <returns></returns>
-        public virtual TBuilder Name(string name)
-        {
-            Component.Name = name;
-
-            return this as TBuilder;
-        }
-
-        /// <summary>
         /// Sets the HTML attributes.
         /// </summary>
         /// <param name="attributes">The HTML attributes.</param>

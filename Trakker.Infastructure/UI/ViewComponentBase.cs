@@ -9,12 +9,11 @@ using System.Web;
 
 namespace Trakker.Infastructure.UI
 {
-    public abstract class ViewComponentBase : IScriptableComponent, IAttributesContainer
+    public abstract class ViewComponentBase : IAttributesContainer
     {
-        protected ViewComponentBase(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IAssetManager assetManager)
+        protected ViewComponentBase(ViewContext viewContext, IAssetManager assetManager)
         {
             ViewContext = viewContext;
-            ClientSideObjectWriterFactory = clientSideObjectWriterFactory;
             AssetManager = assetManager;
 
             HtmlAttributes = new Dictionary<string, object>();
@@ -27,12 +26,6 @@ namespace Trakker.Infastructure.UI
         }
 
         public IDictionary<string, object> HtmlAttributes
-        {
-            get;
-            private set;
-        }
-
-        public IClientSideObjectWriterFactory ClientSideObjectWriterFactory
         {
             get;
             private set;
@@ -70,15 +63,8 @@ namespace Trakker.Infastructure.UI
             }
         }
 
-        protected virtual void EnsureRequiredSettings()
-        {
-            
-        }
-
         protected virtual void WriteHtml(HtmlTextWriter writer)
         {
-            EnsureRequiredSettings();
-
             writer.AddAttribute(HtmlTextWriterAttribute.Type, "text/javascript");
             writer.RenderBeginTag(HtmlTextWriterTag.Script);
             WriteInitializationScript(writer);

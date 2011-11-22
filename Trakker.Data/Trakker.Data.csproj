@@ -82,6 +82,9 @@
     <Reference Include="NHibernate.ByteCode.Castle">
       <HintPath>..\Lib\nHibernate\Required_For_LazyLoading\Castle\NHibernate.ByteCode.Castle.dll</HintPath>
     </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\Lib\postgres\Npgsql.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
@@ -107,6 +110,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth.cs" />
+    <Compile Include="Mappings\ColorPaletteMap.cs" />
+    <Compile Include="Mappings\RoleMap.cs" />
+    <Compile Include="Mappings\UserMap.cs" />
+    <Compile Include="Mappings\TicketPriorityMap.cs" />
+    <Compile Include="Mappings\TicketResolutionMap.cs" />
+    <Compile Include="Mappings\TicketStatusMap.cs" />
+    <Compile Include="Mappings\TicketTypeMap.cs" />
+    <Compile Include="Mappings\TicketMap.cs" />
     <Compile Include="Mappings\ProjectVersionMap.cs" />
     <Compile Include="Mappings\FileMap.cs" />
     <Compile Include="Mappings\ProjectMap.cs" />

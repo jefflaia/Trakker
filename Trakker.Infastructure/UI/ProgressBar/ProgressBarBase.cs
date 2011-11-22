@@ -11,8 +11,8 @@ namespace Trakker.Infastructure.UI
 
         protected IProgressBarHtmlBuilderFactory _renderFactory;
 
-        public ProgressBarBase(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IProgressBarHtmlBuilderFactory renderFactory, IAssetManager assetManager) :
-            base(viewContext, clientSideObjectWriterFactory, assetManager)
+        public ProgressBarBase(ViewContext viewContext, IProgressBarHtmlBuilderFactory renderFactory, IAssetManager assetManager) :
+            base(viewContext, assetManager)
         {
             _renderFactory = renderFactory;
 
