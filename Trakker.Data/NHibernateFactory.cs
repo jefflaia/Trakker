@@ -25,16 +25,22 @@ namespace Trakker.Data
                 {
                     if (_sessionFactory == null)
                     {
+
+                        //var configuration = new NHibernate.Cfg.Configuration();
                         /*
-                        var configuration = new Configuration();
-                        configuration.SetNamingStrategy(new PostgresNamingStrategy());
-                        
-                        configuration.Configure();
-                        SchemaMetadataUpdater.QuoteTableAndColumns(configuration);
-                        
+                        string connectionString = ConfigurationManager.ConnectionStrings["MssqlConnectionString"].ConnectionString;
+                        IPersistenceConfigurer config = MsSqlConfiguration.MsSql2008.ConnectionString(connectionString);
+
+                        FluentConfiguration configuration = Fluently
+                            .Configure()
+                            .Database(config)
+                            .Mappings(m => m.FluentMappings.AddFromAssemblyOf<ProjectMap>());
                         
                         _sessionFactory = configuration.BuildSessionFactory();
-                        */
+                         */
+                        
+
+                        
                         string connectionString = ConfigurationManager.ConnectionStrings["PostgresConnectionString"].ConnectionString;
                         IPersistenceConfigurer config = PostgreSQLConfiguration.PostgreSQL82.ConnectionString(connectionString);
                         
@@ -48,6 +54,7 @@ namespace Trakker.Data
 
                         configuration.ExposeConfiguration(x => x.SetProperty("hbm2ddl.keywords", "auto-quote"));
                         _sessionFactory = configuration.BuildSessionFactory();
+                         
                     }
                     return _sessionFactory;
                 }

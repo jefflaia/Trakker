@@ -12,10 +12,10 @@ namespace Trakker.Routes
         public static void AddRoutes(ref RouteCollection routes)
         {
             
-            routes.MapRoute("ProjectOverviewTab", "project/{keyName}", new { controller = "Project", action = "OverviewTab" });
-            routes.MapRoute("ProjectRoadMapTab", "project/{keyName}/road-map", new { controller = "Project", action = "RoadMapTab" });
-            routes.MapRoute("ProjectReleaseNotes", "project/{keyName}/version/{versionId}/release-notes", new { controller = "Project", action = "ReleaseNotes" });
-            routes.MapRoute("ComponentSummary", "component/{keyName}", new { controller = "Project", action = "ComponentSummary" });
+            routes.MapRoute("ProjectOverviewTab", "project/{projectId}", MVC.Project.OverviewTab());
+            routes.MapRoute("ProjectRoadMapTab", "project/{projectId}/road-map", MVC.Project.RoadMapTab());
+            routes.MapRoute("ProjectReleaseNotes", "project/{projectId}/version/{versionId}/release-notes", MVC.Project.ReleaseNotes());
+            routes.MapRoute("ComponentSummary", "component/{keyName}", MVC.Project.ComponentSummary());
 
         }
     }

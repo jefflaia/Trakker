@@ -69,14 +69,12 @@ namespace Trakker.Data.Mappings
             HasManyToMany<ProjectVersion>(m => m.FixedOnVersions)
                 .Table("TicketFixedOnVersion")
                 .ParentKeyColumn("TicketId")
-                .ChildKeyColumn("VersionId")
-                .Cascade.SaveUpdate();
+                .ChildKeyColumn("VersionId");
 
-            HasManyToMany<Ticket>(m => m.FoundOnVersions)
+            HasManyToMany<ProjectVersion>(m => m.FoundOnVersions)
                 .Table("TicketFoundOnVersion")
                 .ParentKeyColumn("TicketId")
-                .ChildKeyColumn("VersionId")
-                .Cascade.SaveUpdate();
+                .ChildKeyColumn("VersionId");
             #endregion
 
         }

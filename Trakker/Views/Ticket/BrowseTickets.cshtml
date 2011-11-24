@@ -19,7 +19,7 @@
         <tr>
             <td>@Html.Encode(item.KeyName) </td>
             <td>@Html.ActionLink(Html.Encode(item.Summary), MVC.Ticket.TicketDetails(item.KeyName))</td>
-            <td>@Html.Encode(Model.Categories[item.CategoryId].Name)</td>
+            <td>@Html.Encode(Model.Categories[item.TypeId].Name)</td>
            
             <td >
                 <span class="ColorBar" style="background-color: #@Model.Priorities[item.PriorityId].HexColor ;"></span>

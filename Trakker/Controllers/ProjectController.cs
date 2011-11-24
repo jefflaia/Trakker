@@ -24,9 +24,9 @@ namespace Trakker.Controllers
         }
         
         #region Project
-        public virtual ActionResult OverviewTab(string keyName)
+        public virtual ActionResult OverviewTab(int projectId)
         {
-            CurrentProject = _projectRepo.GetProjectByKey(keyName);
+            CurrentProject = _projectRepo.GetProjectById(projectId);
 
             return View(new ProjectOverviewTabModel()
             {
@@ -36,24 +36,24 @@ namespace Trakker.Controllers
             });
         }
 
-        public virtual ActionResult RoadMapTab(string keyName)
+        public virtual ActionResult RoadMapTab(int projectId)
         {
-            Project project = _projectRepo.GetProjectByKey(keyName);
-            IList<ProjectVersion> versions = new List<ProjectVersion>();
+            Project project = _projectRepo.GetProjectById(projectId);
+            IList<ProjectVersion> versions = _projectRepo.GetVersionsByProject(project);
 
             foreach (var version in versions)
             {
-                version.FixedTickets = _ticketRepo.GetTicketsByVersion(version);
+                version.FixedTickets = _ticketRepo.GetFixedTicketsByVersion(version);
             }
 
             return View(new ProjectRoadMapTabModel()
             {
-                Versions = _projectRepo.GetVersionsByProject(project),
+                Versions = versions,
                 Project = project
             });
         }
 
-        public virtual ActionResult ReleaseNotes(string keyName, int versionId)
+        public virtual ActionResult ReleaseNotes(int projectId, int versionId)
         {
             return View(new ReleaseNotesModel()
             {

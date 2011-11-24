@@ -26,9 +26,9 @@
     .AddToRight(Html.ValidationMessageFor(x => x.StatusId)))
 
 @(Html.FormRow()
-    .AddToLeft(Html.LabelFor(x => x.CategoryId))
-     .AddToRight(Html.DropDownListFor(x => x.CategoryId, Model.Categories.ToSelectList("Id", "Name")))
-    .AddToRight(Html.ValidationMessageFor(x => x.CategoryId)))
+    .AddToLeft(Html.LabelFor(x => x.TypeId))
+    .AddToRight(Html.DropDownListFor(x => x.TypeId, Model.Categories.ToSelectList("Id", "Name")))
+    .AddToRight(Html.ValidationMessageFor(x => x.TypeId)))
 
 @(Html.FormRow()
     .AddToLeft(Html.LabelFor(x => x.ResolutionId))

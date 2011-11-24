@@ -7,6 +7,12 @@ namespace Trakker.Data
 {
     public class ProjectVersion : BaseEntity
     {
+        public ProjectVersion()
+        {
+            FixedTickets = new List<Ticket>();
+            FoundTickets = new List<Ticket>();
+        }
+
         public virtual string Name { get; set; }
         public virtual string Description { get; set; }
         public virtual DateTime? ReleaseDate { get; set; }

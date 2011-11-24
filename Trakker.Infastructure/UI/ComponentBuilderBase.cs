@@ -44,7 +44,7 @@ namespace Trakker.Infastructure.UI
 
     static class DynamicTypeBuilder
     {
-        private const string Prefix = "Telerik.Web.Mvc.{Dynamic}";
+        private const string Prefix = "asdasd.{Dynamic}";
 
         private static readonly ModuleBuilder dynamicModule = CreateDynamicModule();
 

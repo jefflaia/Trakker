@@ -15,7 +15,7 @@
                     .Green())
                 </div>
                 <span>@version.FixedPercentClosed().ToString("#.0")% (@version.ClosedFixedTickets.Count of @version.FixedTickets.Count)  have been resolved</span>
-                <span class="notes">@Html.ActionLink("Release Notes", MVC.Project.ReleaseNotes(Model.Project.KeyName.ToLower(), version.Id))</span>
+                <span class="notes">@Html.ActionLink("Release Notes", MVC.Project.ReleaseNotes(Model.Project.Id, version.Id))</span>
             </div>
             <table>
                 @foreach (var ticket in version.FixedTickets)

@@ -86,21 +86,21 @@ namespace Trakker.Controllers {
     public class T4MVC_ProjectController: Trakker.Controllers.ProjectController {
         public T4MVC_ProjectController() : base(Dummy.Instance) { }
 
-        public override System.Web.Mvc.ActionResult OverviewTab(string keyName) {
+        public override System.Web.Mvc.ActionResult OverviewTab(int projectId) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.OverviewTab);
-            callInfo.RouteValueDictionary.Add("keyName", keyName);
+            callInfo.RouteValueDictionary.Add("projectId", projectId);
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult RoadMapTab(string keyName) {
+        public override System.Web.Mvc.ActionResult RoadMapTab(int projectId) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.RoadMapTab);
-            callInfo.RouteValueDictionary.Add("keyName", keyName);
+            callInfo.RouteValueDictionary.Add("projectId", projectId);
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult ReleaseNotes(string keyName, int versionId) {
+        public override System.Web.Mvc.ActionResult ReleaseNotes(int projectId, int versionId) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ReleaseNotes);
-            callInfo.RouteValueDictionary.Add("keyName", keyName);
+            callInfo.RouteValueDictionary.Add("projectId", projectId);
             callInfo.RouteValueDictionary.Add("versionId", versionId);
             return callInfo;
         }

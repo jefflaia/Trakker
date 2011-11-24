@@ -148,9 +148,9 @@ namespace Trakker.Data.Repositories
             base.Save(ticket);
         }
 
-        public IList<Ticket> GetTicketsByVersion(ProjectVersion version)
+        public IList<Ticket> GetFixedTicketsByVersion(ProjectVersion version)
         {
-            return Session.CreateQuery("from Ticket t inner join t.Versions v where v.Id = ?")
+            return Session.CreateQuery("from Ticket t left join fetch t.FixedOnVersions v where v.Id = ?")
                 .SetInt32(0, version.Id)
                 .List<Ticket>();
         }

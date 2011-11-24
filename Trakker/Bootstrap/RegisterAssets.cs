@@ -6,7 +6,6 @@ using System.Web.Routing;
 using ResourceCompiler;
 using ResourceCompiler.Compressors.StyleSheet;
 using ResourceCompiler.Compressors.JavaScript;
-using Telerik.Web.Mvc;
 
 namespace Trakker.Bootstrap
 {

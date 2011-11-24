@@ -32,7 +32,7 @@ namespace Trakker.Models.Ticket
 
         [DisplayName("Category")]
         [Required]
-        public int CategoryId { get; set; }
+        public int TypeId { get; set; }
 
         [DisplayName("Resolution")]
         [Required]
