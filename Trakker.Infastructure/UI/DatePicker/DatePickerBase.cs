@@ -12,18 +12,29 @@ namespace Trakker.Infastructure.UI
 
         protected IDatePickerHtmlBuilderFactory _renderFactory;
 
+        private string _format;
+
         public DatePickerBase(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IDatePickerHtmlBuilderFactory renderFactory, IAssetManager assetManager) :
             base(viewContext, clientSideObjectWriterFactory, assetManager)
         {
             _renderFactory = renderFactory;
             ClientEvents = new DatePickerClientEvents();
-            Format = Culture.Current.DateTimeFormat.ShortDatePattern;
+            Format = "MM/dd/yyyy";
         }
 
         public DatePickerClientEvents ClientEvents { get; set; }
 
-        public DateTime? Value { get; set; }
-        public string Format { get; set; }
+        public DateTime? Value 
+        { 
+            get; 
+            set; 
+        }
+
+        public string Format
+        {
+            get;
+            set;
+        }
 
         public override void WriteInitializationScript(TextWriter writer)
         {
@@ -31,7 +42,7 @@ namespace Trakker.Infastructure.UI
 
             objectWriter.Start();
 
-            objectWriter.Append("dateFormat", Format);
+            objectWriter.Append("dateFormat", JQueryDatePickerFormatTranslator.Translate(Format));
 
             objectWriter.AppendClientEvent("onLoad", ClientEvents.OnLoad);
             objectWriter.AppendClientEvent("onChange", ClientEvents.OnChange);
@@ -51,6 +62,5 @@ namespace Trakker.Infastructure.UI
             rootTag.WriteTo(writer);
             base.WriteHtml(writer);
         }
-
     }
 }

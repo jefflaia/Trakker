@@ -94,6 +94,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infastructure\UI\HtmlTagTest.cs" />
     <Compile Include="Infastructure\Validation\UriTest.cs" />
     <Compile Include="Data\Services\TicketServiceTests.cs" />
     <Compile Include="Data\Utilities\RandomHashTests.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\PaginationTests.cs" />
     <Compile Include="Data\Utilities\SlugGeneratorTests.cs" />
+    <Compile Include="TestHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AuthoringTests.txt" />

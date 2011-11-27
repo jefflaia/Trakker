@@ -64,13 +64,6 @@ namespace Trakker.Infastructure.UI
             }
         }
 
-        public IHtmlNode Attributes(object attributes)
-        {
-            Attributes<string, object>(new RouteValueDictionary(attributes));
-
-            return this;
-        }
-
         public IHtmlNode AddClass(params string[] classes)
         {
             //Not using tagBuilder.AddCssClass as it prepends the value
@@ -122,6 +115,13 @@ namespace Trakker.Infastructure.UI
             {
                 AddClass(@class);
             }
+
+            return this;
+        }
+
+        public IHtmlNode Attributes(object attributes)
+        {
+            Attributes<string, object>(new RouteValueDictionary(attributes));
 
             return this;
         }

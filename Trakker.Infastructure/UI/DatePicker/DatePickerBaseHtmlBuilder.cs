@@ -24,42 +24,10 @@ namespace Trakker.Infastructure.UI
 
         public IHtmlNode InputTag()
         {
-            ModelState state;
-            DateTime? date = null;
-            ViewDataDictionary viewData = Element.ViewContext.ViewData;
-
-            if (Element.Value != DateTime.MinValue)
+            string value = "";
+            if (Element.Value != null)
             {
-                date = Element.Value;
-            }
-            else if (viewData.ModelState.TryGetValue(Element.Id, out state))
-            {
-                if (state.Errors.Count == 0)
-                {
-                    date = state.Value.ConvertTo(typeof(DateTime), Culture.Current) as DateTime?;
-                }
-            }
-
-            object valueFromViewData = viewData.Eval(Element.Name);
-
-            if (valueFromViewData != null)
-            {
-                date = Convert.ToDateTime(valueFromViewData);
-            }
-
-            string value = string.Empty;
-
-            if (date != null)
-            {
-                
-                if (string.IsNullOrEmpty(Element.Format))
-                {
-                    value = date.Value.ToShortDateString();
-                }
-                else
-                {
-                    value = date.Value.ToString(Element.Format);
-                }
+                value = Element.Value.Value.ToString(Element.Format);
             }
 
             return new HtmlTag("input", TagRenderMode.SelfClosing)

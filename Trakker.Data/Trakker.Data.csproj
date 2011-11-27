@@ -111,6 +111,7 @@
   <ItemGroup>
     <Compile Include="Auth.cs" />
     <Compile Include="Mappings\ColorPaletteMap.cs" />
+    <Compile Include="Mappings\CommentMap.cs" />
     <Compile Include="Mappings\RoleMap.cs" />
     <Compile Include="Mappings\UserMap.cs" />
     <Compile Include="Mappings\TicketPriorityMap.cs" />
@@ -213,10 +214,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Mappings\Comment.hbm.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <Content Include="Mappings\Property.hbm.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

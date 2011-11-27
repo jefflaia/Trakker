@@ -31,5 +31,6 @@ namespace Trakker.Data
 
         public virtual IList<ProjectVersion> FixedOnVersions { get; set; }
         public virtual IList<ProjectVersion> FoundOnVersions { get; set; }
+        public virtual IList<Comment> Comments { get; set; }
     }
 }

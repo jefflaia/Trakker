@@ -28,6 +28,8 @@ namespace Trakker.Data.Mappings
             Map(p => p.KeyName);
             #endregion
 
+            HasMany<Comment>(p => p.Comments);
+
             #region Lookups
             References<TicketType>(p => p.Type)
                 .Column("TypeId")

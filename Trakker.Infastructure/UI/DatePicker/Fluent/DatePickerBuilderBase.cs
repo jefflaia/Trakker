@@ -37,6 +37,7 @@ namespace Trakker.Infastructure.UI
             {
                 Component.Value = null;
             }
+
             return this as TBuilder;
         }
     }

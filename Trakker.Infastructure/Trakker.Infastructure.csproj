@@ -83,6 +83,7 @@
     <Compile Include="UI\ClientSideObjectWriter.cs" />
     <Compile Include="UI\ClientSideObjectWriterFactory.cs" />
     <Compile Include="UI\ComponentBuilderBase.cs" />
+    <Compile Include="UI\DatePicker\JQueryDatePickerFormatTranslator.cs" />
     <Compile Include="UI\ViewComponentBuilderBase.cs" />
     <Compile Include="UI\CssPrimitives.cs" />
     <Compile Include="UI\DatePicker\DatePickerClientEvents.cs" />
