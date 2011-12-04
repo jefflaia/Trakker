@@ -9,18 +9,18 @@
 
         @(Html.FormRow()
             .AddToLeft(Html.Label("Version Name:"))
-            .AddToRight(Html.TextBoxFor(x => x.Name, Model.Name))
+            .AddToRight(Html.TextBoxFor(x => x.Name))
             .AddToRight(Html.ValidationMessageFor(m => m.Name)))
     
         @(Html.FormRow()
             .AddToLeft(Html.Label("Description:"))
-            .AddToRight(Html.TextAreaFor(x => x.Description, Model.Description))
+            .AddToRight(Html.TextAreaFor(x => x.Description))
             .AddToRight(Html.ValidationMessageFor(m => m.Description)))
 
     
         @(Html.FormRow()
             .AddToLeft(Html.Label("Release Date:"))
-            .AddToRight(Html.TextBoxFor(x => x.ReleaseDate, Model.ReleaseDate))
+            .AddToRight(Html.Ctm().DatePickerFor(x => x.ReleaseDate))
             .AddToRight(Html.ValidationMessageFor(m => m.ReleaseDate)))
         
         @(Html.FormRow()

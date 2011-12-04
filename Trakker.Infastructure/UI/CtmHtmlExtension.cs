@@ -16,5 +16,10 @@ namespace Trakker.Infastructure.UI
         {
             return new ViewComponentFactory(helper, new ClientSideObjectWriterFactory(), new RecoAssetAdapter(RecoAssets.StyleSheet(), RecoAssets.JavaScript()));
         }
+
+        public static ViewComponentFactory<TModel> Ctm<TModel>(this HtmlHelper<TModel> helper)
+        {
+            return new ViewComponentFactory<TModel>(helper, new ClientSideObjectWriterFactory(), new RecoAssetAdapter(RecoAssets.StyleSheet(), RecoAssets.JavaScript()));
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace Trakker.Data.Mappings
             Map(p => p.TicketId);
             Map(p => p.UserId);
 
-            References<Ticket>(p => p.Ticket);
+            References<Ticket>(p => p.Ticket, "TicketId");
             References<User>(p => p.User, "UserId");
         }
     }

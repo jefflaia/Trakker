@@ -40,6 +40,7 @@ namespace Trakker.Areas.Admin
             context.MapRoute("EditVersion", "admin/management/project/{projectId}/version/{versionId}/edit", MVC.Admin.Management.EditVersion());
             context.MapRoute("DeleteVersion", "admin/management/project/{projectId}/version/{versionId}/delete", MVC.Admin.Management.DeleteVersion());
             context.MapRoute("ReleaseVersion", "admin/management/project/{projectId}/version/{versionId}/release", MVC.Admin.Management.ReleaseVersion());
+            context.MapRoute("UnReleaseVersion", "admin/management/project/{projectId}/version/{versionId}/unrelease", MVC.Admin.Management.UnreleaseVersion());
 
             //SettingsController
             context.MapRoute("SettingsIndex", "admin/settings/", new { controller = "Settings", action = "Index" });

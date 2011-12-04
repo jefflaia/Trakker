@@ -1,0 +1,434 @@
+2011.11.26 09:04:11 INFO  [15] - SELECT project0_."Id" as column1_3_0_, project0_."Name" as column2_3_0_, project0_."KeyName" as column3_3_0_, project0_."Lead" as column4_3_0_, project0_."Due" as column5_3_0_, project0_."Created" as column6_3_0_, project0_."TicketIndex" as column7_3_0_, project0_."Url" as column8_3_0_, project0_."ColorPaletteId" as column9_3_0_, project0_."AvatarId" as column10_3_0_ FROM "Project" project0_ WHERE project0_."Id"=:p0
+2011.11.26 09:04:11 INFO  [15] - SELECT this_."Id" as column1_13_0_, this_."Created" as column2_13_0_, this_."Email" as column3_13_0_, this_."FailedPasswordAttemptCount" as column4_13_0_, this_."FirstName" as column5_13_0_, this_."LastName" as column6_13_0_, this_."LastFailedLoginAttempt" as column7_13_0_, this_."LastLogin" as column8_13_0_, this_."Password" as column9_13_0_, this_."RoleId" as column10_13_0_, this_."Salt" as column11_13_0_, this_."TotalComments" as column12_13_0_ FROM "User" this_ WHERE this_."Email" = :p0
+2011.11.26 09:04:11 INFO  [15] - SELECT this_."Id" as column1_13_0_, this_."Created" as column2_13_0_, this_."Email" as column3_13_0_, this_."FailedPasswordAttemptCount" as column4_13_0_, this_."FirstName" as column5_13_0_, this_."LastName" as column6_13_0_, this_."LastFailedLoginAttempt" as column7_13_0_, this_."LastLogin" as column8_13_0_, this_."Password" as column9_13_0_, this_."RoleId" as column10_13_0_, this_."Salt" as column11_13_0_, this_."TotalComments" as column12_13_0_ FROM "User" this_ WHERE this_."Email" = :p0
+2011.11.26 09:04:11 INFO  [15] - SELECT project0_."Id" as column1_3_0_, project0_."Name" as column2_3_0_, project0_."KeyName" as column3_3_0_, project0_."Lead" as column4_3_0_, project0_."Due" as column5_3_0_, project0_."Created" as column6_3_0_, project0_."TicketIndex" as column7_3_0_, project0_."Url" as column8_3_0_, project0_."ColorPaletteId" as column9_3_0_, project0_."AvatarId" as column10_3_0_ FROM "Project" project0_ WHERE project0_."Id"=:p0
+2011.11.26 09:04:11 INFO  [15] - SELECT this_."Id" as column1_13_0_, this_."Created" as column2_13_0_, this_."Email" as column3_13_0_, this_."FailedPasswordAttemptCount" as column4_13_0_, this_."FirstName" as column5_13_0_, this_."LastName" as column6_13_0_, this_."LastFailedLoginAttempt" as column7_13_0_, this_."LastLogin" as column8_13_0_, this_."Password" as column9_13_0_, this_."RoleId" as column10_13_0_, this_."Salt" as column11_13_0_, this_."TotalComments" as column12_13_0_ FROM "User" this_ WHERE this_."Email" = :p0
+2011.11.26 09:04:11 INFO  [15] - SELECT count(*) as y0_ FROM "Ticket" this_ WHERE this_."AssignedToUserId" = :p0
+2011.11.26 09:04:13 INFO  [30] - SELECT project0_."Id" as column1_3_0_, project0_."Name" as column2_3_0_, project0_."KeyName" as column3_3_0_, project0_."Lead" as column4_3_0_, project0_."Due" as column5_3_0_, project0_."Created" as column6_3_0_, project0_."TicketIndex" as column7_3_0_, project0_."Url" as column8_3_0_, project0_."ColorPaletteId" as column9_3_0_, project0_."AvatarId" as column10_3_0_ FROM "Project" project0_ WHERE project0_."Id"=:p0
+2011.11.26 09:04:13 INFO  [30] - SELECT colorpalet0_."Id" as column1_0_0_, colorpalet0_."NavBackgroundColor" as column2_0_0_, colorpalet0_."SubNavBackgroundColor" as column3_0_0_, colorpalet0_."HighlightColor" as column4_0_0_, colorpalet0_."NavTextColor" as column5_0_0_, colorpalet0_."SubNavTextColor" as column6_0_0_, colorpalet0_."LinkColor" as column7_0_0_, colorpalet0_."Name" as column8_0_0_ FROM "ColorPalette" colorpalet0_ WHERE colorpalet0_."Id"=:p0
+2011.11.26 09:04:16 INFO  [13] - SELECT this_."Id" as column1_13_0_, this_."Created" as column2_13_0_, this_."Email" as column3_13_0_, this_."FailedPasswordAttemptCount" as column4_13_0_, this_."FirstName" as column5_13_0_, this_."LastName" as column6_13_0_, this_."LastFailedLoginAttempt" as column7_13_0_, this_."LastLogin" as column8_13_0_, this_."Password" as column9_13_0_, this_."RoleId" as column10_13_0_, this_."Salt" as column11_13_0_, this_."TotalComments" as column12_13_0_ FROM "User" this_ WHERE this_."Email" = :p0
+2011.11.26 09:04:16 INFO  [13] - handling property dereference [Trakker.Data.Ticket (t) -> KeyName (Class)]
+2011.11.26 09:04:16 INFO  [13] - select ticket0_."Id" as column1_8_, ticket0_."TypeId" as column2_8_, ticket0_."Summary" as column3_8_, ticket0_."PriorityId" as column4_8_, ticket0_."Description" as column5_8_, ticket0_."Created" as column6_8_, ticket0_."DueDate" as column7_8_, ticket0_."StatusId" as column8_8_, ticket0_."ResolutionId" as column9_8_, ticket0_."IsClosed" as column10_8_, ticket0_."AssignedToUserId" as column11_8_, ticket0_."CreatedByUserId" as column12_8_, ticket0_."AssignedByUserId" as column13_8_, ticket0_."ProjectId" as column14_8_, ticket0_."KeyName" as column15_8_ from "Ticket" ticket0_ where ticket0_."KeyName"=:p0
+2011.11.26 09:04:16 INFO  [13] - SELECT user0_."Id" as column1_13_0_, user0_."Created" as column2_13_0_, user0_."Email" as column3_13_0_, user0_."FailedPasswordAttemptCount" as column4_13_0_, user0_."FirstName" as column5_13_0_, user0_."LastName" as column6_13_0_, user0_."LastFailedLoginAttempt" as column7_13_0_, user0_."LastLogin" as column8_13_0_, user0_."Password" as column9_13_0_, user0_."RoleId" as column10_13_0_, user0_."Salt" as column11_13_0_, user0_."TotalComments" as column12_13_0_ FROM "User" user0_ WHERE user0_."Id"=:p0
+2011.11.26 09:04:16 INFO  [13] - SELECT this_."Id" as column1_1_0_, this_."Body" as column2_1_0_, this_."Created" as column3_1_0_, this_."Modified" as column4_1_0_, this_."TicketId" as column5_1_0_, this_."UserId" as column6_1_0_, this_."Ticket_id" as column7_1_0_ FROM "Comment" this_ WHERE this_."TicketId" = :p0
+2011.11.26 09:04:16 ERROR [13] - Could not execute query: SELECT this_."Id" as column1_1_0_, this_."Body" as column2_1_0_, this_."Created" as column3_1_0_, this_."Modified" as column4_1_0_, this_."TicketId" as column5_1_0_, this_."UserId" as column6_1_0_, this_."Ticket_id" as column7_1_0_ FROM "Comment" this_ WHERE this_."TicketId" = :p0
+Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.26 09:04:16 WARN  [13] - Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.26 09:04:16 ERROR [13] - ERROR: 42703: column this_.Ticket_id does not exist
+2011.11.26 09:04:16 WARN  [13] - Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.26 09:04:16 ERROR [13] - ERROR: 42703: column this_.Ticket_id does not exist
+2011.11.26 09:04:16 WARN  [13] - Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.26 09:04:16 ERROR [13] - ERROR: 42703: column this_.Ticket_id does not exist
+2011.11.26 09:04:37 INFO  [15] - SELECT this_."Id" as column1_13_0_, this_."Created" as column2_13_0_, this_."Email" as column3_13_0_, this_."FailedPasswordAttemptCount" as column4_13_0_, this_."FirstName" as column5_13_0_, this_."LastName" as column6_13_0_, this_."LastFailedLoginAttempt" as column7_13_0_, this_."LastLogin" as column8_13_0_, this_."Password" as column9_13_0_, this_."RoleId" as column10_13_0_, this_."Salt" as column11_13_0_, this_."TotalComments" as column12_13_0_ FROM "User" this_ WHERE this_."Email" = :p0
+2011.11.26 09:04:37 INFO  [15] - SELECT this_."Id" as column1_9_0_, this_."Name" as column2_9_0_, this_."Description" as column3_9_0_, this_."HexColor" as column4_9_0_ FROM "TicketPriority" this_
+2011.11.26 09:04:37 INFO  [15] - SELECT this_."Id" as column1_11_0_, this_."Name" as column2_11_0_, this_."Description" as column3_11_0_, this_."IsClosedState" as column4_11_0_ FROM "TicketStatus" this_
+2011.11.26 09:04:37 INFO  [15] - SELECT this_."Id" as column1_12_0_, this_."Name" as column2_12_0_, this_."Description" as column3_12_0_ FROM "TicketType" this_
+2011.11.26 09:04:37 INFO  [15] - SELECT project0_."Id" as column1_3_0_, project0_."Name" as column2_3_0_, project0_."KeyName" as column3_3_0_, project0_."Lead" as column4_3_0_, project0_."Due" as column5_3_0_, project0_."Created" as column6_3_0_, project0_."TicketIndex" as column7_3_0_, project0_."Url" as column8_3_0_, project0_."ColorPaletteId" as column9_3_0_, project0_."AvatarId" as column10_3_0_ FROM "Project" project0_ WHERE project0_."Id"=:p0
+2011.11.26 09:04:37 INFO  [15] - SELECT user0_."Id" as column1_13_0_, user0_."Created" as column2_13_0_, user0_."Email" as column3_13_0_, user0_."FailedPasswordAttemptCount" as column4_13_0_, user0_."FirstName" as column5_13_0_, user0_."LastName" as column6_13_0_, user0_."LastFailedLoginAttempt" as column7_13_0_, user0_."LastLogin" as column8_13_0_, user0_."Password" as column9_13_0_, user0_."RoleId" as column10_13_0_, user0_."Salt" as column11_13_0_, user0_."TotalComments" as column12_13_0_ FROM "User" user0_ WHERE user0_."Id"=:p0
+2011.11.26 09:04:37 INFO  [15] - SELECT user0_."Id" as column1_13_0_, user0_."Created" as column2_13_0_, user0_."Email" as column3_13_0_, user0_."FailedPasswordAttemptCount" as column4_13_0_, user0_."FirstName" as column5_13_0_, user0_."LastName" as column6_13_0_, user0_."LastFailedLoginAttempt" as column7_13_0_, user0_."LastLogin" as column8_13_0_, user0_."Password" as column9_13_0_, user0_."RoleId" as column10_13_0_, user0_."Salt" as column11_13_0_, user0_."TotalComments" as column12_13_0_ FROM "User" user0_ WHERE user0_."Id"=:p0
+2011.11.26 09:04:37 INFO  [15] - SELECT this_."Id" as column1_3_0_, this_."Name" as column2_3_0_, this_."KeyName" as column3_3_0_, this_."Lead" as column4_3_0_, this_."Due" as column5_3_0_, this_."Created" as column6_3_0_, this_."TicketIndex" as column7_3_0_, this_."Url" as column8_3_0_, this_."ColorPaletteId" as column9_3_0_, this_."AvatarId" as column10_3_0_ FROM "Project" this_
+2011.11.26 09:04:37 INFO  [15] - SELECT project0_."Id" as column1_3_0_, project0_."Name" as column2_3_0_, project0_."KeyName" as column3_3_0_, project0_."Lead" as column4_3_0_, project0_."Due" as column5_3_0_, project0_."Created" as column6_3_0_, project0_."TicketIndex" as column7_3_0_, project0_."Url" as column8_3_0_, project0_."ColorPaletteId" as column9_3_0_, project0_."AvatarId" as column10_3_0_ FROM "Project" project0_ WHERE project0_."Id"=:p0
+2011.11.26 09:04:37 INFO  [15] - SELECT project0_."Id" as column1_3_0_, project0_."Name" as column2_3_0_, project0_."KeyName" as column3_3_0_, project0_."Lead" as column4_3_0_, project0_."Due" as column5_3_0_, project0_."Created" as column6_3_0_, project0_."TicketIndex" as column7_3_0_, project0_."Url" as column8_3_0_, project0_."ColorPaletteId" as column9_3_0_, project0_."AvatarId" as column10_3_0_ FROM "Project" project0_ WHERE project0_."Id"=:p0
+2011.11.26 09:04:37 INFO  [15] - SELECT this_."Id" as column1_13_0_, this_."Created" as column2_13_0_, this_."Email" as column3_13_0_, this_."FailedPasswordAttemptCount" as column4_13_0_, this_."FirstName" as column5_13_0_, this_."LastName" as column6_13_0_, this_."LastFailedLoginAttempt" as column7_13_0_, this_."LastLogin" as column8_13_0_, this_."Password" as column9_13_0_, this_."RoleId" as column10_13_0_, this_."Salt" as column11_13_0_, this_."TotalComments" as column12_13_0_ FROM "User" this_ WHERE this_."Email" = :p0
+2011.11.26 09:04:37 INFO  [15] - SELECT this_."Id" as column1_13_0_, this_."Created" as column2_13_0_, this_."Email" as column3_13_0_, this_."FailedPasswordAttemptCount" as column4_13_0_, this_."FirstName" as column5_13_0_, this_."LastName" as column6_13_0_, this_."LastFailedLoginAttempt" as column7_13_0_, this_."LastLogin" as column8_13_0_, this_."Password" as column9_13_0_, this_."RoleId" as column10_13_0_, this_."Salt" as column11_13_0_, this_."TotalComments" as column12_13_0_ FROM "User" this_ WHERE this_."Email" = :p0
+2011.11.26 09:04:37 INFO  [15] - SELECT project0_."Id" as column1_3_0_, project0_."Name" as column2_3_0_, project0_."KeyName" as column3_3_0_, project0_."Lead" as column4_3_0_, project0_."Due" as column5_3_0_, project0_."Created" as column6_3_0_, project0_."TicketIndex" as column7_3_0_, project0_."Url" as column8_3_0_, project0_."ColorPaletteId" as column9_3_0_, project0_."AvatarId" as column10_3_0_ FROM "Project" project0_ WHERE project0_."Id"=:p0
+2011.11.26 09:04:37 INFO  [15] - SELECT this_."Id" as column1_13_0_, this_."Created" as column2_13_0_, this_."Email" as column3_13_0_, this_."FailedPasswordAttemptCount" as column4_13_0_, this_."FirstName" as column5_13_0_, this_."LastName" as column6_13_0_, this_."LastFailedLoginAttempt" as column7_13_0_, this_."LastLogin" as column8_13_0_, this_."Password" as column9_13_0_, this_."RoleId" as column10_13_0_, this_."Salt" as column11_13_0_, this_."TotalComments" as column12_13_0_ FROM "User" this_ WHERE this_."Email" = :p0
+2011.11.26 09:04:37 INFO  [15] - SELECT count(*) as y0_ FROM "Ticket" this_ WHERE this_."AssignedToUserId" = :p0
+2011.11.26 09:04:37 INFO  [4] - SELECT project0_."Id" as column1_3_0_, project0_."Name" as column2_3_0_, project0_."KeyName" as column3_3_0_, project0_."Lead" as column4_3_0_, project0_."Due" as column5_3_0_, project0_."Created" as column6_3_0_, project0_."TicketIndex" as column7_3_0_, project0_."Url" as column8_3_0_, project0_."ColorPaletteId" as column9_3_0_, project0_."AvatarId" as column10_3_0_ FROM "Project" project0_ WHERE project0_."Id"=:p0
+2011.11.26 09:04:37 INFO  [4] - SELECT colorpalet0_."Id" as column1_0_0_, colorpalet0_."NavBackgroundColor" as column2_0_0_, colorpalet0_."SubNavBackgroundColor" as column3_0_0_, colorpalet0_."HighlightColor" as column4_0_0_, colorpalet0_."NavTextColor" as column5_0_0_, colorpalet0_."SubNavTextColor" as column6_0_0_, colorpalet0_."LinkColor" as column7_0_0_, colorpalet0_."Name" as column8_0_0_ FROM "ColorPalette" colorpalet0_ WHERE colorpalet0_."Id"=:p0
+2011.11.26 09:04:42 INFO  [13] - SELECT this_."Id" as column1_13_0_, this_."Created" as column2_13_0_, this_."Email" as column3_13_0_, this_."FailedPasswordAttemptCount" as column4_13_0_, this_."FirstName" as column5_13_0_, this_."LastName" as column6_13_0_, this_."LastFailedLoginAttempt" as column7_13_0_, this_."LastLogin" as column8_13_0_, this_."Password" as column9_13_0_, this_."RoleId" as column10_13_0_, this_."Salt" as column11_13_0_, this_."TotalComments" as column12_13_0_ FROM "User" this_ WHERE this_."Email" = :p0
+2011.11.26 09:04:42 INFO  [13] - select ticket0_."Id" as column1_8_, ticket0_."TypeId" as column2_8_, ticket0_."Summary" as column3_8_, ticket0_."PriorityId" as column4_8_, ticket0_."Description" as column5_8_, ticket0_."Created" as column6_8_, ticket0_."DueDate" as column7_8_, ticket0_."StatusId" as column8_8_, ticket0_."ResolutionId" as column9_8_, ticket0_."IsClosed" as column10_8_, ticket0_."AssignedToUserId" as column11_8_, ticket0_."CreatedByUserId" as column12_8_, ticket0_."AssignedByUserId" as column13_8_, ticket0_."ProjectId" as column14_8_, ticket0_."KeyName" as column15_8_ from "Ticket" ticket0_ where ticket0_."KeyName"=:p0
+2011.11.26 09:04:42 INFO  [13] - SELECT user0_."Id" as column1_13_0_, user0_."Created" as column2_13_0_, user0_."Email" as column3_13_0_, user0_."FailedPasswordAttemptCount" as column4_13_0_, user0_."FirstName" as column5_13_0_, user0_."LastName" as column6_13_0_, user0_."LastFailedLoginAttempt" as column7_13_0_, user0_."LastLogin" as column8_13_0_, user0_."Password" as column9_13_0_, user0_."RoleId" as column10_13_0_, user0_."Salt" as column11_13_0_, user0_."TotalComments" as column12_13_0_ FROM "User" user0_ WHERE user0_."Id"=:p0
+2011.11.26 09:04:42 INFO  [13] - SELECT this_."Id" as column1_1_0_, this_."Body" as column2_1_0_, this_."Created" as column3_1_0_, this_."Modified" as column4_1_0_, this_."TicketId" as column5_1_0_, this_."UserId" as column6_1_0_, this_."Ticket_id" as column7_1_0_ FROM "Comment" this_ WHERE this_."TicketId" = :p0
+2011.11.26 09:04:42 ERROR [13] - Could not execute query: SELECT this_."Id" as column1_1_0_, this_."Body" as column2_1_0_, this_."Created" as column3_1_0_, this_."Modified" as column4_1_0_, this_."TicketId" as column5_1_0_, this_."UserId" as column6_1_0_, this_."Ticket_id" as column7_1_0_ FROM "Comment" this_ WHERE this_."TicketId" = :p0
+Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.26 09:04:42 WARN  [13] - Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.26 09:04:42 ERROR [13] - ERROR: 42703: column this_.Ticket_id does not exist
+2011.11.26 09:04:42 WARN  [13] - Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.26 09:04:42 ERROR [13] - ERROR: 42703: column this_.Ticket_id does not exist
+2011.11.26 09:04:42 WARN  [13] - Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 611
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 413
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.26 09:04:42 ERROR [13] - ERROR: 42703: column this_.Ticket_id does not exist
+2011.11.26 09:05:55 INFO  [28] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.26 09:05:55 INFO  [28] - hibernate-configuration section not found in application configuration file
+2011.11.26 09:05:55 INFO  [28] - Bytecode provider name : lcg
+2011.11.26 09:05:55 INFO  [28] - Using reflection optimizer
+2011.11.26 09:05:56 INFO  [28] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:05:56 INFO  [28] - Mapping class: Trakker.Data.ColorPalette -> "ColorPalette"
+2011.11.26 09:05:56 INFO  [28] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:05:56 INFO  [28] - Mapping class: Trakker.Data.Comment -> "Comment"
+2011.11.26 09:05:56 INFO  [28] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:05:56 INFO  [28] - Mapping class: Trakker.Data.File -> "File"
+2011.11.26 09:05:56 INFO  [28] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:05:56 INFO  [28] - Mapping class: Trakker.Data.Project -> "Project"
+2011.11.26 09:05:56 INFO  [28] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:05:56 INFO  [28] - Mapping class: Trakker.Data.ProjectVersion -> "ProjectVersion"
+2011.11.26 09:05:56 INFO  [28] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> "TicketFixedOnVersion"
+2011.11.26 09:05:56 INFO  [28] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> "TicketFoundOnVersion"
+2011.11.26 09:05:56 INFO  [28] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:05:56 INFO  [28] - Mapping class: Trakker.Data.Role -> "Role"
+2011.11.26 09:05:56 INFO  [28] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:05:56 INFO  [28] - Mapping class: Trakker.Data.Ticket -> "Ticket"
+2011.11.26 09:05:56 INFO  [28] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> "TicketFixedOnVersion"
+2011.11.26 09:05:56 INFO  [28] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> "TicketFoundOnVersion"
+2011.11.26 09:05:56 INFO  [28] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:05:56 INFO  [28] - Mapping class: Trakker.Data.TicketPriority -> "TicketPriority"
+2011.11.26 09:05:56 INFO  [28] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:05:56 INFO  [28] - Mapping class: Trakker.Data.TicketResolution -> "TicketResolution"
+2011.11.26 09:05:56 INFO  [28] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:05:56 INFO  [28] - Mapping class: Trakker.Data.TicketStatus -> "TicketStatus"
+2011.11.26 09:05:56 INFO  [28] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:05:56 INFO  [28] - Mapping class: Trakker.Data.TicketType -> "TicketType"
+2011.11.26 09:05:56 INFO  [28] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:05:56 INFO  [28] - Mapping class: Trakker.Data.User -> "User"
+2011.11.26 09:05:56 INFO  [28] - checking mappings queue
+2011.11.26 09:05:56 INFO  [28] - processing one-to-many association mappings
+2011.11.26 09:05:56 INFO  [28] - mapping collection: Trakker.Data.Ticket.Comments -> "Comment"
+2011.11.26 09:05:56 INFO  [28] - processing one-to-one association property references
+2011.11.26 09:05:56 INFO  [28] - processing foreign key constraints
+2011.11.26 09:05:56 INFO  [28] - processing filters (second pass)
+2011.11.26 09:05:57 INFO  [28] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:05:57 INFO  [28] - Using dialect defined converter
+2011.11.26 09:05:57 INFO  [28] - Generate SQL with comments: disabled
+2011.11.26 09:05:57 INFO  [28] - Initializing connection provider: NHibernate.Connection.DriverConnectionProvider
+2011.11.26 09:05:57 INFO  [28] - Configuring ConnectionProvider
+2011.11.26 09:05:57 INFO  [28] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.26 09:05:57 INFO  [28] - Optimize cache for minimal puts: False
+2011.11.26 09:05:57 INFO  [28] - Connection release mode: auto
+2011.11.26 09:05:57 INFO  [28] - Default batch fetch size: 1
+2011.11.26 09:05:57 INFO  [28] - Statistics: disabled
+2011.11.26 09:05:57 INFO  [28] - Deleted entity synthetic identifier rollback: disabled
+2011.11.26 09:05:57 INFO  [28] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.26 09:05:57 INFO  [28] - Query language substitutions: {}
+2011.11.26 09:05:57 INFO  [28] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.26 09:05:57 INFO  [28] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.26 09:05:57 INFO  [28] - Default entity-mode: Poco
+2011.11.26 09:05:57 INFO  [28] - Named query checking : enabled
+2011.11.26 09:05:57 INFO  [28] - building session factory
+2011.11.26 09:05:57 INFO  [28] - no name configured
+2011.11.26 09:05:57 INFO  [28] - SELECT this_."Id" as column1_13_0_, this_."Created" as column2_13_0_, this_."Email" as column3_13_0_, this_."FailedPasswordAttemptCount" as column4_13_0_, this_."FirstName" as column5_13_0_, this_."LastName" as column6_13_0_, this_."LastFailedLoginAttempt" as column7_13_0_, this_."LastLogin" as column8_13_0_, this_."Password" as column9_13_0_, this_."RoleId" as column10_13_0_, this_."Salt" as column11_13_0_, this_."TotalComments" as column12_13_0_ FROM "User" this_ WHERE this_."Email" = :p0
+2011.11.26 09:05:57 INFO  [28] - handling property dereference [Trakker.Data.Ticket (t) -> KeyName (Class)]
+2011.11.26 09:05:57 INFO  [28] - select ticket0_."Id" as column1_8_, ticket0_."TypeId" as column2_8_, ticket0_."Summary" as column3_8_, ticket0_."PriorityId" as column4_8_, ticket0_."Description" as column5_8_, ticket0_."Created" as column6_8_, ticket0_."DueDate" as column7_8_, ticket0_."StatusId" as column8_8_, ticket0_."ResolutionId" as column9_8_, ticket0_."IsClosed" as column10_8_, ticket0_."AssignedToUserId" as column11_8_, ticket0_."CreatedByUserId" as column12_8_, ticket0_."AssignedByUserId" as column13_8_, ticket0_."ProjectId" as column14_8_, ticket0_."KeyName" as column15_8_ from "Ticket" ticket0_ where ticket0_."KeyName"=:p0
+2011.11.26 09:05:58 INFO  [28] - SELECT user0_."Id" as column1_13_0_, user0_."Created" as column2_13_0_, user0_."Email" as column3_13_0_, user0_."FailedPasswordAttemptCount" as column4_13_0_, user0_."FirstName" as column5_13_0_, user0_."LastName" as column6_13_0_, user0_."LastFailedLoginAttempt" as column7_13_0_, user0_."LastLogin" as column8_13_0_, user0_."Password" as column9_13_0_, user0_."RoleId" as column10_13_0_, user0_."Salt" as column11_13_0_, user0_."TotalComments" as column12_13_0_ FROM "User" user0_ WHERE user0_."Id"=:p0
+2011.11.26 09:05:58 INFO  [28] - SELECT this_."Id" as column1_1_0_, this_."Body" as column2_1_0_, this_."Created" as column3_1_0_, this_."Modified" as column4_1_0_, this_."TicketId" as column5_1_0_, this_."UserId" as column6_1_0_, this_."Ticket_id" as column7_1_0_ FROM "Comment" this_ WHERE this_."TicketId" = :p0
+2011.11.26 09:05:58 ERROR [28] - Could not execute query: SELECT this_."Id" as column1_1_0_, this_."Body" as column2_1_0_, this_."Created" as column3_1_0_, this_."Modified" as column4_1_0_, this_."TicketId" as column5_1_0_, this_."UserId" as column6_1_0_, this_."Ticket_id" as column7_1_0_ FROM "Comment" this_ WHERE this_."TicketId" = :p0
+Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.26 09:05:58 WARN  [28] - Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.26 09:05:58 ERROR [28] - ERROR: 42703: column this_.Ticket_id does not exist
+2011.11.26 09:05:58 WARN  [28] - Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.26 09:05:58 ERROR [28] - ERROR: 42703: column this_.Ticket_id does not exist
+2011.11.26 09:05:58 WARN  [28] - Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.26 09:05:58 ERROR [28] - ERROR: 42703: column this_.Ticket_id does not exist
+2011.11.26 09:06:24 INFO  [15] - NHibernate 3.1.0.4000 (3.1.0.4000)
+2011.11.26 09:06:24 INFO  [15] - hibernate-configuration section not found in application configuration file
+2011.11.26 09:06:24 INFO  [15] - Bytecode provider name : lcg
+2011.11.26 09:06:24 INFO  [15] - Using reflection optimizer
+2011.11.26 09:06:26 INFO  [15] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:06:26 INFO  [15] - Mapping class: Trakker.Data.ColorPalette -> "ColorPalette"
+2011.11.26 09:06:26 INFO  [15] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:06:26 INFO  [15] - Mapping class: Trakker.Data.Comment -> "Comment"
+2011.11.26 09:06:26 INFO  [15] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:06:26 INFO  [15] - Mapping class: Trakker.Data.File -> "File"
+2011.11.26 09:06:26 INFO  [15] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:06:26 INFO  [15] - Mapping class: Trakker.Data.Project -> "Project"
+2011.11.26 09:06:26 INFO  [15] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:06:26 INFO  [15] - Mapping class: Trakker.Data.ProjectVersion -> "ProjectVersion"
+2011.11.26 09:06:26 INFO  [15] - Mapping collection: Trakker.Data.ProjectVersion.FixedTickets -> "TicketFixedOnVersion"
+2011.11.26 09:06:26 INFO  [15] - Mapping collection: Trakker.Data.ProjectVersion.FoundTickets -> "TicketFoundOnVersion"
+2011.11.26 09:06:26 INFO  [15] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:06:26 INFO  [15] - Mapping class: Trakker.Data.Role -> "Role"
+2011.11.26 09:06:26 INFO  [15] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:06:26 INFO  [15] - Mapping class: Trakker.Data.Ticket -> "Ticket"
+2011.11.26 09:06:26 INFO  [15] - Mapping collection: Trakker.Data.Ticket.FixedOnVersions -> "TicketFixedOnVersion"
+2011.11.26 09:06:26 INFO  [15] - Mapping collection: Trakker.Data.Ticket.FoundOnVersions -> "TicketFoundOnVersion"
+2011.11.26 09:06:26 INFO  [15] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:06:26 INFO  [15] - Mapping class: Trakker.Data.TicketPriority -> "TicketPriority"
+2011.11.26 09:06:26 INFO  [15] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:06:26 INFO  [15] - Mapping class: Trakker.Data.TicketResolution -> "TicketResolution"
+2011.11.26 09:06:26 INFO  [15] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:06:26 INFO  [15] - Mapping class: Trakker.Data.TicketStatus -> "TicketStatus"
+2011.11.26 09:06:26 INFO  [15] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:06:26 INFO  [15] - Mapping class: Trakker.Data.TicketType -> "TicketType"
+2011.11.26 09:06:26 INFO  [15] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:06:26 INFO  [15] - Mapping class: Trakker.Data.User -> "User"
+2011.11.26 09:06:26 INFO  [15] - checking mappings queue
+2011.11.26 09:06:26 INFO  [15] - processing one-to-many association mappings
+2011.11.26 09:06:26 INFO  [15] - mapping collection: Trakker.Data.Ticket.Comments -> "Comment"
+2011.11.26 09:06:26 INFO  [15] - processing one-to-one association property references
+2011.11.26 09:06:26 INFO  [15] - processing foreign key constraints
+2011.11.26 09:06:26 INFO  [15] - processing filters (second pass)
+2011.11.26 09:06:26 INFO  [15] - Using dialect: NHibernate.Dialect.PostgreSQL82Dialect
+2011.11.26 09:06:26 INFO  [15] - Using dialect defined converter
+2011.11.26 09:06:26 INFO  [15] - Generate SQL with comments: disabled
+2011.11.26 09:06:26 INFO  [15] - Initializing connection provider: NHibernate.Connection.DriverConnectionProvider
+2011.11.26 09:06:26 INFO  [15] - Configuring ConnectionProvider
+2011.11.26 09:06:26 INFO  [15] - Transaction factory: NHibernate.Transaction.AdoNetWithDistributedTransactionFactory
+2011.11.26 09:06:26 INFO  [15] - Optimize cache for minimal puts: False
+2011.11.26 09:06:26 INFO  [15] - Connection release mode: auto
+2011.11.26 09:06:26 INFO  [15] - Default batch fetch size: 1
+2011.11.26 09:06:26 INFO  [15] - Statistics: disabled
+2011.11.26 09:06:26 INFO  [15] - Deleted entity synthetic identifier rollback: disabled
+2011.11.26 09:06:26 INFO  [15] - Query translator: NHibernate.Hql.Ast.ANTLR.ASTQueryTranslatorFactory
+2011.11.26 09:06:26 INFO  [15] - Query language substitutions: {}
+2011.11.26 09:06:26 INFO  [15] - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.26 09:06:26 INFO  [15] - Batcher factory: NHibernate.AdoNet.NonBatchingBatcherFactory, NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2011.11.26 09:06:26 INFO  [15] - Default entity-mode: Poco
+2011.11.26 09:06:26 INFO  [15] - Named query checking : enabled
+2011.11.26 09:06:26 INFO  [15] - building session factory
+2011.11.26 09:06:26 INFO  [15] - no name configured
+2011.11.26 09:06:26 INFO  [15] - SELECT this_."Id" as column1_13_0_, this_."Created" as column2_13_0_, this_."Email" as column3_13_0_, this_."FailedPasswordAttemptCount" as column4_13_0_, this_."FirstName" as column5_13_0_, this_."LastName" as column6_13_0_, this_."LastFailedLoginAttempt" as column7_13_0_, this_."LastLogin" as column8_13_0_, this_."Password" as column9_13_0_, this_."RoleId" as column10_13_0_, this_."Salt" as column11_13_0_, this_."TotalComments" as column12_13_0_ FROM "User" this_ WHERE this_."Email" = :p0
+2011.11.26 09:06:27 INFO  [15] - handling property dereference [Trakker.Data.Ticket (t) -> KeyName (Class)]
+2011.11.26 09:06:27 INFO  [15] - select ticket0_."Id" as column1_8_, ticket0_."TypeId" as column2_8_, ticket0_."Summary" as column3_8_, ticket0_."PriorityId" as column4_8_, ticket0_."Description" as column5_8_, ticket0_."Created" as column6_8_, ticket0_."DueDate" as column7_8_, ticket0_."StatusId" as column8_8_, ticket0_."ResolutionId" as column9_8_, ticket0_."IsClosed" as column10_8_, ticket0_."AssignedToUserId" as column11_8_, ticket0_."CreatedByUserId" as column12_8_, ticket0_."AssignedByUserId" as column13_8_, ticket0_."ProjectId" as column14_8_, ticket0_."KeyName" as column15_8_ from "Ticket" ticket0_ where ticket0_."KeyName"=:p0
+2011.11.26 09:06:27 INFO  [15] - SELECT user0_."Id" as column1_13_0_, user0_."Created" as column2_13_0_, user0_."Email" as column3_13_0_, user0_."FailedPasswordAttemptCount" as column4_13_0_, user0_."FirstName" as column5_13_0_, user0_."LastName" as column6_13_0_, user0_."LastFailedLoginAttempt" as column7_13_0_, user0_."LastLogin" as column8_13_0_, user0_."Password" as column9_13_0_, user0_."RoleId" as column10_13_0_, user0_."Salt" as column11_13_0_, user0_."TotalComments" as column12_13_0_ FROM "User" user0_ WHERE user0_."Id"=:p0
+2011.11.26 09:06:27 INFO  [15] - SELECT this_."Id" as column1_1_0_, this_."Body" as column2_1_0_, this_."Created" as column3_1_0_, this_."Modified" as column4_1_0_, this_."TicketId" as column5_1_0_, this_."UserId" as column6_1_0_, this_."Ticket_id" as column7_1_0_ FROM "Comment" this_ WHERE this_."TicketId" = :p0
+2011.11.26 09:06:27 ERROR [15] - Could not execute query: SELECT this_."Id" as column1_1_0_, this_."Body" as column2_1_0_, this_."Created" as column3_1_0_, this_."Modified" as column4_1_0_, this_."TicketId" as column5_1_0_, this_."UserId" as column6_1_0_, this_."Ticket_id" as column7_1_0_ FROM "Comment" this_ WHERE this_."TicketId" = :p0
+Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 241
+2011.11.26 09:06:27 WARN  [15] - Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1325
+2011.11.26 09:06:27 ERROR [15] - ERROR: 42703: column this_.Ticket_id does not exist
+2011.11.26 09:06:27 WARN  [15] - Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.26 09:06:27 ERROR [15] - ERROR: 42703: column this_.Ticket_id does not exist
+2011.11.26 09:06:27 WARN  [15] - Npgsql.NpgsqlException:
+column this_.Ticket_id does not exist
+Severity: ERROR
+Code: 42703
+   at Npgsql.NpgsqlState.<ProcessBackendResponses_Ver_3>d__a.MoveNext() in C:\projects\Npgsql2\src\Npgsql\NpgsqlState.cs:line 843
+   at Npgsql.ForwardsOnlyDataReader.GetNextResponseObject() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1173
+   at Npgsql.ForwardsOnlyDataReader.GetNextRowDescription() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1191
+   at Npgsql.ForwardsOnlyDataReader.NextResult() in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1377
+   at Npgsql.ForwardsOnlyDataReader..ctor(IEnumerable`1 dataEnumeration, CommandBehavior behavior, NpgsqlCommand command, NotificationThreadBlock threadBlock, Boolean synchOnReadError) in C:\projects\Npgsql2\src\Npgsql\NpgsqlDataReader.cs:line 1040
+   at Npgsql.NpgsqlCommand.GetReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 609
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior cb) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 588
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\Npgsql2\src\Npgsql\NpgsqlCommand.cs:line 538
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\AdoNet\AbstractBatcher.cs:line 247
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1349
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 411
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 243
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in d:\CSharp\NH\NH\nhibernate\src\NHibernate\Loader\Loader.cs:line 1694
+2011.11.26 09:06:27 ERROR [15] - ERROR: 42703: column this_.Ticket_id does not exist

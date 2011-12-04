@@ -173,9 +173,9 @@ namespace Trakker.Areas.Admin.Controllers
             });
         }
 
-        public virtual ActionResult ViewProject(string keyName)
+        public virtual ActionResult ViewProject(int projectId)
         {
-            Project project = _projectRepo.GetProjectByKey(keyName);
+            Project project = _projectRepo.GetProjectById(projectId);
 
             return View(new ViewProjectModel()
                 {
@@ -217,7 +217,7 @@ namespace Trakker.Areas.Admin.Controllers
                 project.Created = DateTime.Now;
                 _projectRepo.Save(project);
                 
-                return RedirectToAction(MVC.Admin.Management.ViewProject(viewModel.KeyName));
+                return RedirectToAction(MVC.Admin.Management.ViewProject(project.Id));
             }
 
 
@@ -228,9 +228,9 @@ namespace Trakker.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public virtual ActionResult EditProject(string keyName)
+        public virtual ActionResult EditProject(int projectId)
         {
-            Project project = _projectRepo.GetProjectByKey(keyName);
+            Project project = _projectRepo.GetProjectById(projectId);
 
             if (project == null)
             {
@@ -273,7 +273,7 @@ namespace Trakker.Areas.Admin.Controllers
 
                 _projectRepo.Save(project);
                 
-                return RedirectToRoute(MVC.Admin.Management.ViewProject(project.KeyName));
+                return RedirectToRoute(MVC.Admin.Management.ViewProject(project.Id));
             }
 
             viewModel.Users = _userRepo.GetUsers();
@@ -312,9 +312,7 @@ namespace Trakker.Areas.Admin.Controllers
                         ProjectId = project.Id
                     };
 
-                    ProjectVersion afterVersion = _projectRepo.GetVersionById(model.AfterVersionId);
-
-                    _projectService.AddVersion(version, afterVersion);
+                    _projectService.AddVersion(version, _projectRepo.GetVersionById(model.AfterVersionId));
 
                     return RedirectToAction(MVC.Admin.Management.ManageVersions(project.Id));
                 }
@@ -420,6 +418,15 @@ namespace Trakker.Areas.Admin.Controllers
             model.Version = version;
             model.NumberOfTicketsOpen = _projectRepo.NumberOfTicketsOpen(version);
             return View(model);
+        }
+
+        [HttpGet]
+        public virtual ActionResult UnreleaseVersion(int projectId, int versionId)
+        {
+            ProjectVersion version = _projectRepo.GetVersionById(versionId);
+            _projectService.UnreleaseVersion(version);
+
+            return RedirectToAction(MVC.Admin.Management.ManageVersions(projectId));
         }
         #endregion
 

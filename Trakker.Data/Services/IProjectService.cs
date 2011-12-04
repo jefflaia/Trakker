@@ -14,5 +14,6 @@ namespace Trakker.Data.Services
         void DeleteVersion(ProjectVersion version);
 
         void ReleaseVersion(ProjectVersion version);
+        void UnreleaseVersion(ProjectVersion version);
     }
 }

@@ -76,6 +76,11 @@ namespace Trakker.Areas.Admin.Controllers {
         public System.Web.Mvc.ActionResult ReleaseVersion() {
             return new T4MVC_ActionResult(Area, Name, ActionNames.ReleaseVersion);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult UnreleaseVersion() {
+            return new T4MVC_ActionResult(Area, Name, ActionNames.UnreleaseVersion);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ManagementController Actions { get { return MVC.Admin.Management; } }
@@ -103,6 +108,7 @@ namespace Trakker.Areas.Admin.Controllers {
             public readonly string EditVersion = "EditVersion";
             public readonly string DeleteVersion = "DeleteVersion";
             public readonly string ReleaseVersion = "ReleaseVersion";
+            public readonly string UnreleaseVersion = "UnreleaseVersion";
             public readonly string UploadFile = "UploadFile";
         }
 
@@ -191,9 +197,9 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult ViewProject(string keyName) {
+        public override System.Web.Mvc.ActionResult ViewProject(int projectId) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ViewProject);
-            callInfo.RouteValueDictionary.Add("keyName", keyName);
+            callInfo.RouteValueDictionary.Add("projectId", projectId);
             return callInfo;
         }
 
@@ -208,9 +214,9 @@ namespace Trakker.Areas.Admin.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult EditProject(string keyName) {
+        public override System.Web.Mvc.ActionResult EditProject(int projectId) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.EditProject);
-            callInfo.RouteValueDictionary.Add("keyName", keyName);
+            callInfo.RouteValueDictionary.Add("projectId", projectId);
             return callInfo;
         }
 
@@ -276,6 +282,13 @@ namespace Trakker.Areas.Admin.Controllers {
             callInfo.RouteValueDictionary.Add("projectId", projectId);
             callInfo.RouteValueDictionary.Add("versionId", versionId);
             callInfo.RouteValueDictionary.Add("model", model);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult UnreleaseVersion(int projectId, int versionId) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.UnreleaseVersion);
+            callInfo.RouteValueDictionary.Add("projectId", projectId);
+            callInfo.RouteValueDictionary.Add("versionId", versionId);
             return callInfo;
         }
 

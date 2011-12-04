@@ -28,7 +28,11 @@ namespace Trakker.Data.Services
         #region Version
         public void AddVersion(ProjectVersion version, ProjectVersion afterVersion)
         {
-            version.SortOrder = afterVersion.SortOrder;
+            if (afterVersion != null)
+            {
+                version.SortOrder = afterVersion.SortOrder;
+            }
+
             _projectRepo.Save(version);
         }
         
@@ -46,6 +50,12 @@ namespace Trakker.Data.Services
         public void ReleaseVersion(ProjectVersion version)
         {
             version.IsReleased = true;
+            _projectRepo.Save(version);
+        }
+
+        public void UnreleaseVersion(ProjectVersion version)
+        {
+            version.IsReleased = false;
             _projectRepo.Save(version);
         }
         #endregion

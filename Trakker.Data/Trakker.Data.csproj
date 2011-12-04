@@ -125,7 +125,7 @@
     <Compile Include="Models\File.cs" />
     <Compile Include="Models\ProjectVersion.cs" />
     <Compile Include="NHibernateFactory.cs" />
-    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Services\Repositories\IRepository.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\ColorPalette.cs" />
     <Compile Include="Models\IBaseEntity.cs" />
@@ -144,15 +144,15 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\Repository.cs" />
-    <Compile Include="Repositories\ISystemRepository.cs" />
-    <Compile Include="Repositories\SystemRepository.cs" />
-    <Compile Include="Repositories\ITicketRepository.cs" />
-    <Compile Include="Repositories\IUserRepository.cs" />
-    <Compile Include="Repositories\IProjectRepository.cs" />
-    <Compile Include="Repositories\ProjectRepository.cs" />
-    <Compile Include="Repositories\TicketRepository.cs" />
-    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Services\Repositories\Repository.cs" />
+    <Compile Include="Services\Repositories\ISystemRepository.cs" />
+    <Compile Include="Services\Repositories\SystemRepository.cs" />
+    <Compile Include="Services\Repositories\ITicketRepository.cs" />
+    <Compile Include="Services\Repositories\IUserRepository.cs" />
+    <Compile Include="Services\Repositories\IProjectRepository.cs" />
+    <Compile Include="Services\Repositories\ProjectRepository.cs" />
+    <Compile Include="Services\Repositories\TicketRepository.cs" />
+    <Compile Include="Services\Repositories\UserRepository.cs" />
     <Compile Include="Models\Paginated.cs" />
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\Comment.cs" />

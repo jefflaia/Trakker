@@ -21,13 +21,13 @@
     <tbody>
         @foreach(var project in Model.Projects) { 
             <tr>
-                <td>@Html.RouteLink(project.Name, "ViewProject", new { keyName = project.KeyName.ToLower() })</td>
+                <td>@Html.ActionLink(project.Name, MVC.Admin.Management.ViewProject(project.Id))</td>
                 <td>@Model.Users[project.Lead].FullName() </td>
                 <td>@project.KeyName  </td>
                 <td>@project.Due  </td>
                 <td>@project.Created  </td>
                 <td>@project.ColorPalette.Name</td>
-                <td>@Html.RouteLink("Edit", "EditProject", new { keyName = project.KeyName.ToLower() }) </td>
+                <td>@Html.ActionLink("Edit", MVC.Admin.Management.EditProject(project.Id)) </td>
             </tr>
         }     
     </tbody>
