@@ -10,10 +10,11 @@
 
 */
 
-
+/*
 a{ color: #@LinkColor;}
 a:hover{color: #@LinkColor;}
 a:visited{color: #@LinkActiveColor;}
+*/
 
 /*** Header  Colors ***/
 div#Header{ background-color: #@NavBackgroundColor;}
@@ -21,10 +22,12 @@ div#Header a{ color: #@NavTextColor;}
 div#Header div.Right { color: #@NavTextColor;}
 
 /*** Nav Colors ***/
+/*
 div.Nav a{ color: #@NavTextColor;}
 div#SubHeader { background-color: #@SubNavBackgroundColor;  }
 div.Dropdown li ul li a:hover { background-color: #@HighlightColor;}
 div#SubHeader div.Dropdown ul li a {color: #@SubNavTextColor;}
+*/
 
 /*** Sections ***/
 /**

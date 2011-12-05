@@ -17,9 +17,26 @@
     @Reco.Script("/generated.js")
 </head>
 <body>
-    <div id="HeadingTop">
+    <div id="nav-heading">
+<!--
+        <div class="Dropdown Nav">
+            @Html.Partial(MVC.Shared.Views._Menu, Model)
+        </div>-->
+
+        <div class="user">
+            @if (Model.IsUserLoggedIn) { 
+                if (Model.CurrentProject != null) {
+                    <span>@Model.CurrentProject.Name (@Model.CurrentProject.KeyName) </span>
+                }
+                <span>Assigned: @Model.NumTicketsAssignedToCurrentUser</span>
+                <span>@Html.ActionLink("Logout (" + Model.CurrentUser.Email + ")", MVC.User.Logout())</span>
+            }
+        </div>
+    </div>
+
+    <div id="search-heading">
         <a href="/" alt="Home">
-            <img src="/Content/Images/TestTicketIcon.png" width="100" height="30" />
+            <img src="https://ssl.gstatic.com/docs/doclist/images/google.png" />
         </a>
         <div class="Search">
             @{
@@ -37,22 +54,6 @@
             });
 
         </script>
-    </div>
-
-    <div id="Header">
-        @if (Model.IsUserLoggedIn) { 
-            <div class="Right">
-                @if (Model.CurrentProject != null) {
-                    <span>@Model.CurrentProject.Name (@Model.CurrentProject.KeyName) </span>
-                }
-                <span>Assigned: @Model.NumTicketsAssignedToCurrentUser</span>
-                <span>@Html.ActionLink("Logout (" + Model.CurrentUser.Email + ")", MVC.User.Logout())</span>
-            </div>
-
-            <div class="Dropdown Nav">
-                @Html.Partial(MVC.Shared.Views._Menu, Model)
-            </div>
-        }
     </div>
    
     @RenderBody()
