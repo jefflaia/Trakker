@@ -105,6 +105,12 @@ namespace Trakker.Data.Repositories
         public void Delete(object entity)
         {
             Session.Delete(entity);
+
+            //only flush imediately if we are not in a transaction
+            if (Session.Transaction.IsActive == false)
+            {
+                Session.Flush();
+            }
         }
 
         public void Save(object entity)

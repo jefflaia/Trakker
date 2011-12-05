@@ -97,17 +97,17 @@
 
         #region Version
         public void Save(ProjectVersion version)
-        {
-            if (version.Id == 0)
-            {
-                Session.CreateQuery("update ProjectVersion set SortOrder = SortOrder + 1 where SortOrder >= ? and ProjectId = ?")
-                    .SetInt32(0, version.SortOrder)
-                    .SetInt32(1, version.ProjectId)
-                    .ExecuteUpdate();
-            }
-            
+        {            
             base.Save(version);
 
+        }
+
+        public void IncrememtOrderingAfterVersion(ProjectVersion version)
+        {
+            Session.CreateQuery("update ProjectVersion set SortOrder = SortOrder + 1 where SortOrder >= ? and ProjectId = ?")
+                .SetInt32(0, version.SortOrder)
+                .SetInt32(1, version.ProjectId)
+                .ExecuteUpdate();
         }
 
         public ProjectVersion GetVersionById(int id)
@@ -170,24 +170,15 @@
             base.Delete(version);
         }
 
-        public void RemoveTicketOnVersionRelations(ProjectVersion version)
+        public void RemoveVersionFromTickets(ProjectVersion version)
         {
-            Session.Delete("from ProjectVersion v left join v.FixedTickets ft where v.Id = ?", version.Id, NHibernateUtil.Int32);
-
-            /*
-            Session.CreateQuery(@"
-                    delete from ProjectVersion v 
-                    left join v.FixedTickets ft
-                    where v.Id = ?")
+            Session.CreateSQLQuery("delete from \"TicketFixedOnVersion\" where \"VersionId\" = ?")
                 .SetInt32(0, version.Id)
                 .ExecuteUpdate();
 
-            Session.CreateQuery(@"
-                    delete from ProjectVersion v 
-                    left join v.FoundTickets ft
-                    where v.Id = ?")
+            Session.CreateSQLQuery("delete from \"TicketFoundOnVersion\" where \"VersionId\" = ?")
                 .SetInt32(0, version.Id)
-                .ExecuteUpdate();*/
+                .ExecuteUpdate();
         }
         #endregion
 

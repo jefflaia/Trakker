@@ -21,6 +21,7 @@ namespace Trakker.Data.Repositories
         void Save(Trakker.Data.Component component);
 
         void Save(ProjectVersion version);
+        void IncrememtOrderingAfterVersion(ProjectVersion version);
         ProjectVersion GetVersionById(int id);
         ProjectVersion GetVersionByName(string name);
         int NumberOfTicketsToBeFixed(ProjectVersion version);
@@ -36,7 +37,7 @@ namespace Trakker.Data.Repositories
 
         void Delete(ProjectVersion version);
 
-        void RemoveTicketOnVersionRelations(ProjectVersion version);
+        void RemoveVersionFromTickets(ProjectVersion version);
 
         
     }

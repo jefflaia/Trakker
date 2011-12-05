@@ -379,7 +379,11 @@ namespace Trakker.Areas.Admin.Controllers
 
             if (IsPost)
             {
-                _projectService.DeleteVersion(version);
+                if (ModelState.IsValid)
+                {
+                    _projectService.DeleteVersion(version);
+                    return RedirectToAction(MVC.Admin.Management.ManageVersions(project.Id));
+                }
             }
 
             model.NumberOfTicketsToBeFixed = _projectRepo.NumberOfTicketsToBeFixed(version);

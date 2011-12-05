@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Trakker.Data.Repositories;
+using Trakker.Data.Utilities;
 
 namespace Trakker.Data.Services
 {
@@ -10,11 +11,13 @@ namespace Trakker.Data.Services
     {
         private IProjectRepository _projectRepo;
         private ISystemRepository _systemRepo;
+        private IUnitOfWork _uow;
 
-        public ProjectService(IProjectRepository projectRepo, ISystemRepository systemRepo)
+        public ProjectService(IUnitOfWork unitOfWork, IProjectRepository projectRepo, ISystemRepository systemRepo)
         {
             _projectRepo = projectRepo;
             _systemRepo = systemRepo;
+            _uow = unitOfWork;
 
         }
 
@@ -33,6 +36,7 @@ namespace Trakker.Data.Services
                 version.SortOrder = afterVersion.SortOrder;
             }
 
+            _projectRepo.IncrememtOrderingAfterVersion(version);
             _projectRepo.Save(version);
         }
         
@@ -43,7 +47,7 @@ namespace Trakker.Data.Services
 
         public void DeleteVersion(ProjectVersion version)
         {
-            _projectRepo.RemoveTicketOnVersionRelations(version);
+            _projectRepo.RemoveVersionFromTickets(version);
             _projectRepo.Delete(version);
         }
 
