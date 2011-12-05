@@ -132,9 +132,9 @@
         public int NumberOfTicketsToBeFixed(ProjectVersion version)
         {
             return Convert.ToInt32(Session.CreateQuery(@"
-                    select count(v.Id) 
-                    from ProjectVersion v 
-                    left join v.FixedTickets ft
+                    select count(t.Id) 
+                    from Ticket t 
+                    left join t.FixedOnVersions v
                     where v.Id = ?")
                 .SetInt32(0, version.Id)
                 .UniqueResult<Int64>());
@@ -143,9 +143,9 @@
         public int NumberOfTicketsFound(ProjectVersion version)
         {
             return Convert.ToInt32(Session.CreateQuery(@"
-                    select count(v.Id) 
-                    from ProjectVersion v 
-                    left join v.FoundTickets ft
+                    select count(t.Id) 
+                    from Ticket t 
+                    left join t.FoundOnVersions v
                     where v.Id = ?")
                 .SetInt32(0, version.Id)
                 .UniqueResult<Int64>());
