@@ -17,7 +17,7 @@
     @Reco.Script("/generated.js")
 </head>
 <body>
-    <div id="nav-heading">
+    <div id="nav">
 <!--
         <div class="Dropdown Nav">
             @Html.Partial(MVC.Shared.Views._Menu, Model)
@@ -34,13 +34,13 @@
         </div>
     </div>
 
-    <div id="search-heading">
-        <a href="/" alt="Home">
+    <div id="heading">
+        <a href="/" class="logo">
             <img src="https://ssl.gstatic.com/docs/doclist/images/google.png" />
         </a>
 
         @{
-            Html.BeginForm(MVC.Search.SearchIndex(), FormMethod.Get);
+            Html.BeginForm(MVC.Search.SearchIndex(), FormMethod.Get, new { @class = "search" });
             @Html.TextBox("term", null, new { @default = "Ticket Number" }) 
             Html.EndForm();
         }

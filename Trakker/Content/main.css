@@ -13,12 +13,13 @@ button::-moz-focus-inner{border:0px;}
 
 
 
-div#nav-heading { position:fixed; background-color: #2d2d2d; font-size: 13px;  width: 100%; height: 30px; color:#ccc; line-height: 30px; z-index: 9999;}
-div#nav-heading a {color: #ccc;}
-div#nav-heading div.user { width: 400px; position:relative; float:right; height: 30px; margin-right: 5px; }
+div#nav{ position:fixed; background-color: #2d2d2d; font-size: 13px;  width: 100%; height: 30px; color:#ccc; line-height: 30px; z-index: 9999;}
+div#nav a {color: #ccc;}
+div#nav div.user { width: 400px; position:relative; float:right; height: 30px; margin-right: 5px; }
 
-div#search-heading{width: 100%; position:relative; top:30px; background-color: #f1f1f1; border-top: 1px solid #d2d2d2; border-bottom: 1px solid #d2d2d2; height: 50px;}
-
+div#heading{width: 100%; position:relative; top:30px; background-color: #f1f1f1; border-top: 1px solid #d2d2d2; border-bottom: 1px solid #d2d2d2; height: 50px;}
+div#heading a.logo { float: left; width: 150px; display:block;}
+div#heading form.search { width: 500px; float:left;}
 
 div#body{ width: 100%; position:relative; top:30px; background-color:white; font-size: 1.2em; }
 div#body div.inner-body{ position: relative; overflow:hidden; margin: 0px 20px;  min-height: 500px; padding: 10px 20px;}
