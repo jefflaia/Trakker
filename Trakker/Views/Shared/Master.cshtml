@@ -38,14 +38,14 @@
         <a href="/" alt="Home">
             <img src="https://ssl.gstatic.com/docs/doclist/images/google.png" />
         </a>
-        <div class="Search">
-            @{
-                Html.BeginForm(MVC.Search.SearchIndex(), FormMethod.Get);
-                @Html.TextBox("term", null, new { @default = "Ticket Number" }) 
-                Html.EndForm();
-            }
 
-        </div>
+        @{
+            Html.BeginForm(MVC.Search.SearchIndex(), FormMethod.Get);
+            @Html.TextBox("term", null, new { @default = "Ticket Number" }) 
+            Html.EndForm();
+        }
+
+
         <script type="text/javascript">
             $('div#HeadingTop div.Search input').keypress(function (e) {
                 if (e.which == 13) {
@@ -58,7 +58,7 @@
    
     @RenderBody()
 
-    <div id="Footer">
+    <div id="footer">
         
     </div>
     
