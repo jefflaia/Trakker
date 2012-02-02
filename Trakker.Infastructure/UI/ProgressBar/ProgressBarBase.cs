@@ -42,12 +42,12 @@ namespace Trakker.Infastructure.UI
             return (Current / Max) * 100;
         }
 
-        public double BarWidthPercent()
+        public double BarWidthInPercent()
         {
             return Percentage();
         }
 
-        public int BarWidthPixels()
+        public int BarWidthInPixels()
         {
             if (Max == 0.0)
             {
@@ -57,13 +57,12 @@ namespace Trakker.Infastructure.UI
             return Convert.ToInt32(Math.Floor((Current / Max) * Convert.ToDouble(Width)));
         }
         
-        protected override void WriteHtml(System.Web.UI.HtmlTextWriter writer)
+        public override void WriteHtml(System.Web.UI.HtmlTextWriter writer)
         {
             IProgressBarBaseHtmlBuilder builder = _renderFactory.Create(this);
             IHtmlNode rootTag = builder.Build();
 
             rootTag.WriteTo(writer);
-            base.WriteHtml(writer);
         }
     
 

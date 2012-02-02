@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Trakker.Infastructure.UI
 {
-    public interface IScriptableComponent
+    public interface IScriptedViewComponent
     {
 
         IAssetManager AssetManager { get; }

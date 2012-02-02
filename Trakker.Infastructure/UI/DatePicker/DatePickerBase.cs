@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Trakker.Infastructure.UI
 {
-    public class DatePickerBase : ScriptableViewComponent
+    public class DatePickerBase : ScriptedViewComponent
     {
 
         protected IDatePickerHtmlBuilderFactory _renderFactory;
@@ -54,7 +54,7 @@ namespace Trakker.Infastructure.UI
             base.WriteInitializationScript(writer);
         }
 
-        protected override void WriteHtml(System.Web.UI.HtmlTextWriter writer)
+        public override void WriteHtml(System.Web.UI.HtmlTextWriter writer)
         {
             IDatePickerBaseHtmlBuilder builder = _renderFactory.Create(this);
             IHtmlNode rootTag = builder.Build();

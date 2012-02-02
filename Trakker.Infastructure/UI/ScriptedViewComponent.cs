@@ -7,9 +7,9 @@ using System.Web.UI;
 
 namespace Trakker.Infastructure.UI
 {
-    public class ScriptableViewComponent : ViewComponentBase, IScriptableComponent
+    public class ScriptedViewComponent : ViewComponentBase
     {
-        public ScriptableViewComponent(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IAssetManager assetManager) :
+        public ScriptedViewComponent(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IAssetManager assetManager) :
             base(viewContext, assetManager)
         {
             ClientSideObjectWriterFactory = clientSideObjectWriterFactory;
@@ -47,10 +47,24 @@ namespace Trakker.Infastructure.UI
             }
         }
 
-        protected override void WriteHtml(HtmlTextWriter writer)
+        public virtual void WriteCleanupScript(HtmlTextWriter writer)
+        {
+        }
+
+        public virtual void WriteInitializationScript(System.IO.TextWriter writer)
+        {
+
+        }
+
+        public override void WriteHtml(HtmlTextWriter writer)
         {
             EnsureRequiredSettings();
-            base.WriteHtml(writer);
+
+            writer.AddAttribute(HtmlTextWriterAttribute.Type, "text/javascript");
+            writer.RenderBeginTag(HtmlTextWriterTag.Script);
+            writer.RenderEndTag();
+
+
         }
     }
 }

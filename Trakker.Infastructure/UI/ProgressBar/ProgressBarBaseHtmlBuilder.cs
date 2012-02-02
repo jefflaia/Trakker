@@ -48,7 +48,7 @@ namespace Trakker.Infastructure.UI
             var tag = new HtmlTag("div");
             IDictionary<string, object> attributes = new Dictionary<string, object>();
          
-            attributes.AddStyleAttribute("width", Element.BarWidthPixels().ToString() + "px");
+            attributes.AddStyleAttribute("width", Element.BarWidthInPixels().ToString() + "px");
             tag.Attributes(attributes);
             tag.AddClass(Element.ColorClass);
 

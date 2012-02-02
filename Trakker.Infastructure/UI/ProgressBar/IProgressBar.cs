@@ -13,7 +13,7 @@ namespace Trakker.Infastructure.UI
 
 
         double Percentage();
-        double BarWidthPercent();
-        int BarWidthPixels();
+        double BarWidthInPercent();
+        int BarWidthInPixels();
     }
 }

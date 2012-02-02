@@ -6,16 +6,16 @@ using System.Web;
 
 namespace Trakker.Infastructure.UI
 {
-    public abstract class ScriptableViewComponentBuilder<TViewComponent, TBuilder> : ViewComponentBuilderBase<TViewComponent, TBuilder>, IHideObjectMembers, IHtmlString
-        where TViewComponent : ScriptableViewComponent
-        where TBuilder : ScriptableViewComponentBuilder<TViewComponent, TBuilder>
+    public abstract class ScriptedViewComponentBuilder<TViewComponent, TBuilder> : ViewComponentBuilderBase<TViewComponent, TBuilder>, IHideObjectMembers, IHtmlString
+        where TViewComponent : ScriptedViewComponent
+        where TBuilder : ScriptedViewComponentBuilder<TViewComponent, TBuilder>
     {
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewComponentBuilderBase&lt;TViewComponent, TBuilder&gt;"/> class.
         /// </summary>
         /// <param name="component">The component.</param>
-        protected ScriptableViewComponentBuilder(TViewComponent component) : 
+        protected ScriptedViewComponentBuilder(TViewComponent component) : 
             base(component)
         {
             Component = component;

@@ -110,9 +110,9 @@
     <Compile Include="UI\ProgressBar\ProgressBarBaseHtmlBuilder.cs" />
     <Compile Include="UI\ProgressBar\ProgressBarHtmlBuilderFactory.cs" />
     <Compile Include="UI\RecoAssetAdapter.cs" />
-    <Compile Include="UI\UniqueViewComponent.cs" />
+    <Compile Include="UI\ScriptedViewComponent.cs" />
     <Compile Include="UI\ViewComponentBase.cs" />
-    <Compile Include="UI\ScriptableViewComponentBuilder.cs" />
+    <Compile Include="UI\ScriptedViewComponentBuilder.cs" />
     <Compile Include="UI\ViewComponentFactory.cs" />
     <Compile Include="UI\CtmHtmlExtension.cs" />
     <Compile Include="UI\HtmlTag.cs" />

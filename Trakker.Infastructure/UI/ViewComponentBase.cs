@@ -31,10 +31,7 @@ namespace Trakker.Infastructure.UI
             private set;
         }
 
-        public virtual void WriteInitializationScript(System.IO.TextWriter writer)
-        {
-            
-        }
+
 
         public ViewContext ViewContext
         {
@@ -50,10 +47,6 @@ namespace Trakker.Infastructure.UI
             }
         }
 
-        public virtual void WriteCleanupScript(TextWriter writer)
-        {
-        }
-
         public string ToHtmlString()
         {
             using (var output = new StringWriter())
@@ -63,13 +56,7 @@ namespace Trakker.Infastructure.UI
             }
         }
 
-        protected virtual void WriteHtml(HtmlTextWriter writer)
-        {
-            writer.AddAttribute(HtmlTextWriterAttribute.Type, "text/javascript");
-            writer.RenderBeginTag(HtmlTextWriterTag.Script);
-            WriteInitializationScript(writer);
-            writer.RenderEndTag();
-        }
+        public abstract void WriteHtml(HtmlTextWriter writer);
 
     }
 }

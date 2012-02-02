@@ -22,13 +22,12 @@ namespace Trakker.Infastructure.UI
         public string Src { get; set; }
         public string Alt { get; set; }
 
-        protected override void WriteHtml(System.Web.UI.HtmlTextWriter writer)
+        public override void WriteHtml(System.Web.UI.HtmlTextWriter writer)
         {
             var builder = _renderFactory.Create(this);
             IHtmlNode rootTag = builder.Build();
 
             rootTag.WriteTo(writer);
-            base.WriteHtml(writer);
         }
     }
 }
