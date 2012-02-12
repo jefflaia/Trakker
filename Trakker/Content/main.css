@@ -12,10 +12,24 @@ button:focus{outline:none;}
 button::-moz-focus-inner{border:0px;}
 
 
-
+/* Navigation */
 div#nav{ position:fixed; background-color: #2d2d2d; font-size: 13px;  width: 100%; height: 30px; color:#ccc; line-height: 30px; z-index: 9999;}
 div#nav a {color: #ccc;}
 div#nav div.user { width: 400px; position:relative; float:right; height: 30px; margin-right: 5px; }
+
+
+div#nav div.menu { padding: 0; display:block; margin: 2px 0px 0px 10px;}
+div#nav div.menu a.hover{color: #353535; z-index:101; }
+div#nav div.menu li{ display:inline-block; list-style: none; height: 20px; margin-top: 2px;}
+div#nav div.menu li a{ float:left; background-color: transparent; position:relative;  padding: 2px 20px 2px 5px; white-space: nowrap; z-index: 101; height: 20px; line-height: 20px; display:block; position:relative; border: 1px solid transparent; border-bottom: 0px;}
+div#nav div.menu li a:hover, div#nav div.menu li a.hover{ color: #353535; background-color:White; border-color: #aaa;}
+div#nav div.menu li span.arrow{ z-index: 102; position:relative; top: 10px; left: -16px; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #ccc; }
+div#nav div.menu li ul{color: #353535; width: auto; margin:0px; padding: 0; position: absolute; display:none; z-index: 100; margin-top: -6px; background-color: White; border: 1px solid #aaa;}
+div#nav div.menu li ul li{color: #353535; float: none; display:block; }
+div#nav div.menu li ul li a{ float:none; color:inherit; width: auto; display: block; padding: 0px 0px 0px 5px; border:none;}
+div#nav div.menu li ul li a:hover{ background-color: #4c4c4c;}
+div#nav div.menu li ul li.heading{ font-weight: bold; padding: 2px 2px 0px 2px; border-bottom: 1px solid white; border-top: 1px solid white; display:block;}
+div#nav div.menu li ul li.break{ border-bottom: 1px dotted gray; width: 100%; height: 1px; padding: 5px 0px 0px 0px; margin: 0px 0px 0px 0px; }
 
 div#heading{width: 100%; position:relative; top:30px; background-color: #f1f1f1; border-top: 1px solid #d2d2d2; border-bottom: 1px solid #d2d2d2; height: 50px;}
 div#heading a.logo { float: left; width: 150px; display:block;}
@@ -33,39 +47,11 @@ div#body div.Section > h1, div#body div.Section > h2, div#body div.Section > h3,
  
  div#body div.SubSection h2{border-bottom: 1px solid #ccc; font-size: 1.25em; margin-top: 0; padding: 2px 0 2px 5px;}
 
-/* Navigation */
-div.Dropdown { padding: 0; display:block; }
-div.Dropdown a.Hover{ border-width: 1px 1px 0px 1px; border-style: solid; border-color: #999; z-index:101; background-color: White; color: inherit !important;}
-div.Dropdown li{ display:inline-block; list-style: none; border-width: 1px 1px 0px 1px;}
-div.Dropdown li a{ color: #353535; background-color: transparent; position:relative; display: block; padding: 2px 10px 2px 10px; white-space: nowrap; z-index: 99; border-width: 1px 1px 0px 1px; border-style: solid; border-color: transparent;}
-div.Dropdown li ul{ width: auto; margin:0px; padding: 0; position: absolute; display:none; z-index: 100; border: 1px solid #999; margin-top: -1px; }
-div.Dropdown li ul li{ float: none; display:block; background-color: White; border-color: White;}
-div.Dropdown li ul li a{ width: auto; background: white; color: inherit !important; padding: 4px 10px 2x 10px !important;}
-div.Dropdown li ul li a:hover{ background-color: #a4d6f5;}
-div.Dropdown li ul li.Heading{ font-weight: bold; padding: 10px 5px 0px 5px; border-bottom: 1px solid white; border-top: 1px solid white; display:block;}
-div.Dropdown li ul li.Break{ border-bottom: 1px dotted gray; width: 100%; height: 1px; padding: 5px 0px; }
 
-div.Nav{width: 300px;}
 
-div.SubNav{ padding: 0px 10px 0px 10px; display:block; height: 24px; }
-div.SubNav a.Hover{  }
-div.SubNav a.Current{ font-weight: bold; }
-/*
-div.Dropdown { padding: 0; display:block; }
-div.Dropdown a.Hover{ border-width: 1px 1px 0px 1px; border-style: solid; border-color: #999; z-index:101; background-color: White;}
-div.Dropdown li{ display:inline-block; list-style: none; border-width: 1px 1px 0px 1px;}
-div.Dropdown li a{ color: #353535; background-color: transparent; position:relative;  padding: 2px 5px 4px 5px; white-space: nowrap; z-index: 99; border-width: 1px 1px 0px 1px; border-style: solid; border-color: transparent;}
-div.Dropdown li ul{ width: auto; margin:0px; padding: 0; position: absolute; display:none; z-index: 100; border: 1px solid #999; margin-top: 5px; background-color: White;}
-div.Dropdown li a:hover{ background-color: White; }
-div.Dropdown li ul li{ float: none; display:block; background-color: White; border-color: White;}
-div.Dropdown li ul li a{ width: auto; background: white; color: #24313C; display: block;}
-div.Dropdown li ul li a:hover{ background-color: #a4d6f5;}
-div.Dropdown li ul li.Heading{ font-weight: bold; padding: 5px 6px 0px 5px; border-bottom: 1px solid white; border-top: 1px solid white; display:block;}
-div.Dropdown li ul li.Break{ border-bottom: 1px dotted gray; width: 100%; height: 1px; padding: 5px 0px 0px 0px; margin: 0px 0px 0px 0px; }
 
-div.Nav{ margin: 18px 0px 0px 10px; }
-div.SubNav{ font-size: 1.2em;  margin: 5px 0px 0px 0px;  padding: 0px 10px 0px 10px; border-bottom: 1px solid #B0B0B0; height: 25px; }
-div.SubNav a.Current{ font-weight: bold; }*/
+div.sub-nav{ font-size: 1.2em;  margin: 5px 0px 0px 0px;  padding: 0px 10px 0px 10px; border-bottom: 1px solid #B0B0B0; height: 25px; }
+div.sub-nav a.current{ font-weight: bold; }
 
 
 
@@ -88,7 +74,7 @@ form div.validation-summary-errors{background-color: #FFF7F8; border: 1px dashed
 form div.validation-summary-errors li{margin-left: 30px; }
 
 /* UI Elements */
-.UI-Shadow{-moz-box-shadow: 0px 2px 5px #aaa; -webkit-box-shadow: #aaa 0px 2px 5px;}
+.ui-shadow{-moz-box-shadow: 0px 2px 5px #aaa; -webkit-box-shadow: #aaa 0px 2px 5px;}
 .UI-Hover{-moz-box-shadow: 0 0 3px #222; -webkit-box-shadow: #222 0 0 3px;}
 
 /* UI Buttons */

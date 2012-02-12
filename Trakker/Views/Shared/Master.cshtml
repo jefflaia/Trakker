@@ -18,10 +18,10 @@
 </head>
 <body>
     <div id="nav">
-<!--
-        <div class="Dropdown Nav">
+
+        <div class="menu">
             @Html.Partial(MVC.Shared.Views._Menu, Model)
-        </div>-->
+        </div>
 
         <div class="user">
             @if (Model.IsUserLoggedIn) { 
@@ -67,8 +67,8 @@
          $(document).ready(function () {
 
 
-             $("div.Nav > ul > li, div.SubNav > ul > li").hover(function () {
-                 $(this).find(">a").addClass("Hover");
+             $("div.menu > ul > li, div.sub-menu > ul > li").hover(function () {
+                 $(this).find(">a").addClass("hover");
                  $(this).find("ul").eq(0).show();
 
                  var parentWidth = $(this).find("a:first").outerWidth(true);
@@ -78,7 +78,7 @@
                      $(this).find("ul:first li").css({ "width": parentWidth - 2 });
                  }
              }, function () {
-                 $(this).find(">a").removeClass("Hover");
+                 $(this).find(">a").removeClass("hover");
                  $(this).find("ul").eq(0).hide();
              });
 
