@@ -3,100 +3,102 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Trakker.Infastructure.Uploading;
+using System.Web.UI;
+using System.IO;
 
 namespace Trakker.Infastructure.UI
 {
-    public class ProgressBarBuilderBase<TComponent, TBuilder> : ViewComponentBuilderBase<TComponent, TBuilder>
-        where TComponent : ProgressBarBase
-        where TBuilder : ProgressBarBuilderBase<TComponent, TBuilder>
+    public class ProgressBarBuilder : ViewComponentBuilderBase<ProgressBar, ProgressBarBuilder>
     {
 
-        private TComponent Component { get; set; }
+        private IProgressBarHtmlBuilder htmlBuilder;
+
         private bool _isBackground = false;
 
-        public ProgressBarBuilderBase(TComponent component) :
-            base(component)
+        public ProgressBarBuilder(ProgressBar component, IProgressBarHtmlBuilder htmlBuilder, HtmlTextWriter textWriter) :
+            base(component, textWriter)
         {
             Component = component;
+            this.htmlBuilder = htmlBuilder;
         }
 
-        public TBuilder Width(int width)
+        public ProgressBarBuilder Width(int width)
         {
             Component.Width = width;
-            return this as TBuilder;
+            return this;
         }
 
 
-        public TBuilder Height(int value)
+        public ProgressBarBuilder Height(int value)
         {
             Component.Height = value;
-            return this as TBuilder;
+            return this;
         }
 
-        public TBuilder Current(double value)
+        public ProgressBarBuilder Current(double value)
         {
             Component.Current = value;
-            return this as TBuilder;
+            return this;
         }
 
-        public TBuilder Current(int value)
+        public ProgressBarBuilder Current(int value)
         {
             Component.Current = Convert.ToDouble(value);
-            return this as TBuilder;
+            return this;
         }
 
-        public TBuilder Max(double value)
+        public ProgressBarBuilder Max(double value)
         {
             Component.Max = value;
-            return this as TBuilder;
+            return this;
         }
 
-        public TBuilder Max(int value)
+        public ProgressBarBuilder Max(int value)
         {
             Component.Max = Convert.ToDouble(value);
-            return this as TBuilder;
+            return this;
         }
 
-        public TBuilder Background
+        public ProgressBarBuilder Background
         {
             get
             {
                 _isBackground = true;
-                return this as TBuilder;
+                return this;
             }
         }
 
-        public TBuilder Blue()
+        public ProgressBarBuilder Blue()
         {
             return Color(CssPrimitives.ProgressBar.Blue);
         }
 
-        public TBuilder Red()
+        public ProgressBarBuilder Red()
         {
             return Color(CssPrimitives.ProgressBar.Red);
         }
 
-        public TBuilder Green()
+        public ProgressBarBuilder Green()
         {
             return Color(CssPrimitives.ProgressBar.Green);
         }
 
-        public TBuilder Orange()
+        public ProgressBarBuilder Orange()
         {
             return Color(CssPrimitives.ProgressBar.Orange);
         }
 
-        public TBuilder Yellow()
+        public ProgressBarBuilder Yellow()
         {
             return Color(CssPrimitives.ProgressBar.Yellow);
         }
 
-        public TBuilder Purple()
+        public ProgressBarBuilder Purple()
         {
             return Color(CssPrimitives.ProgressBar.Purple);
         }
 
-        private TBuilder Color(string colorClass)
+        private ProgressBarBuilder Color(string colorClass)
         {
             if (_isBackground)
             {
@@ -108,7 +110,13 @@ namespace Trakker.Infastructure.UI
                 Component.ColorClass = colorClass;
             }
 
-            return this as TBuilder;
+            return this;
+        }
+
+        public override void WriteHtml(HtmlTextWriter writer)
+        {
+            var rootTag = htmlBuilder.Build();
+            rootTag.WriteTo(writer);
         }
     }
 }

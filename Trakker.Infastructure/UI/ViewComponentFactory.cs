@@ -8,6 +8,7 @@ using Trakker.Infastructure.Uploading;
 using System.ComponentModel;
 using System.IO;
 using System.Linq.Expressions;
+using System.Web.UI;
 
 namespace Trakker.Infastructure.UI
 {
@@ -24,24 +25,35 @@ namespace Trakker.Infastructure.UI
         public IAssetManager AssetManager { get; private set; }
         public IClientSideObjectWriterFactory ClientSideObjectWriterFactory { get; private set; }
         public HtmlHelper HtmlHelper { get; set; }
+        public HtmlTextWriter Writer { get; set; }
 
         public ImageBuilder Avatar(Trakker.Data.File file)
         {
-            var builder = new ImageBuilder(new ImageBase(HtmlHelper.ViewContext, new ImageHtmlBuilderFactory(), AssetManager), new AvatarImageProfile());
+            var component = new ImageBase(AssetManager);
+            var builder = new ImageBuilder(component, new AvatarImageProfile(), new ImageHtmlBuilder(component), Writer);
             builder.Src(Path.Combine(file.Path, file.FileName));
             return builder;
 
         }
 
-        public ProgressBarBuilder ProgressBar()
+        public ProgressBarBuilder ProgressBar(int current, int max)
         {
-            return new ProgressBarBuilder(new ProgressBarBase(HtmlHelper.ViewContext, new ProgressBarHtmlBuilderFactory(), AssetManager));
+            var component = new ProgressBar(AssetManager)
+            {
+                Current = current,
+                Max = max
+            };
+
+            return new ProgressBarBuilder(component, new ProgressBarHtmlBuilder(component), Writer);
         }
 
-        public DatePickerBuilder DatePicker()
+        public DatePickerBuilder DatePicker(string name, DateTime? dateTime)
         {
-            return new DatePickerBuilder(new DatePickerBase(HtmlHelper.ViewContext, ClientSideObjectWriterFactory, new DatePickerHtmlBuilderFactory(), AssetManager));
+            var component = new DatePickerBase(AssetManager);
+
+            return new DatePickerBuilder(component, new DatePickerHtmlBuilder(component), ClientSideObjectWriterFactory, Writer);
         }
+
     }
 
     public class ViewComponentFactory<TModel> : ViewComponentFactory
@@ -61,16 +73,12 @@ namespace Trakker.Infastructure.UI
 
         public DatePickerBuilder DatePickerFor(Expression<Func<TModel, Nullable<DateTime>>> expression)
         {
-            DatePickerBuilder builder = new DatePickerBuilder(new DatePickerBase(HtmlHelper.ViewContext, ClientSideObjectWriterFactory, new DatePickerHtmlBuilderFactory(), AssetManager));
-            return builder.Name(GetName(expression))
-                          .Value(expression.Compile()(HtmlHelper.ViewData.Model));
+            return DatePicker(GetName(expression), expression.Compile()(HtmlHelper.ViewData.Model));
         }
 
         public DatePickerBuilder DatePickerFor(Expression<Func<TModel, DateTime>> expression)
         {
-            DatePickerBuilder builder = new DatePickerBuilder(new DatePickerBase(HtmlHelper.ViewContext, ClientSideObjectWriterFactory, new DatePickerHtmlBuilderFactory(), AssetManager));
-            return builder.Name(GetName(expression))
-                          .Value(expression.Compile()(HtmlHelper.ViewData.Model));
+            return DatePicker(GetName(expression), expression.Compile()(HtmlHelper.ViewData.Model));
         }
 
 

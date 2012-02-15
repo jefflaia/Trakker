@@ -11,9 +11,8 @@ namespace Trakker.Infastructure.UI
 {
     public abstract class ViewComponentBase : IAttributesContainer
     {
-        protected ViewComponentBase(ViewContext viewContext, IAssetManager assetManager)
+        protected ViewComponentBase(IAssetManager assetManager)
         {
-            ViewContext = viewContext;
             AssetManager = assetManager;
 
             HtmlAttributes = new Dictionary<string, object>();
@@ -30,33 +29,6 @@ namespace Trakker.Infastructure.UI
             get;
             private set;
         }
-
-
-
-        public ViewContext ViewContext
-        {
-            get;
-            private set;
-        }
-
-        public void Render()
-        {
-            using (HtmlTextWriter textWriter = new HtmlTextWriter(ViewContext.HttpContext.Response.Output))
-            {
-                WriteHtml(textWriter);
-            }
-        }
-
-        public string ToHtmlString()
-        {
-            using (var output = new StringWriter())
-            {
-                WriteHtml(new HtmlTextWriter(output));
-                return output.ToString();
-            }
-        }
-
-        public abstract void WriteHtml(HtmlTextWriter writer);
 
     }
 }

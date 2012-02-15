@@ -7,11 +7,11 @@ using Trakker.Core;
 
 namespace Trakker.Infastructure.UI
 {
-    public class ProgressBarBaseHtmlBuilder : IProgressBarBaseHtmlBuilder
+    public class ProgressBarHtmlBuilder : IProgressBarHtmlBuilder
     {
         public IProgressBar Element { get; set; }
 
-        public ProgressBarBaseHtmlBuilder(IProgressBar element)
+        public ProgressBarHtmlBuilder(IProgressBar element)
         {
             Element = element;
         }

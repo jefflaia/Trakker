@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Trakker.Infastructure.UI
 {
-    public interface IProgressBarBaseHtmlBuilder
+    public interface IProgressBarHtmlBuilder
     {
         IHtmlNode Build();
     }

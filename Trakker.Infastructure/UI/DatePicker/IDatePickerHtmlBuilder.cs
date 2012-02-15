@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Trakker.Infastructure.UI
 {
-    public interface IDatePickerBaseHtmlBuilder
+    public interface IDatePickerHtmlBuilder
     {
         IHtmlNode Build();
     }

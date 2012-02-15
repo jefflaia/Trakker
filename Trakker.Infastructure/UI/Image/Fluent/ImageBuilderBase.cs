@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Trakker.Infastructure.Uploading;
+using System.Web.UI;
 
 namespace Trakker.Infastructure.UI
 {
@@ -11,14 +12,16 @@ namespace Trakker.Infastructure.UI
         where TBuilder : ImageBuilderBase<TComponent, TBuilder>
     {
 
-        public TComponent Component { get; set; }
+        private IImageHtmlBuilder htmlBuilder;
+
         public IImageProfile Profile { get; set; }
 
-        public ImageBuilderBase(TComponent component, IImageProfile profile) :
-            base(component)
+        public ImageBuilderBase(TComponent component, IImageProfile profile, IImageHtmlBuilder htmlBuilder, HtmlTextWriter writer) :
+            base(component, writer)
         {
             Component = component;
             Profile = profile;
+            this.htmlBuilder = htmlBuilder;
         }
 
         public TBuilder Small()
@@ -63,6 +66,13 @@ namespace Trakker.Infastructure.UI
         {
             Component.Src = src;
             return this as TBuilder;
+        }
+
+        public override void WriteHtml(System.Web.UI.HtmlTextWriter writer)
+        {
+            IHtmlNode rootTag = htmlBuilder.Build();
+
+            rootTag.WriteTo(writer);
         }
     }
 }

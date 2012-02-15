@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Trakker.Infastructure.UI
 {
-    public interface IImageBaseHtmlBuilder
+    public interface IImageHtmlBuilder
     {
         IHtmlNode Build();
     }

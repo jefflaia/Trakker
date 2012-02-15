@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Trakker.Infastructure.Uploading;
 using System.Linq.Expressions;
+using System.Web.UI;
+using System.IO;
 
 namespace Trakker.Infastructure.UI
 {
@@ -12,17 +14,20 @@ namespace Trakker.Infastructure.UI
         where TBuilder : DatePickerBuilderBase<TComponent, TBuilder>
     {
 
-        public DatePickerBuilderBase(TComponent component) :
-            base(component)
+        private IDatePickerHtmlBuilder htmlBuilder;
+
+        public DatePickerBuilderBase(TComponent component, IDatePickerHtmlBuilder htmlBuilder, IClientSideObjectWriterFactory clientSideObjectWriterFactory, HtmlTextWriter writer) :
+            base(component, clientSideObjectWriterFactory, writer)
         {
             Component = component;
+            this.htmlBuilder = htmlBuilder;
         }
 
         public TBuilder Value(DateTime? date)
         {
             Component.Value = date;
 
-            return this as TBuilder;
+            return (TBuilder) this ;
         }
 
         public TBuilder Value(string date)
@@ -39,6 +44,32 @@ namespace Trakker.Infastructure.UI
             }
 
             return this as TBuilder;
+        }
+
+        public override void WriteInitializationScript(HtmlTextWriter writer)
+        {
+            IClientSideObjectWriter objectWriter = ClientSideObjectWriterFactory.Create(Component.Id, "tDatePicker", writer);
+
+            objectWriter.Start();
+
+            objectWriter.Append("dateFormat", JQueryDatePickerFormatTranslator.Translate(Component.Format));
+
+            objectWriter.AppendClientEvent("onLoad", Component.ClientEvents.OnLoad);
+            objectWriter.AppendClientEvent("onChange", Component.ClientEvents.OnChange);
+            objectWriter.AppendClientEvent("onOpen", Component.ClientEvents.OnOpen);
+            objectWriter.AppendClientEvent("onClose", Component.ClientEvents.OnClose);
+
+            objectWriter.Complete();
+
+            base.WriteInitializationScript(writer);
+        }
+
+        public override void WriteHtml(System.Web.UI.HtmlTextWriter writer)
+        {
+            IHtmlNode rootTag = htmlBuilder.Build();
+
+            rootTag.WriteTo(writer);
+            base.WriteHtml(writer);
         }
     }
 }

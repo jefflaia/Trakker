@@ -8,11 +8,11 @@ using System.Web.Mvc;
 
 namespace Trakker.Infastructure.UI
 {
-    public class DatePickerBaseHtmlBuilder : IDatePickerBaseHtmlBuilder
+    public class DatePickerHtmlBuilder : IDatePickerHtmlBuilder
     {
         public DatePickerBase Element { get; set; }
 
-        public DatePickerBaseHtmlBuilder(DatePickerBase element)
+        public DatePickerHtmlBuilder(DatePickerBase element)
         {
             Element = element;
         }

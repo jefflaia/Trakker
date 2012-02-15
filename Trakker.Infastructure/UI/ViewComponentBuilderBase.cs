@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
+using System.Web.UI;
+using System.Web.Mvc;
+using System.IO;
 
 namespace Trakker.Infastructure.UI
 {
@@ -11,13 +14,17 @@ namespace Trakker.Infastructure.UI
         where TBuilder : ViewComponentBuilderBase<TViewComponent, TBuilder>
     {
 
+
+        protected HtmlTextWriter textWriter;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewComponentBuilderBase&lt;TViewComponent, TBuilder&gt;"/> class.
         /// </summary>
         /// <param name="component">The component.</param>
-        protected ViewComponentBuilderBase(TViewComponent component)
+        protected ViewComponentBuilderBase(TViewComponent component, HtmlTextWriter writer)
         {
             Component = component;
+            this.textWriter = writer;
         }
 
         protected internal TViewComponent Component
@@ -53,18 +60,21 @@ namespace Trakker.Infastructure.UI
             return this as TBuilder;
         }
 
-        /// <summary>
-        /// Renders the component.
-        /// </summary>
-        public virtual void Render()
+
+
+
+        public void Render()
         {
-            Component.Render();
+            WriteHtml(textWriter);
         }
 
         public string ToHtmlString()
         {
-            return ToComponent().ToHtmlString();
+            return textWriter.ToString();
         }
+
+        public abstract void WriteHtml(HtmlTextWriter writer);
+
 
         public override string ToString()
         {

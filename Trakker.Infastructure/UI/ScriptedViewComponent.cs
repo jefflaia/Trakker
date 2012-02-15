@@ -9,22 +9,16 @@ namespace Trakker.Infastructure.UI
 {
     public class ScriptedViewComponent : ViewComponentBase
     {
-        public ScriptedViewComponent(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IAssetManager assetManager) :
-            base(viewContext, assetManager)
+        public ScriptedViewComponent(IAssetManager assetManager) :
+            base(assetManager)
         {
-            ClientSideObjectWriterFactory = clientSideObjectWriterFactory;
+
         }
 
         public string Name
         {
             get;
             set;
-        }
-
-        public IClientSideObjectWriterFactory ClientSideObjectWriterFactory
-        {
-            get;
-            private set;
         }
 
         public string Id
@@ -39,32 +33,5 @@ namespace Trakker.Infastructure.UI
             }
         }
 
-        protected virtual void EnsureRequiredSettings()
-        {
-            if (string.IsNullOrEmpty(Name))
-            {
-                throw new InvalidOperationException(Resources.TextResource.NameCannotBeBlank);
-            }
-        }
-
-        public virtual void WriteCleanupScript(HtmlTextWriter writer)
-        {
-        }
-
-        public virtual void WriteInitializationScript(System.IO.TextWriter writer)
-        {
-
-        }
-
-        public override void WriteHtml(HtmlTextWriter writer)
-        {
-            EnsureRequiredSettings();
-
-            writer.AddAttribute(HtmlTextWriterAttribute.Type, "text/javascript");
-            writer.RenderBeginTag(HtmlTextWriterTag.Script);
-            writer.RenderEndTag();
-
-
-        }
     }
 }

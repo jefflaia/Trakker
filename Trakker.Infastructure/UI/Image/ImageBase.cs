@@ -9,12 +9,9 @@ namespace Trakker.Infastructure.UI
     public class ImageBase : ViewComponentBase, IImage 
     {
 
-        protected IImageHtmlBuilderFactory _renderFactory;
-
-        public ImageBase(ViewContext viewContext, IImageHtmlBuilderFactory renderFactory, IAssetManager assetManager) :
-            base(viewContext, assetManager)
+        public ImageBase(IAssetManager assetManager)
+            : base(assetManager)
         {
-            _renderFactory = renderFactory;
         }
 
         public int Width { get; set; }
@@ -22,12 +19,5 @@ namespace Trakker.Infastructure.UI
         public string Src { get; set; }
         public string Alt { get; set; }
 
-        public override void WriteHtml(System.Web.UI.HtmlTextWriter writer)
-        {
-            var builder = _renderFactory.Create(this);
-            IHtmlNode rootTag = builder.Build();
-
-            rootTag.WriteTo(writer);
-        }
     }
 }

@@ -10,14 +10,11 @@ namespace Trakker.Infastructure.UI
     public class DatePickerBase : ScriptedViewComponent
     {
 
-        protected IDatePickerHtmlBuilderFactory _renderFactory;
-
         private string _format;
 
-        public DatePickerBase(ViewContext viewContext, IClientSideObjectWriterFactory clientSideObjectWriterFactory, IDatePickerHtmlBuilderFactory renderFactory, IAssetManager assetManager) :
-            base(viewContext, clientSideObjectWriterFactory, assetManager)
+        public DatePickerBase(IAssetManager assetManager) :
+            base(assetManager)
         {
-            _renderFactory = renderFactory;
             ClientEvents = new DatePickerClientEvents();
             Format = "MM/dd/yyyy";
         }
@@ -36,31 +33,5 @@ namespace Trakker.Infastructure.UI
             set;
         }
 
-        public override void WriteInitializationScript(TextWriter writer)
-        {
-            IClientSideObjectWriter objectWriter = ClientSideObjectWriterFactory.Create(Id, "tDatePicker", writer);
-
-            objectWriter.Start();
-
-            objectWriter.Append("dateFormat", JQueryDatePickerFormatTranslator.Translate(Format));
-
-            objectWriter.AppendClientEvent("onLoad", ClientEvents.OnLoad);
-            objectWriter.AppendClientEvent("onChange", ClientEvents.OnChange);
-            objectWriter.AppendClientEvent("onOpen", ClientEvents.OnOpen);
-            objectWriter.AppendClientEvent("onClose", ClientEvents.OnClose);
-
-            objectWriter.Complete();
-
-            base.WriteInitializationScript(writer);
-        }
-
-        public override void WriteHtml(System.Web.UI.HtmlTextWriter writer)
-        {
-            IDatePickerBaseHtmlBuilder builder = _renderFactory.Create(this);
-            IHtmlNode rootTag = builder.Build();
-
-            rootTag.WriteTo(writer);
-            base.WriteHtml(writer);
-        }
     }
 }

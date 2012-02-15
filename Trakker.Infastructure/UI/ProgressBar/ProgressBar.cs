@@ -6,16 +6,11 @@ using System.Web.Mvc;
 
 namespace Trakker.Infastructure.UI
 {
-    public class ProgressBarBase : ViewComponentBase, IProgressBar 
+    public class ProgressBar : ViewComponentBase, IProgressBar 
     {
-
-        protected IProgressBarHtmlBuilderFactory _renderFactory;
-
-        public ProgressBarBase(ViewContext viewContext, IProgressBarHtmlBuilderFactory renderFactory, IAssetManager assetManager) :
-            base(viewContext, assetManager)
+        public ProgressBar(IAssetManager assetManager) :
+            base(assetManager)
         {
-            _renderFactory = renderFactory;
-
             //set defaults
             Height = 0;
             Width = 250;
@@ -56,17 +51,6 @@ namespace Trakker.Infastructure.UI
 
             return Convert.ToInt32(Math.Floor((Current / Max) * Convert.ToDouble(Width)));
         }
-        
-        public override void WriteHtml(System.Web.UI.HtmlTextWriter writer)
-        {
-            IProgressBarBaseHtmlBuilder builder = _renderFactory.Create(this);
-            IHtmlNode rootTag = builder.Build();
-
-            rootTag.WriteTo(writer);
-        }
-    
-
-
 
     }
 }
